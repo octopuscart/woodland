@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $baselink = 'http://'.$_SERVER['SERVER_NAME'];
 
-$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/bespoketailorhkadmin/' : $baselink.'/bespoketailorhkadmin/';
+$baselinkmain = strpos($baselink, 'localhost') ? $baselink.'/bespoketailorhkadmin/' : "http://bespoketailorsadmin.costcointernational.com/";
 define('imageserver', $baselinkmain."assets_main/productimages/");
 
 define('imageserverslider', $baselinkmain."assets_main/sliderimages/");

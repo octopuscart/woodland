@@ -98,8 +98,8 @@ foreach ($categorie_parent as $key => $value) {
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="inner-product-details-right">
                     <h3><?php echo $product_details['title']; ?><br/>
-                        <small><?php echo $product_details['sku']; ?>
-                            <span style="    font-size: 12px;color: #000;">(Seller:<?php echo $product_details['vendor']; ?>)</span>
+                        <small><?php echo $product_details['title']; ?>
+                            <span style="    font-size: 12px;color: #000;"></span>
                         </small>
                     </h3>
                     <ul>

@@ -30,7 +30,7 @@ $baselink = 'http://'.$_SERVER['SERVER_NAME'];
 
 $baselinkmain = strpos($baselink, '192.168') ? $baselink.'/bespoketailorshk' : $baselink.'/';
 $baselinkmain = $baselink."/bespoketailorshk";
-$config['base_url'] = $baselinkmain; 
+//$config['base_url'] = $baselinkmain; 
 
 
 

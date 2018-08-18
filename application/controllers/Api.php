@@ -196,7 +196,7 @@ class Api extends REST_Controller {
                 }
             }
         }
-        ob_clean();
+       
         $this->output->set_header('Content-type: application/json');
         $productArray = array('attributes' => $attr_filter,
             'products' => $productListFinal,

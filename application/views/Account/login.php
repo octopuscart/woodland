@@ -65,7 +65,7 @@ $this->load->view('layout/header');
 
 
 
-                        <button class="btn-send-message disabled" type="submit" value="Login">Register</button>
+                        <button class="btn-send-message disabled" type="button" value="Login">Register</button>
                     </form>
                 </div>
             </div>

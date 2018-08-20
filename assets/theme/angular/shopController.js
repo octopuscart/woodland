@@ -142,7 +142,7 @@ ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, 
             swal({
                 title: 'Added To Cart',
                 type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, 'Rs.  ') + ", Quantity: " + rdata.data.quantity + "</p>",
+                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, 'US$.  ') + ", Quantity: " + rdata.data.quantity + "</p>",
                 imageUrl: rdata.data.file_name,
                 imageWidth: 100,
                 timer: 1500,

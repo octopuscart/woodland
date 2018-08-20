@@ -104,7 +104,7 @@
             <!-- Header Area Start Here -->
             <header>
                 <div class="header-area-style2" id="sticker">
-                    <div class="header-top" style="    padding: 60px 0;">
+                    <div class="header-top" style="  ">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
@@ -116,11 +116,40 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-2 hidden-xs">
+
+
+                                    <?php
+                                    $logoref = $_GET['logo'];
+                                    $logoimg = "logo731.png";    
+                                    switch ($logoref) {
+                                        case "1":
+                                            $logoimg = "logo731.png";  
+                                            break;
+                                        case "2":
+                                            $logoimg = "logo732.png";  
+                                            break;
+                                        case "3":
+                                            $logoimg = "logo733.png";  
+                                            break;
+                                        case "4":
+                                            $logoimg = "logo734.png";  
+                                            break;
+                                        case "5":
+                                            $logoimg = "logo735.png";  
+                                            break;
+                                        case "6":
+                                            $logoimg = "logo736.png";  
+                                            break;
+                                        default:
+                                            $logoimg = "logo731.png";  
+                                    }
+                                    ?>
+
                                     <div class="logo-area">
-                                        <a href="<?php echo site_url(); ?>"><img class="img-responsive" src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" alt="logo" style="    
+                                        <a href="<?php echo site_url(); ?>"><img class="img-responsive" src="<?php echo base_url() . 'assets/images/'.$logoimg; ?>" alt="logo" style="    
                                                                                  position: absolute;
-                                                                                 top: -53px;
-                                                                                 height: 128px;
+                                                                                 top: -22px;
+                                                                                 height: 74px;
                                                                                  margin-left: -135px;"></a>
                                     </div>
                                 </div>
@@ -271,7 +300,8 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="logo-area" style="    margin-top: 2px;">
                                         <a href="<?php echo site_url(); ?>">
-                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" alt="logo" style="    height:60px;">
+                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/'.$logoimg; ?>" alt="logo" style="    height:60px;padding-top: 4px;
+    padding-bottom: 6px;">
                                         </a>
                                     </div>
                                     <div class="main-menu-area home2-sticky-area">
@@ -283,19 +313,19 @@
                                                         <li><a href="#">About Us</a></li>
                                                     </ul>
                                                 </li>
-                                                 <li ><a href="#">Order Now</a>
+                                                <li ><a href="#">Order Now</a>
                                                     <ul>
                                                         <li><a href="<?php echo site_url("Product/ProductList/"); ?>/42">Shirts</a></li>
                                                         <li><a href="<?php echo site_url("Product/ProductList/"); ?>/43">Suits</a></li>
                                                         <li><a href="<?php echo site_url("Product/ProductList/"); ?>/43">Trousers</a></li>
                                                         <li><a href="<?php echo site_url("Product/ProductList/"); ?>/43">Jackets</a></li>
-                                                        
+
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">Catalogue</a></li>
                                                 <li><a href="#">Schedule</a></li>
                                                 <li><a href="#">Help</a></li>
-                                                <li><a href="<?php echo site_url("Shop/contactus")?>">Contact Us</a></li>
+                                                <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
                                             </ul>
                                         </nav>
                                     </div>

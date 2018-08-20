@@ -28,10 +28,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
-
-
-$favcolor = "red";
-
 switch ($baselink) {
     case "http://localhost":
         $baselinkmain = $baselink . '/bespoketailorshk';

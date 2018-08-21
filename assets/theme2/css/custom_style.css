@@ -507,9 +507,16 @@ b.barcomb-list {
     }
 }
 
+.header-area-style2 .header-bottom {
+     background: #eaeaea;
+}
+
 .header-area-style2 .header-top {
     background: black;
 }
+
+
+
 .header-area-style2 .header-top .account-wishlist li a {
     color: white;
 }
@@ -539,7 +546,12 @@ i.fa.fa-shopping-cart {
 
 .main-menu-area nav ul > li > ul > li > a {
     color: black!important;
+        background: #eaeaea;
 }
 .stick .main-menu-area nav ul .active > a {
 
+}
+
+.main-menu-area nav ul > li > ul > li > a:hover {
+    background: #ffff;
 }

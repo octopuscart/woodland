@@ -506,3 +506,40 @@ b.barcomb-list {
        
     }
 }
+
+.header-area-style2 .header-top {
+    background: black;
+}
+.header-area-style2 .header-top .account-wishlist li a {
+    color: white;
+}
+
+.header-area-style2 .header-top .account-wishlist li:hover a {
+    color: gray;
+}
+
+
+.header-area-style2 .header-top .account-wishlist li a i {
+    color: white;
+}
+.additional-menu-area .side-menu-open i {
+    color:white;
+}
+
+i.fa.fa-shopping-cart {
+    color: white!important;
+}
+
+.stick .header-bottom {
+        background-color: rgba(0, 0, 0);
+}
+.stick .main-menu-area nav ul > li > a {
+    color: #ffffff;
+}
+
+.main-menu-area nav ul > li > ul > li > a {
+    color: black!important;
+}
+.stick .main-menu-area nav ul .active > a {
+
+}

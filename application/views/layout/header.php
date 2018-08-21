@@ -120,7 +120,7 @@
 
                                     <?php
                                     $logoref = $_GET['logo'];
-                                    $logoimg = "logo731.png";    
+                                    $logoimg = "logo73.png";    
                                     switch ($logoref) {
                                         case "1":
                                             $logoimg = "logo731.png";  
@@ -141,7 +141,7 @@
                                             $logoimg = "logo736.png";  
                                             break;
                                         default:
-                                            $logoimg = "logo731.png";  
+                                            $logoimg = "logo73.png";  
                                     }
                                     ?>
 

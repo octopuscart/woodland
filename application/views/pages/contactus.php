@@ -35,13 +35,13 @@ $this->load->view('layout/header');
                                         </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
                                 </div><script type='text/javascript'>
                                     function init_map() {
-                                        //22.2968045,114.1687551
+                                        //22.2968045,114.1687551  22.2969039,114.1623853
                                         var myOptions = {zoom: 17, center: new google.maps.LatLng(22.297975, 114.17118299999993),
                                             mapTypeId: google.maps.MapTypeId.ROADMAP};
                                         map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
                                         marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.297975, 114.17118299999993)});
 
-                                        marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2968045, 114.1687551)});
+                                        marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2967832,114.1709048)});
 
 
 
@@ -54,7 +54,7 @@ $this->load->view('layout/header');
 
 
 
-                                        infowindow = new google.maps.InfoWindow({content: '<strong>Bespoke Tailors Shop</strong><br>Shop D, Ground Floor, 19-21 Hankow Road , Tsim Sha Tsui, Kowloon , Hong Kong.<br>'});
+                                        infowindow = new google.maps.InfoWindow({content: '<strong>Bespoke Tailors Shop</strong><br>Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road , Tsim Sha Tsui, Kowloon , Hong Kong.<br>'});
 
                                         google.maps.event.addListener(marker2, 'click', function () {
                                             infowindow.open(map, marker2);
@@ -117,7 +117,7 @@ $this->load->view('layout/header');
 
                         <h2 class="title-sidebar">Shop Address</h2>
                         <ul>
-                            <li class="con-address">Shop D, Ground Floor, 19-21 Hankow Road ,
+                            <li class="con-address">Shop D, Ground Floor,  Hanyee Building, 19-21 Hankow Road ,
                                 <br/>
                                 Tsim Sha Tsui, Kowloon , Hong Kong.</li>
                             <li class="con-envelope">info@bespoketailorshk.com</li>

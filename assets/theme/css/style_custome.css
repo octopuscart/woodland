@@ -247,22 +247,32 @@ code {
 }
 
 .monogramtext_posistion_collar {
-    left: 208px;
+       left: 191px;
     display: block;
-    top: 8px;
+    top: 27px;
+    line-height: 8px;
+    font-size: 5px;
+    height: 7px;
 }
 
 .monogramtext_posistion_cuff_left{
-  left: 355px;
+     left: 282px;
     display: block;
-    top: 320px;
-    transform: rotate(6deg);
+    top: 257px;
+    top: 290px;
+    transform: rotate(60deg);
+    line-height: 8px;
+    font-size: 5px;
+    height: 7px
 }
 
 .monogramtext_posistion_left_pocket{
-    left: 262px;
+         left: 234px;
     display: block;
-    top: 111px;
+    top: 119px;
+    line-height: 8px;
+    font-size: 5px;
+    height: 7px;
 }
 
 

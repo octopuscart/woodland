@@ -1085,6 +1085,7 @@ header .user-basket .cart-num {
 	top: -8px;
 	right: -8px;
 	margin: 0px;
+            font-weight: bold;
 }
 .nav-right li a:before {
 	display: none;

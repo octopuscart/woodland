@@ -9,7 +9,7 @@
                             <h3>Information</h3>
                             <ul class="info-list">
                                 <li><a href="#">About us</a></li>
-                               
+
                                 <li><a href="#">Privacy policy</a></li>
                                 <li><a href="#">Terms & condition</a></li>
                             </ul>
@@ -50,18 +50,18 @@
                                 <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 
                             </ul><div class="newsletter-area">
-                                        <h3>NewsLetter Sign Up!</h3>
-                                        <div class="input-group stylish-input-group">
-                                            <input type="text" class="form-control" placeholder="E-mail . . .">
-                                            <span class="input-group-addon">
-							                        <button type="submit">
-							                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-							                        </button>  
-							                    </span>
-                                        </div>
-                                    </div
-                            
-                            
+                                <h3>NewsLetter Sign Up!</h3>
+                                <div class="input-group stylish-input-group">
+                                    <input type="text" class="form-control" placeholder="E-mail . . .">
+                                    <span class="input-group-addon">
+                                        <button type="submit">
+                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                        </button>  
+                                    </span>
+                                </div>
+                            </div
+
+
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <p>Copyright <?php echo date('Y')?> by Bespoke Tailors All Rights Reserved. </p>
+                        <p>Copyright <?php echo date('Y') ?> by Bespoke Tailors All Rights Reserved. </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     </div>
@@ -95,22 +95,22 @@
                                     <div id="metro-related1" class="tab-pane fade active in" ng-if="projectDetailsModel.productobj.file_name">
                                         <a href="#">
                                             <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});   
-    height: 500px;"></div>
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
+                                                 height: 500px;"></div>
+                                                                                         <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related2" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name1">
                                         <a href="#">
                                             <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});    
-    height: 500px;"></div>
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
+                                                 height: 500px;"></div>
+                                                                                         <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related3" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name2">
                                         <a href="#">
                                             <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});    
-    height: 500px;"></div>
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
+                                                 height: 500px;"></div>
+                                                                                         <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
                                         </a>
                                     </div>
                                 </div>
@@ -161,7 +161,11 @@
                                                                     <li><a href="#"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
                                                                 </ul>-->
                                 <ul class="inner-product-details-cart">
-                                    <li><a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a></li>
+                                    <li>
+                                        <a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a>
+                                        <!--<a href=" <?php echo site_url("Product/customizationShirt"); ?>/{{projectDetailsModel.productobj.product_id}}" >Customize Now</a>-->
+
+                                    </li>
                                     <li>
                                         <div class="input-group quantity-holder" id="quantity-holder">
                                             <input type="text" placeholder="1" value="1" id="model_quantity" class="form-control quantity-input" name="quantity">

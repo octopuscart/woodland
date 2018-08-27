@@ -78,5 +78,13 @@ class Product extends CI_Controller {
     function unsetData() {
         $this->session->unset_userdata('session_cart');
     }
+    
+    
+      function customizationShirt($productid) {
+        $session_cart = $this->Product_model->cartData();
+        $data = [];
+        $this->load->view('Product/customization_shirt', $data);
+    }
+    
 
 }

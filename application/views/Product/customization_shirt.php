@@ -21,7 +21,63 @@ $this->load->view('layout/header');
         margin-bottom: 30px;
         box-shadow: 0px 0px 5px #00000017;
     }
+    .frame {
 
+        font-family: sans-serif;
+        overflow: hidden;
+        /*width: 25vw;*/
+        /*margin: 3vw;*/
+        display: inline-block;
+
+        .zoom {
+
+            font-size: 1.3vw;
+            transition: transform 0.2s linear;
+
+        }
+
+
+        img {
+
+            max-width: 25vw;
+
+        }
+
+
+        .lorem {
+
+            padding: 2% 2%;
+
+        }
+
+
+        form {
+
+            margin : 2% auto;    
+            text-align: center;
+
+            button {
+
+                font-size: inherit;
+                margin: inherit;
+
+            }
+
+            input {
+
+                border {
+                    radius : 5px;
+                    style: 1px solid;
+                }    
+
+                width :20vw;
+                margin : 2% auto;
+                padding: .5vw .8vw;
+                font-size: 1.3vw;
+
+            }
+        }
+    }
 </style>
 <!-- Slider -->
 
@@ -78,11 +134,11 @@ $this->load->view('layout/header');
                         </div>
                         <div class="col-sm-9 col-xs-12"  style="padding: 0">
                             <div class="tab-content">
-                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
+                                <div class="tab-pane {{$index === 0?'active':''}} frame" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
                                     <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
                                         <i class="icon ion-refresh"></i>
                                     </button>
-                                    <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
+                                    <div class="fontview_custom customization_block animated zoom" ng-if="screencustom.view_type == 'front'">
                                         <div ng-if="selecteElements[screencustom.fabric]['Monogram Initial']">
                                             <div class="monogramtext_posistion
                                                  {{selecteElements[fab.folder]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.folder]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.folder]['Monogram'].css_class}} 
@@ -127,37 +183,50 @@ $this->load->view('layout/header');
                                         <!--back-->
 
 
-                                        
+
 
                                         <!--pocket-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Pocket'].elements">
 
+
+
                                         <!--collar section-->
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements" style="{{selecteElements[fab.folder]['Collar'].style}}">
-
-
-
-                                        <!--<img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Collar'].insert_full" style="{{selecteElements[fab.folder]['Collar'].style}}"  ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Full Insert'">-->
-
                                         <div  ng-if="selecteElements[fab.folder]['Collar Insert'] != 'No'">
                                             <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{selecteElements[fab.folder]['Collar'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.folder]['Collar'].insert_style_css}}"   >
-                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.folder]['Collar'].insert_overlay_css}};    z-index: 200;">
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar'].insert_overlay}}" class="fixpos animated" style="  z-index: 200;">
+                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements" >
                                         </div>
+                                        <!--collar band-->
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_insert20001.png" class="fixpos animated"  ng-if="selecteElements[fab.folder]['Collar Insert'] == 'No'">
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_band40001.png" class="fixpos animated"  >
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements">
+
                                         <div ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Outer'">
-                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{selecteElements[fab.folder]['Collar'].insert_style}}" class="fixpos animated"  style="{{selecteElements[fab.folder]['Collar'].insert_style_css}};    z-index: 200;"  >
-                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Collar'].insert_full" style="{{selecteElements[fab.folder]['Collar'].style}}" >
-                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.folder]['Collar'].insert_overlay_css}};    z-index: 200;"   ng-if="(selecteElements[fab.folder]['Collar Insert'] != 'No')"   >
+                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_insert20001.png" class="fixpos animated"  >
+                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_band40001.png" class="fixpos animated"  >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/collar_m_comman_full_insert0001.png" class="fixpos animated"  >
+
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Collar'].insert_full" style="{{selecteElements[fab.folder]['Collar'].element}}" >
                                         </div>
 
-                                        <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.folder].collar_buttons}}" class="fixpos animated" style="margin-top: -3px;margin-left: 0px;" ng-if="selecteElements[fab.folder].show_buttons == 'true'">
+                                        <div ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Full Insert'">
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/collar_m_comman_insert20001.png" class="fixpos animated"  ng-if="selecteElements[fab.folder]['Collar Insert'] == 'No'">
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/collar_m_comman_band40001.png" class="fixpos animated"  >
+
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements">
+
+                                        </div>
+
+
+
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.folder]['Collar'].button_down}}" class="fixpos animated" style="margin-left: -3px;" ng-if="selecteElements[fab.folder]['Collar'].button_down">
                                         <!--<img src="http://w2p.nitafashions.com/output_insert/p23/pocket_l0001.png" class="fixpos animated" >-->
 
                                         <!--<img src="http://w2p.nitafashions.com/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/pocket_border_l0001.png" class="fixpos animated" >-->
                                         <img src="<?php echo custome_image_server; ?>/buttonemrald/button_front0001.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front'].elements">
 
-                                     
-                                   
+
+
                                     </div>   
                                     <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" ng-repeat="img in selecteElements[fab.folder].sleeve" class="fixpos animated" >

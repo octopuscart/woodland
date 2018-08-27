@@ -208,6 +208,8 @@ code {
     background-position: 0px -115px!important;
     border-radius: 50%;
     opacity: 0.5;
+    height: 100px;
+    width:100px;
 }
 
 .fabricblock_a{

@@ -26,7 +26,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.folder] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
+            $scope.selecteElements[fb.folder] = {'sleeve': ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png", ],
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -45,7 +45,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
             'view_type': 'front',
             "fabric": $scope.cartFabrics[0].folder,
             "productobj": $scope.cartFabrics[0],
-            "sku":$scope.cartFabrics[0].sku,
+            "sku": $scope.cartFabrics[0].sku,
         };
         var url = baseurl + "Api/customeElements";
         $http.get(url).then(function (rdata) {
@@ -68,6 +68,51 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                     }
                 }
             }
+
+
+            setTimeout(function () {
+             
+
+                //zoom plugin
+
+                $(document).on('mousemove', '.frame', function () {
+
+                    var element = {
+                        width: $(this).width(),
+                        height: $(this).height()
+                    };
+
+                    var mouse = {
+                        x: event.pageX,
+                        y: event.pageY
+                    };
+
+                    var offset = $(this).offset();
+
+                    var origin = {
+                        x: (offset.left + (element.width / 2)),
+                        y: (offset.top + (element.height / 2))
+                    };
+
+                    var trans = {
+                        left: (origin.x - mouse.x) / 2,
+                        down: (origin.y - mouse.y) / 2
+                    };
+
+                    var transform = ("scale(2,2) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
+
+                    $(this).children(".zoom").css("transform", transform);
+
+                });
+
+                $(document).on('mouseleave', '.frame', function () {
+                    $(this).children(".zoom").css("transform", "none");
+                });
+
+                //end of zoom
+
+            }, 1500)
+
 
         });
     }
@@ -113,12 +158,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
 //end of shirt implemantation
 
-    setTimeout(function () {
-        $('.images-slider').flexslider({
-            animation: "fade",
-            controlNav: "thumbnails"
-        });
-    }, 500)
+
 
 
 
@@ -127,7 +167,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     //select fabric
     $scope.selectFabric = function (fabric) {
         $scope.screencustom.fabric = fabric.folder;
-         $scope.screencustom.sku = fabric.sku;
+        $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
     }
     //
@@ -189,7 +229,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
 
     $scope.selectElement = function (obj, element) {
-         console.log(element)
+        console.log(element)
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;

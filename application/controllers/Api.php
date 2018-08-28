@@ -706,21 +706,8 @@ class Api extends REST_Controller {
                         "insert_full" => ["collar_wingtip0001.png"],
                         "image" => "collar_wingtip.jpeg",
                         "buttons" => "buttons_m_w_collar.png",
-                        "monogram_style" => "top:11px;height: 8px;",
-                    ), array(
-                        "status" => "0",
-                        "title" => "Mandarin",
-                        "elements" => [],
-                        "customization_category_id" => "2",
-                        "insert_style_css" => "margin-top: 0px;",
-                        "insert_style" => "collar_m_comman_insert20001.png",
-                        "insert_overlay" => "collar_manderian_insert_overlay.png",
-                        "insert_overlay_css" => "",
-                        "insert_full" => [],
-                        "image" => "collar_mandarin.jpeg",
-                        "monogram_style" => "top:11px;height: 8px;",
-                        "buttons" => "buttons_m_w_collar.png",
-                    )]
+                     
+                    ),]
             ),
             "cuff_collar_insert" => ["p10", "p11", "p2", "p18"],
             "monogram_colors" => [

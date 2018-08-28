@@ -249,32 +249,32 @@ code {
 }
 
 .monogramtext_posistion_collar {
-       left: 191px;
+      left: 234px;
     display: block;
-    top: 27px;
-    line-height: 8px;
-    font-size: 5px;
-    height: 7px;
+    top: 30px;
+    line-height: 10px;
+    font-size: 8px;
+    height: 9px;
 }
 
 .monogramtext_posistion_cuff_left{
-     left: 282px;
+       left: 346px;
     display: block;
-    top: 257px;
-    top: 290px;
-    transform: rotate(60deg);
-    line-height: 8px;
-    font-size: 5px;
-    height: 7px
+    top: 325px;
+    transform: rotate(59deg);
+    line-height: 7px;
+    font-size: 7px;
+    height: 8px;
 }
 
 .monogramtext_posistion_left_pocket{
-         left: 234px;
+        left: 287px;
     display: block;
-    top: 119px;
-    line-height: 8px;
-    font-size: 5px;
-    height: 7px;
+    top: 135px;
+    line-height: 10px;
+    font-size: 7px;
+    height: 10px;
+    transform: rotate(4deg);
 }
 
 

@@ -83,7 +83,17 @@ $this->load->view('layout/header');
 
 
 <div class="" ng-controller="customizationShirt">
+    <!-- Slider -->
+<!--    <section class="sub-bnr" data-stellar-background-ratio="0.5" style="font-weight: 300;
+             font-size: 20px;">
+        <div class="position-center-center">
+            <div class="container">
+                <div  class="row">
 
+                </div>
+            </div>
+        </div>
+    </section>-->
 
     <!-- Content -->
     <div id="content"> 
@@ -92,16 +102,39 @@ $this->load->view('layout/header');
         <section class="item-detail-page padding-top-30 ">
             <div class="container" style="width: 100%">
                 <div class="row"> 
-
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class='custom_block_slide'> 
+                                <div class="item"   ng-repeat="fab in cartFabrics">
+                                    <div class=" fabricblockmobile ">
+                                        <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                            <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server; ?>/output/{{fab.folder}}/cloth0001.png');" > </div>
+                                            <p class="fabric_title">{{fab.sku}}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!--======= IMAGES SLIDER =========-->
 
 
                     <div class="col-sm-5 large-detail shirtcontainer  " >
+                        <div class="col-sm-3 col-xs-12 fabricblockdesktop customization_items " style="padding: 0">
+                            <ul class="nav nav-tabs tabs-left">
+                                <li role="presentation" class="{{$index === 0?'active':''}} " ng-repeat="fab in cartFabrics" >
+                                    <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                        <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo imageserver; ?>/{{fab.file_name2}};" > </div>
+                                        <p class="fabric_title">{{fab.sku}}</p>
+                                    </a>
 
-                        <div class="col-sm-12 col-xs-12"  style="padding: 0">
-                            <div class="">
-                                <div class=" frame" ng-repeat="fab in [cartFabrics[0]]" id="fabric_{{fab.folder}}">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-9 col-xs-12"  style="padding: 0">
+                            <div class="tab-content">
+                                <div class="tab-pane {{$index === 0?'active':''}} frame" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
                                     <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
                                         <i class="icon ion-refresh"></i>
                                     </button>
@@ -126,26 +159,21 @@ $this->load->view('layout/header');
                                         <!--cuff section-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].sleeve1">
 
-                                        <!--buttom-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Bottom'].elements">
+                                        
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].elements">
+                                        <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].overlay">
 
-
-                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_style}}" class="fixpos animated"   ng-if="selecteElements[fab.folder]['Cuff Insert'] != 'No'">
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].insertele">
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].style}}"  ng-if="selecteElements[fab.folder]['Cuff Insert Full'] == 'Full Insert'">
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_style_css}}"    ng-if="selecteElements[fab.folder]['Cuff Insert'] != 'No'">
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_overlay_css}}"   ng-if="selecteElements[fab.folder]['Cuff Insert'] != 'No'"   >
 
                                         <div ng-if="selecteElements[fab.folder]['Cuff Insert Full'] == 'Outer'">
-                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_style}}" class="fixpos animated"   >
-                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].inserteleo">
+                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_style}}" class="fixpos animated"  style="{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_style_css}};    z-index: 200;"  >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].style}}" >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].insert_overlay_css}};    z-index: 200;"   ng-if="(selecteElements[fab.folder]['Cuff Insert'] != 'No')"   >
                                         </div>
-
-                                        <div ng-if="selecteElements[fab.folder]['Cuff Insert Full'] == 'Full Insert'">
-                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].elements" >
-                                        </div>
-
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].elements" ng-if="selecteElements[fab.folder]['Cuff Insert'] == 'No'">
-
-
-
+                                        
                                         <img src="<?php echo custome_image_server; ?>/buttonemrald/{{selecteElements[fab.folder]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.folder]['Cuff & Sleeve'].buttons" >
 
                                         <!--pocket-->
@@ -168,6 +196,7 @@ $this->load->view('layout/header');
                                             <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_insert20001.png" class="fixpos animated"  >
                                             <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_band40001.png" class="fixpos animated"  >
                                             <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/collar_m_comman_full_insert0001.png" class="fixpos animated"  >
+
                                             <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Collar'].insert_full" style="{{selecteElements[fab.folder]['Collar'].element}}" >
                                         </div>
 
@@ -247,14 +276,12 @@ $this->load->view('layout/header');
 
 
     </div>
-    <!-- End Content -->  
+    <!-- End Content --> 
 
 </div>
 
-<script>
-    var product_id = <?php echo $productdetails['id']; ?>;
+<scirpt></scirpt>
 
-</script>
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/ng-shirtcustomization.js"></script>
 

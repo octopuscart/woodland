@@ -81,8 +81,8 @@ class Product extends CI_Controller {
     
     
       function customizationShirt($productid) {
-        $session_cart = $this->Product_model->cartData();
-        $data = [];
+        $productdetails = $this->Product_model->productDetails($productid);
+        $data['productdetails'] = $productdetails;
         $this->load->view('Product/customization_shirt', $data);
     }
     

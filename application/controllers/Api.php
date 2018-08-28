@@ -362,6 +362,12 @@ class Api extends REST_Controller {
         $this->response($session_cart);
     }
 
+    function cartOperationShirtSingle_get($product_id) {
+        $prodct_details = $this->Product_model->productDetails($product_id);
+        $prodct_details['folder'] = $prodct_details['title'];
+        $this->response($prodct_details);
+    }
+
     function customeElements_get() {
         $customeele = array(
             "keys" => [
@@ -390,7 +396,6 @@ class Api extends REST_Controller {
                     "viewtype" => "front",
                     "type" => "main",
                 ),
-               
                 array(
                     "title" => "Pocket",
                     "viewtype" => "front",
@@ -468,7 +473,7 @@ class Api extends REST_Controller {
                         "title" => "Squared",
                         "elements" => ["shirtbody_squre0001.png"],
                         "customization_category_id" => "6",
-                        "image" => "body_squre0001.jpeg"
+                        "image" => "bottom_squred.jpeg"
                     )],
                 "Cuff & Sleeve" => [
                     array(
@@ -488,12 +493,14 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "1",
                         "title" => "Single Cuff Rounded",
-                        "elements" => [ "cuff_m_rounded_insert0001.png", "cuff_m_rounded0001.png"],
+                        "elements" => [ "cuff_m_rounded20001.png"],
+                        "insertele" => [ "cuff_m_rounded30001.png"],
+                        "inserteleo" => [ "cuff_m_rounded30001.png"],
                         "customization_category_id" => "3",
                         "image" => "cuff_single_rounded.jpg",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "insert_style_css" => "",
-                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_style" => "cuff_m_rounded20001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
@@ -502,12 +509,14 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Cutaway",
-                        "elements" => ["cuff_m_cutaway_insert0001.png", "cuff_m_cutaway0001.png"],
+                        "elements" => [ "cuff_m_cutaway20001.png"],
+                        "insertele" => [ "cuff_m_cutaway30001.png"],
+                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "single_cuff_cutaway.jpg",
                         "insert_style_css" => "",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_style" => "cuff_m_cutaway20001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
@@ -518,10 +527,12 @@ class Api extends REST_Controller {
                         "title" => "2 Buttons Cutaway",
                         "customization_category_id" => "3",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => ["cuff_m_cutaway_insert0001.png", "cuff_m_cutaway0001.png"],
+                       "elements" => [ "cuff_m_cutaway20001.png"],
+                        "insertele" => [ "cuff_m_cutaway30001.png"],
+                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
                         "image" => "2_buttons_cutaway.jpg",
                         "insert_style_css" => "",
-                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_style" => "cuff_m_cutaway20001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
@@ -531,11 +542,13 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "2 Buttons Rounded",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => [ "cuff_m_rounded_insert0001.png", "cuff_m_rounded0001.png"],
+                        "elements" => [ "cuff_m_rounded20001.png"],
+                        "insertele" => [ "cuff_m_rounded30001.png"],
+                        "inserteleo" => [ "cuff_m_rounded30001.png"],
                         "customization_category_id" => "3",
                         "image" => "2_buttons_rounded.jpg",
                         "insert_style_css" => "",
-                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_style" => "cuff_m_rounded20001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
@@ -547,9 +560,14 @@ class Api extends REST_Controller {
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
                         "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
+                      
+                        "insertele" => [ "cuff_m_franch_squre0001.png"],
+                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+                        
+                        
                         "image" => "cuff_franch_rounded.jpg",
                         "insert_style_css" => "",
-                        "insert_style" => "cuff_franch_insert0001.png",
+                        "insert_style" => "cuff_m_franch_squre_insert0001.png",
                         "insert_overlay" => "cuff_franch_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_franch_rounded0001.png"],

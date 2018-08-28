@@ -22,7 +22,7 @@
                 <p class="selected-fabric-block-image" style="margin: 0px;background: url('<?php echo custome_image_server; ?>/output/{{screencustom.fabric}}/cloth0001.png')"></p>
             </div>
             <div class="media-body elementItemDesktop">
-                <h4 class="selected-element-title media-heading">{{screencustom.sku}}</h4>
+                <h4 class="selected-element-title media-heading">{{screencustom.productobj.title}}</h4>
                 <p class="selected-element-title_text">
                     {{screencustom.productobj.title}}
                 </p>

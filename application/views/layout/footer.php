@@ -162,8 +162,8 @@
                                                                 </ul>-->
                                 <ul class="inner-product-details-cart">
                                     <li>
-                                        <a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a>
-                                        <!--<a href=" <?php echo site_url("Product/customizationShirt"); ?>/{{projectDetailsModel.productobj.product_id}}" >Customize Now</a>-->
+                                        <!--<a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a>-->
+                                        <a href=" <?php echo site_url("Product/customizationShirt"); ?>/{{projectDetailsModel.productobj.product_id}}" >Customize Now</a>
 
                                     </li>
                                     <li>

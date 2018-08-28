@@ -2,11 +2,27 @@
 
 
 ClassApartStore.controller('customizationShirt', function ($scope, $http, $location) {
+    $scope.fabricurl = "http://api.octopuscart.com/output/";
 
-    var globlecart = baseurl + "Api/cartOperationShirtSingle/"+product_id;
+    var globlecart = baseurl + "Api/cartOperationShirt";
     $scope.product_quantity = 1;
 
+    $scope.cartFabrics1 = [
+        {"sku": "AM697"},
+        {"sku": "AM661"},
+        {"sku": "AM64A"},
+        {"sku": "WF81"},
+        {"sku": "D1576"},
+        {"sku": "L884"}
+    ];
+
+
     $scope.cartFabrics = [];
+
+
+
+
+
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
@@ -108,12 +124,14 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
     $scope.getCartDataFabric = function () {
         $http.get(globlecart).then(function (rdata) {
-            console.log(rdata.data)
-            $scope.fabricCartData = [rdata.data];
-            $scope.cartFabrics = [rdata.data];
+            $scope.fabricCartData = rdata.data;
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-            
+            for (pd in $scope.fabricCartData.products) {
+                var pds = $scope.fabricCartData.products[pd];
+                $scope.cartFabrics.push(pds);
+
+            }
             $scope.shirtimplement()
         }, function (r) {
         })

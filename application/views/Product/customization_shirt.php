@@ -190,13 +190,15 @@ $this->load->view('layout/header');
 
 
                                     </div>   
-                                    <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" ng-repeat="img in selecteElements[fab.folder].sleeve" class="fixpos animated" >
+                                    <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'" style="margin-top: -10px;">
 
-                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/back_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Full Insert'">
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/back_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Collar Insert Full'] != 'Full Insert'">
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/b_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Full Insert'">
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/b_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Collar Insert Full'] != 'Full Insert'">
+
+                                                                                <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" ng-repeat="img in selecteElements[fab.folder].sleeve" class="fixpos animated" >
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back'].elements" >
+
 
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.folder]['Back'].overlay}}" class="fixpos animated" ng-if="selecteElements[fab.folder]['Back'].overlay">

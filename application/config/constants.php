@@ -22,6 +22,9 @@ define('imageserverslider', $baselinkmain."assets_main/sliderimages/");
 define('imageservermain', $baselinkmain."assets_main/");
 
 define('globle_currency_type', 'US$ ');
+ 
+define('globle_currency', 'US$ ');
+
 
 
 define('custome_image_server', "http://costcointernational.com/bespoketailorshk_files");

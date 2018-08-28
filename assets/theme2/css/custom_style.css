@@ -555,3 +555,9 @@ b.barcomb-list {
 .main-menu-area nav ul > li > ul > li > a:hover {
     background: #ffff;
 }
+
+.model_tab_title{
+    float: left;
+    width: 100px;
+        
+}

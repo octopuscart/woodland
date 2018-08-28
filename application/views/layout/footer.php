@@ -149,8 +149,8 @@
                                 <p class="price">{{projectDetailsModel.productobj.price|currency:"<?php echo globle_currency; ?> "}}</p>
                                 <p>{{projectDetailsModel.productobj.short_description}}</p>
                                 <div class="product-details-content">
-                                    <p><span>SKU:</span> {{projectDetailsModel.productobj.sku}}</p>
-                                    <p><span>Availability:</span> {{projectDetailsModel.productobj.stock_status}}</p>
+                                    <p><span class="model_tab_title">SKU:</span> {{projectDetailsModel.productobj.title}}</p>
+                                    <p><span class="model_tab_title">Availability:</span> {{projectDetailsModel.productobj.stock_status}}</p>
                                     <!--<p><span>Category:</span>  {{projectDetailsModel.productobj.stock_status}}</p>-->
                                 </div>
                                 <!--                                <ul class="product-details-social">

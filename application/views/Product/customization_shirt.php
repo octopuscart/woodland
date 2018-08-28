@@ -194,8 +194,7 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/b_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Full Insert'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/b_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Collar Insert Full'] != 'Full Insert'">
-
-                                                                                <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" ng-repeat="img in selecteElements[fab.folder].sleeve" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" ng-repeat="img in selecteElements[fab.folder].sleeve" class="fixpos animated" >
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back'].elements" >
 

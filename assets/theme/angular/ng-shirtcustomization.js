@@ -10,7 +10,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.folder] = {'sleeve': ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png", ],
+            $scope.selecteElements[fb.folder] = {'sleeve': ["b_full_shirt_sleeve0001.png", ],
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -218,6 +218,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
+            console.log(element.sleeve)
 
         }
         if (obj.title == 'Collar') {

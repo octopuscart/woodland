@@ -396,11 +396,11 @@ class Api extends REST_Controller {
                     "viewtype" => "front",
                     "type" => "main",
                 ),
-                 array(
-                    "title" => "Back",
-                    "viewtype" => "back",
-                    "type" => "main",
-                ),
+//                 array(
+//                    "title" => "Back",
+//                    "viewtype" => "back",
+//                    "type" => "main",
+//                ),
                 array(
                     "title" => "Pocket",
                     "viewtype" => "front",

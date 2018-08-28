@@ -667,7 +667,7 @@ class Api extends REST_Controller {
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
-                        "insert_full" => ["collar_m_regular0001.png"],
+                        "insert_full" => ["collar_m_regular20001.png"],
                         "image" => "collar_regular.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
@@ -677,7 +677,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "elements" => [ "collar_m_medium_spread20001.png"],
-                        "insert_full" => ["collar_m_medium_spread0001.png"],
+                        "insert_full" => ["collar_m_medium_spread20001.png"],
                         "image" => "collar_medium_spread.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
@@ -688,7 +688,7 @@ class Api extends REST_Controller {
                         "image" => "collar_wide_spread.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
-                        "insert_full" => ["collar_wide_spread0001.png"],
+                        "insert_full" => ["collar_wide_spread20001.png"],
                         "buttons" => "buttonsh1.png",
                     ), array(
                         "status" => "0",
@@ -696,7 +696,7 @@ class Api extends REST_Controller {
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
-                        "insert_full" => ["collar_m_full_cutaway0001.png"],
+                        "insert_full" => ["collar_m_full_cutaway20001.png"],
                         "elements" => [ "collar_m_full_cutaway20001.png"],
                         "image" => "collar_full_cutaway.jpeg",
                         "buttons" => "buttonsh1.png",

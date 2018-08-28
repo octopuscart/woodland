@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                            <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                    <div class="slider-content t-lfl s-tb slider-1">
-                        <div class="title-container s-tb-c">
-                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                        <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                            <div class="slider-content t-lfl s-tb slider-1">
+                                <div class="title-container s-tb-c">
+                                    <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                            </h2>
-                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                    </h2>
+                                    <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                    <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                    <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
     <?php
 }
 ?>
@@ -84,6 +84,8 @@ foreach ($sliders as $key => $value) {
                 <div class="product-box1">
                     <ul class="product-social" style="">
                         <li><a href="#" ng-click="addToCart(<?php echo $value['id']; ?>, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                        <li><a href="<?php echo site_url("Product/customizationShirt"); ?>/<?php echo $value['id']; ?>"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+
                     </ul>
                     <div class="product-img-holder">
                         <?php if ($value['sale_price'] > 0) { ?>
@@ -153,6 +155,8 @@ foreach ($sliders as $key => $value) {
                     <div class="product-box1">
                         <ul class="product-social">
                             <li><a href="#" ng-click="addToCart(<?php echo $value['id']; ?>, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                            <li><a href="<?php echo site_url("Product/customizationShirt"); ?>/<?php echo $value['id']; ?>"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+
                         </ul>
                         <div class="product-img-holder">
                             <a href="#">

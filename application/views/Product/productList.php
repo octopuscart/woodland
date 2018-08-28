@@ -163,7 +163,7 @@ foreach ($categorie_parent as $key => $value) {
                                 <div class="product-box1">
                                     <ul class="product-social">
                                         <li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                        <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
+                                        <li><a href="<?php echo site_url("Product/customizationShirt"); ?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                     </ul>
                                     <div class="product-img-holder">
@@ -211,7 +211,7 @@ foreach ($categorie_parent as $key => $value) {
                                             </div>
                                             <ul class="product-box2-cart" style="    margin-top: 0px;">
                                                 <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
-                                                <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
+                                                <li><a href="<?php echo site_url("Product/customizationShirt"); ?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
                                                 <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>

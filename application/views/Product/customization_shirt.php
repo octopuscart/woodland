@@ -200,7 +200,6 @@ $this->load->view('layout/header');
 
 
 
-                                        <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.folder]['Back'].overlay}}" class="fixpos animated" ng-if="selecteElements[fab.folder]['Back'].overlay">
 
 
 

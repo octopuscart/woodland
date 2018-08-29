@@ -148,9 +148,7 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/buttonemrald/{{selecteElements[fab.folder]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.folder]['Cuff & Sleeve'].buttons" >
 
-                                        <!--pocket-->
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Pocket'].elements">
-
+                                      
 
 
                                         <!--collar section-->
@@ -178,6 +176,9 @@ $this->load->view('layout/header');
                                             <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements">
 
                                         </div>
+
+                                          <!--pocket-->
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Pocket'].elements">
 
 
 

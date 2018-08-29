@@ -82,6 +82,7 @@ class Product extends CI_Controller {
     
       function customizationShirt($productid) {
         $productdetails = $this->Product_model->productDetails($productid);
+        
         $data['productdetails'] = $productdetails;
         $this->load->view('Product/customization_shirt', $data);
     }

@@ -161,7 +161,7 @@ $this->load->view('layout/header');
                                         </div>
                                         <!--collar band-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_insert20001.png" class="fixpos animated"  ng-if="selecteElements[fab.folder]['Collar Insert'] == 'No'">
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_band40001.png" class="fixpos animated"  >
+                                        <!--<img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_band40001.png" class="fixpos animated"  >-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements">
 
                                         <div ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Outer'">

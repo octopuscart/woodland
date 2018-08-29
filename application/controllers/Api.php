@@ -663,7 +663,7 @@ class Api extends REST_Controller {
                     array(
                         "status" => "1",
                         "title" => "Regular",
-                        "elements" => [ "collar_m_regular20001.png"],
+                        "elements" => [ "collar_m_regular410001.png"],
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",

@@ -24,7 +24,7 @@
             <div class="media-body elementItemDesktop">
                 <h4 class="selected-element-title media-heading">{{screencustom.productobj.title}}</h4>
                 <p class="selected-element-title_text">
-                    {{screencustom.productobj.title}}
+                    {{screencustom.productobj.short_description}}
                 </p>
                 <p class="selected-element-title_text_price">
                     {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}

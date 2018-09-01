@@ -179,6 +179,8 @@ foreach ($categorie_parent as $key => $value) {
                                     <div class="product-content-holder product_details_height">
                                         <h3><a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} 
                                                 <br>
+                                                <span style="font-size: 12px">{{product.short_description}} </span>
+                                                <br>
                                                 <p>{{product.attr}} </p>
                                             </a></h3>
                                         <span>

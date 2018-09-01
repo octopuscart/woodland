@@ -14,6 +14,7 @@ switch ($baselink) {
     default:
         $baselinkmain = 'http://bespoketailorsadmin.costcointernational.com/';
 }
+$baselinkmain = 'http://bespoketailorsadmin.costcointernational.com/';
 
 define('imageserver', $baselinkmain."assets_main/productimages/");
 

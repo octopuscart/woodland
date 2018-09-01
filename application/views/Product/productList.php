@@ -171,7 +171,10 @@ foreach ($categorie_parent as $key => $value) {
                                             <span>Sale</span>
                                         </div>
                                         <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">
+                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">-->
+
                                             <img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">
+
                                             <!--<div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver; ?>{{product.file_name2}});"></div>-->
 
                                         </a>

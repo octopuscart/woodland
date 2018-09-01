@@ -148,7 +148,7 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/whitebutton/{{selecteElements[fab.folder]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.folder]['Cuff & Sleeve'].buttons" >
 
-                                      
+
 
 
                                         <!--collar section-->
@@ -177,7 +177,7 @@ $this->load->view('layout/header');
 
                                         </div>
 
-                                          <!--pocket-->
+                                        <!--pocket-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Pocket'].elements">
 
 
@@ -186,8 +186,10 @@ $this->load->view('layout/header');
                                         <!--<img src="http://w2p.nitafashions.com/output_insert/p23/pocket_l0001.png" class="fixpos animated" >-->
 
                                         <!--<img src="http://w2p.nitafashions.com/output_insert/{{selecteElements[fab.folder]['Collar Insert']}}/pocket_border_l0001.png" class="fixpos animated" >-->
-                                        <img src="<?php echo custome_image_server; ?>/whitebutton/button_front0001.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front'].elements">
 
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front'].elements">
+
+                                        <img src="<?php echo custome_image_server; ?>/whitebutton/button_front0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Front'].show_buttons=='true'">
 
 
                                     </div>   

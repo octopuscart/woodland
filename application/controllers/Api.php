@@ -690,13 +690,13 @@ class Api extends REST_Controller {
                         "status" => "1",
                         "title" => "1 Pocket",
                         "customization_category_id" => "7",
-                        "elements" => ["shirtbody_pocket_right0001.png",],
+                        "elements" => ["shirtbody_pocket_right20001.png",],
                         "image" => "pocket_one.jpeg"
                     ), array(
                         "status" => "0",
                         "title" => "2 Pocket",
                         "customization_category_id" => "7",
-                        "elements" => ["shirtbody_pocket_right0001.png", "shirtbody_pocket_left0001.png"],
+                        "elements" => ["shirtbody_pocket_right20001.png", "shirtbody_pocket_left20001.png"],
                         "image" => "pocket_two.jpeg"
                     )],
                 "Front" => [
@@ -704,13 +704,13 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "Plain Front",
                         "customization_category_id" => "4",
-                        "elements" => ["button_front0001.png"],
+                        "elements" => [],
                         "image" => "front_plain.jpeg",
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
                         "title" => "Fly Front",
-                        "elements" => [],
+                        "elements" => [ "flyfront0001.png"],
                         "customization_category_id" => "4",
                         "image" => "front_fly.jpeg",
                         "show_buttons" => "false",
@@ -718,10 +718,10 @@ class Api extends REST_Controller {
                     , array(
                         "status" => "1",
                         "title" => "Pleated",
-                        "elements" => [],
+                        "elements" => [ "flyfront0001.png"],
                         "customization_category_id" => "4",
                         "image" => "front_ivy.jpeg",
-                        "show_buttons" => "false",
+                        "show_buttons" => "true",
                     )
                     
                     ],

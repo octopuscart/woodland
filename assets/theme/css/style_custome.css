@@ -609,19 +609,19 @@ p.selected-element-title_text_price{
 .customization_items::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: red;
+  background-color: #cbc9c9;
 }
 
 .customization_items::-webkit-scrollbar
 {
-    width: 5px;
-    background-color: red;
+    width: 15px;
+    background-color: #cbc9c9;
 }
 
 .customization_items::-webkit-scrollbar-thumb
 {
     background-color: #000;
-    border: 0px solid red;
+    border: 0px solid #cbc9c9;
 }
 
 .elementTabList .nav-tabs>li.active>a, .elementTabList .nav-tabs>li.active>a:focus, .elementTabList .nav-tabs>li.active>a:hover {

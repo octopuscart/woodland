@@ -352,8 +352,8 @@ class Api extends REST_Controller {
         foreach ($session_cart['products'] as $key => $value) {
 
             $tempss[$key] = $value;
-            $tempss[$key]['folder'] = $value['title'];
-            $tempss[$key]['folder'] = $value['title'];
+            $tempss[$key]['folder'] = $value['folder'];
+          
 
             $prodct_details = $this->Product_model->productDetails($value['product_id']);
             $tempss[$key]['file_name2'] = $prodct_details['file_name2'];
@@ -364,7 +364,7 @@ class Api extends REST_Controller {
 
     function cartOperationShirtSingle_get($product_id) {
         $prodct_details = $this->Product_model->productDetails($product_id);
-        $prodct_details['folder'] = $prodct_details['title'];
+//        $prodct_details['folder'] = $prodct_details['title'];
         $this->response($prodct_details);
     }
 

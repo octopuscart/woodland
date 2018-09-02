@@ -1,5 +1,5 @@
 ###################
-Class Apart Store Ecom Using CodeIgniter
+COde Using CodeIgniter
 ###################
 
 CodeIgniter is an Application Development Framework - a toolkit - for people

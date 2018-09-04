@@ -161,6 +161,8 @@ $this->load->view('layout/header');
                                         <!--<img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_insert20001.png" class="fixpos animated"  ng-if="selecteElements[fab.folder]['Collar Insert'] == 'No'">-->
                                         <!--<img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_band40001.png" class="fixpos animated"  >-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements">
+                                        <img src="<?php echo custome_image_server; ?>/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].overlay">
+
 
                                         <div ng-if="selecteElements[fab.folder]['Collar Insert Full'] == 'Outer'">
                                             <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/collar_m_comman_insert20001.png" class="fixpos animated"  >
@@ -189,7 +191,9 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front'].elements">
 
-                                        <img src="<?php echo custome_image_server; ?>/whitebutton/button_front0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Front'].show_buttons=='true'">
+                                        <img src="<?php echo custome_image_server; ?>/overlay/button_front0001.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Front'].show_buttons == 'true'">
+
+                                        <!--<img src="<?php echo custome_image_server; ?>/overlay/frontoverlay.png" class="fixpos animated" ng-if="selecteElements[fab.folder]['Front'].show_buttons == 'true'">-->
 
 
                                     </div>   

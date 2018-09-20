@@ -561,3 +561,46 @@ b.barcomb-list {
     width: 100px;
         
 }
+
+.mean-container .mean-bar a.logo-mobile-menu {
+    width: 100%;
+    background-color: #000;
+    box-sizing: border-box;
+}
+
+.mean-container a.meanmenu-reveal span {
+    display: block;
+    background: #ffffff;
+    height: 3px;
+    margin-top: 3px;
+    color: #fff;
+}
+.mean-container a.meanmenu-reveal {
+    float: none !important;
+    position: absolute;
+    color: white;
+}
+
+
+.custome_summary_popup tr{
+        border-bottom: 1px solid;
+}
+
+.custome_summary_popup td{
+    text-align: left;
+     width: 50%;
+     padding: 5px;
+    
+}
+
+.custome_summary_popup th{
+    text-align: right;
+        text-align: right;
+    padding-right: 12px;
+    width: 50%;
+    padding: 5px;
+}
+
+.custome_summary_popup table {
+    width: 100%;
+}

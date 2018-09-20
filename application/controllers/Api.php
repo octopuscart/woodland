@@ -367,6 +367,27 @@ class Api extends REST_Controller {
 //        $prodct_details['folder'] = $prodct_details['title'];
         $this->response($prodct_details);
     }
+    
+    
+    //function for product list
+    function cartOperationCustom_post() {
+        $product_id = $this->post('product_id');
+        $quantity = $this->post('quantity');
+        $custome_id = $this->post('custome_id');
+        $customekey = $this->post('customekey');
+        $customevalue = $this->post('customevalue');
+
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $this->user_id);
+            $session_cart = $this->Product_model->cartData($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue);
+            $session_cart = $this->Product_model->cartData();
+        }
+
+        $this->response($session_cart['products'][$product_id]);
+    }
+    
 
     function customeElements_get() {
         $customeele = array(

@@ -23,9 +23,8 @@ class Product extends CI_Controller {
         $data["category"] = $cat_id;
         $this->load->view('Product/productList', $data);
     }
-    
-    
-    function ProductSearch(){
+
+    function ProductSearch() {
         $data['keyword'] = $_GET['keyword'];
         $this->load->view('Product/productSearch', $data);
     }
@@ -78,14 +77,40 @@ class Product extends CI_Controller {
     function unsetData() {
         $this->session->unset_userdata('session_cart');
     }
-    
-    
-      function customizationShirt($productid) {
+
+    function customizationShirt1($productid) {
         $productdetails = $this->Product_model->productDetails($productid);
-        
+
         $data['productdetails'] = $productdetails;
         $this->load->view('Product/customization_shirt', $data);
     }
-    
+
+    function customizationRedirect($custom_id, $product_id) {
+        if ($custom_id == 1) {
+            redirect('Product/customizationShirt/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 2) {
+            redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 4) {
+            redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 3) {
+            redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
+        }
+    }
+
+    function customizationShirt($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid);
+        $data['productdetails'] = $productdetails;
+        $this->load->view('Product/customization_shirt', $data);
+    }
+
+    function customizationSuit($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid);
+
+        $data['productdetails'] = $productdetails;
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
 
 }

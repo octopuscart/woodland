@@ -2,15 +2,32 @@
 
 
 App.controller('customizationShirt', function ($scope, $http, $location) {
+    $scope.fabricurl = "http://api.octopuscart.com/output/";
 
-    var globlecart = baseurl + "Api/cartOperationShirtSingle/"+product_id;
+    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id;
     $scope.product_quantity = 1;
+  
+
+    $scope.cartFabrics1 = [
+        {"sku": "AM697"},
+        {"sku": "AM661"},
+        {"sku": "AM64A"},
+        {"sku": "WF81"},
+        {"sku": "D1576"},
+        {"sku": "L884"}
+    ];
+
 
     $scope.cartFabrics = [];
+
+
+
+
+
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.folder] = {'sleeve': ["b_full_shirt_sleeve0001.png", ],
+            $scope.selecteElements[fb.product_id] = {'sleeve': ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png", ],
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -21,18 +38,18 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
                 "Monogram ColorBack": "White-Black",
                 "Monogram Color": "white",
                 "Monogram Background": "black",
-                "Monogram Style": "10",
+                "Monogram Style": "Style 1",
                 "summary": {},
             };
         }
         $scope.screencustom = {
             'view_type': 'front',
-            "fabric": $scope.cartFabrics[0].folder,
+            "fabric": $scope.cartFabrics[0].product_id,
             "productobj": $scope.cartFabrics[0],
             "sku": $scope.cartFabrics[0].sku,
         };
-        var url = baseurl + "Api/customeElements";
-        $http.get(url).then(function (rdata) {
+        var url = baseurl + "customApi/customeElementsSuit";
+       $http.get(url).then(function (rdata) {
             $scope.data_list = rdata.data.data;
             $scope.cuff_collar_insert = rdata.data.cuff_collar_insert;
             $scope.keys = rdata.data.keys;
@@ -42,12 +59,14 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
             $scope.parents = 'Body Fit';
             for (i in $scope.keys) {
                 var temp = $scope.data_list[$scope.keys[i].title];
+                console.log(temp);
                 for (j in temp) {
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
                             var fb = $scope.cartFabrics[f];
-                            $scope.selecteElements[fb.folder][$scope.keys[i].title] = temp[j];
-                            $scope.selecteElements[fb.folder]['summary'][$scope.keys[i].title] = temp[j].title;
+                            console.log(fb.product_id, temp[j], $scope.keys[i].title);
+                            $scope.selecteElements[fb.product_id][$scope.keys[i].title] = temp[j];
+                            $scope.selecteElements[fb.product_id]['summary'][$scope.keys[i].title] = temp[j].title;
                         }
                     }
                 }
@@ -55,7 +74,7 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
 
 
             setTimeout(function () {
-             
+
 
                 //zoom plugin
 
@@ -102,6 +121,9 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
     }
 
 
+    $scope.show_shirt = function (shirtstyle) {
+        $scope.screencustom.style_select = shirtstyle;
+    }
 
 
     $scope.fabricCartData = {};//cart data
@@ -113,7 +135,7 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-            
+
             $scope.shirtimplement()
         }, function (r) {
         })
@@ -140,7 +162,52 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
 
 //end of shirt implemantation
 
+    setTimeout(function () {
+        $('.images-slider').flexslider({
+            animation: "fade",
+            controlNav: "thumbnails"
+        });
 
+
+        //zoom plugin
+
+        $(document).on('mousemove', '.frame', function () {
+
+            var element = {
+                width: $(this).width(),
+                height: $(this).height()
+            };
+
+            var mouse = {
+                x: event.pageX,
+                y: event.pageY
+            };
+
+            var offset = $(this).offset();
+
+            var origin = {
+                x: (offset.left + (element.width / 2)),
+                y: (offset.top + (element.height / 2))
+            };
+
+            var trans = {
+                left: (origin.x - mouse.x) / 2,
+                down: (origin.y - mouse.y) / 2
+            };
+
+            var transform = ("scale(2,2) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
+
+            $(this).children(".zoom").css("transform", transform);
+
+        });
+
+        $(document).on('mouseleave', '.frame', function () {
+            $(this).children(".zoom").css("transform", "none");
+        });
+
+        //end of zoom
+
+    }, 500)
 
 
 
@@ -149,7 +216,6 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
     //select fabric
     $scope.selectFabric = function (fabric) {
         $scope.screencustom.fabric = fabric.folder;
-        $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
     }
     //
@@ -218,7 +284,6 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
-            console.log(element.sleeve)
 
         }
         if (obj.title == 'Collar') {
@@ -232,7 +297,7 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
                 $scope.selecteElements[$scope.screencustom.fabric]['Monogram'] = element.monogram_position;
             }
         }
-        $scope.monogramSetting();
+
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
 
@@ -241,10 +306,18 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
     }
 
 
-    $scope.selectCollarCuffInsert = function (cctype, insfab) {
-        $scope.selecteElements[$scope.screencustom.fabric][cctype] = insfab;
-        $scope.collarCuffSetting();
+    $scope.laple_button_hole_contrast = function (insfab) {
+
+        $scope.selecteElements[$scope.screencustom.fabric]['Contrast Lapel Button Hole'] = insfab;
+
     }
+    
+    $scope.sleeve_button_hole_contrast = function (insfab) {
+
+        $scope.selecteElements[$scope.screencustom.fabric]['Button Thread'] = insfab;
+
+    }
+    
 
     $scope.selectCollarCuffInsertType = function (cctype, insfab) {
         $scope.selecteElements[$scope.screencustom.fabric][cctype] = insfab;

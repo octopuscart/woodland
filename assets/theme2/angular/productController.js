@@ -10,8 +10,6 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.pricerange = {'min': 0, 'max': 0};
 
     $scope.getProducts = function (attrs) {
-
-
         var argsk = [];
         for (i in $scope.attribute_checked) {
             var at = $scope.attribute_checked[i];
@@ -57,43 +55,29 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                     $scope.checkproduct = 1;
                 }
             }
-            if ($scope.init == 0) {
+            
 
                 $timeout(function () {
 
-
-                    var priceSlider = document.getElementById('price-range-filter');
-                    if (priceSlider) {
-                        noUiSlider.create(priceSlider, {
-                            start: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
-                            connect: true,
-                            /*tooltips: true,*/
-                            range: {
-                                'min': Number($scope.productResults.price.minprice),
-                                'max': Number($scope.productResults.price.maxprice)
-                            },
-                            format: wNumb({
-                                decimals: 0
-                            }),
-                        });
-                        var marginMin = Number($scope.productResults.price.minprice),
-                                marginMax = Number($scope.productResults.price.maxprice);
-                        priceSlider.noUiSlider.on('update', function (values, handle) {
-                            if (handle) {
-                                $timeout(function () {
-                                    $scope.productResults.price.maxprice = values[handle];
-                                })
-
-                            } else {
-                                $timeout(function () {
-                                    $scope.productResults.price.minprice = values[handle];
-                                })
+                   
+                        $("#slider-range").slider({
+                            range: true,
+                            min: Number($scope.productResults.price.minprice),
+                            max: Number($scope.productResults.price.maxprice),
+                            values: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
+                            slide: function (event, ui) {
+                                $("#amount").val("$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ]);
                             }
                         });
-                    }
+                        $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+                 
+
+
+                  
 
                 }, 1000)
-            }
+            
             $scope.init = 1;
         }, function () {
         });

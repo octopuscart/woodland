@@ -63,7 +63,7 @@
     </head>
 
 
-    <body ng-app="ClassApartStore">
+    <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">
             <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -79,7 +79,7 @@
 
 
             <script>
-                var ClassApartStore = angular.module('ClassApartStore', []).config(function ($interpolateProvider, $httpProvider) {
+                var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
                 //$interpolateProvider.startSymbol('{$');
                 //$interpolateProvider.endSymbol('$}');
                 $httpProvider.defaults.headers.common = {};
@@ -214,7 +214,7 @@
                                                     </li>
 
                                                     <li>
-                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_price|currency:" "}}</span>
+                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_price|currency:"<?php echo globle_currency;?> "}}</span>
 
                                                     </li>
                                                     <li>

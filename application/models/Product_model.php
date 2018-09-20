@@ -590,4 +590,105 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
+    
+    
+    //custom product model
+          //cart operation session 
+    public function cartOperationCustom($product_id, $quantity, $custom_id, $customekey, $customevalue, $user_id = 0, $setSession = 0) {
+
+        $this->db->where('id', $custom_id);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
+        
+        $custom_dict = array();
+        foreach ($customekey as $key => $value) {
+            $kkey = $customekey[$key];
+            $vvalue = $customevalue[$key];
+            $custom_dict[$kkey] = $vvalue;
+        }
+        
+        $item_name = $customeitem->item_name;
+        $item_id = $customeitem->id;
+
+        if ($user_id != 0) {
+            $cartdata = $this->cartData($user_id);
+            $product_details = $this->productDetails($product_id);
+            $product_dict = array(
+                'title' => $product_details['title'],
+                'price' => $product_details['price'],
+                'sku' => $product_details['sku'],
+                'attrs' => $product_details['attrs'],
+                'vendor_id' => $product_details['user_id'],
+                'total_price' => $product_details['price'],
+                'file_name' => imageserver . $product_details['file_name'],
+                'quantity' => $quantity,
+                'user_id' => $user_id,
+                'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
+                'product_id' => $product_id,
+                'op_date_time' => date('Y-m-d H:i:s'),
+            );
+            if (isset($cartdata['products'][$product_id])) {
+                if ($setSession) {
+                    $total_price = $product_details['price'] * $quantity;
+                    $total_quantity = $quantity;
+                } else {
+                    $total_price = $cartdata['products'][$product_id]['total_price'] + $product_details['price'];
+                    $total_quantity = $cartdata['products'][$product_id]['quantity'] + $quantity;
+                }
+                $cid = $cartdata['products'][$product_id]['id'];
+                $this->db->set('quantity', $total_quantity);
+                $this->db->set('total_price', $total_price);
+                $this->db->where('id', $cid); //set column_name and value in which row need to update
+                $this->db->update('cart'); //
+            } else {
+                $this->db->insert('cart', $product_dict);
+            }
+        } else {
+            $session_cart = $this->session->userdata('session_cart');
+            if ($session_cart) {
+                
+            } else {
+                $cartdata = array('products' => array(), 'total_quantity' => 0, 'total_price' => 0);
+                $this->session->set_userdata('session_cart', $cartdata);
+                $session_cart = $this->session->userdata('session_cart');
+            }
+
+            if (isset($session_cart['products'][$product_id])) {
+                $product_dict = $session_cart['products'][$product_id];
+                $qauntity = $product_dict['quantity'] + $quantity;
+                $price = $product_dict['price'] * $qauntity;
+                $session_cart['products'][$product_id]['quantity'] = $qauntity;
+                $session_cart['products'][$product_id]['total_price'] = $price;
+                $this->session->set_userdata('session_cart', $session_cart);
+            } else {
+                $product_details = $this->productDetails($product_id);
+                $product_dict = array(
+                    'title' => $product_details['title'],
+                    'price' => $product_details['price'],
+                    'sku' => $product_details['sku'],
+                    'attrs' => $product_details['attrs'],
+                    'vendor_id' => $product_details['user_id'],
+                    'total_price' => $product_details['price'],
+                    'file_name' => imageserver . $product_details['file_name'],
+                    'quantity' => 1,
+                    'item_id'=>$item_id,
+                    'item_name'=>$item_name,
+                    'product_id' => $product_id,
+                    'date' => date('Y-m-d'),
+                    'time' => date('H:i:s'),
+                    'custom_dict'=>$custom_dict
+                );
+                $session_cart['products'][$product_id] = $product_dict;
+                $this->session->set_userdata('session_cart', $session_cart);
+            }
+            $session_cart = $this->session->userdata('session_cart');
+        }
+    }
+
+    
+    
+    
+    
+    
+    
 }

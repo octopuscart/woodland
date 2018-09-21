@@ -6,7 +6,7 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
 
     var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id;
     $scope.product_quantity = 1;
-  
+
 
     $scope.cartFabrics1 = [
         {"sku": "AM697"},
@@ -42,14 +42,27 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
                 "summary": {},
             };
         }
+        var viewtype = "front";
+        switch (defaut_view) {
+            case "Jacket":
+                viewtype = "front";
+                break;
+            case "Pant":
+                viewtype = "pant";
+                break;
+            default:
+                viewtype = "front";
+        }
+
+
         $scope.screencustom = {
-            'view_type': 'front',
+            'view_type': viewtype,
             "fabric": $scope.cartFabrics[0].product_id,
             "productobj": $scope.cartFabrics[0],
             "sku": $scope.cartFabrics[0].sku,
         };
-        var url = baseurl + "customApi/customeElementsSuit";
-       $http.get(url).then(function (rdata) {
+        var url = baseurl + "customApi/customeElements" + defaut_view;
+        $http.get(url).then(function (rdata) {
             $scope.data_list = rdata.data.data;
             $scope.cuff_collar_insert = rdata.data.cuff_collar_insert;
             $scope.keys = rdata.data.keys;
@@ -311,13 +324,13 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
         $scope.selecteElements[$scope.screencustom.fabric]['Contrast Lapel Button Hole'] = insfab;
 
     }
-    
+
     $scope.sleeve_button_hole_contrast = function (insfab) {
 
         $scope.selecteElements[$scope.screencustom.fabric]['Button Thread'] = insfab;
 
     }
-    
+
 
     $scope.selectCollarCuffInsertType = function (cctype, insfab) {
         $scope.selecteElements[$scope.screencustom.fabric][cctype] = insfab;
@@ -333,6 +346,84 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
             $scope.screencustom.view_type = "front";
         }
     }
+
+
+    //add to cart
+    $scope.addToCartCustome = function () {
+        var summerydata = $scope.selecteElements[product_id].summary;
+        var customhtmlarray = [];
+        var form = new FormData()
+        for (i in summerydata) {
+            var ks = i;
+            var kv = summerydata[i];
+            form.append("customekey[]", ks);
+            form.append("customevalue[]", kv);
+            console.log(ks, kv);
+            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
+            customhtmlarray.push(summaryhtml);
+        }
+        ;
+        customhtmlarray = customhtmlarray.join("");
+        var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>"
+
+        swal({
+            title: 'Confirm Desing',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#000',
+            cancelButtonColor: 'red',
+            confirmButtonText: 'Yes, Add To Cart',
+            cancelButtonText: 'No, Cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+//            title: 'Adding to Cart',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            html: customdiv,
+            preConfirm: function () {
+
+                swal({
+                    title: 'Adding to Cart',
+                    onOpen: function () {
+                        swal.showLoading()
+                    }
+                });
+                var globlecart = baseurl + "Api/cartOperationCustom";
+
+//                var form = new FormData()
+                form.append('product_id', product_id);
+                form.append('quantity', 1);
+                form.append('custome_id', 1);
+                $http.post(globlecart, form).then(function (rdata) {
+                    swal.close();
+                    $scope.getCartData();
+                    swal({
+                        title: 'Added To Cart',
+                        type: 'success',
+                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                        imageUrl: rdata.data.file_name,
+                        imageWidth: 100,
+                        timer: 1500,
+//                 background: '#fff url(//bit.ly/1Nqn9HU)', 
+                        imageAlt: 'Custom image',
+                        showConfirmButton: false,
+                        animation: true,
+                        onClose: function () {
+                            console.log("asdfsadf");
+                            window.location = baseurl + "Cart/details";
+                        }
+                    })
+                }, function () {
+                    swal.close();
+                    swal({
+                        title: 'Something Wrong..',
+                    })
+                });
+            },
+        })
+    }
+
+
 
 
 

@@ -193,7 +193,7 @@ $this->load->view('layout/header');
 
                                         <!--jacket body left-->
 
-                                        <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].elements" >-->
+                                        <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].elements" >
 
                                         <!--buttons-->
                                         <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons2" >-->
@@ -244,7 +244,7 @@ $this->load->view('layout/header');
                                         </div>
 
                                         <div class="" ng-if="selecteElements[fab.product_id]['Lapel Button Hole'].title == 'Yes'">
-                                            <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].hole" >-->
+                                            <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].hole" >
                                         </div>
 
                                         <!--buttons-->
@@ -330,7 +330,7 @@ $this->load->view('layout/header');
 
 <script>
     var product_id = <?php echo $productdetails['id']; ?>;
-    var defaut_view = "<?php echo $custom_item;?>";
+
 </script>
 
 <!--angular controllers-->

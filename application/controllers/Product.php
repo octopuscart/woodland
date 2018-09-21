@@ -93,10 +93,10 @@ class Product extends CI_Controller {
             redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
         }
         if ($custom_id == 4) {
-            redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
+            redirect('Product/customizationJacket/' . $product_id . "/" . $custom_id);
         }
         if ($custom_id == 3) {
-            redirect('Product/customizationSuit/' . $product_id . "/" . $custom_id);
+            redirect('Product/customizationPant/' . $product_id . "/" . $custom_id);
         }
     }
 
@@ -108,8 +108,20 @@ class Product extends CI_Controller {
 
     function customizationSuit($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid);
-
         $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Suit";
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    function customizationPant($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Pant";
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    function customizationJacket($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Jacket";
         $this->load->view('Product/customization_suit_v2', $data);
     }
 

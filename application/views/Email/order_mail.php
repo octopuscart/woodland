@@ -232,7 +232,7 @@
 
 
 
-                        <p>For any order related queries, please Mob/Whatsapp +(852) 2730 8566 or email us at info@bespoketailorshk.com</p>
+                        <p>For any order related queries, please email us at info@bespoketailorshk.com</p>
 
                         <p>We assure you of best services at all times.</p>
 
@@ -242,15 +242,15 @@
 
                                     <address>
                                         <b>Address 1</b><br/>
-                                        2nd Floor, 45 Haiphong Road ,<br/> 
-                                        Tsim Sha Tsui, Kowloon , Hong Kong.
+                                        2nd Floor, 45 Haiphong Road,<br/> 
+                                        Tsim Sha Tsui, Kowloon, Hong Kong.
                                         <br/><br/>
                                         <b>Address 2</b><br/>
-                                        Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road , <br/>
-                                        Tsim Sha Tsui, Kowloon , Hong Kong.                                        <br/>
-                                        <b>Tel #</b>: +(852) 27308566   <br/>          
-                                        <b>Fax #</b>: +(852) 27308577
-                                        <b>E</b>:info@bespoketailorshk.com,  <br/><b>WWW.bespoketailorshk.com</b>
+                                        Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road, <br/>
+                                        Tsim Sha Tsui, Kowloon, Hong Kong.                                        <br/>
+                                        <b>Tel #</b>: +(852) 27308566  <b>Fax #</b>: +(852) 27308577<br/>
+                                        <b>Email</b> :info@bespoketailorshk.com  
+                                        <b>Web</b> :www.bespoketailorshk.com</b>
 
 
                                     </address>

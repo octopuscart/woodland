@@ -374,7 +374,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             confirmButtonColor: '#000',
             cancelButtonColor: 'red',
             confirmButtonText: 'Yes, Add To Cart',
-            cancelButtonText: 'No, Cancel!',
+            cancelButtonText: 'Cancel',
             confirmButtonClass: 'btn btn-success',
             cancelButtonClass: 'btn btn-danger',
 //            title: 'Adding to Cart',

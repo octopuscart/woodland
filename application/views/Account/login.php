@@ -19,16 +19,28 @@ $this->load->view('layout/header');
 </div>
 <!-- Inner Page Banner Area End Here -->
 <!-- Login Registration Page Area Start Here -->
-<div class="login-registration-page-area">
+<div class="login-registration-page-area" style="padding: 20px 0;">
     <div class="container">
         <div class="row">
+            <div class="col-lg-12">
+              <h5 class="text-center">  By creating an account with our store, you will be able to move through
+                  the checkout process faster, store multiple shipping addresses,
+                  view and track your orders in your account and more.
+              </h5>
+                <h3  class="text-center">Or</h3>
+                <h5  class="text-center">
+                    <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger">
+                        <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
+                    </a>
+                </h5>
+            </div>
             <?php
             if ($msg) {
                 ?>
                 <div class="col-md-12">
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="ion-android-close"></i> </span></button>
-                        <i class="fa fa-exclamation-triangle fa-2x"></i><?php echo $msg; ?>
+                        <i class="fa fa-exclamation-triangle "></i> <?php echo $msg; ?>
                     </div>
                 </div>
                 <?php

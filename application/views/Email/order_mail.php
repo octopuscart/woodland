@@ -31,7 +31,30 @@
                 text-align: left;
 
             }
+            .style_block{
+       float: left;
+    padding: 1px 1px;
+    margin: 2.5px;
+    /* background: #000; */
+    color: white;
+    border: 1px solid #e4e4e4;
+    width: 47%;
+    font-size: 10px;
+            }
 
+  .style_block span {
+    background: #fff;
+    margin-left: 5px;
+    color: #000;
+    padding: 0px 5px;
+    width: 50%;
+}
+.style_block b {
+    width: 46%;
+    float: left;
+        background: #dedede;
+    color: black;
+}
         </style>
     </head>
 
@@ -44,8 +67,10 @@
                 <tr>
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
-                             height: 50px;
-                             width: auto;"/></center>
+                                     height: 50px;
+                                     width: auto;"/><br/>
+                            <h4 style="color: white;"> Order No.:<?php echo $order_data->order_no; ?></h4>
+                        </center>
                     </td>
 
                 </tr>
@@ -97,7 +122,7 @@
                             </tr>
                             <tr>
                                 <th>Txn No.</th>
-                                <td>: <?php echo $payment_details['txn_id']; ?> </td>
+                                <td>: <?php echo $payment_details['txn_id']?$payment_details['txn_id']:'---'; ?> </td>
                             </tr>
                             <tr>
                                 <th>Status</th>
@@ -138,7 +163,10 @@
                         </td>
 
                         <td style="width: 200px;">
-                            <?php echo $product->title; ?>
+                            <?php echo $product->title; ?> - <?php echo $product->item_name; ?><br/>
+                            <small style="font-size: 10px;">(<?php echo $product->sku; ?>)</small>
+
+
                         </td>
 
                         <td style="text-align: right">
@@ -151,6 +179,18 @@
 
                         <td style="text-align: right;">
                             <?php echo $product->total_price; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <b>Style Details : <?php echo $product->title; ?> - <?php echo $product->item_name; ?></b>
+                            <br/><?php
+                            
+                            foreach ($product->custom_dict as $key => $value) {
+                                echo "<p class='style_block'><b>$key</b><span> $value</span></p>";
+                            }
+                         
+                            ?>  
                         </td>
                     </tr>
                     <?php

@@ -181,13 +181,13 @@ $paymentstatus = "";
                                         <small style="font-size: 12px;">(<?php echo $product->sku; ?>)</small>
 
                                         <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne">
+                                            <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne">
                                                 View Summery
                                             </a>
                                         </h4>
                                         </div>
                                         <div id="collapse<?php echo $product->id; ?>" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
-                                            <div class="panel-body">
+                                            <div class="panel-body" style="padding:10px 0px;">
                                                 <?php
                                                 echo "<ul class='list-group'>";
                                                 foreach ($product->custom_dict as $key => $value) {
@@ -234,9 +234,9 @@ $paymentstatus = "";
 
 
 
-                                        <button class="btn btn-button pull-right" type="button" data-toggle="collapse" data-target="#collapseProduct<?php echo $product->id; ?>" aria-expanded="false" aria-controls="collapseProduct<?php echo $product->id; ?>">
+<!--                                        <button class="btn btn-button pull-right" type="button" data-toggle="collapse" data-target="#collapseProduct<?php echo $product->id; ?>" aria-expanded="false" aria-controls="collapseProduct<?php echo $product->id; ?>">
                                             Show More  <i class="fa fa-arrow-down"></i>
-                                        </button>
+                                        </button>-->
 
                                         <div class="statusdiv">
                                             Current Status: <?php echo $laststatus; ?>

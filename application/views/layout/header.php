@@ -87,6 +87,7 @@
                 });
                         var baseurl = "<?php echo base_url(); ?>index.php/";
                         var imageurlg = "<?php echo imageserver; ?>";
+                        var globlecurrency = "<?php echo globle_currency; ?>";
                         var avaiblecredits = 0;</script>
 
             <style>

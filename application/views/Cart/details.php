@@ -28,25 +28,25 @@ $this->load->view('layout/header');
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <td class="cart-form-heading"></td>
-                                <td class="cart-form-heading">Product</td>
-                                <td class="cart-form-heading">Price</td>
-                                <td class="cart-form-heading">Quantity</td>
-                                <td class="cart-form-heading">Total</td>
+                                <td class="cart-form-heading text_center" style="width: 50%" colspan="2">Product</td>
+                                <td class="cart-form-heading text_center">Price</td>
+                                <td class="cart-form-heading text_center">Quantity</td>
+                                <td class="cart-form-heading text_center">Total</td>
                                 <td class="cart-form-heading"></td>
                             </tr>
                         </thead>
                         <tbody id="quantity-holder">
                             <tr ng-repeat="product in globleCartData.products">
-                                <td class="cart-img-holder">
+                                <td class="cart-img-holder" style="    border-right: 0px;">
                                     <a href="#">
                                         <img  src="{{product.file_name}}" alt=""  alt="cart" class="img-responsive cart_image_block">
                                     </a>
                                 </td>
-                                <td>
-                                    <h3><a href="#">{{product.title}}</a><br/><small style="font-size: 10px">Vendor Code:{{product.vendor_id}}</small></h3>
-                                    <button type="button" ng-click="viewStyle(product)" class="btn btn-primary"  style="margin-top: 10px;">View Design</a>
-
+                                <td  style="    border-left: 0px;">
+                                    <h3><a href="#">{{product.title}} - {{product.item_name}}</a>
+                                        <br/>
+                                        <small style="font-size: 10px">{{product.sku}}</small>
+                                    </h3>
                                 </td>
                                 <td class="amount">{{product.price|currency:" "}}</td>
                                 <td class="quantity">
@@ -61,6 +61,23 @@ $this->load->view('layout/header');
                                 <td class="amount">{{product.total_price|currency:" "}}</td>
                                 <td class="dismiss"><a href="#"  ng-click="removeCart(product.product_id)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                             </tr>
+                            <tr>
+                                <td colspan="4" class="text_right">
+                                    TOTAL
+                                </td>
+                                <td class="text-center amount">
+                                    {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="text_right">
+                                    <div class="proceed-button">
+
+                                        <a href=" <?php echo site_url("Cart/checkout"); ?>" class="btn-apply-coupon disabled" >Proceed to checkout</a>
+                                    </div> </td>
+
+                            </tr>
 
                         </tbody>
                     </table>
@@ -68,29 +85,7 @@ $this->load->view('layout/header');
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                <!--                        <div class="cart-page-bottom-left">
-                                            <h2>Coupon</h2>
-                                            <form method="post">
-                                                <input type="text" id="coupon" name="coupon" placeholder="Enter your coupon code if you have one">
-                                                <button value="Coupon" type="submit" class="btn-apply-coupon disabled">Apply Coupon</button>
-                                            </form>
-                                        </div>-->
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                <div class="cart-page-bottom-right">
 
-                    <h3>Total<span>{{globleCartData.total_price|currency:" "}}</span></h3>
-
-                    <div class="proceed-button">
-
-                                        <a href=" <?php echo site_url("Cart/checkout"); ?>" class="btn-apply-coupon disabled" >Proceed to checkout</a>
-                        <!--<p>..and we'll get back to you</p>-->
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Content -->

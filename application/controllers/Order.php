@@ -20,6 +20,12 @@ class Order extends CI_Controller {
     public function index() {
         redirect('/');
     }
+    
+    public function test(){
+setlocale(LC_MONETARY,"de_DE");
+echo money_format("%.2n", $number);
+                    
+    }
 
     //orders details
     public function orderdetails($order_key) {

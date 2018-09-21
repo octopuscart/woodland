@@ -118,10 +118,11 @@ $this->load->view('layout/header');
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-
-                                        <td class="cart-form-heading text_center" colspan="2">Product</td>
+                                        <td class="cart-form-heading text_center" style="width: 50%" colspan="2">Product</td>
                                         <td class="cart-form-heading text_center">Price</td>
+                                      
                                         <td class="cart-form-heading text_center">Total</td>
+                                        <td class="cart-form-heading"></td>
                                     </tr>
                                 </thead>
                                 <tbody id="quantity-holder">
@@ -132,7 +133,7 @@ $this->load->view('layout/header');
                                             </a>
                                         </td>
                                         <td  style="    border-left: 0px;">
-                                            <h3><a href="#">{{product.title}}</a>
+                                            <h3><a href="#">{{product.title}} - {{product.item_name}}</a>
                                                 <br/>
                                                 <small style="font-size: 10px">{{product.sku}}</small>
                                             </h3>
@@ -140,6 +141,7 @@ $this->load->view('layout/header');
                                         <td class="amount">{{product.price|currency:" "}} X {{product.quantity}}
                                         </td>
                                         <td class="amount">{{product.total_price|currency:" "}}</td>
+                                        <td class="dismiss"><a href="#"  ng-click="removeCart(product.product_id)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text_right">
@@ -148,9 +150,10 @@ $this->load->view('layout/header');
                                         <td class="text-center amount">
                                             {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
                                         </td>
+                                        <td></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="4" class="text_right">
+                                        <td colspan="5" class="text_right">
                                             <div class="proceed-button pull-left " >
                                                 <a href=" <?php echo site_url("Cart/details"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> Back To Cart</a>
                                             </div>
@@ -172,13 +175,13 @@ $this->load->view('layout/header');
 
 
             </div>
-            
-            
+
+
             <?php
-            $this->load->view('Cart/itemblock', array('vtype'=>'shipping'));
+            $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
             ?>
-              <?php
-            $this->load->view('Cart/itemblock', array('vtype'=>'payment'));
+            <?php
+            $this->load->view('Cart/itemblock', array('vtype' => 'payment'));
             ?>
 
         </div>

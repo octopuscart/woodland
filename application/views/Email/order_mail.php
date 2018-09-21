@@ -69,12 +69,12 @@
                         </div>
                         <table class="gn_table">
                             <tr>
-                                <th>Email:</th>
-                                <td><?php echo $order_data->email; ?> </td>
+                                <th>Email</th>
+                                <td>: <?php echo $order_data->email; ?> </td>
                             </tr>
                             <tr>
-                                <th>Contact No.:</th>
-                                <td> <?php echo $order_data->contact_no; ?> </td>
+                                <th>Contact No.</th>
+                                <td>: <?php echo $order_data->contact_no; ?> </td>
                             </tr>
                         </table>
 
@@ -84,24 +84,24 @@
 
                         <table class="gn_table">
                             <tr>
-                                <th>Order No.:</th>
-                                <td><?php echo $order_data->order_no; ?> </td>
+                                <th>Order No.</th>
+                                <td>: <?php echo $order_data->order_no; ?> </td>
                             </tr>
                             <tr>
-                                <th>Date Time:</th>
-                                <td> <?php echo $order_data->order_date; ?> <?php echo $order_data->order_time; ?>  </td>
+                                <th>Date Time</th>
+                                <td>: <?php echo $order_data->order_date; ?> <?php echo $order_data->order_time; ?>  </td>
                             </tr>
                             <tr>
-                                <th>Payment Mode:</th>
-                                <td> <?php echo $order_data->payment_mode; ?> </td>
+                                <th>Payment Mode</th>
+                                <td>: <?php echo $order_data->payment_mode; ?> </td>
                             </tr>
                             <tr>
-                                <th>Txn No.:</th>
-                                <td> <?php echo $payment_details['txn_id']; ?> </td>
+                                <th>Txn No.</th>
+                                <td>: <?php echo $payment_details['txn_id']; ?> </td>
                             </tr>
                             <tr>
-                                <th>Status:</th>
-                                <td> <?php
+                                <th>Status</th>
+                                <td>: <?php
                                     if ($order_status) {
                                         echo end($order_status)->status;
                                     } else {

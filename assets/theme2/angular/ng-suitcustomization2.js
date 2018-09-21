@@ -1,8 +1,9 @@
 
 
 
-App.controller('customizationShirt', function ($scope, $http, $location) {
+App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
     $scope.fabricurl = "http://api.octopuscart.com/output/";
+    var currencyfilter = $filter('currency');
 
     var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id;
     $scope.product_quantity = 1;
@@ -404,7 +405,7 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
                         imageUrl: rdata.data.file_name,
                         imageWidth: 100,
                         timer: 1500,
-//                 background: '#fff url(//bit.ly/1Nqn9HU)', 
+
                         imageAlt: 'Custom image',
                         showConfirmButton: false,
                         animation: true,

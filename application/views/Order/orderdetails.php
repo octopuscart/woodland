@@ -175,9 +175,29 @@ $paymentstatus = "";
                                     </td>
 
                                     <td style="width: 200px;">
-                                        <?php echo $product->title; ?>
+
+                                        <?php echo $product->title; ?> - <?php echo $product->item_name; ?>
                                         <br/>
                                         <small style="font-size: 12px;">(<?php echo $product->sku; ?>)</small>
+
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne">
+                                                View Summery
+                                            </a>
+                                        </h4>
+                                        </div>
+                                        <div id="collapse<?php echo $product->id; ?>" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <?php
+                                                echo "<ul class='list-group'>";
+                                                foreach ($product->custom_dict as $key => $value) {
+                                                    echo "<li class='list-group-item'>$key <span class='badge'>$value</span></li>";
+                                                }
+                                                echo "</ul>";
+                                                ?>                                            </div>
+                                        </div>
+
+
                                     </td>
 
                                     <td style="text-align: right">
@@ -300,7 +320,7 @@ $paymentstatus = "";
 
     App.controller('OrderDetailsController', function ($scope, $http, $timeout, $interval) {
         var url = baseurl + "Api/order_mail/" + <?php echo $order_data->id; ?> + "/" + '<?php echo $order_data->order_no; ?>';
-      
+
         $scope.sendOrderMail = function (order_no) {
             swal({
                 title: 'Sending Mail...',

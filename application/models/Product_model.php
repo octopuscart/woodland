@@ -202,6 +202,15 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $total_price += $value['total_price'];
                 $total_quantity += $value['quantity'];
                 $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
+                $cart_id = $value['id'];
+                $this->db->where('cart_id', $cart_id);
+                $query = $this->db->get('cart_customization');
+                $cartcustom = $query->result_array();
+                $customdata = array();
+                foreach ($cartcustom as $key1 => $value1) {
+                    $customdata[$value1['style_key']] = $value1['style_value'];
+                }
+                $productlist[$value['product_id']]['custom_dict'] = $customdata;
             }
 
             $cartdata = array('products' => $productlist,
@@ -258,8 +267,18 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $cart_items = $query->result();
 
             foreach ($cart_items as $key => $value) {
-                $vendor_id = $value->vendor_id;
-//                $this->db->order_by('id', 'desc');
+                $cart_id = $value->id;
+                
+                $this->db->where('cart_id', $cart_id);
+                $query = $this->db->get('cart_customization');
+                $cartcustom = $query->result_array();
+                
+                $customdata = array();
+                foreach ($cartcustom as $key1 => $value1) {
+                    $customdata[$value1['style_key']] = $value1['style_value'];
+                }
+                $value->custom_dict = $customdata;
+                
                 $this->db->where('order_id', $order_id);
                 $this->db->where('vendor_id', $vendor_id);
                 $query = $this->db->get('vendor_order_status');
@@ -314,6 +333,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $this->db->update('cart'); //
             } else {
                 $this->db->insert('cart', $product_dict);
+                
             }
         } else {
             $session_cart = $this->session->userdata('session_cart');
@@ -473,6 +493,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     }
 
     function order_mail($order_id, $subject = "") {
+        setlocale(LC_MONETARY, 'en_US');
         $order_details = $this->getOrderDetails($order_id, 0);
 
         $emailsender = email_sender;
@@ -489,10 +510,10 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
-//            echo $this->load->view('Email/order_mail', $order_details, true);
+            echo $this->load->view('Email/order_mail', $order_details, true);
             $this->email->message($this->load->view('Email/order_mail', $order_details, true));
             $this->email->print_debugger();
-              echo $result = $this->email->send();
+//              echo $result = $this->email->send();
         }
     }
 

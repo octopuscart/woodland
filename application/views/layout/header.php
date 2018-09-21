@@ -193,7 +193,7 @@
                                                                             <h2 style="    white-space: nowrap;
                                                                                 overflow: hidden;
                                                                                 text-overflow: ellipsis;
-                                                                                width: 250px;"><a href="#" style="">{{product.title}}</a></h2>
+                                                                                width: 250px;"><a href="#" style="">{{product.title}} - {{product.item_name}}</a></h2>
                                                                             <h3>                                                                 
                                                                                 <p>
                                                                                     {{product.price|currency:" "}} X {{product.quantity}} 
@@ -221,7 +221,7 @@
                                                     <li>
                                                         <ul class="checkout">
                                                             <li><a href="<?php echo site_url("Cart/details"); ?>" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                                            <!--<li><a href="<?php echo site_url("Cart/checkout"); ?>" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>-->
+                                                            <!--<li><a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>-->
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -425,7 +425,7 @@
                                                             <h2 style="    white-space: nowrap;
                                                                 overflow: hidden;
                                                                 text-overflow: ellipsis;
-                                                                width: 250px;"><a href="#" style="">{{product.title}}</a></h2>
+                                                                width: 250px;"><a href="#" style="">{{product.title}}-{{product.item_name}}</a></h2>
                                                             <h3>                                                                 
                                                                 <p>
                                                                     {{product.price|currency:" "}} X {{product.quantity}} 
@@ -447,7 +447,7 @@
                                     <li>
                                         <ul class="checkout">
                                             <li><a href="<?php echo site_url("Cart/details"); ?>" class="btn-checkout1"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                            <li><a href="<?php echo site_url("Cart/checkout"); ?>" class="btn-checkout1"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                            <li><a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn-checkout1"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
                                         </ul>
                                     </li>
                                 </ul>

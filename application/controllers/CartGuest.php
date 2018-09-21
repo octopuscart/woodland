@@ -103,7 +103,7 @@ class CartGuest extends CI_Controller {
             $sub_total_price = $session_cart['total_price'];
             $total_quantity = $session_cart['total_quantity'];
 
-           
+
 
 
 //place order
@@ -145,7 +145,7 @@ class CartGuest extends CI_Controller {
 
             $this->Product_model->cartOperationCustomCopyOrder($last_id);
 
-        
+
 
 
 
@@ -160,6 +160,16 @@ class CartGuest extends CI_Controller {
             );
             $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);
+
+            $newdata = array(
+                'username' => '',
+                'password' => '',
+                'logged_in' => FALSE,
+            );
+
+            $this->session->unset_userdata($newdata);
+            $this->session->sess_destroy();
+
             redirect('Order/orderdetailsguest/' . $orderkey);
         }
         $this->load->view('CartGuest/checkoutPayment', $data);

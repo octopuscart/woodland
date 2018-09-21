@@ -16,11 +16,24 @@ class Product extends CI_Controller {
     }
 
     //function for product list
-    function ProductList($cat_id) {
-        $categories = $this->Product_model->productListCategories($cat_id);
+    function ProductList($custom_id, $cat_id) {
+       
+
+        $this->db->where('id', $custom_id);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
+
+        if ($cat_id == 0) {
+            $cat_id = $customeitem->category_id;
+        }
+        
+        $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
+        $data["custom_item"] = $customeitem->item_name;
+        $data["custom_id"] = $custom_id;
+
         $this->load->view('Product/productList', $data);
     }
 
@@ -112,12 +125,14 @@ class Product extends CI_Controller {
         $data["custom_item"] = "Suit";
         $this->load->view('Product/customization_suit_v2', $data);
     }
+
     function customizationPant($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "Pant";
         $this->load->view('Product/customization_suit_v2', $data);
     }
+
     function customizationJacket($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid);
         $data['productdetails'] = $productdetails;

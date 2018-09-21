@@ -20,7 +20,7 @@ foreach ($categorie_parent as $key => $value) {
                 <div class="breadcrumb-area">
                     <h1>
                         <?php
-                        echo count($linklist) ? $cattitle : 'Shop Now';
+                        echo $custom_item;
                         ?>
                     </h1>
                     <ul>
@@ -55,7 +55,7 @@ foreach ($categorie_parent as $key => $value) {
                                     ?>  
 
                                     <li>
-                                        <a href="<?php echo site_url("Product/ProductList/" . $value['id']); ?>">
+                                        <a href="<?php echo site_url("Product/ProductList/".$custom_id."/" . $value['id']); ?>">
                                             <i class="flaticon-left-arrow"></i>
                                             <?php echo $value['category_name']; ?>
 
@@ -162,8 +162,8 @@ foreach ($categorie_parent as $key => $value) {
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
                                 <div class="product-box1">
                                     <ul class="product-social">
-                                        <li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                        <li><a href="<?php echo site_url("Product/customizationShirt"); ?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+                                        <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>-->
+                                        <li><a href="<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                     </ul>
                                     <div class="product-img-holder">

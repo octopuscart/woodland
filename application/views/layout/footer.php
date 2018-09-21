@@ -243,7 +243,7 @@
 
 
 <!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/angular/shopController.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/angular/shopController.js"></script>
 
 
 

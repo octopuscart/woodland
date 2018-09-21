@@ -45,6 +45,8 @@ $this->load->view('layout/header');
                                 </td>
                                 <td>
                                     <h3><a href="#">{{product.title}}</a><br/><small style="font-size: 10px">Vendor Code:{{product.vendor_id}}</small></h3>
+                                    <button type="button" ng-click="viewStyle(product)" class="btn btn-primary"  style="margin-top: 10px;">View Design</a>
+
                                 </td>
                                 <td class="amount">{{product.price|currency:" "}}</td>
                                 <td class="quantity">
@@ -78,7 +80,7 @@ $this->load->view('layout/header');
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                 <div class="cart-page-bottom-right">
-                    
+
                     <h3>Total<span>{{globleCartData.total_price|currency:" "}}</span></h3>
 
                     <div class="proceed-button">
@@ -90,25 +92,25 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
-    
-    <!-- Content -->
-<div id="content"  ng-if="!globleCartData.total_quantity"> 
-    <!-- Tesm Text -->
-    <section class="error-page text-center pad-t-b-130">
-        <div class="container "> 
 
-            <!-- Heading -->
-            <h1 style="font-size: 40px">No Product Found</h1>
-            <p>Please add product to cart<br>
-                You can go back to</p>
-            <hr class="dotted">
-            <a href="<?php echo site_url(); ?>" class="btn-send-message ">BACK TO HOME</a>
-        </div>
-    </section>
-</div>
-<!-- End Content --> 
-    
-    
+    <!-- Content -->
+    <div id="content"  ng-if="!globleCartData.total_quantity"> 
+        <!-- Tesm Text -->
+        <section class="error-page text-center pad-t-b-130">
+            <div class="container "> 
+
+                <!-- Heading -->
+                <h1 style="font-size: 40px">No Product Found</h1>
+                <p>Please add product to cart<br>
+                    You can go back to</p>
+                <hr class="dotted">
+                <a href="<?php echo site_url(); ?>" class="btn-send-message ">BACK TO HOME</a>
+            </div>
+        </section>
+    </div>
+    <!-- End Content --> 
+
+
 </div>
 <!-- Cart Page Area End Here -->
 <!--angular controllers-->

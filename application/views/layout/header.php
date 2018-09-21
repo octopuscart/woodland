@@ -120,33 +120,33 @@
 
                                     <?php
                                     $logoref = $_GET['logo'];
-                                    $logoimg = "logo73.png";    
+                                    $logoimg = "logo73.png";
                                     switch ($logoref) {
                                         case "1":
-                                            $logoimg = "logo731.png";  
+                                            $logoimg = "logo731.png";
                                             break;
                                         case "2":
-                                            $logoimg = "logo732.png";  
+                                            $logoimg = "logo732.png";
                                             break;
                                         case "3":
-                                            $logoimg = "logo733.png";  
+                                            $logoimg = "logo733.png";
                                             break;
                                         case "4":
-                                            $logoimg = "logo734.png";  
+                                            $logoimg = "logo734.png";
                                             break;
                                         case "5":
-                                            $logoimg = "logo735.png";  
+                                            $logoimg = "logo735.png";
                                             break;
                                         case "6":
-                                            $logoimg = "logo736.png";  
+                                            $logoimg = "logo736.png";
                                             break;
                                         default:
-                                            $logoimg = "logo73.png";  
+                                            $logoimg = "logo73.png";
                                     }
                                     ?>
 
                                     <div class="logo-area">
-                                        <a href="<?php echo site_url(); ?>"><img class="img-responsive" src="<?php echo base_url() . 'assets/images/'.$logoimg; ?>" alt="logo" style="    
+                                        <a href="<?php echo site_url(); ?>"><img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $logoimg; ?>" alt="logo" style="    
                                                                                  position: absolute;
                                                                                  top: -22px;
                                                                                  height: 74px;
@@ -214,7 +214,7 @@
                                                     </li>
 
                                                     <li>
-                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_price|currency:"<?php echo globle_currency;?> "}}</span>
+                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                                     </li>
                                                     <li>
@@ -300,8 +300,8 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="logo-area" style="    margin-top: 2px;">
                                         <a href="<?php echo site_url(); ?>">
-                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/'.$logoimg; ?>" alt="logo" style="    height:60px;padding-top: 4px;
-    padding-bottom: 6px;">
+                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $logoimg; ?>" alt="logo" style="    height:60px;padding-top: 4px;
+                                                 padding-bottom: 6px;">
                                         </a>
                                     </div>
                                     <div class="main-menu-area home2-sticky-area">
@@ -315,10 +315,10 @@
                                                 </li>
                                                 <li ><a href="#">Order Now</a>
                                                     <ul>
-                                                        <li><a href="<?php echo site_url("Product/ProductList/"); ?>/42">Shirts</a></li>
-                                                        <li><a href="<?php echo site_url("Product/ProductList/"); ?>/43">Suits</a></li>
-                                                        <li><a href="<?php echo site_url("Product/ProductList/"); ?>/43">Trousers</a></li>
-                                                        <li><a href="<?php echo site_url("Product/ProductList/"); ?>/43">Jackets</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
 
                                                     </ul>
                                                 </li>

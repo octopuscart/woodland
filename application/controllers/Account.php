@@ -73,6 +73,7 @@ class Account extends CI_Controller {
     }
 
     //login page
+        //login page
     function login() {
         $data1['msg'] = "";
 
@@ -125,6 +126,7 @@ class Account extends CI_Controller {
         }
 
         if (isset($_POST['registration'])) {
+       
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $first_name = $this->input->post('first_name');

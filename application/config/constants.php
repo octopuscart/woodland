@@ -26,9 +26,22 @@ define('globle_currency_type', 'US$ ');
  
 define('globle_currency', 'US$ ');
 
+define('site_mail_logo', 'http://bespoketailorshk.costcointernational.com/assets/images/logo73.png');
+
 
 
 define('custome_image_server', "http://costcointernational.com/bespoketailorshk_files");
+
+
+//Email Settings//
+define('email_sender', 'info@bespoketailorshk.com');
+define('email_sender_name', 'Bespoke Tailors');
+define('email_bcc', 'octopuscartltd@gmail.com');
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

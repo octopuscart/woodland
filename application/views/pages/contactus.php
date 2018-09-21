@@ -121,8 +121,8 @@ $this->load->view('layout/header');
                                 <br/>
                                 Tsim Sha Tsui, Kowloon , Hong Kong.</li>
                             <li class="con-envelope">info@bespoketailorshk.com</li>
-                            <li class="con-phone">(852) 27308566</li>
-                            <li class="con-fax">(852) 27308577</li>
+                            <li class="con-phone">+(852) 27308566</li>
+                            <li class="con-fax">+(852) 27308577</li>
                         </ul>
                 </div>
 

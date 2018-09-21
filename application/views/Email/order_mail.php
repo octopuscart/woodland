@@ -23,23 +23,32 @@
                 padding:10px 20px;
             }
 
+            .gn_table td{
+                padding:3px 0px;
+            }
+            .gn_table th{
+                padding:3px 0px;
+                text-align: left;
+
+            }
+
         </style>
     </head>
+
     <body style="margin: 0;
           padding: 0;
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
         <div class="" style="padding:50px 0px">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding: 0 20px">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="background: #000;padding: 0 20px">
                 <tr>
-                    <td style="width: 80px">
-                        <img src="<?php echo base_url() . 'assets/images/logo73.png'; ?> " style="margin: 10px">
+                    <td >
+                        <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
+                             height: 50px;
+                             width: auto;"/></center>
                     </td>
-                    <td style="font-size: 30px;    font-family: serif;">
-                        Class Apart <span style="color: red">Store</span>
-                    </td>
+
                 </tr>
-                <tr><td colspan="2"><hr/></td></tr>
 
             </table>
             <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="background: #fff">
@@ -50,28 +59,59 @@
                             <?php echo $order_data->name; ?>
                         </span> <br/>
                         <div style="    padding: 5px 0px;">
-                            <?php echo $order_data->address; ?>
+                            <?php echo $order_data->address1; ?><br/>
+                            <?php echo $order_data->address2; ?><br/>
                             <?php echo $order_data->state; ?>
                             <?php echo $order_data->city; ?>
-                            <?php echo $order_data->pincode; ?>
-                        </div>
 
-                        <span style="">
-                            <b>Email.</b> <?php echo $order_data->email; ?> 
-                        </span>
-                        <br/>
-                        <span style="">
-                            <b>Contact No.</b> : <?php echo $order_data->contact_no; ?> 
-                        </span>
+                            <?php echo $order_data->country; ?> <?php echo $order_data->zipcode; ?>
+
+                        </div>
+                        <table class="gn_table">
+                            <tr>
+                                <th>Email:</th>
+                                <td><?php echo $order_data->email; ?> </td>
+                            </tr>
+                            <tr>
+                                <th>Contact No.:</th>
+                                <td> <?php echo $order_data->contact_no; ?> </td>
+                            </tr>
+                        </table>
+
+
                     </td>
                     <td style="font-size: 12px;width: 50%" >
-                        <span style="">
-                            <b>Order No.</b> #<?php echo $order_data->order_no; ?> 
-                        </span>
-                        <br/>
-                        <span style="">
-                            <b>Date Time</b> : <?php echo $order_data->order_date; ?> <?php echo $order_data->order_time; ?> 
-                        </span>
+
+                        <table class="gn_table">
+                            <tr>
+                                <th>Order No.:</th>
+                                <td><?php echo $order_data->order_no; ?> </td>
+                            </tr>
+                            <tr>
+                                <th>Date Time:</th>
+                                <td> <?php echo $order_data->order_date; ?> <?php echo $order_data->order_time; ?>  </td>
+                            </tr>
+                            <tr>
+                                <th>Payment Mode:</th>
+                                <td> <?php echo $order_data->payment_mode; ?> </td>
+                            </tr>
+                            <tr>
+                                <th>Txn No.:</th>
+                                <td> <?php echo $payment_details['txn_id']; ?> </td>
+                            </tr>
+                            <tr>
+                                <th>Status:</th>
+                                <td> <?php
+                                    if ($order_status) {
+                                        echo end($order_status)->status;
+                                    } else {
+                                        echo "Pending";
+                                    }
+                                    ?> </td>
+                            </tr>
+                        </table>
+
+
                     </td>
                 </tr>
             </table>
@@ -80,9 +120,9 @@
                     <td style="width: 20px;text-align: center">S.No.</td>
                     <td colspan="2"  style="text-align: center">Product</td>
 
-                    <td style="text-align: center">Price<br/><span style="font-size: 10px">(In INR)</span></td>
-                    <td style="text-align: center">Qnty.</td>
-                    <td style="text-align: center;width: 60px">Total<br/><span style="font-size: 10px">(In INR)</span></td>
+                    <td style="text-align: right;width: 60px">Price<br/><span style="font-size: 10px">(In <?php echo globle_currency; ?>)</span></td>
+                    <td style="text-align: right">Qnty.</td>
+                    <td style="text-align: right;width: 60px">Total<br/><span style="font-size: 10px">(In  <?php echo globle_currency; ?>)</span></td>
                 </tr>
                 <!--cart details-->
                 <?php
@@ -93,8 +133,8 @@
                             <?php echo $key + 1; ?>
                         </td>
 
-                        <td style="width: 80px">
-                            <center>   <img src=" <?php echo $product->file_name; ?>" style="height: 70px;"></img>
+                        <td style="width: 50px">
+                            <center>   <img src=" <?php echo $product->file_name; ?>" style="height: 50px;"></img>
                         </td>
 
                         <td style="width: 200px;">
@@ -119,18 +159,22 @@
                 <!--end of cart details-->
 
                 <tr>
-                    <td colspan="3"  rowspan="4" style="font-size: 12px">
+                    <td colspan="3"  rowspan="5" style="font-size: 12px">
                         <b>Total Amount in Words:</b><br/>
                         <span style="text-transform: capitalize"> <?php echo $amount_in_word; ?></span>
                     </td>
 
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align: right">Total</td>
+                    <td colspan="2" style="text-align: right">Sub Total</td>
                     <td style="text-align: right;width: 60px"><?php echo $order_data->sub_total_price; ?> </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align: right">Credit Used</td>
+                    <td colspan="2" style="text-align: right">Shipping Amount</td>
+                    <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right">Coupon Discount</td>
                     <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
                 </tr>
                 <tr>
@@ -141,15 +185,37 @@
 
                 <tr>
                     <td colspan="6" style="font-size: 12px;">
-                        <p> DECLARATION:
-                            We declare that this invoice shows the actual price of the goods described above and that all particulars are true and correct.The goods sold are
-                            intended for end user consumption and not for resale.
-                        </p>
 
-                        <p>
-                            CUSTOMER ACKNOWLEDGEMENT:
-                            I <?php echo $order_data->name; ?> confirm that the said products are being purchased for my internal/personal consumption and not for re-sale.
-                        </p>
+
+
+
+
+
+
+                        <p>For any order related queries, please Mob/Whatsapp +(852) 2730 8566 or email us at info@bespoketailorshk.com</p>
+
+                        <p>We assure you of best services at all times.</p>
+
+                        <div style="height: 200px;">Kindest Regards,<br />
+                            <img src="<?php echo site_mail_logo; ?>" style="height: 30px;  background: #000 ;margin: 5px 0px 10px ;"><br/>
+                                <span style="float: left; font-size: 12px;">
+
+                                    <address>
+                                        <b>Address 1</b><br/>
+                                        2nd Floor, 45 Haiphong Road ,<br/> 
+                                        Tsim Sha Tsui, Kowloon , Hong Kong.
+                                        <br/><br/>
+                                        <b>Address 2</b><br/>
+                                        Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road , <br/>
+                                        Tsim Sha Tsui, Kowloon , Hong Kong.                                        <br/>
+                                        <b>Tel #</b>: +(852) 27308566   <br/>          
+                                        <b>Fax #</b>: +(852) 27308577
+                                        <b>E</b>:info@bespoketailorshk.com,  <br/><b>WWW.bespoketailorshk.com</b>
+
+
+                                    </address>
+                                </span>
+                        </div>
 
                         <br/>
                         <span style="    text-align: center;
@@ -163,6 +229,7 @@
                 </tr>
 
             </table>
+
         </div>
     </body>
 </html>

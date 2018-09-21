@@ -116,6 +116,7 @@ class Product extends CI_Controller {
     function customizationShirt($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid);
         $data['productdetails'] = $productdetails;
+        $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_shirt', $data);
     }
 
@@ -123,6 +124,7 @@ class Product extends CI_Controller {
         $productdetails = $this->Product_model->productDetails($productid);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "Suit";
+        $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
     }
 
@@ -130,6 +132,7 @@ class Product extends CI_Controller {
         $productdetails = $this->Product_model->productDetails($productid);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "Pant";
+        $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
     }
 
@@ -137,6 +140,7 @@ class Product extends CI_Controller {
         $productdetails = $this->Product_model->productDetails($productid);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "Jacket";
+        $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
     }
 

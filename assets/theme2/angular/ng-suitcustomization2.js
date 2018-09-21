@@ -393,7 +393,7 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
 //                var form = new FormData()
                 form.append('product_id', product_id);
                 form.append('quantity', 1);
-                form.append('custome_id', 1);
+                form.append('custome_id', gcustome_id);
                 $http.post(globlecart, form).then(function (rdata) {
                     swal.close();
                     $scope.getCartData();

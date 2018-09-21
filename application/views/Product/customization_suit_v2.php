@@ -331,6 +331,7 @@ $this->load->view('layout/header');
 <script>
     var product_id = <?php echo $productdetails['id']; ?>;
     var defaut_view = "<?php echo $custom_item;?>";
+    var gcustome_id = <?php echo $custom_id;?>;
 </script>
 
 <!--angular controllers-->

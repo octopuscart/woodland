@@ -654,3 +654,11 @@ b.barcomb-list {
     padding: 10px 0;
     background: #7a7a7a;
 }
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    /* border: none; */
+    border-radius: 0;
+    background: red;
+}

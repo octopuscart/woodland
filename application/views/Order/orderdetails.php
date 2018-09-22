@@ -5,6 +5,17 @@ $paymentstatus = "";
 
 
 <style>
+    .measurement_right_text{
+        float: right;
+    }
+    .measurement_text{
+        float: left;
+    }
+    .fr_value{
+        font-size: 12px;
+        margin-top: -7px;
+        float: left;
+    }
     .productStatusBlock{
         padding:10px;
         border: 1px solid #000;
@@ -216,6 +227,38 @@ $paymentstatus = "";
                                     <?php
                                 }
                                 ?>
+                                <td colspan="7">
+                                    Measurement Type :
+                                    <?php
+                                    echo $order_data->measurement_style;
+                                    if (count($measurements_items)) {
+                                        ?>
+                                        <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapsemeasurements" aria-expanded="true" aria-controls="collapseOne">
+                                            View Measurement
+                                        </a>
+                                        <div id="collapsemeasurements" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="panel-body" style="padding:10px 0px;">
+                                                        <?php
+                                                        echo "<ul class='list-group'>";
+                                                        foreach ($measurements_items as $keym => $valuem) {
+                                                            $mvalues = explode(" ", $valuem['measurement_value']);
+                                                            echo "<li class='list-group-item'>" . $valuem['measurement_key'] . " <span class='measurement_right_text'><span class='measurement_text'>" . $mvalues[0] . "</span><span class='fr_value'>" . $mvalues[1] . '"' . "</span></span></li>";
+                                                        }
+                                                        echo "</ul>";
+                                                        ?>                             
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+
+
                                 <!--end of cart details-->
                                 <tr>
                                     <td colspan="7">

@@ -106,6 +106,10 @@ $this->load->view('layout/header');
             <?php
             $this->load->view('CartGuest/itemblock', array('vtype' => 'items'));
             ?>
+             <?php
+            $this->load->view('Cart/itemblock', array('vtype' => 'size'));
+            ?>
+
 
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -159,7 +163,7 @@ $this->load->view('layout/header');
                                     }
                                 } else {
                                     ?>
-                                    <h4 class="text-center"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+                                    <h4 class="text-center " style="color: red"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
 
                                     <?php
                                 }

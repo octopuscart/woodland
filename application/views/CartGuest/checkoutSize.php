@@ -120,7 +120,7 @@ $this->load->view('layout/header');
                                     <tr>
                                         <td class="cart-form-heading text_center" style="width: 50%" colspan="2">Product</td>
                                         <td class="cart-form-heading text_center">Price</td>
-
+                                      
                                         <td class="cart-form-heading text_center">Total</td>
                                         <td class="cart-form-heading"></td>
                                     </tr>
@@ -158,7 +158,7 @@ $this->load->view('layout/header');
                                                 <a href=" <?php echo site_url("Cart/details"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> Back To Cart</a>
                                             </div>
                                             <div class="proceed-button pull-right ">
-                                                <a href=" <?php echo site_url("Cart/checkoutSize"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Your Size <i class="fa fa-arrow-right"></i></a>
+                                                <a href=" <?php echo site_url("CartGuest/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Shipping Address <i class="fa fa-arrow-right"></i></a>
                                             </div>
                                         </td>
 
@@ -176,14 +176,12 @@ $this->load->view('layout/header');
 
             </div>
 
+
             <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'size'));
+            $this->load->view('CartGuest/itemblock', array('vtype' => 'shipping'));
             ?>
             <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
-            ?>
-            <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'payment'));
+            $this->load->view('CartGuest/itemblock', array('vtype' => 'payment'));
             ?>
 
         </div>
@@ -212,22 +210,7 @@ $this->load->view('layout/header');
 
 
 
-<!-- Content -->
-<div id="content" class="cart-page-area"  ng-if="!globleCartData.total_quantity"> 
-    <!-- Tesm Text -->
-    <section class="error-page text-center pad-t-b-130">
-        <div class="container "> 
 
-            <!-- Heading -->
-            <h1 style="font-size: 40px">No Product Found</h1>
-            <p>Please add product to cart<br>
-                You can go back to</p>
-            <hr class="dotted">
-            <a href="<?php echo site_url(); ?>" class="btn-send-message ">BACK TO HOME</a>
-        </div>
-    </section>
-</div>
-<!-- End Content --> 
 
 
 

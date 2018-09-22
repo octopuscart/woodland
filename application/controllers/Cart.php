@@ -29,6 +29,9 @@ class Cart extends CI_Controller {
     }
 
     function checkoutInit() {
+        $measurement_style = $this->session->userdata('measurement_style');
+        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
+
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
             $user_address_details = $this->User_model->user_address_details($this->user_id);
@@ -39,7 +42,56 @@ class Cart extends CI_Controller {
         }
     }
 
+    function checkoutSize() {
+        $measurement_style = $this->session->userdata('measurement_style');
+        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
+
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartData($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartData();
+        }
+
+        $custome_items = $session_cart['custome_items'];
+
+        $this->db->select("group_concat(measurements) as measurement");
+        $this->db->where_in('id', $custome_items);
+        $query = $this->db->get('custome_items');
+        $custome_measurements = $query->row();
+
+        $measurementarray = explode(",", $custome_measurements->measurement);
+
+        $this->db->select("*");
+        $this->db->order_by('display_index', 'asc');
+        $this->db->where_in('id', $measurementarray);
+        $query = $this->db->get('measurement');
+        $custome_measurements = $query->result_array();
+        $data['measurements_list'] = $custome_measurements;
+        if (isset($_POST['submit_measurement'])) {
+            $measurement_style = array(
+                'measurement_style' => $this->input->post('measurement_type'),
+                'measurement_dict' => array()
+            );
+            $measurement_title = $this->input->post('measurement_title');
+            $measurement_value = $this->input->post('measurement_value');
+
+            foreach ($measurement_title as $key => $value) {
+                $mvalue = $measurement_value[$key];
+                $mtitle = $value;
+                $measurement_style['measurement_dict'][$mtitle] = $mvalue;
+            }
+
+            $this->session->set_userdata('measurement_style', $measurement_style);
+            redirect('Cart/checkoutShipping');
+        }
+        $this->load->view('Cart/checkoutSize', $data);
+    }
+
     function checkoutShipping() {
+
+        $measurement_style = $this->session->userdata('measurement_style');
+        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
+
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
             $user_details = $this->User_model->user_details($this->user_id);
@@ -90,6 +142,9 @@ class Cart extends CI_Controller {
     }
 
     function checkoutPayment() {
+        $measurement_style = $this->session->userdata('measurement_style');
+        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
+
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
             $user_details = $this->User_model->user_details($this->user_id);
@@ -108,7 +163,6 @@ class Cart extends CI_Controller {
                 $address = $user_address_details[0];
 
                 if ($this->checklogin) {
-                
                     $session_cart = $this->Product_model->cartData($this->user_id);
                 } else {
                     $session_cart = $this->Product_model->cartData();
@@ -151,9 +205,10 @@ class Cart extends CI_Controller {
                     'total_quantity' => $total_quantity,
                     'status' => 'Order Confirmed',
                     'payment_mode' => $paymentmathod,
+                    'measurement_style' => $measurement_style['measurement_style'],
                     'credit_price' => $this->input->post('credit_price') || 0,
                 );
-         
+
                 $this->db->insert('user_order', $order_array);
                 $last_id = $this->db->insert_id();
                 $orderno = "BT" . date('Y/m/d') . "/" . $last_id;
@@ -163,13 +218,47 @@ class Cart extends CI_Controller {
                 $this->db->where('id', $last_id);
                 $this->db->update('user_order');
 
-
+                //measurwement data
 
                 $this->db->set('order_id', $last_id);
                 $this->db->where('order_id', '0');
                 $this->db->where('user_id', $this->user_id);
                 $this->db->update('cart');
 
+
+                $custome_items = $session_cart['custome_items'];
+                $custome_items_ids = implode(", ", $custome_items);
+                $custome_items_ids_profile = implode("", $custome_items);
+                $custome_items_nameslist = $session_cart['custome_items_name'];
+                $custome_items_names = implode(", ", $custome_items_nameslist);
+
+                $measurement_style_array = $measurement_style['measurement_dict'];
+
+                if (count($measurement_style_array)) {
+                    $order_measurement_profile = array(
+                        'datetime' => date('Y-m-d H:i:s'),
+                        'order_id' => $last_id,
+                        'measurement_items' => $custome_items_names,
+                        'measurement_items_id' => $custome_items_ids,
+                        'user_id' => $this->user_id,
+                        'display_index' => '1',
+                        "profile" => "MES/" . $this->user_id . "/" . $custome_items_ids_profile . "/" . $last_id,
+                    );
+                    $this->db->insert('custom_measurement_profile', $order_measurement_profile);
+                    $mprofile_id = $this->db->insert_id();
+                    $display_index = 1;
+                    foreach ($measurement_style_array as $key => $value) {
+                        $custom_array = array(
+                            'measurement_key' => $key,
+                            'measurement_value' => $value,
+                            'display_index' => $display_index,
+                            'order_id' => $last_id,
+                            'custom_measurement_profile' => $mprofile_id
+                        );
+                        $this->db->insert('custom_measurement', $custom_array);
+                        $display_index++;
+                    }
+                }
 
 
 
@@ -183,7 +272,7 @@ class Cart extends CI_Controller {
                 );
                 $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);
-                 redirect('Order/orderdetails/' . $orderkey);
+                redirect('Order/orderdetails/' . $orderkey);
             }
             $this->load->view('Cart/checkoutPayment', $data);
         } else {

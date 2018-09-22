@@ -103,6 +103,9 @@ $this->load->view('layout/header');
             <?php
             $this->load->view('Cart/itemblock', array('vtype' => 'items'));
             ?>
+            <?php
+            $this->load->view('Cart/itemblock', array('vtype' => 'size'));
+            ?>
 
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -156,7 +159,7 @@ $this->load->view('layout/header');
                                         }
                                     } else {
                                         ?>
-                                        <h4><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+                                        <h4 class="text-center "  style="color: red"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
 
                                         <?php
                                     }
@@ -171,7 +174,7 @@ $this->load->view('layout/header');
                                     <tr>
                                         <td colspan="4" class="text_right">
                                             <div class="proceed-button pull-left " >
-                                                <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                <a href=" <?php echo site_url("Cart/checkoutSize"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Size</a>
                                             </div>
                                             <div class="proceed-button pull-right ">
                                                 <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>

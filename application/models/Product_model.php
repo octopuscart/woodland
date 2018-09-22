@@ -197,8 +197,14 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $total_price = 0;
             $total_quantity = 0;
             $total_credit_limit = 0;
+            $custome_items = [];
+            $custome_items_name = [];
             foreach ($product as $key => $value) {
                 $productlist[$value['product_id']] = $value;
+                if (isset($value['item_id'])) {
+                    array_push($custome_items, $value['item_id']);
+                    array_push($custome_items_name, $value['item_name']);
+                }
                 $total_price += $value['total_price'];
                 $total_quantity += $value['quantity'];
                 $total_credit_limit += ($value['credit_limit'] * $value['quantity']);
@@ -213,11 +219,15 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $productlist[$value['product_id']]['custom_dict'] = $customdata;
             }
 
-            $cartdata = array('products' => $productlist,
+            $cartdata = array(
+                'products' => $productlist,
+                'custome_items_name' => $custome_items_name,
+                'custome_items' => $custome_items,
                 'total_quantity' => $total_quantity,
                 'total_price' => $total_price,
                 'total_credit_limit' => $total_credit_limit,
-                'used_credit' => 0);
+                'used_credit' => 0
+            );
             return $cartdata;
         } else {
             $session_cart = $this->session->userdata('session_cart');
@@ -226,6 +236,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             } else {
                 $cartdata = array('products' => array(),
                     'total_quantity' => 0,
+                    'custome_items' => [],
+                    'custome_items_name' => [],
                     'total_credit_limit' => $total_credit_limit,
                     'total_price' => 0, 'used_credit' => 0);
                 $this->session->set_userdata('session_cart', $cartdata);
@@ -233,7 +245,12 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             }
             $session_cart['total_quantity'] = 0;
             $session_cart['total_price'] = 0;
+            $custome_items = [];
             foreach ($session_cart['products'] as $key => $value) {
+                if (isset($value['item_id'])) {
+                    array_push($session_cart['custome_items'], $value['item_id']);
+                    array_push($session_cart['custome_items_name'], $value['item_name']);
+                }
                 $session_cart['total_quantity'] += $value['quantity'];
                 $session_cart['total_price'] += $value['total_price'];
             }
@@ -265,7 +282,14 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('cart');
             $cart_items = $query->result();
-          
+
+            $this->db->order_by('display_index', 'asc');
+            $this->db->where('order_id', $order_details->id);
+            $query = $this->db->get('custom_measurement');
+            $custom_measurement = $query->result_array();
+            
+            $order_data['measurements_items'] = $custom_measurement;
+
             foreach ($cart_items as $key => $value) {
                 $cart_id = $value->id;
 
@@ -746,7 +770,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
-           
+
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;
@@ -762,8 +786,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             }
         }
     }
-    
-     public function cartOperationCustomCopyOrder($order_id) {
+
+    public function cartOperationCustomCopyOrder($order_id) {
 
         $session_cart = $this->session->userdata('session_cart');
         $productlist = $session_cart['products'];
@@ -788,7 +812,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'item_name' => $item_name,
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
-                'order_id'=>$order_id,
+                'order_id' => $order_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
             $custom_dict = $value['custom_dict'];

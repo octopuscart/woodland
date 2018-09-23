@@ -134,15 +134,15 @@ $this->load->view('layout/header');
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <ul>
-                                                <!--<li class="active"><a href="#paypal" data-toggle="tab" aria-expanded="false">PayPal</a></li>-->
-                                                <li class="active"><a href="#bank" data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
+                                                <li class="active"><a href="#paypal" data-toggle="tab" aria-expanded="false">PayPal</a></li>
+                                                <li><a href="#bank" data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
                                                 <li><a href="#cash" data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
                                                 <li><a href="#cheque" data-toggle="tab" aria-expanded="false">Cheque On Delivery</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="tab-content">
-<!--                                                <div class="tab-pane fade active in"  id="paypal">
+                                                <div class="tab-pane fade active in"  id="paypal">
                                                     <p>
                                                         <img src="<?php echo base_url(); ?>assets/paymentstatus/paypal.png" style="height: 100px;">                
                                                     </p>
@@ -152,11 +152,11 @@ $this->load->view('layout/header');
                                                                 <tr>
                                                                     <td colspan="4" class="text_right">
                                                                         <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                            <a href=" <?php echo site_url("CartGuest/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
 
-                                                                            <a href=" <?php echo site_url("PayPalPayment/index"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Place Order <i class="fa fa-arrow-right"></i></a>
+                                                                            <a href=" <?php echo site_url("PayPalPaymentTestGuest/process"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Place Order <i class="fa fa-arrow-right"></i></a>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -164,8 +164,8 @@ $this->load->view('layout/header');
                                                         </table>
 
                                                     </div>
-                                                </div>-->
-                                                <div class="tab-pane fade active in" id="bank">
+                                                </div>
+                                                <div class="tab-pane fade " id="bank">
                                                     <p>
                                                         <img src="<?php echo base_url(); ?>assets/paymentstatus/bank.png" style="height: 100px;">                
 
@@ -176,7 +176,7 @@ $this->load->view('layout/header');
                                                                 <tr>
                                                                     <td colspan="4" class="text_right">
                                                                         <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                            <a href=" <?php echo site_url("CartGuest/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
                                                                             <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer">
@@ -201,7 +201,7 @@ $this->load->view('layout/header');
                                                                 <tr>
                                                                     <td colspan="4" class="text_right">
                                                                         <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                            <a href=" <?php echo site_url("CartGuest/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
                                                                             <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cash On Delivery">
@@ -226,7 +226,7 @@ $this->load->view('layout/header');
                                                                 <tr>
                                                                     <td colspan="4" class="text_right">
                                                                         <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                            <a href=" <?php echo site_url("CartGuest/checkShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
                                                                             <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cheque On Delivery">

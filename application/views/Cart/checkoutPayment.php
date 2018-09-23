@@ -156,7 +156,7 @@ $this->load->view('layout/header');
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
 
-                                                                            <a href=" <?php echo site_url("PayPalPayment/index"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Place Order <i class="fa fa-arrow-right"></i></a>
+                                                                            <a href=" <?php echo site_url("PayPalPayment/process"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Place Order <i class="fa fa-arrow-right"></i></a>
                                                                         </div>
                                                                     </td>
                                                                 </tr>

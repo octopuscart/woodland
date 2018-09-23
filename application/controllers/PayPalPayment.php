@@ -15,9 +15,9 @@ class PayPalPayment extends CI_Controller {
 
     public function process() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'octopuscartltd_api1.gmail.com'; //PayPal API Username
-        $PayPalApiPassword = '66ZLFS5QP6WHV58H'; //Paypal API password
-        $PayPalApiSignature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31AtRlYclVHieqMP.mCqq5eNqN-DpU'; //Paypal API Signature
+        $PayPalApiUsername = 'bespoke_api1.biznetvigator.com'; //PayPal API Username
+        $PayPalApiPassword = 'BWJW5YLKQN48TLKJ'; //Paypal API password
+        $PayPalApiSignature = 'A4B5rTBa2Wszba-8qwTnM0eJZcbYA9Av3m2kXRN3E9ICkpspkoU6Z..Y'; //Paypal API Signature
         $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
         $data = [];
         if ($this->checklogin) {

@@ -311,11 +311,11 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 }
                 $value->custom_dict = $customdata;
 
-                $this->db->where('order_id', $order_id);
-                $this->db->where('vendor_id', $vendor_id);
-                $query = $this->db->get('vendor_order_status');
-                $orderstatus = $query->result();
-                $value->product_status = $orderstatus;
+//                $this->db->where('order_id', $order_id);
+//                $this->db->where('vendor_id', $vendor_id);
+//                $query = $this->db->get('vendor_order_status');
+//                $orderstatus = $query->result();
+                $value->product_status = array();
             }
 
             $order_data['cart_data'] = $cart_items;

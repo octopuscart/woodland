@@ -16,16 +16,17 @@ class Shop extends CI_Controller {
         $categories = $this->Product_model->productListCategories(0);
         $data["categories"] = $categories;
         $data["product_home_slider_bottom"] = $product_home_slider_bottom;
-        
-        $this->db->where_in('id', array(0=>1,1=>2));
+        $customarray = [1,2];
+        $this->db->where_in('id', $customarray);
         $query = $this->db->get('custome_items');
-        $customeitem = $query->row();
+        $customeitem = $query->result();
+        
+        $data['shirtcustome'] = $customeitem[0];
+        $data['suitcustome'] = $customeitem[1];
         
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
         
-        print_r($customeitem);
-
         $this->load->view('home', $data);
     }
     public function contactus() {

@@ -134,11 +134,9 @@ class Order extends CI_Controller {
     }
     
      public function orderdetailsguest($order_key) {
-         echo $order_key;
-         echo "<br/>";
-         $order_key =  urldecode($order_key);
+
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-        print_r($order_details);
+
         $file_newname = "";
         $this->db->where('active', 'yes');
         $query = $this->db->get('payment_barcode');

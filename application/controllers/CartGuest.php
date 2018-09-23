@@ -43,6 +43,9 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutSize() {
+        $address = $this->session->userdata('shipping_address');
+        $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
+
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -67,6 +70,8 @@ class CartGuest extends CI_Controller {
         $query = $this->db->get('measurement');
         $custome_measurements = $query->result_array();
         $data['measurements_list'] = $custome_measurements;
+
+
         if ($this->input->post('submit_measurement')) {
             $measurement_style = array(
                 'measurement_style' => $this->input->post('measurement_type'),
@@ -74,11 +79,12 @@ class CartGuest extends CI_Controller {
             );
             $measurement_title = $this->input->post('measurement_title');
             $measurement_value = $this->input->post('measurement_value');
-
-            foreach ($measurement_title as $key => $value) {
-                $mvalue = $measurement_value[$key];
-                $mtitle = $value;
-                $measurement_style['measurement_dict'][$mtitle] = $mvalue;
+            if ($measurement_title) {
+                foreach ($measurement_title as $key => $value) {
+                    $mvalue = $measurement_value[$key];
+                    $mtitle = $value;
+                    $measurement_style['measurement_dict'][$mtitle] = $mvalue;
+                }
             }
 
             $this->session->set_userdata('measurement_style', $measurement_style);

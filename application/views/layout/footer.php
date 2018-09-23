@@ -84,59 +84,59 @@
 <!-- Modal Dialog Box Start Here-->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-body">
+        <div class="modal-body ">
             <button type="button" class="close myclose" data-dismiss="modal">&times;</button>
             <div class="product-details1-area">
                 <div class="product-details-info-area">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="inner-product-details-left">
                                 <div class="tab-content">
                                     <div id="metro-related1" class="tab-pane fade active in" ng-if="projectDetailsModel.productobj.file_name">
                                         <a href="#">
                                             <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});   
-                                                 height: 500px;"></div>
+                                                 height: 360px;"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related2" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name1">
                                         <a href="#">
                                             <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});    
-                                                 height: 500px;"></div>
+                                                 height: 360px;"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related3" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name2">
                                         <a href="#">
                                             <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});    
-                                                 height: 500px;"></div>
+                                                 height: 360px;"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
                                         </a>
                                     </div>
                                 </div>
                                 <ul>
                                     <li class="active" ng-if="projectDetailsModel.productobj.file_name">
-                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related1">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});width:75px;height: 75px"></div>
+                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related1" style="width:75px;">
+                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});height: 75px"></div>
                                             <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="related1">-->
                                         </a>
                                     </li>
                                     <li ng-if="projectDetailsModel.productobj.file_name1">
-                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related2">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});width:75px;height: 75px"></div>
+                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related2" style="width:75px;">
+                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});height: 75px"></div>
                                             <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="related2">-->
                                         </a>
                                     </li>
                                     <li ng-if="projectDetailsModel.productobj.file_name2">
-                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related3">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});width:75px;height: 75px"></div>
+                                        <a aria-expanded="false" data-toggle="tab" href="#metro-related3" style="width:75px;">
+                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});height: 75px"></div>
                                             <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="related3">-->
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class=" col-md-12 col-sm-12 col-xs-12">
+                        <div class=" col-md-5 col-sm-12 col-xs-12">
                             <div class="inner-product-details-right">
                                 <h3>{{projectDetailsModel.productobj.title}}</h3>
                                 <ul>
@@ -163,10 +163,9 @@
                                 <ul class="inner-product-details-cart">
                                     <li>
                                         <!--<a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a>-->
-                                        <a href=" <?php echo site_url("Product/customizationShirt"); ?>/{{projectDetailsModel.productobj.product_id}}" >Customize Now</a>
-
+                                        <a href="{{projectDetailsModel.link}}" >Customize Now</a>
                                     </li>
-                                    <li>
+<!--                                    <li>
                                         <div class="input-group quantity-holder" id="quantity-holder">
                                             <input type="text" placeholder="1" value="1" id="model_quantity" class="form-control quantity-input" name="quantity">
                                             <div class="input-group-btn-vertical">
@@ -174,7 +173,7 @@
                                                 <button type="button" class="btn btn-default quantity-minus"  ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-minus"></i></button>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li>-->
                                     <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
                                 </ul>
                             </div>

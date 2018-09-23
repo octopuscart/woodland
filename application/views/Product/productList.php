@@ -97,7 +97,7 @@ foreach ($categorie_parent as $key => $value) {
                         <?php
                     }
                     ?>
-                    <h2 class="title-sidebar product_attr_h2">FILTER BY PRICE</h2>
+<!--                    <h2 class="title-sidebar product_attr_h2">FILTER BY PRICE</h2>
                     <div id="price-range-wrapper" class="price-range-wrapper">
                         <div id="price-range-filter"></div>
                         <div class="price-range-select">
@@ -105,7 +105,7 @@ foreach ($categorie_parent as $key => $value) {
                             <div class="price-range" id="price-range-max">{{productResults.price.maxprice}}</div>
                         </div>
                         <button class="btn-services-shop-now" type="button" ng-click="filterPrice()">Filter</button>
-                    </div>
+                    </div>-->
 
                     <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" ng-if="attrv.length > 1">
                         <!-- HEADING -->
@@ -164,7 +164,7 @@ foreach ($categorie_parent as $key => $value) {
                                     <ul class="product-social">
                                         <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>-->
                                         <li><a href="<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/'+product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                     </ul>
                                     <div class="product-img-holder">
                                         <div class="hot-sale" ng-if="product.sale_price > 0">
@@ -215,9 +215,9 @@ foreach ($categorie_parent as $key => $value) {
                                                 </p>
                                             </div>
                                             <ul class="product-box2-cart" style="    margin-top: 0px;">
-                                                <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
-                                                <li><a href="<?php echo site_url("Product/customizationShirt"); ?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>-->
+                                                <li><a href="<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i> Customize Now</a></li>
+                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/'+product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

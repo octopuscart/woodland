@@ -227,10 +227,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     }, function (e) {
     })
 
-    $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1};
+    $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1, "link":""};
     //get product detail model
-    $scope.viewShortDetails = function (detailobj) {
+    $scope.viewShortDetails = function (detailobj, link) {
         $scope.projectDetailsModel.productobj = detailobj;
+        $scope.projectDetailsModel.link = link;
     }
 
 

@@ -78,6 +78,7 @@ class Account extends CI_Controller {
         $data1['msg'] = "";
 
         $link = isset($_GET['page']) ? $_GET['page'] : '';
+        $data1['next_link'] = $link;
 
         if (isset($_POST['signIn'])) {
             $username = $this->input->post('email');
@@ -157,7 +158,7 @@ class Account extends CI_Controller {
 
                     $this->session->set_userdata('logged_in', $sess_data);
 
-                    if ($link == 'checkout') {
+                    if ($link == 'checkoutInit') {
                        redirect('Cart/checkoutInit');
                     }
 

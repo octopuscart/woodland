@@ -249,18 +249,18 @@ code {
 }
 
 .monogramtext_posistion_collar {
-      left: 234px;
+    left: 222px;
     display: block;
-    top: 30px;
+    top: 28px;
     line-height: 10px;
     font-size: 8px;
     height: 9px;
 }
 
 .monogramtext_posistion_cuff_left{
-       left: 346px;
+     left: 329px;
     display: block;
-    top: 325px;
+    top: 308px;
     transform: rotate(59deg);
     line-height: 7px;
     font-size: 7px;
@@ -268,7 +268,7 @@ code {
 }
 
 .monogramtext_posistion_left_pocket{
-        left: 287px;
+        left: 273px;
     display: block;
     top: 135px;
     line-height: 10px;
@@ -404,6 +404,8 @@ p.selected-element-title_text_price{
 .total_price_block h5 {
     font-size: 19px;
     color: white;
+        line-height: 60px;
+    margin: 0;
 }
 
 @media only screen and (max-width: 768px) {

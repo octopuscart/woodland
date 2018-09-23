@@ -108,12 +108,20 @@ where pa.product_id = $product_id group by attribute_value_id";
     }
 
     //product Details
-    function productDetails($product_id) {
+    function productDetails($product_id, $custom_id = 0) {
         $this->db->where('id', $product_id);
         $query = $this->db->get('products');
         $product = $query->result_array();
         if (count($product)) {
             $productobj = $product[0];
+            if ($custom_id != 0) {
+                $this->db->where('id', $custom_id);
+                $query = $this->db->get('custome_items');
+                $customeitem = $query->row();
+                $productobj['price'] = $customeitem->price;
+                $productobj['regular_price'] = $customeitem->price;
+                $productobj['item_name'] = $customeitem->item_name;
+            }
             $productattr = $this->singleProductAttrs($productobj['id']);
             $productobj['attrs'] = $productattr;
 
@@ -287,7 +295,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('custom_measurement');
             $custom_measurement = $query->result_array();
-            
+
             $order_data['measurements_items'] = $custom_measurement;
 
             foreach ($cart_items as $key => $value) {
@@ -600,34 +608,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'remark' => "Order Confirmed, Now Payment Pending From Client Side.",
                 );
                 $this->db->insert('vendor_order_status', $vendor_order_status_data);
-
-//                $config = Array(
-//                    'protocol' => 'smtp',
-//                    'smtp_host' => 'ssl://smtp.googlemail.com',
-//                    'smtp_port' => 465,
-//                    'smtp_user' => 'noreplay2classapartstore@gmail.com',
-//                    'smtp_pass' => 'vjdsxubpqhrhahrj',
-//                    'mailtype' => 'html',
-//                    'charset' => 'iso-8859-1'
-//                );
-//                $this->load->library('email', $config);
-//                $this->email->set_newline("\r\n");
-//                $this->email->from('no_replay_classapartstore@gmail.com', 'Class Apart Store');
-//                $this->email->to($value['vendor']->email);
-//                $this->email->bcc('noreplay2classapartstore@gmail.com');
-//
-//
-//                $this->email->subject('Class Apart Sore Vendor Order No:' . $vendor_order . " Generated.");
-//
-//
-//                echo $this->load->view('Email/vender_order_mail', $value, true);
-//                $this->email->message($this->load->view('Email/vender_order_mail', $order_details, true));
-//                $this->email->print_debugger();
-//                try {
-//                  //  echo $result = $this->email->send();
-//                } catch (customException $e) {
-//                    
-//                }
             }
         }
     }
@@ -652,7 +632,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
         if ($user_id != 0) {
             $cartdata = $this->cartData($user_id);
-            $product_details = $this->productDetails($product_id);
+            $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
@@ -719,7 +699,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $session_cart['products'][$product_id]['total_price'] = $price;
                 $this->session->set_userdata('session_cart', $session_cart);
             } else {
-                $product_details = $this->productDetails($product_id);
+                $product_details = $this->productDetails($product_id, $item_id);
                 $product_dict = array(
                     'title' => $product_details['title'],
                     'price' => $product_details['price'],
@@ -753,7 +733,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_id = $value['product_id'];
             $item_id = $value['item_id'];
             $item_name = $value['item_name'];
-            $product_details = $this->productDetails($product_id);
+            $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
@@ -797,7 +777,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_id = $value['product_id'];
             $item_id = $value['item_id'];
             $item_name = $value['item_name'];
-            $product_details = $this->productDetails($product_id);
+            $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],

@@ -17,8 +17,14 @@ class Shop extends CI_Controller {
         $data["categories"] = $categories;
         $data["product_home_slider_bottom"] = $product_home_slider_bottom;
         
+        $this->db->where_in('id', array(0=>1,1=>2));
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->row();
+        
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
+        
+        print_r($customeitem);
 
         $this->load->view('home', $data);
     }

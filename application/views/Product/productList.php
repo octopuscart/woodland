@@ -188,7 +188,7 @@ foreach ($categorie_parent as $key => $value) {
                                             </a></h3>
                                         <span>
                                             <span ng-if="product.sale_price > 0"> {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>
-                                            {{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            {{<?php echo $item_price;?>|currency:"<?php echo globle_currency; ?> "}}</span>
                                     </div>
                                 </div>
                             </div>

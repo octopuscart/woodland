@@ -23,15 +23,21 @@ $this->load->view('layout/header');
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-              <h5 class="text-center">  By creating an account with our store, you will be able to move through
-                  the checkout process faster, store multiple shipping addresses,
-                  view and track your orders in your account and more.
-              </h5>
-                <h3  class="text-center">Or</h3>
+                <?php
+                if($next_link==='checkoutInit'){
+                ?>
                 <h5  class="text-center">
                     <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger">
                         <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
                     </a>
+                </h5>
+                <h3  class="text-center">Or</h3>
+                <?php
+                }
+                ?>
+                <h5 class="text-center">  By creating an account with our store, you will be able to move through
+                    the checkout process faster, store multiple shipping addresses,
+                    view and track your orders in your account and more.
                 </h5>
             </div>
             <?php
@@ -72,7 +78,7 @@ $this->load->view('layout/header');
                         <input type="email" name="email" placeholder="Email *">
                         <label>Password *</label>
                         <input type="password" class="pass" name="password" placeholder="Password">
-                         <label>Confirm Password *</label>
+                        <label>Confirm Password *</label>
                         <input type="password" class="con_pass" name="con_password" placeholder="Confirm Password">
 
 

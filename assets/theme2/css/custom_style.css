@@ -662,3 +662,7 @@ b.barcomb-list {
     border-radius: 0;
     background: red;
 }
+.btn{
+    /*border: 1px;*/
+    border-radius: 0px;
+}

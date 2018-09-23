@@ -5,7 +5,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 
-    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id;
+    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id+"/"+gcustome_id;
     $scope.product_quantity = 1;
 
 
@@ -411,7 +411,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                         animation: true,
                         onClose: function () {
                             console.log("asdfsadf");
-                            window.location = baseurl + "Cart/details";
+//                            window.location = baseurl + "Cart/details";
                         }
                     })
                 }, function () {

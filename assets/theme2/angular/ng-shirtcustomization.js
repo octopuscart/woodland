@@ -3,7 +3,7 @@
 
 App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
 
-    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id;
+    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id + "/"+gcustome_id;
     $scope.product_quantity = 1;
 
     var currencyfilter = $filter('currency');

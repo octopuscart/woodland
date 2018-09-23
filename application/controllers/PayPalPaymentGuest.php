@@ -169,13 +169,13 @@ class PayPalPaymentGuest extends CI_Controller {
 
                     //place order
 
-                    $address = $user_address_details[0];
+                    $address = $user_address_details;
 
                     $order_array = array(
                         'name' => $user_details['name'],
                         'email' => $user_details['email'],
                         'user_id' => 'guest',
-                        'contact_no' => $user_details->contact_no ? $user_details->contact_no : '---',
+                        'contact_no' => $user_details['contact_no'],
                         'zipcode' => $address['zipcode'],
                         'address1' => $address['address1'],
                         'address2' => $address['address2'],

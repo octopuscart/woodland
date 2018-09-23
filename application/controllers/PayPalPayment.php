@@ -327,18 +327,18 @@ class PayPalPayment extends CI_Controller {
                      */
 
                     echo '<pre>';
-                    print_r($httpParsedResponseAr);
+                //    print_r($httpParsedResponseAr);
                     echo '</pre>';
                 } else {
                     echo '<div style="color:red"><b>GetTransactionDetails failed:</b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
                     echo '<pre>';
-                    print_r($httpParsedResponseAr);
+                //    print_r($httpParsedResponseAr);
                     echo '</pre>';
                 }
             } else {
                 echo '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
                 echo '<pre>';
-                print_r($httpParsedResponseAr);
+             //   print_r($httpParsedResponseAr);
                 echo '</pre>';
             }
         }

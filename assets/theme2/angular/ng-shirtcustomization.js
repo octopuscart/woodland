@@ -322,12 +322,10 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                         imageUrl: rdata.data.file_name,
                         imageWidth: 100,
                         timer: 1500,
-//                 background: '#fff url(//bit.ly/1Nqn9HU)', 
                         imageAlt: 'Custom image',
                         showConfirmButton: false,
                         animation: true,
                         onClose: function () {
-                            console.log("asdfsadf");
                             window.location = baseurl + "Cart/details";
                         }
                     })

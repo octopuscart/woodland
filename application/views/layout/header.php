@@ -62,7 +62,12 @@
 
     </head>
 
-
+ <!--LOADER--> 
+            <div id="loader">
+                <div class="position-center-center">
+                    <div class="loader"></div>
+                </div>
+            </div>
     <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">
             <!--[if lt IE 8]>
@@ -70,12 +75,7 @@
             <![endif]-->
             <!-- Add your site or application content here -->
             <!-- Header Area Start Here -->
-            <!--LOADER--> 
-            <div id="loader">
-                <div class="position-center-center">
-                    <div class="loader"></div>
-                </div>
-            </div>
+           
 
 
             <script>

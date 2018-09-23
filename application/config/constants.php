@@ -12,9 +12,9 @@ switch ($baselink) {
         $baselinkmain = $baselink . '/bespoketailorhkadmin';
         break;
     default:
-        $baselinkmain = 'http://bespoketailorsadmin.costcointernational.com/';
+        $baselinkmain = '';
 }
-$baselinkmain = 'http://bespoketailorsadmin.costcointernational.com/';
+$baselinkmain = '';
 
 define('imageserver', $baselinkmain."assets_main/productimages/");
 

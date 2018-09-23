@@ -45,7 +45,7 @@ class PayPalPayment extends CI_Controller {
             $countitem++;
         }
 
-        $discountcalculate = $total_amt - 0.50;
+        $discountcalculate = $total_amt - 0.01;
 
         $total_amt = $total_amt - $discountcalculate;
         $total_amt = number_format($total_amt, 2, '.', '');

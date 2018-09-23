@@ -276,6 +276,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
         $query = $this->db->get('user_order');
         $order_details = $query->row();
+        
 
         if ($order_details) {
 

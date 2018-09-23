@@ -285,7 +285,7 @@ class PayPalPaymentGuest extends CI_Controller {
                    // $this->session->unset_userdata($newdata);
                    // $this->session->sess_destroy();
 
-                    redirect('Order/orderdetails/' . $orderkey);
+                    redirect('Order/orderdetailsguest/' . $orderkey);
 
                     $this->load->view('Cart/checkoutPayment', $data);
 

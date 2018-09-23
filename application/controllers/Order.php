@@ -30,6 +30,7 @@ class Order extends CI_Controller {
 
     //orders details
     public function orderdetails($order_key) {
+        
         if ($this->user_id == 0) {
             redirect('/');
         }
@@ -133,14 +134,11 @@ class Order extends CI_Controller {
     }
     
      public function orderdetailsguest($order_key) {
-      
+         echo $order_key;
+         echo "<br/>";
+         $order_key =  urldecode($order_key);
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-        $this->db->order_by('id', 'desc');
-        $this->db->where('order_id', $order_details['order_data']->id);
-        $query = $this->db->get('vendor_order');
-        $vendor_order = $query->result();
-
-
+        print_r($order_details);
         $file_newname = "";
         $this->db->where('active', 'yes');
         $query = $this->db->get('payment_barcode');
@@ -195,26 +193,6 @@ class Order extends CI_Controller {
             $this->db->insert('user_order_status', $orderstatus);
 
 
-            $this->db->where('order_id', $order_id);
-            $query = $this->db->get('vendor_order');
-            $vendor_order = $query->result();
-
-            foreach ($vendor_order as $key => $value) {
-                $vorder_id = $value->id;
-                $vendor_id = $value->vendor_id;
-
-                $vendor_order_status_data = array(
-                    'vendor_order_id' => $vorder_id,
-                    'vendor_id' => $vendor_id,
-                    'c_date' => date('Y-m-d'),
-                    'c_time' => date('H:i:s'),
-                    'status' => "Payment Done",
-                    'remark' => "Payment Done, and txn id. $paymentid",
-                    'description' => $description,
-                    'order_id' => $order_id
-                );
-                $this->db->insert('vendor_order_status', $vendor_order_status_data);
-            }
         }
 
 

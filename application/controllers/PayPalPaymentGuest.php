@@ -282,8 +282,8 @@ class PayPalPaymentGuest extends CI_Controller {
                         'logged_in' => FALSE,
                     );
 
-                    $this->session->unset_userdata($newdata);
-                    $this->session->sess_destroy();
+                   // $this->session->unset_userdata($newdata);
+                   // $this->session->sess_destroy();
 
                     redirect('Order/orderdetails/' . $orderkey);
 

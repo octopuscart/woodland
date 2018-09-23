@@ -67,7 +67,7 @@ class CartGuest extends CI_Controller {
         $query = $this->db->get('measurement');
         $custome_measurements = $query->result_array();
         $data['measurements_list'] = $custome_measurements;
-        if (isset($_POST['submit_measurement'])) {
+        if ($this->input->post('submit_measurement')) {
             $measurement_style = array(
                 'measurement_style' => $this->input->post('measurement_type'),
                 'measurement_dict' => array()

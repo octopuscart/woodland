@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class PayPalPayment extends CI_Controller {
+class PayPalPaymentTest extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -79,11 +79,9 @@ class PayPalPayment extends CI_Controller {
         $this->session->set_userdata('session_paypal', $paypaldata);
         $session_paypal = $this->session->userdata('session_paypal');
 
-        $httpParsedResponseAr = $this->paypalclass->PPHttpPost('SetExpressCheckout', $setexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
+//        $httpParsedResponseAr = $this->paypalclass->PPHttpPost('SetExpressCheckout', $setexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
 
-        if ("SUCCESS" == strtoupper($httpParsedResponseAr["ACK"]) || "SUCCESSWITHWARNING" == strtoupper($httpParsedResponseAr["ACK"])) {
-//Redirect user to PayPal store with Token received.
-            $paypalurl = 'https://www' . $PayPalMode . '.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=' . $httpParsedResponseAr["TOKEN"] . '';
+        if (1) {
             header('Location: ' . $paypalurl);
         } else {
 //Show error message
@@ -103,11 +101,11 @@ class PayPalPayment extends CI_Controller {
         $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
         $data = [];
         //Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID
-        if ($this->input->get("token") && $this->input->get("PayerID")) {
+        if ($this->input->get("token")) {
 //we will be using these two variables to execute the "DoExpressCheckoutPayment"
 //Note: we haven't received any payment yet.
-            $token = $this->input->get("token");
-            $payer_id = $this->input->get("PayerID");
+            $token = 123;
+            $payer_id = 1;
             $paypaldata = $this->session->userdata('session_paypal');
 
             $doexpresscheckout = '&TOKEN=' . urlencode($token) .
@@ -115,34 +113,16 @@ class PayPalPayment extends CI_Controller {
                     '&PAYMENTREQUEST_0_PAYMENTACTION=' . urlencode("SALE");
 //We need to execute the "DoExpressCheckoutPayment" at this point to Receive payment from user.
             $this->load->library('paypalclass');
-            $httpParsedResponseAr = $this->paypalclass->PPHttpPost('DoExpressCheckoutPayment', $doexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
+            //$httpParsedResponseAr = $this->paypalclass->PPHttpPost('DoExpressCheckoutPayment', $doexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
 //Check if everything went ok..
-            if ("SUCCESS" == strtoupper($httpParsedResponseAr["ACK"]) || "SUCCESSWITHWARNING" == strtoupper($httpParsedResponseAr["ACK"])) {
-                if (isset($httpParsedResponseAr["L_LONGMESSAGE0"])) {
-                    $long_message = urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]);
-                    $message = urldecode($httpParsedResponseAr["L_SHORTMESSAGE0"]);
-                    $error_code = urldecode($httpParsedResponseAr["L_ERRORCODE0"]);
-                } else {
-                    $long_message = 'Your Transaction ID : ' . urldecode($httpParsedResponseAr["PAYMENTINFO_0_TRANSACTIONID"]);
-                    $message = "Payment Success";
-                    $error_code = "0";
-                }
-                $payment_error_code = urldecode($httpParsedResponseAr["PAYMENTINFO_0_ERRORCODE"]);
-                $payment_status = urldecode($httpParsedResponseAr["PAYMENTINFO_0_PAYMENTSTATUS"]);
-                if ('Completed' == $httpParsedResponseAr["PAYMENTINFO_0_PAYMENTSTATUS"]) {
-                    // echo '<div style="color:green">Payment Received! Your product will be sent to you very soon!</div>';
-                } elseif ('Pending' == $httpParsedResponseAr["PAYMENTINFO_0_PAYMENTSTATUS"]) {
-                    echo '<div style="color:red">Transaction Complete, but payment is still pending! ' .
-                    'You need to manually authorize this payment in your <a target="_new" href="http://www.paypal.com">Paypal Account</a></div>';
-                }
+            if (1) {
+                
 
-// we can retrive transection details using either GetTransactionDetails or GetExpressCheckoutDetails
-// GetTransactionDetails requires a Transaction ID, and GetExpressCheckoutDetails requires Token returned by SetExpressCheckOut
                 $padata = '&TOKEN=' . urlencode($token);
 
-                $httpParsedResponseAr = $this->paypalclass->PPHttpPost('GetExpressCheckoutDetails', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
+//                $httpParsedResponseAr = $this->paypalclass->PPHttpPost('GetExpressCheckoutDetails', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
 
-                if ("SUCCESS" == strtoupper($httpParsedResponseAr["ACK"]) || "SUCCESSWITHWARNING" == strtoupper($httpParsedResponseAr["ACK"])) {
+                if (1) {
 
 
                     $measurement_style = $this->session->userdata('measurement_style');
@@ -183,9 +163,9 @@ class PayPalPayment extends CI_Controller {
                         'country' => $address['country'],
                         'order_date' => date('Y-m-d'),
                         'order_time' => date('H:i:s'),
-                        'amount_in_word' => $this->Product_model->convert_num_word(urldecode($httpParsedResponseAr["AMT"])),
-                        'sub_total_price' => urldecode($httpParsedResponseAr["AMT"]), //;$this->input->post('sub_total_price'),
-                        'total_price' => urldecode($httpParsedResponseAr["AMT"]),
+                        'amount_in_word' => $this->Product_model->convert_num_word(urldecode(100)),
+                        'sub_total_price' => 100, //;$this->input->post('sub_total_price'),
+                        'total_price' => 100,
                         'total_quantity' => $session_cart['total_quantity'],
                         'status' => 'Payment Completed',
                         'payment_mode' => 'PayPal',
@@ -246,31 +226,31 @@ class PayPalPayment extends CI_Controller {
 
 
 
-                    $array_payment = array(
-                        'c_date' => date('Y-m-d'),
-                        'c_time' => date('H:i:s'),
-                        'order_id' => $last_id,
-                        'status' => $payment_status . " Using PayPal",
-                        'user_id' => $this->user_id,
-                        'remark' => "Order Confirmed, Payment Made Using PayPay.",
-                        "txn_no" => urldecode($httpParsedResponseAr["TRANSACTIONID"]),
-                        "message" => $message,
-                        "long_message" => $long_message,
-                        "total_amount" => urldecode($httpParsedResponseAr["AMT"]),
-                        "currency_code" => urldecode($httpParsedResponseAr["COUNTRYCODE"]),
-                        "payment_status" => $payment_status,
-                        "payment_error_code" => $payment_error_code,
-                        "token" => urldecode($httpParsedResponseAr["TOKEN"]),
-                        "payer_id" => urldecode($httpParsedResponseAr["PAYERID"]),
-                        "payer_email" => urldecode($httpParsedResponseAr["EMAIL"]),
-                        "payer_info" => urldecode($httpParsedResponseAr["FIRSTNAME"]) . " " . urldecode($httpParsedResponseAr["LASTNAME"]),
-                        "currection_id" => urldecode($httpParsedResponseAr["CORRELATIONID"]),
-                        "ack" => urldecode($httpParsedResponseAr["ACK"]),
-                        "timestemp" => urldecode($httpParsedResponseAr["TIMESTAMP"]),
-                        "error_code" => $error_code,
-                        "checkoutstatus" => urldecode($httpParsedResponseAr["CHECKOUTSTATUS"]),
-                    );
-                    $this->db->insert('paypal_status', $array_payment);
+//                    $array_payment = array(
+//                        'c_date' => date('Y-m-d'),
+//                        'c_time' => date('H:i:s'),
+//                        'order_id' => $last_id,
+//                        'status' => $payment_status . " Using PayPal",
+//                        'user_id' => $this->user_id,
+//                        'remark' => "Order Confirmed, Payment Made Using PayPay.",
+//                        "txn_no" => urldecode($httpParsedResponseAr["TRANSACTIONID"]),
+//                        "message" => $message,
+//                        "long_message" => $long_message,
+//                        "total_amount" => urldecode($httpParsedResponseAr["AMT"]),
+//                        "currency_code" => urldecode($httpParsedResponseAr["COUNTRYCODE"]),
+//                        "payment_status" => $payment_status,
+//                        "payment_error_code" => $payment_error_code,
+//                        "token" => urldecode($httpParsedResponseAr["TOKEN"]),
+//                        "payer_id" => urldecode($httpParsedResponseAr["PAYERID"]),
+//                        "payer_email" => urldecode($httpParsedResponseAr["EMAIL"]),
+//                        "payer_info" => urldecode($httpParsedResponseAr["FIRSTNAME"]) . " " . urldecode($httpParsedResponseAr["LASTNAME"]),
+//                        "currection_id" => urldecode($httpParsedResponseAr["CORRELATIONID"]),
+//                        "ack" => urldecode($httpParsedResponseAr["ACK"]),
+//                        "timestemp" => urldecode($httpParsedResponseAr["TIMESTAMP"]),
+//                        "error_code" => $error_code,
+//                        "checkoutstatus" => urldecode($httpParsedResponseAr["CHECKOUTSTATUS"]),
+//                    );
+//                    $this->db->insert('paypal_status', $array_payment);
 
 
                     $order_status_data = array(
@@ -326,20 +306,20 @@ class PayPalPayment extends CI_Controller {
 
                      */
 
-                  //  echo '<pre>';
-                //    print_r($httpParsedResponseAr);
-                 //   echo '</pre>';
+                    //  echo '<pre>';
+                    //    print_r($httpParsedResponseAr);
+                    //   echo '</pre>';
                 } else {
-                  //  echo '<div style="color:red"><b>GetTransactionDetails failed:</b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
-                  //  echo '<pre>';
-                //    print_r($httpParsedResponseAr);
-                //    echo '</pre>';
+                    //  echo '<div style="color:red"><b>GetTransactionDetails failed:</b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
+                    //  echo '<pre>';
+                    //    print_r($httpParsedResponseAr);
+                    //    echo '</pre>';
                 }
             } else {
-              //  echo '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
+                //  echo '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
                 echo '<pre>';
-             //   print_r($httpParsedResponseAr);
-             //   echo '</pre>';
+                //   print_r($httpParsedResponseAr);
+                //   echo '</pre>';
             }
         }
         $this->load->view('paypal/cancel', $data);

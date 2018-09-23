@@ -30,9 +30,11 @@ class Shop extends CI_Controller {
         $this->load->view('home', $data);
     }
     public function contactus() {
-      
-
         $this->load->view('pages/contactus');
+    }
+    
+     public function aboutus() {
+        $this->load->view('pages/aboutus');
     }
 
 }

@@ -311,7 +311,7 @@
                                                 <li class="active"><a href="#">Home</a>
                                                     <ul>
                                                         <li><a href="#">FAQ'S</a></li>
-                                                        <li><a href="#">About Us</a></li>
+                                                        <li><a href="<?php echo site_url("Shop/aboutus")?>">About Us</a></li>
                                                     </ul>
                                                 </li>
                                                 <li ><a href="#">Order Now</a>

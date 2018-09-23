@@ -149,7 +149,7 @@ $this->load->view('layout/header');
                                         <!--front button-->
                                         <!--<img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/front_button.png" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Front'].show_buttons == 'true'">-->
 
-                                        <img src="<?php echo custome_image_server; ?>/overlay/button_front0001.png" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Front'].show_buttons == 'true'">
+                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/button_front0001.png" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Front'].show_buttons == 'true'">
 
 
 

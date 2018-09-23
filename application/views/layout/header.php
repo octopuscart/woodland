@@ -62,12 +62,12 @@
 
     </head>
 
- <!--LOADER--> 
-            <div id="loader">
-                <div class="position-center-center">
-                    <div class="loader"></div>
-                </div>
-            </div>
+    <!--LOADER--> 
+    <div id="loader">
+        <div class="position-center-center">
+            <div class="loader"></div>
+        </div>
+    </div>
     <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">
             <!--[if lt IE 8]>
@@ -75,7 +75,7 @@
             <![endif]-->
             <!-- Add your site or application content here -->
             <!-- Header Area Start Here -->
-           
+
 
 
             <script>
@@ -111,8 +111,26 @@
                                 <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
                                     <div class="account-wishlist">
                                         <ul>
-                                            <li><a href="<?php echo site_url('Account/profile'); ?>"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
-                                            <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
+                                            <?php
+                                            $session_data = $this->session->userdata('logged_in');
+                                            if (isset($session_data['login_id'])) {
+                                                ?>
+                                                <li><a href="<?php echo site_url('Account/profile'); ?>">
+                                                    <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
+                                                </li>
+                                                <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                  <li><a href="<?php echo site_url('Account/profile'); ?>">
+                                                        <i class="fa fa-lock" aria-hidden="true"></i> Account</a>
+                                                </li>
+                                                <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
+                                               
+
+                                                <?php
+                                            }
+                                            ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -120,9 +138,7 @@
 
 
                                     <?php
-                                  
                                     $logoimg = "logo73.png";
-                                   
                                     ?>
 
                                     <div class="logo-area">
@@ -290,7 +306,7 @@
                                                 <li class="active"><a href="#">Home</a>
                                                     <ul>
                                                         <li><a href="#">FAQ'S</a></li>
-                                                        <li><a href="<?php echo site_url("Shop/aboutus")?>">About Us</a></li>
+                                                        <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
                                                     </ul>
                                                 </li>
                                                 <li ><a href="#">Order Now</a>

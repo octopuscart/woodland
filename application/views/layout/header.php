@@ -120,30 +120,9 @@
 
 
                                     <?php
-                                    $logoref = $_GET['logo'];
+                                  
                                     $logoimg = "logo73.png";
-                                    switch ($logoref) {
-                                        case "1":
-                                            $logoimg = "logo731.png";
-                                            break;
-                                        case "2":
-                                            $logoimg = "logo732.png";
-                                            break;
-                                        case "3":
-                                            $logoimg = "logo733.png";
-                                            break;
-                                        case "4":
-                                            $logoimg = "logo734.png";
-                                            break;
-                                        case "5":
-                                            $logoimg = "logo735.png";
-                                            break;
-                                        case "6":
-                                            $logoimg = "logo736.png";
-                                            break;
-                                        default:
-                                            $logoimg = "logo73.png";
-                                    }
+                                   
                                     ?>
 
                                     <div class="logo-area">

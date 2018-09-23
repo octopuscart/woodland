@@ -25,8 +25,8 @@ class PayPalPaymentTestGuest extends CI_Controller {
         } else {
             $session_cart = $this->Product_model->cartData();
         }
-        $PayPalReturnURL = site_url("PayPalPayment/success");
-        $PayPalCancelURL = site_url("PayPalPayment/cancel");
+        $PayPalReturnURL = site_url("PayPalPaymentTestGuest/success");
+        $PayPalCancelURL = site_url("PayPalPaymentTestGuest/cancel");
 
         $paypaldata = "";
         $products = $session_cart['products'];
@@ -81,16 +81,7 @@ class PayPalPaymentTestGuest extends CI_Controller {
 
 //        $httpParsedResponseAr = $this->paypalclass->PPHttpPost('SetExpressCheckout', $setexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
 
-        if (1) {
-            header('Location: ' . $paypalurl);
-        } else {
-//Show error message
-//            print_r($httpParsedResponseAr);
-
-            $data["error"] = '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
-            $this->load->view('paypal/error', $data);
-        }
-        $this->load->view('paypal/process', $data);
+        header('Location: ' . $PayPalReturnURL);
     }
 
     public function success() {
@@ -101,26 +92,14 @@ class PayPalPaymentTestGuest extends CI_Controller {
         $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
         $data = [];
         //Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID
-        if ($this->input->get("token")) {
-//we will be using these two variables to execute the "DoExpressCheckoutPayment"
-//Note: we haven't received any payment yet.
-            $token = 123;
-            $payer_id = 1;
-            $paypaldata = $this->session->userdata('session_paypal');
-
-            $doexpresscheckout = '&TOKEN=' . urlencode($token) .
-                    '&PAYERID=' . urlencode($payer_id) .
-                    '&PAYMENTREQUEST_0_PAYMENTACTION=' . urlencode("SALE");
-//We need to execute the "DoExpressCheckoutPayment" at this point to Receive payment from user.
-            $this->load->library('paypalclass');
-            //$httpParsedResponseAr = $this->paypalclass->PPHttpPost('DoExpressCheckoutPayment', $doexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
-//Check if everything went ok..
+        if (1) {
             if (1) {
+               
 
+// we can retrive transection details using either GetTransactionDetails or GetExpressCheckoutDetails
+// GetTransactionDetails requires a Transaction ID, and GetExpressCheckoutDetails requires Token returned by SetExpressCheckOut
+                $padata = 1;
 
-                $padata = '&TOKEN=' . urlencode($token);
-
-//                $httpParsedResponseAr = $this->paypalclass->PPHttpPost('GetExpressCheckoutDetails', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
 
                 if (1) {
 
@@ -135,7 +114,6 @@ class PayPalPaymentTestGuest extends CI_Controller {
                         $session_cart = $this->Product_model->cartData();
                     }
 
-
                     $measurement_style = $this->session->userdata('measurement_style');
                     $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -145,8 +123,6 @@ class PayPalPaymentTestGuest extends CI_Controller {
                     $user_details = $this->session->userdata('customer_inforamtion');
                     $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
 
-                    $sub_total_price = $session_cart['total_price'];
-                    $total_quantity = $session_cart['total_quantity'];
 
 
 
@@ -155,10 +131,10 @@ class PayPalPaymentTestGuest extends CI_Controller {
                     $address = $user_address_details;
 
                     $order_array = array(
-                        'name' => $user_details->first_name . " " . $user_details->last_name,
-                        'email' => $user_details->email,
-                        'user_id' => $user_details->id,
-                        'contact_no' => $user_details->contact_no ? $user_details->contact_no : '---',
+                        'name' => $user_details['name'],
+                        'email' => $user_details['email'],
+                        'user_id' => 'guest',
+                        'contact_no' =>$user_details['contact_no'],
                         'zipcode' => $address['zipcode'],
                         'address1' => $address['address1'],
                         'address2' => $address['address2'],
@@ -168,8 +144,8 @@ class PayPalPaymentTestGuest extends CI_Controller {
                         'order_date' => date('Y-m-d'),
                         'order_time' => date('H:i:s'),
                         'amount_in_word' => $this->Product_model->convert_num_word(urldecode(100)),
-                        'sub_total_price' => 100, //;$this->input->post('sub_total_price'),
-                        'total_price' => 100,
+                        'sub_total_price' => urldecode(100), //;$this->input->post('sub_total_price'),
+                        'total_price' => urldecode(100),
                         'total_quantity' => $session_cart['total_quantity'],
                         'status' => 'Payment Completed',
                         'payment_mode' => 'PayPal',
@@ -177,7 +153,7 @@ class PayPalPaymentTestGuest extends CI_Controller {
                         'credit_price' => $this->input->post('credit_price') || 0,
                     );
 
-                    // $this->db->insert('user_order', $order_array);
+                    $this->db->insert('user_order', $order_array);
                     $last_id = $this->db->insert_id();
                     $orderno = "OCT" . date('Y/m/d') . "/" . $last_id;
                     $orderkey = md5($orderno);
@@ -188,10 +164,15 @@ class PayPalPaymentTestGuest extends CI_Controller {
 
 
 
-                    $this->db->set('order_id', $last_id);
-                    $this->db->where('order_id', '0');
-                    $this->db->where('user_id', $this->user_id);
-                    // $this->db->update('cart');
+                    $this->Product_model->cartOperationCustomCopyOrder($last_id);
+
+                    $custome_items = $session_cart['custome_items'];
+                    $custome_items_ids = implode(", ", $custome_items);
+                    $custome_items_ids_profile = implode("", $custome_items);
+                    $custome_items_nameslist = $session_cart['custome_items_name'];
+                    $custome_items_names = implode(", ", $custome_items_nameslist);
+
+                    $measurement_style_array = $measurement_style['measurement_dict'];
 
                     $custome_items = $session_cart['custome_items'];
                     $custome_items_ids = implode(", ", $custome_items);
@@ -202,17 +183,6 @@ class PayPalPaymentTestGuest extends CI_Controller {
                     $measurement_style_array = $measurement_style['measurement_dict'];
 
                     if (count($measurement_style_array)) {
-                        $order_measurement_profile = array(
-                            'datetime' => date('Y-m-d H:i:s'),
-                            'order_id' => $last_id,
-                            'measurement_items' => $custome_items_names,
-                            'measurement_items_id' => $custome_items_ids,
-                            'user_id' => $this->user_id,
-                            'display_index' => '1',
-                            "profile" => "MES/" . $this->user_id . "/" . $custome_items_ids_profile . "/" . $last_id,
-                        );
-                        //   $this->db->insert('custom_measurement_profile', $order_measurement_profile);
-                        $mprofile_id = $this->db->insert_id();
                         $display_index = 1;
                         foreach ($measurement_style_array as $key => $value) {
                             $custom_array = array(
@@ -220,9 +190,9 @@ class PayPalPaymentTestGuest extends CI_Controller {
                                 'measurement_value' => $value,
                                 'display_index' => $display_index,
                                 'order_id' => $last_id,
-                                'custom_measurement_profile' => $mprofile_id
+                                'custom_measurement_profile' => 'guest'
                             );
-                            //  $this->db->insert('custom_measurement', $custom_array);
+                            $this->db->insert('custom_measurement', $custom_array);
                             $display_index++;
                         }
                     }
@@ -230,72 +200,59 @@ class PayPalPaymentTestGuest extends CI_Controller {
 
 
 
-//                    $array_payment = array(
-//                        'c_date' => date('Y-m-d'),
-//                        'c_time' => date('H:i:s'),
-//                        'order_id' => $last_id,
-//                        'status' => $payment_status . " Using PayPal",
-//                        'user_id' => $this->user_id,
-//                        'remark' => "Order Confirmed, Payment Made Using PayPay.",
-//                        "txn_no" => urldecode($httpParsedResponseAr["TRANSACTIONID"]),
-//                        "message" => $message,
-//                        "long_message" => $long_message,
-//                        "total_amount" => urldecode($httpParsedResponseAr["AMT"]),
-//                        "currency_code" => urldecode($httpParsedResponseAr["COUNTRYCODE"]),
-//                        "payment_status" => $payment_status,
-//                        "payment_error_code" => $payment_error_code,
-//                        "token" => urldecode($httpParsedResponseAr["TOKEN"]),
-//                        "payer_id" => urldecode($httpParsedResponseAr["PAYERID"]),
-//                        "payer_email" => urldecode($httpParsedResponseAr["EMAIL"]),
-//                        "payer_info" => urldecode($httpParsedResponseAr["FIRSTNAME"]) . " " . urldecode($httpParsedResponseAr["LASTNAME"]),
-//                        "currection_id" => urldecode($httpParsedResponseAr["CORRELATIONID"]),
-//                        "ack" => urldecode($httpParsedResponseAr["ACK"]),
-//                        "timestemp" => urldecode($httpParsedResponseAr["TIMESTAMP"]),
-//                        "error_code" => $error_code,
-//                        "checkoutstatus" => urldecode($httpParsedResponseAr["CHECKOUTSTATUS"]),
-//                    );
-//                    $this->db->insert('paypal_status', $array_payment);
+                    $array_payment = array(
+                        'c_date' => date('Y-m-d'),
+                        'c_time' => date('H:i:s'),
+                        'order_id' => $last_id,
+                        'status' => $payment_status . " Using PayPal",
+                        'user_id' => 'guest',
+                        'remark' => "Order Confirmed, Payment Made Using PayPay.",
+                        "txn_no" => urldecode($httpParsedResponseAr["TRANSACTIONID"]),
+                        "message" => $message,
+                        "long_message" => $long_message,
+                        "total_amount" => urldecode($httpParsedResponseAr["AMT"]),
+                        "currency_code" => urldecode($httpParsedResponseAr["COUNTRYCODE"]),
+                        "payment_status" => $payment_status,
+                        "payment_error_code" => $payment_error_code,
+                        "token" => urldecode($httpParsedResponseAr["TOKEN"]),
+                        "payer_id" => urldecode($httpParsedResponseAr["PAYERID"]),
+                        "payer_email" => urldecode($httpParsedResponseAr["EMAIL"]),
+                        "payer_info" => urldecode($httpParsedResponseAr["FIRSTNAME"]) . " " . urldecode($httpParsedResponseAr["LASTNAME"]),
+                        "currection_id" => urldecode($httpParsedResponseAr["CORRELATIONID"]),
+                        "ack" => urldecode($httpParsedResponseAr["ACK"]),
+                        "timestemp" => urldecode($httpParsedResponseAr["TIMESTAMP"]),
+                        "error_code" => $error_code,
+                        "checkoutstatus" => urldecode($httpParsedResponseAr["CHECKOUTSTATUS"]),
+                    );
+                    $this->db->insert('paypal_status', $array_payment);
+
 
 
                     $order_status_data = array(
                         'c_date' => date('Y-m-d'),
                         'c_time' => date('H:i:s'),
                         'order_id' => $last_id,
-                        'status' => $payment_status . " Using PayPal",
-                        'user_id' => $this->user_id,
+                        'status' => "Order Confirmed",
+                        'user_id' => "guest",
                         'remark' => "Order Confirmed, Payment Made Using PayPay.",
                     );
-                    // $this->db->insert('user_order_status', $order_status_data);
-//                    $this->Product_model->order_to_vendor($last_id);
-                    // redirect('Order/orderdetails/' . $orderkey);
-//                    $this->load->view('Cart/checkoutPayment', $data);
-// echo '<br /><b>Stuff to store in database :</b><br /><pre>';
-                    /*
-                      #### SAVE BUYER INFORMATION IN DATABASE ###
-                      //see (http://www.sanwebe.com/2013/03/basic-php-mysqli-usage) for mysqli usage
+                    $this->db->insert('user_order_status', $order_status_data);
 
-                      $buyerName = $httpParsedResponseAr["FIRSTNAME"].' '.$httpParsedResponseAr["LASTNAME"];
-                      $buyerEmail = $httpParsedResponseAr["EMAIL"];
+                    $newdata = array(
+                        'username' => '',
+                        'password' => '',
+                        'logged_in' => FALSE,
+                    );
 
-                      //Open a new connection to the MySQL server
-                      $mysqli = new mysqli('host','username','password','database_name');
+                    //$this->session->unset_userdata($newdata);
+                    //$this->session->sess_destroy();
 
-                      //Output any connection error
-                      if ($mysqli->connect_error) {
-                      die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-                      }
 
-                      $insert_row = $mysqli->query("INSERT INTO BuyerTable
-                      (BuyerName,BuyerEmail,TransactionID,ItemName,ItemNumber, ItemAmount,ItemQTY)
-                      VALUES ('$buyerName','$buyerEmail','$transactionID','$ItemName',$ItemNumber, $ItemTotalPrice,$ItemQTY)");
+                  //  redirect('Order/orderdetails/' . $orderkey);
 
-                      if($insert_row){
-                      print 'Success! ID of last inserted record is : ' .$mysqli->insert_id .'<br />';
-                      }else{
-                      die('Error : ('. $mysqli->errno .') '. $mysqli->error);
-                      }
 
-                     */
+
+                    $this->load->view('Cart/checkoutPayment', $data);
 
                     //  echo '<pre>';
                     //    print_r($httpParsedResponseAr);

@@ -142,7 +142,7 @@ $this->load->view('layout/header');
                                         <h3><i class="fa fa-user"></i> <?php echo $user_details['name']; ?> </h3>
                                         <p class="address_guest_p"><i class="fa fa-phone"></i> <?php echo $user_details['contact_no']; ?> </p>
                                         <p class="address_guest_p"><i class="fa fa-envelope"></i> <?php echo $user_details['email']; ?> </p>
-                                        <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $value['city']); ?>" class="btn btn-danger address_button btn-sm "><i class ="fa fa-times"></i> Remove Address</a>
+                                        <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $user_details['email']); ?>" class="btn btn-danger address_button btn-sm "><i class ="fa fa-times"></i> Remove Address</a>
                                     </div>
 
                                     <?php

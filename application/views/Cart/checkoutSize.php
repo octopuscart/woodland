@@ -2,7 +2,6 @@
 $this->load->view('layout/header');
 ?>
 
-<link rel="stylesheet" href="http://192.168.1.2/bespoketailorshk/assets/theme/css/bootstrap.vertical-tabs.css">
 
 
 <style>

@@ -267,16 +267,13 @@ class PayPalPaymentGuest extends CI_Controller {
                     );
                     $this->db->insert('paypal_status', $array_payment);
 
-
-
                     $order_status_data = array(
                         'c_date' => date('Y-m-d'),
                         'c_time' => date('H:i:s'),
                         'order_id' => $last_id,
                         'status' => "Order Confirmed",
                         'user_id' => 'guest',
-                        'remark' => "Order Confirmed By Customer Using " . $paymentmathod . ", Now Waiting for payment",
-                    );
+                        'remark' => "Order Confirmed, Payment Made Using PayPay.",);
                     $this->db->insert('user_order_status', $order_status_data);
 
                     $newdata = array(
@@ -288,10 +285,7 @@ class PayPalPaymentGuest extends CI_Controller {
                     $this->session->unset_userdata($newdata);
                     $this->session->sess_destroy();
 
-
                     redirect('Order/orderdetails/' . $orderkey);
-
-
 
                     $this->load->view('Cart/checkoutPayment', $data);
 

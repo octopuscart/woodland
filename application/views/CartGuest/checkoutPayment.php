@@ -1,5 +1,6 @@
 <?php
 $this->load->view('layout/header');
+print_r($_SESSION);
 ?>
 
 <style>

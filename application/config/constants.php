@@ -26,7 +26,7 @@ define('globle_currency_type', 'US$ ');
  
 define('globle_currency', 'US$ ');
 
-define('site_mail_logo', 'http://bespoketailorshk.costcointernational.com/assets/images/logo73.png');
+define('site_mail_logo', $baselinkmain.'/assets/images/logo73.png');
 
 
 

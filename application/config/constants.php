@@ -12,7 +12,7 @@ switch ($baselink) {
         $baselinkmain = $baselink . '/bespoketailorhkadmin';
         break;
     default:
-        $baselinkmain = '';
+        $baselinkmain = 'http://www.bespoketailorshk.com/';
 }
 $baselinkmain = 'http://bespoketailorsadmin.costcointernational.com/';
 

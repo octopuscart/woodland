@@ -83,7 +83,7 @@ foreach ($sliders as $key => $value) {
                 ?>
                 <div class="product-box1">
                     <ul class="product-social" style="">
-                        <li><a href="<?php echo site_url("Product/customizationRedirect/" . $shirtcustome->id) ?>/<?php echo $value['id']; ?>"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+                        <li><a href="<?php echo site_url("Product/customizationRedirect/" . $shirtcustome->id) ?>/<?php echo $value['id']; ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 
                     </ul>
                     <div class="product-img-holder">
@@ -156,7 +156,7 @@ foreach ($sliders as $key => $value) {
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale">
                     <div class="product-box1">
                         <ul class="product-social">
-                            <li><a href="<?php echo site_url("Product/customizationRedirect/" . $suitcustome->id) ?>/<?php echo $value['id']; ?>"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+                            <li><a href="<?php echo site_url("Product/customizationRedirect/" . $suitcustome->id) ?>/<?php echo $value['id']; ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 
                         </ul>
                         <div class="product-img-holder">

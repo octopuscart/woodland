@@ -253,7 +253,7 @@ $image2 = "";
                                             </div>
                                             <ul class="product-box2-cart" style="    margin-top: 0px;">
                                                 <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>-->
-                                                <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i> Customize Now</a></li>
+                                                <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Customize Now</a></li>
                                                 <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>

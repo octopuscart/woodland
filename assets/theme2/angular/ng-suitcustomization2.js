@@ -348,6 +348,11 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         }
     }
 
+$scope.changeViews = function (viewtype) {
+       
+            $scope.screencustom.view_type = viewtype;
+        
+    }
 
     //add to cart
     $scope.addToCartCustome = function () {

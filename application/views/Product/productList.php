@@ -9,7 +9,14 @@ foreach ($categorie_parent as $key => $value) {
     $liobj = "<li><a href='" . site_url("Product/ProductList/" . $catid) . "'>$cattitle</a></li>";
     array_push($linklist, $liobj);
 }
+
+
+
+$image1 = "";
+$image2 = "";
 ?>
+
+
 
 
 <!-- Inner Page Banner Area Start Here -->
@@ -55,7 +62,7 @@ foreach ($categorie_parent as $key => $value) {
                                     ?>  
 
                                     <li>
-                                        <a href="<?php echo site_url("Product/ProductList/".$custom_id."/" . $value['id']); ?>">
+                                        <a href="<?php echo site_url("Product/ProductList/" . $custom_id . "/" . $value['id']); ?>">
                                             <i class="flaticon-left-arrow"></i>
                                             <?php echo $value['category_name']; ?>
 
@@ -97,15 +104,15 @@ foreach ($categorie_parent as $key => $value) {
                         <?php
                     }
                     ?>
-<!--                    <h2 class="title-sidebar product_attr_h2">FILTER BY PRICE</h2>
-                    <div id="price-range-wrapper" class="price-range-wrapper">
-                        <div id="price-range-filter"></div>
-                        <div class="price-range-select">
-                            <div class="price-range" id="price-range-min">{{productResults.price.minprice}}</div>
-                            <div class="price-range" id="price-range-max">{{productResults.price.maxprice}}</div>
-                        </div>
-                        <button class="btn-services-shop-now" type="button" ng-click="filterPrice()">Filter</button>
-                    </div>-->
+                    <!--                    <h2 class="title-sidebar product_attr_h2">FILTER BY PRICE</h2>
+                                        <div id="price-range-wrapper" class="price-range-wrapper">
+                                            <div id="price-range-filter"></div>
+                                            <div class="price-range-select">
+                                                <div class="price-range" id="price-range-min">{{productResults.price.minprice}}</div>
+                                                <div class="price-range" id="price-range-max">{{productResults.price.maxprice}}</div>
+                                            </div>
+                                            <button class="btn-services-shop-now" type="button" ng-click="filterPrice()">Filter</button>
+                                        </div>-->
 
                     <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" ng-if="attrv.length > 1">
                         <!-- HEADING -->
@@ -161,19 +168,47 @@ foreach ($categorie_parent as $key => $value) {
                         <div role="tabpanel" class="tab-pane active clear products-container" id="gried-view"> 
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
                                 <div class="product-box1">
-                                    <ul class="product-social">
-                                        <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>-->
-                                        <li><a href="<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/'+product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                    <ul class="product-social" style="background: url(<?php echo custome_image_server; ?>/pant/output/{{product.folder}}/pant_style0001.png);top:0px;    height: 264px;padding:40% 0px;
+                                        background-size: cover;">
+                                                                            <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>-->
+                                        <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                     </ul>
                                     <div class="product-img-holder">
                                         <div class="hot-sale" ng-if="product.sale_price > 0">
                                             <span>Sale</span>
                                         </div>
                                         <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">-->
 
-                                            <img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">
+                                            <?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">
+                                                    <?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">
+                                                    <?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/pant/output/{{product.folder}}/pant_style10001.png" alt="product">
+                                                    <?php
+                                                    break;
+                                                case "4":
+                                                   ?>
+                                                    <img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">
+                                                    <?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>
+
+                                            <!---->
+
 
                                             <!--<div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver; ?>{{product.file_name2}});"></div>-->
 
@@ -188,7 +223,7 @@ foreach ($categorie_parent as $key => $value) {
                                             </a></h3>
                                         <span>
                                             <span ng-if="product.sale_price > 0"> {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>
-                                            {{<?php echo $item_price;?>|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            {{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -196,12 +231,14 @@ foreach ($categorie_parent as $key => $value) {
                         </div>
                         <!-- List Style -->
                         <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
-                            <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products" style="    height: 225px;">
-                                <div class="product-box2" style="    height: auto!important;">
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products">
+                                <div class="product-box2" style="height: auto;">
                                     <div class="media">
                                         <a class="pull-left" href="#">
                                             <!--<img class="img-responsive" src="img/product/grid/1.jpg" alt="product" />-->
-                                            <div class="product_image_back product_image_back_list" style="background: url(<?php echo imageserver; ?>{{product.file_name2}});"></div>
+                                            <div class="product_image_back product_image_back_list" style="background: url(<?php echo custome_image_server; ?>/pant/output/{{product.folder}}/pant_style20001.png);"></div>
 
                                         </a>
                                         <div class="media-body">
@@ -216,12 +253,13 @@ foreach ($categorie_parent as $key => $value) {
                                             </div>
                                             <ul class="product-box2-cart" style="    margin-top: 0px;">
                                                 <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>-->
-                                                <li><a href="<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i> Customize Now</a></li>
-                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/")?><?php echo $custom_id;?>/'+product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-cog" aria-hidden="true"></i> Customize Now</a></li>
+                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+                                <div style="clear: both"></div>
                             </div>
 
                         </div>

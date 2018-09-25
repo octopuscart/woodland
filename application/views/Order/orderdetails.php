@@ -193,7 +193,7 @@ $paymentstatus = "";
 
                                         <h4 class="panel-title">
                                             <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne">
-                                                View Summery
+                                                View Summary
                                             </a>
                                         </h4>
                                         </div>

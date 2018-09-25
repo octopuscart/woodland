@@ -277,11 +277,11 @@
             var mHeight = 0;
             $(this).children('div').children('div').height('auto');
             $(this).children('div').each(function () {
-                var itemHeight = $(this).actual('height');
-                if (itemHeight > mHeight) {
-                    mHeight = itemHeight;
-                }
-                $(this).children('div').height(mHeight + 'px');
+//                var itemHeight = $(this).actual('height');
+//                if (itemHeight > mHeight) {
+//                    mHeight = itemHeight;
+//                }
+//                $(this).children('div').height(mHeight + 'px');
             });
         });
     }
@@ -291,9 +291,9 @@
      -------------------------------------*/
     $(window).on('load', function () {
         // Page Preloader
-        $('#preloader').fadeOut('slow', function () {
-            $(this).remove();
-        });
+//        $('#preloader').fadeOut('slow', function () {
+//            $(this).remove();
+//        });
 
         //jQuery for Isotope initialization
         var $container = $('#home-isotope');

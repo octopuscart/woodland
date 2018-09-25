@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/wamp/www/bespoketailorshk/application/views/layout/header.php</file>
             <file>file:/C:/wamp/www/bespoketailorshk/application/config/constants.php</file>
+            <file>file:/C:/wamp/www/bespoketailorshk/application/config/config.php</file>
             <file>file:/C:/wamp/www/bespoketailorshk/application/models/Product_model.php</file>
         </group>
     </open-files>

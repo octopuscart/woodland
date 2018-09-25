@@ -68,6 +68,12 @@
             <div class="loader"></div>
         </div>
     </div>
+    
+    
+    <!-- Modal Dialog Box End Here-->
+<!-- Preloader Start Here -->
+<div id="preloader"></div>
+<!-- Preloader End Here -->
     <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">
             <!--[if lt IE 8]>
@@ -79,13 +85,15 @@
 
 
             <script>
+
+
                 var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
                 //$interpolateProvider.startSymbol('{$');
                 //$interpolateProvider.endSymbol('$}');
                 $httpProvider.defaults.headers.common = {};
                         $httpProvider.defaults.headers.post = {};
                 });
-                        var baseurl = "<?php echo base_url(); ?>";
+                        var baseurl = "<?php echo site_url(); ?>";
                         var imageurlg = "<?php echo imageserver; ?>";
                         var globlecurrency = "<?php echo globle_currency; ?>";
                         var avaiblecredits = 0;</script>
@@ -116,17 +124,17 @@
                                             if (isset($session_data['login_id'])) {
                                                 ?>
                                                 <li><a href="<?php echo site_url('Account/profile'); ?>">
-                                                    <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
+                                                        <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
                                                 </li>
                                                 <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
                                                 <?php
                                             } else {
                                                 ?>
-                                                  <li><a href="<?php echo site_url('Account/profile'); ?>">
+                                                <li><a href="<?php echo site_url('Account/profile'); ?>">
                                                         <i class="fa fa-lock" aria-hidden="true"></i> Account</a>
                                                 </li>
                                                 <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
-                                               
+
 
                                                 <?php
                                             }
@@ -169,7 +177,7 @@
 
                                         <li>
                                             <div class="cart-area">
-                                                <a href="#"><i class="fa fa-shopping-cart" style="color: black;" aria-hidden="true"></i><span style="background: #f01211">{{globleCartData.total_quantity}}</span></a>
+                                                <a href="#"><i class="fa fa-shopping-cart"  aria-hidden="true"></i><span style="background: #f01211">{{globleCartData.total_quantity}}</span></a>
                                                 <ul ng-if="globleCartData.total_quantity">
                                                     <li  ng-repeat="product in globleCartData.products">
 
@@ -271,13 +279,12 @@
                                                         }
                                                         ?>
                                                     </ul>
-                                                    <h3 class="ctg-name-title">Category Name List</h3>
+                                                    <h3 class="ctg-name-title">Order Now</h3>
                                                     <ul class="sidenav-nav">
-                                                        <li ng-repeat="catv in categoriesMenu">
-                                                            <a href="<?php echo site_url("Product/ProductList/"); ?>{{catv.id}}" >
-                                                                <i class="flaticon-left-arrow"></i>{{catv.category_name}}
-                                                            </a>
-                                                        </li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
 
                                                     </ul>
                                                     <!-- times-->
@@ -326,7 +333,7 @@
                                         </nav>
                                     </div>
                                     <div class="cart_header_stick">
-                                        <i class="fa fa-shopping-cart" style="color: black;" aria-hidden="true"></i><span>{{globleCartData.total_quantity}}</span>
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>{{globleCartData.total_quantity}}</span>
                                     </div>
                                 </div>
                             </div>

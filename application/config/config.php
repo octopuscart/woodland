@@ -56,7 +56,7 @@ $config['base_url'] = $baselinkmain;
   | variable so that it is blank.
   |
  */
-$config['index_page'] =  strpos($baselink, '192.168') ?  'index.php' : '';
+$config['index_page'] =  strpos($baselink, '192.168') ?  'index.php/' : '';
 
 /*
   |--------------------------------------------------------------------------

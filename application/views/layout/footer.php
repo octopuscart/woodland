@@ -189,10 +189,7 @@
 </div>
 </div>
 
-<!-- Modal Dialog Box End Here-->
-<!-- Preloader Start Here -->
-<div id="preloader"></div>
-<!-- Preloader End Here -->
+
 
 
 <!-- jquery-->
@@ -248,6 +245,15 @@
 
 
 <script>
+    $(window).on('load', function () {
+                // Page Preloader
+                $('#preloader').fadeOut('slow', function () {
+                    setTimeout(function(){
+//                       $(this).remove();  
+                    }, 3000)
+               
+                });
+                });
                                                     $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
 </script>
 

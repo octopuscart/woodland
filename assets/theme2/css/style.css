@@ -6557,12 +6557,14 @@ ul {
 19.3 Shop Product Box2 styles 
 ---------------------------------------*/
 .product-box2 {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+     height: auto!important;
 }
 @media only screen and (max-width: 479px) {
     .product-box2 {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
+        height: auto!important;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -6600,7 +6602,7 @@ ul {
 }
 .product-box2 .media-body {
     text-align: left;
-    padding: 8px 30px 0 20px;
+    padding: 21px 30px 0px 20px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .product-box2 .media-body {

@@ -543,6 +543,7 @@ p.selected-element-title_text_price{
     }
     .shirtcontainer{
         height: 380px;
+            margin-top: 80px;
     }
 
     header .logo img {
@@ -550,6 +551,11 @@ p.selected-element-title_text_price{
         height: 47px;
         position: relative;
     }
+    
+    .customization_items::-webkit-scrollbar {
+    width: 4px!important;
+    background-color: #cbc9c9;
+}
 
 }
 

@@ -62,18 +62,25 @@
 
     </head>
 
-    <!--LOADER--> 
-    <div id="loader">
-        <div class="position-center-center">
-            <div class="loader"></div>
-        </div>
-    </div>
-    
-    
+
+    <style>
+        .preloadimage{
+            background: black;
+            top: 38%;
+            position: absolute;
+          
+               margin-left: -50px;
+        }
+    </style>
+
     <!-- Modal Dialog Box End Here-->
-<!-- Preloader Start Here -->
-<div id="preloader"></div>
-<!-- Preloader End Here -->
+    <!-- Preloader Start Here -->
+    <div id="preloader">
+        <center>
+            <img class="preloadimage animated " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
+        </center>
+    </div>
+    <!-- Preloader End Here -->
     <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">
             <!--[if lt IE 8]>
@@ -346,26 +353,26 @@
                                         <div class="mobile-menu">
                                             <nav id="dropdown">
                                                 <ul>
-                                                <li class="active"><a href="#">Home</a>
-                                                    <ul>
-                                                        <li><a href="#">FAQ'S</a></li>
-                                                        <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li ><a href="#">Order Now</a>
-                                                    <ul>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
+                                                    <li class="active"><a href="#">Home</a>
+                                                        <ul>
+                                                            <li><a href="#">FAQ'S</a></li>
+                                                            <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li ><a href="#">Order Now</a>
+                                                        <ul>
+                                                            <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
+                                                            <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
+                                                            <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
+                                                            <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
 
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Catalogue</a></li>
-                                                <li><a href="#">Schedule</a></li>
-                                                <li><a href="#">Help</a></li>
-                                                <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
-                                            </ul>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Catalogue</a></li>
+                                                    <li><a href="#">Schedule</a></li>
+                                                    <li><a href="#">Help</a></li>
+                                                    <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
+                                                </ul>
                                             </nav>
                                         </div>
                                     </div>

@@ -265,6 +265,13 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.screencustom.view_type = "front";
         }
     }
+    
+    
+    $scope.changeViews = function (viewtype) {
+       
+            $scope.screencustom.view_type = viewtype;
+        
+    }
 
     //add to cart
     $scope.addToCartCustome = function () {

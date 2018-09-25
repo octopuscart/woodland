@@ -126,6 +126,8 @@ $this->load->view('layout/header');
                                         </div>
                                         <!--cuff section-->
                                         <img src="<?php echo custome_image_server; ?>/shirt/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff & Sleeve'].sleeve1">
+                                        <img src="<?php echo custome_image_server; ?>/shirt/overlay/sleeveoverlay.png" class="fixpos animated" ng-if="selecteElements[fab.product_id]['Cuff & Sleeve'].sleeve1[0]=='shirt_sleeve0001.png'">
+
 
 
 
@@ -176,7 +178,7 @@ $this->load->view('layout/header');
 
                 <div class="row customization_order_block">
 
-                     <?php
+                    <?php
                     $this->load->view('Product/custom_bottom');
                     ?>
 
@@ -193,8 +195,8 @@ $this->load->view('layout/header');
 
 <script>
     var product_id = <?php echo $productdetails['id']; ?>;
-    var defaut_view = "<?php echo $custom_item;?>";
-    var gcustome_id = <?php echo $custom_id;?>;
+    var defaut_view = "<?php echo $custom_item; ?>";
+    var gcustome_id = <?php echo $custom_id; ?>;
 
 </script>
 <!--angular controllers-->

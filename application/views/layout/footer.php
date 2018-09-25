@@ -165,16 +165,16 @@
                                         <!--<a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a>-->
                                         <a href="{{projectDetailsModel.link}}" >Customize Now</a>
                                     </li>
-<!--                                    <li>
-                                        <div class="input-group quantity-holder" id="quantity-holder">
-                                            <input type="text" placeholder="1" value="1" id="model_quantity" class="form-control quantity-input" name="quantity">
-                                            <div class="input-group-btn-vertical">
-                                                <button type="button" class="btn btn-default quantity-plus" ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-plus"></i></button>
-                                                <button type="button" class="btn btn-default quantity-minus"  ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-minus"></i></button>
-                                            </div>
-                                        </div>
-                                    </li>-->
-                                    <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
+                                    <!--                                    <li>
+                                                                            <div class="input-group quantity-holder" id="quantity-holder">
+                                                                                <input type="text" placeholder="1" value="1" id="model_quantity" class="form-control quantity-input" name="quantity">
+                                                                                <div class="input-group-btn-vertical">
+                                                                                    <button type="button" class="btn btn-default quantity-plus" ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-plus"></i></button>
+                                                                                    <button type="button" class="btn btn-default quantity-minus"  ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-minus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>-->
+                                                                        <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
                                 </ul>
                             </div>
                         </div>
@@ -245,16 +245,23 @@
 
 
 <script>
-    $(window).on('load', function () {
-                // Page Preloader
-                $('#preloader').fadeOut('slow', function () {
-                    setTimeout(function(){
-//                       $(this).remove();  
-                    }, 3000)
-               
-                });
-                });
-                                                    $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
+                                            $(window).on('load', function () {
+                                                // Page Preloader
+                                                
+                                                 setTimeout(function () {
+                                                    $('#preloader').fadeOut('slow', function () {
+                                                });
+                                                }, 3000)
+
+
+                                                setTimeout(function () {
+                                                    $(".preloadimage").addClass("zoomOutUp")
+                                                }, 2000)
+                                                
+                                                
+                                            });
+
+                                            $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
 </script>
 
 

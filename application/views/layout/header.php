@@ -346,18 +346,26 @@
                                         <div class="mobile-menu">
                                             <nav id="dropdown">
                                                 <ul>
+                                                <li class="active"><a href="#">Home</a>
+                                                    <ul>
+                                                        <li><a href="#">FAQ'S</a></li>
+                                                        <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li ><a href="#">Order Now</a>
+                                                    <ul>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
 
-                                                    <li ng-repeat="catv in categoriesMenu">
-                                                        <a href="<?php echo site_url("Product/ProductList/"); ?>{{catv.id}}" class="{{$index==0?'active':''}}" >{{catv.category_name}}</a>
-
-                                                        <ul>
-                                                            <li ng-repeat="subv in catv.sub_category">
-                                                                <a href="<?php echo site_url("Product/ProductList/"); ?>{{subv.id}}" >{{subv.category_name}}</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-                                                </ul>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">Catalogue</a></li>
+                                                <li><a href="#">Schedule</a></li>
+                                                <li><a href="#">Help</a></li>
+                                                <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
+                                            </ul>
                                             </nav>
                                         </div>
                                     </div>

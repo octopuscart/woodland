@@ -189,7 +189,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         $timeout(function () {
             equalHeight(); // Call Equal height function
 
-            $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='img/logo.png' /></a>"});
+//            $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='"+baseurl +"../assets/images/logo73.png' /></a>"});
             var wHeight = $(window).height();
             var mLogoH = $('a.logo-mobile-menu').outerHeight();
             wHeight = wHeight - 50;
@@ -198,7 +198,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                 var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + $scope.globleCartData.total_quantity + '</b></a>';
                 $(".logo-mobile-menu").after(mhref);
                 var mhref = '<a href="#" class="meanmenu-reveal search_open" style="right: 70px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-search"></i></a>';
-                $(".logo-mobile-menu").after(mhref);
+//                $(".logo-mobile-menu").after(mhref);
                 $(".cartopen").click(function () {
                     $('#mobileModel').modal('show')
                 })

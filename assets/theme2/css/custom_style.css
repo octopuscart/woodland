@@ -125,6 +125,11 @@ b.barcomb-list {
 }
 
 @media only screen and (max-width: 479px) {
+    
+    .main-slider2{
+            margin-top: 52px;
+    }
+    
     .inner-page-banner-area .breadcrumb-area{
         top:25px;
         padding: 0px 5px;
@@ -153,6 +158,11 @@ b.barcomb-list {
 }
 
 @media only screen and (max-width: 767px) {
+     .main-slider2{
+            margin-top: 52px;
+    }
+    
+    
     .inner-page-banner-area .breadcrumb-area{
         top:25px;
         padding: 0px 5px;
@@ -177,6 +187,10 @@ b.barcomb-list {
 }
 
 @media only screen and (max-width: 320px) {
+     .main-slider2{
+            margin-top: 52px;
+    }
+    
     .inner-page-banner-area .breadcrumb-area{
         top:25px;
         padding: 0px 5px;

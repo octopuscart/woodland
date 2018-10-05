@@ -66,10 +66,10 @@
     <style>
         .preloadimage{
             background: black;
-            top: 38%;
+            top: 28%;
             position: absolute;
           
-               margin-left: -50px;
+               margin-left: -90px;
         }
     </style>
 
@@ -77,7 +77,7 @@
     <!-- Preloader Start Here -->
     <div id="preloader">
         <center>
-            <!--<img class="preloadimage animated " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >-->
+            <img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
         </center>
     </div>
     <!-- Preloader End Here -->

@@ -682,3 +682,33 @@ b.barcomb-list {
     /*border: 1px;*/
     border-radius: 0px;
 }
+
+.inner-page-banner-area .breadcrumb-area h1 {
+    letter-spacing: 4px;
+    font-size: 0px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.inner-page-banner-area {
+    background: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+    min-height: 50px;
+}
+
+.inner-page-banner-area .breadcrumb-area {
+    position: absolute;
+    z-index: 2;
+     top: 0px; 
+    left: 0;
+    right: 0;
+}
+
+.shop-page-area {
+    padding: 10px 0;
+}

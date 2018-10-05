@@ -74,7 +74,7 @@ $this->load->view('layout/header');
                                 <td colspan="6" class="text_right">
                                     <div class="proceed-button">
 
-                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon disabled" >Proceed to checkout</a>
+                                        <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon disabled" >Proceed to checkout</a>
                                     </div> </td>
 
                             </tr>

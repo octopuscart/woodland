@@ -4,7 +4,7 @@ $ci = new CI_Controller();
 $ci = & get_instance();
 $ci->load->helper('url');
 ?>
-
+ 
 <?php
 include APPPATH . '/views/layout/header_2.php';
 ?>

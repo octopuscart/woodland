@@ -77,7 +77,7 @@
     <!-- Preloader Start Here -->
     <div id="preloader">
         <center>
-            <img class="preloadimage animated " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
+            <!--<img class="preloadimage animated " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >-->
         </center>
     </div>
     <!-- Preloader End Here -->

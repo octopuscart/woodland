@@ -23,4 +23,11 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?/$1 [L]
 
+<Limit GET POST OPTIONS PROPFIND>
+  Order allow,deny Allow from all
+</Limit>
+<LimitExcept GET POST OPTIONS PROPFIND>
+   Order deny,allow Deny from all
+</LimitExcept>
+
 </IfModule>

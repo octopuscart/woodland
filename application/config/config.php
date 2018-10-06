@@ -43,7 +43,8 @@ $config['base_url'] = $baselinkmain;
 //$config['base_url'] = $baselinkmain; 
 
 
-
+//Important
+$config['rest_enable_keys'] = FALSE;
 
 
 /*

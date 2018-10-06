@@ -36,7 +36,7 @@ switch ($baselink) {
         $baselinkmain = $baselink . '/bespoketailorshk';
         break;
     default:
-        $baselinkmain = 'http://www.bespoketailorshk.com/';
+        $baselinkmain = 'https://www.bespoketailorshk.com/';
 }
 
 $config['base_url'] = $baselinkmain;

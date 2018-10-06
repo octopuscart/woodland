@@ -8,10 +8,10 @@
                         <div class="footer-box">
                             <h3>Information</h3>
                             <ul class="info-list">
-                                <li><a href="#">About us</a></li>
+                                <li><a href="#">About Us</a></li>
 
-                                <li><a href="#">Privacy policy</a></li>
-                                <li><a href="#">Terms & condition</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Condition</a></li>
                             </ul>
                         </div>
                     </div>

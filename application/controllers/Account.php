@@ -131,6 +131,12 @@ class Account extends CI_Controller {
             $first_name = $this->input->post('first_name');
             $last_name = $this->input->post('last_name');
             $cpassword = $this->input->post('con_password');
+            
+            $birth_date = $this->input->post('birth_date');
+            $gender = $this->input->post('gender');
+            $country = $this->input->post('country');
+            $profession = $this->input->post('profession');
+            
             if ($cpassword == $password) {
                 $user_check = $this->User_model->check_user($email);
                 if ($user_check) {
@@ -142,6 +148,11 @@ class Account extends CI_Controller {
                         'email' => $email,
                         'password' => md5($password),
                         'password2' => $password,
+                        'profession'=>$profession,
+                        'country'=>$country,
+                        'gender'=>$gender,
+                        'birth_date'=>$birth_date,
+                        'registration_datetime'=>date("Y-m-d h:i:s A")
                     );
                     $this->db->insert('admin_users', $userarray);
                     $user_id = $this->db->insert_id();

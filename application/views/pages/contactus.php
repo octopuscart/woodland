@@ -41,7 +41,7 @@ $this->load->view('layout/header');
                                         map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
                                         marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.297975, 114.17118299999993)});
 
-                                        marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2967832,114.1709048)});
+                                        marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2967832, 114.1709048)});
 
 
 
@@ -74,16 +74,46 @@ $this->load->view('layout/header');
                                 <fieldset>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Name*" class="form-control" id="form-name" data-error="Name field is required" required>
+                                            <input type="text" placeholder="Last Name*" class="form-control" id="form-name" data-error="This field is required" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="First Name*" class="form-control" id="form-email" data-error="This field is required" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <input type="email" placeholder="Email*" class="form-control" id="form-email" data-error="Email field is required" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Contact No." class="form-control" id="form-name" data-error="This field is required" >
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <select name="subject" placeholder="Subject" class="form-control" style="   " required="">
+                                                <option>Enquiry</option>
+                                                <option>Send Swatches</option>
+                                                <option>Feedback</option>
+                                                <option>Appointment</option>
+                                                <option>Altration</option> 
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <textarea placeholder="Message*" class="textarea form-control" id="form-message" rows="8" cols="20" data-error="Message field is required" required></textarea>
@@ -113,7 +143,7 @@ $this->load->view('layout/header');
                         <li class="con-address">2nd Floor, 45 Haiphong Road ,
                             <br/>
                             Tsim Sha Tsui, Kowloon, Hong Kong.
-                            </li>
+                        </li>
 
                         <h2 class="title-sidebar">Shop Address</h2>
                         <ul>

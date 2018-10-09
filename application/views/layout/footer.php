@@ -248,15 +248,7 @@
                                             $(window).on('load', function () {
                                                 // Page Preloader
                                                 
-                                                 setTimeout(function () {
-                                                    $('#preloader').fadeOut('slow', function () {
-                                                });
-                                                }, 3000)
-
-
-                                                setTimeout(function () {
-                                                    $(".preloadimage").addClass("zoomOutUp")
-                                                }, 2000)
+                                                
                                                 
                                                 
                                             });

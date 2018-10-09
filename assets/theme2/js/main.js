@@ -291,9 +291,9 @@
      -------------------------------------*/
     $(window).on('load', function () {
         // Page Preloader
-//        $('#preloader').fadeOut('slow', function () {
-//            $(this).remove();
-//        });
+        $('#preloader').fadeOut('slow', function () {
+            $(this).remove();
+        });
 
         //jQuery for Isotope initialization
         var $container = $('#home-isotope');

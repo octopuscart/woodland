@@ -68,7 +68,8 @@
             background: black;
             top: 28%;
             position: absolute;
-          
+          height:100px; 
+              
                margin-left: -90px;
         }
     </style>
@@ -77,7 +78,7 @@
     <!-- Preloader Start Here -->
     <div id="preloader">
         <center>
-            <img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
+            <!--<img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >-->
         </center>
     </div>
     <!-- Preloader End Here -->

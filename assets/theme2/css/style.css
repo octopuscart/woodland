@@ -990,11 +990,12 @@ ul {
 1.6 Preloader styles
 --------------------------------------*/
 #preloader {
-    background: #ffffff url('img/preloader.gif') no-repeat scroll center center;
+    background: #ffffff url('../img/preloader.gif') no-repeat scroll center center;
     height: 100%;
     left: 0;
     overflow: visible;
     position: fixed;
+        background-size: 100px;
     top: 0;
     width: 100%;
     z-index: 9999999;

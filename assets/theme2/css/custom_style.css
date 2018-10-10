@@ -731,3 +731,10 @@ b.barcomb-list {
 .bith_date_select_year{
     width: 35%!important;
 }
+
+.popup_fabric{
+    height: 360px;
+    width: 300px;
+    float: left;
+    position: relative;
+}

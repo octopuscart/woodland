@@ -94,22 +94,19 @@
                                 <div class="tab-content">
                                     <div id="metro-related1" class="tab-pane fade active in" ng-if="projectDetailsModel.productobj.file_name">
                                         <a href="#">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});   
-                                                 height: 360px;width: 360px;"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related2" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name1">
                                         <a href="#">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});    
-                                                 height: 360px;width: 360px;"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related3" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name2">
                                         <a href="#">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});    
-                                                 height: 360px;width: 360px;"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
                                         </a>
                                     </div>

@@ -292,7 +292,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>"
 
         swal({
-            title: 'Confirm Desing',
+            title: 'Confirm Design',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#000',

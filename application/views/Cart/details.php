@@ -8,10 +8,10 @@ $this->load->view('layout/header');
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcrumb-area">
-                    <h1>Cart Page</h1>
+                    <h1>Your Shopping Cart</h1>
                     <ul>
                         <li><a href="#">Home</a> /</li>
-                        <li>Cart</li>
+                        <li>Your Shopping Cart</li>
                     </ul>
                 </div>
             </div>

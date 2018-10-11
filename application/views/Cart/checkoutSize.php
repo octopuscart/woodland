@@ -150,8 +150,8 @@ $this->load->view('layout/header');
                                         <ul>
                                             <li class="active"><a href="#size_standard" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Standard Size - M')">Standard Size</a></li>
                                             <li><a href="#bank" data-toggle="tab" aria-expanded="true" ng-click="slidedemo('Custom Measurement')">Measure Your Body</a></li>
-                                            <li><a href="#cash" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Mail us a shirt to copy')">Mail us a Shirt to Copy</a></li>
-                                            <li><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Shop Stored')">Shop Stored</a></li>
+                                            <li><a href="#cash" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Mail-in Garments')">Mail-in Garments</a></li>
+                                            <li><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Recent Measurements')">For Exting Client</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -496,6 +496,16 @@ $this->load->view('layout/footer');
         $scope.measurementstyle = {'title': 'Standard Size - M'};
 
         $("#measurement_profile_M").attr("checked", "true");
+        
+        $scope.custome_items = <?php echo json_encode($custome_items);?>;
+        $scope.getstandardsize = "<?php echo site_url("Api/getstsize");?>";
+        
+        console.log($scope.getstandardsize);
+        
+        
+       
+        
+        
         $scope.measurementDict = {};
 <?php
 foreach ($measurements_list as $key => $value) {

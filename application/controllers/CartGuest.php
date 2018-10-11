@@ -56,6 +56,8 @@ class CartGuest extends CI_Controller {
         }
 
         $custome_items = $session_cart['custome_items'];
+        
+        $data['custome_items'] =  $custome_items;
 
         $this->db->select("group_concat(measurements) as measurement");
         $this->db->where_in('id', $custome_items);

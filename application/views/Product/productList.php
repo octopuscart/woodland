@@ -184,7 +184,7 @@ $image2 = "";
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <img class="img-responsive" src="<?php echo imageserver; ?>{{product.file_name}}" alt="product">
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product">
                                                     <?php
                                                     break;
                                                 case "2":

@@ -88,7 +88,26 @@ $this->load->view('layout/header');
         display: none;
     }
 
+
+    .measurement_lable{
+        float: left;
+        font-size: 13px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .measurement_img{
+        height: 100px!important;
+    }
+
+
+
+
 </style>
+
+
 
 
 
@@ -114,6 +133,7 @@ $this->load->view('layout/header');
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
+
 
 
 <div class="cart-page-area"  ng-controller="measurementController">
@@ -157,94 +177,21 @@ $this->load->view('layout/header');
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="tab-content" style="padding: 2px 35px;">
                                             <div class="tab-pane fade active in"  id="size_standard">
-                                                <p>
+
+                                                
+
+
+                                               
 
                                                 <div class="row">
-
-
-                                                    <table class="table"> 
-                                                        <tbody>
-                                                            <tr style=""> 
-                                                                <td><br></td>
-
-                                                                <?php
-                                                                $sizearray = ['S', 'M', 'L', 'XL', 'XXL'];
-                                                                foreach ($sizearray as $key => $value) {
-                                                                    ?>
-
-                                                                    <td class="size_lable">
-                                                                        <label for="measurement_profile_<?php echo $value; ?>" class="d_inline_m m_right_10" style="width: 100%" ng-click="slidedemo('Standard Size - <?php echo $value; ?>')">
-                                                                            <input type="radio" id="measurement_profile_<?php echo $value; ?>" name="order_measurement_type" class="d_none standard_measurement" value="<?php echo $value; ?>" >
-                                                                            <b><?php echo $value; ?></b>
-                                                                        </label> 
-                                                                    </td> 
-                                                                <?php }
-                                                                ?>
-
-                                                            </tr>
-                                                            <tr> 
-                                                                <th>Chest</th> 
-                                                                <td>35"-37"</td>
-                                                                <td>38"-40"</td>
-                                                                <td>41"-43"</td> 
-                                                                <td>45"-47"</td> 
-                                                                <td>49"-51"</td>
-                                                            </tr> 
-                                                            <tr> 
-                                                                <th>Waist</th> 
-                                                                <td>28"-30"</td> 
-                                                                <td>31"-33"</td>
-                                                                <td>34"-36"</td> 
-                                                                <td>38"-40"</td>
-                                                                <td>42"-44"</td> 
-                                                            </tr> 
-                                                            <tr> 
-                                                                <th>Hips</th> 
-                                                                <td>35"-37"</td>
-                                                                <td>38"-40"</td>
-                                                                <td>41"-43"</td> 
-                                                                <td>44"-46"</td> 
-                                                                <td>47"-49"</td> 
-                                                            </tr> 
-                                                            <tr> 
-                                                                <th>Thigh</th>
-                                                                <td>21"</td> 
-                                                                <td>22"</td> 
-                                                                <td>23"</td> 
-                                                                <td>24"</td>
-                                                                <td>25"</td> 
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Neck</th> 
-                                                                <td>14 1/2"</td>
-                                                                <td>15 1/2"</td>
-                                                                <td>16 1/2"</td> 
-                                                                <td>17 1/2"</td>
-                                                                <td>18 1/2"</td> 
-                                                            </tr> 
-                                                            <tr> 
-                                                                <th>Sleeve</th> 
-                                                                <td>33"</td> 
-                                                                <td>34"</td> 
-                                                                <td>35"</td> 
-                                                                <td>36"</td> 
-                                                                <td>37"</td> 
-                                                            </tr> 
-                                                            <tr> 
-                                                                <th>Inseam</th> 
-                                                                <td>31 1/2"</td>
-                                                                <td>32"</td>
-                                                                <td>32 1/2"</td> 
-                                                                <td>33"</td>
-                                                                <td>33 1/2"</td> 
-                                                            </tr> 
-                                                        </tbody>
-                                                    </table>
+<?php
+                                                $this->load->view('Cart/sizes', array('vtype' => 'items'));
+                                                ?>
 
 
                                                 </div>
 
-                                                </p>
+                                             
                                                 <div class="cart-page-top table-responsive">
                                                     <table class="table table-hover">
                                                         <tbody id="quantity-holder">
@@ -283,48 +230,60 @@ $this->load->view('layout/header');
                                                         <!--custome meausrements-->
                                                         <?php
                                                         foreach ($measurements_list as $key => $value) {
+                                                            $vlname = $value['title'];
+                                                            $vimg = $value['imagespath'];
                                                             ?>
-                                                            <tr>
+                                                            <tr style="height: 150px;">
                                                                 <th>
+
+
+                                                            <div class="thumbnail" style="margin-bottom: 0px;">
+                                                                <img src="<?php echo $vimg; ?>" class="measurement_img">
+                                                                <h4 class="measurement_lable">
                                                                     <?php
-                                                                    $vlname = $value['title'];
                                                                     echo $vlname;
                                                                     echo "<input class='input_display_none' name='measurement_title[]' value='$vlname'>"
-                                                                    ?>
+                                                                    ?>    
 
-                                                                </th>
-                                                                <td>
+                                                                </h4>
 
-                                                                    <div id="slider-pips<?php echo $value['id']; ?>"></div>
+                                                            </div>
 
-                                                                </td>
-        <!--                                                            <td>
-                                                                    <select name="measurement_<?php echo $value['id']; ?>" ng-model="measurement_<?php echo $value['id']; ?>" ng-init="measurement_<?php echo $value['id']; ?> =<?php echo $value['standard_value']; ?>">
-                                                                <?php
-                                                                for ($i = $value['min_value']; $i <= $value['max_value']; $i++) {
-                                                                    $vl1 = $i;
 
-                                                                    echo "<option value='$vl1' " . ($value['standard_value'] == $i ? "selected" : '') . ">$vl1</option>";
-                                                                }
-                                                                ?>
-                                                                    </select>
-                                                                    <select ng-model="measurement_<?php echo $value['id']; ?>_fr">
-                                                                        <option></option>
-                                                                        <option value="1/8">1/8</option>
-                                                                        <option value="1/4">1/4</option>
-                                                                        <option value="3/8">3/8</option>
-                                                                        <option value="1/2">1/2</option>
-                                                                        <option value="5/8">5/8</option>
-                                                                        <option value="3/4">3/4</option>
-                                                                        <option value="7/8">7/8</option>
-                                                                    </select>
 
-                                                                </td>-->
+                                                            </th>
+                                                            <td>
 
-                                                                <td>
-                                                                    <input class="input_display_none" name="measurement_value[]" value="{{measurementDict['m<?php echo $value['id']; ?>'].mvalue}} {{measurementDict['m<?php echo $value['id']; ?>'].frvalue}}">
-                                                                    <span class="measurement_text">{{measurementDict['m<?php echo $value['id']; ?>'].mvalue}}</span> <small class="fr_value">{{measurementDict['m<?php echo $value['id']; ?>'].frvalue}}"</small>
-                                                                </td>
+                                                                <div id="slider-pips<?php echo $value['id']; ?>"></div>
+
+                                                            </td>
+    <!--                                                            <td>
+                                                                <select name="measurement_<?php echo $value['id']; ?>" ng-model="measurement_<?php echo $value['id']; ?>" ng-init="measurement_<?php echo $value['id']; ?> =<?php echo $value['standard_value']; ?>">
+                                                            <?php
+                                                            for ($i = $value['min_value']; $i <= $value['max_value']; $i++) {
+                                                                $vl1 = $i;
+
+                                                                echo "<option value='$vl1' " . ($value['standard_value'] == $i ? "selected" : '') . ">$vl1</option>";
+                                                            }
+                                                            ?>
+                                                                </select>
+                                                                <select ng-model="measurement_<?php echo $value['id']; ?>_fr">
+                                                                    <option></option>
+                                                                    <option value="1/8">1/8</option>
+                                                                    <option value="1/4">1/4</option>
+                                                                    <option value="3/8">3/8</option>
+                                                                    <option value="1/2">1/2</option>
+                                                                    <option value="5/8">5/8</option>
+                                                                    <option value="3/4">3/4</option>
+                                                                    <option value="7/8">7/8</option>
+                                                                </select>
+
+                                                            </td>-->
+
+                                                            <td>
+                                                                <input class="input_display_none" name="measurement_value[]" value="{{measurementDict['m<?php echo $value['id']; ?>'].mvalue}} {{measurementDict['m<?php echo $value['id']; ?>'].frvalue}}">
+                                                                <span class="measurement_text">{{measurementDict['m<?php echo $value['id']; ?>'].mvalue}}</span> <small class="fr_value">{{measurementDict['m<?php echo $value['id']; ?>'].frvalue}}"</small>
+                                                            </td>
                                                             </tr>
                                                             <?php
                                                         }
@@ -481,11 +440,15 @@ $this->load->view('layout/header');
 
 
 
+
+<script type="text/javascript">
+    var custom_items = "<?php echo implode(", ", $custome_items) ?>";
+    var avaiblecredits = 0;</script>
+
+
+
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
-<script>
-        var avaiblecredits =<?php echo $user_credits | 0; ?>;</script>
-
 <?php
 $this->load->view('layout/footer');
 ?>
@@ -495,17 +458,40 @@ $this->load->view('layout/footer');
 
         $scope.measurementstyle = {'title': 'Standard Size - M'};
 
-        $("#measurement_profile_M").attr("checked", "true");
-        
-        $scope.custome_items = <?php echo json_encode($custome_items);?>;
-        $scope.getstandardsize = "<?php echo site_url("Api/getstsize");?>";
-        
+        $scope.predefine = {'1': ['Shirt'],
+            '2': ['Jacket', 'Pant'],
+            '3': ['Pant'],
+            '4': ['Jacket'],
+        };
+
+        $scope.standard_measurement1 = {'Shirt': '16L(Shirt)', 'Jacket': '34(Jacket)', 'Suit': '34(Jacket)', 'Pant': '32S(Pant)'};
+
+        $scope.standard_measurement = {'Shirt': '', 'Jacket': '', 'Pant': ''};
+        var cussta = custom_items.split(", ")
+        $timeout(function () {
+            for (i in cussta) {
+                var temp = $scope.predefine[cussta[i]];
+                for(k in temp){
+                $scope.standard_measurement[temp[k]] = $scope.standard_measurement1[temp[k]];
+                 $(".activemeasurement" + temp[k]).click();
+            }
+
+               
+            }
+        }, 500)
+
+
+//        $("#measurement_profile_M").attr("checked", "true");
+
+        $scope.custome_items = <?php echo json_encode($custome_items); ?>;
+        $scope.getstandardsize = "<?php echo site_url("Api/getstsize"); ?>";
+
         console.log($scope.getstandardsize);
-        
-        
-       
-        
-        
+
+
+
+
+
         $scope.measurementDict = {};
 <?php
 foreach ($measurements_list as $key => $value) {
@@ -523,8 +509,8 @@ foreach ($measurements_list as $key => $value) {
     ?>
             //slider section start
             $timeout(function () {
-//                $("#measurement_profile_M").click();
-                $("#measurement_profile_M").attr("checked", "true");
+                //                $("#measurement_profile_M").click();
+
 
                 var pipsSlider<?php echo $value['id']; ?> = document.getElementById('slider-pips<?php echo $value['id']; ?>');
                 noUiSlider.create(pipsSlider<?php echo $value['id']; ?>, {
@@ -560,7 +546,11 @@ foreach ($measurements_list as $key => $value) {
 }
 ?>
 
+
         $scope.slidedemo = function (mestitle) {
+
+            console.log($scope.standard_measurement);
+
             $scope.measurementstyle.title = mestitle;
             var sliderval = <?php echo $measurements_list[0]['id']; ?>;
             var svalue = <?php echo $measurements_list[0]['standard_value']; ?>;
@@ -577,6 +567,17 @@ foreach ($measurements_list as $key => $value) {
 
 
         }
+
+        $scope.slidedemostandard = function () {
+            console.log($scope.standard_measurement);
+            var stsize = [$scope.standard_measurement.Jacket, $scope.standard_measurement.Shirt, $scope.standard_measurement.Pant];
+
+            var trsize = (stsize.join("  ")).trim();
+            $scope.measurementstyle.title = trsize.replace("  ", ", ");
+            console.log("--" + (stsize.join(" ")).trim() + "--");
+        }
+
+
 
 
 

@@ -59,7 +59,18 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
                 $timeout(function () {
 
-                   
+                   $('#paging_container1').pajinate({
+					items_per_page : 12,
+                                        num_page_links_to_display : 5,
+//					item_container_id : '.alt_content',
+//					nav_panel_id : '.alt_page_navigation'
+					
+				});
+                                
+                                
+                                $(".page_link").click(function(){
+                                     $("html, body").animate({scrollTop: 0}, "slow")
+                                })
                         $("#slider-range").slider({
                             range: true,
                             min: Number($scope.productResults.price.minprice),

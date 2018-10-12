@@ -41,8 +41,6 @@ switch ($baselink) {
 
 $config['base_url'] = $baselinkmain;
 //$config['base_url'] = $baselinkmain; 
-
-
 //Important
 $config['rest_enable_keys'] = FALSE;
 
@@ -57,7 +55,7 @@ $config['rest_enable_keys'] = FALSE;
   | variable so that it is blank.
   |
  */
-$config['index_page'] =  strpos($baselink, '192.168') ?  'index.php/' : '';
+$config['index_page'] = strpos($baselink, '192.168') ? 'index.php/' : '';
 
 /*
   |--------------------------------------------------------------------------
@@ -400,13 +398,39 @@ $config['encryption_key'] = '';
   |
  */
 
+$baselink = 'http://' . $_SERVER['SERVER_NAME'];
+switch ($baselink) {
+    case "http://localhost":
+       $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_driver'] = 'database';
-$config['sess_save_path'] = 'ci_sessions';
+$config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
+        break;
+    case "http://192.168.1.2":
+        $config['sess_driver'] = 'files';
+$config['sess_cookie_name'] = 'ci_session';
+$config['sess_expiration'] = 7200;
+$config['sess_save_path'] = NULL;
+$config['sess_match_ip'] = FALSE;
+$config['sess_time_to_update'] = 300;
+$config['sess_regenerate_destroy'] = FALSE;
+        break;
+    default:
+        $config['sess_cookie_name'] = 'ci_session';
+        $config['sess_expiration'] = 7200;
+        $config['sess_driver'] = 'database';
+        $config['sess_save_path'] = 'ci_sessions';
+        $config['sess_match_ip'] = FALSE;
+        $config['sess_time_to_update'] = 300;
+        $config['sess_regenerate_destroy'] = FALSE;
+}
+
+
+
+
 
 /*
   |--------------------------------------------------------------------------

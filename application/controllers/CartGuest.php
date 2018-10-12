@@ -20,7 +20,22 @@ class CartGuest extends CI_Controller {
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
+    
+    function redirectCart() {
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartData($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartData();
+        }
+        if (count($session_cart['custome_items'])) {
+            
+        } else {
+            redirect('Cart/details');
+        }
+    }
+    
     public function index() {
+        $this->redirectCart();
         redirect('Cart/details');
     }
 
@@ -29,6 +44,7 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutInit() {
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -43,6 +59,7 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutSize() {
+        $this->redirectCart();
         $address = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
 
@@ -63,6 +80,7 @@ class CartGuest extends CI_Controller {
         $this->db->where_in('id', $custome_items);
         $query = $this->db->get('custome_items');
         $custome_measurements = $query->row();
+        $data['customitems'] = $custome_measurements;
 
         $measurementarray = explode(",", $custome_measurements->measurement);
 
@@ -96,6 +114,7 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutShipping() {
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -139,7 +158,7 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutPayment() {
-
+$this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 

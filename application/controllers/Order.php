@@ -30,7 +30,7 @@ class Order extends CI_Controller {
 
     //orders details
     public function orderdetails($order_key) {
-        
+
         if ($this->user_id == 0) {
             redirect('/');
         }
@@ -98,12 +98,23 @@ class Order extends CI_Controller {
             $this->db->where('order_id', $order_id);
             $query = $this->db->get('vendor_order');
             $vendor_order = $query->result();
-
-            
         }
 
-
+        $order_id = $order_details['order_data']->id;
         if ($order_details) {
+
+            $this->db->where('order_id', $order_id);
+            $query = $this->db->get('user_order_log');
+            $orderlog = $query->result();
+
+            if (count($orderlog)) {
+                
+            } else {
+                $this->Product_model->order_mail($order_id);
+                redirect("Order/orderdetails/$order_key");
+            }
+
+
             try {
                 $order_id = $order_details['order_data']->id;
                 // $this->Product_model->order_mail($order_id);
@@ -117,8 +128,8 @@ class Order extends CI_Controller {
         }
         $this->load->view('Order/orderdetails', $order_details);
     }
-    
-     public function orderdetailsguest($order_key) {
+
+    public function orderdetailsguest($order_key) {
 
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
 
@@ -174,12 +185,24 @@ class Order extends CI_Controller {
                 'order_id' => $order_id
             );
             $this->db->insert('user_order_status', $orderstatus);
-
-
         }
 
-
+        $order_id = $order_details['order_data']->id;
         if ($order_details) {
+
+            $this->db->where('order_id', $order_id);
+            $query = $this->db->get('user_order_log');
+            $orderlog = $query->result();
+
+            if (count($orderlog)) {
+                
+            } else {
+                $this->Product_model->order_mail($order_id);
+                // redirect("Order/orderdetails/$order_key");
+            }
+
+
+
             try {
                 $order_id = $order_details['order_data']->id;
                 // $this->Product_model->order_mail($order_id);

@@ -276,7 +276,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
         $query = $this->db->get('user_order');
         $order_details = $query->row();
-        
+        $payment_details = array("payment_mode" => "", "txn_id" => "", "payment_date" => "");
 
         if ($order_details) {
 
@@ -285,6 +285,19 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $query = $this->db->get('user_order_status');
             $userorderstatus = $query->result();
             $order_data['order_status'] = $userorderstatus;
+
+            if ($order_details->payment_mode == 'PayPal') {
+                $this->db->where('order_id', $order_details->id);
+                $query = $this->db->get('paypal_status');
+                $paypal_details = $query->result();
+
+                if ($paypal_details) {
+                    $paypal_details = end($paypal_details);
+                    $payment_details['payment_mode'] = "PayPal";
+                    $payment_details['txn_id'] = $paypal_details->txn_no;
+                    $payment_details['payment_date'] = $paypal_details->timestemp;
+                }
+            }
 
             $order_id = $order_details->id;
             $order_data['order_data'] = $order_details;
@@ -318,7 +331,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 //                $orderstatus = $query->result();
                 $value->product_status = array();
             }
-
+            $order_data['payment_details'] = $payment_details;
             $order_data['cart_data'] = $cart_items;
             $order_data['amount_in_word'] = $this->convert_num_word($order_data['order_data']->total_price);
         }
@@ -538,11 +551,17 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->email->to($order_details['order_data']->email);
             $this->email->bcc(email_bcc);
 
+            $orderlog = array(
+                'log_type' => 'Email',
+                'log_datetime' => date('Y-m-d H:i:s'),
+                'order_id' => $order_id,
+            );
+            $this->db->insert('user_order_log', $orderlog);
 
             $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
-//            echo $this->load->view('Email/order_mail', $order_details, true);
+            //echo $this->load->view('Email/order_mail', $order_details, true);
             $this->email->message($this->load->view('Email/order_mail', $order_details, true));
             $this->email->print_debugger();
             echo $result = $this->email->send();
@@ -641,7 +660,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'attrs' => $product_details['attrs'],
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $product_details['price'],
-                'file_name' => custome_image_server. "/coman/output/" . $product_details['folder']."/cutting20001.png",
+                'file_name' => custome_image_server . "/coman/output/" . $product_details['folder'] . "/cutting20001.png",
                 'quantity' => $quantity,
                 'user_id' => $user_id,
                 'item_id' => $item_id,
@@ -708,7 +727,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'attrs' => $product_details['attrs'],
                     'vendor_id' => $product_details['user_id'],
                     'total_price' => $product_details['price'],
-                    'file_name' => custome_image_server. "/coman/output/" . $product_details['folder']."/cutting20001.png",
+                    'file_name' => custome_image_server . "/coman/output/" . $product_details['folder'] . "/cutting20001.png",
                     'quantity' => 1,
                     'item_id' => $item_id,
                     'item_name' => $item_name,
@@ -742,7 +761,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'attrs' => $product_details['attrs'],
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $value['total_price'],
-                'file_name' => custome_image_server. "/coman/output/" . $product_details['folder']."/cutting20001.png",
+                'file_name' => custome_image_server . "/coman/output/" . $product_details['folder'] . "/cutting20001.png",
                 'quantity' => $quantity,
                 'user_id' => $user_id,
                 'item_id' => $item_id,
@@ -786,7 +805,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'attrs' => $product_details['attrs'],
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $value['total_price'],
-                'file_name' => custome_image_server. "/coman/output/" . $product_details['folder']."/cutting20001.png",
+                'file_name' => custome_image_server . "/coman/output/" . $product_details['folder'] . "/cutting20001.png",
                 'quantity' => $quantity,
                 'user_id' => 'guest',
                 'item_id' => $item_id,

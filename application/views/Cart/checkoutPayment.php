@@ -154,7 +154,7 @@ $this->load->view('layout/header');
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
 
-                                                                            <a href=" <?php echo site_url("PayPalPayment/process"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Place Order <i class="fa fa-arrow-right"></i></a>
+                                                                            <a href=" <?php echo site_url("PayPalPayment/process"); ?>" class="btn-apply-coupon checkout_button_next disabled"  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -177,7 +177,7 @@ $this->load->view('layout/header');
                                                                             <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                         </div>
                                                                         <div class="proceed-button pull-right ">
-                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer">
+                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer" onclick="confirmOrder()">
                                                                                 Place Order <i class="fa fa-arrow-right"></i>
                                                                             </button>
                                                                         </div>
@@ -317,6 +317,14 @@ $this->load->view('layout/header');
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
     var avaiblecredits =<?php echo $user_credits; ?>;
+    function confirmOrder(){
+        swal({
+            title: 'Processing Order',
+            onOpen: function () {
+                swal.showLoading()
+            }
+        });
+    }
 </script>
 
 <?php

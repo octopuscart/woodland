@@ -99,22 +99,7 @@ class Order extends CI_Controller {
             $query = $this->db->get('vendor_order');
             $vendor_order = $query->result();
 
-            foreach ($vendor_order as $key => $value) {
-                $vorder_id = $value->id;
-                $vendor_id = $value->vendor_id;
-
-                $vendor_order_status_data = array(
-                    'vendor_order_id' => $vorder_id,
-                    'vendor_id' => $vendor_id,
-                    'c_date' => date('Y-m-d'),
-                    'c_time' => date('H:i:s'),
-                    'status' => "Payment Done",
-                    'remark' => "Payment Done, and txn id. $paymentid",
-                    'description' => $description,
-                    'order_id' => $order_id
-                );
-                $this->db->insert('vendor_order_status', $vendor_order_status_data);
-            }
+            
         }
 
 

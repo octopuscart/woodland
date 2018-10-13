@@ -14,7 +14,6 @@ switch ($baselink) {
     default:
         $baselinkmain = 'http://www.bespoketailorshk.com/';
 }
-$baselinkmain = 'http://bespoketailorsadmin.costcointernational.com/';
 
 define('imageserver', $baselinkmain."assets_main/productimages/");
 
@@ -26,7 +25,7 @@ define('globle_currency_type', 'US$ ');
  
 define('globle_currency', 'US$ ');
 
-define('site_mail_logo', $baselinkmain.'/assets/images/logo73.png');
+define('site_mail_logo', 'http://www.bespoketailorshk.com/assets/images/logo73.png');
 
 
 

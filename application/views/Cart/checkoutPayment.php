@@ -136,9 +136,7 @@ $this->load->view('layout/header');
                                             <ul>
                                                 <li class="active"><a href="#paypal" data-toggle="tab" aria-expanded="false">PayPal</a></li>
                                                 <li><a href="#bank" data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
-                                                <li><a href="#cash" data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
-                                                <li><a href="#cheque" data-toggle="tab" aria-expanded="false">Cheque On Delivery</a></li>
-                                            </ul>
+                                           </ul>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="tab-content">
@@ -190,56 +188,7 @@ $this->load->view('layout/header');
 
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="cash">
-                                                    <p>
-                                                        <img src="<?php echo base_url(); ?>assets/paymentstatus/cod.png" style="height: 100px;">                
-
-                                                    </p>
-                                                    <div class="cart-page-top table-responsive">
-                                                        <table class="table table-hover">
-                                                            <tbody id="quantity-holder">
-                                                                <tr>
-                                                                    <td colspan="4" class="text_right">
-                                                                        <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                        </div>
-                                                                        <div class="proceed-button pull-right ">
-                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cash On Delivery">
-                                                                                Place Order <i class="fa fa-arrow-right"></i>
-                                                                            </button>                                                                    </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="tab-pane fade" id="cheque">
-                                                    <p>
-                                                        <img src="<?php echo base_url(); ?>assets/paymentstatus/chod.png" style="height: 100px;">                
-
-                                                    </p>
-                                                    <div class="cart-page-top table-responsive">
-                                                        <table class="table table-hover">
-                                                            <tbody id="quantity-holder">
-                                                                <tr>
-                                                                    <td colspan="4" class="text_right">
-                                                                        <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                        </div>
-                                                                        <div class="proceed-button pull-right ">
-                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cheque On Delivery">
-                                                                                Place Order <i class="fa fa-arrow-right"></i>
-                                                                            </button>                                                                   
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                </div>
+                                            
                                             </div>
                                         </div>
                                     </div>

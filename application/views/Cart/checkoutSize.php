@@ -168,7 +168,7 @@ $this->load->view('layout/header');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="active"><a href="#size_standard" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Standard Size - M')">Standard Size</a></li>
+                                            <li class="active"><a href="#size_standard" data-toggle="tab" aria-expanded="false" ng-click="slidedemostandard()">Standard Size</a></li>
                                             <li><a href="#bank" data-toggle="tab" aria-expanded="true" ng-click="slidedemo('Custom Measurement')">Measure Your Body</a></li>
                                             <li><a href="#cash" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Mail-in Garments')">Mail-in Garments</a></li>
                                             <li><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Recent Measurements')">For Exting Client</a></li>
@@ -178,20 +178,20 @@ $this->load->view('layout/header');
                                         <div class="tab-content" style="padding: 2px 35px;">
                                             <div class="tab-pane fade active in"  id="size_standard">
 
-                                                
 
 
-                                               
+
+
 
                                                 <div class="row">
-<?php
-                                                $this->load->view('Cart/sizes', array('vtype' => 'items'));
-                                                ?>
+                                                    <?php
+                                                    $this->load->view('Cart/sizes', array('vtype' => 'items'));
+                                                    ?>
 
 
                                                 </div>
 
-                                             
+
                                                 <div class="cart-page-top table-responsive">
                                                     <table class="table table-hover">
                                                         <tbody id="quantity-holder">
@@ -471,12 +471,12 @@ $this->load->view('layout/footer');
         $timeout(function () {
             for (i in cussta) {
                 var temp = $scope.predefine[cussta[i]];
-                for(k in temp){
-                $scope.standard_measurement[temp[k]] = $scope.standard_measurement1[temp[k]];
-                 $(".activemeasurement" + temp[k]).click();
-            }
+                for (k in temp) {
+                    $scope.standard_measurement[temp[k]] = $scope.standard_measurement1[temp[k]];
+                    $(".activemeasurement" + temp[k]).click();
+                }
 
-               
+
             }
         }, 500)
 

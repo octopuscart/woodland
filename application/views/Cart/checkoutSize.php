@@ -333,9 +333,9 @@ $this->load->view('layout/header');
                                                     <br/>
                                                     2nd Floor, 45 Haiphong Road,
                                                     <br/>
-                                                    Tsim Sha Tsui, Kowloon, Hong Kong.<br/>
+                                                    Tsim Sha Tsui, Kowloon, Hong Kong<br/>
                                                     <i class="fa fa-envelope"></i> info@bespoketailorshk.com<br/>
-                                                    <i class="fa fa-phone"></i> +(852) 27308566
+                                                    <i class="fa fa-phone"></i> +(852) 2730 8566
 
                                                 </div>
                                                 </p>
@@ -478,6 +478,7 @@ $this->load->view('layout/footer');
 
 
             }
+            $scope.slidedemostandard();
         }, 500)
 
 

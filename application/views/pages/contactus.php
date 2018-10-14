@@ -142,17 +142,17 @@ $this->load->view('layout/header');
                     <ul>
                         <li class="con-address">2nd Floor, 45 Haiphong Road ,
                             <br/>
-                            Tsim Sha Tsui, Kowloon, Hong Kong.
+                            Tsim Sha Tsui, Kowloon, Hong Kong
                         </li>
 
                         <h2 class="title-sidebar">Shop Address</h2>
                         <ul>
                             <li class="con-address">Shop D, Ground Floor,  Hanyee Building, 19-21 Hankow Road,
                                 <br/>
-                                Tsim Sha Tsui, Kowloon, Hong Kong.</li>
+                                Tsim Sha Tsui, Kowloon, Hong Kong</li>
                             <li class="con-envelope">info@bespoketailorshk.com</li>
-                            <li class="con-phone">+(852) 27308566</li>
-                            <li class="con-fax">+(852) 27308577</li>
+                            <li class="con-phone">+(852) 2730 8566</li>
+                            <li class="con-fax">+(852) 2730 8577</li>
                         </ul>
                 </div>
 

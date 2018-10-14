@@ -16,5 +16,5 @@ $config['validate'] = FALSE;
 $config['priority'] = 3;
 $config['crlf'] = "\r\n";
 $config['newline'] = "\r\n";
-$config['bcc_batch_mode'] = FALSE;
+$config['bcc_batch_mode'] = TRUE;
 $config['bcc_batch_size'] = 200;

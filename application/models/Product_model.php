@@ -547,10 +547,11 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
         if ($order_details) {
             $order_no = $order_details['order_data']->order_no;
+             $this->email->set_newline("\r\n");
             $this->email->from($emailsender, $sendername);
             $this->email->to($order_details['order_data']->email);
             $this->email->bcc(email_bcc);
-            $this->email->set_newline("\r\n");
+           
 
 
             $orderlog = array(

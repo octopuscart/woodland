@@ -43,19 +43,19 @@ class Shop extends CI_Controller {
         $foldercheck = ['HL_42002_72.jpg', 'HL_42004_72.jpg', 'HL_42004_72.png', 'HL_42009_72.jpg', 'HL_42023_72.jpg', 'HL_42031_72.jpg', 'HL_42032_72.jpg', 'HL_42033_72.jpg', 'HL_42034_72.jpg', 'HL_42035_72.jpg', 'HL_42036_72.jpg', 'HL_42037_72.jpg', 'HL_42038_72.jpg', 'HL_42039_72.jpg', 'HL_42040_56.jpg', 'HL_42040_72.jpg', 'HL_42041_72.jpg', 'HL_42042_72.jpg', 'HL_42067_72.jpg', 'HL_42068_72.jpg', 'HL_42069_72.jpg', 'HL_42071_72.jpg', 'HL_72104_56.jpg', 'HL_72107_56.jpg', 'HL_72108_56.jpg', 'HL_72119_56.jpg', 'HL_72120_56.jpg', 'HL_72121_56.jpg', 'HL_72124_56.jpg', 'HL_72197_56.jpg', 'HL_72198_56.jpg', 'HL_72199_56.jpg', 'HL_72200_56.jpg', 'HL_72211_56.jpg', 'HL_72214_56.jpg', 'HL_72215_56.jpg', 'HL_72217_56.jpg', 'HL_72219_56.jpg', 'HL_72221_56.jpg', 'HL_72222_56.jpg', 'HL_72275_56.jpg', 'HL_72276_56.jpg', 'HL_72277_56.jpg', 'HL_72281_56.jpg', 'HL_72282_56.jpg'];
         $foldersolid = ['HL5600164.jpg', 'HL5601064.jpg', 'HL5601264.jpg', 'HL5601764.jpg', 'HL5601864.jpg', 'HL5602064.jpg', 'HL5602164.jpg', 'HL5602464.jpg', 'HL5602564.jpg', 'HL5602664.jpg', 'HL5603264.jpg', 'HL5603464.jpg', 'HL5603564.jpg', 'HL5702564.jpg', 'HL5702664.jpg'];
         $foldertexture = ['HL5400364.jpg', 'HL5400764.jpg', 'HL5402564.jpg', 'HL5402964.jpg', 'HL5405664.jpg', 'HL5406264.jpg', 'HL5406364.jpg', 'HL5407964.jpg', 'HL5408164.jpg', 'HL5414564.jpg'];
-        
-        
+
+
         foreach ($foldertexture as $key => $value) {
-            $folder =  $value;
+            $folder = $value;
             $foldermain = str_replace(".jpg", "", $folder);
             $titles = explode("_", $folder);
 
-            
-            $title = "BT".$titles[1];
+
+            $title = "BT" . $titles[1];
 
             $products = array(
                 "category_id" => 48,
-                "sku" => $title,     
+                "sku" => $title,
                 "title" => $title,
                 "short_description" => "2 Ply 100% Cotton",
                 "description" => "2 Ply 100% Cotton",
@@ -64,34 +64,39 @@ class Shop extends CI_Controller {
                 "sale_price" => "0",
                 "credit_limit" => "",
                 "price" => "95",
-                "file_name" => $foldermain."shirt_model20001.png",
-                "file_name1" => $foldermain."shirt_model10001.png",
-                "file_name2" => $foldermain."fabricx0001.png",
+                "file_name" => $foldermain . "shirt_model20001.png",
+                "file_name1" => $foldermain . "shirt_model10001.png",
+                "file_name2" => $foldermain . "fabricx0001.png",
                 "file_name3" => "",
                 "user_id" => "10",
                 "op_date_time" => "",
                 "status" => "1",
                 "home_slider" => "",
-                "home_bottom"=>"",
+                "home_bottom" => "",
                 "keywords" => "",
                 "stock_status" => "In Stock",
                 "variant_product_of" => "",
                 "folder" => $foldermain);
-              $this->db->insert('products', $products);
-           
+            $this->db->insert('products', $products);
         }
     }
-    
+
     public function testinsertsuit() {
         $foldercheck = ['12501.jpg', '12502.jpg', '12503.jpg', '12504.jpg', '12508.jpg', '12509.jpg', '12510.jpg', '12511.jpg', '12512.jpg', '12514.jpg', '12601.jpg', '12602.jpg', '9775.jpg', '9776.jpg', '9777.jpg', '9778.jpg', '9779.jpg', '9780.jpg'];
-        foreach ($foldercheck as $key => $value) {
-            $folder =  $value;
+        $folderchek2 = ['12512.jpg', '12514.jpg', '12601.jpg', '12602.jpg', '12603.jpg', '12604.jpg', '12605.jpg', '12606.jpg', '12611.jpg', '12612.jpg', '12613.jpg', '12615.jpg', '12616.jpg', '12617.jpg', '12618.jpg', '12619.jpg', '12649.jpg', '12650.jpg', '12651.jpg', '12652.jpg', '12653.jpg', '12654.jpg', '12655.jpg', '12656.jpg'];
+        foreach ($folderchek2 as $key => $value) {
+            $folder = $value;
             $foldermain = str_replace(".jpg", "", $folder);
-            
-            $titles = explode("_", $folder);
 
-            
-            $title = "BT".$titles[1];
+            if (strpos($folder, '_')) {
+                $titles = explode("_", $foldermain);
+                $title = "BT" . $titles[1];
+            } else {
+                $title = "BT" . $foldermain;
+            }
+
+
+
 
             $products = array(
                 "category_id" => 49,
@@ -104,22 +109,21 @@ class Shop extends CI_Controller {
                 "sale_price" => "0",
                 "credit_limit" => "",
                 "price" => "800",
-                "file_name" => $foldermain."s1_master_style60001.png", 
-                "file_name1" => $foldermain."style_buttons.png",
-                "file_name2" => $foldermain."fabricx0001.png",
+                "file_name" => $foldermain . "s1_master_style60001.png",
+                "file_name1" => $foldermain . "style_buttons.png",
+                "file_name2" => $foldermain . "fabricx0001.png",
                 "file_name3" => "",
                 "user_id" => "10",
                 "op_date_time" => "",
                 "status" => "1",
                 "home_slider" => "",
-                "home_bottom"=>"",
+                "home_bottom" => "",
                 "keywords" => "",
                 "stock_status" => "In Stock",
                 "variant_product_of" => "",
                 "folder" => $foldermain);
-            
-              $this->db->insert('products', $products);
-           
+
+           #$this->db->insert('products', $products);
         }
     }
 

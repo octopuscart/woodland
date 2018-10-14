@@ -236,8 +236,8 @@ $image2 = "";
                                         <h3><a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} 
                                                 <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
-                                                <br>
-                                                <p>{{product.attr}} </p>
+                                                <!--<br>-->
+                                                <!--<p>{{product.attr}} </p>-->
                                             </a></h3>
                                         <span>
                                             <span ng-if="product.sale_price > 0"> {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>

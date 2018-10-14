@@ -550,6 +550,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->email->from($emailsender, $sendername);
             $this->email->to($order_details['order_data']->email);
             $this->email->bcc(email_bcc);
+            $this->email->set_newline("\r\n");
+
 
             $orderlog = array(
                 'log_type' => 'Email',
@@ -563,6 +565,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
             //echo $this->load->view('Email/order_mail', $order_details, true);
             $this->email->message($this->load->view('Email/order_mail', $order_details, true));
+            
             $this->email->print_debugger();
            $send = $this->email->send();
             if($send) {

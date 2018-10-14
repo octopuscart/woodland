@@ -95,9 +95,7 @@ class Order extends CI_Controller {
             $this->db->insert('user_order_status', $orderstatus);
 
 
-            $this->db->where('order_id', $order_id);
-            $query = $this->db->get('vendor_order');
-            $vendor_order = $query->result();
+          
         }
 
         $order_id = $order_details['order_data']->id;

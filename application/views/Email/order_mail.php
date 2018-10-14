@@ -69,7 +69,7 @@
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
                                      height: 50px;
                                      width: auto;"/><br/>
-                            <h4 style="color: white;"> Order No.:<?php echo $order_data->order_no; ?></h4>
+                            <h4 style="color: white;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
                     </td>
 
@@ -200,7 +200,7 @@
 
                 <tr>
                     <td colspan="3"  rowspan="5" style="font-size: 12px">
-                        <b>Total Amount in Words:</b><br/>
+                        <b>Total Amount in Words: </b><br/>
                         <span style="text-transform: capitalize"> <?php echo $amount_in_word; ?></span>
                     </td>
 
@@ -243,14 +243,14 @@
                                     <address>
                                         <b>Address 1</b><br/>
                                         2nd Floor, 45 Haiphong Road,<br/> 
-                                        Tsim Sha Tsui, Kowloon, Hong Kong.
+                                        Tsim Sha Tsui, Kowloon, Hong Kong
                                         <br/><br/>
                                         <b>Address 2</b><br/>
                                         Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road, <br/>
-                                        Tsim Sha Tsui, Kowloon, Hong Kong.                                        <br/>
-                                        <b>Tel #</b>: +(852) 27308566  <b>Fax #</b>: +(852) 27308577<br/>
-                                        <b>Email</b> :info@bespoketailorshk.com  
-                                        <b>Web</b> :www.bespoketailorshk.com</b>
+                                        Tsim Sha Tsui, Kowloon, Hong Kong                                        <br/>
+                                        <b>Tel#</b>: +(852) 2730 8566  <b>Fax#</b>: +(852) 2730 8577<br/>
+                                        <b>Email</b>: info@bespoketailorshk.com  
+                                        <b>Web</b>: www.bespoketailorshk.com</b>
 
 
                                     </address>

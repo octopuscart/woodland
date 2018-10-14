@@ -273,14 +273,14 @@ $this->load->view('layout/header');
                                 <label>Profession *</label>
                                 <select name="profession" id="profession_select"  onchange="professionChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
                                     <option value="" >Select Profession</option>
-                                    <option value="1" >Academic</option>
-                                    <option value="2" >Medicine</option>
-                                    <option value="3" >Law</option>
-                                    <option value="4" >Banking</option>
-                                    <option value="5" >IT</option>
-                                    <option value="6" >Entrepreneur</option>
-                                    <option value="7" >Sales/Marketing</option>
-                                    <option value="0" >Other</option>
+                                    <option value="Academic" >Academic</option>
+                                    <option value="Medicine" >Medicine</option>
+                                    <option value="Law" >Law</option>
+                                    <option value="Banking" >Banking</option>
+                                    <option value="IT" >IT</option>
+                                    <option value="Entrepreneur" >Entrepreneur</option>
+                                    <option value="Sales/Marketing" >Sales/Marketing</option>
+                                    <option value="Other" >Other</option>
                                 </select>
 
                             </div>

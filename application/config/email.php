@@ -3,8 +3,8 @@ $config['useragent'] = 'CodeIgniter';
 $config['protocol'] = 'smtp';
 //$config['mailpath'] = '/usr/sbin/sendmail';
 $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-$config['smtp_user'] = 'noreplaybespoketailorshk@gmail.com';
-$config['smtp_pass'] = 'ejyrgcekrxapcvce';
+$config['smtp_user'] = 'noreply.octopuscart@gmail.com';
+$config['smtp_pass'] = 'ilvznbnpokkfobbg';
 
 $config['smtp_port'] = 465; 
 $config['smtp_timeout'] = 5;

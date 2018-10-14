@@ -139,53 +139,7 @@ class Order extends CI_Controller {
         $paymentbarcode = $query->row();
         $order_details['paymentbarcode'] = $paymentbarcode;
 
-        if (isset($_POST['submit'])) {
-            if (!empty($_FILES['picture']['name'])) {
-                $config['upload_path'] = 'assets_main/sliderimages';
-                $config['allowed_types'] = '*';
-                $temp1 = rand(100, 1000000);
-                $ext1 = explode('.', $_FILES['picture']['name']);
-                $ext = strtolower(end($ext1));
-                $file_newname = $temp1 . "1." . $ext;
-                $config['file_name'] = $file_newname;
-                //Load upload library and initialize configuration
-                $this->load->library('upload', $config);
-                $this->upload->initialize($config);
-                if ($this->upload->do_upload('picture')) {
-                    $uploadData = $this->upload->data();
-                    $picture = $uploadData['file_name'];
-                } else {
-                    $picture = '';
-                }
-            } else {
-                $picture = '';
-            }
-            $order_id = $order_details['order_data']->id;
-            $paymentdict = array(
-                'mobile_no' => $this->input->post('mobile_no'),
-                'payment_id' => $this->input->post('payment_id'),
-                'payment_date' => $this->input->post('payment_date'),
-                'description' => $this->input->post('description'),
-                'file_name' => $file_newname,
-                'order_id' => $order_id,
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-            );
-            $this->db->insert('user_order_payment', $paymentdict);
-
-
-            $description = $this->input->post('description');
-            $paymentid = $this->input->post('payment_id');
-            $orderstatus = array(
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-                'status' => "Payment Done",
-                'remark' => "Payment Done, and txn id. $paymentid",
-                'description' => $description,
-                'order_id' => $order_id
-            );
-            $this->db->insert('user_order_status', $orderstatus);
-        }
+      
 
         $order_id = $order_details['order_data']->id;
         if ($order_details) {
@@ -193,12 +147,13 @@ class Order extends CI_Controller {
             $this->db->where('order_id', $order_id);
             $query = $this->db->get('user_order_log');
             $orderlog = $query->result();
+          
 
             if (count($orderlog)) {
                 
             } else {
                 $this->Product_model->order_mail($order_id);
-                // redirect("Order/orderdetails/$order_key");
+                 redirect("Order/orderdetails/$order_key");
             }
 
 

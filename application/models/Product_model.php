@@ -564,7 +564,14 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             //echo $this->load->view('Email/order_mail', $order_details, true);
             $this->email->message($this->load->view('Email/order_mail', $order_details, true));
             $this->email->print_debugger();
-           echo $result = $this->email->send();
+           $send = $this->email->send();
+            if($send) {
+                echo json_encode("send");
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+                echo json_encode($error);
+            }
+
         }
     }
 

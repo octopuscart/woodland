@@ -63,7 +63,7 @@
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
         <div class="" style="padding:50px 0px">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="background: #000;padding: 0 20px">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #000;padding: 0 20px">
                 <tr>
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
@@ -76,7 +76,7 @@
                 </tr>
 
             </table>
-            <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="background: #fff">
+            <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
                     <td style="font-size: 12px;width: 50%" >
                         <b>Shipping Address</b><br/><hr/>
@@ -140,14 +140,14 @@
                     </td>
                 </tr>
             </table>
-            <table class="carttable"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding:20px">
+            <table class="carttable"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding:20px">
                 <tr style="font-weight: bold">
                     <td style="width: 20px;text-align: center">S.No.</td>
                     <td colspan="2"  style="text-align: center">Product</td>
 
-                    <td style="text-align: right;width: 100px">Price (In <?php echo globle_currency; ?>)</td>
+                    <td style="text-align: right;width: 100px">Price (In <?php echo trim(globle_currency); ?>)</td>
                     <td style="text-align: right">Qnty.</td>
-                    <td style="text-align: right;width: 100px">Total (In  <?php echo globle_currency; ?>)</td>
+                    <td style="text-align: right;width: 100px">Total (In  <?php echo trim(globle_currency);?>)</td>
                 </tr>
                 <!--cart details-->
                 <?php
@@ -207,19 +207,19 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Sub Total</td>
-                    <td style="text-align: right;width: 60px"><?php echo $order_data->sub_total_price; ?> </td>
+                    <td style="text-align: right;width: 60px"><?php  echo globle_currency ." ".  number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Shipping Amount</td>
-                    <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency ." ". number_format($order_data->credit_price, 2, '.', '');  ?> </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Coupon Discount</td>
-                    <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency ." ". number_format($order_data->credit_price, 2, '.', '');  ?> </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Toal Amount</td>
-                    <td style="text-align: right;width: 60px"><?php echo $order_data->total_price; ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency ." ". number_format($order_data->total_price, 2, '.', '');?> </td>
                 </tr>
 
 

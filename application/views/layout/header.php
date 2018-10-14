@@ -289,10 +289,10 @@
                                                     </ul>
                                                     <h3 class="ctg-name-title">Order Now</h3>
                                                     <ul class="sidenav-nav">
-                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
 
                                                     </ul>
                                                     <!-- times-->
@@ -326,10 +326,10 @@
                                                 </li>
                                                 <li ><a href="#">Order Now</a>
                                                     <ul>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
+                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
 
                                                     </ul>
                                                 </li>

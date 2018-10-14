@@ -257,7 +257,7 @@ $this->redirectCart();
                 'order_id' => $last_id,
                 'status' => "Order Confirmed",
                 'user_id' => 'guest',
-                'remark' => "Order Confirmed By Customer Using " . $paymentmathod . ", Now Waiting for payment",
+                'remark' => "Order Confirmed By Using " . $paymentmathod . ",  Waiting For Payment",
             );
             $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);

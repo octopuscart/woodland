@@ -25,11 +25,11 @@ define('globle_currency_type', 'US$ ');
  
 define('globle_currency', 'US$ ');
 
-define('site_mail_logo', 'http://www.bespoketailorshk.com/assets/images/logo73.png');
+define('site_mail_logo', 'https://www.bespoketailorshk.com/assets/images/logo73.png');
 
 
 
-define('custome_image_server', "http://costcointernational.com/bespoketailorshk_files");
+define('custome_image_server', "https://costcointernational.com/bespoketailorshk_files");
 
 
 //Email Settings//

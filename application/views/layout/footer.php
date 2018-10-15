@@ -94,19 +94,82 @@
                                 <div class="tab-content">
                                     <div id="metro-related1" class="tab-pane fade active in" ng-if="projectDetailsModel.productobj.file_name">
                                         <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>)"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related2" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name1">
                                         <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>);"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
                                         </a>
                                     </div>
                                     <div id="metro-related3" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name2">
                                         <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png"<?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>);"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
                                         </a>
                                     </div>
@@ -114,20 +177,81 @@
                                 <ul>
                                     <li class="active" ng-if="projectDetailsModel.productobj.file_name">
                                         <a aria-expanded="false" data-toggle="tab" href="#metro-related1" style="width:75px;">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name}});height: 75px"></div>
+                                            <div class="product_image_back" style="background: url(<?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>);height: 75px"></div>
                                             <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="related1">-->
                                         </a>
                                     </li>
                                     <li ng-if="projectDetailsModel.productobj.file_name1">
                                         <a aria-expanded="false" data-toggle="tab" href="#metro-related2" style="width:75px;">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name1}});height: 75px"></div>
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="related2">-->
+                                            <div class="product_image_back" style="background: url(<?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>);height: 75px"></div>
                                         </a>
                                     </li>
                                     <li ng-if="projectDetailsModel.productobj.file_name2">
                                         <a aria-expanded="false" data-toggle="tab" href="#metro-related3" style="width:75px;">
-                                            <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{projectDetailsModel.productobj.file_name2}});height: 75px"></div>
-                                            <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="related3">-->
+                                            <div class="product_image_back" style="background: url(<?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png"<?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>);height: 75px"></div>
                                         </a>
                                     </li>
                                 </ul>

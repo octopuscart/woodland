@@ -156,29 +156,7 @@ $image2 = "";
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
-                        <!--                        <div class="inner-shop-top-left">
-                                                    <div class="dropdown">
-                                                        <button class="btn sorting-btn dropdown-toggle" type="button" data-toggle="dropdown">Default Sorting<span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="#">Date</a></li>
-                                                            <li><a href="#">Best Sale</a></li>
-                                                            <li><a href="#">Rating</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>-->
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
-                        <div class="inner-shop-top-right">
-                            <ul>
-                                <li class="active"><a href="#gried-view" data-toggle="tab" aria-expanded="false"><i class="fa fa-th-large"></i></a></li>
-                                <li><a href="#list-view" data-toggle="tab" aria-expanded="true"><i class="fa fa-list"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="row inner-section-space-top">
                     <!-- Tab panes -->
                     <div class="tab-content" >
@@ -246,49 +224,50 @@ $image2 = "";
                                 </div>
                             </div>
 
-
-                        </div>
-                        <div class="col-md-12">
-                            <center>
-                            <div class="page_navigation "></div>
-                            </center>
                             <div style="clear: both"></div>
                         </div>
 
+
                         <!-- List Style -->
-                        <!--                        <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
-                        
-                        
-                                                    <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products">
-                                                        <div class="product-box2" style="height: auto;">
-                                                            <div class="media">
-                                                                <a class="pull-left" href="#">
-                                                                    <img class="img-responsive" src="img/product/grid/1.jpg" alt="product" />
-                                                                    <div class="product_image_back product_image_back_list" style="background: url(<?php echo custome_image_server; ?>/pant/output/{{product.folder}}/pant_style20001.png);"></div>
-                        
-                                                                </a>
-                                                                <div class="media-body">
-                                                                    <div class="product-box2-content ">
-                                                                        <h3><a href="#">{{product.title}} </a></h3>
-                                                                        <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
-                                                                        <p>
-                                                                            {{product.short_description}}
-                                                                            <br/>
-                                                                            {{product.attr}} 
-                                                                        </p>
-                                                                    </div>
-                                                                    <ul class="product-box2-cart" style="    margin-top: 0px;">
-                                                                        <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
-                                                                        <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Customize Now</a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div style="clear: both"></div>
-                                                    </div>
-                        
-                                                </div>-->
+                        <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products">
+                                <div class="product-box2" style="height: auto;">
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="img-responsive" src="img/product/grid/1.jpg" alt="product" />
+                                            <div class="product_image_back product_image_back_list" style="background: url(<?php echo custome_image_server; ?>/pant/output/{{product.folder}}/pant_style20001.png);"></div>
+
+                                        </a>
+                                        <div class="media-body">
+                                            <div class="product-box2-content ">
+                                                <h3><a href="#">{{product.title}} </a></h3>
+                                                <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                                <p>
+                                                    {{product.short_description}}
+                                                    <br/>
+                                                    {{product.attr}} 
+                                                </p>
+                                            </div>
+                                            <ul class="product-box2-cart" style="    margin-top: 0px;">
+                                                <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
+                                                <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Customize Now</a></li>
+                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <center>
+                            <div class="page_navigation "></div>
+                        </center>
+                        <div style="clear: both"></div>
                     </div>
                 </div>
                 <!--                <div class="row">

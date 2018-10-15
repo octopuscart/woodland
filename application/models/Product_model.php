@@ -536,9 +536,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     function menuController() {
         return "hello";
     }
-    
-    
-    
 
     function order_mail($order_id, $subject = "") {
         setlocale(LC_MONETARY, 'en_US');

@@ -195,7 +195,7 @@ $image2 = "";
                                         <div class="hot-sale" ng-if="product.sale_price > 0">
                                             <span>Sale</span>
                                         </div>
-                                        <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">
+                                        <a href="#">
 
                                             <?php
                                             switch ($custom_id) {
@@ -233,7 +233,7 @@ $image2 = "";
                                         </a>
                                     </div>
                                     <div class="product-content-holder product_details_height">
-                                        <h3><a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} 
+                                        <h3><a href="#">{{product.title}} 
                                                 <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
                                                 <!--<br>-->

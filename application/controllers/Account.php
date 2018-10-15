@@ -105,16 +105,15 @@ class Account extends CI_Controller {
                     $session_cart = $this->session->userdata('session_cart');
                     $productlist = $session_cart['products'];
 
-                     $this->Product_model->cartOperationCustomCopy($user_id);
+                    $this->Product_model->cartOperationCustomCopy($user_id);
 
                     $this->session->set_userdata('logged_in', $sess_data);
 
                     if ($link == 'checkoutInit') {
-                      redirect('Cart/checkoutInit');
+                        redirect('Cart/checkoutInit');
                     }
 
                     redirect('Account/profile');
-                    
                 } else {
                     $data1['msg'] = 'Invalid Email Or Password, Please Try Again';
                 }
@@ -131,12 +130,12 @@ class Account extends CI_Controller {
             $first_name = $this->input->post('first_name');
             $last_name = $this->input->post('last_name');
             $cpassword = $this->input->post('con_password');
-            
+
             $birth_date = $this->input->post('birth_date');
             $gender = $this->input->post('gender');
             $country = $this->input->post('country');
             $profession = $this->input->post('profession');
-            
+
             if ($cpassword == $password) {
                 $user_check = $this->User_model->check_user($email);
                 if ($user_check) {
@@ -148,11 +147,11 @@ class Account extends CI_Controller {
                         'email' => $email,
                         'password' => md5($password),
                         'password2' => $password,
-                        'profession'=>$profession,
-                        'country'=>$country,
-                        'gender'=>$gender,
-                        'birth_date'=>$birth_date,
-                        'registration_datetime'=>date("Y-m-d h:i:s A")
+                        'profession' => $profession,
+                        'country' => $country,
+                        'gender' => $gender,
+                        'birth_date' => $birth_date,
+                        'registration_datetime' => date("Y-m-d h:i:s A")
                     );
                     $this->db->insert('admin_users', $userarray);
                     $user_id = $this->db->insert_id();
@@ -165,12 +164,18 @@ class Account extends CI_Controller {
                     );
 
 
+                    try {
+                        $this->User_model->registration_mail($user_id);
+                    } catch (Exception $e) {
+                        
+                    }
+
                     $this->Product_model->cartOperationCustomCopy($user_id);
 
                     $this->session->set_userdata('logged_in', $sess_data);
 
                     if ($link == 'checkoutInit') {
-                       redirect('Cart/checkoutInit');
+                        redirect('Cart/checkoutInit');
                     }
 
                     redirect('Account/profile');
@@ -288,6 +293,12 @@ class Account extends CI_Controller {
 
 
         $this->load->view('Account/credits', $data);
+    }
+    
+    
+    function testReg(){
+        $user_id = $this->user_id;
+        $this->User_model->registration_mail($user_id);
     }
 
 }

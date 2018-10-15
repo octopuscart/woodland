@@ -87,8 +87,8 @@
                         <p>Dear <?php echo $customer->first_name; ?> <?php echo $customer->last_name; ?>,</p><br/>
 
                         <p> Thank you for registering your online Bespoke Tailors account from <?php echo $customer->country; ?>. </p>
-                        <p>you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more. </p> 
-                        <p>Your Login Credential Are: </p>
+                        <p>You will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more. </p> 
+                        <p>Your Login Credentials: </p>
                         <table style="    margin-top: 12px;
                                border: 1px solid #e1e1e1;">
                             <tr>

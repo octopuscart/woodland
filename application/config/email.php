@@ -2,11 +2,11 @@
 $config['useragent'] = 'CodeIgniter';
 $config['protocol'] = 'smtp';
 //$config['mailpath'] = '/usr/sbin/sendmail';
-$config['smtp_host'] = 'ssl://smtp.googlemail.com';
-$config['smtp_user'] = 'noreply.octopuscart@gmail.com';
-$config['smtp_pass'] = 'ilvznbnpokkfobbg';
+$config['smtp_host'] = 'server.octopuscart.com';
+$config['smtp_user'] = 'noreply@bespoketailorshk.com';
+$config['smtp_pass'] = 'Bthk2018';
 
-$config['smtp_port'] = 465; 
+$config['smtp_port'] = 587; 
 $config['smtp_timeout'] = 5;
 $config['wordwrap'] = TRUE;
 $config['wrapchars'] = 76;

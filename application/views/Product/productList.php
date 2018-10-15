@@ -156,16 +156,68 @@ $image2 = "";
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                
+
                 <div class="row inner-section-space-top">
                     <!-- Tab panes -->
                     <div class="tab-content" >
                         <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
+
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
-                                <div class="product-box1">
+                                <div class="product-box1" style="height: 434px;">
+                                    <ul class="product-social">
+                                         <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   </ul>
+                                    <div class="product-img-holder">
+                                        <a href="#">
+                                            <?php
+                                            switch ($custom_id) {
+                                                case "1":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product">
+                                                    <?php
+                                                    break;
+                                                case "2":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
+
+                                                    <?php
+                                                    break;
+                                                case "3":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
+                                                    <?php
+                                                    break;
+                                                case "4":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
+                                                    <?php
+                                                    break;
+                                                default:
+                                                    echo $custom_item;
+                                            }
+                                            ?>
+                                        </a>
+                                    </div>
+                                    <div class="product-content-holder">
+                                        <h3>
+                                            <a href="#">{{product.title}}  <br>
+                                                <span style="font-size: 12px">{{product.short_description}} </span>
+                                            </a>
+                                        </h3>
+                                        <span>{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+<!--                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
+                                <div class="product-box1" style="min-height: 382px;">
                                     <ul class="product-social" style="top:0px;    height: 264px;padding:40% 0px;
                                         background-size: cover;">
-                                                                            <!--<li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>-->
+                                                                            <li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                                         <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                     </ul>
@@ -203,10 +255,10 @@ $image2 = "";
                                             }
                                             ?>
 
-                                            <!---->
+                                            
 
 
-                                            <!--<div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver; ?>{{product.file_name2}});"></div>-->
+                                            <div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver; ?>{{product.file_name2}});"></div>
 
                                         </a>
                                     </div>
@@ -214,15 +266,15 @@ $image2 = "";
                                         <h3><a href="#">{{product.title}} 
                                                 <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
-                                                <!--<br>-->
-                                                <!--<p>{{product.attr}} </p>-->
+                                                <br>
+                                                <p>{{product.attr}} </p>
                                             </a></h3>
                                         <span>
                                             <span ng-if="product.sale_price > 0"> {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>
                                             {{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div style="clear: both"></div>
                         </div>
@@ -307,8 +359,7 @@ $image2 = "";
 
 
 <script>
-    var category_id = <?php echo $category; ?>;
-</script>
+            var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
@@ -324,7 +375,7 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
+            $(document).ready(function () {
 
     });
 </script>

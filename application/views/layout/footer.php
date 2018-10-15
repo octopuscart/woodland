@@ -89,7 +89,7 @@
             <div class="product-details1-area">
                 <div class="product-details-info-area">
                     <div class="row">
-                        <div class="col-md-7 col-sm-12 col-xs-12">
+                        <div class="col-md-9 col-sm-12 col-xs-12">
                             <div class="inner-product-details-left">
                                 <div class="tab-content">
                                     <div id="metro-related1" class="tab-pane fade active in" ng-if="projectDetailsModel.productobj.file_name">
@@ -98,24 +98,24 @@
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>)"></div>
+                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
+                                                         break;
+                                                     case "2":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
+                                                         break;
+                                                     case "3":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
+                                                         break;
+                                                     case "4":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
+                                                         break;
+                                                     default:
+                                                         echo $custom_item;
+                                                 }
+                                                 ?>)"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="single">-->
                                         </a>
                                     </div>
@@ -125,24 +125,24 @@
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>);"></div>
+                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
+                                                         break;
+                                                     case "2":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
+                                                         break;
+                                                     case "3":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
+                                                         break;
+                                                     case "4":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
+                                                         break;
+                                                     default:
+                                                         echo $custom_item;
+                                                 }
+                                                 ?>);"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name1}}" alt="single">-->
                                         </a>
                                     </div>
@@ -152,27 +152,28 @@
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png"<?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>);"></div>
+                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                         break;
+                                                     case "2":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png"<?php
+                                                         break;
+                                                     case "3":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                         break;
+                                                     case "4":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                         break;
+                                                     default:
+                                                         echo $custom_item;
+                                                 }
+                                                 ?>);"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
                                         </a>
                                     </div>
+                                    <div style="clear: both"></div>
                                 </div>
                                 <ul>
                                     <li class="active" ng-if="projectDetailsModel.productobj.file_name">
@@ -181,24 +182,24 @@
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>);height: 75px"></div>
+                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model10001.png<?php
+                                                         break;
+                                                     case "2":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png"<?php
+                                                         break;
+                                                     case "3":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style10001.png<?php
+                                                         break;
+                                                     case "4":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/s1_master_style60001.png<?php
+                                                         break;
+                                                     default:
+                                                         echo $custom_item;
+                                                 }
+                                                 ?>);height: 75px"></div>
                                             <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name}}" alt="related1">-->
                                         </a>
                                     </li>
@@ -208,24 +209,24 @@
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>);height: 75px"></div>
+                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/shirt_model20001.png<?php
+                                                         break;
+                                                     case "2":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png"<?php
+                                                         break;
+                                                     case "3":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/pant_style20001.png<?php
+                                                         break;
+                                                     case "4":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/style_buttons.png<?php
+                                                         break;
+                                                     default:
+                                                         echo $custom_item;
+                                                 }
+                                                 ?>);height: 75px"></div>
                                         </a>
                                     </li>
                                     <li ng-if="projectDetailsModel.productobj.file_name2">
@@ -234,30 +235,30 @@
                                             switch ($custom_id) {
                                                 case "1":
                                                     ?>
-                                                    <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png"<?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>);height: 75px"></div>
+                                                         <?php echo custome_image_server; ?>/shirt/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                         break;
+                                                     case "2":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png"<?php
+                                                         break;
+                                                     case "3":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                         break;
+                                                     case "4":
+                                                         ?>
+                                                         <?php echo custome_image_server; ?>/jacket/output/{{projectDetailsModel.productobj.folder}}/fabric20001.png<?php
+                                                         break;
+                                                     default:
+                                                         echo $custom_item;
+                                                 }
+                                                 ?>);height: 75px"></div>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class=" col-md-5 col-sm-12 col-xs-12">
+                        <div class=" col-md-3 col-sm-12 col-xs-12">
                             <div class="inner-product-details-right">
                                 <h3>{{projectDetailsModel.productobj.title}}</h3>
                                 <ul>
@@ -270,8 +271,8 @@
                                 <p class="price">{{projectDetailsModel.productobj.price|currency:"<?php echo globle_currency; ?> "}}</p>
                                 <p>{{projectDetailsModel.productobj.short_description}}</p>
                                 <div class="product-details-content">
-                                    <p><span class="model_tab_title">SKU:</span> {{projectDetailsModel.productobj.title}}</p>
-                                    <p><span class="model_tab_title">Availability:</span> {{projectDetailsModel.productobj.stock_status}}</p>
+                                    <p><span class="model_tab_title">SKU:</span><br/> {{projectDetailsModel.productobj.title}}</p>
+                                    <p><span class="model_tab_title">Availability:</span><br/> {{projectDetailsModel.productobj.stock_status}}</p>
                                     <!--<p><span>Category:</span>  {{projectDetailsModel.productobj.stock_status}}</p>-->
                                 </div>
                                 <!--                                <ul class="product-details-social">
@@ -368,10 +369,10 @@
 <script>
                                             $(window).on('load', function () {
                                                 // Page Preloader
-                                                
-                                                
-                                                
-                                                
+
+
+
+
                                             });
 
                                             $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});

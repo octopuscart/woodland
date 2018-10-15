@@ -281,7 +281,7 @@ $image2 = "";
 
 
                         <!-- List Style -->
-                        <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
+<!--                        <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
 
 
                             <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products">
@@ -313,7 +313,7 @@ $image2 = "";
                                 <div style="clear: both"></div>
                             </div>
 
-                        </div>
+                        </div>-->
                     </div>
                     <div class="col-md-12">
                         <center>

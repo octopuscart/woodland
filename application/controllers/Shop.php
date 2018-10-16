@@ -112,7 +112,9 @@ class Shop extends CI_Controller {
     public function testinsertsuit() {
         $foldercheck = ['12501.jpg', '12502.jpg', '12503.jpg', '12504.jpg', '12508.jpg', '12509.jpg', '12510.jpg', '12511.jpg', '12512.jpg', '12514.jpg', '12601.jpg', '12602.jpg', '9775.jpg', '9776.jpg', '9777.jpg', '9778.jpg', '9779.jpg', '9780.jpg'];
         $folderchek2 = ['12512.jpg', '12514.jpg', '12601.jpg', '12602.jpg', '12603.jpg', '12604.jpg', '12605.jpg', '12606.jpg', '12611.jpg', '12612.jpg', '12613.jpg', '12615.jpg', '12616.jpg', '12617.jpg', '12618.jpg', '12619.jpg', '12649.jpg', '12650.jpg', '12651.jpg', '12652.jpg', '12653.jpg', '12654.jpg', '12655.jpg', '12656.jpg'];
-        foreach ($folderchek2 as $key => $value) {
+       
+        $folderstrip = ['12546.jpg', '12548.jpg', '12549.jpg', '12550.jpg', '12551.jpg', '12552.jpg', '12553.jpg', '12554.jpg', '12562.jpg', '9733.jpg', '9734.jpg', '9735.jpg', '9736.jpg', '9737.jpg', '9744.jpg', '9749.jpg', '9750.jpg', '9751.jpg'];
+        foreach ($folderstrip as $key => $value) {
             $folder = $value;
             $foldermain = str_replace(".jpg", "", $folder);
 
@@ -127,7 +129,7 @@ class Shop extends CI_Controller {
 
 
             $products = array(
-                "category_id" => 49,
+                "category_id" => 50,
                 "sku" => $title,
                 "title" => $title,
                 "short_description" => "100% Cotton",
@@ -151,7 +153,7 @@ class Shop extends CI_Controller {
                 "variant_product_of" => "",
                 "folder" => $foldermain);
 
-            #$this->db->insert('products', $products);
+            $this->db->insert('products', $products);
         }
     }
 

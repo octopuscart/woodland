@@ -77,8 +77,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     $scope.getCartData();
     //remove cart data
     $scope.removeCart = function (product_id) {
-        $http.delete(globlecart + "/" + product_id).then(function (rdata) {
-            console.log("asdfsadf");
+         $http.get(globlecart+"Delete" + "/" + product_id).then(function (rdata) {
+            
             $scope.getCartData();
         }, function (r) {
         })
@@ -101,7 +101,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             }
         }
         console.log(productobj.quantity)
-        $http.put(globlecart + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
+         $http.get(globlecart+"Put"  + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
             $scope.getCartData();
         }, function (r) {
         })

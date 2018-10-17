@@ -75,7 +75,7 @@ class Product_model extends CI_Model {
         $points = ($point) ?
                 " and " . $wordsz[$point / 10] . " " .
                 $wordsz[$point = $point % 10] : '';
-        return globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . " Only";
+        return "Only ".globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
     }
 
     ///*******  Get data for deepth of the array  ********///
@@ -539,7 +539,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
     function order_mail($order_id, $subject = "") {
         setlocale(LC_MONETARY, 'en_US');
-        $checkcode = 0;
+        $checkcode = 1;
         $order_details = $this->getOrderDetails($order_id, 0);
 
         $emailsender = email_sender;

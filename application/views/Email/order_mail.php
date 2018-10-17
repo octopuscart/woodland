@@ -119,6 +119,11 @@
 
                         <table class="gn_table">
                             <tr>
+                                <td colspan="2">
+                                     <b>Shipping Address</b><br/><hr/>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th>Order No.</th>
                                 <td>: <?php echo $order_data->order_no; ?> </td>
                             </tr>
@@ -224,7 +229,7 @@
                 <tr>
                     <td colspan="3"  rowspan="5" style="font-size: 12px">
                         <b>Total Amount in Words: </b><br/>
-                        <span style="text-transform: capitalize"> <?php echo $amount_in_word; ?></span>
+                        <span style="text-transform: capitalize"> Only <?php echo $order_data->amount_in_word; ?></span>
                     </td>
 
                 </tr>

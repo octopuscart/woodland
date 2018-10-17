@@ -166,9 +166,9 @@ $paymentstatus = "";
                                     <td style="width: 20px;text-align: right">S.No.</td>
                                     <td colspan="2"  style="text-align: center">Product</td>
 
-                                    <td style="text-align: right;width: 100px"">Price<br/><span style="font-size: 10px">(In <?php echo globle_currency; ?>)</span></td>
-                                    <td style="text-align: right;width: 20px"">Qnty.</td>
-                                    <td style="text-align: right;width: 100px">Total<br/><span style="font-size: 10px">(In <?php echo globle_currency; ?>)</span></td>
+                                    <td style="text-align: right;width: 100px"">Price</td>
+                                    <td style="text-align: right;width: 20px"">Qantity</td>
+                                    <td style="text-align: right;width: 100px">Total</td>
                                 </tr>
                                 <!--cart details-->
                                 <?php
@@ -212,15 +212,15 @@ $paymentstatus = "";
                                     </td>
 
                                     <td style="text-align: right">
-                                        <?php echo $product->price; ?>
+                                       {{ <?php echo $product->price; ?> |currency:"<?php echo globle_currency; ?> "}}
                                     </td>
 
                                     <td style="text-align: right">
-                                        <?php echo $product->quantity; ?>
+                                        <?php echo $product->quantity; ?> 
                                     </td>
 
                                     <td style="text-align: right;">
-                                        <?php echo $product->total_price; ?>
+                                       {{ <?php echo $product->total_price; ?>|currency:"<?php echo globle_currency; ?> "}}
                                     </td>
                                     </tr>
 

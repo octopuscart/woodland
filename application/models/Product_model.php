@@ -75,7 +75,7 @@ class Product_model extends CI_Model {
         $points = ($point) ?
                 " and " . $wordsz[$point / 10] . " " .
                 $wordsz[$point = $point % 10] : '';
-        return globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "");
+        return globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . " Only";
     }
 
     ///*******  Get data for deepth of the array  ********///

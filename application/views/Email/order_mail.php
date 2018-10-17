@@ -32,28 +32,38 @@
 
             }
             .style_block{
-       float: left;
-    padding: 1px 1px;
-    margin: 2.5px;
-    /* background: #000; */
-    color: white;
-    border: 1px solid #e4e4e4;
-    width: 47%;
-    font-size: 10px;
+                float: left;
+                padding: 1px 1px;
+                margin: 2.5px;
+                /* background: #000; */
+                color: white;
+                border: 1px solid #e4e4e4;
+                width: 47%;
+                font-size: 12px;
             }
 
-  .style_block span {
-    background: #fff;
-    margin-left: 5px;
-    color: #000;
-    padding: 0px 5px;
-    width: 50%;
-}
-.style_block b {
-    width: 46%;
-    float: left;
-        background: #dedede;
-    color: black;
+
+            .style_block span {
+                background: #fff;
+                margin-left: 5px;
+                color: #000;
+                padding: 0px 5px;
+                width: 50%;
+            }
+            .style_block b {
+                width: 46%;
+                float: left;
+                background: #dedede;
+                color: black;
+            }
+                        span.fr_value {
+    margin-left: 1px;
+    padding: 0;
+    font-size: 9px;
+    text-align: -webkit-left;
+    position: absolute;
+    margin-top: 0px;
+    width: 20px;
 }
         </style>
     </head>
@@ -122,7 +132,7 @@
                             </tr>
                             <tr>
                                 <th>Txn No.</th>
-                                <td>: <?php echo $payment_details['txn_id']?$payment_details['txn_id']:'---'; ?> </td>
+                                <td>: <?php echo $payment_details['txn_id'] ? $payment_details['txn_id'] : '---'; ?> </td>
                             </tr>
                             <tr>
                                 <th>Status</th>
@@ -147,7 +157,7 @@
 
                     <td style="text-align: right;width: 100px">Price (In <?php echo trim(globle_currency); ?>)</td>
                     <td style="text-align: right">Qnty.</td>
-                    <td style="text-align: right;width: 100px">Total (In  <?php echo trim(globle_currency);?>)</td>
+                    <td style="text-align: right;width: 100px">Total (In  <?php echo trim(globle_currency); ?>)</td>
                 </tr>
                 <!--cart details-->
                 <?php
@@ -185,11 +195,9 @@
                         <td colspan="6">
                             <b>Style Details : <?php echo $product->title; ?> - <?php echo $product->item_name; ?></b>
                             <br/><?php
-                            
                             foreach ($product->custom_dict as $key => $value) {
                                 echo "<p class='style_block'><b>$key</b><span> $value</span></p>";
                             }
-                         
                             ?>  
                         </td>
                     </tr>
@@ -197,6 +205,21 @@
                 }
                 ?>
                 <!--end of cart details-->
+
+                <tr>
+                    <td colspan="6">
+                        <b>Sizes: <?php echo $order_data->measurement_style; ?></b>
+                        <br/><?php
+                        if (count($measurements_items)) {
+                             foreach ($measurements_items as $keym => $valuem) {
+                                 $mvalues = explode(" ", $valuem['measurement_value']);
+                                echo "<p class='style_block'><b>".$valuem['measurement_key']." </b><span> " . $mvalues[0] . " <span class='fr_value'>" . $mvalues[1] . '"' . "</span></span></p>";
+                            }
+                        }
+                        ?>  
+                    </td>
+                </tr>
+
 
                 <tr>
                     <td colspan="3"  rowspan="5" style="font-size: 12px">
@@ -207,19 +230,19 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Sub Total</td>
-                    <td style="text-align: right;width: 60px"><?php  echo globle_currency ." ".  number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Shipping Amount</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency ." ". number_format($order_data->credit_price, 2, '.', '');  ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Coupon Discount</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency ." ". number_format($order_data->credit_price, 2, '.', '');  ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right">Toal Amount</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency ." ". number_format($order_data->total_price, 2, '.', '');?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->total_price, 2, '.', ''); ?> </td>
                 </tr>
 
 

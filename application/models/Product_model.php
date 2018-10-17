@@ -539,6 +539,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
     function order_mail($order_id, $subject = "") {
         setlocale(LC_MONETARY, 'en_US');
+        $checkcode = 0;
         $order_details = $this->getOrderDetails($order_id, 0);
 
         $emailsender = email_sender;
@@ -547,11 +548,11 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
         if ($order_details) {
             $order_no = $order_details['order_data']->order_no;
-             $this->email->set_newline("\r\n");
+            $this->email->set_newline("\r\n");
             $this->email->from($emailsender, $sendername);
             $this->email->to($order_details['order_data']->email);
             $this->email->bcc(email_bcc);
-           
+
 
 
             $orderlog = array(
@@ -564,18 +565,19 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
-            //echo $this->load->view('Email/order_mail', $order_details, true);
-            $this->email->message($this->load->view('Email/order_mail', $order_details, true));
-            
-            $this->email->print_debugger();
-           $send = $this->email->send();
-            if($send) {
-                echo json_encode("send");
+            if ($checkcode) {
+                $this->email->message($this->load->view('Email/order_mail', $order_details, true));
+                $this->email->print_debugger();
+                $send = $this->email->send();
+                if ($send) {
+                    echo json_encode("send");
+                } else {
+                    $error = $this->email->print_debugger(array('headers'));
+                    echo json_encode($error);
+                }
             } else {
-                $error = $this->email->print_debugger(array('headers'));
-                echo json_encode($error);
+                echo $this->load->view('Email/order_mail', $order_details, true);
             }
-
         }
     }
 

@@ -171,7 +171,7 @@ $this->load->view('layout/header');
                                             <li class="active"><a href="#size_standard" data-toggle="tab" aria-expanded="false" ng-click="slidedemostandard()">Standard Size</a></li>
                                             <li><a href="#bank" data-toggle="tab" aria-expanded="true" ng-click="slidedemo('Custom Measurement')">Measure Your Body</a></li>
                                             <li><a href="#cash" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Mail-in Garments')">Mail-in Garments</a></li>
-                                            <li><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Recent Measurements')">For Exting Client</a></li>
+                                            <li><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Recent Measurement')">For Existing Clients</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -450,7 +450,7 @@ $this->load->view('layout/header');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <?php
-$this->load->view('layout/footer');
+$this->load->view('layout/footer', array('custom_item'=>0, 'custom_id'=>0));
 ?>
 <script>
 

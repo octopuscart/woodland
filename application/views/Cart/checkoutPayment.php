@@ -316,7 +316,7 @@ $this->load->view('layout/header');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-    var avaiblecredits =<?php echo $user_credits; ?>;
+    var avaiblecredits =0;
     function confirmOrder(){
         swal({
             title: 'Processing Order',
@@ -328,5 +328,5 @@ $this->load->view('layout/header');
 </script>
 
 <?php
-$this->load->view('layout/footer');
+$this->load->view('layout/footer', array('custom_item'=>0, 'custom_id'=>0));
 ?>

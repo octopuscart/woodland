@@ -926,6 +926,9 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["buttons_110001.png"],
                         "button_hole" => ["button_hole_110001.png"],
                         "show_buttons" => "true",
+                        "canvas_m"=>"jacketstyle",
+                        "canvas_o"=>"jacketstyleoverlay",
+                        "function"=>"setJacketBody",
                         "overlay" => ["single_overlay.png"],
                     ), array(
                         "status" => "0",
@@ -939,6 +942,8 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["buttons_120001.png"],
                         "button_hole" => ["button_hole_110001.png", "button_hole_120001.png"],
                         "show_buttons" => "false",
+                        "canvas_m"=>"jacketstyle",
+                        "canvas_o"=>"jacketstyleoverlay",
                         "overlay" => [ "single_overlay.png"],
                     )
                     , array(
@@ -953,6 +958,9 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["buttons_42_120001.png", "buttons_42_340001.png",],
                         "buttons2" => [],
                         "show_buttons" => "true",
+                        "canvas_m"=>"jacketstyle",
+                        "function"=>"setJacketBody",
+                        "canvas_o"=>"jacketstyleoverlay",
                         "overlay" => ["double_overlay.png"],
                     )
                     , array(
@@ -967,6 +975,8 @@ class CustomApi extends REST_Controller {
                         "buttons2" => [],
                         "image" => "suit_elements/suittype/62_button.png",
                         "show_buttons" => "true",
+                        "canvas_m"=>"jacketstyle",
+                        "canvas_o"=>"jacketstyleoverlay",
                         "overlay" => ["double_overlay.png"],
                     )
                 ],
@@ -1015,11 +1025,11 @@ class CustomApi extends REST_Controller {
                             "6 Buttons 1 Button Fasten" => array("elements" => [
 
                                     "laple__double_notch0001.png",
-                                    "laple_double_42.png",
+                                   
                                 ], "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple__double_notch0001.png",
-                                    "laple_double_42.png",
+                                   
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["button_hole_notch.png"],

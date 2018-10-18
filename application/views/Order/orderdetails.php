@@ -236,7 +236,9 @@ $paymentstatus = "";
                         </div>
 
                         <div class="col-md-12" style=" margin-top: 10px;">
-                            <article class="" style="padding: 10px;">
+                            <article class="" style="padding: 10px;border: 1px solid #000;
+    padding: 6px;
+    border-radius: 5px;">
                                 <table class="table table-bordered"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding:20px">
                                     <tr style="font-weight: bold">
                                         <td style="width: 20px;text-align: right">S.No.</td>

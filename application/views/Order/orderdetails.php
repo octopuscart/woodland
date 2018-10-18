@@ -75,8 +75,8 @@ $paymentstatus = "";
             <div class="row  "> 
 
                 <div class="col-md-3" style="    border: 1px solid #000;
-    padding: 6px;
-    border-radius: 5px;">
+                     padding: 6px;
+                     border-radius: 5px;">
                     <h3 class="headerorder">Order Status</h3>
 
                     <?php
@@ -85,8 +85,8 @@ $paymentstatus = "";
                     foreach ($order_status as $oskey => $osvalue) {
                         ?>
                         <div class="media" style="border-bottom: 1px solid #000;
-    margin-bottom: 10px;
-    padding-bottom: 10px;">
+                             margin-bottom: 10px;
+                             padding-bottom: 10px;">
                             <div class="media-left">
                                 <a href="#">
                                     <i class='icon-circle'><?php
@@ -129,7 +129,7 @@ $paymentstatus = "";
                         <i class="fa fa-envelope"></i> Request Order Copy On Mail
                     </button>
 
-                
+
 
 
                 </div>
@@ -237,8 +237,8 @@ $paymentstatus = "";
 
                         <div class="col-md-12" style=" margin-top: 10px;">
                             <article class="" style="padding: 10px;border: 1px solid #000;
-    padding: 6px;
-    border-radius: 5px;">
+                                     padding: 6px;
+                                     border-radius: 5px;">
                                 <table class="table table-bordered"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding:20px">
                                     <tr style="font-weight: bold">
                                         <td style="width: 20px;text-align: right">S.No.</td>

@@ -280,7 +280,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
         if ($order_details) {
 
-//            $this->db->order_by('id', 'desc');
+            $this->db->order_by('id', 'desc');
             $this->db->where('order_id', $order_details->id);
             $query = $this->db->get('user_order_status');
             $userorderstatus = $query->result();

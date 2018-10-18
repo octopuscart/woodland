@@ -40,7 +40,6 @@ $paymentstatus = "";
     .headerorder{
         padding: 2px 10px;
         /*text-align: center;*/
-        margin: -2px;
         background-color: #000000;
         margin-bottom: 10px;
         color: #fff;
@@ -75,86 +74,62 @@ $paymentstatus = "";
         <div class="container">
             <div class="row  "> 
 
-                <div class="col-md-3">
+                <div class="col-md-3" style="    border: 1px solid #000;
+    padding: 6px;
+    border-radius: 5px;">
+                    <h3 class="headerorder">Order Status</h3>
 
-                    <table class="carttable"  border-color= "#9E9E9E" align="center"  cellpadding="0" cellspacing="0" style="background: #fff;">
+                    <?php
+                    $count = 0;
+                    $countord = count($order_status);
+                    foreach ($order_status as $oskey => $osvalue) {
+                        ?>
+                        <div class="media" style="border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+    padding-bottom: 10px;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <i class='icon-circle'><?php
+                                        echo $countord - $count;
+                                        ?></i>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading" style="font-size: 15px">  <?php
+                                    echo $osvalue->status;
+                                    ?></h4>
+                                <small style="font-weight:300;font-size:13px">
+                                    <?php
+                                    if ($osvalue->status == "Shipped") {
+                                        echo $osvalue->description;
+                                    } else {
+                                        echo $osvalue->remark;
+                                    }
+                                    ?>
 
+                                </small>
+                                <br/>
+                                <span style="font-size: 10px;">
+                                    <i class="fa fa-calendar"></i> 
+                                    <?php
+                                    echo $osvalue->c_date . " " . $osvalue->c_time;
+                                    ?>
+                                </span>
+                            </div>
+                        </div>
+                        <?php
+                        $count++;
+                        ?>
 
-                        <tr>
-                            <td>
-                                <div class = "" style = "    padding: 5px 5px;
-                                     border: 1px solid #000;
-                                     margin-bottom: 18px;
-                                     border-radius: 5px;">
-                                    <center>
-                                        <h3 class="headerorder">Order Status</h3>
+                        <?php
+                    }
+                    ?>
 
-                                        <table class="orderstatustable" align="center"  cellpadding="0" cellspacing="0" >
+                    <button class="btn btn-inverse btn-block" ng-click="sendOrderMail('<?php echo $order_data->order_no; ?>')">
+                        <i class="fa fa-envelope"></i> Request Order Copy On Mail
+                    </button>
 
-                                            <?php
-                                            $count = 0;
-                                            $countord = count($order_status);
-                                            foreach ($order_status as $oskey => $osvalue) {
-                                                ?>
-                                                <tr style="border-bottom: 1px solid #000;">
-                                                    <td style='text-align: right; border-left: 0px solid;padding: 0;'>
-
-                                                        <i class='icon-circle'><?php
-                                                            echo $countord - $count;
-                                                            ?></i>
-                                                    </td>
-                                                    <td style=' padding: 10px;'>
-                                                        <b>
-                                                            <?php
-                                                            echo $osvalue->status;
-                                                            ?>
-                                                        </b>
-                                                        <br/>
-                                                        <small style="font-weight:300;font-size:13px">
-                                                            <?php
-                                                            if ($osvalue->status == "Shipped") {
-                                                                echo $osvalue->description;
-                                                            } else {
-                                                                echo $osvalue->remark;
-                                                            }
-                                                            ?>
-
-                                                        </small>
-                                                        <br/>
-                                                        <span style="font-size: 10px;">
-                                                            <i class="fa fa-calendar"></i> 
-                                                            <?php
-                                                            echo $osvalue->c_date . " " . $osvalue->c_time;
-                                                            ?>
-                                                        </span>
-
-
-                                                    </td>
-
-
-                                                </tr>
-                                                <?php
-                                               
-                                                ?>
-                                                <?php
-                                                $count++;
-                                            }
-                                            ?>
-                                            <tr>
-                                                <th colspan="3" style="padding: 10px 5px 5px;">
-                                                    <button class="btn btn-inverse btn-block" ng-click="sendOrderMail('<?php echo $order_data->order_no; ?>')">
-                                                        <i class="fa fa-envelope"></i> Request Order Copy On Mail
-                                                    </button>
-                                                </th>
-                                            </tr>
-
-                                        </table>
-                                    </center>
-                                </div>
-                            </td>
-                        </tr>          
-
-                    </table>
+                
 
 
                 </div>

@@ -992,14 +992,14 @@ class CustomApi extends REST_Controller {
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["button_hole_notch.png"],
-                                "overelay" => ["single_laple_n.png",]),
+                                "overelay" => ["single_laple_n1.png",]),
                             "2 Buttons" => array("elements" => [
 
                                     "laple_single_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["button_hole_notch.png"],
-                                "overelay" => ["single_laple_n.png",]),
+                                "overelay" => ["single_laple_n1.png",]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_notch_modern0001.png"

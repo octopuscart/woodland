@@ -257,9 +257,10 @@ b.barcomb-list {
 
 
 .order_box{
-    padding: 10px;
+       padding: 6px;
     padding-bottom: 11px!important;
     height: 160px;
+    border-radius: 5px;
     border: 1px solid;
 }
 .order_box li{

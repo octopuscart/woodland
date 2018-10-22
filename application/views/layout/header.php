@@ -128,6 +128,7 @@
                                     <div class="account-wishlist">
                                         <ul>
                                             <?php
+                                           
                                             $session_data = $this->session->userdata('logged_in');
                                             if (isset($session_data['login_id'])) {
                                                 ?>
@@ -320,7 +321,7 @@
                                             <ul>
                                                 <li class="active"><a href="#">Home</a>
                                                     <ul>
-                                                        <li><a href="#">FAQ'S</a></li>
+                                                        <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ'S</a></li>
                                                         <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
                                                     </ul>
                                                 </li>
@@ -356,7 +357,7 @@
                                                 <ul>
                                                     <li class="active"><a href="#">Home</a>
                                                         <ul>
-                                                            <li><a href="#">FAQ'S</a></li>
+                                                            <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ'S</a></li>
                                                             <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
                                                         </ul>
                                                     </li>

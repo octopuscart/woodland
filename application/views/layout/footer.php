@@ -8,8 +8,8 @@
                         <div class="footer-box">
                             <h3>Information</h3>
                             <ul class="info-list">
-                                <li><a href="#">About Us</a></li>
-
+                                <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ's</a></li>
+                                <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Terms & Condition</a></li>
                             </ul>

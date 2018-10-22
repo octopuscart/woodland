@@ -29,9 +29,9 @@ $this->load->view('layout/header');
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                 <div class="single-blog-details-content">
-                   <img class="img-responsive" src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" alt="logo" style="  margin: 0px auto 34px;
+<!--                   <img class="img-responsive" src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" alt="logo" style="  margin: 0px auto 34px;
     background: black;
-    height: 53px;">
+    height: 53px;">-->
 
                     <p>
                         As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.

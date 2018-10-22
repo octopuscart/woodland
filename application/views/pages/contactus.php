@@ -70,31 +70,31 @@ $this->load->view('layout/header');
                     <h2>Send Us Message</h2>
                     <div class="row">
                         <div class="contact-form">
-                            <form id="contact-form">
+                            <form id="contact-form" method="post" action="#">
                                 <fieldset>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Last Name*" class="form-control" id="form-name" data-error="This field is required" required>
+                                            <input name="last_name" type="text" placeholder="Last Name*" class="form-control" id="form-name" data-error="This field is required" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" placeholder="First Name*" class="form-control" id="form-email" data-error="This field is required" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="email" placeholder="Email*" class="form-control" id="form-email" data-error="Email field is required" required>
+                                            <input name="first_name" type="text" placeholder="First Name*" class="form-control" id="form-email" data-error="This field is required" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Contact No." class="form-control" id="form-name" data-error="This field is required" >
+                                            <input name="email" type="email" placeholder="Email*" class="form-control" id="form-email" data-error="Email field is required" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input name="contact" type="text" placeholder="Contact No." class="form-control" id="form-name" data-error="This field is required" >
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -116,13 +116,13 @@ $this->load->view('layout/header');
 
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <textarea placeholder="Message*" class="textarea form-control" id="form-message" rows="8" cols="20" data-error="Message field is required" required></textarea>
+                                            <textarea name="message" placeholder="Message*" class="textarea form-control" id="form-message" rows="8" cols="20" data-error="Message field is required" required></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <button type="submit" class="btn-send-message">Send Message</button>
+                                            <button type="submit" name="sendmessage" value="sendmessage" class="btn-send-message">Send Message</button>
                                         </div>
                                     </div>
                                 </fieldset>

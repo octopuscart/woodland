@@ -11,14 +11,17 @@ class PayPalPaymentGuest extends CI_Controller {
         $this->load->model('User_model');
         $this->checklogin = $this->session->userdata('logged_in');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $query = $this->db->get('site_configuration');
+        $siteconfiguration = $query->row();
+        
     }
 
     public function process() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'bespoke_api1.biznetvigator.com'; //PayPal API Username
-        $PayPalApiPassword = 'BWJW5YLKQN48TLKJ'; //Paypal API password
-        $PayPalApiSignature = 'A4B5rTBa2Wszba-8qwTnM0eJZcbYA9Av3m2kXRN3E9ICkpspkoU6Z..Y'; //Paypal API Signature
-        $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
+        $PayPalApiUsername = paypal_api_username; //PayPal API Username
+        $PayPalApiPassword = paypal_api_password; //Paypal API password
+        $PayPalApiSignature = paypal_api_signature; //Paypal API Signature
+        $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartData($this->user_id);
@@ -97,10 +100,10 @@ class PayPalPaymentGuest extends CI_Controller {
 
     public function success() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'bespoke_api1.biznetvigator.com'; //PayPal API Username
-        $PayPalApiPassword = 'BWJW5YLKQN48TLKJ'; //Paypal API password
-        $PayPalApiSignature = 'A4B5rTBa2Wszba-8qwTnM0eJZcbYA9Av3m2kXRN3E9ICkpspkoU6Z..Y'; //Paypal API Signature
-        $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
+        $PayPalApiUsername = paypal_api_username; //PayPal API Username
+        $PayPalApiPassword = paypal_api_password; //Paypal API password
+        $PayPalApiSignature = paypal_api_signature; //Paypal API Signature
+        $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         //Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID
         if ($this->input->get("token") && $this->input->get("PayerID")) {

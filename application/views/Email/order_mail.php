@@ -120,7 +120,7 @@
                         <table class="gn_table">
                             <tr>
                                 <td colspan="2">
-                                     <b>Shipping Address</b><br/><hr/>
+                                     <b>Order Information</b><br/><hr/>
                                 </td>
                             </tr>
                             <tr>

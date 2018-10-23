@@ -25,18 +25,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   |
  */
 
-
+require("configdbconnect.php");
+$configuration = $globleConnectDB;
 
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 switch ($baselink) {
     case "http://localhost":
-        $baselinkmain = $baselink . '/bespoketailorshk';
+        $baselinkmain = $baselink . $configuration['localpath'];
         break;
     case "http://192.168.1.2":
-        $baselinkmain = $baselink . '/bespoketailorshk';
+        $baselinkmain = $baselink .  $configuration['localpath'];
         break;
     default:
-        $baselinkmain = 'https://www.bespoketailorshk.com/';
+        $baselinkmain =  $configuration['site_url'];
 }
 
 $config['base_url'] = $baselinkmain;

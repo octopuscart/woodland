@@ -433,7 +433,7 @@
                                             <div class="media">
                                                 <div class="pull-left cart-product-img">
                                                     <a href="#">
-                                                        <div class="product_image_back" style="background: url({{product.file_name}});height: 80px;width: 80px;"></div>
+                                                        <div class="product_image_back" style="background: url({{product.file_name}});height: 80px;width: 80px;    background-size: cover;"></div>
 
                                                                     <!--<img class="img-responsive" alt="product" src="{{product.file_name}}">-->
                                                     </a>

@@ -24,6 +24,11 @@ class Account extends CI_Controller {
 
     //Profile page
     public function profile() {
+
+        $query = $this->db->get('country');
+        $countrylist = $query->result();
+        $data1['countrylist'] = $countrylist;
+
         if ($this->user_id == 0) {
             redirect('Account/login');
         }
@@ -76,6 +81,10 @@ class Account extends CI_Controller {
     //login page
     function login() {
         $data1['msg'] = "";
+
+        $query = $this->db->get('country');
+        $countrylist = $query->result();
+        $data1['countrylist'] = $countrylist;
 
         $link = isset($_GET['page']) ? $_GET['page'] : '';
         $data1['next_link'] = $link;
@@ -294,9 +303,8 @@ class Account extends CI_Controller {
 
         $this->load->view('Account/credits', $data);
     }
-    
-    
-    function testReg(){
+
+    function testReg() {
         $user_id = $this->user_id;
         $this->User_model->registration_mail($user_id);
     }

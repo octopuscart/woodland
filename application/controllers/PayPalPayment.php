@@ -15,10 +15,10 @@ class PayPalPayment extends CI_Controller {
 
     public function process() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'bespoke_api1.biznetvigator.com'; //PayPal API Username
-        $PayPalApiPassword = 'BWJW5YLKQN48TLKJ'; //Paypal API password
-        $PayPalApiSignature = 'A4B5rTBa2Wszba-8qwTnM0eJZcbYA9Av3m2kXRN3E9ICkpspkoU6Z..Y'; //Paypal API Signature
-        $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
+        $PayPalApiUsername = paypal_api_username; //PayPal API Username
+        $PayPalApiPassword = paypal_api_password; //Paypal API password
+        $PayPalApiSignature = paypal_api_signature; //Paypal API Signature
+        $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartData($this->user_id);
@@ -67,28 +67,21 @@ class PayPalPayment extends CI_Controller {
                 '&PAYMENTREQUEST_0_SHIPDISCAMT=' . urlencode('0') .
                 '&PAYMENTREQUEST_0_INSURANCEAMT=' . urlencode('0') .
                 '&PAYMENTREQUEST_0_AMT=' . urlencode($total_amt) .
-                '&PAYMENTREQUEST_0_CURRENCYCODE=' . urlencode('USD') .
+                '&PAYMENTREQUEST_0_CURRENCYCODE=' . urlencode(paypal_api_currency_code) .
                 '&LOCALECODE=GB' . //PayPal pages to match the language on your website.
                 '&LOGOIMG=http://bespoketailorshk.costcointernational.com/assets/images/logo73.png' . //site logo
                 '&CARTBORDERCOLOR=000000' . //border color of cart
                 '&ALLOWNOTE=1';
-//        $this->load->view('home', $data);
         $this->load->library('paypalclass');
-
-//        set payment on session
         $this->session->set_userdata('session_paypal', $paypaldata);
         $session_paypal = $this->session->userdata('session_paypal');
 
         $httpParsedResponseAr = $this->paypalclass->PPHttpPost('SetExpressCheckout', $setexpresscheckout . $paypaldata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
 
         if ("SUCCESS" == strtoupper($httpParsedResponseAr["ACK"]) || "SUCCESSWITHWARNING" == strtoupper($httpParsedResponseAr["ACK"])) {
-//Redirect user to PayPal store with Token received.
             $paypalurl = 'https://www' . $PayPalMode . '.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=' . $httpParsedResponseAr["TOKEN"] . '';
             header('Location: ' . $paypalurl);
         } else {
-//Show error message
-//            print_r($httpParsedResponseAr);
-
             $data["error"] = '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
             $this->load->view('paypal/error', $data);
         }
@@ -97,10 +90,10 @@ class PayPalPayment extends CI_Controller {
 
     public function success() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'bespoke_api1.biznetvigator.com'; //PayPal API Username
-        $PayPalApiPassword = 'BWJW5YLKQN48TLKJ'; //Paypal API password
-        $PayPalApiSignature = 'A4B5rTBa2Wszba-8qwTnM0eJZcbYA9Av3m2kXRN3E9ICkpspkoU6Z..Y'; //Paypal API Signature
-        $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
+        $PayPalApiUsername = paypal_api_username; //PayPal API Username
+        $PayPalApiPassword = paypal_api_password; //Paypal API password
+        $PayPalApiSignature = paypal_api_signature; //Paypal API Signature
+        $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         //Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID
         if ($this->input->get("token") && $this->input->get("PayerID")) {
@@ -317,20 +310,20 @@ class PayPalPayment extends CI_Controller {
 
                      */
 
-                  //  echo '<pre>';
-                //    print_r($httpParsedResponseAr);
-                 //   echo '</pre>';
+                    //  echo '<pre>';
+                    //    print_r($httpParsedResponseAr);
+                    //   echo '</pre>';
                 } else {
-                  //  echo '<div style="color:red"><b>GetTransactionDetails failed:</b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
-                  //  echo '<pre>';
-                //    print_r($httpParsedResponseAr);
-                //    echo '</pre>';
+                    //  echo '<div style="color:red"><b>GetTransactionDetails failed:</b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
+                    //  echo '<pre>';
+                    //    print_r($httpParsedResponseAr);
+                    //    echo '</pre>';
                 }
             } else {
-              //  echo '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
+                //  echo '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
                 echo '<pre>';
-             //   print_r($httpParsedResponseAr);
-             //   echo '</pre>';
+                //   print_r($httpParsedResponseAr);
+                //   echo '</pre>';
             }
         }
         $this->load->view('paypal/cancel', $data);

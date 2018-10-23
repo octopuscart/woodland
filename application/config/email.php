@@ -1,12 +1,15 @@
 <?php
+ require("configdbconnect.php");
+$configuration = $globleConnectDB;
+
+
 $config['useragent'] = 'CodeIgniter';
 $config['protocol'] = 'smtp';
 //$config['mailpath'] = '/usr/sbin/sendmail';
-$config['smtp_host'] = 'server.octopuscart.com';
-$config['smtp_user'] = 'noreply@bespoketailorshk.com';
-$config['smtp_pass'] = 'Bthk2018';
-
-$config['smtp_port'] = 587; 
+$config['smtp_host'] =$configuration['email_host'];
+$config['smtp_user'] = $configuration['email_sender'];
+$config['smtp_pass'] = $configuration['email_password'];
+$config['smtp_port'] = $configuration['email_port'];
 $config['smtp_timeout'] = 5;
 $config['wordwrap'] = TRUE;
 $config['wrapchars'] = 76;
@@ -18,3 +21,5 @@ $config['crlf'] = "\r\n";
 $config['newline'] = "\r\n";
 $config['bcc_batch_mode'] = TRUE;
 $config['bcc_batch_size'] = 200;
+
+    

@@ -179,19 +179,22 @@ class Api extends REST_Controller {
             $productString = implode(",", $productListSt);
 
 
-            $attr_query = "select count(cav.id) product_count, '' as checked, cav.attribute_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa
+            $attr_query = "select count(cav.id) product_count, '' as checked, cvv.widget, cav.attribute_value, cav.additional_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa
         join category_attribute_value as cav on cav.id = pa.attribute_value_id
+        join category_attribute as cvv on cvv.id = cav.attribute_id
         where pa.product_id in ($productString)
         group by cav.id";
             $attr_result = $this->Product_model->query_exe($attr_query);
 
 
             foreach ($attr_result as $key => $value) {
-                $filter = $value['attribute'];
+                $filter = $value['attribute_id'];
+                $attitle = $value['attribute'];
+                $widget = $value['widget'];
                 if (isset($attr_filter[$filter])) {
                     array_push($attr_filter[$filter], $value);
                 } else {
-                    $attr_filter[$filter] = [];
+                    $attr_filter[$filter] = array("title"=>$attitle, "attrs" =>[], "widget"=>$widget);
                     array_push($attr_filter[$filter], $value);
                 }
             }

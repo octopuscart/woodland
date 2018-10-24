@@ -131,16 +131,24 @@ $image2 = "";
                                             <button class="btn-services-shop-now" type="button" ng-click="filterPrice()">Filter</button>
                                         </div>-->
 
-                    <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" ng-if="attrv.length > 1">
+                    <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
                         <!-- HEADING -->
-                        <h2 class="title-sidebar product_attr_h2">{{attrk}}</h2>
+                        
+                        <h2 class="title-sidebar product_attr_h2">{{attrv.title}}</h2>
 
                         <!-- COLORE -->
-                        <ul class="cate">
-                            <li ng-repeat="atv in attrv">
+                        <ul class="cate" ng-if='attrv.widget == "color"'>
+                            <li ng-repeat="atv in attrv" ng-if='atv.product_count'>
                                 <a href="#.">
-                                    <label style="font-weight: 500">
-                                        <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)">  {{atv.attribute_value}} ({{atv.product_count}})
+                                    <label style="font-weight: 500;background: {{atv.additional_value}};padding: 0px 5px;float: left;
+    margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
+    text-shadow: 0px 1px 4px #000;">
+                                        <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)" style="opacity: 0;"> 
+                                        
+                                        <i class="fa fa-check" ng-if="atv.checked" style="    position: absolute;
+    margin-top: -22px;
+    color: #fff;"></i>
+                                        <!--{{atv.attribute_value}} ({{atv.product_count}})-->
                                     </label>
                                 </a>
 

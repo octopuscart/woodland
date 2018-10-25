@@ -269,7 +269,7 @@
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                 </ul>
-                                <p style="font-size: 20px;" class="price">{{<?php  try{echo $item_price;}catch(Exception $e){echo 0;} ?>|currency:"<?php echo globle_currency; ?> "}}</p>
+                                <p style="font-size: 20px;" class="price"><?php echo globle_currency; ?> {{<?php  try{echo $item_price;}catch(Exception $e){echo 0;} ?>}}</p>
                                 <p>{{projectDetailsModel.productobj.short_description}}</p>
                                 <div class="product-details-content">
                                     <p><span class="model_tab_title">SKU:</span><br/> {{projectDetailsModel.productobj.title}}</p>

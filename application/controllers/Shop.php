@@ -53,12 +53,12 @@ class Shop extends CI_Controller {
                 $this->email->from($this->input->post('email'), $sendername);
                 $this->email->to(email_bcc);
 //                $this->email->bcc(email_bcc);
-
+              $subjectt = $this->input->post('subject');
                 $orderlog = array(
                     'log_type' => 'Enquiry',
                     'log_datetime' => date('Y-m-d H:i:s'),
                     'user_id' => 'ENQ',
-                    'log_detail' => "Enquiry from website. "
+                    'log_detail' => "Enquiry from website - " . $this->input->post('subject')
                 );
                 $this->db->insert('system_log', $orderlog);
 

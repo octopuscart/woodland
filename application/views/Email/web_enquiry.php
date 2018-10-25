@@ -69,7 +69,7 @@
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
                                      height: 50px;
                                      width: auto;"/><br/>
-                            <h4 style="color: white;"> Enquiry </h4>
+                            <h4 style="color: white;"> <?php echo $web_enquiry['subject']; ?> </h4>
                         </center>
                     </td>
 

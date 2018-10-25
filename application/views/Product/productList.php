@@ -15,6 +15,7 @@ foreach ($categorie_parent as $key => $value) {
 $image1 = "";
 $image2 = "";
 ?>
+
 {{showmodel = 1}}
 <style>
     .page_navigation a {
@@ -323,7 +324,7 @@ $image2 = "";
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script src="<?php echo base_url(); ?>assets/theme2/angular/productController.js"></script>
-
+{{gitem_price = <?php echo $item_price; ?>}}
 
 
 <?php

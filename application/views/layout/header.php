@@ -123,6 +123,8 @@
             <!-- Header Area Start Here -->
             <header>
                 <input type="hidden" ng-model="showmodel" ng-init="showmodel = 0">
+                <input type="hidden" ng-model="gitem_price" ng-init="showmodel = 0">
+                
                 <div class="header-area-style2" id="sticker">
                     <div class="header-top" style="  ">
                         <div class="container">

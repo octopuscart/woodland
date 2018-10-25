@@ -15,7 +15,7 @@ foreach ($categorie_parent as $key => $value) {
 $image1 = "";
 $image2 = "";
 ?>
-
+{{showmodel = 1}}
 <style>
     .page_navigation a {
         padding: 5px 10px;
@@ -31,6 +31,57 @@ $image2 = "";
         background: #fff;
         color: black;
     }
+    
+    .colorblock{
+        font-weight: 500;
+
+    padding: 0px 10px;
+    height: 13px;
+    width: 100x;
+    /* float: left; */
+    margin-top: -71px;
+    position: absolute;
+    margin: auto;
+    border: 1px solid #0000005e;
+    border: 1px solid #0000005e;
+    text-shadow: 0px 1px 4px #000;
+    margin-top: -71px;
+        margin-left: -7px;
+    }
+    
+    
+.product-box1 .product-img-holder {
+
+   
+
+    <?php
+    switch ($custom_id) {
+        case "1":
+            ?>
+     min-height: 260px;
+            <?php
+            break;
+        case "2":
+            ?>
+ min-height: 379px;
+            <?php
+            break;
+        case "3":
+            ?>
+  min-height: 262px;
+            <?php
+            break;
+        case "4":
+            ?>
+  min-height: 379px;
+            <?php
+            break;
+        default:
+            ?>
+                 min-height: 260px;<?php
+    }
+    ?>
+}
 </style>
 
 
@@ -133,7 +184,7 @@ $image2 = "";
 
                     <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
                         <!-- HEADING -->
-                        
+
                         <h2 class="title-sidebar product_attr_h2">{{attrv.title}}</h2>
 
                         <!-- COLORE -->
@@ -141,13 +192,13 @@ $image2 = "";
                             <li ng-repeat="atv in attrv" ng-if='atv.product_count'>
                                 <a href="#.">
                                     <label style="font-weight: 500;background: {{atv.additional_value}};padding: 0px 5px;float: left;
-    margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
-    text-shadow: 0px 1px 4px #000;">
+                                           margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
+                                           text-shadow: 0px 1px 4px #000;">
                                         <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)" style="opacity: 0;"> 
-                                        
+
                                         <i class="fa fa-check" ng-if="atv.checked" style="    position: absolute;
-    margin-top: -22px;
-    color: #fff;"></i>
+                                           margin-top: -22px;
+                                           color: #fff;"></i>
                                         <!--{{atv.attribute_value}} ({{atv.product_count}})-->
                                     </label>
                                 </a>
@@ -173,9 +224,9 @@ $image2 = "";
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
                                 <div class="product-box1" style="height: 434px;">
                                     <ul class="product-social">
-                                         <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                        <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                   </ul>
+                                    </ul>
                                     <div class="product-img-holder">
                                         <a href="#">
                                             <?php
@@ -212,6 +263,10 @@ $image2 = "";
                                             <a href="#">{{product.title}}  <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
                                             </a>
+                                            <p style="    margin-bottom: -7px;" ng-if="product.attr.length">
+                                                 
+                                                <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
+                                            </p>
                                         </h3>
                                         <span>{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
                                     </div>
@@ -220,108 +275,11 @@ $image2 = "";
 
 
 
-
-<!--                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
-                                <div class="product-box1" style="min-height: 382px;">
-                                    <ul class="product-social" style="top:0px;    height: 264px;padding:40% 0px;
-                                        background-size: cover;">
-                                                                            <li><a href="#" ng-click="addToCart(product.product_id, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                        <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                    <div class="product-img-holder">
-                                        <div class="hot-sale" ng-if="product.sale_price > 0">
-                                            <span>Sale</span>
-                                        </div>
-                                        <a href="#">
-
-                                            <?php
-                                            switch ($custom_id) {
-                                                case "1":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product">
-                                                    <?php
-                                                    break;
-                                                case "2":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-
-                                                    <?php
-                                                    break;
-                                                case "3":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
-                                                    <?php
-                                                    break;
-                                                case "4":
-                                                    ?>
-                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-                                                    <?php
-                                                    break;
-                                                default:
-                                                    echo $custom_item;
-                                            }
-                                            ?>
-
-                                            
-
-
-                                            <div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver; ?>{{product.file_name2}});"></div>
-
-                                        </a>
-                                    </div>
-                                    <div class="product-content-holder product_details_height">
-                                        <h3><a href="#">{{product.title}} 
-                                                <br>
-                                                <span style="font-size: 12px">{{product.short_description}} </span>
-                                                <br>
-                                                <p>{{product.attr}} </p>
-                                            </a></h3>
-                                        <span>
-                                            <span ng-if="product.sale_price > 0"> {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>
-                                            {{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
-                                    </div>
-                                </div>
-                            </div>-->
-
                             <div style="clear: both"></div>
                         </div>
 
 
-                        <!-- List Style -->
-<!--                        <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
-
-
-                            <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products">
-                                <div class="product-box2" style="height: auto;">
-                                    <div class="media">
-                                        <a class="pull-left" href="#">
-                                            <img class="img-responsive" src="img/product/grid/1.jpg" alt="product" />
-                                            <div class="product_image_back product_image_back_list" style="background: url(<?php echo custome_image_server; ?>/pant/output/{{product.folder}}/pant_style20001.png);"></div>
-
-                                        </a>
-                                        <div class="media-body">
-                                            <div class="product-box2-content ">
-                                                <h3><a href="#">{{product.title}} </a></h3>
-                                                <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
-                                                <p>
-                                                    {{product.short_description}}
-                                                    <br/>
-                                                    {{product.attr}} 
-                                                </p>
-                                            </div>
-                                            <ul class="product-box2-cart" style="    margin-top: 0px;">
-                                                <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
-                                                <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Customize Now</a></li>
-                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="clear: both"></div>
-                            </div>
-
-                        </div>-->
+                   
                     </div>
                     <div class="col-md-12">
                         <center>
@@ -330,15 +288,7 @@ $image2 = "";
                         <div style="clear: both"></div>
                     </div>
                 </div>
-                <!--                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <ul class="mypagination">
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>-->
+            
             </div>
 
         </div>
@@ -367,7 +317,7 @@ $image2 = "";
 
 
 <script>
-            var category_id = <?php echo $category; ?>;</script>
+    var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
@@ -383,7 +333,7 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script type="text/javascript">
-            $(document).ready(function () {
+    $(document).ready(function () {
 
     });
 </script>

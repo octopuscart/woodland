@@ -104,7 +104,9 @@
                         var baseurl = "<?php echo site_url(); ?>";
                         var imageurlg = "<?php echo imageserver; ?>";
                         var globlecurrency = "<?php echo globle_currency; ?>";
-                        var avaiblecredits = 0;</script>
+                        var avaiblecredits = 0;
+                      
+            </script>
 
             <style>
                 .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -116,10 +118,11 @@
                 }
             </style>
 
-
+            
 
             <!-- Header Area Start Here -->
             <header>
+                <input type="hidden" ng-model="showmodel" ng-init="showmodel = 0">
                 <div class="header-area-style2" id="sticker">
                     <div class="header-top" style="  ">
                         <div class="container">

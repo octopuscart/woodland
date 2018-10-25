@@ -41,7 +41,6 @@ define('paypal_api_currency_code', $configuration['paypal_api_currency_code']);
 
 
 
-
 /*
   |--------------------------------------------------------------------------
   | Display Debug backtrace

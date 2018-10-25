@@ -93,7 +93,7 @@ class Product_model extends CI_Model {
     }
 
     function singleProductAttrs($product_id) {
-        $query = "SELECT pa.attribute, pa.product_id, pa.attribute_value_id, cav.attribute_value FROM product_attribute as pa 
+        $query = "SELECT pa.attribute, pa.product_id, cav.additional_value, pa.attribute_value_id, cav.attribute_value FROM product_attribute as pa 
 join category_attribute_value as cav on cav.id = pa.attribute_value_id
 where pa.product_id = $product_id group by attribute_value_id";
         $product_attr_value = $this->query_exe($query);
@@ -101,10 +101,12 @@ where pa.product_id = $product_id group by attribute_value_id";
         if (count($product_attr_value))
             foreach ($product_attr_value as $key => $value) {
                 $attrk = $value['attribute'];
-                $attrv = $value['attribute_value'];
-                array_push($arrayattr, $attrk . '-' . $attrv);
+                $attrv = $value['additional_value'];
+                if($attrk=='Colors'){
+                array_push($arrayattr, array($attrk =>$attrv));
+                }
             }
-        return implode(", ", $arrayattr);
+        return  $arrayattr;
     }
 
     //product Details

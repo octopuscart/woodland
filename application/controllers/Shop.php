@@ -47,7 +47,7 @@ class Shop extends CI_Controller {
             $emailsender = email_sender;
             $sendername = email_sender_name;
             $email_bcc = email_bcc;
-            $sendernameeq  = $this->input->post('last_name')." ".$this->input->post('first_name');
+            $sendernameeq = $this->input->post('last_name') . " " . $this->input->post('first_name');
             if ($this->input->post('email')) {
                 $this->email->set_newline("\r\n");
                 $this->email->from($this->input->post('email'), $sendername);
@@ -62,7 +62,7 @@ class Shop extends CI_Controller {
                 );
                 $this->db->insert('system_log', $orderlog);
 
-                $subject = "Enquiry from website - ".$this->input->post('subject');
+                $subject = "Enquiry from website - " . $this->input->post('subject');
                 $this->email->subject($subject);
 
                 $web_enquiry['web_enquiry'] = $web_enquiry;
@@ -141,13 +141,13 @@ class Shop extends CI_Controller {
         $folderchek2 = ['12512.jpg', '12514.jpg', '12601.jpg', '12602.jpg', '12603.jpg', '12604.jpg', '12605.jpg', '12606.jpg', '12611.jpg', '12612.jpg', '12613.jpg', '12615.jpg', '12616.jpg', '12617.jpg', '12618.jpg', '12619.jpg', '12649.jpg', '12650.jpg', '12651.jpg', '12652.jpg', '12653.jpg', '12654.jpg', '12655.jpg', '12656.jpg'];
 
         $folderstrip = ['12546.jpg', '12548.jpg', '12549.jpg', '12550.jpg', '12551.jpg', '12552.jpg', '12553.jpg', '12554.jpg', '12562.jpg', '9733.jpg', '9734.jpg', '9735.jpg', '9736.jpg', '9737.jpg', '9744.jpg', '9749.jpg', '9750.jpg', '9751.jpg'];
-        
-        $foldersolid  = ['9706.jpg', '9708.jpg', '9709.jpg', '9710.jpg', '9711.jpg', '9712.jpg', '9714.jpg', '9718.jpg', '9781.jpg', '9782.jpg', '9783.jpg', '9784.jpg'];
-        
+
+        $foldersolid = ['9706.jpg', '9708.jpg', '9709.jpg', '9710.jpg', '9711.jpg', '9712.jpg', '9714.jpg', '9718.jpg', '9781.jpg', '9782.jpg', '9783.jpg', '9784.jpg'];
+
         $foldersolid2 = ['12529.jpg', '12530.jpg', '12531.jpg', '12536.jpg', '12539.jpg', '12540.jpg', '12541.jpg', '12542.jpg', '12543.jpg', '12544.jpg', '12545.jpg', '12596.jpg', '12599.jpg', '12600.jpg'];
-        
+
         $foldertexture = ['12506.jpg', '12519.jpg', '12520.jpg', '12522.jpg', '12523.jpg', '12526.jpg', '12526_2.jpg', '12527.jpg', '12599.jpg', '12600.jpg', '12607.jpg', '12608.jpg', '12609.jpg', '12610.jpg', '9738.jpg', '9739.jpg', '9740.jpg'];
-        
+
         foreach ($foldertexture as $key => $value) {
             $folder = $value;
             $foldermain = str_replace(".jpg", "", $folder);
@@ -165,7 +165,7 @@ class Shop extends CI_Controller {
             $products = array(
                 "category_id" => 52,
                 "sku" => $title,
-                "category_items_id"=>3,
+                "category_items_id" => 3,
                 "title" => $title,
                 "short_description" => "100% Wool",
                 "description" => "100% Wool",
@@ -202,6 +202,20 @@ class Shop extends CI_Controller {
                 "country_code" => $cc,
             );
             # $this->db->insert('country', $products);
+        }
+    }
+
+    public function removedouble() {
+        $query = "select id, title, count(title) as counter from products group by title";
+        $query = $this->db->query($query);
+        $data = $query->result_array();
+        echo "<pre>";
+        foreach ($data as $key => $value) {
+            if ($value['counter'] > 1) {
+                $ids = $value['id'];
+              #  $this->db->where('id', $ids); //set column_name and value in which row need to update
+               # $this->db->delete('products'); //
+            }
         }
     }
 

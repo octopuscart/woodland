@@ -71,7 +71,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <p>Copyright <?php echo date('Y') ?> by Bespoke Tailors All Rights Reserved. </p>
+                        <p>Copyright <?php echo date('Y') ?> by Bespoke Tailors All Rights Reserved.  </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     </div>
@@ -80,9 +80,10 @@
         </div>
     </div>
 </footer>
+
 <!-- Footer Area End Here -->
 <!-- Modal Dialog Box Start Here-->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" class="modal fade" role="dialog" ng-if="showmodel">
     <div class="modal-dialog">
         <div class="modal-body ">
             <button type="button" class="close myclose" data-dismiss="modal">&times;</button>
@@ -268,7 +269,7 @@
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                 </ul>
-                                <p class="price">{{projectDetailsModel.productobj.price|currency:"<?php echo globle_currency; ?> "}}</p>
+                                <p class="price">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</p>
                                 <p>{{projectDetailsModel.productobj.short_description}}</p>
                                 <div class="product-details-content">
                                     <p><span class="model_tab_title">SKU:</span><br/> {{projectDetailsModel.productobj.title}}</p>

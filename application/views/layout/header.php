@@ -339,7 +339,7 @@
                                                 </li>
                                                 <li><a href="#">Catalogue</a></li>
                                                 <li><a href="#">Schedule</a></li>
-                                                <li><a href="#">Help</a></li>
+                                               
                                                 <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
                                             </ul>
                                         </nav>
@@ -375,7 +375,7 @@
                                                     </li>
                                                     <li><a href="#">Catalogue</a></li>
                                                     <li><a href="#">Schedule</a></li>
-                                                    <li><a href="#">Help</a></li>
+                                                   
                                                     <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
                                                 </ul>
                                             </nav>

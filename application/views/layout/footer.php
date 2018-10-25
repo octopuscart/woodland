@@ -274,8 +274,10 @@
                                 <div class="product-details-content">
                                     <p><span class="model_tab_title">SKU:</span><br/> {{projectDetailsModel.productobj.title}}</p>
                                     <p><span class="model_tab_title">Availability:</span><br/> {{projectDetailsModel.productobj.stock_status}}</p>
-                                    <!--<p><span>Category:</span>  {{projectDetailsModel.productobj.stock_status}}</p>-->
+                                    <p ng-if="projectDetailsModel.productobj.attr.length"><span class="model_tab_title" >Color(s)</span><br/> <span class="colorblock" style="background: {{projectDetailsModel.productobj.attr[0]['Colors']}};    position: relative;margin: 0;"></span></p>
                                 </div>
+                                                                                
+
                                 <!--                                <ul class="product-details-social">
                                                                     <li>Share: {{projectDetailsModel.quantity}}</li>
                                                                     <li><a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>

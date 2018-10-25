@@ -261,7 +261,7 @@
                         </div>
                         <div class=" col-md-3 col-sm-12 col-xs-12">
                             <div class="inner-product-details-right">
-                                <h3>{{projectDetailsModel.productobj.title}}</h3>
+                                <h3 style="font-size: 20px;">{{projectDetailsModel.productobj.title}}</h3>
                                 <ul>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
@@ -269,7 +269,7 @@
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                 </ul>
-                                <p class="price">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</p>
+                                <p style="font-size: 20px;" class="price">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</p>
                                 <p>{{projectDetailsModel.productobj.short_description}}</p>
                                 <div class="product-details-content">
                                     <p><span class="model_tab_title">SKU:</span><br/> {{projectDetailsModel.productobj.title}}</p>

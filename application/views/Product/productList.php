@@ -15,8 +15,11 @@ foreach ($categorie_parent as $key => $value) {
 $image1 = "";
 $image2 = "";
 ?>
-
+<div style="opacity: 0;position: fixed;">
+{{gitem_price = <?php echo $item_price; ?>}}
 {{showmodel = 1}}
+</div>
+
 <style>
     .page_navigation a {
         padding: 5px 10px;
@@ -111,11 +114,28 @@ $image2 = "";
 </div>
 
 
+
 <!-- Inner Page Banner Area End Here -->
 <!-- Shop Page Area Start Here -->
 <div class="shop-page-area" ng-controller="ProductController">
     <div class="container" id="paging_container1">
+        
+        <div id="content"  ng-if="productProcess.state==1"> 
+            <div >
+                <!-- Tesm Text -->
+                <section class="error-page text-center pad-t-b-130">
+                    <div class="container "> 
+
+                        <!-- Heading -->
+                        <h1 style="font-size: 40px">Loading...</h1>
+                     </div>
+                </section>
+            </div>
+        </div>
+        
         <div class="row"  ng-if="productResults.products.length">
+            
+
             <div class="col-lg-3 col-md-3">
                 <div class="sidebar hidden-after-desk">
 
@@ -215,7 +235,7 @@ $image2 = "";
 
                 </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" ng-if="productProcess.state==2">
 
                 <div class="row inner-section-space-top">
                     <!-- Tab panes -->
@@ -278,9 +298,6 @@ $image2 = "";
 
                             <div style="clear: both"></div>
                         </div>
-
-
-                   
                     </div>
                     <div class="col-md-12">
                         <center>
@@ -296,7 +313,7 @@ $image2 = "";
 
 
 
-        <div id="content"  ng-if="!productResults.products.length"> 
+        <div id="content"  ng-if="productProcess.state==0"> 
             <div ng-if="checkproduct == 0">
                 <!-- Tesm Text -->
                 <section class="error-page text-center pad-t-b-130">
@@ -310,8 +327,11 @@ $image2 = "";
                     </div>
                 </section>
             </div>
-
         </div>
+        
+        
+        
+        
 
     </div>
 </div>
@@ -324,8 +344,6 @@ $image2 = "";
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script src="<?php echo base_url(); ?>assets/theme2/angular/productController.js"></script>
-{{gitem_price = <?php echo $item_price; ?>}}
-
 
 <?php
 $this->load->view('layout/footer');

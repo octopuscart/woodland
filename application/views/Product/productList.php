@@ -16,8 +16,8 @@ $image1 = "";
 $image2 = "";
 ?>
 <div style="opacity: 0;position: fixed;">
-{{gitem_price = <?php echo $item_price; ?>}}
-{{showmodel = 1}}
+    {{gitem_price = <?php echo $item_price; ?>}}
+    {{showmodel = 1}}
 </div>
 
 <style>
@@ -35,57 +35,93 @@ $image2 = "";
         background: #fff;
         color: black;
     }
-    
+
     .colorblock{
         font-weight: 500;
 
-    padding: 0px 10px;
-    height: 13px;
-    width: 100x;
-    /* float: left; */
-    margin-top: -71px;
-    position: absolute;
-    margin: auto;
-    border: 1px solid #0000005e;
-    border: 1px solid #0000005e;
-    text-shadow: 0px 1px 4px #000;
-    margin-top: -71px;
+        padding: 0px 10px;
+        height: 13px;
+        width: 100x;
+        /* float: left; */
+        margin-top: -71px;
+        position: absolute;
+        margin: auto;
+        border: 1px solid #0000005e;
+        border: 1px solid #0000005e;
+        text-shadow: 0px 1px 4px #000;
+        margin-top: -71px;
         margin-left: -7px;
     }
-    
-    
-.product-box1 .product-img-holder {
 
-   
 
-    <?php
-    switch ($custom_id) {
-        case "1":
-            ?>
-     min-height: 260px;
-            <?php
-            break;
-        case "2":
-            ?>
- min-height: 379px;
-            <?php
-            break;
-        case "3":
-            ?>
-  min-height: 262px;
-            <?php
-            break;
-        case "4":
-            ?>
-  min-height: 379px;
-            <?php
-            break;
-        default:
-            ?>
-                 min-height: 260px;<?php
+    .product-box1 .product-img-holder {
+
+
+
+        <?php
+        switch ($custom_id) {
+            case "1":
+                ?>
+                min-height: 260px;
+                <?php
+                break;
+            case "2":
+                ?>
+                min-height: 390px;
+                <?php
+                break;
+            case "3":
+                ?>
+                min-height: 262px;
+                <?php
+                break;
+            case "4":
+                ?>
+                min-height: 390px;
+                <?php
+                break;
+            default:
+                ?>
+                min-height: 260px;<?php
+        }
+        ?>
     }
-    ?>
-}
+    
+    
+    
+    .product-box1{
+
+
+
+        <?php
+        switch ($custom_id) {
+            case "1":
+                ?>
+                min-height: 260px;
+                <?php
+                break;
+            case "2":
+                ?>
+                min-height: 520px;
+                <?php
+                break;
+            case "3":
+                ?>
+                min-height: 262px;
+                <?php
+                break;
+            case "4":
+                ?>
+                min-height: 520px;
+                <?php
+                break;
+            default:
+                ?>
+                min-height: 260px;<?php
+        }
+        ?>
+    }
+    
 </style>
 
 
@@ -119,25 +155,14 @@ $image2 = "";
 <!-- Shop Page Area Start Here -->
 <div class="shop-page-area" ng-controller="ProductController">
     <div class="container" id="paging_container1">
-        
-        <div id="content"  ng-if="productProcess.state==1"> 
-            <div >
-                <!-- Tesm Text -->
-                <section class="error-page text-center pad-t-b-130">
-                    <div class="container "> 
 
-                        <!-- Heading -->
-                        <h1 style="font-size: 40px">Loading...</h1>
-                     </div>
-                </section>
-            </div>
-        </div>
-        
-        <div class="row"  ng-if="productResults.products.length">
-            
 
-            <div class="col-lg-3 col-md-3">
-                <div class="sidebar hidden-after-desk">
+
+        <div class="row"  >
+
+
+            <div class="col-lg-3 col-md-3" ng-if="productResults.products.length">
+                <div class="sidebar hidden-after-desk animated slideInLeft">
 
                     <?php
                     if (count($categories)) {
@@ -235,14 +260,30 @@ $image2 = "";
 
                 </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" ng-if="productProcess.state==2">
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" >
 
-                <div class="row inner-section-space-top">
+
+                <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
+
+                    <!-- Tesm Text -->
+                    <section class="error-page text-center pad-t-b-130">
+                        <div class="{{productResults.products.length?'container1':'container'}}"> 
+                            <center>
+                                <img src="<?php echo base_url() . 'assets/theme2/img/loader.gif' ?>">
+                            </center>
+                            <!-- Heading -->
+                            <h1 style="font-size: 40px;text-align: center">Loading...</h1>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="row inner-section-space-top" ng-if="productProcess.state == 2">
                     <!-- Tab panes -->
                     <div class="tab-content" >
                         <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
 
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"  ng-repeat="(k, product) in productResults.products">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
                                 <div class="product-box1" style="height: 434px;">
                                     <ul class="product-social">
                                         <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
@@ -285,7 +326,7 @@ $image2 = "";
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
                                             </a>
                                             <p style="    margin-bottom: -7px;" ng-if="product.attr.length">
-                                                 
+
                                                 <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
                                             </p>
                                         </h3>
@@ -306,14 +347,14 @@ $image2 = "";
                         <div style="clear: both"></div>
                     </div>
                 </div>
-            
+
             </div>
 
         </div>
 
 
 
-        <div id="content"  ng-if="productProcess.state==0"> 
+        <div id="content"  ng-if="productProcess.state == 0"> 
             <div ng-if="checkproduct == 0">
                 <!-- Tesm Text -->
                 <section class="error-page text-center pad-t-b-130">
@@ -328,17 +369,17 @@ $image2 = "";
                 </section>
             </div>
         </div>
-        
-        
-        
-        
+
+
+
+
 
     </div>
 </div>
 
 
 <script>
-    var category_id = <?php echo $category; ?>;</script>
+            var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
@@ -352,7 +393,7 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
+            $(document).ready(function () {
 
     });
 </script>

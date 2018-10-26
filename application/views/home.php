@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                        <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                    <div class="slider-content t-lfl s-tb slider-1">
-                                        <div class="title-container s-tb-c">
-                                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                    <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                        <div class="slider-content t-lfl s-tb slider-1">
+                                            <div class="title-container s-tb-c">
+                                                <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                            </h2>
-                                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                </h2>
+                                                <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
     <?php
 }
 ?>
@@ -70,7 +70,7 @@ foreach ($sliders as $key => $value) {
 <!-- Slider Area End Here -->
 
 <!-- Featured Products Area End Here -->
-<div class="featured-products-area">
+<div class="featured-products-area" style="padding: 30px 0px">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -95,13 +95,15 @@ foreach ($sliders as $key => $value) {
                         }
                         ?>
                         <a href="#">
-                            <div class="product_image_back" style="background: url(<?php echo imageserver . $value['file_name']; ?>);height: 224px"></div>
+                            <!--<img class="img-responsive" src="" alt="product" style="height: 224px">-->
+
+                            <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/shirt/output/<?php echo $value['folder'];?>/shirt_model10001.png);height: 270px"></div>
                             <!--<img src="img/product/15.jpg" alt="product">-->
                         </a>
                     </div>
                     <div class="product-content-holder">
                         <h3><a href="#"><?php echo $value['title']; ?></a></h3>
-                    
+
                         <span style="font-size: 12px"><?php echo $value['short_description']; ?></span>
                         <br>
                         <span>{{<?php echo $shirtcustome->price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
@@ -137,7 +139,7 @@ foreach ($sliders as $key => $value) {
 </div>-->
 <!-- Offer Area 1 End Here -->
 <!-- Product Area Start Here -->
-<div class="product-area padding-top-0-after-desk">
+<div class="product-area padding-top-0-after-desk" style="padding: 30px 0px">
     <div class="container" id="home-isotope">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -161,15 +163,15 @@ foreach ($sliders as $key => $value) {
                         </ul>
                         <div class="product-img-holder">
                             <a href="#">
-                                <div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver . $value['file_name']; ?>);"></div>
+                                <div class="product_image_back product_image_back_grid" style="background: url(<?php echo custome_image_server; ?>/jacket/output/<?php echo $value['folder'];?>/s1_master_style60001.png);height: 360px"></div>
                                 <!--<img src="img/product/3.jpg" alt="product">-->
                             </a>
                         </div>
                         <div class="product-content-holder">
                             <h3><a href="<?php echo site_url("Product/ProductDetails/" . $value['id']); ?>"><?php echo $value['title']; ?></a></h3>
-                          
-                        <span style="font-size: 12px"><?php echo $value['short_description']; ?></span>
-                        <br>
+
+                            <span style="font-size: 12px"><?php echo $value['short_description']; ?></span>
+                            <br>
                             <span>{{<?php echo $suitcustome->price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
                         </div>
                     </div>

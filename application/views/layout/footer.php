@@ -221,7 +221,7 @@
                         </div>
                         <div class=" col-md-3 col-sm-12 col-xs-12">
                             <div class="inner-product-details-right">
-                                <h3 style="font-size: 20px;">{{projectDetailsModel.productobj.title}}</h3>
+                                <h3 style="font-size: 20px;">{{projectDetailsModel.productobj.title}}</h3> 
                                 <ul>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>
                                     <li><i aria-hidden="true" class="fa fa-star"></i></li>

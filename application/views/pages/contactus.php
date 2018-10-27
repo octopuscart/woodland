@@ -154,7 +154,7 @@ $this->load->view('layout/header');
                     </ul>
                     <h2 class="title-sidebar" style="margin-bottom: 10px;">Shop Address</h2>
                     <ul>
-                        <li class="con-address">Shop D, Ground Floor,  Hanyee Building, 19-21 Hankow Road,
+                        <li class="con-address">Shop D, Ground Floor,<br/>  Hanyee Building,<br/> 19-21 Hankow Road,
                             <br/>
                             Tsim Sha Tsui, Kowloon, <br/>Hong Kong</li>
                         

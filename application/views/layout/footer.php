@@ -151,7 +151,7 @@
                                     </div>
                                     <div id="metro-related3" class="tab-pane fade" ng-if="projectDetailsModel.productobj.file_name2">
                                         <a href="#">
-                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo custome_image_server; ?>/coman/resize/output/{{projectDetailsModel.productobj.folder}}.jpg);"></div>
+                                            <div class="product_image_back popup_fabric" style="background: url(<?php echo custome_image_server; ?>/coman/resize/output/{{projectDetailsModel.productobj.folder}}.jpg);background-repeat: repeat!important;"></div>
                                                                                          <!--<img class="img-responsive" src="<?php echo imageserver; ?>/{{projectDetailsModel.productobj.file_name2}}" alt="single">-->
                                         </a>
                                     </div>

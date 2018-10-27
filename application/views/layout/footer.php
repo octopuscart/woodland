@@ -28,14 +28,16 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="footer-box">
-                            <h3>Categories</h3>
-                            <ul class="tag-list">
+                            <h3>Order Now</h3>
+                            <ul class="info-list">
 
-                                <li ng-repeat="catv in categoriesMenu">
-                                    <a href="<?php echo site_url("Product/ProductList/"); ?>{{catv.id}}" >
-                                        <i class="flaticon-left-arrow"></i>{{catv.category_name}}
-                                    </a>
-                                </li>
+                                <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
+                                <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
+                                <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
+                                <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
+
+
+                               
                             </ul>
                         </div>
                     </div>
@@ -276,7 +278,7 @@
                                     <p><span class="model_tab_title">Availability:</span><br/> {{projectDetailsModel.productobj.stock_status}}</p>
                                     <p ng-if="projectDetailsModel.productobj.attr.length"><span class="model_tab_title" >Color(s)</span><br/> <span class="colorblock" style="background: {{projectDetailsModel.productobj.attr[0]['Colors']}};    position: relative;margin: 0;"></span></p>
                                 </div>
-                                                                                
+
 
                                 <!--                                <ul class="product-details-social">
                                                                     <li>Share: {{projectDetailsModel.quantity}}</li>

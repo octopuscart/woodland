@@ -144,16 +144,46 @@ $this->load->view('layout/header');
                             <br/>
                             Tsim Sha Tsui, Kowloon, <br/>Hong Kong
                         </li>
+                        <li class="con-envelope">info@bespoketailorshk.com</li>
+                        <li class="con-phone">+(852) 2730 8566</li>
+
+                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
+                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
+                            <span class="timeing_open">Sun - Holidays</span>: 09:00 to 18:00
+                        </li>
                     </ul>
                     <h2 class="title-sidebar" style="margin-bottom: 10px;">Shop Address</h2>
                     <ul>
                         <li class="con-address">Shop D, Ground Floor,  Hanyee Building, 19-21 Hankow Road,
                             <br/>
                             Tsim Sha Tsui, Kowloon, <br/>Hong Kong</li>
+                        
+                        
+                        
                         <li class="con-envelope">info@bespoketailorshk.com</li>
-                        <li class="con-phone">+(852) 2730 8566</li>
-                        <li class="con-fax">+(852) 2730 8577</li>
+                        
+                        <li class="con-phone">+(852) 3460 5254</li>
+
+                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
+                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 21:00 <br/>
+                            <span class="timeing_open">Sun - Holidays</span>: 09:00 to 19:00
+                        </li>
+ 
                     </ul>
+                    
+                    
+                    <ul>
+                      
+
+                        <li class=""><i class="con-clock fa fa-whatsapp"></i> 
+                            <span class="timeing_opensm">WhatsApp (24 Hours)</span><br> 
+                            <b>+(852) 6795 8894</b>
+                        
+                        </li>
+ 
+                    </ul>
+                    
+                    
                 </div>
 
 

@@ -53,7 +53,7 @@ class Shop extends CI_Controller {
                 $this->email->from($this->input->post('email'), $sendername);
                 $this->email->to(email_bcc);
 //                $this->email->bcc(email_bcc);
-              $subjectt = $this->input->post('subject');
+                $subjectt = $this->input->post('subject');
                 $orderlog = array(
                     'log_type' => 'Enquiry',
                     'log_datetime' => date('Y-m-d H:i:s'),
@@ -91,6 +91,72 @@ class Shop extends CI_Controller {
 
     public function faq() {
         $this->load->view('pages/faq');
+    }
+
+    public function catalogue() {
+        $this->load->view('pages/catalogue');
+    }
+
+    public function appointment() {
+        if (isset($_POST['submit'])) {
+            $appointment = array(
+                'last_name' => $this->input->post('last_name'),
+                'first_name' => $this->input->post('first_name'),
+                'email' => $this->input->post('email'),
+                'contact_no' => $this->input->post('contact_no'),
+                'select_time' => $this->input->post('select_time'),
+                'select_date' => $this->input->post('select_date'),
+                'no_of_person' => $this->input->post('no_of_person'),
+                'referral' => $this->input->post('referral'),
+                'datetime' => date("Y-m-d H:i:s a"),
+                'appointment_type' => "Local",
+            );
+
+            $this->db->insert('appointment_list', $appointment);
+
+            $emailsender = email_sender;
+            $sendername = email_sender_name;
+            $email_bcc = email_bcc;
+            $sendernameeq = $this->input->post('last_name') . " " . $this->input->post('first_name');
+            if ($this->input->post('email')) {
+                $this->email->set_newline("\r\n");
+                $this->email->from(email_bcc, $sendername);
+                $this->email->to($this->input->post('email'));
+                $this->email->bcc(email_bcc);
+                $subjectt = "Bespoke Tailors Appointment : ".$appointment['select_date']." (".$appointment['select_time'].")";
+                $orderlog = array(
+                    'log_type' => 'Appointment',
+                    'log_datetime' => date('Y-m-d H:i:s'),
+                    'user_id' => 'Appointment User',
+                    'log_detail' => $sendernameeq . "  " . $subjectt
+                );
+                $this->db->insert('system_log', $orderlog);
+
+                $subject = $subjectt;
+                $this->email->subject($subject);
+
+                $appointment['appointment'] = $appointment;
+
+                $checksend = 1;
+                $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
+                if ($checksend) {
+                    $this->email->message($htmlsmessage);
+                    $this->email->print_debugger();
+                    $send = $this->email->send();
+                    if ($send) {
+                        echo json_encode("send");
+                    } else {
+                        $error = $this->email->print_debugger(array('headers'));
+                        echo json_encode($error);
+                    }
+                } else {
+                    echo $htmlsmessage;
+                }
+            }
+
+            redirect('Shop/appointment');
+        }
+        $this->load->view('pages/appointment');
     }
 
     public function testinsert() {
@@ -213,8 +279,8 @@ class Shop extends CI_Controller {
         foreach ($data as $key => $value) {
             if ($value['counter'] > 1) {
                 $ids = $value['id'];
-              #  $this->db->where('id', $ids); //set column_name and value in which row need to update
-               # $this->db->delete('products'); //
+                #  $this->db->where('id', $ids); //set column_name and value in which row need to update
+                # $this->db->delete('products'); //
             }
         }
     }

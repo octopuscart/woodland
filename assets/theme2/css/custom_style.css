@@ -744,3 +744,24 @@ b.barcomb-list {
     position: relative;
     min-height: 260px;
 }
+
+.contact-us-page-area .contact-us-right ul .con-clock{
+      content: "\f095";
+    font-family: fontawesome;
+    position: absolute;
+    left: 18px;
+    margin-top: 3px;
+    /* top: 2px; */
+    font-size: 20px;
+    color: #111111;
+}
+
+.timeing_open{
+    float: left;
+    width: 100px;
+    /*font-size: 10px;*/
+}
+
+.timeing_opensm{
+    /*font-size: 12px;*/
+}

@@ -140,14 +140,14 @@
                                                 <li><a href="<?php echo site_url('Account/profile'); ?>">
                                                         <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
                                                 </li>
-                                                <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
+                                                <!--<li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>-->
                                                 <?php
                                             } else {
                                                 ?>
                                                 <li><a href="<?php echo site_url('Account/profile'); ?>">
                                                         <i class="fa fa-lock" aria-hidden="true"></i> Account</a>
                                                 </li>
-                                                <li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
+                                                <!--<li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>-->
 
 
                                                 <?php
@@ -293,7 +293,7 @@
                                                         }
                                                         ?>
                                                     </ul>
-                                                    <h3 class="ctg-name-title">Order Now</h3>
+                                                    <h3 class="ctg-name-title"><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Order Now</a></h3>
                                                     <ul class="sidenav-nav">
                                                         <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
@@ -324,13 +324,13 @@
                                     <div class="main-menu-area home2-sticky-area">
                                         <nav>
                                             <ul>
-                                                <li class="active"><a href="#">Home</a>
+                                                <li class="active"><a href="<?php echo base_url();?>">Home</a>
                                                     <ul>
                                                         <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ'S</a></li>
                                                         <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
                                                     </ul>
                                                 </li>
-                                                <li ><a href="#">Order Now</a>
+                                                <li ><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Order Now</a>
                                                     <ul>
                                                         <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
@@ -339,8 +339,8 @@
 
                                                     </ul>
                                                 </li>
-                                                <li><a href="#">Catalogue</a></li>
-                                                <li><a href="#">Schedule</a></li>
+                                                <li><a href="<?php echo site_url("Shop/catalogue"); ?>">Catalogue</a></li>
+                                                <li><a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a></li>
                                                
                                                 <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
                                             </ul>

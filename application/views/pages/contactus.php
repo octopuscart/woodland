@@ -149,7 +149,7 @@ $this->load->view('layout/header');
 
                         <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
                             <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
-                            <span class="timeing_open">Sun - Holidays</span>: 09:00 to 18:00
+                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
                         </li>
                     </ul>
                     <h2 class="title-sidebar" style="margin-bottom: 10px;">Shop Address</h2>
@@ -166,7 +166,7 @@ $this->load->view('layout/header');
 
                         <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
                             <span class="timeing_open">Mon - Sat</span>: 09:00 to 21:00 <br/>
-                            <span class="timeing_open">Sun - Holidays</span>: 09:00 to 19:00
+                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 19:00
                         </li>
  
                     </ul>

@@ -75,7 +75,7 @@ class Product_model extends CI_Model {
         $points = ($point) ?
                 " and " . $wordsz[$point / 10] . " " .
                 $wordsz[$point = $point % 10] : '';
-        return "Only ".globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
+        return "Only " . globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
     }
 
     ///*******  Get data for deepth of the array  ********///
@@ -102,11 +102,11 @@ where pa.product_id = $product_id group by attribute_value_id";
             foreach ($product_attr_value as $key => $value) {
                 $attrk = $value['attribute'];
                 $attrv = $value['additional_value'];
-                if($attrk=='Colors'){
-                array_push($arrayattr, array($attrk =>$attrv));
+                if ($attrk == 'Colors') {
+                    array_push($arrayattr, array($attrk => $attrv));
                 }
             }
-        return  $arrayattr;
+        return $arrayattr;
     }
 
     //product Details
@@ -554,7 +554,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->email->from(email_bcc, $sendername);
             $this->email->to($order_details['order_data']->email);
             $this->email->bcc(email_bcc);
-            
+
             $orderlog = array(
                 'log_type' => 'Email',
                 'log_datetime' => date('Y-m-d H:i:s'),
@@ -783,7 +783,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
-
+            $custom_dict = $value['custom_dict'];
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;

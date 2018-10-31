@@ -190,23 +190,10 @@ $this->load->view('layout/header');
 
     </div>
 
-    <!-- Content -->
-    <div id="content"  ng-if="!globleCartData.total_quantity"> 
-        <!-- Tesm Text -->
-        <section class="error-page text-center pad-t-b-130">
-            <div class="container "> 
 
-                <!-- Heading -->
-                <h1 style="font-size: 40px">No Product Found</h1>
-                <p>Please add product to cart<br>
-                    You can go back to</p>
-                <hr class="dotted">
-                <a href="<?php echo site_url(); ?>" class="btn-send-message ">BACK TO HOME</a>
-            </div>
-        </section>
-    </div>
-    <!-- End Content --> 
-
+    <?php
+    $this->load->view('Cart/noproduct');
+    ?>
 
 </div>
 
@@ -218,9 +205,9 @@ $this->load->view('layout/header');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-    var avaiblecredits =0;
+                                                var avaiblecredits = 0;
 </script>
 
 <?php
-$this->load->view('layout/footer', array('custom_item'=>0, 'custom_id'=>0));
+$this->load->view('layout/footer', array('custom_item' => 0, 'custom_id' => 0));
 ?>

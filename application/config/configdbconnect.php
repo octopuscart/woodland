@@ -1,5 +1,7 @@
 <?php
 $globleConnectDB = array();
+$globleConnectCartCheckout = array();
+$globleConnectReport = array(); 
 try {
     $username = "j2k5e6r5_octopus";
     $password = "India$2017";
@@ -15,6 +17,12 @@ try {
     $stmt->execute();
     while($row = $stmt->fetch()) {
         $globleConnectReport = $row;
+    }
+    
+    $stmt = $conn->prepare('SELECT * FROM configuration_cartcheckout');
+    $stmt->execute();
+    while($row = $stmt->fetch()) {
+        $globleConnectCartCheckout = $row;
     }
     
     

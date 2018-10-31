@@ -60,8 +60,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     });
     //searchdata 
     
-    $scope.gcheckcart = {'status':1};
-
+    $scope.gcheckcart = {'status': 1};
     var globlecart = baseurl + "Api/cartOperation";
     $scope.product_quantity = 1;
     var currencyfilter = $filter('currency');
@@ -70,20 +69,22 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     //get cart data
     $scope.getCartData = function () {
         $scope.gcheckcart.status = 1;
-        
+
         $http.get(globlecart).then(function (rdata) {
-             $scope.gcheckcart.status = 2;
+            $scope.gcheckcart.status = 2;
             $scope.globleCartData = rdata.data;
             $scope.globleCartData['grand_total'] = $scope.globleCartData['total_price'];
+            
+            if($scope.globleCartData.total_quantity==0){
+                $scope.gcheckcart.status = 0;
+            }
+            
             $(".cartquantity").text($scope.globleCartData.total_quantity);
         }, function (r) {
-             $scope.gcheckcart.status = 0;
+            $scope.gcheckcart.status = 0;
         })
     }
-    
-    
     $scope.getCartData();
-    
     
     //remove cart data
     $scope.removeCart = function (product_id) {

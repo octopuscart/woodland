@@ -9,10 +9,10 @@ $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 switch ($baselink) {
     case "http://localhost":
-        $baselinkmain = $baselink . '/bespoketailorhkadmin';
+        $baselinkmain = $baselink . $configuration['localpath'];
         break;
     case "http://192.168.1.2":
-        $baselinkmain = $baselink . '/bespoketailorhkadmin';
+        $baselinkmain = $baselink . $configuration['localpath'];
         break;
     default:
         $baselinkmain = $configuration['site_url'];
@@ -40,10 +40,21 @@ define('paypal_api_currency_code', $configuration['paypal_api_currency_code']);
 
 
 //reporting configuration
-//reporting
 define('EMAIL_HEADER', $globleConnectReport['email_header']);
 define('EMAIL_FOOTER', $globleConnectReport['email_footer']);
 define('REPORT_MODE', $globleConnectReport['report_mode']);
+
+//payment mode
+define('PAYMENT_MODE_PAYPAL', $globleConnectCartCheckout['payment_paypal']);
+define('PAYMENT_MODE_BANK', $globleConnectCartCheckout['payment_bank']);
+define('PAYMENT_MODE_CHEQUE', $globleConnectCartCheckout['payment_cheque']);
+define('PAYMENT_MODE_COD', $globleConnectCartCheckout['payment_cod']);
+define('DEFAULT_PAYMENT_MODE', $globleConnectCartCheckout['default_payment_mode']);
+define('ORDER_PREFIX', $globleConnectCartCheckout['order_prefix']);
+define('PRODUCT_PATH_PRE', $globleConnectCartCheckout['product_path_pre']);
+define('PRODUCT_PATH_POST', $globleConnectCartCheckout['product_path_post']);
+
+
 
 
 /*

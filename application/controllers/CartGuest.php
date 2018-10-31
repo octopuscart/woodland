@@ -20,7 +20,6 @@ class CartGuest extends CI_Controller {
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
-    
     function redirectCart() {
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartData($this->user_id);
@@ -33,7 +32,7 @@ class CartGuest extends CI_Controller {
             redirect('Cart/details');
         }
     }
-    
+
     public function index() {
         $this->redirectCart();
         redirect('Cart/details');
@@ -73,8 +72,8 @@ class CartGuest extends CI_Controller {
         }
 
         $custome_items = $session_cart['custome_items'];
-        
-        $data['custome_items'] =  $custome_items;
+
+        $data['custome_items'] = $custome_items;
 
         $this->db->select("group_concat(measurements) as measurement");
         $this->db->where_in('id', $custome_items);
@@ -118,7 +117,9 @@ class CartGuest extends CI_Controller {
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
-
+        $data['checkoutmode'] = 'Guest';
+        
+        
         $address = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
 
@@ -158,7 +159,7 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutPayment() {
-$this->redirectCart();
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -167,7 +168,10 @@ $this->redirectCart();
 
         $user_details = $this->session->userdata('customer_inforamtion');
         $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
-
+       
+        $data['checkoutmode'] = 'Guest'; 
+        
+        
 //place order
         if (isset($_POST['place_order'])) {
             $address = $user_address_details[0];
@@ -247,10 +251,6 @@ $this->redirectCart();
             }
 
 
-
-
-
-
             $order_status_data = array(
                 'c_date' => date('Y-m-d'),
                 'c_time' => date('H:i:s'),
@@ -273,7 +273,7 @@ $this->redirectCart();
 
             redirect('Order/orderdetailsguest/' . $orderkey);
         }
-        $this->load->view('CartGuest/checkoutPayment', $data);
+        $this->load->view('Cart/checkoutPayment', $data);
     }
 
 }

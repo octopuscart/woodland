@@ -39,6 +39,11 @@ define('paypal_api_signature', $configuration['paypal_api_signature']);
 define('paypal_api_currency_code', $configuration['paypal_api_currency_code']);
 
 
+//reporting configuration
+//reporting
+define('EMAIL_HEADER', $globleConnectReport['email_header']);
+define('EMAIL_FOOTER', $globleConnectReport['email_footer']);
+define('REPORT_MODE', $globleConnectReport['report_mode']);
 
 
 /*

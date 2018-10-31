@@ -536,12 +536,12 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
     //menu controller
     function menuController() {
-        return "hello";
+        return "";
     }
 
     function order_mail($order_id, $subject = "") {
         setlocale(LC_MONETARY, 'en_US');
-        $checkcode = 1;
+        $checkcode = REPORT_MODE;
         $order_details = $this->getOrderDetails($order_id, 0);
 
         $emailsender = email_sender;
@@ -551,12 +551,10 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         if ($order_details) {
             $order_no = $order_details['order_data']->order_no;
             $this->email->set_newline("\r\n");
-            $this->email->from($emailsender, $sendername);
+            $this->email->from(email_bcc, $sendername);
             $this->email->to($order_details['order_data']->email);
             $this->email->bcc(email_bcc);
-
-
-
+            
             $orderlog = array(
                 'log_type' => 'Email',
                 'log_datetime' => date('Y-m-d H:i:s'),

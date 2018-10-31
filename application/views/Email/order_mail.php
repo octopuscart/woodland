@@ -56,18 +56,17 @@
                 background: #dedede;
                 color: black;
             }
-                        span.fr_value {
-    margin-left: 1px;
-    padding: 0;
-    font-size: 9px;
-    text-align: -webkit-left;
-    position: absolute;
-    margin-top: 0px;
-    width: 20px;
-}
+            span.fr_value {
+                margin-left: 1px;
+                padding: 0;
+                font-size: 9px;
+                text-align: -webkit-left;
+                position: absolute;
+                margin-top: 0px;
+                width: 20px;
+            }
         </style>
     </head>
-
     <body style="margin: 0;
           padding: 0;
           background: rgb(225, 225, 225);
@@ -84,7 +83,6 @@
                     </td>
 
                 </tr>
-
             </table>
             <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
@@ -120,7 +118,7 @@
                         <table class="gn_table">
                             <tr>
                                 <td colspan="2">
-                                     <b>Order Information</b><br/><hr/>
+                                    <b>Order Information</b><br/><hr/>
                                 </td>
                             </tr>
                             <tr>
@@ -216,9 +214,9 @@
                         <b>Sizes: <?php echo $order_data->measurement_style; ?></b>
                         <br/><?php
                         if (count($measurements_items)) {
-                             foreach ($measurements_items as $keym => $valuem) {
-                                 $mvalues = explode(" ", $valuem['measurement_value']);
-                                echo "<p class='style_block'><b>".$valuem['measurement_key']." </b><span> " . $mvalues[0] . " <span class='fr_value'>" . $mvalues[1] . '"' . "</span></span></p>";
+                            foreach ($measurements_items as $keym => $valuem) {
+                                $mvalues = explode(" ", $valuem['measurement_value']);
+                                echo "<p class='style_block'><b>" . $valuem['measurement_key'] . " </b><span> " . $mvalues[0] . " <span class='fr_value'>" . $mvalues[1] . '"' . "</span></span></p>";
                             }
                         }
                         ?>  
@@ -255,35 +253,7 @@
                     <td colspan="6" style="font-size: 12px;">
 
 
-
-
-
-
-
-                        <p>For any order related queries, please email us at info@bespoketailorshk.com</p>
-
-                        <p>We assure you of best services at all times.</p>
-
-                        <div style="height: 200px;">Kindest Regards,<br />
-                            <img src="<?php echo site_mail_logo; ?>" style="height: 30px;  background: #000 ;margin: 5px 0px 10px ;"><br/>
-                                <span style="float: left; font-size: 12px;">
-
-                                    <address>
-                                        <b>Address 1</b><br/>
-                                        2nd Floor, 45 Haiphong Road,<br/> 
-                                        Tsim Sha Tsui, Kowloon, Hong Kong
-                                        <br/><br/>
-                                        <b>Address 2</b><br/>
-                                        Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road, <br/>
-                                        Tsim Sha Tsui, Kowloon, Hong Kong                                        <br/>
-                                        <b>Tel#</b>: +(852) 2730 8566  <b>Fax#</b>: +(852) 2730 8577<br/>
-                                        <b>Email</b>: info@bespoketailorshk.com  
-                                        <b>Web</b>: www.bespoketailorshk.com</b>
-
-
-                                    </address>
-                                </span>
-                        </div>
+                        <?php echo EMAIL_FOOTER; ?>
 
                         <br/>
                         <span style="    text-align: center;

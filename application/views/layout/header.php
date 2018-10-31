@@ -68,9 +68,9 @@
             background: black;
             top: 28%;
             position: absolute;
-          height:100px; 
-              
-               margin-left: -90px;
+            height:100px; 
+
+            margin-left: -90px;
         }
     </style>
 
@@ -104,9 +104,7 @@
                         var baseurl = "<?php echo site_url(); ?>";
                         var imageurlg = "<?php echo imageserver; ?>";
                         var globlecurrency = "<?php echo globle_currency; ?>";
-                        var avaiblecredits = 0;
-                      
-            </script>
+                        var avaiblecredits = 0;</script>
 
             <style>
                 .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -116,31 +114,41 @@
                 .ownmenu .dropdown.megamenu .dropdown-menu li a{
                     line-height: 25px;
                 }
+                .account-wishlist ul li a {
+                    font-size: 12px;
+                }
             </style>
 
-            
+
 
             <!-- Header Area Start Here -->
             <header>
                 <input type="hidden" ng-model="showmodel" ng-init="showmodel = 0">
                 <input type="hidden" ng-model="gitem_price" ng-init="showmodel = 0">
-                
+
                 <div class="header-area-style2" id="sticker">
                     <div class="header-top" style="  ">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                                    <div class="account-wishlist">
+                                    <div class="account-wishlist" style="font-size: 12px;">
                                         <ul>
                                             <?php
-                                           
                                             $session_data = $this->session->userdata('logged_in');
                                             if (isset($session_data['login_id'])) {
                                                 ?>
-                                                <li><a href="<?php echo site_url('Account/profile'); ?>">
+                                                <li>
+                                                    <a href="<?php echo site_url('Account/profile'); ?>">
                                                         <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
+                                                    </a>
                                                 </li>
-                                                <!--<li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>-->
+                                                <li>
+                                                    <a href="<?php echo site_url('Account/profile'); ?>">Profile</a>
+                                                </li>
+                                                <li>
+
+                                                    <a href="<?php echo site_url('Account/logout'); ?>">   Logout</a>
+                                                </li>
                                                 <?php
                                             } else {
                                                 ?>
@@ -324,7 +332,7 @@
                                     <div class="main-menu-area home2-sticky-area">
                                         <nav>
                                             <ul>
-                                                <li class="active"><a href="<?php echo base_url();?>">Home</a>
+                                                <li class="active"><a href="<?php echo base_url(); ?>">Home</a>
                                                     <ul>
                                                         <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ'S</a></li>
                                                         <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
@@ -341,7 +349,7 @@
                                                 </li>
                                                 <li><a href="<?php echo site_url("Shop/catalogue"); ?>">Catalogue</a></li>
                                                 <li><a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a></li>
-                                               
+
                                                 <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
                                             </ul>
                                         </nav>
@@ -377,7 +385,7 @@
                                                     </li>
                                                     <li><a href="#">Catalogue</a></li>
                                                     <li><a href="#">Schedule</a></li>
-                                                   
+
                                                     <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
                                                 </ul>
                                             </nav>

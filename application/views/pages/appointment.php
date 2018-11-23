@@ -113,9 +113,9 @@ if (isset($prefixshopappointment[$cdateshort])) {
                     <div class = "modal-title row" id = "myModalLabel">
 
                         <address style="    margin-bottom: 0;">
-                            <span id="location"><b>Shop Appointment</b>
+                            <span id="location"><b>Appointment</b>
                             </span><br>
-                            <span id="address">Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road,
+                            <span id="address">2nd Floor, 45 Haiphong Road ,
                             <br/>
                             Tsim Sha Tsui, Kowloon, Hong Kong</span><br>
                         </address>

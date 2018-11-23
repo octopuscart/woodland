@@ -47,7 +47,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                 <div class="col-md-3">
 
                     <ul style="    margin-bottom: 30px;">
-                        <li class="con-address">2nd Floor, 45 Haiphong Road ,
+                        <li class="con-address">2nd Floor, 45 Haiphong Road,
                             <br/>
                             Tsim Sha Tsui, Kowloon, <br/>Hong Kong
                         </li>
@@ -115,7 +115,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                         <address style="    margin-bottom: 0;">
                             <span id="location"><b>Appointment</b>
                             </span><br>
-                            <span id="address">2nd Floor, 45 Haiphong Road ,
+                            <span id="address">2nd Floor, 45 Haiphong Road,
                             <br/>
                             Tsim Sha Tsui, Kowloon, Hong Kong</span><br>
                         </address>

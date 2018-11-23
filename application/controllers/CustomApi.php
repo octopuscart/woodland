@@ -438,7 +438,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Round Point",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_round_point_5w0001.png"],
+                        "elements" => [ "collar_ragular_round_point0001.png"],
                         "image" => "customization/collar_round_point.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",

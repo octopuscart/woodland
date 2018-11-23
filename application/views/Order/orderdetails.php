@@ -242,7 +242,7 @@ $paymentstatus = "";
                                 <table class="table table-bordered"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding:20px">
                                     <tr style="font-weight: bold">
                                         <td style="width: 20px;text-align: right">S.No.</td>
-                                        <td colspan="2"  style="text-align: center">Product</td>
+                                        <td colspan="2"  style="text-align: center;    width: 700px;">Product</td>
 
                                         <td style="text-align: right;width: 100px"">Price</td>
                                         <td style="text-align: right;width: 20px"">Qantity</td>

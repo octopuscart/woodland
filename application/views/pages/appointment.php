@@ -136,8 +136,8 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                     </ul>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#<?php echo $avalue['id'];?>">Book Now</button>
-                                    <div class = "modal fade" id = "<?php echo $avalue['id'];?>"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+                                    <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#<?php echo $avalue['id']; ?>">Book Now</button>
+                                    <div class = "modal fade" id = "<?php echo $avalue['id']; ?>"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
 
                                         <div class = "modal-dialog ">
                                             <div class = "modal-content">
@@ -156,7 +156,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                                 <span id="location"><b><?php echo $avalue['hotel']; ?></b>
                                                                 </span><br>
                                                                 <span id="address">  
-                                            <?php echo $avalue['addresss']; ?></span><br>
+                                                                    <?php echo $avalue['addresss']; ?></span><br>
                                                             </address>
 
                                                             <div style="clear: both"></div>
@@ -224,41 +224,57 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                                 <div class="form-group" style="font-color:black">
 
                                                                     <label for="select_date">Available Date</label> 
+                                                                    <select class="form-control" name="select_time" id="select_time" style="height:34px;" required >
 
-                                                                    <div class="input-group date" id="datepicker">
-                                                                        <input class="form-control" id="appintmentDate" type="text" required class="form-control" name="select_date"  readonly=""  style="height:34px;" required value="<?php echo date("Y-m-d"); ?>">
-                                                                        <span class="input-group-addon">
-                                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                                        </span>
-                                                                    </div>
+                                                                        <?php
+                                                                        $dataes = $avalue['dates'];
+                                                                        foreach ($dataes as $dkey => $dvalue) {
+                                                                            ?>    
+                                                                            <option value="<?php echo $dvalue['date']; ?>"><?php echo $dvalue['date']; ?></option>
+                                                                            <?php
+                                                                        }
+                                                                        ?>
+                                                                    </select>
+
 
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-4" >
-                                                                <div class="form-group" style="font-color:black">
-
-                                                                    <label for="select_time">Available Time</label> 
-                                                                    <select class="form-control" name="select_time" id="select_time" style="height:34px;" required />
-                                                                    <?php
-                                                                    for ($tm = $timingarray[0]; $tm < $timingarray[1]; $tm++) {
-                                                                        $tm1 = ($tm < 10 ? '0' . $tm : $tm);
-                                                                        $tms1 = $tm1 . ":00 - $tm1:30";
-                                                                        $tm2 = $tm1 + 1;
-                                                                        $tms2 = $tm1 . ":30 - $tm2:00";
-
-                                                                        $tms12 = $tm1 . ":00";
-
-                                                                        $tms13 = $tm1 . ":30";
-
-
-                                                                        echo "<option>$tms12</option>";
-                                                                        echo "<option>$tms13</option>";
-                                                                    }
+                                                                <?php
+                                                                foreach ($dataes as $dtkey => $dtvalue) {
+                                                                  $t1 =  $dtvalue['timing1'];
+                                                                  $t2 = $dtvalue['timing2'];
+                                                                  
+                                                                  echo array_search($t1, $timeslot);
+                                                                  echo array_search($t2, $timeslot);
                                                                     ?>
-                                                                    </select>
+                                                                    <div class="form-group" style="font-color:black">
 
-                                                                </div>
+                                                                        <label for="select_time">Available Time</label> 
+                                                                        <select class="form-control" name="select_time" id="select_time" style="height:34px;" required />
+                                                                        <?php
+                                                                        for ($tm = $timingarray[0]; $tm < $timingarray[1]; $tm++) {
+                                                                            $tm1 = ($tm < 10 ? '0' . $tm : $tm);
+                                                                            $tms1 = $tm1 . ":00 - $tm1:30";
+                                                                            $tm2 = $tm1 + 1;
+                                                                            $tms2 = $tm1 . ":30 - $tm2:00";
+
+                                                                            $tms12 = $tm1 . ":00";
+
+                                                                            $tms13 = $tm1 . ":30";
+
+
+                                                                            echo "<option>$tms12</option>";
+                                                                            echo "<option>$tms13</option>";
+                                                                        }
+                                                                        ?>
+                                                                        </select>
+
+                                                                    </div>
+                                                                    <?php
+                                                                }
+                                                                ?>
                                                             </div>
                                                             <div class="col-md-4" >
                                                                 <div class="form-group" style="font-color:black">

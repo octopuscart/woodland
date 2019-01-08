@@ -262,7 +262,7 @@ $image2 = "";
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" >
 
-
+                
                 <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
 
                     <!-- Tesm Text -->
@@ -342,7 +342,7 @@ $image2 = "";
                     </div>
                     <div class="col-md-12">
                         <center>
-                            <div class="page_navigation "></div>
+                            <div class="page_navigation"></div>
                         </center>
                         <div style="clear: both"></div>
                     </div>

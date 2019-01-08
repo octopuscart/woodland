@@ -163,7 +163,7 @@ class Shop extends CI_Controller {
         $foldersstrip = ['HL_41007_72.jpg', 'HL_41009_72.jpg', 'HL_41043_72.jpg', 'HL_41044_72.jpg', 'HL_41045_72.jpg', 'HL_41094_72.jpg', 'HL_51045_64.jpg', 'HL_51047_64.jpg', 'HL_51048_64.jpg', 'HL_51077_64.jpg', 'HL_51082_64.jpg', 'HL_51143_64.jpg', 'HL_51145_64.jpg', 'HL_51146_64.jpg', 'HL_51147_64.jpg', 'HL_51148_64.jpg', 'HL_51156_64.jpg', 'HL_51157_64.jpg', 'HL_51158_64.jpg', 'HL_71005_56.jpg', 'HL_71007_56.jpg', 'HL_71008_56.jpg', 'HL_71009_56.jpg', 'HL_71010_56.jpg', 'HL_71058_56.jpg', 'HL_71059_56.jpg', 'HL_71087_56.jpg', 'HL_71088_56.jpg', 'HL_71093_56.jpg', 'HL_71094_56.jpg', 'HL_71098_56.jpg', 'HL_71099_56.jpg', 'HL_71122_56.jpg', 'HL_71124_56.jpg', 'HL_71126_56.jpg', 'HL_71241_56.jpg', 'HL_71242_56.jpg', 'HL_71299_56.jpg', 'HL_71300_56.jpg', 'HL_71301_56.jpg', 'HL_71303_56.jpg'];
         $foldercheck = ['HL_42002_72.jpg', 'HL_42004_72.jpg', 'HL_42004_72.png', 'HL_42009_72.jpg', 'HL_42023_72.jpg', 'HL_42031_72.jpg', 'HL_42032_72.jpg', 'HL_42033_72.jpg', 'HL_42034_72.jpg', 'HL_42035_72.jpg', 'HL_42036_72.jpg', 'HL_42037_72.jpg', 'HL_42038_72.jpg', 'HL_42039_72.jpg', 'HL_42040_56.jpg', 'HL_42040_72.jpg', 'HL_42041_72.jpg', 'HL_42042_72.jpg', 'HL_42067_72.jpg', 'HL_42068_72.jpg', 'HL_42069_72.jpg', 'HL_42071_72.jpg', 'HL_72104_56.jpg', 'HL_72107_56.jpg', 'HL_72108_56.jpg', 'HL_72119_56.jpg', 'HL_72120_56.jpg', 'HL_72121_56.jpg', 'HL_72124_56.jpg', 'HL_72197_56.jpg', 'HL_72198_56.jpg', 'HL_72199_56.jpg', 'HL_72200_56.jpg', 'HL_72211_56.jpg', 'HL_72214_56.jpg', 'HL_72215_56.jpg', 'HL_72217_56.jpg', 'HL_72219_56.jpg', 'HL_72221_56.jpg', 'HL_72222_56.jpg', 'HL_72275_56.jpg', 'HL_72276_56.jpg', 'HL_72277_56.jpg', 'HL_72281_56.jpg', 'HL_72282_56.jpg'];
         $foldersolid = ['HL5600164.jpg', 'HL5601064.jpg', 'HL5601264.jpg', 'HL5601764.jpg', 'HL5601864.jpg', 'HL5602064.jpg', 'HL5602164.jpg', 'HL5602464.jpg', 'HL5602564.jpg', 'HL5602664.jpg', 'HL5603264.jpg', 'HL5603464.jpg', 'HL5603564.jpg', 'HL5702564.jpg', 'HL5702664.jpg'];
-        $foldertexture = ['HL5400364.jpg', 'HL5400764.jpg', 'HL5402564.jpg', 'HL5402964.jpg', 'HL5405664.jpg', 'HL5406264.jpg', 'HL5406364.jpg', 'HL5407964.jpg', 'HL5408164.jpg', 'HL5414564.jpg'];
+        $foldertexture = ['1837.jpg', '1838.jpg', '1839.jpg', '1840.jpg', '1841.jpg', '1842.jpg', '1843.jpg', '1844.jpg', '1845.jpg', '1846.jpg', '1847.jpg', '1848.jpg', '1849.jpg', '1850.jpg', '1851.jpg', '1852.jpg', '1853.jpg', '1854.jpg', '1855.jpg', '1856.jpg', '1857.jpg', '1858.jpg', '1859.jpg', '1860.jpg', '1861.jpg', '1862.jpg', '1863.jpg', '1864.jpg', '1865.jpg', '1866.jpg', '1867.jpg', '1868.jpg', '1869.jpg', '1870.jpg', '1871.jpg', '1872.jpg', '1873.jpg', '1874.jpg', '1875.jpg', '1876.jpg', '1877.jpg', '1878.jpg', '1879.jpg', '1880.jpg', '1881.jpg', '1883.jpg', '1884.jpg', '1885.jpg', '1886.jpg', '1887.jpg', '1888.jpg', '1889.jpg', '1890.jpg', '1891.jpg', '1892.jpg', '1893.jpg', '1894.jpg', '1895.jpg', '1896.jpg', '1897.jpg', '1898.jpg', '1899.jpg', '1900.jpg', '1901.jpg', '2019.jpg', '2020.jpg', '2021.jpg', '2022.jpg',];
 
 
         foreach ($foldertexture as $key => $value) {
@@ -172,11 +172,12 @@ class Shop extends CI_Controller {
             $titles = explode("_", $folder);
 
 
-            $title = "BT" . $titles[1];
+            $title = "RT" . $titles[1];
 
             $products = array(
                 "category_id" => 48,
                 "sku" => $title,
+                "category_items_id" => 4,
                 "title" => $title,
                 "short_description" => "2 Ply 100% Cotton",
                 "description" => "2 Ply 100% Cotton",
@@ -198,7 +199,7 @@ class Shop extends CI_Controller {
                 "stock_status" => "In Stock",
                 "variant_product_of" => "",
                 "folder" => $foldermain);
-            # $this->db->insert('products', $products);
+             $this->db->insert('products', $products);
         }
     }
 

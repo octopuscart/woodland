@@ -232,6 +232,8 @@ class Shop extends CI_Controller {
             );
 
             $this->db->insert('appointment_list', $appointment);
+            $appointment['contact_no2'] = $this->input->post('contact_no2');
+          
 
             $emailsender = email_sender;
             $sendername = email_sender_name;
@@ -256,8 +258,8 @@ class Shop extends CI_Controller {
 
                 $appointment['appointment'] = $appointment;
 
-                $checksend = 0;
-               echo  $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
+                $checksend = 1;
+                 $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
                 if ($checksend) {
                     $this->email->message($htmlsmessage);
                     $this->email->print_debugger();

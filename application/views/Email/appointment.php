@@ -91,8 +91,8 @@
                         <p>Dear <?php echo $appointment['first_name']; ?> <?php echo $appointment['last_name']; ?>,</p><br/>
 
                         <p> Thank you for choosing to book an appointment with Bespoke Tailors. </p>
-                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at our shop.</p> 
-
+                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at <b><?php echo $appointment['hotel']; ?></b>.</p> 
+                        <p>On the day of your appointment, please call our tailor on his contact no. (<b><?php echo $appointment['country']; ?>:  <?php echo $appointment['contact_no2']; ?></b>) and he will give you his suite number.</p>
                         <p>For any appointment related queries, please email us at info@bespoketailorshk.com</p>
 
                         <br/>
@@ -101,13 +101,10 @@
                                 <span style="float: left; font-size: 12px;">
 
                                     <address>
-                                        <b>Address 1</b><br/>
+                                        <b>Address</b><br/>
                                         2nd Floor, 45 Haiphong Road,<br/> 
                                         Tsim Sha Tsui, Kowloon, Hong Kong
-                                        <br/><br/>
-                                        <b>Address 2</b><br/>
-                                        Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road, <br/>
-                                        Tsim Sha Tsui, Kowloon, Hong Kong                                        <br/>
+                                        <br/>
                                         <b>Tel#</b>: +(852) 2730 8566  <b>Fax#</b>: +(852) 2730 8577<br/>
                                         <b>Email</b>: info@bespoketailorshk.com  
                                         <b>Web</b>: www.bespoketailorshk.com

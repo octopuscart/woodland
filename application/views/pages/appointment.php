@@ -420,6 +420,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                         <input type="hidden" name="address" value="<?php echo $value['address']; ?>">
                                                         <input type="hidden" name="city_state" value="<?php echo $value['city_state']; ?>">
                                                         <input type="hidden" name="country" value="<?php echo $value['country']; ?>">
+                                                        <input type="hidden" name="contact_no2" value="<?php echo $value['contact_no']; ?>">
 
                                                         <div style="clear: both"></div>
                                                     </div>

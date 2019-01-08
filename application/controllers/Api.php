@@ -194,7 +194,7 @@ class Api extends REST_Controller {
                 if (isset($attr_filter[$filter])) {
                     array_push($attr_filter[$filter], $value);
                 } else {
-                    $attr_filter[$filter] = array("title"=>$attitle, "attrs" =>[], "widget"=>$widget);
+                    $attr_filter[$filter] = array("title" => $attitle, "attrs" => [], "widget" => $widget);
                     array_push($attr_filter[$filter], $value);
                 }
             }
@@ -344,15 +344,15 @@ class Api extends REST_Controller {
         $query = $this->db->get('user_order_log');
         $orderlog = $query->result_array();
         if (count($orderlog)) {
-            $this->response(array('checkpre'=>'1'));
+            $this->response(array('checkpre' => '1'));
         } else {
-            $this->response(array('checkpre'=>'0'));
+            $this->response(array('checkpre' => '0'));
         }
     }
-    
+
     function order_mailchecksend_get($order_id, $order_no) {
-            $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [$order_no] has been successfully placed!";
-            $this->Product_model->order_mail($order_id, $subject);
+        $subject = "Order Confirmation - Your Order with www.bespoketailorshk.com [$order_no] has been successfully placed!";
+        $this->Product_model->order_mail($order_id, $subject);
     }
 
     function orderMailVender_get($order_id) {
@@ -925,6 +925,37 @@ class Api extends REST_Controller {
             
         }
         $this->response($customeele);
+    }
+
+    //order detail get
+    function appointment_get() {
+        $appointmentdetails = [
+            array(
+                "country" => "Australia",
+                "city_state" => "Sydney, NSW",
+                "hotel" => "InterContinental Sydney Hotel",
+                "addresss" => "117 Macquarie Street,\n Sydney NSW 2000,\n Australia",
+                "days" => "21st Jan Until 22nd Jan 2019",
+                "contact_no"=>"+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "21st Jan 2019", "timing1" => "11:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "22nd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                ]
+            ),
+            array(
+                "country" => "Australia",
+                "city_state" => "Melbourne, VIC",
+                "hotel" => "Crown Towers Melbourne Hotel",
+                "addresss" => "8 Whiteman St, Southbank VIC 3006, Australia",
+                "days" => "21st Jan Until 22nd Jan 2019",
+                "contact_no"=>"+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "21st Jan 2019", "timing1" => "11:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "22nd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                ]
+            ),
+            ];
+        $this->response($appointmentdetails);
     }
 
 }

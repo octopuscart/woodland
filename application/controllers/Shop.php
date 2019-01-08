@@ -98,6 +98,70 @@ class Shop extends CI_Controller {
     }
 
     public function appointment() {
+
+        $appointmentdetails = [
+            array(
+                "country" => "Australia",
+                "city_state" => "Sydney, NSW",
+                "hotel" => "InterContinental Sydney Hotel",
+                "addresss" => "117 Macquarie Street,<br/> Sydney NSW 2000,<br/> Australia",
+                "days" => "21st Jan Until 22nd Jan 2019",
+                "contact_no" => "+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "21st Jan 2019", "timing1" => "11:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "22nd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                ]
+            ),
+            array(
+                "country" => "Australia",
+                "city_state" => "Melbourne, VIC",
+                "hotel" => "Crown Towers Melbourne Hotel",
+                "addresss" => "8 Whiteman St, <br/>Southbank VIC 3006,<br/> Australia",
+                "days" => "23rd Jan Until 24th Jan 2019",
+                "contact_no" => "+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "23rd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "24th Jan 2019", "timing1" => "09:00 AM", "timing2" => "12:00 PM"),
+                ]
+            ),
+            array(
+                "country" => "Australia",
+                "city_state" => "Brisbane, QLD",
+                "hotel" => "Hilton Hotel Brisbane",
+                "addresss" => "190 Elizabeth St, <br/>Brisbane City QLD 4000,<br/> Australia",
+                "days" => "25th Jan Until 26th Jan 2019",
+                "contact_no" => "+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "25th Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "26th Jan 2019", "timing1" => "09:00 AM", "timing2" => "12:00 PM"),
+                ]
+            ),
+            array(
+                "country" => "Australia",
+                "city_state" => "Adelaide, SA",
+                "hotel" => "InterContinental Adelaide Hotel ",
+                "addresss" => "North Terrace, <br/>Adelaide SA 5000,<br/> Australia",
+                "days" => "27th Jan Until 28th Jan 2019",
+                "contact_no" => "+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "27th Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "28th Jan 2019", "timing1" => "09:00 AM", "timing2" => "12:00 PM"),
+                ]
+            ),
+            array(
+                "country" => "Australia",
+                "city_state" => "Perth, WA",
+                "hotel" => "InterContinental Perth City Centre Hotel",
+                "addresss" => "815 Hay St, <br/>Perth WA 6000, <br/>Australia",
+                "days" => "29th Jan 2019",
+                "contact_no" => "+(614) 1142 6048",
+                "dates" => [
+                    array("date" => "29th Jan 2019", "timing1" => "09:00 AM", "timing2" => "03:00 PM"),
+                ]
+            ),
+        ];
+
+        $data['appointmentdata'] = $appointmentdetails;
         if (isset($_POST['submit'])) {
             $appointment = array(
                 'last_name' => $this->input->post('last_name'),
@@ -123,7 +187,7 @@ class Shop extends CI_Controller {
                 $this->email->from(email_bcc, $sendername);
                 $this->email->to($this->input->post('email'));
                 $this->email->bcc(email_bcc);
-                $subjectt = "Bespoke Tailors Appointment : ".$appointment['select_date']." (".$appointment['select_time'].")";
+                $subjectt = "Bespoke Tailors Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
                 $orderlog = array(
                     'log_type' => 'Appointment',
                     'log_datetime' => date('Y-m-d H:i:s'),
@@ -156,7 +220,7 @@ class Shop extends CI_Controller {
 
             redirect('Shop/appointment');
         }
-        $this->load->view('pages/appointment');
+        $this->load->view('pages/appointment', $data);
     }
 
     public function testinsert() {
@@ -199,7 +263,7 @@ class Shop extends CI_Controller {
                 "stock_status" => "In Stock",
                 "variant_product_of" => "",
                 "folder" => $foldermain);
-             $this->db->insert('products', $products);
+            $this->db->insert('products', $products);
         }
     }
 

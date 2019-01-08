@@ -304,3 +304,15 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
         });
     })
 })
+
+App.controller('AppointmentDetails', function ($scope, $http, $timeout, $interval, $filter) {
+    var appointmenturl = baseurl+"Api/appointment";
+    $scope.appointmentData = [];
+    $http.get(appointmenturl).then(function (rdata) {
+          
+            $scope.appointmentData = rdata.data;
+       
+        }, function (r) {
+          
+        })
+})

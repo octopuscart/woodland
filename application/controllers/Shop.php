@@ -105,14 +105,40 @@ class Shop extends CI_Controller {
            ];
        
        $data['timeslot'] = $timeslot;
+       
+       $appointmentdetailslocal = [array(
+                "type"=>"local",
+                "id"=>"au0_app",
+                "country" => "Hong Kong",
+                "city_state" => "Kowloon",
+                "hotel" => "SHOWROOM",
+                "address" => "2nd Floor, 45 Haiphong Road, <br/>Tsim Sha Tsui, Kowloon,<br/>Hong Kong",
+                "days" => "",
+                "start_date"=>"",
+                "end_date"=>"",
+                
+                "contact_no" => "+(852) 2730 8566",
+                "dates" => [
+                    array("date" => "Mon - Sat", "timing1" => "09:00 AM", "timing2" => "07:00 PM"),
+                    array("date" => "Sun & Holidays", "timing1" => "09:00 AM", "timing2" => "06:00 PM"),
+                ]
+            ),];
+       
+       $data['appointmentdetailslocal'] = $appointmentdetailslocal;
+       
         $appointmentdetails = [
+            
             array(
+                "type"=>"globle",
                 "id"=>"au1_app",
                 "country" => "Australia",
                 "city_state" => "Sydney, NSW",
                 "hotel" => "InterContinental Sydney Hotel",
-                "addresss" => "117 Macquarie Street,<br/> Sydney NSW 2000,<br/> Australia",
+                "address" => "117 Macquarie Street,<br/> Sydney NSW 2000,<br/> Australia",
                 "days" => "21st Jan Until 22nd Jan 2019",
+                "start_date"=>"21-01-2019",
+                "end_date"=>"22-01-2019",
+                
                 "contact_no" => "+61 4 1142 6048",
                 "dates" => [
                     array("date" => "21st Jan 2019", "timing1" => "11:00 AM", "timing2" => "09:00 PM"),
@@ -120,12 +146,15 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "type"=>"globle",
                 "id"=>"au2_app",
                 "country" => "Australia",
                 "city_state" => "Melbourne, VIC",
                 "hotel" => "Crown Towers Melbourne Hotel",
-                "addresss" => "8 Whiteman St, <br/>Southbank VIC 3006,<br/> Australia",
+                "address" => "8 Whiteman St, <br/>Southbank VIC 3006,<br/> Australia",
                 "days" => "23rd Jan Until 24th Jan 2019",
+                "start_date"=>"23-01-2019",
+                "end_date"=>"24-01-2019",
                 "contact_no" => "+61 4 1142 6048",
                 "dates" => [
                     array("date" => "23rd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
@@ -133,12 +162,15 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "type"=>"globle",
                 "id"=>"au3_app",
                 "country" => "Australia",
                 "city_state" => "Brisbane, QLD",
                 "hotel" => "Hilton Hotel Brisbane",
-                "addresss" => "190 Elizabeth St, <br/>Brisbane City QLD 4000,<br/> Australia",
+                "address" => "190 Elizabeth St, <br/>Brisbane City QLD 4000,<br/> Australia",
                 "days" => "25th Jan Until 26th Jan 2019",
+                "start_date"=>"25-01-2019",
+                "end_date"=>"26-01-2019",
                 "contact_no" => "+61 4 1142 6048",
                 "dates" => [
                     array("date" => "25th Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
@@ -146,12 +178,15 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "type"=>"globle",
                 "id"=>"au4_app",
                 "country" => "Australia",
                 "city_state" => "Adelaide, SA",
                 "hotel" => "InterContinental Adelaide Hotel ",
-                "addresss" => "North Terrace, <br/>Adelaide SA 5000,<br/> Australia",
+                "address" => "North Terrace, <br/>Adelaide SA 5000,<br/> Australia",
                 "days" => "27th Jan Until 28th Jan 2019",
+                "start_date"=>"27-01-2019",
+                "end_date"=>"28-01-2019",
                 "contact_no" => "+61 4 1142 6048",
                 "dates" => [
                     array("date" => "27th Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
@@ -159,12 +194,15 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "type"=>"globle",
                 "id"=>"au5_app",
                 "country" => "Australia",
                 "city_state" => "Perth, WA",
                 "hotel" => "InterContinental Perth City Centre Hotel",
-                "addresss" => "815 Hay St, <br/>Perth WA 6000, <br/>Australia",
+                "address" => "815 Hay St, <br/>Perth WA 6000, <br/>Australia",
                 "days" => "29th Jan 2019",
+                "start_date"=>"29-01-2019",
+                "end_date"=>"29-01-2019",
                 "contact_no" => "+61 4 1142 6048",
                 "dates" => [
                     array("date" => "29th Jan 2019", "timing1" => "09:00 AM", "timing2" => "03:00 PM"),
@@ -175,6 +213,12 @@ class Shop extends CI_Controller {
         $data['appointmentdata'] = $appointmentdetails;
         if (isset($_POST['submit'])) {
             $appointment = array(
+                
+                "country" => $this->input->post('country'),
+                "city_state" => $this->input->post('city_state'),
+                "hotel" => $this->input->post('hotel'),
+                "address" => $this->input->post('address'),
+                
                 'last_name' => $this->input->post('last_name'),
                 'first_name' => $this->input->post('first_name'),
                 'email' => $this->input->post('email'),

@@ -45,270 +45,530 @@ if (isset($prefixshopappointment[$cdateshort])) {
             <div class="row" style="border-bottom: 2px solid;    background: #ffffffb5; ">
                 <div class="contact-us-right">
                     <h2 class="title-sidebar text-center" style="margin-bottom: 30px;padding-bottom:  30px;border-bottom: 1px dotted ">Local Appointment</h2>
-                    <div class="col-md-3">
+                       <table class="table table-borderd">
+                    <tr style="    background-color: #000;
+                        color: #fff;">
+                        <th style="width: 100px">Country</th>
+                        <th style="width: 150px">City/State</th>
+                        <th style="">Address</th>
 
-                        <ul style="    margin-bottom: 30px;">
-                            <li class="con-address">2nd Floor, 45 Haiphong Road,
+                        <th style="width: 350px">Date/Time</th>
+                        <th style="width: 200px"></th>
+
+                    </tr>
+                    <?php
+                    foreach ($appointmentdetailslocal as $key => $value) {
+                        ?>
+                        <tr>
+                            <td>
+
+                                <?php echo $value['country']; ?>
+                            </td>
+                            <td>
+                                <?php echo $value['city_state']; ?>
+                            </td>
+
+                            <td>
+                                <b>
+                                    <i class="fa fa-building-o"></i>
+                                    <span style="line-height: 14px;"> <?php echo $value['hotel']; ?></span>
+                                </b>
                                 <br/>
-                                Tsim Sha Tsui, Kowloon, <br/>Hong Kong
-                            </li>
+                                <small>
+                                    <?php echo $value['address']; ?>
+                                </small>
+                            </td>
 
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <ul style="    margin-bottom: 30px;">
+                            <td>
+                                <?php
+                                if ($value['type'] == 'globle') {
+                                    ?>
 
-                            <li class="con-envelope">info@bespoketailorshk.com</li>
-                            <li class="con-phone">+(852) 2730 8566</li>
+                                    <i class="fa fa-calendar"></i>
+                                    <b><?php
+                                        $date1 = date_create($value['start_date']);
+                                        echo date_format($date1, "j<\s\u\p>S</\s\u\p>   F");
+                                        ?></b> <span style="
+                                        font-size: 12px;
+                                        line-height: 24px;
+                                                   margin: 0px 10px;"> Until</span>  <b><?php
+                                                   $date2 = date_create($value['end_date']);
+                                                   echo date_format($date2, "j<\s\u\p>S</\s\u\p> F Y");
+
+                                                   $days = $date2->diff($date1)->format("%a");
+                                                   echo "<br/> <center> (" . ($days + 1) . " Days)</center> ";
+                                                   ?></b>
+                                    <br/>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <ul style="    margin-bottom: 0px;">
+
+                                        <li class="">
+                                           
+                                            <span class="timeing_opensm"> <i class="fa fa-clock-o"></i> Timing</span><br/>
+                                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
+                                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
+                                        </li>
+                                    </ul>
+
+                                    <?php
+                                }
+                                ?>
+
+                                <br/>
+
+                                <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#<?php echo $value['id']; ?>">Book Now</button>
+                                <div class = "modal fade" id = "<?php echo $value['id']; ?>"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+
+                                    <div class = "modal-dialog ">
+                                        <div class = "modal-content">
+                                            <form method="post" action="#">
+                                                <div class = "modal-header" style=" color: #fff;background: #000 ">
+                                                    <button type = "button" style="    background-color: #000;
+                                                            border: 1px solid #000;" class = " btn btn-danger btn-xm pull-right" data-dismiss = "modal" aria-hidden = "true">
+
+                                                        <i class="fa fa-close"></i>
+
+                                                    </button>
+
+                                                    <div class = "modal-title row" id = "myModalLabel">
+
+                                                        <address style="    margin-bottom: 0;">
+                                                            <span id="location"><b><?php echo $value['hotel']; ?></b>
+                                                            </span><br>
+                                                            <span id="address">  
+                                                                <?php echo $value['address']; ?></span><br>
+                                                        </address>
+                                                        <input type="hidden" name="country" value="">
+
+                                                        <div style="clear: both"></div>
+                                                    </div>
+                                                </div>
 
 
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <ul style="    margin-bottom: 30px;">
 
-                            <li class=""><i class="con-clock fa fa-clock-o"></i> 
-                                <span class="timeing_opensm">Timing</span><br/>
-                                <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
-                                <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#schedule_modal_shop">Book Now</button>
-                    </div>
+                                                <div class = "modal-body">
+
+
+
+
+                                                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">Last Name</label> 
+                                                                <input type="text" class="time start form-control" name="last_name"  style="height:34px;" required/>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">First Name</label> 
+                                                                <input type="text" class="time start form-control" name="first_name"  style="height:34px;" required />
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+                                                                <label for="first_name">No. Of Persons</label> 
+                                                                <input  class="time start form-control" type="number"  name="no_of_person"  style="height:34px;" min="1" value="1" />
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                        <div class="col-md-6" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">Email</label> 
+                                                                <input type="text" class="time start form-control" name="email"   style="height:34px;" required />
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">Contact No.</label> 
+                                                                <input type="text" class="time start form-control" name="contact_no"  style="height:34px;" required />
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="select_date">Available Date</label> 
+                                                                <select class="form-control" name="select_date" id="dateselection" style="height:34px;" required ng-model="dateselection<?php echo $value['id']; ?>"  ng-init="dateselection<?php echo $value['id']; ?> = '<?php echo $value['dates'][0]['date']; ?>'" >
+
+                                                                    <?php
+                                                                    $dataes = $value['dates'];
+                                                                    foreach ($dataes as $dkey => $dvalue) {
+                                                                        $dateid = $value['id'] . $dkey;
+                                                                        ?>    
+                                                                        <option  value="<?php echo $dvalue['date']; ?>"><?php echo $dvalue['date']; ?></option>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </select>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4" >
+                                                            {{dateselection}}
+
+
+                                                            <?php
+                                                            foreach ($dataes as $dtkey => $dtvalue) {
+                                                                $dateid = $value['id'] . $dkey;
+                                                                $t1 = $dtvalue['timing1'];
+                                                                $t2 = $dtvalue['timing2'];
+
+                                                                $cnt1 = array_search($t1, $timeslot);
+                                                                $cnt2 = array_search($t2, $timeslot);
+                                                                ?>
+                                                                <div class="form-group tab-pane " ng-if="dateselection<?php echo $value['id']; ?> == '<?php echo $dtvalue['date']; ?>'" style="font-color:black">
+                                                                    <label for="select_time">Available Time</label> 
+                                                                    <select class="form-control" name="select_time" id="select_time" style="height:34px;" required />
+                                                                    <?php
+                                                                    for ($tm = $cnt1; $tm < $cnt2 + 1; $tm++) {
+                                                                        $time1 = $timeslot[$tm];
+                                                                        echo "<option >$time1</option>";
+                                                                    }
+                                                                    ?>
+                                                                    </select>
+                                                                </div>
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </div>
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="select_date">Referral</label> 
+
+                                                                <select class="form-control" name="referral" id="select_time" style="height:34px;" required >
+                                                                    <option value="">Select</option>
+                                                                    <option value="Newspaper">Newspaper</option>
+                                                                    <option value="Facebook">Facebook</option>
+                                                                    <option value="E-Newsletter">E-Newsletter</option>
+                                                                    <option value="Online Search">Online Search</option>
+                                                                    <option value="Word of Mouth">Word of Mouth</option>
+                                                                    <option value="Paper Flier">Paper Flier</option>
+                                                                    <option value="Instagram">Instagram</option>
+                                                                    <option value="I am a Repeat Customer">I am a Repeat Customer</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                                            <div class="col-md-12" >
+                                                                                <label for="first_name">Address</label> <br>
+                                                                                <textarea name="address" class="form-control"  rows="1" cols="27" style="height: 94px !important;"></textarea>
+                                                                            </div>
+                                                                        </div>-->
+
+
+
+                                                    <div style="clear:both"></div>
+                                                </div>
+
+
+
+
+
+
+
+
+
+                                                <div class = "modal-footer">
+
+
+                                                    <button type = "submit" name="submit" class="btn btn-danger" style="background: black" >
+                                                        Book Appointment
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+                            </td>
+                            <td style="">
+                                <span style="    line-height: 15px;
+                                      padding: 0px 0px 10px;    color: black;
+                                      float: left;">
+                                    <i class="fa fa-phone-square"></i>  <?php echo $value['contact_no']; ?>
+                                </span>
+                                <iframe  frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'  height="100px" width="300px"  src="https://maps.google.com/?q=Bespoke Tailors+<?php echo $value['address']; ?>&output=embed">
+                                </iframe>  
+
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
                 </div>
             </div>
 
             <!--global appointment-->
             <div class="row"  style="border-bottom: 2px solid;    background: #ffffffb8; ">
                 <h2 class="title-sidebar text-center" style="margin: 30px;padding-bottom:  30px;border-bottom: 1px dotted ">Global Appointment</h2>
+                <table class="table table-borderd">
+                    <tr style="    background-color: #000;
+                        color: #fff;">
+                        <th style="width: 100px">Country</th>
+                        <th style="width: 150px">City/State</th>
+                        <th style="">Hotel Name & Address</th>
 
-                <?php
-                foreach ($appointmentdata as $akey => $avalue) {
-                    ?>
-                    <div class="container contact-us-page-area" style="padding: 10px 0 10px;">
-                        <h2 style="    font-size: 19px;
-                            text-align: center;"><?php echo $avalue['country']; ?> <?php echo $avalue['city_state']; ?>   (<?php echo $avalue['days']; ?>)</h2>
-                        <div class="row" style="border-bottom: 2px solid;    background: #ffffffb5;" >
-                            <div class="contact-us-right">
-                                <div class="col-md-3">
+                        <th style="width: 350px">From Date - To Date</th>
+                        <th style="width: 200px"></th>
 
-                                    <ul style="    margin-bottom: 30px;">
-                                        <li class="con-address">
-                                            <b><?php echo $avalue['hotel']; ?></b><br/>
-                                            <?php echo $avalue['addresss']; ?>
-                                        </li>
+                    </tr>
+                    <?php
+                    foreach ($appointmentdata as $key => $value) {
+                        ?>
+                        <tr>
+                            <td>
 
-                                    </ul>
-                                </div>
-                                <div class="col-md-3">
-                                    <ul style="    margin-bottom: 30px;">
+                                <?php echo $value['country']; ?>
+                            </td>
+                            <td>
+                                <?php echo $value['city_state']; ?>
+                            </td>
 
-                                        <li class="con-envelope">info@bespoketailorshk.com</li>
-                                        <li class="con-phone"> <?php echo $avalue['contact_no']; ?></li>
+                            <td>
+                                <b>
+                                    <i class="fa fa-building-o"></i>
+                                    <span style="line-height: 14px;"> <?php echo $value['hotel']; ?></span>
+                                </b>
+                                <br/>
+                                <small>
+                                    <?php echo $value['address']; ?>
+                                </small>
+                            </td>
 
+                            <td>
+                                <?php
+                                if ($value['type'] == 'globle') {
+                                    ?>
 
-                                    </ul>
-                                </div>
-                                <div class="col-md-3">
-                                    <ul style="    margin-bottom: 30px;">
+                                    <i class="fa fa-calendar"></i>
+                                    <b><?php
+                                        $date1 = date_create($value['start_date']);
+                                        echo date_format($date1, "j<\s\u\p>S</\s\u\p>   F");
+                                        ?></b> <span style="
+                                        font-size: 12px;
+                                        line-height: 24px;
+                                                   margin: 0px 10px;"> Until</span>  <b><?php
+                                                   $date2 = date_create($value['end_date']);
+                                                   echo date_format($date2, "j<\s\u\p>S</\s\u\p> F Y");
+
+                                                   $days = $date2->diff($date1)->format("%a");
+                                                   echo "<br/> <center> (" . ($days + 1) . " Days)</center> ";
+                                                   ?></b>
+                                    <br/>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <ul style="    margin-bottom: 0px;">
 
                                         <li class=""><i class="con-clock fa fa-clock-o"></i> 
                                             <span class="timeing_opensm">Timing</span><br/>
-                                            <?php
-                                            $dataes = $avalue['dates'];
-                                            foreach ($dataes as $dkey => $dvalue) {
-                                                ?>
-                                                <div  style="    font-size: 13px;">
-                                                    <span class="timeing_open" >
-                                                        <?php echo $dvalue['date']; ?>
-                                                    </span>: <?php echo $dvalue['timing1']; ?>
-                                                    <?php echo $dvalue['timing2']; ?>
-                                                    <br/>
-                                                </div>
-
-                                                <?php
-                                            }
-                                            ?>
-
+                                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
+                                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="col-md-3">
-                                    <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#<?php echo $avalue['id']; ?>">Book Now</button>
-                                    <div class = "modal fade" id = "<?php echo $avalue['id']; ?>"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
 
-                                        <div class = "modal-dialog ">
-                                            <div class = "modal-content">
-                                                <form method="post" action="#">
-                                                    <div class = "modal-header" style=" color: #fff;background: #000 ">
-                                                        <button type = "button" style="    background-color: #000;
-                                                                border: 1px solid #000;" class = " btn btn-danger btn-xm pull-right" data-dismiss = "modal" aria-hidden = "true">
+                                    <?php
+                                }
+                                ?>
 
-                                                            <i class="fa fa-close"></i>
+                                <br/>
 
-                                                        </button>
+                                <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#<?php echo $value['id']; ?>">Book Now</button>
+                                <div class = "modal fade" id = "<?php echo $value['id']; ?>"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
 
-                                                        <div class = "modal-title row" id = "myModalLabel">
+                                    <div class = "modal-dialog ">
+                                        <div class = "modal-content">
+                                            <form method="post" action="#">
+                                                <div class = "modal-header" style=" color: #fff;background: #000 ">
+                                                    <button type = "button" style="    background-color: #000;
+                                                            border: 1px solid #000;" class = " btn btn-danger btn-xm pull-right" data-dismiss = "modal" aria-hidden = "true">
 
-                                                            <address style="    margin-bottom: 0;">
-                                                                <span id="location"><b><?php echo $avalue['hotel']; ?></b>
-                                                                </span><br>
-                                                                <span id="address">  
-                                                                    <?php echo $avalue['addresss']; ?></span><br>
-                                                            </address>
+                                                        <i class="fa fa-close"></i>
 
-                                                            <div style="clear: both"></div>
+                                                    </button>
+
+                                                    <div class = "modal-title row" id = "myModalLabel">
+
+                                                        <address style="    margin-bottom: 0;">
+                                                            <span id="location"><b><?php echo $value['hotel']; ?></b>
+                                                            </span><br>
+                                                            <span id="address">  
+                                                                <?php echo $value['address']; ?></span><br>
+                                                        </address>
+                                                        <input type="hidden" name="hotel" value="<?php echo $value['hotel']; ?>">
+                                                        <input type="hidden" name="address" value="<?php echo $value['address']; ?>">
+                                                        <input type="hidden" name="city_state" value="<?php echo $value['city_state']; ?>">
+                                                        <input type="hidden" name="country" value="<?php echo $value['country']; ?>">
+
+                                                        <div style="clear: both"></div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class = "modal-body">
+
+
+
+
+                                                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">Last Name</label> 
+                                                                <input type="text" class="time start form-control" name="last_name"  style="height:34px;" required/>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">First Name</label> 
+                                                                <input type="text" class="time start form-control" name="first_name"  style="height:34px;" required />
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+                                                                <label for="first_name">No. Of Persons</label> 
+                                                                <input  class="time start form-control" type="number"  name="no_of_person"  style="height:34px;" min="1" value="1" />
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                        <div class="col-md-6" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">Email</label> 
+                                                                <input type="text" class="time start form-control" name="email"   style="height:34px;" required />
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="first_name">Contact No.</label> 
+                                                                <input type="text" class="time start form-control" name="contact_no"  style="height:34px;" required />
+
+                                                            </div>
                                                         </div>
                                                     </div>
 
 
+                                                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
 
-                                                    <div class = "modal-body">
+                                                                <label for="select_date">Available Date</label> 
+                                                                <select class="form-control" name="select_date" id="dateselection" style="height:34px;" required ng-model="dateselection<?php echo $value['id']; ?>"  ng-init="dateselection<?php echo $value['id']; ?> = '<?php echo $value['dates'][0]['date']; ?>'" >
 
-
-
-
-                                                        <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
-                                                            <div class="col-md-4" >
-                                                                <div class="form-group" style="font-color:black">
-
-                                                                    <label for="first_name">Last Name</label> 
-                                                                    <input type="text" class="time start form-control" name="last_name"  style="height:34px;" required/>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4" >
-                                                                <div class="form-group" style="font-color:black">
-
-                                                                    <label for="first_name">First Name</label> 
-                                                                    <input type="text" class="time start form-control" name="first_name"  style="height:34px;" required />
-
-                                                                </div>
-                                                            </div>
-
-
-                                                            <div class="col-md-4" >
-                                                                <div class="form-group" style="font-color:black">
-                                                                    <label for="first_name">No. Of Persons</label> 
-                                                                    <input  class="time start form-control" type="number"  name="no_of_person"  style="height:34px;" min="1" value="1" />
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
-                                                            <div class="col-md-6" >
-                                                                <div class="form-group" style="font-color:black">
-
-                                                                    <label for="first_name">Email</label> 
-                                                                    <input type="text" class="time start form-control" name="email"   style="height:34px;" required />
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-md-6" >
-                                                                <div class="form-group" style="font-color:black">
-
-                                                                    <label for="first_name">Contact No.</label> 
-                                                                    <input type="text" class="time start form-control" name="contact_no"  style="height:34px;" required />
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
-                                                            <div class="col-md-4" >
-                                                                <div class="form-group" style="font-color:black">
-
-                                                                    <label for="select_date">Available Date</label> 
-                                                                    <select class="form-control" name="select_time" id="select_time" style="height:34px;" required >
-
-                                                                        <?php
-                                                                        $dataes = $avalue['dates'];
-                                                                        foreach ($dataes as $dkey => $dvalue) {
-                                                                            ?>    
-                                                                            <option value="<?php echo $dvalue['date']; ?>"><?php echo $dvalue['date']; ?></option>
-                                                                            <?php
-                                                                        }
-                                                                        ?>
-                                                                    </select>
-
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-md-4" >
-                                                                <?php
-                                                                foreach ($dataes as $dtkey => $dtvalue) {
-                                                                  $t1 =  $dtvalue['timing1'];
-                                                                  $t2 = $dtvalue['timing2'];
-                                                                  
-                                                                  echo array_search($t1, $timeslot);
-                                                                  echo array_search($t2, $timeslot);
-                                                                    ?>
-                                                                    <div class="form-group" style="font-color:black">
-
-                                                                        <label for="select_time">Available Time</label> 
-                                                                        <select class="form-control" name="select_time" id="select_time" style="height:34px;" required />
-                                                                        <?php
-                                                                        for ($tm = $timingarray[0]; $tm < $timingarray[1]; $tm++) {
-                                                                            $tm1 = ($tm < 10 ? '0' . $tm : $tm);
-                                                                            $tms1 = $tm1 . ":00 - $tm1:30";
-                                                                            $tm2 = $tm1 + 1;
-                                                                            $tms2 = $tm1 . ":30 - $tm2:00";
-
-                                                                            $tms12 = $tm1 . ":00";
-
-                                                                            $tms13 = $tm1 . ":30";
-
-
-                                                                            echo "<option>$tms12</option>";
-                                                                            echo "<option>$tms13</option>";
-                                                                        }
-                                                                        ?>
-                                                                        </select>
-
-                                                                    </div>
                                                                     <?php
-                                                                }
-                                                                ?>
-                                                            </div>
-                                                            <div class="col-md-4" >
-                                                                <div class="form-group" style="font-color:black">
+                                                                    $dataes = $value['dates'];
+                                                                    foreach ($dataes as $dkey => $dvalue) {
+                                                                        $dateid = $value['id'] . $dkey;
+                                                                        ?>    
+                                                                        <option  value="<?php echo $dvalue['date']; ?>"><?php echo $dvalue['date']; ?></option>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </select>
 
-                                                                    <label for="select_date">Referral</label> 
 
-                                                                    <select class="form-control" name="referral" id="select_time" style="height:34px;" required >
-                                                                        <option value="">Select</option>
-                                                                        <option value="Newspaper">Newspaper</option>
-                                                                        <option value="Facebook">Facebook</option>
-                                                                        <option value="E-Newsletter">E-Newsletter</option>
-                                                                        <option value="Online Search">Online Search</option>
-                                                                        <option value="Word of Mouth">Word of Mouth</option>
-                                                                        <option value="Paper Flier">Paper Flier</option>
-                                                                        <option value="Instagram">Instagram</option>
-                                                                        <option value="I am a Repeat Customer">I am a Repeat Customer</option>
-                                                                    </select>
-
-                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <!--                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
-                                                                                <div class="col-md-12" >
-                                                                                    <label for="first_name">Address</label> <br>
-                                                                                    <textarea name="address" class="form-control"  rows="1" cols="27" style="height: 94px !important;"></textarea>
-                                                                                </div>
-                                                                            </div>-->
+                                                        <div class="col-md-4" >
+                                                            {{dateselection}}
 
 
+                                                            <?php
+                                                            foreach ($dataes as $dtkey => $dtvalue) {
+                                                                $dateid = $value['id'] . $dkey;
+                                                                $t1 = $dtvalue['timing1'];
+                                                                $t2 = $dtvalue['timing2'];
 
-                                                        <div style="clear:both"></div>
+                                                                $cnt1 = array_search($t1, $timeslot);
+                                                                $cnt2 = array_search($t2, $timeslot);
+                                                                ?>
+                                                                <div class="form-group tab-pane " ng-if="dateselection<?php echo $value['id']; ?> == '<?php echo $dtvalue['date']; ?>'" style="font-color:black">
+                                                                    <label for="select_time">Available Time</label> 
+                                                                    <select class="form-control" name="select_time" id="select_time" style="height:34px;" required />
+                                                                    <?php
+                                                                    for ($tm = $cnt1; $tm < $cnt2 + 1; $tm++) {
+                                                                        $time1 = $timeslot[$tm];
+                                                                        echo "<option >$time1</option>";
+                                                                    }
+                                                                    ?>
+                                                                    </select>
+                                                                </div>
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </div>
+                                                        <div class="col-md-4" >
+                                                            <div class="form-group" style="font-color:black">
+
+                                                                <label for="select_date">Referral</label> 
+
+                                                                <select class="form-control" name="referral" id="select_time" style="height:34px;" required >
+                                                                    <option value="">Select</option>
+                                                                    <option value="Newspaper">Newspaper</option>
+                                                                    <option value="Facebook">Facebook</option>
+                                                                    <option value="E-Newsletter">E-Newsletter</option>
+                                                                    <option value="Online Search">Online Search</option>
+                                                                    <option value="Word of Mouth">Word of Mouth</option>
+                                                                    <option value="Paper Flier">Paper Flier</option>
+                                                                    <option value="Instagram">Instagram</option>
+                                                                    <option value="I am a Repeat Customer">I am a Repeat Customer</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
                                                     </div>
 
+                                                    <!--                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                                            <div class="col-md-12" >
+                                                                                <label for="first_name">Address</label> <br>
+                                                                                <textarea name="address" class="form-control"  rows="1" cols="27" style="height: 94px !important;"></textarea>
+                                                                            </div>
+                                                                        </div>-->
+
+
+
+                                                    <div style="clear:both"></div>
+                                                </div>
 
 
 
@@ -317,24 +577,35 @@ if (isset($prefixshopappointment[$cdateshort])) {
 
 
 
-                                                    <div class = "modal-footer">
+
+                                                <div class = "modal-footer">
 
 
-                                                        <button type = "submit" name="submit" class="btn btn-danger" style="background: black" >
-                                                            Book Appointment
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div><!-- /.modal-content -->
-                                        </div><!-- /.modal-dialog -->
-                                    </div>
+                                                    <button type = "submit" name="submit" class="btn btn-danger" style="background: black" >
+                                                        Book Appointment
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                }
-                ?>
+                            </td>
+                            <td style="">
+                                <span style="    line-height: 15px;
+                                      padding: 0px 0px 10px;    color: black;
+                                      float: left;">
+                                    <i class="fa fa-phone-square"></i>  <?php echo $value['contact_no']; ?>
+                                </span>
+                                <iframe  frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'  height="100px" width="300px"  src="https://maps.google.com/?q=<?php echo $value['hotel']; ?>+<?php echo $value['address']; ?>&output=embed">
+                                </iframe>  
+
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
+
 
                 <!--                <div class="contact-us-right" ng-if="appointmentData.length == 0">
                 
@@ -534,13 +805,21 @@ if (isset($prefixshopappointment[$cdateshort])) {
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#appintmentDate").datepicker({
-            minDate: 0,
-            dateFormat: "yy-mm-dd"
-        });
-        $.datepicker.parseDate("yy-mm-dd", "<?php echo date('Y-m-d'); ?>");
-    });
+                                                                        $(document).ready(function () {
+                                                                            $("#appintmentDate").datepicker({
+                                                                                minDate: 0,
+                                                                                dateFormat: "yy-mm-dd"
+                                                                            });
+                                                                            $.datepicker.parseDate("yy-mm-dd", "<?php echo date('Y-m-d'); ?>");
+
+
+                                                                            $('#dateselection').on('change', function (e) {
+                                                                                var $optionSelected = $("option:selected", this);
+                                                                                console.log(this);
+                                                                                $optionSelected.tab('show')
+                                                                            });
+
+                                                                        });
 
 </script>
 

@@ -101,6 +101,7 @@ class Shop extends CI_Controller {
 
         $appointmentdetails = [
             array(
+                "id"=>"au1_app",
                 "country" => "Australia",
                 "city_state" => "Sydney, NSW",
                 "hotel" => "InterContinental Sydney Hotel",
@@ -113,6 +114,7 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "id"=>"au2_app",
                 "country" => "Australia",
                 "city_state" => "Melbourne, VIC",
                 "hotel" => "Crown Towers Melbourne Hotel",
@@ -125,6 +127,7 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "id"=>"au3_app",
                 "country" => "Australia",
                 "city_state" => "Brisbane, QLD",
                 "hotel" => "Hilton Hotel Brisbane",
@@ -137,6 +140,7 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "id"=>"au4_app",
                 "country" => "Australia",
                 "city_state" => "Adelaide, SA",
                 "hotel" => "InterContinental Adelaide Hotel ",
@@ -149,6 +153,7 @@ class Shop extends CI_Controller {
                 ]
             ),
             array(
+                "id"=>"au5_app",
                 "country" => "Australia",
                 "city_state" => "Perth, WA",
                 "hotel" => "InterContinental Perth City Centre Hotel",

@@ -136,7 +136,182 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                     </ul>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#schedule_modal_shop">Book Now</button>
+                                    <button class="btn btn-danger btn-lg" style="background: black" data-toggle="modal" data-target="#<?php echo $avalue['id'];?>">Book Now</button>
+                                    <div class = "modal fade" id = "<?php echo $avalue['id'];?>"  role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+
+                                        <div class = "modal-dialog ">
+                                            <div class = "modal-content">
+                                                <form method="post" action="#">
+                                                    <div class = "modal-header" style=" color: #fff;background: #000 ">
+                                                        <button type = "button" style="    background-color: #000;
+                                                                border: 1px solid #000;" class = " btn btn-danger btn-xm pull-right" data-dismiss = "modal" aria-hidden = "true">
+
+                                                            <i class="fa fa-close"></i>
+
+                                                        </button>
+
+                                                        <div class = "modal-title row" id = "myModalLabel">
+
+                                                            <address style="    margin-bottom: 0;">
+                                                                <span id="location"><b><?php echo $avalue['hotel']; ?></b>
+                                                                </span><br>
+                                                                <span id="address">  
+                                            <?php echo $avalue['addresss']; ?></span><br>
+                                                            </address>
+
+                                                            <div style="clear: both"></div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class = "modal-body">
+
+
+
+
+                                                        <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                            <div class="col-md-4" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="first_name">Last Name</label> 
+                                                                    <input type="text" class="time start form-control" name="last_name"  style="height:34px;" required/>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="first_name">First Name</label> 
+                                                                    <input type="text" class="time start form-control" name="first_name"  style="height:34px;" required />
+
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-md-4" >
+                                                                <div class="form-group" style="font-color:black">
+                                                                    <label for="first_name">No. Of Persons</label> 
+                                                                    <input  class="time start form-control" type="number"  name="no_of_person"  style="height:34px;" min="1" value="1" />
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                            <div class="col-md-6" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="first_name">Email</label> 
+                                                                    <input type="text" class="time start form-control" name="email"   style="height:34px;" required />
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="first_name">Contact No.</label> 
+                                                                    <input type="text" class="time start form-control" name="contact_no"  style="height:34px;" required />
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                            <div class="col-md-4" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="select_date">Available Date</label> 
+
+                                                                    <div class="input-group date" id="datepicker">
+                                                                        <input class="form-control" id="appintmentDate" type="text" required class="form-control" name="select_date"  readonly=""  style="height:34px;" required value="<?php echo date("Y-m-d"); ?>">
+                                                                        <span class="input-group-addon">
+                                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                                        </span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="select_time">Available Time</label> 
+                                                                    <select class="form-control" name="select_time" id="select_time" style="height:34px;" required />
+                                                                    <?php
+                                                                    for ($tm = $timingarray[0]; $tm < $timingarray[1]; $tm++) {
+                                                                        $tm1 = ($tm < 10 ? '0' . $tm : $tm);
+                                                                        $tms1 = $tm1 . ":00 - $tm1:30";
+                                                                        $tm2 = $tm1 + 1;
+                                                                        $tms2 = $tm1 . ":30 - $tm2:00";
+
+                                                                        $tms12 = $tm1 . ":00";
+
+                                                                        $tms13 = $tm1 . ":30";
+
+
+                                                                        echo "<option>$tms12</option>";
+                                                                        echo "<option>$tms13</option>";
+                                                                    }
+                                                                    ?>
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4" >
+                                                                <div class="form-group" style="font-color:black">
+
+                                                                    <label for="select_date">Referral</label> 
+
+                                                                    <select class="form-control" name="referral" id="select_time" style="height:34px;" required >
+                                                                        <option value="">Select</option>
+                                                                        <option value="Newspaper">Newspaper</option>
+                                                                        <option value="Facebook">Facebook</option>
+                                                                        <option value="E-Newsletter">E-Newsletter</option>
+                                                                        <option value="Online Search">Online Search</option>
+                                                                        <option value="Word of Mouth">Word of Mouth</option>
+                                                                        <option value="Paper Flier">Paper Flier</option>
+                                                                        <option value="Instagram">Instagram</option>
+                                                                        <option value="I am a Repeat Customer">I am a Repeat Customer</option>
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--                    <div class="row" style="    border-bottom: 1px solid #E5E5E5;">
+                                                                                <div class="col-md-12" >
+                                                                                    <label for="first_name">Address</label> <br>
+                                                                                    <textarea name="address" class="form-control"  rows="1" cols="27" style="height: 94px !important;"></textarea>
+                                                                                </div>
+                                                                            </div>-->
+
+
+
+                                                        <div style="clear:both"></div>
+                                                    </div>
+
+
+
+
+
+
+
+
+
+                                                    <div class = "modal-footer">
+
+
+                                                        <button type = "submit" name="submit" class="btn btn-danger" style="background: black" >
+                                                            Book Appointment
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div>
                                 </div>
                             </div>
                         </div>

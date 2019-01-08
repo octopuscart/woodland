@@ -256,8 +256,8 @@ class Shop extends CI_Controller {
 
                 $appointment['appointment'] = $appointment;
 
-                $checksend = 1;
-                $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
+                $checksend = 0;
+               echo  $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
                 if ($checksend) {
                     $this->email->message($htmlsmessage);
                     $this->email->print_debugger();

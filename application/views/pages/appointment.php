@@ -378,7 +378,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                    echo date_format($date2, "j<\s\u\p>S</\s\u\p> F Y");
 
                                                    $days = $date2->diff($date1)->format("%a");
-                                                   echo "<br/> <center> (" . ($days + 1) . " Days)</center> ";
+                                                   echo "";
                                                    ?></b>
                                     <br/>
                                     <?php

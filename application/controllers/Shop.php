@@ -110,7 +110,7 @@ class Shop extends CI_Controller {
                 "type"=>"local",
                 "id"=>"au0_app",
                 "country" => "Hong Kong",
-                "city_state" => "Kowloon",
+                "city_state" => "Kowloon,  T. S. T",
                 "hotel" => "SHOWROOM",
                 "address" => "2nd Floor, 45 Haiphong Road, <br/>Tsim Sha Tsui, Kowloon,<br/>Hong Kong",
                 "days" => "",

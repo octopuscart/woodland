@@ -91,14 +91,24 @@
                         <p>Dear <?php echo $appointment['first_name']; ?> <?php echo $appointment['last_name']; ?>,</p><br/>
 
                         <p> Thank you for choosing to book an appointment with Bespoke Tailors. </p>
-                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at <b><?php
+                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at <b>
+                                <?php
                                 if ($appointment['type'] == 'local') {
-                                      echo $appointment['address2'];
+                                    echo $appointment['address2'];
                                 } else {
                                     echo $appointment['hotel'];
                                 }
                                 ?></b>.</p> 
-                        <p>On the day of your appointment, please call our tailor on his contact no. (<b><?php echo $appointment['country']; ?>:  <?php echo $appointment['contact_no2']; ?></b>) and he will give you his suite number.</p>
+                        <?php
+                        if ($appointment['type'] == 'local') {
+                            
+                        } else {
+                            ?>
+                            <p>On the day of your appointment, please call our tailor on his contact no. (<b><?php echo $appointment['country']; ?>:  <?php echo $appointment['contact_no2']; ?></b>) and he will give you his suite number.</p>
+                            <?php
+                        }
+                        ?>
+
                         <p>For any appointment related queries, please email us at info@bespoketailorshk.com</p>
 
                         <br/>

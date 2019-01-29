@@ -118,15 +118,15 @@ class Shop extends CI_Controller {
         "id" => "au0_app",
         "country" => "Hong Kong",
         "city_state" => "Kowloon,  T. S. T",
-        "hotel" => "SHOWROOM, 2nd Floor, 45 Haiphong Road, Tsim Sha Tsui, Kowloon, Hong Kong ",
+        "hotel" => "SHOWROOM",
         "address" => "2nd Floor, 45 Haiphong Road, <br/>Tsim Sha Tsui, Kowloon,<br/>Hong Kong",
+        "address2" => "SHOWROOM, 2nd Floor, 45 Haiphong Road, Tsim Sha Tsui, Kowloon, Hong Kong",
         "days" => "",
         "start_date" => "",
         "end_date" => "",
         "contact_no" => "+(852) 2730 8566",
         "dates" => [
             array("date" => date("Y-m-d"), "timing1" => "09:00 AM", "timing2" => "07:00 PM"),
-         
         ]
             ),];
 
@@ -214,9 +214,9 @@ class Shop extends CI_Controller {
                 ]
             ),
         ];
-        
+
         $checkcode = REPORT_MODE;
-                     
+
         $data['appointmentdata'] = $appointmentdetails;
         if (isset($_POST['submit'])) {
             $appointment = array(
@@ -238,6 +238,8 @@ class Shop extends CI_Controller {
 
             $this->db->insert('appointment_list', $appointment);
             $appointment['contact_no2'] = $this->input->post('contact_no2');
+            $appointment['address2'] = $this->input->post('address2');
+            $appointment['type'] = $this->input->post('type');
 
 
             $emailsender = email_sender;

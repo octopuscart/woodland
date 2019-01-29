@@ -147,6 +147,9 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                     </div>
                                                     <input type="hidden" name="hotel" value="<?php echo $value['hotel']; ?>">
                                                     <input type="hidden" name="address" value="<?php echo $value['address']; ?>">
+
+                                                    <input type="hidden" name="address2" value="<?php echo $value['address2']; ?>">
+                                                    <input type="hidden" name="type" value="<?php echo $value['type']; ?>">
                                                     <input type="hidden" name="city_state" value="<?php echo $value['city_state']; ?>">
                                                     <input type="hidden" name="country" value="<?php echo $value['country']; ?>">
                                                     <input type="hidden" name="contact_no2" value="<?php echo $value['contact_no']; ?>">
@@ -414,6 +417,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                             <span id="address">  
     <?php echo $value['address']; ?></span><br>
                                                         </address>
+                                                        <input type="hidden" name="type" value="<?php echo $value['type']; ?>">
                                                         <input type="hidden" name="hotel" value="<?php echo $value['hotel']; ?>">
                                                         <input type="hidden" name="address" value="<?php echo $value['address']; ?>">
                                                         <input type="hidden" name="city_state" value="<?php echo $value['city_state']; ?>">

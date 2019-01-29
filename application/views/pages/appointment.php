@@ -145,7 +145,11 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                             <div style="clear: both"></div>
                                                         </div>
                                                     </div>
-
+                                                    <input type="hidden" name="hotel" value="<?php echo $value['hotel']; ?>">
+                                                    <input type="hidden" name="address" value="<?php echo $value['address']; ?>">
+                                                    <input type="hidden" name="city_state" value="<?php echo $value['city_state']; ?>">
+                                                    <input type="hidden" name="country" value="<?php echo $value['country']; ?>">
+                                                    <input type="hidden" name="contact_no2" value="<?php echo $value['contact_no']; ?>">
 
 
                                                     <div class = "modal-body">
@@ -207,18 +211,8 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                                 <div class="form-group" style="font-color:black">
 
                                                                     <label for="select_date">Available Date</label> 
-                                                                    <select class="form-control" name="select_date" id="dateselection" style="height:34px;" required ng-model="dateselection<?php echo $value['id']; ?>"  ng-init="dateselection<?php echo $value['id']; ?> = '<?php echo $value['dates'][0]['date']; ?>'" >
+                                                                    <input type="text" class="form-control" name="select_date" id="appintmentDate" style="height:34px;" required ng-model="dateselection<?php echo $value['id']; ?>"  ng-init="dateselection<?php echo $value['id']; ?> = '<?php echo $value['dates'][0]['date']; ?>'" >
 
-                                                                        <?php
-                                                                        $dataes = $value['dates'];
-                                                                        foreach ($dataes as $dkey => $dvalue) {
-                                                                            $dateid = $value['id'] . $dkey;
-                                                                            ?>    
-                                                                            <option  value="<?php echo $dvalue['date']; ?>"><?php echo $dvalue['date']; ?></option>
-                                                                            <?php
-                                                                        }
-                                                                        ?>
-                                                                    </select>
 
 
                                                                 </div>
@@ -229,6 +223,10 @@ if (isset($prefixshopappointment[$cdateshort])) {
 
 
                                                                 <?php
+                                                                $dataes = $value['dates'];
+                                                                foreach ($dataes as $dkey => $dvalue) {
+                                                                    
+                                                                }
                                                                 foreach ($dataes as $dtkey => $dtvalue) {
                                                                     $dateid = $value['id'] . $dkey;
                                                                     $t1 = $dtvalue['timing1'];
@@ -347,7 +345,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                 <?php echo $value['country']; ?>
                             </td>
                             <td>
-                                <?php echo $value['city_state']; ?>
+    <?php echo $value['city_state']; ?>
                             </td>
 
                             <td>
@@ -357,7 +355,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                 </b>
                                 <br/>
                                 <small>
-                                    <?php echo $value['address']; ?>
+    <?php echo $value['address']; ?>
                                 </small>
                             </td>
 
@@ -414,7 +412,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                             <span id="location"><b><?php echo $value['hotel']; ?></b>
                                                             </span><br>
                                                             <span id="address">  
-                                                                <?php echo $value['address']; ?></span><br>
+    <?php echo $value['address']; ?></span><br>
                                                         </address>
                                                         <input type="hidden" name="hotel" value="<?php echo $value['hotel']; ?>">
                                                         <input type="hidden" name="address" value="<?php echo $value['address']; ?>">
@@ -625,18 +623,18 @@ if (isset($prefixshopappointment[$cdateshort])) {
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-                                                                            $(document).ready(function () {
-                                                                    $("#appintmentDate").datepicker({
-                                                                    minDate: 0,
-                                                                            dateFormat: "yy-mm-dd"
-                                                                    });
-                                                                            $.datepicker.parseDate("yy-mm-dd", "<?php echo date('Y-m-d'); ?>");
-                                                                            $('#dateselection').on('change', function (e) {
-                                                                    var $optionSelected = $("option:selected", this);
-                                                                            console.log(this);
-                                                                            $optionSelected.tab('show')
-                                                                    });
-                                                                    });
+                                                                    $(document).ready(function () {
+                                                            $("#appintmentDate").datepicker({
+                                                            minDate: 0,
+                                                                    dateFormat: "yy-mm-dd"
+                                                            });
+                                                                    $.datepicker.parseDate("yy-mm-dd", "<?php echo date('Y-m-d'); ?>");
+                                                                    $('#dateselection').on('change', function (e) {
+                                                            var $optionSelected = $("option:selected", this);
+                                                                    console.log(this);
+                                                                    $optionSelected.tab('show')
+                                                            });
+                                                            });
 
 </script>
 

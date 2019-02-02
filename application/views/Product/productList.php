@@ -312,7 +312,29 @@ $image2 = "";
                                                 case "4":
                                                     ?>
                                                     <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-                                                    <?php
+                                                    
+                                                             <?php
+                                                    break;
+                                                case "5":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
+                                                    
+                                                        
+                                                         <?php
+                                                    break;
+                                                case "6":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
+                                                    
+                                                        
+                                                         <?php
+                                                    break;
+                                                case "7":
+                                                    ?>
+                                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
+                                                    
+                                                        
+                                                        <?php
                                                     break;
                                                 default:
                                                     echo $custom_item;

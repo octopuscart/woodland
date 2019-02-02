@@ -219,9 +219,25 @@ $this->load->view('layout/header');
                                         <!--sleeve half-->
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/sleeve_2_l0001.png" class="fixpos animated" >
 
-                                        <!--button sleeve-->
-                                        <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].elements" >
-                                        <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].buttons" >
+
+
+
+                                        <?php
+                                        if ($tuxedotype == '1') {
+                                            ?>
+                                            <!--button sleeve-->
+                                            <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].elements" >
+                                            <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{selecteElements[fab.product_id]['Buttons'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].buttons" >
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <!--button sleeve-->
+                                            <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].elements" >
+                                            <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Sleeve Buttons'].buttons" >
+                                            <?php
+                                        }
+                                        ?>
 
 
                                         <!--<img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/buttons_flat1_hole0001.png" class="fixpos animated" >-->
@@ -239,6 +255,22 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
 
 
+                                        <?php
+                                        if ($tuxedotype == '1') {
+                                            ?>
+
+                                            <img src="<?php echo custome_image_server; ?>/jacket/output/{{selecteElements[fab.product_id]['Lapel Facing'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
+
+
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
+                                            <?php
+                                        }
+                                        ?>
+
                                         <div class="" ng-if="selecteElements[fab.product_id]['Handstitching'].title == 'Yes'">
                                             <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].stitcing">
                                         </div>
@@ -248,8 +280,17 @@ $this->load->view('layout/header');
                                         </div>
 
                                         <!--buttons-->
-                                        <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons" >
-
+                                        <?php
+                                        if ($tuxedotype == '1') {
+                                            ?>
+                                            <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{selecteElements[fab.product_id]['Buttons'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons" >
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <img src="<?php echo custome_image_server; ?>/jacket/buttons/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Jacket Style'].buttons" >
+                                            <?php
+                                        }
+                                        ?>
 
 
 
@@ -271,6 +312,19 @@ $this->load->view('layout/header');
                                         <!--<img src="<?php echo base_url(); ?>assets/images/pant_elements/base.png" class="fixpos animated">-->
                                         <!--font-->
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Number of Pleat'].elements">
+                                        <?php
+                                        if ($tuxedotype == '1') {
+                                            ?>
+
+
+                                            <img src="<?php echo custome_image_server; ?>/jacket/output/{{selecteElements[fab.product_id]['Ribbon on Side Seam'].folder}}/pant_side_seam0001.png" class="fixpos animated" >
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <?php
+                                        }
+                                        ?>
                                         <img src="<?php echo custome_image_server; ?>/jacket/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Front Pocket Style'].elements">  
                                         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Waistband'].elements">
                                         <img src="<?php echo custome_image_server; ?>/jacket/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Cuff'].elements">
@@ -319,8 +373,8 @@ $this->load->view('layout/header');
 
 <script>
     var product_id = <?php echo $productdetails['id']; ?>;
-    var defaut_view = "<?php echo $custom_item;?>";
-    var gcustome_id = <?php echo $custom_id;?>;
+    var defaut_view = "<?php echo $custom_item; ?>";
+    var gcustome_id = <?php echo $custom_id; ?>;
 </script>
 
 <!--angular controllers-->

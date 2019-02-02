@@ -5,7 +5,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 
-    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id+"/"+gcustome_id;
+    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id + "/" + gcustome_id;
     $scope.product_quantity = 1;
 
 
@@ -49,6 +49,9 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 viewtype = "front";
                 break;
             case "Pant":
+                viewtype = "pant";
+                break;
+            case "TuxedoPant":
                 viewtype = "pant";
                 break;
             default:
@@ -348,10 +351,10 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         }
     }
 
-$scope.changeViews = function (viewtype) {
-       
-            $scope.screencustom.view_type = viewtype;
-        
+    $scope.changeViews = function (viewtype) {
+
+        $scope.screencustom.view_type = viewtype;
+
     }
 
     //add to cart
@@ -410,7 +413,6 @@ $scope.changeViews = function (viewtype) {
                         imageUrl: rdata.data.file_name,
                         imageWidth: 100,
                         timer: 1500,
-
                         imageAlt: 'Custom image',
                         showConfirmButton: false,
                         animation: true,

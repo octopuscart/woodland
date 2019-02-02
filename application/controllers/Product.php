@@ -112,6 +112,15 @@ class Product extends CI_Controller {
         if ($custom_id == 3) {
             redirect('Product/customizationPant/' . $product_id . "/" . $custom_id);
         }
+        if ($custom_id == 5) {
+            redirect('Product/customizationTuxedoSuit/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 6) {
+            redirect('Product/customizationTuxedoJacket/' . $product_id . "/" . $custom_id);
+        }
+        if ($custom_id == 7) {
+            redirect('Product/customizationTuxedoPant/' . $product_id . "/" . $custom_id);
+        }
     }
 
     function customizationShirt($productid, $custom_id) {
@@ -129,6 +138,36 @@ class Product extends CI_Controller {
         $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
     }
+    
+    function customizationTuxedoSuit($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "TuxedoSuit";
+        $data['custom_id'] = $custom_id;
+        
+        $data['tuxedotype'] = "1";
+        
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
+    function customizationTuxedoJacket($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "TuxedoJacket";
+        $data['custom_id'] = $custom_id;
+        $data['tuxedotype'] = "1";
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
+    function customizationTuxedoPant($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "TuxedoPant";
+        $data['custom_id'] = $custom_id;
+        $data['tuxedotype'] = "1";
+        $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
     
     function customizationSuitV2($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);

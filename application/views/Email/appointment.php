@@ -91,14 +91,14 @@
                         <p>Dear <?php echo $appointment['first_name']; ?> <?php echo $appointment['last_name']; ?>,</p><br/>
 
                         <p> Thank you for choosing to book an appointment with Bespoke Tailors. </p>
-                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at <b>
+                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at 
                                 <?php
                                 if ($appointment['type'] == 'local') {
                                     echo $appointment['address2'];
                                 } else {
-                                    echo $appointment['hotel'] . " ". $appointment['address'];
+                                    echo "<b>".$appointment['hotel'] . "</b> ". $appointment['address'];
                                 }
-                                ?></b>.</p> 
+                                ?>.</p> 
                         <?php
                         if ($appointment['type'] == 'local') {
                             

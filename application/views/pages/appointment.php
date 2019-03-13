@@ -385,7 +385,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                         echo "<li>";
                                         $dateid = $value['id'] . $dkey;
 
-                                        echo '<span class = "timeing_open" style="    width: 82px;">' . $dtvalue1['date'] . "</span>: " . $dtvalue1['timing1'] . " to " . $dtvalue1['timing2'] . "<br/>";
+                                        echo '<span class = "timeing_open" style="    ">' . $dtvalue1['date'] . "</span>: " . $dtvalue1['timing1'] . " to " . $dtvalue1['timing2'] . "<br/>";
 
                                         echo "</li>";
                                     }

@@ -96,7 +96,7 @@
                                 if ($appointment['type'] == 'local') {
                                     echo $appointment['address2'];
                                 } else {
-                                    echo "<b>".$appointment['hotel'] . "</b> ". $appointment['address'];
+                                    echo "<b>".$appointment['hotel'] . "</b>, ". $appointment['address'];
                                 }
                                 ?>.</p> 
                         <?php

@@ -112,6 +112,8 @@ class Shop extends CI_Controller {
         ];
 
         $data['timeslot'] = $timeslot;
+        $data['sentemail'] = "0";
+        $data['message'] = "";
 
         $appointmentdetailslocal = [array(
         "type" => "local",
@@ -146,7 +148,7 @@ class Shop extends CI_Controller {
                 "end_date" => "09-04-2019",
                 "contact_no" => "+03 8627 1400",
                 "dates" => [
-                    
+
                     array("date" => "07th April 2019", "timing1" => "03:00 PM", "timing2" => "09:00 PM"),
                     array("date" => "08th April 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
                     array("date" => "09th April 2019", "timing1" => "09:00 AM", "timing2" => "04:00 PM"),
@@ -168,7 +170,6 @@ class Shop extends CI_Controller {
                     array("date" => "11th April 2019", "timing1" => "09:00 AM", "timing2" => "04:00 PM"),
                 ]
             ),
-            
         ];
 
         $checkcode = REPORT_MODE;
@@ -221,6 +222,8 @@ class Shop extends CI_Controller {
 
                 $appointment['appointment'] = $appointment;
 
+                $data['sentemail'] = "1";
+                $data['message'] = "Hello ".$sendernameeq."<br/> Your appointment has been booked. <br/>Thanks";
 
 
                 $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
@@ -235,11 +238,11 @@ class Shop extends CI_Controller {
                         echo json_encode($error);
                     }
                 } else {
-                    echo $htmlsmessage;
+                    //echo $htmlsmessage;
                 }
             }
 
-            redirect('Shop/appointment');
+           // redirect('Shop/appointment');
         }
         $this->load->view('pages/appointment', $data);
     }

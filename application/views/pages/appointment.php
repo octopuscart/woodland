@@ -348,7 +348,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                 <?php echo $value['country']; ?>
                             </td>
                             <td>
-    <?php echo $value['city_state']; ?>
+                                <?php echo $value['city_state']; ?>
                             </td>
 
                             <td>
@@ -358,8 +358,8 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                 </b>
                                 <br/>
                                 <small>
-    <?php echo $value['address']; ?>
-                                    
+                                    <?php echo $value['address']; ?>
+
                                 </small><br/>
                                 <br/>
                                 <p style="line-height: 12px;">  Note: Please ask for Mr. Mohammad Jalel at reception.</p>
@@ -418,7 +418,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                             <span id="location"><b><?php echo $value['hotel']; ?></b>
                                                             </span><br>
                                                             <span id="address">  
-    <?php echo $value['address']; ?></span><br>
+                                                                <?php echo $value['address']; ?></span><br>
                                                         </address>
                                                         <input type="hidden" name="type" value="<?php echo $value['type']; ?>">
                                                         <input type="hidden" name="hotel" value="<?php echo $value['hotel']; ?>">
@@ -624,7 +624,6 @@ if (isset($prefixshopappointment[$cdateshort])) {
 
 
 
-
 </div>
 
 <!--angular controllers-->
@@ -642,6 +641,28 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                                                     $optionSelected.tab('show')
                                                             });
                                                             });
+<?php
+if ($sentemail == "1") {
+    ?>
+                                                                swal({
+                                                                title: 'Appointment Booked',
+                                                                        type: 'success',
+                                                                        html: "<?php echo $message;?>",
+//                 timer: 1500,
+                                                                      
+
+                                                                }).then(
+                    function () {
+                         window.location =  "<?php echo site_url("Shop/appointment");?>";
+                    },
+                    function (dismiss) {
+                        alert("Hello");
+                    }
+            )
+    <?php
+}
+?>
+
 
 </script>
 

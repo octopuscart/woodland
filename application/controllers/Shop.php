@@ -138,81 +138,37 @@ class Shop extends CI_Controller {
                 "type" => "globle",
                 "id" => "au1_app",
                 "country" => "Australia",
-                "city_state" => "Sydney, NSW",
-                "hotel" => "InterContinental Sydney Hotel",
-                "address" => "117 Macquarie Street,<br/> Sydney NSW 2000,<br/> Australia",
-                "days" => "21st Jan Until 22nd Jan 2019",
-                "start_date" => "21-01-2019",
-                "end_date" => "22-01-2019",
-                "contact_no" => "+61 4 1142 6048",
+                "city_state" => "Melbourne, VIC",
+                "hotel" => "InterContinental Hotel",
+                "address" => "495 Collins St, Melbourne VIC 3000, Australia",
+                "days" => "07th April  Until 09th April 2019",
+                "start_date" => "07-04-2019",
+                "end_date" => "09-04-2019",
+                "contact_no" => "+03 8627 1400",
                 "dates" => [
-                    array("date" => "21st Jan 2019", "timing1" => "11:00 AM", "timing2" => "09:00 PM"),
-                    array("date" => "22nd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    
+                    array("date" => "07th April 2019", "timing1" => "03:00 PM", "timing2" => "09:00 PM"),
+                    array("date" => "08th April 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "09th April 2019", "timing1" => "09:00 AM", "timing2" => "04:00 PM"),
                 ]
             ),
             array(
                 "type" => "globle",
                 "id" => "au2_app",
                 "country" => "Australia",
-                "city_state" => "Melbourne, VIC",
-                "hotel" => "Crown Towers Melbourne Hotel",
-                "address" => "8 Whiteman St, <br/>Southbank VIC 3006,<br/> Australia",
-                "days" => "23rd Jan Until 24th Jan 2019",
-                "start_date" => "23-01-2019",
-                "end_date" => "24-01-2019",
-                "contact_no" => "+61 4 1142 6048",
+                "city_state" => "Sydney, NSW",
+                "hotel" => "InterContinental Sydney Hotel",
+                "address" => "117 Macquarie Street, Sydney NSW 2000, Australia",
+                "days" => "10th April Until 11th April 2019",
+                "start_date" => "10-04-2019",
+                "end_date" => "11-04-2019",
+                "contact_no" => "+02 9253 9000",
                 "dates" => [
-                    array("date" => "23rd Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
-                    array("date" => "24th Jan 2019", "timing1" => "09:00 AM", "timing2" => "12:00 PM"),
+                    array("date" => "10th April 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "11th April 2019", "timing1" => "09:00 AM", "timing2" => "04:00 PM"),
                 ]
             ),
-            array(
-                "type" => "globle",
-                "id" => "au3_app",
-                "country" => "Australia",
-                "city_state" => "Brisbane, QLD",
-                "hotel" => "Hilton Hotel Brisbane",
-                "address" => "190 Elizabeth St, <br/>Brisbane City QLD 4000,<br/> Australia",
-                "days" => "25th Jan Until 26th Jan 2019",
-                "start_date" => "25-01-2019",
-                "end_date" => "26-01-2019",
-                "contact_no" => "+61 4 1142 6048",
-                "dates" => [
-                    array("date" => "25th Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
-                    array("date" => "26th Jan 2019", "timing1" => "09:00 AM", "timing2" => "12:00 PM"),
-                ]
-            ),
-            array(
-                "type" => "globle",
-                "id" => "au4_app",
-                "country" => "Australia",
-                "city_state" => "Adelaide, SA",
-                "hotel" => "InterContinental Adelaide Hotel ",
-                "address" => "North Terrace, <br/>Adelaide SA 5000,<br/> Australia",
-                "days" => "27th Jan Until 28th Jan 2019",
-                "start_date" => "27-01-2019",
-                "end_date" => "28-01-2019",
-                "contact_no" => "+61 4 1142 6048",
-                "dates" => [
-                    array("date" => "27th Jan 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
-                    array("date" => "28th Jan 2019", "timing1" => "09:00 AM", "timing2" => "12:00 PM"),
-                ]
-            ),
-            array(
-                "type" => "globle",
-                "id" => "au5_app",
-                "country" => "Australia",
-                "city_state" => "Perth, WA",
-                "hotel" => "InterContinental Perth City Centre Hotel",
-                "address" => "815 Hay St, <br/>Perth WA 6000, <br/>Australia",
-                "days" => "29th Jan 2019",
-                "start_date" => "29-01-2019",
-                "end_date" => "29-01-2019",
-                "contact_no" => "+61 4 1142 6048",
-                "dates" => [
-                    array("date" => "29th Jan 2019", "timing1" => "09:00 AM", "timing2" => "03:00 PM"),
-                ]
-            ),
+            
         ];
 
         $checkcode = REPORT_MODE;

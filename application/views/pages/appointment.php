@@ -359,7 +359,10 @@ if (isset($prefixshopappointment[$cdateshort])) {
                                 <br/>
                                 <small>
     <?php echo $value['address']; ?>
-                                </small>
+                                    
+                                </small><br/>
+                                <br/>
+                                <p style="line-height: 12px;">  Note: Please ask for Mr. Mohammad Jalel at reception.</p>
                             </td>
 
                             <td>

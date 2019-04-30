@@ -221,7 +221,7 @@ class Shop extends CI_Controller {
                 "city_state" => "San Francisco, CA",
                 "hotel" => "Holiday Inn San Francisco",
                 "address" => "1500 Van Ness Avenue, San Francisco, CA 94109",
-                "days" => "14th June Until 15th June 2019",
+                "days" => "18th June Until 19th June 2019",
                 "start_date" => "18-06-2019",
                 "end_date" => "19-06-2019",
                 "contact_no" => "Hotel Tel: 1-415-4414000",

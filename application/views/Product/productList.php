@@ -86,9 +86,9 @@ $image2 = "";
         }
         ?>
     }
-    
-    
-    
+
+
+
     .product-box1{
 
 
@@ -121,7 +121,7 @@ $image2 = "";
         }
         ?>
     }
-    
+
 </style>
 
 
@@ -262,7 +262,7 @@ $image2 = "";
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" >
 
-                
+
                 <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
 
                     <!-- Tesm Text -->
@@ -286,7 +286,12 @@ $image2 = "";
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
                                 <div class="product-box1" style="height: 434px;">
                                     <ul class="product-social">
+                                        <?php
+                                        if(false){
+                                        ?>
                                         <li><a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                        <?php } ?>
+                                        <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                     </ul>
                                     <div class="product-img-holder">
@@ -312,29 +317,29 @@ $image2 = "";
                                                 case "4":
                                                     ?>
                                                     <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-                                                    
-                                                             <?php
+
+                                                    <?php
                                                     break;
                                                 case "5":
                                                     ?>
                                                     <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-                                                    
-                                                        
-                                                         <?php
+
+
+                                                    <?php
                                                     break;
                                                 case "6":
                                                     ?>
                                                     <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product">
-                                                    
-                                                        
-                                                         <?php
+
+
+                                                    <?php
                                                     break;
                                                 case "7":
                                                     ?>
                                                     <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product">
-                                                    
-                                                        
-                                                        <?php
+
+
+                                                    <?php
                                                     break;
                                                 default:
                                                     echo $custom_item;
@@ -401,7 +406,7 @@ $image2 = "";
 
 
 <script>
-            var category_id = <?php echo $category; ?>;</script>
+    var category_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
 
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
@@ -602,7 +607,7 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script type="text/javascript">
-            $(document).ready(function () {
+                                            $(document).ready(function () {
 
-    });
+                                            });
 </script>

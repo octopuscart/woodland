@@ -362,7 +362,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
 
                                 </small><br/>
                                 <br/>
-                                <p style="line-height: 12px;">  Note: Please ask for Mr. Mohammad Siraj at reception.</p>
+                                <p style="line-height: 12px;">  Note: Please ask for Mr. Mohammad Raheel Raja at reception.</p>
                             </td>
 
                             <td>

@@ -139,35 +139,97 @@ class Shop extends CI_Controller {
             array(
                 "type" => "globle",
                 "id" => "au1_app",
-                "country" => "Australia",
-                "city_state" => "Sydney",
-                "hotel" => "InterContinental Hotel",
-                "address" => "117 Macquarie St, Sydney NSW 2000",
-                "days" => "24th June Until 25th June 2019",
-                "start_date" => "24-06-2019",
-                "end_date" => "25-06-2019",
-                "contact_no" => "Hotel Tel: +61 2 9253 9000",
+                "country" => "U.S.A",
+                "city_state" => "New York, NY",
+                "hotel" => "Crowne Plaza Times Square Hotel",
+                "address" => "1605 Broadway, New York, NY 10019",
+                "days" => "10th June Until 11th June 2019",
+                "start_date" => "10-06-2019",
+                "end_date" => "11-06-2019",
+                "contact_no" => "Hotel Tel: 1-212-9774000",
                 "dates" => [
-                    array("date" => "24th June 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
-                    array("date" => "25th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM")
+                    array("date" => "10th June 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "11th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM")
                 ]
             ),
             array(
                 "type" => "globle",
                 "id" => "au2_app",
-                "country" => "Australia",
-                "city_state" => "Melbourne",
-                "hotel" => "Holiday Inn on Flinders",
-                "address" => "575 Flinders Ln, Melbourne VIC 3000",
-                "days" => "26th June Until 27th June 2019",
-                "start_date" => "26-06-2019",
-                "end_date" => "27-06-2019",
-                "contact_no" => "Hotel Tel: +61 3 9629 4111",
+                "country" => "U.S.A",
+                "city_state" => "Washington, DC",
+                "hotel" => "Holiday Inn Washington - Central",
+                "address" => "1501 Rhode Island Ave NW, Washington, DC 20005",
+                "days" => "12th June Until 13th June 2019",
+                "start_date" => "12-06-2019",
+                "end_date" => "13-06-2019",
+                "contact_no" => "Hotel Tel: 1-202-4832000",
                 "dates" => [
-                    array("date" => "26th June 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
-                    array("date" => "27th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM")
+                    array("date" => "12th June 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "13th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM")
                 ]
-            )
+            ),
+            array(
+                "type" => "globle",
+                "id" => "au3_app",
+                "country" => "U.S.A",
+                "city_state" => "Chicago, IL",
+                "hotel" => "Holiday Inn Chicago O’Hare",
+                "address" => "5615 N. Cumberland Avenue, Chicago, IL 60631",
+                "days" => "14th June Until 15th June 2019",
+                "start_date" => "14-06-2019",
+                "end_date" => "15-06-2019",
+                "contact_no" => "Hotel Tel: 1-773-6935800",
+                "dates" => [
+                    array("date" => "14th June 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "15th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM")
+                ]
+            ),
+            array(
+                "type" => "globle",
+                "id" => "au4_app",
+                "country" => "U.S.A",
+                "city_state" => "Houston, TX",
+                "hotel" => "Holiday Inn Houston Airport",
+                "address" => "15222 JFK Boulevard, Houston, TX 77032",
+                "days" => "16th June 2019",
+                "start_date" => "16-06-2019",
+                "end_date" => "16-06-2019",
+                "contact_no" => "Hotel Tel: 1-281-4492311",
+                "dates" => [
+                    array("date" => "16th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM"),
+                ]
+            ),
+            array(
+                "type" => "globle",
+                "id" => "au5_app",
+                "country" => "U.S.A",
+                "city_state" => "Los Angeles, CA",
+                "hotel" => "Crowne Plaza Los Angeles Airport",
+                "address" => "5985 W. Century Boulevard, Los Angeles, CA 90045",
+                "days" => "17th June 2019",
+                "start_date" => "17-06-2019",
+                "end_date" => "17-06-2019",
+                "contact_no" => "Hotel Tel: 1-310-6427500",
+                "dates" => [
+                    array("date" => "17th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM"),
+                ]
+            ),
+            array(
+                "type" => "globle",
+                "id" => "au6_app",
+                "country" => "U.S.A",
+                "city_state" => "San Francisco, CA",
+                "hotel" => "Holiday Inn San Francisco",
+                "address" => "1500 Van Ness Avenue, San Francisco, CA 94109",
+                "days" => "18th June Until 19th June 2019",
+                "start_date" => "18-06-2019",
+                "end_date" => "19-06-2019",
+                "contact_no" => "Hotel Tel: 1-415-4414000",
+                "dates" => [
+                    array("date" => "18th June 2019", "timing1" => "09:00 AM", "timing2" => "09:00 PM"),
+                    array("date" => "19th June 2019", "timing1" => "09:00 AM", "timing2" => "02:00 PM")
+                ]
+            ),
         ];
 
 

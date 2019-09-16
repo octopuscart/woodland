@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                        <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                    <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                        <div class="slider-content t-lfl s-tb slider-1">
-                                            <div class="title-container s-tb-c">
-                                                <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                    <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                        <div class="title-container s-tb-c">
+                                                                                                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                </h2>
-                                                <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                                                                            </h2>
+                                                                                                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
     <?php
 }
 ?>
@@ -69,112 +69,155 @@ foreach ($sliders as $key => $value) {
 </div>
 <!-- Slider Area End Here -->
 
-<!-- Featured Products Area End Here -->
-<div class="featured-products-area" style="padding: 30px 0px">
+
+<div class="about-us-page-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h2 class="title-carousel">Featured Products</h2>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="about-us-page-left">
+                    <a href="#"><img src="<?php echo base_url(); ?>assets/images/shop3.jpg" alt="about" class="img-responsive"></a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <div class="about-us-page-right" style="    font-size: 17.6px;">
+                    <h2>Who We Are</h2>
+                    <p>
+                        As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.
+                    </p>
+
+                    <p>
+                        Our master tailors work with a group of over 250 professionally trained Shanghainese tailors to deliver each garment to utter satisfaction of clients. Our garments are hand-cut and hand-stitched to ensure the best quality outcome.                           
+                    </p>
+
+                    <p>
+                        Our overseas sales team travels across the globe with wide range of fabrics and styles to provide door-to-door services, office tours, or hotel exhibitions as per clients' requests.                    </p>
+
+
+                    <p>
+                        We stock over 20,000 fabrics in our showroom in Hong Kong. Our fabrics include brands like Ermenegildo Zegna, Loro Piana, Vitale Barberis Canonico, Dormeuil, Hugo Collections and many other prestigious fabrics from Italy, United Kingdom and France.                    </p>
+                </div>
             </div>
         </div>
-        <div class="metro-carousel" data-loop="true" data-items="4" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="3" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="4" data-r-large-nav="true" data-r-large-dots="false">
-            <?php
-            foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
-                ?>
-                <div class="product-box1">
-                    <ul class="product-social" style="">
-                        <li><a href="<?php echo site_url("Product/customizationRedirect/" . $shirtcustome->id) ?>/<?php echo $value['id']; ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+    </div>
+</div>
 
-                    </ul>
-                    <div class="product-img-holder">
-                        <?php if ($value['sale_price'] > 0) { ?>
-                            <div class="hot-sale">
-                                <span>Sale</span>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                        <a href="#">
-                            <!--<img class="img-responsive" src="" alt="product" style="height: 224px">-->
 
-                            <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/shirt/output/<?php echo $value['folder'];?>/shirt_model10001.png);height: 270px"></div>
-                            <!--<img src="img/product/15.jpg" alt="product">-->
+
+<!-- Blog3 Area Start Here -->
+<div class="blog3-area about-us-page-area" style="padding-top: 0px;">
+    <div class="section-title">
+        <span class="title-bar-left"></span>
+        <h2>Our Work Process</h2>
+        <span class="title-bar-right"></span>
+    </div>
+
+
+
+    <div class="" >
+        <div class=" col-md-4 blog-box">
+
+            <div class="blog-content-holder">
+                <h3><a href="#">CHOOSE FABRIC</a></h3>
+                <ul>
+                    <li>
+                        <p style="color:white;">Choose any fabric and create own style. Vogue Tailors stock about 15000 fabrics ranging from affordable to exclusive.</p>
+                    </li>
+
+                </ul>
+            </div>
+            <a href="#"><img src="<?php echo base_url(); ?>assets/block/img1.jpg" alt="blog" class="img-responsive" ></a>
+        </div>
+        <div class="col-md-4 blog-box">
+
+            <div class="blog-content-holder">
+                <h3><a href="#">GET SIZE</a></h3>
+                <ul>
+                    <li>                    <p style="color:white;">Let Size and calculate your measurement. Insert you measurements by following easy steps.</p>
+                    </li>
+
+
+
+                </ul>
+            </div>
+            <a href="#"><img src="<?php echo base_url(); ?>assets/block/img2.jpeg" alt="blog" class="img-responsive"></a>
+        </div>
+        <div class="col-md-4 blog-box">
+
+            <div class="blog-content-holder">
+                <h3><a href="#">CUT TO CREATE</a></h3>
+                <ul>
+                    <li>                    <p style="color:white;">You can customize your clothes conveniently, And our experienced shanghainese tailor cut and make your new dress.</p>
+                    </li>
+                </ul>
+            </div>
+            <a href="#"><img src="<?php echo base_url(); ?>assets/block/img3.jpg" alt="blog" class="img-responsive"></a>
+        </div>
+
+    </div>
+</div>
+<!-- Blog3 Area End Here -->
+
+<div style="clear: both"></div>
+<div class="advantage2-area" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="advantage-area-box">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <i class="flaticon-truck"></i>
                         </a>
-                    </div>
-                    <div class="product-content-holder">
-                        <h3><a href="#"><?php echo $value['title']; ?></a></h3>
-
-                        <span style="font-size: 12px"><?php echo $value['short_description']; ?></span>
-                        <br>
-                        <span>{{<?php echo $shirtcustome->price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
+                        <div class="media-body">
+                            <h3>FREE SHIPPING</h3>
+                            <p>On Orders Over US$ 300</p>
+                        </div>
                     </div>
                 </div>
-                <?php
-            }
-            ?>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="advantage-area-box">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <i class="flaticon-headphones"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3>24/7 SERVICE</h3>
+                            <p>Get Help When You Need</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="advantage-area-box">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-sticky-note-o" style="    margin-left: 20px;"></i>
+                        </a>
+                        <div class="media-body">
+                            <h3>TOP BRANDS</h3>
+                            <p>5,000 luxurious fabrics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- Featured Products Area End Here -->
-<!-- Offer Area 1 Start Here -->
-<!--<div class="offer-area1 hidden-after-desk" style="background: url(<?php echo base_url(); ?>assets/theme2/img/mid_slide.jpg)">
+
+<div class="brand-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="brand-area-box-l">
-                    <span>Get the Most Classy</span>
-                    <h1>HOME DECOR </h1>
-                    <p>Check it out now! </p>
-                    <a href="#" class="btn-shop-now-fill">Shop Now</a>
-                </div>
-            </div>
-            <div id="countdown" style="    margin-left: 75px;"></div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="brand-area-box-r">
-                    <a href="#"><img src="<?php echo base_url(); ?>assets/theme2/img/mid_slide.jpg" alt="offer"></a>
-                </div>
-            </div>
+        <div class="section-title">
+            <span class="title-bar-left"></span>
+            <h2>our Best Brands</h2>
+            <span class="title-bar-right"></span>
         </div>
-    </div>
-</div>-->
-<!-- Offer Area 1 End Here -->
-<!-- Product Area Start Here -->
-<div class="product-area padding-top-0-after-desk" style="padding: 30px 0px">
-    <div class="container" id="home-isotope">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="isotop-classes-tab myisotop1">
-
-                    <a href="#" data-filter=".popular">Popular</a>
-                </div>
-            </div>
-        </div>
-        <div class="row featuredContainer">
-
-
+        <div class="metro-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
             <?php
-            foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
+            $brandarray = ['loropiana.jpg', 'reda.jpg', 'zegna.jpg', 'hollandsherry.jpg', 'thomasmason.jpg', 'vbc.jpg'];
+            foreach ($brandarray as $key => $value) {
                 ?>
-                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale">
-                    <div class="product-box1">
-                        <ul class="product-social">
-                            <li><a href="<?php echo site_url("Product/customizationRedirect/" . $suitcustome->id) ?>/<?php echo $value['id']; ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-
-                        </ul>
-                        <div class="product-img-holder">
-                            <a href="#">
-                                <div class="product_image_back product_image_back_grid" style="background: url(<?php echo custome_image_server; ?>/jacket/output/<?php echo $value['folder'];?>/s1_master_style60001.png);height: 360px"></div>
-                                <!--<img src="img/product/3.jpg" alt="product">-->
-                            </a>
-                        </div>
-                        <div class="product-content-holder">
-                            <h3><a href="<?php echo site_url("Product/ProductDetails/" . $value['id']); ?>"><?php echo $value['title']; ?></a></h3>
-
-                            <span style="font-size: 12px"><?php echo $value['short_description']; ?></span>
-                            <br>
-                            <span>{{<?php echo $suitcustome->price; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
-                        </div>
-                    </div>
+                <div class="brand-area-box">
+                    <a href="#"><img src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="brand"></a>
                 </div>
                 <?php
             }
@@ -183,57 +226,8 @@ foreach ($sliders as $key => $value) {
         </div>
     </div>
 </div>
-<!-- Product Area End Here -->
+<!-- Brand Area End Here -->
 
-<!-- Advantage Area Start Here -->
-<div class="advantage3-area">
-    <div class="container">
-        <div class="row">
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="advantage-area-box">
-                    <div class="advantage-area-box-icon">
-                        <a href="#"><i class="flaticon-polo"></i></a>
-                    </div>
-                    <div class="advantage-area-box-content">
-                        <h3>CHOOSE A LOOK</h3>
-                        <p>On All Orders!</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="advantage-area-box">
-                    <div class="advantage-area-box-icon">
-                        <a href="#"><i class="fa fa-tap"></i></a>
-                    </div>
-                    <div class="advantage-area-box-content">
-                        <h3>HOW TO MEASURE</h3>
-                        <p>Have Problems? Call Us Directly!</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="advantage-area-box">
-                    <div class="advantage-area-box-icon">
-                        <a href="#"><i class="flaticon-screen"></i></a>
-                    </div>
-                    <div class="advantage-area-box-content">
-                        <h3>WHO WE ARE</h3>
-                        <p>Get Products From An Exclusive Range!</p>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<!-- Advantage Area End Here -->
 
 <?php
 $this->load->view('layout/footer');

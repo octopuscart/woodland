@@ -765,3 +765,74 @@ b.barcomb-list {
 .timeing_opensm{
     /*font-size: 12px;*/
 }
+
+
+.footer-area {
+    padding: 93px 0 0;
+    background: #000000;
+}
+
+.footer-area .footer-area-top .footer-box h3 {
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    font-size: 20px;
+}
+
+
+.footer-area .footer-area-top .footer-box .info-list li a {
+    color: #ffffff;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.footer-area .footer-area-top .footer-box {
+    padding-bottom: 30px;
+    color: white;
+}
+
+.footer-area .footer-area-top .footer-box .footer-social li a {
+    width: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    height: 32px;
+    border: 1px solid #f3f3f3;
+    display: block;
+    text-align: center;
+    background: transparent;
+}
+
+.header-top-inner-top a{
+    color:white;
+}
+
+.header-top-inner-top i{
+    color:white;
+}
+
+.header-top-inner-top{
+    background: black;
+}
+
+.footer-area .footer-area-top .footer-box .footer-social li a i {
+    color: #fff7f7;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+
+.about-us-page-area {
+    padding: 80px 0 50px;
+}
+
+.brand-area {
+    padding: 30px 0;
+    text-align: center;
+}

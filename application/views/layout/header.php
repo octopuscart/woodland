@@ -128,6 +128,29 @@
                 <input type="hidden" ng-model="gitem_price" ng-init="showmodel = 0">
 
                 <div class="header-area-style2" id="sticker">
+                    <div class="header-top-inner-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="header-contact">
+                                        <ul>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="+(852) 2730 8566"> +(852) 2730 8566</a></li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@bespoketailorshk.com"> info@bespoketailorshk.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="account-wishlist">
+                                        <ul>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="header-top" style="  ">
                         <div class="container">
                             <div class="row">

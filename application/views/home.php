@@ -120,7 +120,7 @@ foreach ($sliders as $key => $value) {
                 <h3><a href="#">CHOOSE FABRIC</a></h3>
                 <ul>
                     <li>
-                        <p style="color:white;">Choose any fabric and create own style. Vogue Tailors stock about 15000 fabrics ranging from affordable to exclusive.</p>
+                        <p style="color:white;">Choose any fabric and create own style. We stock about 5000 fabrics ranging from affordable to exclusive.</p>
                     </li>
 
                 </ul>

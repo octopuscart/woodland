@@ -10,7 +10,8 @@
         <link rel="shortcut icon" href="<?php echo base_url() . 'assets/images/logof.png'; ?>" type="image/x-icon">
         <link rel="icon" href="<?php echo base_url() . 'assets/images/logof.png'; ?>" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="p:domain_verify" content="94b973ad564911b1f3016176fbe5c22e"/>
+        <!--<meta name="p:domain_verify" content="94b973ad564911b1f3016176fbe5c22e"/>-->
+        <meta name="p:domain_verify" content="9c441577920ccb59aa33fe32889fa29c"/>
         <!-- Favicon -->
         <!-- Normalize CSS -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/normalize.css">

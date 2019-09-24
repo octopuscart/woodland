@@ -92,7 +92,7 @@ b.barcomb-list {
 .product-details1-area .inner-product-details-left .tab-content {
     border: 0px solid red;
     margin-top: 5px;
-   
+
 }
 
 .product_attr_h2{
@@ -116,12 +116,15 @@ b.barcomb-list {
     height: 100px;width: auto;    margin: 0 auto;
 }
 
+
+
+
 @media only screen and (max-width: 479px) {
-    
+
     .main-slider2{
-            margin-top: 52px;
+        margin-top: 52px;
     }
-    
+
     .inner-page-banner-area .breadcrumb-area{
         top:25px;
         padding: 0px 5px;
@@ -150,11 +153,11 @@ b.barcomb-list {
 }
 
 @media only screen and (max-width: 767px) {
-     .main-slider2{
-            margin-top: 52px;
+    .main-slider2{
+        margin-top: 52px;
     }
-    
-    
+
+
     .inner-page-banner-area .breadcrumb-area{
         top:25px;
         padding: 0px 5px;
@@ -179,10 +182,10 @@ b.barcomb-list {
 }
 
 @media only screen and (max-width: 320px) {
-     .main-slider2{
-            margin-top: 52px;
+    .main-slider2{
+        margin-top: 52px;
     }
-    
+
     .inner-page-banner-area .breadcrumb-area{
         top:25px;
         padding: 0px 5px;
@@ -257,7 +260,7 @@ b.barcomb-list {
 
 
 .order_box{
-       padding: 6px;
+    padding: 6px;
     padding-bottom: 11px!important;
     height: 160px;
     border-radius: 5px;
@@ -487,7 +490,7 @@ b.barcomb-list {
     width: 100%;
     float: left;
     position: relative;
-        margin-top: -15px;
+    margin-top: -15px;
 }
 
 
@@ -512,26 +515,26 @@ b.barcomb-list {
     .mobile_model_search{
         background: white;
         border: none;
-         webkit-box-shadow: 0 0px 00px rgba(0,0,0,.5); 
+        webkit-box-shadow: 0 0px 00px rgba(0,0,0,.5); 
         box-shadow: 0 0px 0px rgba(0,0,0,.5); 
     }
 
     .model_search{
         background: white;
         border: none;
-       
+
     }
     .popup_fabric {
-    height: 300px;
-    width: 300px;
-    float: left;
-    position: relative;
-}
+        height: 300px;
+        width: 300px;
+        float: left;
+        position: relative;
+    }
 
 }
 
 .header-area-style2 .header-bottom {
-     background: #eaeaea;
+    background: white;
 }
 
 .header-area-style2 .header-top {
@@ -561,16 +564,16 @@ b.barcomb-list {
 }
 
 .stick .header-bottom {
-        background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0);
 }
 .stick .main-menu-area nav ul > li > a {
     color: #ffffff;
-    
+
 }
 
 .main-menu-area nav ul > li > ul > li > a {
     color: black!important;
-        background: #eaeaea;
+    background: #eaeaea;
 }
 .stick .main-menu-area nav ul .active > a {
 
@@ -583,7 +586,7 @@ b.barcomb-list {
 .model_tab_title{
     float: left;
     width: 100px;
-        
+
 }
 
 .mean-container .mean-bar a.logo-mobile-menu {
@@ -607,19 +610,19 @@ b.barcomb-list {
 
 
 .custome_summary_popup tr{
-        border-bottom: 1px solid;
+    border-bottom: 1px solid;
 }
 
 .custome_summary_popup td{
     text-align: left;
-     width: 50%;
-     padding: 5px;
-    
+    width: 50%;
+    padding: 5px;
+
 }
 
 .custome_summary_popup th{
     text-align: right;
-        text-align: right;
+    text-align: right;
     padding-right: 12px;
     width: 50%;
     padding: 5px;
@@ -653,9 +656,9 @@ b.barcomb-list {
 }
 
 .cart-page-area .cart-page-top {
-     margin-bottom: 0px; 
+    margin-bottom: 0px; 
     border: 1px solid #b6b6b6;
-     padding: 0 0 0px; 
+    padding: 0 0 0px; 
 }
 .panel-default>.panel-heading {
     color: #fff;
@@ -712,7 +715,7 @@ b.barcomb-list {
 .inner-page-banner-area .breadcrumb-area {
     position: absolute;
     z-index: 2;
-     top: 0px; 
+    top: 0px; 
     left: 0;
     right: 0;
 }
@@ -746,7 +749,7 @@ b.barcomb-list {
 }
 
 .contact-us-page-area .contact-us-right ul .con-clock{
-      content: "\f095";
+    content: "\f095";
     font-family: fontawesome;
     position: absolute;
     left: 18px;
@@ -807,15 +810,15 @@ b.barcomb-list {
 }
 
 .header-top-inner-top a{
-    color:white;
+    color:black;
 }
 
 .header-top-inner-top i{
-    color:white;
+    color:black;
 }
 
 .header-top-inner-top{
-    background: black;
+    background: white;
 }
 
 .footer-area .footer-area-top .footer-box .footer-social li a i {
@@ -835,4 +838,135 @@ b.barcomb-list {
 .brand-area {
     padding: 30px 0;
     text-align: center;
+}
+
+.category-menu-area ul li {
+    border:none;
+}
+
+.title-sidebar {
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #212121;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.header-area-style2 .header-bottom .main-menu-area nav > ul > li {
+    padding: 10px 0;
+}
+
+.category-menu-area ul li a {
+    line-height: 18px;
+    float: left;
+    /* background: black; */
+    color: black;
+    margin: 0px 5px;
+    padding: 5px 10px;
+    border: 2px solid;
+}
+
+.title-sidebar {
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #212121;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+    float: left;
+    line-height: 27px;
+    margin-right: 40px;
+}
+
+.product-box1 .product-content-holder h3 {
+    font-size: 18px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.activecat {
+    border-color: red!important;
+    background: red;
+    color: white!important;
+}
+
+
+.productbuttonscontainer a {
+    margin: 0 2px 0 0;
+    display: inline-block;
+    border: 1px solid #111111;
+}
+.productbutton {
+    line-height: 30px;
+    text-align: center;
+    height: 32px;
+    padding: 0 10px;
+    background: transparent;
+    display: block;
+    color: #111111;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.videotext{
+    text-align: center;
+    font-size: 30px;
+    color:white;
+}
+
+#background {
+    position: relative;
+    right: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+}
+
+.processcirclearea{
+
+}
+
+.processcirclearea .container{
+   margin-top: -470px;
+    margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 479px) {
+    .processcirclearea .container{
+        margin-top: 10px
+    }
+    .processcirclearea{
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .processcirclearea .container{
+        margin-top: 10px
+    }
+    .processcirclearea{
+        margin-top: 50px;
+    }
+}
+.advantage2-area {
+    padding: 0px 0 40px;
+    background: transparent;
 }

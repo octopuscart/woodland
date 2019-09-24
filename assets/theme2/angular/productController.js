@@ -77,7 +77,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             $timeout(function () {
                 
                 $('#paging_container1').pajinate({
-                    items_per_page: 12,
+                    items_per_page: 24,
                     num_page_links_to_display: 5,
                 });
 

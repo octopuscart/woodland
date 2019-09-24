@@ -332,10 +332,8 @@
                                                         <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo Suits</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/6/0') ?>">Tuxedo Jackets</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/7/0') ?>">Tuxedo Pants</a></li>
-
+                                                        <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
+                                                       
                                                     </ul>
                                                     <!-- times-->
                                                 </div>
@@ -353,8 +351,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="logo-area" style="    margin-top: 2px;">
                                         <a href="<?php echo site_url(); ?>">
-                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $logoimg; ?>" alt="logo" style="    height:60px;padding-top: 4px;
-                                                 padding-bottom: 6px;">
+                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $logoimg; ?>" alt="logo" style="    height:35px;">
                                         </a>
                                     </div>
                                     <div class="main-menu-area home2-sticky-area">

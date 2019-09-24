@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                        <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                            <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                    <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                        <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                            <div class="title-container s-tb-c">
-                                                                                                                <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                        <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                            <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                <div class="title-container s-tb-c">
+                                                                                                                    <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                </h2>
-                                                                                                                <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                    </h2>
+                                                                                                                    <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                    <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                    <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                </div>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                    </div>
     <?php
 }
 ?>
@@ -59,8 +59,8 @@ foreach ($sliders as $key => $value) {
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div id="slider-direction-2" class="t-cn slider-direction">
             <div class="slider-content t-lfl s-tb slider-1">
                 <div class="title-container s-tb-c">
@@ -81,7 +81,7 @@ foreach ($sliders as $key => $value) {
             </div>
         </div>
 
-        
+
 
         <div id="slider-direction-4" class="slider-direction">
             <div class="slider-content t-lfl s-tb slider-1">
@@ -183,10 +183,28 @@ foreach ($sliders as $key => $value) {
     </div>
 </div>
 <!-- Blog3 Area End Here -->
+<style>
+
+</style>
+<div class="backvideo">
+   
+</div>
+
+
+
+
+
+
 
 <div style="clear: both"></div>
-<div class="advantage2-area" style="margin-top: 50px;">
+<div class="advantage2-area processcirclearea" style="">
+     <video autoplay loop muted poster="screenshot.jpg" id="background">
+        <source src="<?php echo base_url(); ?>assets/sliders/bespokeshop.mp4" type="video/mp4">
+    </video>
     <div class="container">
+        <h3 class="videotext">
+            We stock over 20,000 fabrics in our showroom in Hong Kong. Our fabrics include brands like Ermenegildo Zegna, Loro Piana, Vitale Barberis Canonico, Dormeuil, Hugo Collections and many other prestigious fabrics from Italy, United Kingdom and France.
+        </h3>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="advantage-area-box">
@@ -230,8 +248,8 @@ foreach ($sliders as $key => $value) {
         </div>
     </div>
 </div>
-
-<div class="brand-area">
+<div style="clear: both"></div>
+<div class="brand-area" >
     <div class="container">
         <div class="section-title">
             <span class="title-bar-left"></span>

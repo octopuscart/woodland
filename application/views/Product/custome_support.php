@@ -1,6 +1,6 @@
 <?php
 $this->load->view('Product/custom_select_left');
-?>}<div class="col-md-8 col-xs-10">
+?><div class="col-md-8 col-xs-10">
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane {{$index == 0?'active':''}}" ng-repeat="k in keys" id="custome{{$index}}" ng-if="k.type == 'main'">

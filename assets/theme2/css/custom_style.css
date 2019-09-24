@@ -868,7 +868,7 @@ b.barcomb-list {
     border: 2px solid;
 }
 
-.title-sidebar {
+.shop-page-area .title-sidebar {
     position: relative;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -969,4 +969,8 @@ b.barcomb-list {
 .advantage2-area {
     padding: 0px 0 40px;
     background: transparent;
+}
+
+.footer-area .footer-area-top {
+     padding-bottom: 0px; 
 }

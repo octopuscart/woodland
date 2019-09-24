@@ -21,10 +21,105 @@ $this->load->view('layout/header');
 </div>
 <!-- Inner Page Banner Area End Here -->
 <!-- Contact Us Page Area Start Here -->
-<div class="contact-us-page-area">
+<div class="contact-us-page-area" style="padding: 10px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="background: url(<?php echo base_url(); ?>assets/images/shopf.jpg);    height: 400px;
+                 background-size: cover;
+                 background-position: center;
+                 border-top-left-radius: 50px;
+                 border-bottom-left-radius: 50px;">
+                <div class="contact-us-left" > 
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="contact-us-right">
+                    <h2 class="title-sidebar" style="margin-bottom: 10px;">Showroom</h2>
+                    <ul style="    margin-bottom: 30px;">
+                        <li class="con-address">2nd Floor, 45 Haiphong Road ,
+                            <br/>
+                            Tsim Sha Tsui, Kowloon, <br/>Hong Kong
+                        </li>
+                        <li class="con-envelope">info@bespoketailorshk.com</li>
+                        <li class="con-phone">+(852) 2730 8566</li>
+
+                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
+                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
+                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
+                        </li>
+                    </ul>
+
+                    <ul>
+
+
+                        <li class=""><i class="con-clock fa fa-whatsapp"></i> 
+                            <span class="timeing_opensm">WhatsApp (24 Hours)</span><br> 
+                            <b>+(852) 6795 8894</b>
+
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="contact-us-right">
+
+                    <h2 class="title-sidebar" style="margin-bottom: 10px;">Shop Address</h2>
+                    <ul>
+                        <li class="con-address">Shop D, Ground Floor,<br/>  Hanyee Building,<br/> 19-21 Hankow Road,
+                            <br/>
+                            Tsim Sha Tsui, Kowloon, <br/>Hong Kong</li>
+
+
+
+                        <li class="con-envelope">info@bespoketailorshk.com</li>
+
+                        <li class="con-phone">+(852) 3460 5254</li>
+
+                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
+                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 21:00 <br/>
+                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 19:00
+                        </li>
+
+                    </ul>
+
+
+                    <ul>
+
+
+                        <li class=""><i class="con-clock fa fa-whatsapp"></i> 
+                            <span class="timeing_opensm">WhatsApp (24 Hours)</span><br> 
+                            <b>+(852) 6795 8894</b>
+
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="background: url(<?php echo base_url(); ?>assets/images/shopg.jpg);    height: 400px;
+                 background-size: cover;
+
+                 border-top-right-radius: 50px;
+                 border-bottom-right-radius: 50px;">
+                <div class="contact-us-left" > 
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="contact-us-left">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -136,61 +231,7 @@ $this->load->view('layout/header');
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                <div class="contact-us-right">
-                    <h2 class="title-sidebar" style="margin-bottom: 10px;">Showroom</h2>
-                    <ul style="    margin-bottom: 30px;">
-                        <li class="con-address">2nd Floor, 45 Haiphong Road ,
-                            <br/>
-                            Tsim Sha Tsui, Kowloon, <br/>Hong Kong
-                        </li>
-                        <li class="con-envelope">info@bespoketailorshk.com</li>
-                        <li class="con-phone">+(852) 2730 8566</li>
 
-                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
-                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
-                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
-                        </li>
-                    </ul>
-                    <h2 class="title-sidebar" style="margin-bottom: 10px;">Shop Address</h2>
-                    <ul>
-                        <li class="con-address">Shop D, Ground Floor,<br/>  Hanyee Building,<br/> 19-21 Hankow Road,
-                            <br/>
-                            Tsim Sha Tsui, Kowloon, <br/>Hong Kong</li>
-                        
-                        
-                        
-                        <li class="con-envelope">info@bespoketailorshk.com</li>
-                        
-                        <li class="con-phone">+(852) 3460 5254</li>
-
-                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
-                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 21:00 <br/>
-                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 19:00
-                        </li>
- 
-                    </ul>
-                    
-                    
-                    <ul>
-                      
-
-                        <li class=""><i class="con-clock fa fa-whatsapp"></i> 
-                            <span class="timeing_opensm">WhatsApp (24 Hours)</span><br> 
-                            <b>+(852) 6795 8894</b>
-                        
-                        </li>
- 
-                    </ul>
-                    
-                    
-                </div>
-
-
-
-
-
-            </div>
         </div>
     </div>
 </div>

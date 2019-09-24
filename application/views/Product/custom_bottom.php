@@ -4,7 +4,6 @@
 </div>
 <div class="col-md-2 col-xs-5">
     <div class="total_price_block">
-        <h5> {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}</h5>
     </div>
 </div>
 <div class="col-md-2 col-xs-4">

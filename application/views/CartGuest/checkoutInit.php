@@ -107,7 +107,7 @@ $this->load->view('layout/header');
                                     <i class="fa fa-shopping-cart fa-stack-1x"></i>
                                     <i class="ion-bag fa-stack-1x "></i>
                                 </span>   My Shopping Bag
-                                <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #fff" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
+                        <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_quantity}}</span> 
                             </a>
                         </h4>
                     </div>
@@ -118,11 +118,9 @@ $this->load->view('layout/header');
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <td class="cart-form-heading text_center" style="width: 50%" colspan="2">Product</td>
-                                        <td class="cart-form-heading text_center">Price</td>
+                                        <td class="cart-form-heading text-left"  colspan="2">Product</td>
 
-                                        <td class="cart-form-heading text_center">Total</td>
-                                        <td class="cart-form-heading"></td>
+                                        <td class="cart-form-heading text_center" style="width: 100px;">Total</td>
                                     </tr>
                                 </thead>
                                 <tbody id="quantity-holder">
@@ -138,19 +136,17 @@ $this->load->view('layout/header');
                                                 <small style="font-size: 10px">{{product.sku}}</small>
                                             </h3>
                                         </td>
-                                        <td class="amount">{{product.price|currency:" "}} X {{product.quantity}}
+                                        <td class="amount">{{product.quantity}}
                                         </td>
-                                        <td class="amount">{{product.total_price|currency:" "}}</td>
-                                        <td class="dismiss"><a href="#"  ng-click="removeCart(product.product_id)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" class="text_right">
+                                        <td colspan="2" class="text_right">
                                             TOTAL
                                         </td>
                                         <td class="text-center amount">
-                                            {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
+                                            {{globleCartData.total_quantity}}
                                         </td>
-                                        <td></td>
+                                       
                                     </tr>
                                     <tr>
                                         <td colspan="5" class="text_right">

@@ -26,9 +26,7 @@
                 <p class="selected-element-title_text">
                     {{screencustom.productobj.short_description}}
                 </p>
-                <p class="selected-element-title_text_price">
-                    {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}
-                </p>
+              
             </div>
 
         </div>

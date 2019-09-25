@@ -247,7 +247,7 @@
                                                                                 width: 250px;"><a href="#" style="">{{product.title}} - {{product.item_name}}</a></h2>
                                                                             <h3>                                                                 
                                                                                 <p>
-                                                                                    {{product.price|currency:" "}} X {{product.quantity}} 
+                                                                                {{product.quantity}} 
                                                                                 </p>
                                                                             </h3>
                                                                         </li>
@@ -266,7 +266,7 @@
                                                     </li>
 
                                                     <li>
-                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_quantity}}</span>
 
                                                     </li>
                                                     <li>

@@ -184,7 +184,7 @@ $this->load->view('layout/header');
                                             <?php
                                             if (count($user_address_details)) {
                                                 ?>
-                                                <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
+                                                <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Process Now <i class="fa fa-arrow-right"></i></a>
                                                 <?php
                                             }
                                             ?>

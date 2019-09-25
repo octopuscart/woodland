@@ -168,202 +168,14 @@ $this->load->view('layout/header');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <ul>
-                                            <li class="active"><a href="#size_standard" data-toggle="tab" aria-expanded="false" ng-click="slidedemostandard()">Standard Size</a></li>
-                                            <li><a href="#bank" data-toggle="tab" aria-expanded="true" ng-click="slidedemo('Custom Measurement')">Measure Your Body</a></li>
-                                            <li><a href="#cash" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Mail-in Garments')">Mail-in Garments</a></li>
-                                            <li><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Recent Measurement')">For Existing Clients</a></li>
+                                           <li class="active"><a href="#cheque" data-toggle="tab" aria-expanded="false" ng-click="slidedemo('Recent Measurement')">For Existing Clients</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="tab-content" style="padding: 2px 35px;">
-                                            <div class="tab-pane fade active in"  id="size_standard">
+                                            
 
-
-
-
-
-
-                                                <div class="row">
-                                                    <?php
-                                                    $this->load->view('Cart/sizes', array('vtype' => 'items'));
-                                                    ?>
-
-
-                                                </div>
-
-
-                                                <div class="cart-page-top table-responsive">
-                                                    <table class="table table-hover">
-                                                        <tbody id="quantity-holder">
-                                                            <tr>
-                                                                <td colspan="4" class="text_right">
-                                                                    <div class="proceed-button pull-left " >
-                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                    </div>
-                                                                    <div class="proceed-button pull-right ">
-                                                                        <form action="#" method="post">
-                                                                            <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
-                                                                                Choose Shipping Address <i class="fa fa-arrow-right"></i>
-                                                                            </button>
-                                                                        </form>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-
-                                                </div>
-                                            </div>
-
-                                            <!--start of custome measurement-->
-                                            <div class="tab-pane fade " id="bank">
-                                                <form action="#" method="post">
-                                                    <p>
-                                                    <table class="table table-responsive table-striped">
-                                                        <tr>
-                                                            <td style="width: 150px;">Measurements</td>
-                                                            <td class="text-center">Tap to select and slide left to right to change value</td>
-                                                            <!--<td style="width: 150px;"></td>-->
-                                                            <td style="width: 100px">Values <br><span style="font-size: 9px;">(In Inches)</span></td>
-                                                        </tr>
-                                                        <!--custome meausrements-->
-                                                        <?php
-                                                        foreach ($measurements_list as $key => $value) {
-                                                            $vlname = $value['title'];
-                                                            $vimg = $value['imagespath'];
-                                                            ?>
-                                                            <tr style="height: 150px;">
-                                                                <th>
-
-
-                                                            <div class="thumbnail" style="margin-bottom: 0px;">
-                                                                <img src="<?php echo $vimg; ?>" class="measurement_img">
-                                                                <h4 class="measurement_lable">
-                                                                    <?php
-                                                                    echo $vlname;
-                                                                    echo "<input class='input_display_none' name='measurement_title[]' value='$vlname'>"
-                                                                    ?>    
-
-                                                                </h4>
-
-                                                            </div>
-
-
-
-                                                            </th>
-                                                            <td>
-
-                                                                <div id="slider-pips<?php echo $value['id']; ?>"></div>
-
-                                                            </td>
-    <!--                                                            <td>
-                                                                <select name="measurement_<?php echo $value['id']; ?>" ng-model="measurement_<?php echo $value['id']; ?>" ng-init="measurement_<?php echo $value['id']; ?> =<?php echo $value['standard_value']; ?>">
-                                                            <?php
-                                                            for ($i = $value['min_value']; $i <= $value['max_value']; $i++) {
-                                                                $vl1 = $i;
-
-                                                                echo "<option value='$vl1' " . ($value['standard_value'] == $i ? "selected" : '') . ">$vl1</option>";
-                                                            }
-                                                            ?>
-                                                                </select>
-                                                                <select ng-model="measurement_<?php echo $value['id']; ?>_fr">
-                                                                    <option></option>
-                                                                    <option value="1/8">1/8</option>
-                                                                    <option value="1/4">1/4</option>
-                                                                    <option value="3/8">3/8</option>
-                                                                    <option value="1/2">1/2</option>
-                                                                    <option value="5/8">5/8</option>
-                                                                    <option value="3/4">3/4</option>
-                                                                    <option value="7/8">7/8</option>
-                                                                </select>
-
-                                                            </td>-->
-
-                                                            <td>
-                                                                <input class="input_display_none" name="measurement_value[]" value="{{measurementDict['m<?php echo $value['id']; ?>'].mvalue}} {{measurementDict['m<?php echo $value['id']; ?>'].frvalue}}">
-                                                                <span class="measurement_text">{{measurementDict['m<?php echo $value['id']; ?>'].mvalue}}</span> <small class="fr_value">{{measurementDict['m<?php echo $value['id']; ?>'].frvalue}}"</small>
-                                                            </td>
-                                                            </tr>
-                                                            <?php
-                                                        }
-                                                        ?>
-                                                    </table>
-
-
-
-                                                    </p>
-                                                    <div class="cart-page-top table-responsive">
-                                                        <table class="table table-hover">
-                                                            <tbody id="quantity-holder">
-                                                                <tr>
-                                                                    <td colspan="4" class="text_right">
-                                                                        <div class="proceed-button pull-left " >
-                                                                            <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                        </div>
-                                                                        <div class="proceed-button pull-right ">
-
-                                                                            <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
-                                                                                Choose Shipping Address <i class="fa fa-arrow-right"></i>
-                                                                            </button>
-
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <!--end of custome meausrement-->
-
-
-                                            <div class="tab-pane fade" id="cash">
-                                                <p style="margin: 20px 0px 10px;">
-                                                    Want to copy the fit of a shirt you already have, but aren't sure how to measure it properly?
-
-                                                    Mail us your shirt and our experts will measure it and create a size for you. 
-
-
-
-                                                <div class="contact-us-right">
-                                                    <b>Send to:</b>
-                                                    <br/>
-                                                    2nd Floor, 45 Haiphong Road,
-                                                    <br/>
-                                                    Tsim Sha Tsui, Kowloon, Hong Kong<br/>
-                                                    <i class="fa fa-envelope"></i> info@bespoketailorshk.com<br/>
-                                                    <i class="fa fa-phone"></i> +(852) 2730 8566
-
-                                                </div>
-                                                </p>
-                                                <div class="cart-page-top table-responsive">
-                                                    <table class="table table-hover">
-                                                        <tbody id="quantity-holder">
-                                                            <tr>
-                                                                <td colspan="4" class="text_right">
-                                                                    <div class="proceed-button pull-left " >
-                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                    </div>
-                                                                    <div class="proceed-button pull-right ">
-                                                                        <form action="#" method="post">
-                                                                            <input class="input_display_none" type ="hidden1" name="measurement_type" ng-model="measurementstyle.title"  >
-                                                                            <button type="submit" name="submit_measurement" class="btn-apply-coupon checkout_button_next disabled"  value="measurement">
-                                                                                Choose Shipping Address <i class="fa fa-arrow-right"></i>
-                                                                            </button>
-                                                                        </form>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="tab-pane fade" id="cheque">
+                                            <div class="tab-pane fade active in" id="cheque">
                                                 <p style="margin: 20px 0px 10px;">
                                                     If you have purchased from us before, we have stored your most recent measurement on record.
 
@@ -564,6 +376,10 @@ foreach ($measurements_list as $key => $value) {
             $scope.measurementstyle.title = trsize.replace("  ", ", ");
             console.log("--" + (stsize.join(" ")).trim() + "--");
         }
+        
+        $timeout(function(){
+            $scope.slidedemo('Recent Measurement');
+        },1000)
 
 
 

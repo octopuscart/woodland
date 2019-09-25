@@ -177,7 +177,7 @@ $this->load->view('layout/header');
                                                 <a href=" <?php echo site_url("Cart/checkoutSize"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Size</a>
                                             </div>
                                             <div class="proceed-button pull-right ">
-                                                <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
+                                                <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Process Now <i class="fa fa-arrow-right"></i></a>
                                             </div>
                                         </td>
                                     </tr>

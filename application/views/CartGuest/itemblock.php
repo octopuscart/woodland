@@ -71,9 +71,9 @@
                         <span class="fa-stack">
                             <i class="fa fa-money fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
-                        </span>  Payment Method
+                        </span>  confirm Order
                         <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
-                            PayPal
+                            
                         </span> 
                     </a>
                     <?php

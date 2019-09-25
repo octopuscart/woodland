@@ -84,7 +84,7 @@
 
                 </tr>
             </table>
-            <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
+          <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
                     <td style="font-size: 12px;width: 50%" >
                         <b>Shipping Address</b><br/><hr/>
@@ -130,7 +130,7 @@
                                 <td>: <?php echo $order_data->order_date; ?> <?php echo $order_data->order_time; ?>  </td>
                             </tr>
                             <tr>
-                                <th>Payment Mode</th>
+                                <th>Payment</th>
                                 <td>: <?php echo $order_data->payment_mode; ?> </td>
                             </tr>
                             <tr>
@@ -158,9 +158,7 @@
                     <td style="width: 20px;text-align: center">S.No.</td>
                     <td colspan="2"  style="text-align: center">Product</td>
 
-                    <td style="text-align: right;width: 100px">Price (In <?php echo trim(globle_currency); ?>)</td>
                     <td style="text-align: right">Qnty.</td>
-                    <td style="text-align: right;width: 100px">Total (In  <?php echo trim(globle_currency); ?>)</td>
                 </tr>
                 <!--cart details-->
                 <?php
@@ -182,20 +180,16 @@
 
                         </td>
 
-                        <td style="text-align: right">
-                            <?php echo $product->price; ?>
-                        </td>
+                        
 
                         <td style="text-align: right">
                             <?php echo $product->quantity; ?>
                         </td>
 
-                        <td style="text-align: right;">
-                            <?php echo $product->total_price; ?>
-                        </td>
+                       
                     </tr>
                     <tr>
-                        <td colspan="6">
+                        <td colspan="4">
                             <b>Style Details : <?php echo $product->title; ?> - <?php echo $product->item_name; ?></b>
                             <br/><?php
                             foreach ($product->custom_dict as $key => $value) {
@@ -210,7 +204,7 @@
                 <!--end of cart details-->
 
                 <tr>
-                    <td colspan="6">
+                    <td colspan="4">
                         <b>Sizes: <?php echo $order_data->measurement_style; ?></b>
                         <br/><?php
                         if (count($measurements_items)) {
@@ -224,33 +218,16 @@
                 </tr>
 
 
+               
                 <tr>
-                    <td colspan="3"  rowspan="5" style="font-size: 12px">
-                        <b>Total Amount in Words: </b><br/>
-                        <span style="text-transform: capitalize">  <?php echo $order_data->amount_in_word; ?></span>
-                    </td>
-
+                    <td colspan="3" style="text-align: right"> Total Quantity</td>
+                    <td style="text-align: right;width: 60px"><?php echo $order_data->total_quantity; ?> </td>
                 </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right">Sub Total</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right">Shipping Amount</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right">Coupon Discount</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right">Toal Amount</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->total_price, 2, '.', ''); ?> </td>
-                </tr>
+                
 
 
                 <tr>
-                    <td colspan="6" style="font-size: 12px;">
+                    <td colspan="4" style="font-size: 12px;">
 
 
                         <?php echo EMAIL_FOOTER; ?>

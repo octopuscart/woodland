@@ -172,7 +172,9 @@ $image2 = "";
 
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
                                 <div class="product-box1" style="height: 434px;">
-                                    
+                                    <ul class="product-social">
+                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                    </ul>
                                     <div class="product-img-holder" style="background: url(https://files.costcokart.com/bespoke/{{product.folder}}.jpg);    background-size: 300px;
                                          background-position: -20px -20px;">
 
@@ -184,9 +186,10 @@ $image2 = "";
                                             </a>
                                         </h3>
                                         <div class="productbuttonscontainer">
+
                                             <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="productbutton">Design Now</a>
-                                            <a href="#" class="productbutton"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            <a href="#" class="productbutton" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Price Enq.</button>
+
                                         </div>  
                                     </div>
                                 </div>
@@ -232,6 +235,94 @@ $image2 = "";
 
 
     </div>
+    <!-- Modal -->
+    <div class="modal  fade" id="productprice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                        Price Enquiry For 
+                        <?php
+                        echo $custom_item;
+                        ?>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+
+
+
+                <!-- Cart Details -->
+                <div class="modal-body checkout-form">
+                    <div class="custom_block_item">
+                        <?php
+                        $citem_id = $custom_id;
+                        ?>
+
+                        <div class="row cart-details" >
+
+
+                            <div class="col-sm-12 col-md-3" ng-repeat="product in askpricedata" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+                                <div class="thumbnail">
+                                    <img src="https://files.costcokart.com/bespoke/{{product.folder}}.jpg" alt="" style="width: auto;" alt="...">
+
+                                    <div class="caption">
+                                        <h5 style="font-size:15px;" class="text-center m_bottom_10">{{product.title}}</h5>
+                                        <p style="margin: 0px;"><a href="#."  ng-click="removePriceData(product.id)" class="btn btn-danger btn-xs btn-block" style="    padding: 10px;line-height:10px;"><i class="fa fa-remove d_inline_m fs_large" ></i> Remove</a> </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 askpriceform">
+                                <form method="post" action="#">
+                                    <div style="margin-top:10px;">
+                                        <input type="hidden" name="item" value="<?php echo $custom_item; ?>" />
+                                        <input type="hidden" name="item_id" value="<?php echo $citem_id; ?>" />
+
+                                        <span ng-repeat="product in askpricedata">
+                                            <input type="hidden" name="productid[]" value="{{product.id}}" />
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10">
+                                                <input type="text" name="last_name" placeholder="Last Name*" class="form-control" required="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10" >
+                                                <input type="text" name="first_name" placeholder="First Name*" class="form-control" required="">
+                                            </div>
+
+                                        </div>
+                                        <input type="email" name="email" placeholder="Email*" class="form-control" required="">
+
+
+                                        <input type="tel" name="contact" placeholder="Contact No." class="form-control">
+
+
+                                        <button type="submit" name="priceenquiry" class="btn btn-danger">Submit</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
+
+
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 
@@ -430,6 +521,10 @@ $image2 = "";
                 </div>-->
     </div>
 </div>
+
+<script>
+    var category_id = <?php echo $category; ?>;
+    var custom_id = <?php echo $custom_id; ?>;</script>
 <?php
 $this->load->view('layout/footer');
 ?>
@@ -437,7 +532,7 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme2/js/jquery.pajinate.min.js"></script>
 
 <script type="text/javascript">
-                                            $(document).ready(function () {
+    $(document).ready(function () {
 
-                                            });
+    });
 </script>

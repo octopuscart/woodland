@@ -902,6 +902,12 @@ b.barcomb-list {
     display: inline-block;
     border: 1px solid #111111;
 }
+
+.productbuttonscontainer button {
+    margin: 0 2px 0 0;
+    display: inline-block;
+    border: 1px solid #111111;
+}
 .productbutton {
     line-height: 30px;
     text-align: center;
@@ -973,4 +979,8 @@ b.barcomb-list {
 
 .footer-area .footer-area-top {
      padding-bottom: 0px; 
+}
+
+.askpriceform input{
+    margin-bottom: 10px;
 }

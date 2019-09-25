@@ -124,6 +124,7 @@ where pa.product_id = $product_id group by attribute_value_id";
                 $productobj['regular_price'] = $customeitem->price;
                 $productobj['item_name'] = $customeitem->item_name;
             }
+            $productobj['item_id'] = $custom_id;
             $productattr = $this->singleProductAttrs($productobj['id']);
             $productobj['attrs'] = $productattr;
 

@@ -34,10 +34,9 @@
                                 <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
                                 <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
                                 <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
-                                <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
+                                <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
 
 
-                               
                             </ul>
                         </div>
                     </div>
@@ -46,11 +45,11 @@
                             <h3>Stay With Us!</h3>
                             <p>Connect with us via social media.</p>
                             <ul class="footer-social">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-
+                                         <li><a href="https://www.facebook.com/pg/bespoketailorshk"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://twitter.com/bespoketailorhk"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.instagram.com/bespoke_tailors_hong_kong/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.pinterest.com/jaybespoketailorshk/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                             </ul><div class="newsletter-area">
                                 <h3>NewsLetter Sign Up!</h3>
                                 <div class="input-group stylish-input-group">
@@ -143,15 +142,15 @@
 
 
 <script>
-                                            $(window).on('load', function () {
-                                                // Page Preloader
+    $(window).on('load', function () {
+        // Page Preloader
 
 
 
 
-                                            });
+    });
 
-                                            $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
+    $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
 </script>
 
 

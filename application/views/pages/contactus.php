@@ -104,7 +104,7 @@ $this->load->view('layout/header');
 
                 </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="background: url(<?php echo base_url(); ?>assets/images/shopg.jpg);    height: 400px;
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="background: url(<?php echo base_url(); ?>assets/images/shop5.jpg);    height: 400px;
                  background-size: cover;
 
                  border-top-right-radius: 50px;

@@ -100,27 +100,28 @@ foreach ($sliders as $key => $value) {
 <div class="about-us-page-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="about-us-page-left">
-                    <a href="#"><img src="<?php echo base_url(); ?>assets/images/shop3.jpg" alt="about" class="img-responsive"></a>
+                    <a href="#"><img src="<?php echo base_url(); ?>assets/images/shop4.jpg" alt="about" class="img-responsive"></a>
                 </div>
             </div>
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                <div class="about-us-page-right" style="    font-size: 17.6px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="about-us-page-right" style="       font-size: 15.6px;
+    margin-top: -30px;">
                     <h2>Who We Are</h2>
-                    <p>
+                    <p style="margin: 0px;">
                         As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.
                     </p>
 
-                    <p>
+                    <p style="margin: 0px;">
                         Our master tailors work with a group of over 250 professionally trained Shanghainese tailors to deliver each garment to utter satisfaction of clients. Our garments are hand-cut and hand-stitched to ensure the best quality outcome.                           
                     </p>
 
-                    <p>
+                    <p style="margin: 0px;">
                         Our overseas sales team travels across the globe with wide range of fabrics and styles to provide door-to-door services, office tours, or hotel exhibitions as per clients' requests.                    </p>
 
 
-                    <p>
+                    <p style="margin: 0px;">
                         We stock over 20,000 fabrics in our showroom in Hong Kong. Our fabrics include brands like Ermenegildo Zegna, Loro Piana, Vitale Barberis Canonico, Dormeuil, Hugo Collections and many other prestigious fabrics from Italy, United Kingdom and France.                    </p>
                 </div>
             </div>

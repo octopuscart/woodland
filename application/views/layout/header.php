@@ -97,12 +97,12 @@
             <script>
 
 
-                var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                //$interpolateProvider.startSymbol('{$');
-                //$interpolateProvider.endSymbol('$}');
-                $httpProvider.defaults.headers.common = {};
-                        $httpProvider.defaults.headers.post = {};
-                });
+                        var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
+                            //$interpolateProvider.startSymbol('{$');
+                            //$interpolateProvider.endSymbol('$}');
+                            $httpProvider.defaults.headers.common = {};
+                            $httpProvider.defaults.headers.post = {};
+                        });
                         var baseurl = "<?php echo site_url(); ?>";
                         var imageurlg = "<?php echo imageserver; ?>";
                         var globlecurrency = "<?php echo globle_currency; ?>";
@@ -143,10 +143,11 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <div class="account-wishlist">
                                         <ul>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li></ul>
+                                            <li><a href="https://www.facebook.com/pg/bespoketailorshk"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://twitter.com/bespoketailorhk"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.instagram.com/bespoke_tailors_hong_kong/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.pinterest.com/jaybespoketailorshk/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -333,7 +334,7 @@
                                                         <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
-                                                       
+
                                                     </ul>
                                                     <!-- times-->
                                                 </div>
@@ -370,7 +371,7 @@
                                                         <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
                                                         <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
-                                                     
+
                                                     </ul>
                                                 </li>
                                                 <li><a href="<?php echo site_url("Shop/catalogue"); ?>">Catalogue</a></li>

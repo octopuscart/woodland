@@ -135,7 +135,7 @@
                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                     <div class="header-contact">
                                         <ul>
-                                            <li><i class="fa fa-whatsapp" aria-hidden="true"></i><a href="+(852) 2730 8566"> +(852) 6795 8894</a></li>
+                                            <li><i class="fa fa-whatsapp" aria-hidden="true"></i><a href="https://api.whatsapp.com/send?phone=85267958894"> +(852) 6795 8894</a></li>
                                             <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@bespoketailorshk.com"> info@bespoketailorshk.com</a></li>
                                         </ul>
                                     </div>

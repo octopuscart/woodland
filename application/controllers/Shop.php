@@ -52,7 +52,7 @@ class Shop extends CI_Controller {
                 $this->email->set_newline("\r\n");
                 $this->email->from($this->input->post('email'), $sendername);
                 $this->email->to(email_bcc);
-//                $this->email->bcc(email_bcc);
+                $this->email->bcc($this->input->post('email'));
                 $subjectt = $this->input->post('subject');
                 $orderlog = array(
                     'log_type' => 'Enquiry',
@@ -71,7 +71,7 @@ class Shop extends CI_Controller {
 
                 $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
 
-                if ($checkcode) {
+                if ($this->input->post('email')) {
                     $this->email->message($htmlsmessage);
 
                     $this->email->print_debugger();

@@ -78,11 +78,11 @@
 
     <!-- Modal Dialog Box End Here-->
     <!-- Preloader Start Here -->
-    <div id="preloader">
+<!--    <div id="preloader">
         <center>
-            <!--<img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >-->
+            <img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
         </center>
-    </div>
+    </div>-->
     <!-- Preloader End Here -->
     <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">

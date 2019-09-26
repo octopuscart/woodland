@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                            <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                                <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                        <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                            <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                <div class="title-container s-tb-c">
-                                                                                                                    <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                            <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                                <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                    <div class="title-container s-tb-c">
+                                                                                                                        <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                    </h2>
-                                                                                                                    <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                    <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                    <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                        </h2>
+                                                                                                                        <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                        <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                        <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                    </div>
                                                                                                                 </div>
                                                                                                             </div>
-                                                                                                        </div>
     <?php
 }
 ?>
@@ -107,7 +107,7 @@ foreach ($sliders as $key => $value) {
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="about-us-page-right" style="       font-size: 15.6px;
-    margin-top: -30px;">
+                     margin-top: -30px;">
                     <h2>Who We Are</h2>
                     <p style="margin: 0px;">
                         As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.
@@ -188,7 +188,7 @@ foreach ($sliders as $key => $value) {
 
 </style>
 <div class="backvideo">
-   
+
 </div>
 
 
@@ -199,7 +199,7 @@ foreach ($sliders as $key => $value) {
 
 <div style="clear: both"></div>
 <div class="advantage2-area processcirclearea" style="">
-     <video autoplay loop muted poster="screenshot.jpg" id="background">
+    <video autoplay loop muted poster="screenshot.jpg" id="background">
         <source src="<?php echo base_url(); ?>assets/sliders/bespokeshop.mp4" type="video/mp4">
     </video>
     <div class="container">

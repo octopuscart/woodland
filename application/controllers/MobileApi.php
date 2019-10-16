@@ -186,7 +186,7 @@ class MobileApi extends REST_Controller {
 
             $data['sentemail'] = "1";
             $data['message'] = "Hello " . $sendernameeq . "<br/> Your appointment has been booked. <br/>Thanks";
-
+            $checkcode = REPORT_MODE;
 
             $htmlsmessage = $this->load->view('Email/appointment_mobile', $appointment, true);
             if ($checkcode) {

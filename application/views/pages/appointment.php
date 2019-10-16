@@ -653,7 +653,7 @@ if ($sentemail == "1") {
 
                                                                 }).then(
                     function () {
-                         window.location =  "<?php echo site_url("Shop/appointment");?>";
+//                         window.location =  "<?php echo site_url("Shop/appointment");?>";
                     },
                     function (dismiss) {
                         alert("Hello");

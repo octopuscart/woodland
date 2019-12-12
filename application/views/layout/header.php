@@ -137,7 +137,7 @@
                         <div class="container">
                             <h2 style="    margin: 0;">
                                 <marquee>
-                                Special Seasonal Offer - 25% off on all products.
+                                Special Seasonal Offer 25% off on all products.
                                 </marquee>
                             </h2>
                         </div>

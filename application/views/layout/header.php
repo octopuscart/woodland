@@ -78,11 +78,11 @@
 
     <!-- Modal Dialog Box End Here-->
     <!-- Preloader Start Here -->
-<!--    <div id="preloader">
-        <center>
-            <img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
-        </center>
-    </div>-->
+    <!--    <div id="preloader">
+            <center>
+                <img class="preloadimage  " src="<?php echo base_url() . 'assets/theme2/img/preloader.gif' ?>" alt="logo" >
+            </center>
+        </div>-->
     <!-- Preloader End Here -->
     <body ng-app="App">
         <div class="wrapper-area" ng-controller="ShopController">
@@ -97,16 +97,16 @@
             <script>
 
 
-                        var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                            //$interpolateProvider.startSymbol('{$');
-                            //$interpolateProvider.endSymbol('$}');
-                            $httpProvider.defaults.headers.common = {};
-                            $httpProvider.defaults.headers.post = {};
-                        });
-                        var baseurl = "<?php echo site_url(); ?>";
-                        var imageurlg = "<?php echo imageserver; ?>";
-                        var globlecurrency = "<?php echo globle_currency; ?>";
-                        var avaiblecredits = 0;</script>
+                var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
+                //$interpolateProvider.startSymbol('{$');
+                //$interpolateProvider.endSymbol('$}');
+                $httpProvider.defaults.headers.common = {};
+                $httpProvider.defaults.headers.post = {};
+                });
+                var baseurl = "<?php echo site_url(); ?>";
+                var imageurlg = "<?php echo imageserver; ?>";
+                var globlecurrency = "<?php echo globle_currency; ?>";
+                var avaiblecredits = 0;</script>
 
             <style>
                 .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -128,7 +128,21 @@
                 <input type="hidden" ng-model="showmodel" ng-init="showmodel = 0">
                 <input type="hidden" ng-model="gitem_price" ng-init="showmodel = 0">
 
+
+
                 <div class="header-area-style2" id="sticker">
+
+                    <div class="header-top-inner-top" style="    color: white;
+    background: red;">
+                        <div class="container">
+                            <h2 style="    margin: 0;">
+                                <marquee>
+                                Special Seasonal Offer - 25% off on all products.
+                                </marquee>
+                            </h2>
+                        </div>
+                    </div>
+
                     <div class="header-top-inner-top">
                         <div class="container">
                             <div class="row">
@@ -147,7 +161,7 @@
                                             <li><a href="https://twitter.com/bespoketailorhk"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                             <li><a href="https://www.instagram.com/bespoke_tailors_hong_kong/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                             <li><a href="https://www.pinterest.com/jaybespoketailorshk/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li></ul>
+                                            <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +261,7 @@
                                                                                 width: 250px;"><a href="#" style="">{{product.title}} - {{product.item_name}}</a></h2>
                                                                             <h3>                                                                 
                                                                                 <p>
-                                                                                {{product.quantity}} 
+                                                                                    {{product.quantity}} 
                                                                                 </p>
                                                                             </h3>
                                                                         </li>

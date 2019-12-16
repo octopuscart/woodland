@@ -128,20 +128,19 @@
                 <input type="hidden" ng-model="showmodel" ng-init="showmodel = 0">
                 <input type="hidden" ng-model="gitem_price" ng-init="showmodel = 0">
 
-
+                <div class="header-top-inner-top" style="color: white;background: red;">
+                    <div class="container">
+                        <h2 style="margin: 0;">
+                            <marquee>
+                                Special Seasonal Offer 25% off on all products.
+                            </marquee>
+                        </h2>
+                    </div>
+                </div>
 
                 <div class="header-area-style2" id="sticker">
 
-                    <div class="header-top-inner-top" style="    color: white;
-    background: red;">
-                        <div class="container">
-                            <h2 style="    margin: 0;">
-                                <marquee>
-                                Special Seasonal Offer 25% off on all products.
-                                </marquee>
-                            </h2>
-                        </div>
-                    </div>
+
 
                     <div class="header-top-inner-top">
                         <div class="container">
@@ -439,6 +438,16 @@
                     </div>
                 </div>
             </header>
+            <div class="showonmobile" style="    color: white;
+                     background: red;">
+                    <div class="container">
+                        <h2 style="    margin: 0;">
+                            <marquee>
+                                Special Seasonal Offer 25% off on all products.
+                            </marquee>
+                        </h2>
+                    </div>
+                </div>
             <!-- Header Area End Here -->
 
 

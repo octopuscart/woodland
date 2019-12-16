@@ -122,9 +122,16 @@ b.barcomb-list {
 }
 
 
+.showonmobile{
+        display: none;
+    }
 
 
 @media only screen and (max-width: 479px) {
+    
+    .showonmobile{
+        display: block;
+    }
 
     .main-slider2{
         margin-top: 52px;

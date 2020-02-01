@@ -10,8 +10,7 @@
         <link rel="shortcut icon" href="<?php echo base_url() . 'assets/images/logof.png'; ?>" type="image/x-icon">
         <link rel="icon" href="<?php echo base_url() . 'assets/images/logof.png'; ?>" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<meta name="p:domain_verify" content="94b973ad564911b1f3016176fbe5c22e"/>-->
-        <meta name="p:domain_verify" content="9c441577920ccb59aa33fe32889fa29c"/>
+
         <!-- Favicon -->
         <!-- Normalize CSS -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/normalize.css">
@@ -43,6 +42,8 @@
 
         <!--custom css style-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/custom_style.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/style2.css">
+
 
         <!-- Modernizr Js -->
         <script src="<?php echo base_url(); ?>assets/theme2/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -50,11 +51,11 @@
         <script src="<?php echo base_url(); ?>assets/theme/js/vendors/modernizr.js"></script>
 
         <!--sweet alert-->
-        <script src="<?php echo base_url(); ?>assets/theme/sweetalert2/sweetalert2.min.js"></script>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/sweetalert2/sweetalert2.min.css">
+        <script src="<?php echo base_url(); ?>assets/theme2/sweetalert2/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/sweetalert2/sweetalert2.min.css">
 
         <!--angular js-->
-        <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/angular/angular.min.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -125,236 +126,135 @@
 
             <!-- Header Area Start Here -->
             <header>
-                <input type="hidden" ng-model="showmodel" ng-init="showmodel = 0">
-                <input type="hidden" ng-model="gitem_price" ng-init="showmodel = 0">
-
-                <div class="header-top-inner-top" style="color: white;background: red;">
-                    <div class="container">
-                        <h2 style="margin: 0;">
-                            <marquee>
-                                Special Seasonal Offer 25% off on all products.
-                            </marquee>
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="header-area-style2" id="sticker">
-
-
-
-                    <div class="header-top-inner-top">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                    <div class="header-contact">
-                                        <ul>
-                                            <li><i class="fa fa-whatsapp" aria-hidden="true"></i><a href="https://api.whatsapp.com/send?phone=85267958894"> +(852) 6795 8894</a></li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@bespoketailorshk.com"> info@bespoketailorshk.com</a></li>
-                                        </ul>
+                <div class="header-area-style3" id="sticker">
+                    <div class="header-top">
+                        <div class="header-top-inner-top">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                        <div class="header-contact">
+                                            <ul>
+                                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+(852) 2756 5611">+(852) 2756 5611</a></li>
+                                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> mahamarthk@gmail.com</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div class="account-wishlist">
-                                        <ul>
-                                            <li><a href="https://www.facebook.com/pg/bespoketailorshk"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://twitter.com/bespoketailorhk"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.instagram.com/bespoke_tailors_hong_kong/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.pinterest.com/jaybespoketailorshk/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li></ul>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="account-wishlist">
+                                            <ul>
+                                                <li><a href="login-registration.html"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
+                                                <li><a href="wishlist.html"><i class="fa fa-heart-o" aria-hidden="true"></i> Wishlist</a></li>
+                                                <li><a href="#"><i class="fa fa-usd" aria-hidden="true"></i> USD</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="header-top" style="  ">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                                    <div class="account-wishlist" style="font-size: 12px;">
-                                        <ul>
-                                            <?php
-                                            $session_data = $this->session->userdata('logged_in');
-                                            if (isset($session_data['login_id'])) {
-                                                ?>
-                                                <li>
-                                                    <a href="<?php echo site_url('Account/profile'); ?>">
-                                                        <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
+                        <div class="header-top-inner-bottom">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="logo-area">
+                                            <a href="index.html"><img class="img-responsive mainsitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" ></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="search-area">
+                                            <div class="input-group" id="adv-search">
+                                                <input type="text" class="form-control" placeholder="Search Product" />
+                                                <div class="input-group-btn">
+                                                    <div class="btn-group" role="group">
+
+                                                        <button type="button" class="btn btn-metro-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <ul class="header-cart-area">
+                                            <li>
+                                                <div class="cart-area maincartarea">
+                                                    <a href="#" class="cartheadericon">
+                                                        <font>My Cart</font>
+                                                        <i class="fa fa-shopping-cart"></i><span>2</span>
                                                     </a>
-                                                </li>
-                                                <li>
-                                                    <a href="<?php echo site_url('Account/profile'); ?>">Profile</a>
-                                                </li>
-                                                <li>
-
-                                                    <a href="<?php echo site_url('Account/logout'); ?>">   Logout</a>
-                                                </li>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <li><a href="<?php echo site_url('Account/profile'); ?>">
-                                                        <i class="fa fa-lock" aria-hidden="true"></i> Account</a>
-                                                </li>
-                                                <!--<li><a href=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>-->
-
-
-                                                <?php
-                                            }
-                                            ?>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-2 hidden-xs">
-
-
-                                    <?php
-                                    $logoimg = "logo73.png";
-                                    ?>
-
-                                    <div class="logo-area">
-                                        <a href="<?php echo site_url(); ?>"><img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $logoimg; ?>" alt="logo" style="    
-                                                                                 position: absolute;
-                                                                                 top: -22px;
-                                                                                 height: 74px;
-                                                                                 margin-left: -135px;"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                                    <ul class="header-cart-area">
-                                        <!--                                        <li class="header-search" id="remote">
-                                                                                    <form id="top-search-form" action="<?php echo site_url('Product/ProductSearch'); ?>">                           
-                                                                                        <input type="text" name="keyword" class="search-input typeahead" placeholder="Search...." required="">
-                                                                                        <a href="#" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                                                                        <button type="submit" style="height: 0px;width: 0px;opacity: 0;"></button>
-                                                                                    </form>
-                                                                                </li>-->
-
-
-                                        <!--                                    <li class="header-search" >
-                                                                                <form id="top-search-form" >                           
-                                                                                        <input type="text" id="searchdata" class="search-input" placeholder="Search...." required="">
-                                                                                        <a href="#" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                                                                </form>
-                                                                            </li>-->
-
-                                        <li>
-                                            <div class="cart-area">
-                                                <a href="#"><i class="fa fa-shopping-cart"  aria-hidden="true"></i><span style="background: #f01211">{{globleCartData.total_quantity}}</span></a>
-                                                <ul ng-if="globleCartData.total_quantity">
-                                                    <li  ng-repeat="product in globleCartData.products">
-
-                                                        <div class="cart-single-product">
-                                                            <div class="media">
-                                                                <div class="pull-left cart-product-img">
-                                                                    <a href="#">
-                                                                        <div class="product_image_back1" style="background: url({{product.file_name}});height: 80px;width: 80px;"></div>
-
-                                                                    <!--<img class="img-responsive" alt="product" src="{{product.file_name}}">-->
-                                                                    </a>
-                                                                </div>
-                                                                <div class="media-body cart-content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <h2 style="    white-space: nowrap;
-                                                                                overflow: hidden;
-                                                                                text-overflow: ellipsis;
-                                                                                width: 250px;"><a href="#" style="">{{product.title}} - {{product.item_name}}</a></h2>
-                                                                            <h3>                                                                 
-                                                                                <p>
-                                                                                    {{product.quantity}} 
-                                                                                </p>
-                                                                            </h3>
-                                                                        </li>
-                                                                        <li>
-                                                                        </li>
-                                                                        <li>
-                                                                            <p></p>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="trash" href="#." ng-click="removeCart(product.product_id)"><i class="fa fa-trash-o"></i></a>
-                                                                        </li>
-                                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="cart-single-product">
+                                                                <div class="media">
+                                                                    <div class="pull-left cart-product-img">
+                                                                        <a href="#">
+                                                                            <img class="img-responsive" alt="product" src="img/best-seller/4.jpg">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="media-body cart-content">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <h2><a href="#">Product Title Here</a></h2>
+                                                                                <h3><span>Code:</span> STPT600</h3>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>X 1</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>$49</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="trash" href="#"><i class="fa fa-trash-o"></i></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <span><span>Sub Total</span></span><span>{{globleCartData.total_quantity}}</span>
-
-                                                    </li>
-                                                    <li>
-                                                        <ul class="checkout">
-                                                            <li><a href="<?php echo site_url("Cart/details"); ?>" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                                            <!--<li><a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>-->
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-
-
-
-
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="additional-menu-area" id="additional-menu-area">
-
-
-
-                                                <div id="mySidenav" class="sidenav">
-                                                    <a href="#" class="closebtn">×</a>
-                                                    <div class="sidenav-search">
-                                                        <div class="input-group stylish-input-group" >
-                                                            <input type="text" placeholder="Search Here . . ." class="form-control">
-                                                            <span class="input-group-addon">
-                                                                <button type="submit">
-                                                                    <span class="glyphicon glyphicon-search"></span>
-                                                                </button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="sidenav-login-registration">
-
-                                                        <?php
-                                                        $session_data = $this->session->userdata('logged_in');
-                                                        if (isset($session_data['login_id'])) {
-                                                            ?>
-                                                            <li>
-                                                                <a href="<?php echo site_url("Account/profile"); ?>" style="text-transform: capitalize">
-                                                                    <i class="fa fa-user"></i> <?php echo $session_data['first_name'] . ' ' . $session_data['last_name']; ?>
-                                                                    <span class="arrow"></span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="<?php echo site_url("Account/logout"); ?>">Logout<span class="arrow"></span></a>
-                                                            </li>
-
-                                                            <?php
-                                                        } else {
-                                                            ?>
-                                                            <li>
-                                                                <a href="<?php echo site_url("Account/login"); ?>">Login<span class="arrow"></span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="<?php echo site_url("Account/login"); ?>">Registration<span class="arrow"></span></a>
-                                                            </li>
-                                                            <?php
-                                                        }
-                                                        ?>
+                                                        </li>
+                                                        <li>
+                                                            <div class="cart-single-product">
+                                                                <div class="media">
+                                                                    <div class="pull-left cart-product-img">
+                                                                        <a href="#">
+                                                                            <img class="img-responsive" alt="product" src="img/best-seller/5.jpg">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="media-body cart-content">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <h2><a href="#">Product Title Here</a></h2>
+                                                                                <h3><span>Code:</span> STPT460</h3>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>X 1</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>$75</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="trash" href="#"><i class="fa fa-trash-o"></i></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <span><span>Sub Total</span></span><span>$124</span>
+                                                            <span><span>Discount</span></span><span>$30</span>
+                                                            <span><span>Vat(20%)</span></span><span>$18.8</span>
+                                                            <span><span>Sub Total</span></span><span>$112.8</span>
+                                                        </li>
+                                                        <li>
+                                                            <ul class="checkout">
+                                                                <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
+                                                                <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                                            </ul>
+                                                        </li>
                                                     </ul>
-                                                    <h3 class="ctg-name-title"><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Order Now</a></h3>
-                                                    <ul class="sidenav-nav">
-                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
-
-                                                    </ul>
-                                                    <!-- times-->
                                                 </div>
-                                                <span class="side-menu-open side-menu-trigger"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                            </li>
+
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -362,40 +262,269 @@
                     <div class="header-bottom">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="logo-area" style="    margin-top: 2px;">
-                                        <a href="<?php echo site_url(); ?>">
-                                            <img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $logoimg; ?>" alt="logo" style="    height:35px;">
-                                        </a>
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="logo-area">
+                                        <a href="index.html"><img class="img-responsive stickheadersitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
                                     </div>
-                                    <div class="main-menu-area home2-sticky-area">
+                                    <div class="category-menu-area" id="category-menu-area">
+                                        <h2 class="category-menu-title"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
+                                        <ul class="category-menu-area-inner">
+                                            <li><a href="shop1.html"><i class="flaticon-dress-1"></i>Women<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Women Sub Title 1</a></li>
+                                                    <li><a href="#">Women Sub Title 2</a></li>
+                                                    <li><a href="#">Women Sub Title 3</a></li>
+                                                    <li><a href="#">Women Sub Title 4</a></li>
+                                                    <li><a href="#">Women Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop2.html"><i class="flaticon-polo"></i>Men<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Men Sub Title 1</a></li>
+                                                    <li><a href="#">Men Sub Title 2</a></li>
+                                                    <li><a href="#">Men Sub Title 3</a></li>
+                                                    <li><a href="#">Men Sub Title 4</a></li>
+                                                    <li><a href="#">Men Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop3.html"><i class="flaticon-plug"></i>Electornics<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Electornics Sub Title 1</a></li>
+                                                    <li><a href="#">Electornics Sub Title 2</a></li>
+                                                    <li><a href="#">Electornics Sub Title 3</a></li>
+                                                    <li><a href="#">Electornics Sub Title 4</a></li>
+                                                    <li><a href="#">Electornics Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop4.html"><i class="flaticon-necklace"></i>Jewellery<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Jewellery Sub Title 1</a></li>
+                                                    <li><a href="#">Jewellery Sub Title 2</a></li>
+                                                    <li><a href="#">Jewellery Sub Title 3</a></li>
+                                                    <li><a href="#">Jewellery Sub Title 4</a></li>
+                                                    <li><a href="#">Jewellery Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop5.html"><i class="flaticon-screen"></i>Computer<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Computer Sub Title 1</a></li>
+                                                    <li><a href="#">Computer Sub Title 2</a></li>
+                                                    <li><a href="#">Computer Sub Title 3</a></li>
+                                                    <li><a href="#">Computer Sub Title 4</a></li>
+                                                    <li><a href="#">Computer Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop6.html"><i class="flaticon-headphones"></i>Head Phone<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Head Phone Sub Title 1</a></li>
+                                                    <li><a href="#">Head Phone Sub Title 2</a></li>
+                                                    <li><a href="#">Head Phone Sub Title 3</a></li>
+                                                    <li><a href="#">Head Phone Sub Title 4</a></li>
+                                                    <li><a href="#">Head Phone Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop1.html"><i class="flaticon-transport"></i>Toys<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Toys Sub Title 1</a></li>
+                                                    <li><a href="#">Toys Sub Title 2</a></li>
+                                                    <li><a href="#">Toys Sub Title 3</a></li>
+                                                    <li><a href="#">Toys Sub Title 4</a></li>
+                                                    <li><a href="#">Toys Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop1.html"><i class="flaticon-fashion"></i>Shoes<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Shoes Sub Title 1</a></li>
+                                                    <li><a href="#">Shoes Sub Title 2</a></li>
+                                                    <li><a href="#">Shoes Sub Title 3</a></li>
+                                                    <li><a href="#">Shoes Sub Title 4</a></li>
+                                                    <li><a href="#">Shoes Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop1.html"><i class="flaticon-dress"></i>Kid’s Wear<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Kid’s Wear Sub Title 1</a></li>
+                                                    <li><a href="#">Kid’s Wear Sub Title 2</a></li>
+                                                    <li><a href="#">Kid’s Wear Sub Title 3</a></li>
+                                                    <li><a href="#">Kid’s Wear Sub Title 4</a></li>
+                                                    <li><a href="#">Kid’s Wear Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop1.html"><i class="flaticon-technology"></i>Mobile<span><i class="flaticon-next"></i></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Mobile Sub Title 1</a></li>
+                                                    <li><a href="#">Mobile Sub Title 2</a></li>
+                                                    <li><a href="#">Mobile Sub Title 3</a></li>
+                                                    <li><a href="#">Mobile Sub Title 4</a></li>
+                                                    <li><a href="#">Mobile Sub Title 5</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8">
+                                    <div class="main-menu-area hideonstickheader">
                                         <nav>
                                             <ul>
-                                                <li class="active"><a href="<?php echo base_url(); ?>">Home</a>
+                                                <li class="active"><a href="#">Home22</a>
                                                     <ul>
-                                                        <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ'S</a></li>
-                                                        <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
+                                                        <li><a href="index.html">Home 1</a></li>
+                                                        <li><a href="index2.html">Home 2</a></li>
+                                                        <li><a class="active" href="index3.html">Home 3</a></li>
+                                                        <li><a href="index4.html">Home 4</a></li>
                                                     </ul>
                                                 </li>
-                                                <li ><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Order Now</a>
+                                                <li><a href="about.html">About</a></li>
+                                                <li><a href="#">Blog</a>
                                                     <ul>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
-                                                        <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
-
+                                                        <li><a href="blog.html">Blog</a></li>
+                                                        <li><a href="single-blog.html">Single Blog</a></li>
+                                                        <li class="has-child-menu"><a href="#">Demo</a>
+                                                            <ul class="thired-level">
+                                                                <li><a href="#">Demo 1</a></li>
+                                                                <li><a href="#">Demo 2</a></li>
+                                                            </ul>
+                                                        </li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="<?php echo site_url("Shop/catalogue"); ?>">Catalogue</a></li>
-                                                <li><a href="<?php echo site_url("Shop/appointment"); ?>">Appointment</a></li>
-
-                                                <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
+                                                <li><a href="#">Pages</a>
+                                                    <ul class="mega-menu-area">
+                                                        <li>
+                                                            <a href="index.html">Home 1</a>
+                                                            <a href="index2.html">Home 2</a>
+                                                            <a href="index3.html">Home 3</a>
+                                                            <a href="index4.html">Home 4</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="single-blog.html">Single Blog 2</a>
+                                                            <a href="portfolio1.html">Portfolio 1</a>
+                                                            <a href="portfolio2.html">Portfolio 2</a>
+                                                            <a href="shop1.html">Shop 1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="shop2.html">Shop 2</a>
+                                                            <a href="shop3.html">Shop 3</a>
+                                                            <a href="shop4.html">Shop 4</a>
+                                                            <a href="shop5.html">Shop 5</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="shop6.html">Shop 6</a>
+                                                            <a href="shop7.html">Shop 7</a>
+                                                            <a href="product-details1.html">Product Details 1</a>
+                                                            <a href="product-details2.html">Product Details 2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="login-registration.html">Login Registration</a>
+                                                            <a href="my-account.html">My Account</a>
+                                                            <a href="wishlist.html">Wishlist</a>
+                                                            <a href="cart.html">Cart</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="check-out.html">Check Out</a>
+                                                            <a href="order-history.html">Order History</a>
+                                                            <a href="order-details.html">Order Details</a>
+                                                            <a href="404.html">404</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="contact.html">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
-                                    <div class="cart_header_stick">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>{{globleCartData.total_quantity}}</span>
+                                    <div class="showonstickheader">
+                                        <div class="col-lg-10 col-md-7 col-sm-7 col-xs-12">
+                                            <div class="search-area">
+                                                <div class="input-group" id="adv-search">
+                                                    <input type="text" class="form-control" placeholder="Search Product" />
+                                                    <div class="input-group-btn">
+                                                        <div class="btn-group" role="group">
+
+                                                            <button type="button" class="btn btn-metro-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                            <ul class="header-cart-area">
+                                                <li>
+                                                    <div class="cart-area">
+                                                        <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>2</span></a>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="cart-single-product">
+                                                                    <div class="media">
+                                                                        <div class="pull-left cart-product-img">
+                                                                            <a href="#">
+                                                                                <img class="img-responsive" alt="product" src="img/best-seller/4.jpg">
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="media-body cart-content">
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <h2><a href="#">Product Title Here</a></h2>
+                                                                                    <h3><span>Code:</span> STPT600</h3>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p>X 1</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p>$49</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="trash" href="#"><i class="fa fa-trash-o"></i></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cart-single-product">
+                                                                    <div class="media">
+                                                                        <div class="pull-left cart-product-img">
+                                                                            <a href="#">
+                                                                                <img class="img-responsive" alt="product" src="img/best-seller/5.jpg">
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="media-body cart-content">
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <h2><a href="#">Product Title Here</a></h2>
+                                                                                    <h3><span>Code:</span> STPT460</h3>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p>X 1</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p>$75</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="trash" href="#"><i class="fa fa-trash-o"></i></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <span><span>Sub Total</span></span><span>$124</span>
+                                                                <span><span>Discount</span></span><span>$30</span>
+                                                                <span><span>Vat(20%)</span></span><span>$18.8</span>
+                                                                <span><span>Sub Total</span></span><span>$112.8</span>
+                                                            </li>
+                                                            <li>
+                                                                <ul class="checkout">
+                                                                    <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
+                                                                    <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -410,23 +539,57 @@
                                                 <ul>
                                                     <li class="active"><a href="#">Home</a>
                                                         <ul>
-                                                            <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ'S</a></li>
-                                                            <li><a href="<?php echo site_url("Shop/aboutus") ?>">About Us</a></li>
+                                                            <li><a href="index.html">Home 1</a></li>
+                                                            <li><a href="index2.html">Home 2</a></li>
+                                                            <li><a href="index3.html">Home 3</a></li>
+                                                            <li><a href="index4.html">Home 4</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li ><a href="#">Order Now</a>
+                                                    <li><a href="about.html">About</a></li>
+                                                    <li><a href="#">Blog</a>
                                                         <ul>
-                                                            <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirt</a></li>
-                                                            <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suit</a></li>
-                                                            <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jacket</a></li>
-                                                            <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pant</a></li>
-
+                                                            <li><a href="blog.html">Blog</a></li>
+                                                            <li><a href="single-blog.html">Single Blog</a></li>
+                                                            <li class="has-child-menu"><a href="#">Demo</a>
+                                                                <ul class="thired-level">
+                                                                    <li><a href="#">Demo 1</a></li>
+                                                                    <li><a href="#">Demo 2</a></li>
+                                                                </ul>
+                                                            </li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="#">Catalogue</a></li>
-                                                    <li><a href="#">Schedule</a></li>
-
-                                                    <li><a href="<?php echo site_url("Shop/contactus") ?>">Contact Us</a></li>
+                                                    <li><a href="#">Portfolio</a>
+                                                        <ul>
+                                                            <li><a href="portfolio1.html">Portfolio 1</a></li>
+                                                            <li><a href="portfolio2.html">Portfolio 2</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Shop</a>
+                                                        <ul>
+                                                            <li><a href="shop1.html">Shop 1</a></li>
+                                                            <li><a href="shop2.html">Shop 2</a></li>
+                                                            <li><a href="shop3.html">Shop 3</a></li>
+                                                            <li><a href="shop4.html">Shop 4</a></li>
+                                                            <li><a href="shop5.html">Shop 5</a></li>
+                                                            <li><a href="shop6.html">Shop 6</a></li>
+                                                            <li><a href="shop7.html">Shop 7</a></li>
+                                                            <li><a href="product-details1.html">Shop Details 1</a></li>
+                                                            <li><a href="product-details2.html">Shop Details 2</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Pages</a>
+                                                        <ul>
+                                                            <li><a href="login-registration.html">Login Registration</a></li>
+                                                            <li><a href="my-account.html">My Account</a></li>
+                                                            <li><a href="cart.html">Cart</a></li>
+                                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                                            <li><a href="check-out.html">Check Out</a></li>
+                                                            <li><a href="order-history.html">Order History</a></li>
+                                                            <li><a href="order-details.html">Order Details</a></li>
+                                                            <li><a href="404.html">404</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="contact.html">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -438,17 +601,6 @@
                     </div>
                 </div>
             </header>
-            <div class="showonmobile" style="    color: white;
-                     background: red;">
-                    <div class="container">
-                        <h2 style="    margin: 0;">
-                            <marquee>
-                                Special Seasonal Offer 25% off on all products.
-                            </marquee>
-                        </h2>
-                    </div>
-                </div>
-            <!-- Header Area End Here -->
 
 
 

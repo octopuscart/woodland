@@ -3,62 +3,15 @@
  */
 
 App.controller('ProductController', function ($scope, $http, $timeout, $interval) {
-    
-        $scope.selectedProduct = {'product':{}};
-    
-    $scope.zoomProduct = function(product){
-        $scope.selectedProduct.product = product;
-    }
-    
-    $scope.askPriceSelected = function () {
-        var url = baseurl + "Api/priceAsk/" + custom_id;
-        $http.get(url).then(function (rdata) {
-            $scope.askpricedata = rdata.data;
-
-        })
-    }
-
-
-    $scope.removePriceData = function (product_id) {
-        var url = baseurl + "Api/priceAskDelete/" + custom_id + "/" + product_id;
-        $http.get(url).then(function (rdata) {
-
-            $scope.askPriceSelected();
-        })
-    }
-
-    $scope.askPriceSelected();
-
-
-    $scope.showPriceProducts = function () {
-        $scope.askPriceSelected();
-        $("#productprice").modal("show");
-    }
-
-    $scope.askPriceSelection = function (product_id) {
-        console.log(product_id)
-        var url = baseurl + "Api/priceAsk";
-        var form = new FormData()
-        form.append('product_id', product_id);
-        form.append('item_id', custom_id);
-        $http.post(url, form).then(function (rdata) {
-            console.log(rdata)
-            $scope.showPriceProducts();
-        })
-    }
-
-    
-    
-    
 
     $scope.productResults = {};
     $scope.init = 0;
     $scope.checkproduct = 0;
     $scope.pricerange = {'min': 0, 'max': 0};
-    $scope.productProcess = {'state': 1};
 
     $scope.getProducts = function (attrs) {
-         $scope.productProcess.state = 1;
+
+
         var argsk = [];
         for (i in $scope.attribute_checked) {
             var at = $scope.attribute_checked[i];
@@ -88,7 +41,6 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
 
 
-
         var url = baseurl + "Api/productListApi/" + category_id + "";
 
         if (stargs) {
@@ -104,49 +56,46 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                 if ($scope.productResults.products.length) {
                     $scope.checkproduct = 1;
                 }
-                else {
-//                    $scope.productProcess.state = 2;
-                }
             }
+            if ($scope.init == 0) {
 
-            if ($scope.productResults.products.length) {
-               $scope.productProcess.state = 2;
-            }
-            else {
-                $scope.productProcess.state = 0;
-            }
-            
-            
-//            $timeout(function () {
-//                $scope.productProcess.state = 2;
-//            }, 2000)
-
-            $timeout(function () {
-                
-                $('#paging_container1').pajinate({
-                    items_per_page: 24,
-                    num_page_links_to_display: 5,
-                });
+                $timeout(function () {
 
 
-                $(".page_link").click(function () {
-                    $("html, body").animate({scrollTop: 0}, "slow")
-                })
-                $("#slider-range").slider({
-                    range: true,
-                    min: Number($scope.productResults.price.minprice),
-                    max: Number($scope.productResults.price.maxprice),
-                    values: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
-                    slide: function (event, ui) {
-                        $("#amount").val("$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ]);
+                    var priceSlider = document.getElementById('price-range-filter');
+                    if (priceSlider) {
+                        noUiSlider.create(priceSlider, {
+                            start: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
+                            connect: true,
+                            /*tooltips: true,*/
+                            range: {
+                                'min': Number($scope.productResults.price.minprice),
+                                'max': Number($scope.productResults.price.maxprice)
+                            },
+                            format: wNumb({
+                                decimals: 0
+                            }),
+                        });
+                        var marginMin = Number($scope.productResults.price.minprice),
+                                marginMax = Number($scope.productResults.price.maxprice);
+                        priceSlider.noUiSlider.on('update', function (values, handle) {
+                            if (handle) {
+                                $timeout(function () {
+                                    $scope.productResults.price.maxprice = values[handle];
+                                })
+
+                            } else {
+                                $timeout(function () {
+                                    $scope.productResults.price.minprice = values[handle];
+                                })
+                            }
+                        });
                     }
-                });
-                $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-            }, 1000)
 
+                }, 1000)
+            }
             $scope.init = 1;
         }, function () {
-            $scope.productProcess.state = 0;
         });
     }
 

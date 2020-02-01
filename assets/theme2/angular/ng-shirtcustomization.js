@@ -1,18 +1,16 @@
 
 
 
-App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
+App.controller('customizationShirt', function ($scope, $http, $location) {
 
-    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id + "/"+gcustome_id;
+    var globlecart = baseurl + "Api/cartOperationShirtSingle/"+product_id;
     $scope.product_quantity = 1;
-
-    var currencyfilter = $filter('currency');
 
     $scope.cartFabrics = [];
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.product_id] = {'sleeve': ["full_sleeve.png", "back_cuff.png"],
+            $scope.selecteElements[fb.folder] = {'sleeve': ["b_full_shirt_sleeve0001.png", ],
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -29,11 +27,11 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         }
         $scope.screencustom = {
             'view_type': 'front',
-            "fabric": $scope.cartFabrics[0].product_id,
+            "fabric": $scope.cartFabrics[0].folder,
             "productobj": $scope.cartFabrics[0],
             "sku": $scope.cartFabrics[0].sku,
         };
-        var url = baseurl + "customApi/customeElements";
+        var url = baseurl + "Api/customeElements";
         $http.get(url).then(function (rdata) {
             $scope.data_list = rdata.data.data;
             $scope.cuff_collar_insert = rdata.data.cuff_collar_insert;
@@ -44,14 +42,12 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.parents = 'Body Fit';
             for (i in $scope.keys) {
                 var temp = $scope.data_list[$scope.keys[i].title];
-                console.log(temp);
                 for (j in temp) {
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
                             var fb = $scope.cartFabrics[f];
-                            console.log(fb.product_id, temp[j], $scope.keys[i].title);
-                            $scope.selecteElements[fb.product_id][$scope.keys[i].title] = temp[j];
-                            $scope.selecteElements[fb.product_id]['summary'][$scope.keys[i].title] = temp[j].title;
+                            $scope.selecteElements[fb.folder][$scope.keys[i].title] = temp[j];
+                            $scope.selecteElements[fb.folder]['summary'][$scope.keys[i].title] = temp[j].title;
                         }
                     }
                 }
@@ -59,7 +55,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
 
             setTimeout(function () {
-
+             
 
                 //zoom plugin
 
@@ -117,7 +113,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-
+            
             $scope.shirtimplement()
         }, function (r) {
         })
@@ -152,8 +148,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
     //select fabric
     $scope.selectFabric = function (fabric) {
-        console.log(fabric)
-        $scope.screencustom.fabric = fabric.product_id;
+        $scope.screencustom.fabric = fabric.folder;
         $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
     }
@@ -265,86 +260,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.screencustom.view_type = "front";
         }
     }
-    
-    
-    $scope.changeViews = function (viewtype) {
-       
-            $scope.screencustom.view_type = viewtype;
-        
-    }
 
-    //add to cart
-    $scope.addToCartCustome = function () {
-        var summerydata = $scope.selecteElements[product_id].summary;
-        var customhtmlarray = [];
-        var form = new FormData()
-        for (i in summerydata) {
-            var ks = i;
-            var kv = summerydata[i];
-            form.append("customekey[]", ks);
-            form.append("customevalue[]", kv);
-            console.log(ks, kv);
-            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
-            customhtmlarray.push(summaryhtml);
-        }
-        ;
-        customhtmlarray = customhtmlarray.join("");
-        var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>"
-
-        swal({
-            title: 'Confirm Design',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#000',
-            cancelButtonColor: 'red',
-            confirmButtonText: 'Yes, Add To Cart',
-            cancelButtonText: 'No, Cancel!',
-            confirmButtonClass: 'btn btn-success',
-            cancelButtonClass: 'btn btn-danger',
-//            title: 'Adding to Cart',
-            allowEscapeKey: false,
-            allowOutsideClick: false,
-            html: customdiv,
-            preConfirm: function () {
-
-                swal({
-                    title: 'Adding to Cart',
-                    onOpen: function () {
-                        swal.showLoading()
-                    }
-                });
-                var globlecart = baseurl + "Api/cartOperationCustom";
-
-//                var form = new FormData()
-                form.append('product_id', product_id);
-                form.append('quantity', 1);
-                form.append('custome_id', 1);
-                $http.post(globlecart, form).then(function (rdata) {
-                    swal.close();
-                    $scope.getCartData();
-                    swal({
-                        title: 'Added To Cart',
-                        type: 'success',
-                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>Quantity: " + rdata.data.quantity + "</p>",
-                        imageUrl: rdata.data.file_name,
-                        imageWidth: 100,
-                        timer: 1500,
-                        imageAlt: 'Custom image',
-                        showConfirmButton: false,
-                        animation: true,
-                        onClose: function () {
-                            window.location = baseurl + "Cart/details";
-                        }
-                    })
-                }, function () {
-                    swal.close();
-                    swal({
-                        title: 'Something Wrong..',
-                    })
-                });
-            },
-        })
-    }
 
 
 

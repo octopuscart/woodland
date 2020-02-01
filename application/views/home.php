@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                                                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                    <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                        <div class="title-container s-tb-c">
-                                                                                                                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                                                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                                                    <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                                        <div class="title-container s-tb-c">
+                                                                                                                                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                            </h2>
-                                                                                                                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
+                                                                                                                                            </h2>
+                                                                                                                                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
     <?php
 }
 ?>
@@ -43,55 +43,36 @@ foreach ($sliders as $key => $value) {
 <div class="main-slider2">
     <div class="bend niceties preview-1">
         <div id="ensign-nivoslider-3" class="slides">
+            <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
+            <img src="<?php echo base_url(); ?>assets/sliders/cinema-ticket-banner.jpg" alt="" title="#slider-direction-2" />
 
-            <img src="<?php echo base_url(); ?>assets/sliders/ss4.jpg" alt="" title="#slider-direction-1" />
-            <img src="<?php echo base_url(); ?>assets/sliders/ss2.jpg" alt="" title="#slider-direction-2" />
-            <img src="<?php echo base_url(); ?>assets/sliders/s1.jpg" alt="" title="#slider-direction-4" />
-            <img src="<?php echo base_url(); ?>assets/sliders/ss5.jpg" alt="" title="#slider-direction-3" />
         </div>
         <div id="slider-direction-1" class="t-cn slider-direction">
-            <div class="slider-content t-lfl s-tb slider-1">
+            <div class="slider-content t-lfr s-tb slider-3">
                 <div class="title-container s-tb-c">
-                    <h2 class="title1">   <span style="color: block">Custom Made</span> <br>Just For You</h2>
-                    <p style="color: black">With our unique suit customizer, you can easily create a suit </p>
-                    <p style="color: black">that perfectly matches your personality.</p>
-                    <a href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="btn-shop-now-fill-slider">Customize Now</a>
+                    <h2 class="title1">SHOP ORGANIC PRODUCT
+                        <br/><span>Upto 20% OFF</span> <br>on Every purchase
+                    </h2>
+                    <a href="#" class="btn-shop-now-fill-slider">Shop Now</a>
                 </div>
             </div>
         </div>
-
 
         <div id="slider-direction-2" class="t-cn slider-direction">
-            <div class="slider-content t-lfl s-tb slider-1">
+            <div class="slider-content t-lfr s-tb slider-3">
                 <div class="title-container s-tb-c">
-                    <h2 class="title1" style="color: white"><span style="font-size: 20px;color: white">HAND MADE AND HAND CUT</span><br/> MADE TO MEASURE!</h2>
+                    <h2 class="title1" style="font-size: 23px;"><span style="font-size: 40px;">Bollywood Movie Tickets
+</span> <br>For Bookings Call / Whatsapp - +(852) 6142 8189
 
-                    <a href="<<?php echo site_url("Shop/appointment"); ?>" class="btn-shop-now-fill-slider">Book Now</a>
-                </div>
-            </div>
-        </div>
 
-        <div id="slider-direction-3" class="t-cn slider-direction">
-            <div class="slider-content t-lfl s-tb slider-1">
-                <div class="title-container s-tb-c">
-                    <h2 class="title1" style="color: white;font-size:50px;"> ORIGINAL ITALIAN FABRICS</h2>
-                    <p style="color: white">We always provides something new in fashion and fabrics quality</p>
-                    <a href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="btn-shop-now-fill-slider">Customize Now</a>
+                    </h2>
+                    <a href="#" class="btn-shop-now-fill-slider">Contact Us</a>
                 </div>
             </div>
         </div>
 
 
 
-        <div id="slider-direction-4" class="slider-direction">
-            <div class="slider-content t-lfl s-tb slider-1">
-                <div class="title-container s-tb-c">
-                    <h2 class="title1" ><span>New Collection</span> Is <br>Available Here</h2>
-                    <p></p>
-                    <a href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="btn-shop-now-fill-slider">View Collections</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- Slider Area End Here -->

@@ -561,29 +561,11 @@ b.barcomb-list {
 }
 
 
-.header-area-style2 .header-top .account-wishlist li a i {
-    color: white;
-}
-.additional-menu-area .side-menu-open i {
-    color:white;
-}
 
-.cart-area i.fa.fa-shopping-cart {
-    color: white!important;
-}
 
-.stick .header-bottom {
-    background-color: rgba(0, 0, 0);
-}
-.stick .main-menu-area nav ul > li > a {
-    color: #ffffff;
 
-}
 
-.main-menu-area nav ul > li > ul > li > a {
-    color: black!important;
-    background: #eaeaea;
-}
+
 .stick .main-menu-area nav ul .active > a {
 
 }
@@ -642,9 +624,6 @@ b.barcomb-list {
 }
 
 
-.category-menu-area ul li a {
-    line-height: 18px;
-}
 
 .text_left{
     text-align: left;
@@ -868,15 +847,6 @@ b.barcomb-list {
     padding: 10px 0;
 }
 
-.category-menu-area ul li a {
-    line-height: 18px;
-    float: left;
-    /* background: black; */
-    color: black;
-    margin: 0px 5px;
-    padding: 5px 10px;
-    border: 2px solid;
-}
 
 .shop-page-area .title-sidebar {
     position: relative;

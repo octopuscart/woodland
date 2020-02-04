@@ -27,7 +27,7 @@ switch ($baselink) {
           $adminlinkmain = $baselink . "/shopadmin";
         break;
     default:
-        $baselinkmain = $configuration['site_url'];
+        $adminlinkmain = "https://shopadmin.costcokart.com/";
 }
 
 define('ADMINURL', $adminlinkmain);

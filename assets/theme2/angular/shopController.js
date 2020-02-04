@@ -13,19 +13,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         }
     });
 
-    $('#remote .typeahead').typeahead(null, {
-        name: 'search-products',
-        display: 'title',
-        source: searchProducts,
-        templates: {
-            empty: [
-                '<div class="empty-message">',
-                "Can't Find!, Try Something Else",
-                '</div>'
-            ].join('\n'),
-            suggestion: Handlebars.compile('<div class="searchholder"><div class="product_image_back serachbox-image" style="background:url(' + imageurlg + '{{file_name}});"></div><strong>{{title}}</strong><button class="btn btn-xs">Add</button></div>')
-        }
-    });
+
 
 
 

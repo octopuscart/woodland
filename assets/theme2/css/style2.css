@@ -143,3 +143,26 @@
     color: #ffeb3b;
     font-size: 60px;
 }
+
+
+span.keywordfooter {
+    text-transform: capitalize;
+     color: white; 
+}
+
+.footertable{
+    text-transform: uppercase;
+}
+
+.footertable tr{
+    border-bottom: 1px solid #000;
+}
+
+.footertable th{
+    padding: 0px 10px;
+}
+
+
+.footertable td, .footertable th{
+      padding: 20px 10px;
+}

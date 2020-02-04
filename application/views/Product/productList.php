@@ -75,7 +75,7 @@ $image2 = "";
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcrumb-area">
-                   
+
                     <ul>
                         <li><a href="<?php echo site_url("/"); ?>">Home</a></li>
                         <?php echo count($linklist) ? "<b class='barcomb-list'>/</b>" : ''; ?>
@@ -148,16 +148,14 @@ $image2 = "";
                         <ul>
                             <?php
                             $taglist = [
-                                 'rice', 'flour', 'spices', 'dhal', 'dal', 'lentils', 'oilGrocery', 'Fruits', 'vegetables'
+                                'rice', 'flour', 'spices', 'dhal', 'dal', 'lentils', 'oilGrocery', 'Fruits', 'vegetables'
                             ];
                             foreach ($taglist as $key => $value) {
-                                
-                            
+                                ?>
+                                <li><a href="#" style="text-transform: uppercase"><?php echo $value; ?></a></li>
+                                <?php
+                            }
                             ?>
-                            <li><a href="#" style="text-transform: uppercase"><?php echo $value;?></a></li>
-                          <?php
-                          }
-                          ?>
                         </ul>
                     </div>
                 </div>
@@ -187,11 +185,11 @@ $image2 = "";
                     <div class="tab-content" >
                         <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
 
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products" ng-if="$index < 7">
                                 <div class="product-box1" >
-<!--                                    <ul class="product-social">
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                    </ul>-->
+                                    <!--                                    <ul class="product-social">
+                                                                            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                                        </ul>-->
                                     <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
                                          background-position: center;">
 
@@ -218,6 +216,42 @@ $image2 = "";
                                 </div>
                             </div>
 
+                            <div class="">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
+                                    <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products" ng-if="$index > 7">
+                                <div class="product-box1" >
+                                    <!--                                    <ul class="product-social">
+                                                                            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                                        </ul>-->
+                                    <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
+                                         background-position: center;">
+
+                                    </div>
+
+                                    <div class="product-content-holder">
+                                        <h3>
+                                            <a href="#">{{product.title}}  <br>
+                                                <span style="font-size: 12px">{{product.short_description}} </span>
+                                            </a>
+                                            <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+
+                                        </h3>
+
+                                        <div class="productbuttonscontainer">
+
+                                            <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
+                                                    color: white;
+                                                    border-color: #d92229;">Add To Cart</button>
+                                            <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Buy Now</button>
+
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
 
 
                             <div style="clear: both"></div>

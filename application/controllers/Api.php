@@ -76,7 +76,7 @@ class Api extends REST_Controller {
 
     //Product 
     public function SearchSuggestApi_get($keyword) {
-        $query = $this->db->select('title, id, file_name, price')->from('products')->where("keywords LIKE '%$keyword%' or title LIKE '%$keyword%' ")->get();
+        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
         $searchobj = $query->result_array();
 
         $pquery = "select title, file_name, id from (

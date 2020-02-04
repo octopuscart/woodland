@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                                            <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                                                                                <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                                        <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                                                            <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                                                                <div class="title-container s-tb-c">
-                                                                                                                                                                    <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                                                                            <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                                                                                <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                                                                    <div class="title-container s-tb-c">
+                                                                                                                                                                        <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                                                                    </h2>
-                                                                                                                                                                    <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                                                                    <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                                                                    <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                        </h2>
+                                                                                                                                                                        <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                                                                        <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                                                                        <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                    </div>
                                                                                                                                                                 </div>
                                                                                                                                                             </div>
-                                                                                                                                                        </div>
     <?php
 }
 ?>
@@ -104,35 +104,35 @@ foreach ($sliders as $key => $value) {
 
             <div class="row featuredContainer">
                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 " ng-repeat="product in homeInit.offers" >
-                   
+
                     <div class="product-box1" >
-<!--                                    <ul class="product-social">
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                    </ul>-->
-                                    <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
-                                         background-position: center;">
+                        <!--                                    <ul class="product-social">
+                                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                            </ul>-->
+                        <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
+                             background-position: center;">
 
-                                    </div>
+                        </div>
 
-                                    <div class="product-content-holder">
-                                        <h3>
-                                            <a href="#">{{product.title}}  <br>
-                                                <span style="font-size: 12px">{{product.short_description}} </span>
-                                            </a>
-                                            <span ><span  style="font-size: 12px;">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                        <div class="product-content-holder">
+                            <h3>
+                                <a href="#">{{product.title}}  <br>
+                                    <span style="font-size: 12px">{{product.short_description}} </span>
+                                </a>
+                                <span ><span  style="font-size: 12px;">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
-                                        </h3>
+                            </h3>
 
-                                        <div class="productbuttonscontainer">
+                            <div class="productbuttonscontainer">
 
-                                            <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
-                                                    color: white;
-                                                    border-color: #d92229;">Add To Cart</button>
-                                            <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Buy Now</button>
+                                <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
+                                        color: white;
+                                        border-color: #d92229;">Add To Cart</button>
+                                <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Buy Now</button>
 
-                                        </div>  
-                                    </div>
-                                </div>
+                            </div>  
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -166,7 +166,17 @@ foreach ($sliders as $key => $value) {
         </div>
     </div>
 
-
+    <div class="container block52">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
+            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/contact/"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/become-vendor-1.jpg" alt=""></a></div>
+            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/delivery-around-hong-kong.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/hk-delivery-1.jpg" alt=""></a></div>
+            <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/movie-ticket.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/favourite-banner-1.jpg" alt=""></a></div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="    margin-top: 24px;">
+            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/boutique-collection-1.jpg" alt=""></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/posts/category/csr/"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/cares-shares-1.jpg" alt=""></a></div>
+        </div>
+    </div>
 
     <video autoplay loop muted poster="screenshot.jpg" id="background">
         <source src="<?php echo base_url(); ?>assets/sliders/maharajamart.mp4" type="video/mp4">
@@ -199,6 +209,14 @@ foreach ($sliders as $key => $value) {
         </div>
     </div>
     <!-- Brand Area End Here -->
+    
+    
+    <div class="container">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
+<div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
+</div>
+</div>
 
 </div>
 <?php

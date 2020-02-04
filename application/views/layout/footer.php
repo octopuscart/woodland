@@ -1,5 +1,61 @@
 <!-- Footer Area Start Here -->
+<div style="clear: both"></div>
+<?php
+$querymenu = $this->db->get('category');
+$categorylists = $querymenu->result_array();
+$categorylisttemp = [];
+
+
+$this->db->select("seo_keywords");
+$queryconf = $this->db->get('configuration_site');
+$seokeywords = $queryconf->row();
+$keywordschat = $seokeywords->seo_keywords;
+
+$keywordslist = explode(", ", $keywordschat);
+?>
+<div class="container">
+    <hr/>
+
+    <table class="footertable">
+        <tr>
+            <th style="width: 25%;text-align: right;">
+                POPULAR CATEGORIES:
+            </th>
+            <td>
+                <?php
+                foreach ($categorylists as $key => $value) {
+                    echo $value['category_name'] . ($key == (count($categorylists) - 1) ? '' : ', ');
+                }
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th style="width: 25%;text-align: right;">
+                POPULAR BRANDS:
+            </th>
+            <td>
+
+                POPULAR BRANDS:
+                Fresho, bb Royal, Surf Excel, Amul, Nestle , Saffola, Britannia, Harpic, Lizol, Colgate, Dettol, Dabur, Tata I Shakti, Dhara , Fresho Meats, Parle, Real, Tropicana, Kissan, danone,
+            </td>
+        </tr>
+        
+        <tr>
+            <th style="width: 25%;text-align: right;">
+                PAYMENT OPTIONS:
+            </th>
+            <td>
+                 <img src="<?php echo base_url(); ?>assets/paymentstatus/payment.jpg" style="height: 75px;">
+           </td>
+        </tr>
+    </table>
+
+
+</div>
+
 <footer>
+
     <div class="footer-area" style="background: #d92229">
         <div class="footer-area-top">
             <div class="container">
@@ -62,7 +118,20 @@
                     </div>
                 </div>
             </div>
+
         </div>
+        <div style="clear: both"></div>
+        <div class="container">
+            <div class="col-md-12 row " style="text-align: center;">
+                <hr/>
+
+                <span class="keywordfooter"><?php echo$keywordschat; ?> </span>
+
+                <hr/>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+
         <div class="footer-area-bottom" style="background: #ffeb3b">
             <div class="container">
                 <div class="row">
@@ -75,7 +144,9 @@
             </div>
         </div>
     </div>
-   </div>
+</div>
+
+
 </footer>
 
 <!-- Footer Area End Here -->

@@ -166,3 +166,9 @@ span.keywordfooter {
 .footertable td, .footertable th{
       padding: 20px 10px;
 }
+
+.productlistmeddile{
+      background: #EEEEEE;
+    height: 265px!important;
+    padding: 20px 0px;
+}

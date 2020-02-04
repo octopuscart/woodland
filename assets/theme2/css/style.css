@@ -3296,7 +3296,6 @@ ul {
 .inner-page-banner-area:after {
     position: absolute;
     content: "";
-    background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
     top: 0;

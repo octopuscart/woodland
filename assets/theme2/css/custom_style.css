@@ -78,7 +78,7 @@
 
 b.barcomb-list {
     margin: 0px 5px;
-    color: white;
+    color: #000;
 }
 
 .modal-dialog .product-details1-area .inner-product-details-left ul li {
@@ -123,12 +123,12 @@ b.barcomb-list {
 
 
 .showonmobile{
-        display: none;
-    }
+    display: none;
+}
 
 
 @media only screen and (max-width: 479px) {
-    
+
     .showonmobile{
         display: block;
     }
@@ -363,7 +363,7 @@ b.barcomb-list {
 }
 
 .tt-menu {
-    width: 422px;
+    width: 100%;
     margin: 20px 0;
     margin-left: 20px;
     padding: 8px 0;
@@ -382,22 +382,12 @@ b.barcomb-list {
 
     border-bottom: 1px solid #b6b6b6;
     padding: 3px 20px;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
     text-align: left;
 }
 
-.tt-suggestion:hover {
-    cursor: pointer;
-    color: #fff;
-    background-color: #000;
-}
 
-.tt-suggestion.tt-cursor {
-    color: #fff;
-    background-color: #000;
-
-}
 
 .tt-suggestion p {
     margin: 0;
@@ -406,6 +396,13 @@ b.barcomb-list {
 .gist {
     font-size: 14px;
 }
+
+
+.searchholder .btn{
+    float: right;
+
+}
+
 
 .search-input, .search-input.typeahead  {
     position: absolute!important;
@@ -434,7 +431,8 @@ b.barcomb-list {
 }
 
 .serachbox-image{
-    height:50px;width:50px;float:left
+    height:50px;width:50px;float:left;
+    margin-right: 10px;
 }
 .empty-message{
     padding:10px;
@@ -691,7 +689,7 @@ b.barcomb-list {
 }
 
 .inner-page-banner-area {
-    background: #000;
+    background: #ffeb3b;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -700,16 +698,24 @@ b.barcomb-list {
     min-height: 50px;
 }
 
+.inner-page-banner-area .breadcrumb-area ul li a {
+    color: #000000;}
+
 .inner-page-banner-area .breadcrumb-area {
     position: absolute;
     z-index: 2;
-    top: 0px; 
+    top: 13px; 
     left: 0;
     right: 0;
 }
 
 .shop-page-area {
     padding: 10px 0;
+}
+
+
+.productlistborder{
+    border:1px solid #EEEEEE;
 }
 
 .login-registration-page-area .login-registration-field label {
@@ -856,13 +862,18 @@ b.barcomb-list {
     color: #212121;
     margin-bottom: 10px;
     border-bottom: 1px solid #000;
-    float: left;
+
     line-height: 27px;
     margin-right: 40px;
 }
 
+.category-menu-area ul li a {
+    display: block;
+    padding: 8px 0px 7px 15px;
+}
+
 .product-box1 .product-content-holder h3 {
-    font-size: 18px;
+    font-size: 14px;
     text-transform: capitalize;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -892,11 +903,11 @@ b.barcomb-list {
     line-height: 30px;
     text-align: center;
     height: 32px;
-    padding: 0 10px;
+    padding: 0 5px;
     background: transparent;
     display: block;
     color: #111111;
-    font-size: 14px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
@@ -963,7 +974,7 @@ b.barcomb-list {
     }
 
     .product-box1 .product-img-holder {
-           display: block;
+        display: block;
         padding: 5px;
         min-height: 200px; 
     }
@@ -977,10 +988,10 @@ b.barcomb-list {
 
 
 .product-box1 .product-img-holder {
-          display: block;
-        padding: 5px;
-        min-height: 250px; 
-    }
+    display: block;
+    padding: 5px;
+    min-height: 250px; 
+}
 
 @media only screen and (max-width: 767px) {
     .processcirclearea .container{
@@ -1009,7 +1020,7 @@ b.barcomb-list {
         transition: all 0.5s ease-out;
     }
     .product-box1 .product-img-holder {
-            display: block;
+        display: block;
         padding: 5px;
         min-height: 200px; 
     }
@@ -1025,4 +1036,207 @@ b.barcomb-list {
 
 .askpriceform input{
     margin-bottom: 10px;
+}
+
+
+.product-box1 .product-content-holder h3 a {
+    color: #212121;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    height: 100px;
+    float: left;
+    width: 100%;
+}
+
+
+.productbuttonscontainer a {
+    color: white;
+    margin: 0 2px 0 0;
+    display: inline-block;
+    border: 1px solid #d92229;
+    background: #d92229;
+}
+
+.productbuttonscontainer button {
+    margin: 0 2px 0 0;
+    display: inline-block;
+    border: 1px solid #ffeb3b;
+    background: #ffeb3b;
+}
+
+.btn-apply-coupon {
+    background: #d9242b;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #d92229;
+
+}
+
+
+.btn-send-message {
+    background: #d92229;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid #d92229;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.panel-default>.panel-heading {
+    color: #1a1818;
+    background-color: #ffeb3b;
+    border-color: #ffeb3b;
+}
+
+.header-area-style3 .header-bottom .category-menu-area .category-menu-area-inner {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    top: 48px;
+    background: #ffffff;
+    width: 263px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    border: 1px solid #d92229;
+}   
+
+.twitter-typeahead{
+    width:100%;
+}
+
+.textoverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
+}
+.cart-area > a > span {
+    background: #111111;
+    border-radius: 45px;
+    color: #ffffff;
+    height: 20px;
+    padding: 0 0px;
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    font-size: 12px;
+    right: -10px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.searchtitle{
+    float:left;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.searchbody{
+
+}
+
+
+.searchtext{
+    line-height: 40px;
+}
+.searchbody .input-group{
+    text-align: center;
+    margin-top: 5px!important;
+}
+
+.searchbutton{
+    margin-top: 5px!important;
+    background: #d92229;
+    color: white;
+}
+
+.stick .header-bottom{
+    background: #fff;
+}
+
+.offer-area1 #countdown2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    text-align: center;
+    z-index: 1;
+}
+
+.offer-area1 #countdown2 .countdown-section {
+    padding-top: 7px;
+    height: 80px;
+    width: 86px;
+    background: #ffeb3b;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.offer-area1 #countdown2 .countdown-section h3 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 0;
+}
+
+.offer-area1 #countdown2 .countdown-section p {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.movieblockhome{
+    background: #d92229;
+    padding: 50px 0px;
+}
+
+.movieblockhome .brand-area-box-l h1{
+   color: #ffeb3b;
+}
+
+.movieblockhome .brand-area-box-l span{
+   color: #fff;
+}
+
+.movieblockhome .brand-area-box-l p{
+    
+  letter-spacing: normal;
+}
+
+.movieblockhome .btn-shop-now-fill {
+    background: #ffeb3b;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: 4px;
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #111111;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }

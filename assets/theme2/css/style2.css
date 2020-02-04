@@ -72,6 +72,8 @@
     border-top: 1px solid #ffeb3b!important;
     border-bottom: 1px solid #ffeb3b!important;
     border-left: 1px solid #ffeb3b!important;
+    padding: 0px 5px 0px 0px;
+    border: 1px solid #ffeb3b;
 }
 
 .btn-group .btn-metro-search{

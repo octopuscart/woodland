@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                                                                            <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                                    <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                                        <div class="title-container s-tb-c">
-                                                                                                                                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                                                                        <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                                                                            <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                                                                <div class="title-container s-tb-c">
+                                                                                                                                                                    <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                                            </h2>
-                                                                                                                                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </div>
+                                                                                                                                                                    </h2>
+                                                                                                                                                                    <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                                                                    <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                                                                    <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div>
     <?php
 }
 ?>
@@ -37,226 +37,170 @@ foreach ($sliders as $key => $value) {
     </div>
 </div>-->
 <!-- Slider Area End Here -->
+<div ng-controller="HomeController">
 
+    <!-- Slider Area Start Here -->
+    <div class="main-slider2">
+        <div class="bend niceties preview-1">
+            <div id="ensign-nivoslider-3" class="slides">
+                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
+                <img src="<?php echo base_url(); ?>assets/sliders/cinema-ticket-banner.jpg" alt="" title="#slider-direction-2" />
+                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-3.jpg" alt="" title="#slider-direction-3" />
 
-<!-- Slider Area Start Here -->
-<div class="main-slider2">
-    <div class="bend niceties preview-1">
-        <div id="ensign-nivoslider-3" class="slides">
-            <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
-            <img src="<?php echo base_url(); ?>assets/sliders/cinema-ticket-banner.jpg" alt="" title="#slider-direction-2" />
-
-        </div>
-        <div id="slider-direction-1" class="t-cn slider-direction">
-            <div class="slider-content t-lfr s-tb slider-3">
-                <div class="title-container s-tb-c">
-                    <h2 class="title1">SHOP ORGANIC PRODUCT
-                        <br/><span>Upto 20% OFF</span> <br>on Every purchase
-                    </h2>
-                    <a href="#" class="btn-shop-now-fill-slider">Shop Now</a>
-                </div>
             </div>
-        </div>
-
-        <div id="slider-direction-2" class="t-cn slider-direction">
-            <div class="slider-content t-lfr s-tb slider-3">
-                <div class="title-container s-tb-c">
-                    <h2 class="title1" style="font-size: 23px;"><span style="font-size: 40px;">Bollywood Movie Tickets
-</span> <br>For Bookings Call / Whatsapp - +(852) 6142 8189
-
-
-                    </h2>
-                    <a href="#" class="btn-shop-now-fill-slider">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-</div>
-<!-- Slider Area End Here -->
-
-
-<div class="about-us-page-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="about-us-page-left">
-                    <a href="#"><img src="<?php echo base_url(); ?>assets/images/shop4.jpg" alt="about" class="img-responsive"></a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="about-us-page-right" style="       font-size: 15.6px;
-                     margin-top: -30px;">
-                    <h2>Who We Are</h2>
-                    <p style="margin: 0px;">
-                        As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.
-                    </p>
-
-                    <p style="margin: 0px;">
-                        Our master tailors work with a group of over 250 professionally trained Shanghainese tailors to deliver each garment to utter satisfaction of clients. Our garments are hand-cut and hand-stitched to ensure the best quality outcome.                           
-                    </p>
-
-                    <p style="margin: 0px;">
-                        Our overseas sales team travels across the globe with wide range of fabrics and styles to provide door-to-door services, office tours, or hotel exhibitions as per clients' requests.                    </p>
-
-
-                    <p style="margin: 0px;">
-                        We stock over 20,000 fabrics in our showroom in Hong Kong. Our fabrics include brands like Ermenegildo Zegna, Loro Piana, Vitale Barberis Canonico, Dormeuil, Hugo Collections and many other prestigious fabrics from Italy, United Kingdom and France.                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Blog3 Area Start Here -->
-<div class="blog3-area about-us-page-area" style="padding-top: 0px;">
-    <div class="section-title">
-        <span class="title-bar-left"></span>
-        <h2>Our Work Process</h2>
-        <span class="title-bar-right"></span>
-    </div>
-
-
-
-    <div class="" >
-        <div class=" col-md-4 blog-box">
-
-            <div class="blog-content-holder">
-                <h3><a href="#">CHOOSE FABRIC</a></h3>
-                <ul>
-                    <li>
-                        <p style="color:white;">Choose any fabric and create own style. We stock about 5000 fabrics ranging from affordable to exclusive.</p>
-                    </li>
-
-                </ul>
-            </div>
-            <a href="#"><img src="<?php echo base_url(); ?>assets/block/img1.jpg" alt="blog" class="img-responsive" ></a>
-        </div>
-        <div class="col-md-4 blog-box">
-
-            <div class="blog-content-holder">
-                <h3><a href="#">GET SIZE</a></h3>
-                <ul>
-                    <li>                    
-                        <p style="color:white;">Let Size and calculate your measurement. Insert you measurements by following easy steps.</p>
-                    </li>
-
-
-
-                </ul>
-            </div>
-            <a href="#"><img src="<?php echo base_url(); ?>assets/block/img2.jpeg" alt="blog" class="img-responsive"></a>
-        </div>
-        <div class="col-md-4 blog-box">
-
-            <div class="blog-content-holder">
-                <h3><a href="#">CUT TO CREATE</a></h3>
-                <ul>
-                    <li>                    
-                        <p style="color:white;">You can customize your clothes conveniently, And our experienced shanghainese tailor cut and make your new dress.</p>
-                    </li>
-                </ul>
-            </div>
-            <a href="#"><img src="<?php echo base_url(); ?>assets/block/img3.jpg" alt="blog" class="img-responsive"></a>
-        </div>
-
-    </div>
-</div>
-<!-- Blog3 Area End Here -->
-<style>
-
-</style>
-<div class="backvideo">
-
-</div>
-
-
-
-
-
-
-
-<div style="clear: both"></div>
-<video autoplay loop muted poster="screenshot.jpg" id="background">
-    <source src="<?php echo base_url(); ?>assets/sliders/bespokeshop.mp4" type="video/mp4">
-</video>
-<div class="advantage2-area " style="">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="advantage-area-box">
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <i class="flaticon-truck"></i>
-                        </a>
-                        <div class="media-body">
-                            <h3>FREE SHIPPING</h3>
-                            <p>On Orders Over US$ 300</p>
-                        </div>
+            <div id="slider-direction-1" class="t-cn slider-direction">
+                <div class="slider-content t-lfr s-tb slider-3">
+                    <div class="title-container s-tb-c">
+                        <h2 class="title1">SHOP ORGANIC PRODUCT
+                            <br/><span>Upto 20% OFF</span> <br>on Every purchase
+                        </h2>
+                        <a href="#" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="advantage-area-box">
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <i class="flaticon-headphones"></i>
-                        </a>
-                        <div class="media-body">
-                            <h3>24/7 SERVICE</h3>
-                            <p>Get Help When You Need</p>
-                        </div>
+
+            <div id="slider-direction-2" class="t-cn slider-direction">
+                <div class="slider-content t-lfr s-tb slider-3">
+                    <div class="title-container s-tb-c">
+                        <h2 class="title1" style="font-size: 23px;"><span style="font-size: 40px;">Bollywood Movie Tickets
+                            </span> <br>For Bookings Call / Whatsapp - +(852) 6142 8189
+                        </h2>
+                        <a href="#" class="btn-shop-now-fill-slider">Contact Us</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="advantage-area-box">
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-sticky-note-o" style="    margin-left: 20px;"></i>
-                        </a>
-                        <div class="media-body">
-                            <h3>TOP BRANDS</h3>
-                            <p>5,000 luxurious fabrics</p>
-                        </div>
+
+
+            <div id="slider-direction-3" class="t-cn slider-direction">
+                <div class="slider-content t-lfr s-tb slider-3">
+                    <div class="title-container s-tb-c">
+                        <h2 class="title1" style="font-size: 23px;">
+                            <span style="font-size: 40px;">
+                            </span> 
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- Slider Area End Here -->
+
+
+
+    <div class="product2-area">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <span class="title-bar-left"></span>
+                        <h2>Blockbuster Offers</h2>
+                        <span class="title-bar-right"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row featuredContainer">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 " ng-repeat="product in homeInit.offers" >
+                   
+                    <div class="product-box1" >
+<!--                                    <ul class="product-social">
+                                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                    </ul>-->
+                                    <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
+                                         background-position: center;">
+
+                                    </div>
+
+                                    <div class="product-content-holder">
+                                        <h3>
+                                            <a href="#">{{product.title}}  <br>
+                                                <span style="font-size: 12px">{{product.short_description}} </span>
+                                            </a>
+                                            <span ><span  style="font-size: 12px;">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+
+                                        </h3>
+
+                                        <div class="productbuttonscontainer">
+
+                                            <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
+                                                    color: white;
+                                                    border-color: #d92229;">Add To Cart</button>
+                                            <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Buy Now</button>
+
+                                        </div>  
+                                    </div>
+                                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="offer-area1 hidden-after-desk movieblockhome">
+        <div class="" style="padding: 0px 50px;">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="brand-area-box-l" style="padding-top: 24px;">
+                        <span>Ticket Price From </span>
+                        <h1>HK$ 180 Only</h1>
+                        <p>Choose your Ticket Price<br/> $220 (J-O) - $200 (E-I) - $180 (C-D)</p>
+                        <a href="#" class="btn-shop-now-fill">Book Now</a>
+                    </div>
+                </div>
+                <div id="countdown2">
+                    <div class="countdown-section"><h3>7th</h3> <p>FAB</p> </div>
+                    <div class="countdown-section"><h3>8th</h3> <p>FAB</p> </div>
+                    <div class="countdown-section"><h3>9th</h3> <p>FAB</p> </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="brand-area-box-r">
+                        <a href="#"><img src="<?php echo base_url(); ?>assets/movies/movieposter1.jpg" alt="offer"></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div style="clear: both"></div>
-<div class="brand-area" >
-    <div class="container">
-        <div class="section-title">
-            <span class="title-bar-left"></span>
-            <h2>our Best Brands</h2>
-            <span class="title-bar-right"></span>
-        </div>
-        <div class="metro-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
-            <?php
-            $brandarray = ['loropiana.jpg', 'reda.jpg', 'zegna.jpg', 'hollandsherry.jpg', 'thomasmason.jpg', 'vbc.jpg'];
-            foreach ($brandarray as $key => $value) {
-                ?>
-                <div class="brand-area-box">
-                    <a href="#"><img src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="brand"></a>
-                </div>
+
+
+
+    <video autoplay loop muted poster="screenshot.jpg" id="background">
+        <source src="<?php echo base_url(); ?>assets/sliders/maharajamart.mp4" type="video/mp4">
+    </video>
+
+
+    <div style="clear: both"></div>
+    <div class="brand-area" >
+        <div class="container">
+            <div class="section-title">
+                <span class="title-bar-left"></span>
+                <h2>our Best Brands</h2>
+                <span class="title-bar-right"></span>
+            </div>
+            <div class="metro-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
                 <?php
-            }
-            ?>
+                $brandarray = ['Marico.png', 'Gowardhan.png', 'KhadiNatural.png', 'NaturePearls.png', 'RealFruitPower.png',
+                    'Patanjali.png', 'Bikaji.png', 'PSO.png'
+                ];
+                foreach ($brandarray as $key => $value) {
+                    ?>
+                    <div class="brand-area-box">
+                        <a href="#"><img src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="brand"></a>
+                    </div>
+                    <?php
+                }
+                ?>
 
+            </div>
         </div>
     </div>
+    <!-- Brand Area End Here -->
+
 </div>
-<!-- Brand Area End Here -->
-
-
 <?php
 $this->load->view('layout/footer');
 ?>

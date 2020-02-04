@@ -143,35 +143,7 @@ $this->load->view('layout/header');
                         </div>
                         <div style="clear: both"></div>
 
-                        <div class="row" style="margin-top: 15px;">
-                            <div class="col-md-6">
-                                <label>Profession *</label>
-                                <select name="profession" id="profession_select"  onchange="professionChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
-                                    <option value="" >Select Profession</option>
-                                    <option value="Academic" >Academic</option>
-                                    <option value="Medicine" >Medicine</option>
-                                    <option value="Law" >Law</option>
-                                    <option value="Banking" >Banking</option>
-                                    <option value="IT" >IT</option>
-                                    <option value="Entrepreneur" >Entrepreneur</option>
-                                    <option value="Sales/Marketing" >Sales/Marketing</option>
-                                    <option value="Other" >Other</option>
-                                </select>
-
-                            </div>
-                            <div class="col-md-6">
-                                <label>Country *</label>
-                                <select name="country" id="country"  onchange="countryChange()" class="r_corners bg_light w_full border_none" style="width: 100%;height: 40px;padding: 5px;" required >
-                                   <option value="" >Select Country</option>
-                                            <?php
-                                            foreach ($countrylist as $key => $value) {
-                                                echo $country = ucwords(strtolower($value->country_name));
-                                                echo "<option value='$country'>$country</option>";
-                                            }
-                                            ?>
-                                </select>
-                            </div>
-                        </div> 
+                   
 
 
 

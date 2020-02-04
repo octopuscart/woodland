@@ -57,6 +57,8 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                     $scope.checkproduct = 1;
                 }
             }
+            $scope.offerProducts = result.data.offers;
+            console.log(result.data.products);
             if ($scope.init == 0) {
 
                 $timeout(function () {

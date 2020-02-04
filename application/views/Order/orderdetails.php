@@ -242,9 +242,11 @@ $paymentstatus = "";
                                 <table class="table table-bordered"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding:20px">
                                     <tr style="font-weight: bold">
                                         <td style="width: 20px;text-align: right">S.No.</td>
-                                        <td colspan="2"  style="text-align: center">Product</td>
+                                        <td colspan="2"  style="text-align: center;    width: 700px;">Product</td>
 
-                                        <td style="text-align: right;width: 10px">Quantity</td>
+                                        <td style="text-align: right;width: 100px"">Price</td>
+                                        <td style="text-align: right;width: 20px"">Qantity</td>
+                                        <td style="text-align: right;width: 100px">Total</td>
                                     </tr>
                                     <!--cart details-->
                                     <?php
@@ -261,75 +263,34 @@ $paymentstatus = "";
                                         </center>
                                         </td>
 
-                                        <td style="width: 300px;">
+                                        <td style="width: 200px;">
 
-                                            <?php echo $product->title; ?> - <?php echo $product->item_name; ?>
+                                            <?php echo $product->title; ?> 
                                             <br/>
                                             <small style="font-size: 12px;">(<?php echo $product->sku; ?>)</small>
 
-                                            <h4 class="panel-title">
-                                                <a role="button" class="btn  btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne" style="    margin: 5px 0px;
-                                                   padding: 4px;line-height: 10px;">
-                                                    View Summary
-                                                </a>
-                                            </h4>
-                                            </div>
-                                            <div id="collapse<?php echo $product->id; ?>" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
-                                                <div class="panel-body" style="padding:10px 0px;">
-                                                    <?php
-                                                    echo "<ul class='list-group'>";
-                                                    foreach ($product->custom_dict as $key => $value) {
-                                                        echo "<li class='list-group-item'>$key <span class='badge'>$value</span></li>";
-                                                    }
-                                                    echo "</ul>";
-                                                    ?>                                            </div>
-                                            </div>
+                                           
 
 
                                         </td>
 
-
+                                        <td style="text-align: right">
+                                            {{ <?php echo $product->price; ?> |currency:"<?php echo globle_currency; ?> "}}
+                                        </td>
 
                                         <td style="text-align: right">
                                             <?php echo $product->quantity; ?> 
                                         </td>
 
-
+                                        <td style="text-align: right;">
+                                            {{ <?php echo $product->total_price; ?>|currency:"<?php echo globle_currency; ?> "}}
+                                        </td>
                                         </tr>
 
                                         <?php
                                     }
                                     ?>
-                                    <td colspan="7">
-                                        Measurement Type :
-                                        <?php
-                                        echo $order_data->measurement_style;
-                                        if (count($measurements_items)) {
-                                            ?>
-                                            <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapsemeasurements" aria-expanded="true" aria-controls="collapseOne">
-                                                View Measurement
-                                            </a>
-                                            <div id="collapsemeasurements" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="panel-body" style="padding:10px 0px;">
-                                                            <?php
-                                                            echo "<ul class='list-group'>";
-                                                            foreach ($measurements_items as $keym => $valuem) {
-                                                                $mvalues = explode(" ", $valuem['measurement_value']);
-                                                                echo "<li class='list-group-item'>" . $valuem['measurement_key'] . " <span class='measurement_right_text'><span class='measurement_text'>" . $mvalues[0] . "</span><span class='fr_value'>" . $mvalues[1] . '"' . "</span></span></li>";
-                                                            }
-                                                            echo "</ul>";
-                                                            ?>                             
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <?php
-                                        }
-                                        ?>
-                                    </td>
+                                   
 
 
                                     <!--end of cart details-->
@@ -392,11 +353,24 @@ $paymentstatus = "";
                                         </td>
                                     </tr>
 
-
-
                                     <tr>
-                                        <td colspan="3" style="text-align: right">Total Quantity</td>
-                                        <td style="text-align: right;width: 60px">{{<?php echo $order_data->total_quantity; ?>}} </td>
+                                        <td colspan="3"  rowspan="4" style="font-size: 12px">
+                                            <b>Total Amount in Words:</b><br/>
+                                            <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Sub Total</td>
+                                        <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
+                                    </tr>
+    <!--                                <tr>
+                                        <td colspan="2" style="text-align: right">Credit Used</td>
+                                        <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
+                                    </tr>-->
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Total Amount</td>
+                                        <td style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
                                     </tr>
 
 

@@ -1,6 +1,6 @@
 <!-- Footer Area Start Here -->
 <footer>
-    <div class="footer-area">
+    <div class="footer-area" style="background: #d92229">
         <div class="footer-area-top">
             <div class="container">
                 <div class="row">
@@ -8,8 +8,9 @@
                         <div class="footer-box">
                             <h3>Information</h3>
                             <ul class="info-list">
-                                <li><a href="<?php echo site_url("Shop/faq"); ?>">FAQ's</a></li>
-                                <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Terms & Condition</a></li>
                             </ul>
@@ -19,10 +20,10 @@
                         <div class="footer-box">
                             <h3>My Account</h3>
                             <ul class="info-list">
-                                <li><a href="<?php echo site_url("Account/login"); ?>">Login</a></li>
-                                <li><a href="<?php echo site_url("Account/profile"); ?>">My Account</a></li>
-                                <li><a href="<?php echo site_url("Account/orderList"); ?>">Order History</a></li>
-                                <li><a href="<?php echo site_url("Cart/details"); ?>">View Cart</a></li>
+                                <li><a href="">Login</a></li>
+                                <li><a href="">My Account</a></li>
+                                <li><a href="">Order History</a></li>
+                                <li><a href="">View Cart</a></li>
                             </ul>
                         </div>
                     </div>
@@ -30,12 +31,6 @@
                         <div class="footer-box">
                             <h3>Order Now</h3>
                             <ul class="info-list">
-
-                                <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
-                                <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
-                                <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
-                                <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo</a></li>
-
 
                             </ul>
                         </div>
@@ -45,11 +40,11 @@
                             <h3>Stay With Us!</h3>
                             <p>Connect with us via social media.</p>
                             <ul class="footer-social">
-                                         <li><a href="https://www.facebook.com/pg/bespoketailorshk"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://twitter.com/bespoketailorhk"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.instagram.com/bespoke_tailors_hong_kong/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.pinterest.com/jaybespoketailorshk/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                             </ul><div class="newsletter-area">
                                 <h3>NewsLetter Sign Up!</h3>
                                 <div class="input-group stylish-input-group">
@@ -68,11 +63,11 @@
                 </div>
             </div>
         </div>
-        <div class="footer-area-bottom">
+        <div class="footer-area-bottom" style="background: #ffeb3b">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <p>Copyright <?php echo date('Y') ?> by Bespoke Tailors All Rights Reserved.  </p>
+                        <p>Copyright <?php echo date('Y') ?> by  Maharaja Mart Ltd. All rights reserved.  </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     </div>
@@ -80,6 +75,7 @@
             </div>
         </div>
     </div>
+   </div>
 </footer>
 
 <!-- Footer Area End Here -->
@@ -89,9 +85,7 @@
 
 
 
-<!-- jquery-->
-<script src="<?php echo base_url(); ?>assets/theme2/js/vendor/jquery-2.2.4.min.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 
 

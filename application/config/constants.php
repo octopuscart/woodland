@@ -18,6 +18,23 @@ switch ($baselink) {
         $baselinkmain = $configuration['site_url'];
 }
 
+
+switch ($baselink) {
+    case "http://localhost":
+        $adminlinkmain = $baselink . "/shopadmin";
+        break;
+    case "http://192.168.1.2":
+          $adminlinkmain = $baselink . "/shopadmin";
+        break;
+    default:
+        $baselinkmain = $configuration['site_url'];
+}
+
+define('ADMINURL', $adminlinkmain);
+
+define('PRODUCTIMAGELINK', $adminlinkmain."/assets/product_images/");
+
+
 define('imageserver', $baselinkmain . "assets_main/productimages/");
 define('imageserverslider', $baselinkmain . "assets_main/sliderimages/");
 define('imageservermain', $baselinkmain . "assets_main/");

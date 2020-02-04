@@ -23,22 +23,21 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                 "Can't Find!, Try Something Else",
                 '</div>'
             ].join('\n'),
-            suggestion: Handlebars.compile('<div class="searchholder"><div class="product_image_back serachbox-image" style="background:url(' + imageurlg + '{{file_name}});"></div><strong>{{title}}</strong></div>')
+            suggestion: Handlebars.compile('<div class="searchholder"><div class="product_image_back serachbox-image" style="background:url(' + imageurlg + '{{file_name}});"></div><strong>{{title}}</strong><button class="btn btn-xs">Add</button></div>')
         }
     });
 
 
-    $('.typeahead').bind('typeahead:open', function () {
-        $(".tt-menu").css({"left": $(".search-input").position().left + "px"})
-    });
+
 
 
     $('.typeahead').bind('typeahead:select', function (ev, suggestion) {
-        window.location = baseurl + "Product/ProductDetails/" + suggestion.id;
+        //  window.location = baseurl + "Product/ProductDetails/" + suggestion.id;
     });
 
-
-
+    $(document).on("typeahead:beforeselect", function (event, data) {
+        event.preventDefault();
+    });
 
 
     //search data
@@ -91,7 +90,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
     //remove cart data
     $scope.removeCart = function (product_id) {
-        $http.delete(globlecart + "/" + product_id).then(function (rdata) {
+        $http.get(globlecart + "Delete/" + product_id).then(function (rdata) {
             console.log("asdfsadf");
             $scope.getCartData();
         }, function (r) {
@@ -102,20 +101,18 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     $scope.updateCart = function (productobj, oper) {
         if (oper == 'sub') {
             if (productobj.quantity == 1) {
-            }
-            else {
+            } else {
                 productobj.quantity = Number(productobj.quantity) - 1;
             }
         }
         if (oper == 'add') {
             if (productobj.quantity > 5) {
-            }
-            else {
+            } else {
                 productobj.quantity = Number(productobj.quantity) + 1;
             }
         }
         console.log(productobj.quantity)
-        $http.put(globlecart + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
+        $http.get(globlecart + "Put/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
             $scope.getCartData();
         }, function (r) {
         })
@@ -137,12 +134,13 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             }
         })
         $http.post(globlecart, form).then(function (rdata) {
+            $(".cartquantitysearch").text("1");
             swal.close();
             $scope.getCartData();
             swal({
                 title: 'Added To Cart',
                 type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, 'US$.  ') + ", Quantity: " + rdata.data.quantity + "</p>",
+                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, ' ' + globlecurrency + '  ') + ", Quantity: " + rdata.data.quantity + "</p>",
                 imageUrl: rdata.data.file_name,
                 imageWidth: 100,
                 timer: 1500,
@@ -172,8 +170,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     $scope.checkOrderTotal = function () {
         if ($scope.globleCartData.used_credit) {
             $scope.globleCartData.grand_total = $scope.globleCartData.total_price - $scope.globleCartData.used_credit;
-        }
-        else {
+        } else {
             $scope.globleCartData.used_credit = 0;
             $scope.globleCartData.grand_total = $scope.globleCartData.total_price;
             alert("Invalid Credit Entered.")
@@ -199,6 +196,67 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     $http.get(globlemenu).then(function (r) {
         $scope.categoriesMenu = r.data;
         //Define the maximum height for mobile menu
+        var templatesearch2 = `
+<ul class="media-list">
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+                                   <div class="product_image_back serachbox-image" style="background:url( ` + imageurlg + `{{file_name}});"></div>
+
+      </a>
+    </div>
+    <div class="media-body searchbody">
+        <div class="row">
+            <div class="col-xs-5">
+                <h4 class="media-heading"><span class="textoverflow searchtitle">{{title}}</span></h4>
+            </div>
+            <div class="col-xs-2 searchtext">
+                 ` + globlecurrency + ` {{price}}                
+             </div>
+            <div class="col-xs-3">
+               <div class="input-group input-group-sm searchinputgroup">
+                    <span class="input-group-btn" >
+                        <button class="btn btn-default incbutton" type="button" onclick="incQuantity(this)">+</button>
+                     </span>
+                    <span class="cartquantitysearch">1</span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="decQuantity(this)">-</button>
+                    </span>
+                </div>
+            </div>
+           <div class="col-xs-2">
+                  <button class="btn btn-sm searchbutton" onclick="addToCartExt({{id}}, 1, this)">Add</button>               
+             </div>
+       </div>
+    </div>
+  </li>
+</ul>`;
+        var templateserach = `<div class="searchholder">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="product_image_back serachbox-image" style="background:url( ` + imageurlg + `{{file_name}});"></div>
+                     
+                            <span class="textoverflow searchtitle">{{title}}</span>
+                        </div>
+                        <div class="col-xs-2">
+                            {{price}}
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">+</button>
+                                </span>
+                                <input type="number" class="form-control" >
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">-</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-xs" onclick="addToCartExt({{id}}, 1)">Add</button>
+                        </div>
+                    </div>
+                </div>`;
         $timeout(function () {
             equalHeight(); // Call Equal height function
 
@@ -214,7 +272,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                 var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + $scope.globleCartData.total_quantity + '</b></a>';
                 $(".logo-mobile-menu").after(mhref);
                 var mhref = '<a href="#" class="meanmenu-reveal search_open" style="right: 70px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-search"></i></a>';
-               // $(".logo-mobile-menu").after(mhref);
+                // $(".logo-mobile-menu").after(mhref);
 
                 $(".cartopen").click(function () {
                     $('#mobileModel').modal('show')
@@ -237,7 +295,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                             "Can't Find!, Try Something Else",
                             '</div>'
                         ].join('\n'),
-                        suggestion: Handlebars.compile('<div class="searchholder"><div class="product_image_back serachbox-image" style="background:url(' + imageurlg + '{{file_name}});"></div><strong>{{title}}</strong></div>')
+                        suggestion: Handlebars.compile(templatesearch2)
                     }
                 });
 
@@ -273,6 +331,23 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 })
 
 
+App.controller('HomeController', function ($scope, $http, $timeout, $interval, $filter) {
+    $scope.homeInit = {"offers": ""};
+    var url = baseurl + "Api/productListOffersApi/";
+    $http.get(url).then(function (rdata) {
+        $scope.homeInit.offers = rdata.data;
+    }, function () {
+
+    })
+
+
+
+
+})
+
+
+
+
 App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $filter) {
     $scope.productver = {'quantity': 1};
 
@@ -280,15 +355,13 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
         console.log(oper)
         if (oper == 'sub') {
             if ($scope.productver.quantity == 1) {
-            }
-            else {
+            } else {
                 $scope.productver.quantity = Number($scope.productver.quantity) - 1;
             }
         }
         if (oper == 'add') {
             if ($scope.productver.quantity > 5) {
-            }
-            else {
+            } else {
                 $scope.productver.quantity = Number($scope.productver.quantity) + 1;
             }
         }
@@ -302,3 +375,21 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
         });
     })
 })
+
+
+
+function addToCartExt(productid, qnty, obj) {
+    var qntyobj = $(obj).parents(".searchbody").find(".cartquantitysearch").text();
+
+    angular.element(document.getElementById("ShopController")).scope().addToCart(productid, qntyobj);
+}
+
+function incQuantity(obj) {
+    var qntyobj = $(obj).parents(".searchinputgroup").find(".cartquantitysearch")
+    $(qntyobj).text(Number($(qntyobj).text()) + 1)
+}
+
+function decQuantity(obj) {
+    var qntyobj = $(obj).parents(".searchinputgroup").find(".cartquantitysearch");
+    $(qntyobj).text(Number($(qntyobj).text()) > 1 ? (Number($(qntyobj).text()) - 1) : Number($(qntyobj).text()));
+}

@@ -29,9 +29,9 @@ $this->load->view('layout/header');
                         <thead>
                             <tr>
                                 <td class="cart-form-heading text_center" style="width: 50%" colspan="2">Product</td>
-                            
+                                <td class="cart-form-heading text_center">Price</td>
                                 <td class="cart-form-heading text_center">Quantity</td>
-                       
+                                <td class="cart-form-heading text_center">Total</td>
                                 <td class="cart-form-heading"></td>
                             </tr>
                         </thead>
@@ -43,14 +43,13 @@ $this->load->view('layout/header');
                                     </a>
                                 </td>
                                 <td  style="    border-left: 0px;">
-                                    <h3><a href="#">{{product.title}} - {{product.item_name}}</a>
+                                    <h3><a href="#">{{product.title}}</a>
                                         <br/>
                                         <small style="font-size: 10px">{{product.sku}}</small>
                                     </h3>
-                                                                        <button type="button" ng-click="viewStyle(product)" class="btn btn-primary"  style="margin-top: 10px;">View Design</a>
 
                                 </td>
-                          
+                                <td class="amount">{{product.price|currency:" "}}</td>
                                 <td class="quantity">
                                     <div class="input-group quantity-holder">
                                         <input type="text" name='quantity' class="form-control quantity-input" value="{{product.quantity}}"  placeholder="1">
@@ -60,15 +59,15 @@ $this->load->view('layout/header');
                                         </div>
                                     </div>
                                 </td>
-                    
+                                <td class="amount">{{product.total_price|currency:" "}}</td>
                                 <td class="dismiss"><a href="#"  ng-click="removeCart(product.product_id)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="text_right">
+                                <td colspan="4" class="text_right">
                                     TOTAL
                                 </td>
                                 <td class="text-center amount">
-                                    {{globleCartData.total_quantity}}
+                                    {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
                                 </td>
                                 <td></td>
                             </tr>

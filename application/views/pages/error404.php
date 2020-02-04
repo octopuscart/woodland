@@ -1,14 +1,8 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <?php
-$ci = new CI_Controller();
-$ci = & get_instance();
-$ci->load->helper('url');
+$this->load->view('layout/header');
 ?>
- 
-<?php
-include APPPATH . '/views/layout/header.php';
-?>
-<!-- Content -->
+
+
 <div id="content"> 
     <section class="page_title bg_gradiant image_fixed t_align_c relative wrapper" style="margin-top: 0px;">
         <img src="images/page_404.jpg" alt="" class="page_404 d_xs_none">
@@ -20,7 +14,8 @@ include APPPATH . '/views/layout/header.php';
        </center>
     </section>
 </div>
-<!-- End Content --> 
+
+
 <?php
-include APPPATH . '/views/layout/footer.php';
+$this->load->view('layout/footer');
 ?>

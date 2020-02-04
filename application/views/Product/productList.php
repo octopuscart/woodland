@@ -216,7 +216,7 @@ $image2 = "";
                                 </div>
                             </div>
                             <div style="clear:both"></div>
-                            <div class="">
+                            <div class="" style="height: 265px;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="    background: #EEEEEE;
     height: 265px;
     padding: 20px 0px;">

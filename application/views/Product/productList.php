@@ -185,7 +185,7 @@ $image2 = "";
                     <div class="tab-content" >
                         <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
 
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products" ng-if="$index < 7">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products" ng-if="$index < 8">
                                 <div class="product-box1" >
                                     <!--                                    <ul class="product-social">
                                                                             <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>

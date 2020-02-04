@@ -156,8 +156,8 @@
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                         <div class="account-wishlist">
                                             <ul>
-                                                <li><a href="login-registration.html"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
-                                                <li><a href="wishlist.html"><i class="fa fa-heart-o" aria-hidden="true"></i> Wishlist</a></li>
+                                                <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
+                                                <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Wishlist</a></li>
                                                 <li><a href="#"><?php echo globle_currency; ?></a></li>
                                             </ul>
                                         </div>
@@ -170,7 +170,7 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         <div class="logo-area">
-                                            <a href="index.html"><img class="img-responsive mainsitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" ></a>
+                                            <a href="<?php echo site_url("/");?>"><img class="img-responsive mainsitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" ></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
@@ -257,7 +257,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-4">
                                     <div class="logo-area">
-                                        <a href="index.html"><img class="img-responsive stickheadersitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
+                                        <a href="<?php echo site_url("/");?>"><img class="img-responsive stickheadersitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
                                     </div>
                                     <div class="category-menu-area" id="category-menu-area">
                                         <h2 class="category-menu-title"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
@@ -385,63 +385,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mobile-menu">
-                                            <nav id="dropdown">
-                                                <ul>
-                                                    <li class="active"><a href="#">Home</a>
-                                                        <ul>
-                                                            <li><a href="index.html">Home 1</a></li>
-                                                            <li><a href="index2.html">Home 2</a></li>
-                                                            <li><a href="index3.html">Home 3</a></li>
-                                                            <li><a href="index4.html">Home 4</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="#">Blog</a>
-                                                        <ul>
-                                                            <li><a href="blog.html">Blog</a></li>
-                                                            <li><a href="single-blog.html">Single Blog</a></li>
-                                                            <li class="has-child-menu"><a href="#">Demo</a>
-                                                                <ul class="thired-level">
-                                                                    <li><a href="#">Demo 1</a></li>
-                                                                    <li><a href="#">Demo 2</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Portfolio</a>
-                                                        <ul>
-                                                            <li><a href="portfolio1.html">Portfolio 1</a></li>
-                                                            <li><a href="portfolio2.html">Portfolio 2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Shop</a>
-                                                        <ul>
-                                                            <li><a href="shop1.html">Shop 1</a></li>
-                                                            <li><a href="shop2.html">Shop 2</a></li>
-                                                            <li><a href="shop3.html">Shop 3</a></li>
-                                                            <li><a href="shop4.html">Shop 4</a></li>
-                                                            <li><a href="shop5.html">Shop 5</a></li>
-                                                            <li><a href="shop6.html">Shop 6</a></li>
-                                                            <li><a href="shop7.html">Shop 7</a></li>
-                                                            <li><a href="product-details1.html">Shop Details 1</a></li>
-                                                            <li><a href="product-details2.html">Shop Details 2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Pages</a>
-                                                        <ul>
-                                                            <li><a href="login-registration.html">Login Registration</a></li>
-                                                            <li><a href="my-account.html">My Account</a></li>
-                                                            <li><a href="cart.html">Cart</a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="check-out.html">Check Out</a></li>
-                                                            <li><a href="order-history.html">Order History</a></li>
-                                                            <li><a href="order-details.html">Order Details</a></li>
-                                                            <li><a href="404.html">404</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                </ul>
-                                            </nav>
+                            
                                         </div>
                                     </div>
                                 </div>
@@ -458,94 +402,7 @@
             <!--mobile model-->
 
 
-            <!--search_open-->
-            <div class="modal fade model_search" id="searchModel" tabindex="-1" role="dialog" aria-labelledby="searchModelLabel">
-                <div class="modal-dialog" role="document" style="margin-top: 60px;">
-                    <div class="modal-content mobile_model_search">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-                        </div>
-                        <div class="modal-body">
-
-                            <form id="top-search-form1" action="<?php echo site_url('Product/ProductSearch'); ?>">                           
-                                <input type="text" name="keyword" class="search-input1 typeahead" placeholder="Search...." required="" style="width: 100%">
-                                <button type="submit" style="height: 0px;width: 0px;opacity: 0;"></button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 
-            <!-- Modal -->
-            <div class="modal fade" id="mobileModel" tabindex="-1" role="dialog" aria-labelledby="mobileModelLabel">
-                <div class="modal-dialog" role="document" style="margin-top: 60px;">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="mobileModelLabel">Total: {{globleCartData.total_price|currency:" "}}</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="cart-area cart-area1">
-
-                                <ul ng-if="globleCartData.total_quantity">
-                                    <li  ng-repeat="product in globleCartData.products">
-
-                                        <div class="cart-single-product">
-                                            <div class="media">
-                                                <div class="pull-left cart-product-img">
-                                                    <a href="#">
-                                                        <div class="product_image_back" style="background: url({{product.file_name}});height: 80px;width: 80px;    background-size: cover;"></div>
-
-                                                                            <!--<img class="img-responsive" alt="product" src="{{product.file_name}}">-->
-                                                    </a>
-                                                </div>
-                                                <div class="media-body cart-content">
-                                                    <ul>
-                                                        <li>
-                                                            <h2 style="    white-space: nowrap;
-                                                                overflow: hidden;
-                                                                text-overflow: ellipsis;
-                                                                width: 250px;"><a href="#" style="">{{product.title}}-{{product.item_name}}</a></h2>
-                                                            <h3>                                                                 
-                                                                <p>
-                                                                    {{product.price|currency:" "}} X {{product.quantity}} 
-                                                                </p>
-                                                            </h3>
-                                                        </li>
-
-
-                                                        <li>
-                                                            <a class="trash" href="#." ng-click="removeCart(product.product_id)"><i class="fa fa-trash-o"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-
-                                    <li>
-                                        <ul class="checkout">
-                                            <li><a href="<?php echo site_url("Cart/details"); ?>" class="btn-checkout1"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                            <li><a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn-checkout1"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-
-
-
-                            </div>
-                        </div>
-                        <!--                        <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>-->
-                    </div>
-                </div>
-            </div>
 

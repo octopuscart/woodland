@@ -218,7 +218,7 @@ $image2 = "";
                             <div style="clear:both"></div>
                             <div class="">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="    background: #EEEEEE;
-    height: auto;
+    height: 265px;
     padding: 20px 0px;">
                                     <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
                                     <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>

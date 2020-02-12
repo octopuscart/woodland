@@ -12,6 +12,10 @@ $seokeywords = $queryconf->row();
 $keywordschat = $seokeywords->seo_keywords;
 
 $keywordslist = explode(", ", $keywordschat);
+
+$this->db->where("parent_id", "0");
+$querymenu = $this->db->get('category');
+$categorylistsparent = $querymenu->result_array();
 ?>
 <div class="container">
     <hr/>
@@ -40,14 +44,14 @@ $keywordslist = explode(", ", $keywordschat);
                 Fresho, bb Royal, Surf Excel, Amul, Nestle , Saffola, Britannia, Harpic, Lizol, Colgate, Dettol, Dabur, Tata I Shakti, Dhara , Fresho Meats, Parle, Real, Tropicana, Kissan, danone,
             </td>
         </tr>
-        
+
         <tr>
             <th style="width: 25%;text-align: right;">
                 PAYMENT OPTIONS:
             </th>
             <td>
-                 <img src="<?php echo base_url(); ?>assets/paymentstatus/payment.jpg" style="height: 75px;">
-           </td>
+                <img src="<?php echo base_url(); ?>assets/paymentstatus/payment.jpg" style="height: 75px;">
+            </td>
         </tr>
     </table>
 
@@ -76,7 +80,7 @@ $keywordslist = explode(", ", $keywordschat);
                         <div class="footer-box">
                             <h3>My Account</h3>
                             <ul class="info-list">
-                                <li><a href="">Login</a></li>
+                                 <li><a href="">Login</a></li>
                                 <li><a href="">My Account</a></li>
                                 <li><a href="">Order History</a></li>
                                 <li><a href="">View Cart</a></li>
@@ -87,7 +91,14 @@ $keywordslist = explode(", ", $keywordschat);
                         <div class="footer-box">
                             <h3>Order Now</h3>
                             <ul class="info-list">
-
+                                <?php
+                                foreach ($categorylistsparent as $key => $value) {
+                                    ?>
+                                 <li><a href=""><?php echo $value['category_name'];?></a></li>
+                                <?php
+                                  
+                                }
+                                ?>    
                             </ul>
                         </div>
                     </div>

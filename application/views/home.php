@@ -145,7 +145,7 @@ foreach ($sliders as $key => $value) {
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="brand-area-box-l" style="padding-top: 24px;">
-                        <span>Ticket Price From </span>
+                        <span>Movie Ticket Price From </span>
                         <h1>HK$ 180 Only</h1>
                         <p>Choose your Ticket Price<br/> $220 (J-O) - $200 (E-I) - $180 (C-D)</p>
                         <a href="#" class="btn-shop-now-fill">Book Now</a>

@@ -251,6 +251,7 @@ $paymentstatus = "";
                                     <!--cart details-->
                                     <?php
                                     foreach ($cart_data as $key => $product) {
+                                        
                                         ?>
                                         <tr>
                                             <td style="text-align: right">
@@ -399,28 +400,28 @@ $paymentstatus = "";
         var url = baseurl + "Api/order_mail/" + <?php echo $order_data->id; ?> + "/" + '<?php echo $order_data->order_no; ?>';
         $scope.checkmailsend = 0;
         $scope.sendOrderMail = function (order_no) {
-            swal({
-                title: 'Sending Mail...',
-                onOpen: function () {
-                    swal.showLoading()
-                },
-            })
-            $http.get(url).then(function (rdata) {
-                swal({timer: 1500,
-                    title: 'Mail Sent!',
-                    type: 'success', })
-            }, function () {
-                swal({timer: 1500,
-                    title: 'Unable To Send Mail!',
-                    type: 'error', })
-            })
+//            swal({
+//                title: 'Sending Mail...',
+//                onOpen: function () {
+//                    swal.showLoading()
+//                },
+//            })
+//            $http.get(url).then(function (rdata) {
+//                swal({timer: 1500,
+//                    title: 'Mail Sent!',
+//                    type: 'success', })
+//            }, function () {
+//                swal({timer: 1500,
+//                    title: 'Unable To Send Mail!',
+//                    type: 'error', })
+//            })
         }
 
         $interval(function () {
             if ($scope.checkmailsend == 1) {
             }
             else {
-                $scope.sendOrderMailCheck();
+//                $scope.sendOrderMailCheck();
             }
         }, 2000)
 

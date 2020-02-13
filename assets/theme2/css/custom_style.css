@@ -682,10 +682,10 @@ b.barcomb-list {
 
 .inner-page-banner-area .breadcrumb-area h1 {
     letter-spacing: 4px;
-    font-size: 0px;
+    font-size: 20px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #d92229;
 }
 
 .inner-page-banner-area {
@@ -696,13 +696,16 @@ b.barcomb-list {
     text-align: center;
     position: relative;
     min-height: 50px;
+    max-height: 83px;
+        padding: 10px;
+        text-transform: uppercase;
 }
 
 .inner-page-banner-area .breadcrumb-area ul li a {
     color: #000000;}
 
 .inner-page-banner-area .breadcrumb-area {
-    position: absolute;
+    position: initial;
     z-index: 2;
     top: 13px; 
     left: 0;
@@ -1239,4 +1242,8 @@ b.barcomb-list {
     -ms-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+}
+
+.breadcrumb-area li {
+    color: black!important;
 }

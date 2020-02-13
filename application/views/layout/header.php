@@ -295,6 +295,7 @@
                                             <ul>
                                                 <li class="active"><a href="#">Offers</a></li>
                                                 <li><a href="">Movie Tickets</a></li>
+                                                <li><a href="">Woodlands Indian Vegetarian Restauran</a></li>
 
                                             </ul>
                                         </nav>

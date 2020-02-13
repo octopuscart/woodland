@@ -4,14 +4,7 @@
 App.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
 
 
-    var searchProducts = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        remote: {
-            url: baseurl + "Api/SearchSuggestApi/" + '%QUERY',
-            wildcard: '%QUERY'
-        }
-    });
+
 
 
 
@@ -152,6 +145,55 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             })
         });
     }
+    
+    
+    $scope.addToBuy = function (product_id, quantity) {
+        var productdict = {
+            'product_id': product_id,
+            'quantity': quantity,
+        }
+        var form = new FormData()
+        form.append('product_id', product_id);
+        form.append('quantity', quantity);
+        swal({
+            title: 'Adding to Cart',
+            onOpen: function () {
+                swal.showLoading()
+            }
+        })
+        $http.post(globlecart, form).then(function (rdata) {
+            $(".cartquantitysearch").text("1");
+            swal.close();
+            $scope.getCartData();
+            swal({
+                title: 'Added To Cart',
+                type: 'success',
+                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, ' ' + globlecurrency + '  ') + ", Quantity: " + rdata.data.quantity + "</p>",
+                imageUrl: rdata.data.file_name,
+                imageWidth: 100,
+                timer: 1500,
+//                 background: '#fff url(//bit.ly/1Nqn9HU)',
+                imageAlt: 'Custom image',
+                showConfirmButton: false,
+                animation: true
+
+            }).then(
+                    function () {
+                        window.location = baseurl+"CartGuest/checkoutInit";
+                    },
+                    function (dismiss) {
+                        if (dismiss === 'timer') {
+                            window.location = baseurl+"CartGuest/checkoutInit";
+                        }
+                    }
+            )
+        }, function () {
+            swal.close();
+            swal({
+                title: 'Something Wrong..',
+            })
+        });
+    }
 
     $scope.avaiblecredits = avaiblecredits;
 
@@ -183,8 +225,32 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     var globlemenu = baseurl + "Api/categoryMenu";
     $http.get(globlemenu).then(function (r) {
         $scope.categoriesMenu = r.data;
-        //Define the maximum height for mobile menu
-        var templatesearch2 = `
+
+    }, function (e) {
+    })
+    var substringMatcher = function (strs) {
+        return function findMatches(q, cb) {
+            var matches, substringRegex;
+
+            // an array that will be populated with substring matches
+            matches = [];
+
+            // regex used to determine if a string contains the substring `q`
+            substrRegex = new RegExp(q, 'i');
+
+            // iterate through the pool of strings and for any string that
+            // contains the substring `q`, add it to the `matches` array
+            $.each(strs, function (i, str) {
+                if (substrRegex.test(str.title)) {
+                    matches.push(str);
+                }
+            });
+
+            cb(matches);
+        };
+    };
+
+    var templatesearch2 = `
 <ul class="media-list">
   <li class="media">
     <div class="media-left">
@@ -219,7 +285,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     </div>
   </li>
 </ul>`;
-        var templateserach = `<div class="searchholder">
+    var templateserach = `<div class="searchholder">
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="product_image_back serachbox-image" style="background:url( ` + imageurlg + `{{file_name}});"></div>
@@ -245,59 +311,46 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                         </div>
                     </div>
                 </div>`;
+
+    $scope.prefetchdata = {};
+    $http.get(baseurl + "Api/prefetchdata.json").then(function (rdata) {
+        $scope.prefetchdata = rdata.data;
         $timeout(function () {
             equalHeight(); // Call Equal height function
+            var searchProducts = new Bloodhound({
+                initialize: false,
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                identify: function (obj) {
+                    return obj.title;
+                },
+                prefetch: baseurl + "Api/prefetchdata.json",
+                remote: {
+                    url: baseurl + "Api/SearchSuggestApi?query=" + '%QUERY%',
+                    wildcard: '%QUERY%'
+                }
+            });
 
-            $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='img/logo.png' /></a>"});
-
-            var wHeight = $(window).height();
-            var mLogoH = $('a.logo-mobile-menu').outerHeight();
-            wHeight = wHeight - 50;
-            $('.mean-nav > ul').css('height', wHeight + 'px');
-
-
-            $timeout(function () {
-                var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + $scope.globleCartData.total_quantity + '</b></a>';
-                $(".logo-mobile-menu").after(mhref);
-                var mhref = '<a href="#" class="meanmenu-reveal search_open" style="right: 70px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-search"></i></a>';
-                // $(".logo-mobile-menu").after(mhref);
-
-                $(".cartopen").click(function () {
-                    $('#mobileModel').modal('show')
-                })
-
-
-                $(".search_open").click(function () {
-                    $('#searchModel').modal('show');
-
-                })
-
-
-                $('.typeahead').typeahead(null, {
-                    name: 'search-products',
-                    display: 'title',
-                    source: searchProducts,
-                    templates: {
-                        empty: [
-                            '<div class="empty-message">',
-                            "Can't Find!, Try Something Else",
-                            '</div>'
-                        ].join('\n'),
-                        suggestion: Handlebars.compile(templatesearch2)
-                    }
-                });
-
-
-            }, 500);
+            $('.typeahead').typeahead(null, {
+                name: 'search-products',
+                display: 'title',
+                source: substringMatcher($scope.prefetchdata),
+//                source: searchProducts,
+                templates: {
+                    empty: [
+                        '<div class="empty-message">',
+                        "Can't Find!, Try Something Else",
+                        '</div>'
+                    ].join('\n'),
+                    suggestion: Handlebars.compile(templatesearch2)
+                }
+            });
 
         }, 500);
-
-
-
-
-
-    }, function (e) {
     })
+
+
+
 
     $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1};
     //get product detail model

@@ -61,7 +61,7 @@ $this->load->view('layout/header');
                         <label>Password *</label>
                         <input type="password" name="password" placeholder="Password *" required=""/>
 
-                        <button class="btn-send-message disabled" name="signIn" type="submit" value="signIn">Login</button>
+                        <button class="btn-send-message disabled" name="signIn" type="button" value="signIn">Login</button>
                         <!--<span><input type="checkbox" name="remember"/>Remember Me</span>-->
                     </form>
                 </div>
@@ -150,7 +150,7 @@ $this->load->view('layout/header');
                         <br/>
 
 
-                        <button name = "registration" class="btn-send-message disabled" type="submit" value="Login">Register</button>
+                        <button name = "registration" class="btn-send-message disabled" type="button" value="Login">Register</button>
                     </form>
                 </div>
             </div>

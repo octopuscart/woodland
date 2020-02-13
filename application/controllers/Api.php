@@ -75,20 +75,23 @@ class Api extends REST_Controller {
     }
 
     //Product 
-    public function SearchSuggestApi_get($keyword) {
-        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
-        $searchobj = $query->result_array();
+    public function SearchSuggestApi_get() {
+        $query = $this->get("query");
+//        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
+//        $searchobj = $query->result_array();
 
-        $pquery = "select title, file_name, id from (
-                    (SELECT title, file_name, id from products where keywords like '%$keyword%' )
-                   union 
-                   (SELECT title, file_name, id from products where title like '%$keyword%')
-                    ) as search group by id   
-                  ";
+        $pquery = "SELECT title, file_name, id, price from products where title like '%$query%'";
         $attr_products = $this->Product_model->query_exe($pquery);
 
 
-        $this->response($searchobj);
+        $this->response($attr_products);
+    }
+    
+    public function prefetchdata_get(){
+         $pquery = "SELECT title, file_name, id, price from products ";
+        $attr_products = $this->Product_model->query_exe($pquery);
+        $this->response($attr_products);
+        
     }
 
     public function SearchSuggestApiJUI_get() {

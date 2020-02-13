@@ -215,7 +215,7 @@ class CartGuest extends CI_Controller {
 
             $this->db->insert('user_order', $order_array);
             $last_id = $this->db->insert_id();
-            $orderno = "OC" . date('Ymd') . "" . $last_id;
+            $orderno = "MR" . date('Ymd') . "" . $last_id;
             $orderkey = md5($orderno);
             $this->db->set('order_no', $orderno);
             $this->db->set('order_key', $orderkey);

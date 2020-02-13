@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                                                <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                                                                                    <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                                            <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                                                                <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                                                                    <div class="title-container s-tb-c">
-                                                                                                                                                                        <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                                                                                <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                                                                                    <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                                                                        <div class="title-container s-tb-c">
+                                                                                                                                                                            <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                                                                        </h2>
-                                                                                                                                                                        <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                                                                        <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                                                                        <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                            </h2>
+                                                                                                                                                                            <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                                                                            <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                                                                            <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                        </div>
                                                                                                                                                                     </div>
                                                                                                                                                                 </div>
-                                                                                                                                                            </div>
     <?php
 }
 ?>
@@ -128,7 +128,7 @@ foreach ($sliders as $key => $value) {
                                 <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
                                         color: white;
                                         border-color: #d92229;">Add To Cart</button>
-                                <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Buy Now</button>
+                                <button ng-click="addToBuy(product.id, 1)" type="button" class="productbutton">Buy Now</button>
 
                             </div>  
                         </div>
@@ -138,9 +138,10 @@ foreach ($sliders as $key => $value) {
             </div>
         </div>
     </div>
-
+    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer">
 
     <div class="offer-area1 hidden-after-desk movieblockhome">
+
         <div class="" style="padding: 0px 50px;">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -209,14 +210,14 @@ foreach ($sliders as $key => $value) {
         </div>
     </div>
     <!-- Brand Area End Here -->
-    
-    
+
+
     <div class="container">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
-<div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
-</div>
-</div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
+        </div>
+    </div>
 
 </div>
 <?php

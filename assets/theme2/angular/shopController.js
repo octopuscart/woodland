@@ -279,7 +279,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                 </div>
             </div>
            <div class="col-xs-2">
-                  <button class="btn btn-sm searchbutton" onclick="addToCartExt({{id}}, 1, this)">Add</button>               
+                  <button class="btn btn-sm searchbutton" onclick="addToCartExt({{id}}, 1, this)">Add</button>  
+    
              </div>
        </div>
     </div>

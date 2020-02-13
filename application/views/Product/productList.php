@@ -209,7 +209,7 @@ $image2 = "";
                                             <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
                                                     color: white;
                                                     border-color: #d92229;">Add To Cart</button>
-                                            <button ng-click="askPriceSelection(product.product_id)" type="button" class="productbutton">Buy Now</button>
+                                            <button ng-click="addToBuy(product.id, 1)" type="button" class="productbutton">Buy Now</button>
 
                                         </div>  
                                     </div>

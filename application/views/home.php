@@ -161,7 +161,7 @@ foreach ($sliders as $key => $value) {
             </div>
         </div>
     </div>
-    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer">
+    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
 
     <div class="offer-area1 hidden-after-desk movieblockhome">
 

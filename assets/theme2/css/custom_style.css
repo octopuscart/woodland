@@ -1293,3 +1293,13 @@ select.productsveriantselection {
 .activeproduct .addedtocard{
     display: block;
 }
+
+
+
+
+.product-box1 .product-content-holder span {
+    color: #111111;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}

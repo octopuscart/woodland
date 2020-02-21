@@ -199,7 +199,7 @@ $image2 = "";
                                             <a href="#">{{product.title}}  <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
                                             </a>
-                                            <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            <span><span  style="font-size: 11px;" ng-if="product.sale_price>0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
 
@@ -224,7 +224,7 @@ $image2 = "";
                                                 </select>
 
                                             </div>
-                                            <span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price>0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
 

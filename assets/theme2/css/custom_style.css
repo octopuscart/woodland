@@ -1271,6 +1271,7 @@ b.barcomb-list {
 select.productsveriantselection {
     width: 100%;
     margin-top: 20px;
+        font-size: 12px;
 }
 
 .addedtocard{

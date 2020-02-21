@@ -126,12 +126,10 @@ foreach ($sliders as $key => $value) {
             </div>
 
             <div class="row featuredContainer">
-                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 " ng-repeat="product in homeInit.offers" >
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 homeproductblock {{globleCartData.products[product.id] ? 'activeproduct': '' }} " ng-repeat="product in homeInit.offers" >
 
                     <div class="product-box1" >
-                        <!--                                    <ul class="product-social">
-                                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                                            </ul>-->
+                      
                         <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
                              background-position: center;">
 

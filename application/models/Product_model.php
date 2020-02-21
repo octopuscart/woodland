@@ -87,7 +87,7 @@ class Product_model extends CI_Model {
         $container = "";
         foreach ($category as $ckey => $cvalue) {
             $container .= $this->stringCategories($cvalue['id']);
-            $container .=", " . $cvalue['id'];
+            $container .= ", " . $cvalue['id'];
         }
         return $container;
     }
@@ -140,11 +140,25 @@ where pa.product_id = $product_id group by attribute_value_id";
     }
 
     function getProductVeriants($product_id) {
-        $this->db->select("id as product_id");
+
+        $this->db->select("id, title, regular_price, sale_price, price");
+        $this->db->where('id', $product_id);
+        $query = $this->db->get('products');
+        $product_main = $query->row_array();
+
+        $this->db->select("id, title, regular_price, sale_price, price");
         $this->db->where('variant_product_of', $product_id);
         $query = $this->db->get('products');
         $product_veriant = $query->result_array();
-        return $product_veriant;
+        
+        $returnArray = array();
+        if($product_veriant){
+            $returnArray[$product_main['id']] = $product_main;
+            foreach ($product_veriant as $key => $value) {
+                $returnArray[$value['id']] =  $value;
+            }
+        }
+        return $returnArray;
     }
 
     //product veriants
@@ -409,7 +423,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'attrs' => "",
                     'vendor_id' => $product_details['user_id'],
                     'total_price' => $product_details['price'],
-                   'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
+                    'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                     'quantity' => $quantity,
                     'product_id' => $product_id,
                     'date' => date('Y-m-d'),
@@ -809,7 +823,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         foreach ($productlist as $key => $value) {
             $quantity = $value['quantity'];
             $product_id = $value['product_id'];
-        
+
             $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
@@ -818,10 +832,9 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $value['total_price'],
-                'file_name' => $value['file_name'] ,
+                'file_name' => $value['file_name'],
                 'quantity' => $quantity,
                 'user_id' => 'guest',
-               
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
                 'order_id' => $order_id,
@@ -831,7 +844,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;
-            
         }
     }
 

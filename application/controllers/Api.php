@@ -86,12 +86,11 @@ class Api extends REST_Controller {
 
         $this->response($attr_products);
     }
-    
-    public function prefetchdata_get(){
-         $pquery = "SELECT title, file_name, id, price from products ";
+
+    public function prefetchdata_get() {
+        $pquery = "SELECT title, file_name, id, price from products ";
         $attr_products = $this->Product_model->query_exe($pquery);
         $this->response($attr_products);
-        
     }
 
     public function SearchSuggestApiJUI_get() {
@@ -157,7 +156,7 @@ class Api extends REST_Controller {
         $categoriesString = ltrim($categoriesString, ", ");
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery";
+            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery $proquery";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];
@@ -170,6 +169,19 @@ class Api extends REST_Controller {
             $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
             array_push($productListSt, $value['product_id']);
             array_push($pricecount, $value['price']);
+            $variantproduct = $this->Product_model->getProductVeriants($value['product_id']);
+
+            if ($variantproduct) {
+                $value['hasvarient'] = '1';
+                $value['varients'] = $variantproduct;
+                $value['selectedobject'] =$value['product_id']; 
+                $value['selectedvarient'] = $variantproduct[$value['product_id']];
+            } else {
+                $value['hasvarient'] = '0';
+                $value['verients'] = [];
+                $value['selectedvarient'] = array();
+            }
+
             array_push($productListFinal, $value);
         }
 

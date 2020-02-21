@@ -68,7 +68,13 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         })
     }
     $scope.getCartData();
-
+    
+    
+    //change productverient
+    $scope.changeProductVarient = function(verient, productobj){
+            console.log(productobj, verient)
+    }
+    //
     //remove cart data
     $scope.removeCart = function (product_id) {
         $http.get(globlecart + "Delete/" + product_id).then(function (rdata) {

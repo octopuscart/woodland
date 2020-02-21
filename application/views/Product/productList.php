@@ -185,17 +185,16 @@ $image2 = "";
                     <div class="tab-content" >
                         <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
 
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products" ng-if="$index < 8">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" ng-if="$index < 8">
                                 <div class="product-box1" >
-                                    <!--                                    <ul class="product-social">
-                                                                            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                                                        </ul>-->
+                                    <div class="addedtocard"><i class="fa fa-cart-plus"></i></div>
+
                                     <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
                                          background-position: center;">
 
                                     </div>
 
-                                    <div class="product-content-holder">
+                                    <div class="product-content-holder" ng-if="product.hasvarient == 0">
                                         <h3>
                                             <a href="#">{{product.title}}  <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
@@ -209,10 +208,37 @@ $image2 = "";
                                             <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
                                                     color: white;
                                                     border-color: #d92229;">Add To Cart</button>
-                                            <button ng-click="addToBuy(product.id, 1)" type="button" class="productbutton">Buy Now</button>
+                                            <button ng-click="addToBuy(product.product_id, 1)" type="button" class="productbutton">Buy Now</button>
 
                                         </div>  
                                     </div>
+
+
+                                    <div class="product-content-holder" ng-if="product.hasvarient == 1">
+                                        <h3>
+                                            <div>{{product.varients[product.selectedobject].title}}  <br>
+                                                <select class="productsveriantselection" ng-change="changeProductVarient(product.selectedobject, product)" ng-model="product.selectedobject" >
+
+                                                    <option ng-if="product.selectedobject==prd.id" selected value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
+                                                    <option ng-if="product.selectedobject!=prd.id"  value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
+                                                </select>
+
+                                            </div>
+                                            <span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
+
+                                        </h3>
+
+
+                                        <div class="productbuttonscontainer" >
+
+                                            <button ng-click="addToCart(product.varients[product.selectedobject].id, 1)" class="productbutton" style="    background: #d92229;
+                                                    color: white;
+                                                    border-color: #d92229;">Add To Cart</button>
+                                            <button ng-click="addToBuy(product.varients[product.selectedobject].id, 1)" type="button" class="productbutton">Buy Now</button>
+
+                                        </div>  
+                                    </div>
+
                                 </div>
                             </div>
                             <div style="clear:both"></div>
@@ -223,11 +249,9 @@ $image2 = "";
                                 </div>
                             </div>
                             <div style="clear:both"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder"  ng-repeat="(k, product) in productResults.products" ng-if="$index > 7">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" ng-if="$index > 7">
                                 <div class="product-box1" >
-                                    <!--                                    <ul class="product-social">
-                                                                            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product, '<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/' + product.product_id)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                                                        </ul>-->
+
                                     <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
                                          background-position: center;">
 

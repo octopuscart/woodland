@@ -1,0 +1,85 @@
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Movie extends CI_Model {
+
+    function __construct() {
+        // Call the Model constructor
+        parent::__construct();
+        $this->load->database();
+    }
+
+    function movieList() {
+        $movies = array(
+            "m1" =>
+            array(
+                "id" => "m1",
+                "title" => "Baaghi 3",
+                "attr" => "Hindi-U/A-2D",
+                "image" => "baaghi.jpg",
+                "about" => "This action-drama is the third installment in Sajid Nadiadwala’s martial arts movie series Baaghi. Loaded with power-packed stunts and high-octane thrills, the film promises a fast-paced narrative full of unexpected twists and turns."
+            ),
+            "m2" =>
+            array("title" => "Dolittle",
+                "id" => "m2",
+                "attr" => "English-U-3D",
+                "image" => "dolittle.jpg",
+                "about" => "This fantasy-adventure is centered on the titular character created by Hugh Lofting for the series of books- The Voyages of Doctor Dolittle. The plot revolves around a physician who is blessed with the ability to talk to animals. The narrative is balanced with endearing moments as well as witty humour throughout. The ensemble cast of the film includes six Oscar winners.
+
+",
+            ),
+            "m3" =>
+            array("title" => "Bhoot",
+                "id" => "m3",
+                "attr" => "Hindi-A-2D",
+                "image" => "bhoot.jpg",
+                "about" => "Produced by Karan Johar's Dharma Productions, Bhoot: Part One - The Haunted Ship marks the beginning of the horror franchise. Starring Vicky Kaushal and Bhumi Pednekar in pivotal roles, the film is reportedly based on a true incident which occurred in Mumbai. Packed with all the essential chills and thrills, the film will be helmed by debutant director Bhanu Pratap Singh.
+
+",
+            ),
+            "m4" =>
+            array("title" => "Sonic The Hedgehog",
+                "id" => "m4",
+                "attr" => "English-U-3D",
+                "image" => "sonic.jpg",
+                "about" => "The film revolves around Sonic, an extra-terrestrial blue hedgehog who tries to navigate the complexities of life on Earth with his newfound human best friend. The duo must join forces to prevent an evil Dr. Robotnik (Jim Carrey) from capturing Sonic and using his superpowers for world domination.
+
+",
+            ),
+            "m5" =>
+            array("title" => "Tanhaji: The Unsung Warrior",
+                "id" => "m5",
+                "attr" => "Hindi-U/A-3D",
+                "image" => "tanhaji.jpg",
+                "about" => "This period action film brings alive the story of Tanaji Malusare, a brave military leader of the Maratha empire. He is most famously known for his role in the Battle of Sinhagad in 1670 A.D. Laced with rich historical elements and stunning battle scenes, the movie offers a detailed insight into the life and times of the celebrated Maratha hero.
+
+",
+            )
+        );
+        return $movies;
+    }
+
+    function theaters() {
+        $listoftheaters = array(
+            "GH-HS1" => array(
+                "title" => "GH Whampoa - House 1",
+                "timing" => ["09:45",  "15:45", "18:45", "21:15"],
+            ),
+            "GH-HSE3" => array(
+                "title" => "GH Whampoa - Cinema 3",
+                "timing" => ["10:45", "14:45", "16:45", "20:50", "23:15"],
+            ),
+            "GH-HS4" => array(
+                "title" => "GH Whampoa - Cinema 4",
+                "timing" => ["11:45", "14:30",  "22:15"],
+            ),
+            "GRND-OCE" => array(
+                "title" => "Grand Ocean (Tsim Sha Tsui)",
+                "timing" => ["09:45", "13:45", "15:45", "21:50"],
+            )
+        );
+        return $listoftheaters;
+    }
+
+}

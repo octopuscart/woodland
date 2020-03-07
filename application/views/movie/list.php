@@ -14,7 +14,7 @@ $this->load->view('layout/header');
                     <h1>Movie Ticket </h1>
                     <ul>
                         <li><a href="#">Home</a> /</li>
-                        <li>Select Move</li>
+                        <li>Select Movie</li>
                     </ul>
                 </div>
             </div>

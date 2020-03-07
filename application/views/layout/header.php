@@ -294,7 +294,7 @@
                                         <nav>
                                             <ul>
                                                 <li class="active"><a href="#">Offers</a></li>
-                                                <li><a href="">Movie Tickets</a></li>
+                                                <li><a href="<?php echo site_url("Movies/index");?>">Movie Tickets</a></li>
                                                 <li><a href="">Woodlands Indian Vegetarian Restaurant</a></li>
 
                                             </ul>

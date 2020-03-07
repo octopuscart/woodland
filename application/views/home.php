@@ -170,7 +170,7 @@ foreach ($sliders as $key => $value) {
                         <span>Movie Ticket Price From </span>
                         <h1>HK$ 180 Only</h1>
                         <p>Choose your Ticket Price<br/> $220 (J-O) - $200 (E-I) - $180 (C-D)</p>
-                        <a href="#" class="btn-shop-now-fill">Book Now</a>
+                        <a href="<?php echo site_url("Movies/index");?>" class="btn-shop-now-fill">Book Now</a>
                     </div>
                 </div>
                 <div id="countdown2">

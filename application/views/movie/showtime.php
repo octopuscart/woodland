@@ -17,6 +17,7 @@ $this->load->view('layout/header');
         margin-top: 21px;
         margin-left: 5px;
         margin-bottom: 23px;
+        line-height: 46px;
     }
     .time-select .items-wrap {
         padding-top: 15px;
@@ -44,8 +45,12 @@ $this->load->view('layout/header');
         cursor: pointer;
         background-image: url(<?php echo base_url(); ?>assets/movies/bg-time.png);
         background-size: 100%;
-        border: 2px solid #fff;
+        border: 4px solid #fff;
     }
+
+    .time-select__item.active{
+        border:4px solid #000;
+    } 
     .time-select .time-select__item:after {
         content: '';
         width: 64px;
@@ -69,7 +74,23 @@ $this->load->view('layout/header');
     }
     .time-select .time-select__item:hover {
         background-color: #000000;
-        border: 2px solid #000;
+        border: 4px solid #000;
+    }
+
+
+    .countdown-section:hover {
+        cursor: pointer;
+        border: 5px solid #000;
+    }
+
+    .countdown-section.active {
+        cursor: pointer;
+        border: 5px solid #000;
+    }
+
+    .countdown-section{
+        cursor: pointer;
+        border: 5px solid #ffeb3b;
     }
 </style>
 
@@ -94,13 +115,13 @@ $this->load->view('layout/header');
 <!-- Single Blog Page Area Start Here -->
 
 
-<div class="portfolio2-page-area1" style="padding: 30px">
+<div class="portfolio2-page-area1" style="padding: 30px" ng-controller="showTimeContoller">
     <div class="container">
 
         <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12">
             <div class="product-box2" style="height: 250px;background: #f5f5f5;
                  color: white;
-                ">
+                 ">
                 <div class="media">
                     <a class="pull-left" href="#">
                         <img class="img-responsive" style="width: 174px;" src="<?php echo base_url(); ?>assets/movies/<?php echo $movie['image']; ?>" alt="product">
@@ -120,20 +141,20 @@ $this->load->view('layout/header');
         <div class="row">
             <div class="col-sm-12">
 
-<hr/>
+                <hr/>
 
                 <div class="choose-container choose-container--short">
                     <h2 class="page-heading">Select Date</h2>
                     <div class="offer-area1 hidden-after-desk movieblockhome" style="padding:10px;">
                         <div id="countdown2" style="position: inherit;    text-align: left;">
-                            <div class="countdown-section"><h3>7th</h3> <p>MARCH</p> </div>
-                            <div class="countdown-section"><h3>8th</h3> <p>MARCH</p> </div>
-                            <div class="countdown-section"><h3>9th</h3> <p>MARCH</p> </div>
+                            <div class="countdown-section {{selectShowtime.date=='2020-03-07'?'active':''}}" ng-click="selectDate('2020-03-07')" ><h3>7th</h3> <p>MARCH</p> </div>
+                            <div class="countdown-section {{selectShowtime.date=='2020-03-08'?'active':''}}" ng-click="selectDate('2020-03-08')"><h3>8th</h3> <p>MARCH</p> </div>
+                            <div class="countdown-section {{selectShowtime.date=='2020-03-09'?'active':''}}" ng-click="selectDate('2020-03-09')"><h3>9th</h3> <p>MARCH</p> </div>
 
                         </div>
                     </div>
                 </div>
-<hr/>
+                <hr/>
                 <h2 class="page-heading">Select time</h2>
 
                 <div class="time-select time-select--wide">
@@ -150,10 +171,10 @@ $this->load->view('layout/header');
                                 <?php
                                 foreach ($value['timing'] as $key2 => $value2) {
                                     ?>
-                                    <li class="time-select__item" data-time="<?php echo $value2; ?>"><?php echo $value2; ?></li>
-                                        <?php
-                                    }
-                                    ?>
+                                    <li class="time-select__item {{selectShowtime.time=='<?php echo $value2; ?>'?'active':''}}" ng-click="selectTime('<?php echo $value2; ?>', '<?php echo $key; ?>')" data-time="<?php echo $value2; ?>"><?php echo $value2; ?></li>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                         <?php
@@ -165,6 +186,19 @@ $this->load->view('layout/header');
             </div>
 
         </div>
+        <div class="well well-sm">
+            <b>Selected Date/Time:</b> {{selectShowtime.theater?selectShowtime.theater:'---'}}, {{selectShowtime.date?selectShowtime.date:'YYYY-MM-DD'}}, {{selectShowtime.time?selectShowtime.time:'HH:MM'}}
+        </div>
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous"><a href="<?php echo site_url('Movies/index'); ?>" style="    background: #d92229;
+                                        color: white;"><span aria-hidden="true">&larr;</span> Select Movie</a></li>
+                <li class="next">
+                    <a href="<?php echo site_url("Movie/selectSit") . "?movie=" . $movie['id'] . "&"; ?>theater={{selectShowtime.theater}}&selecttime={{selectShowtime.time}}&selectdate={{selectShowtime.date}}" ng-if="selectShowtime.date && selectShowtime.time" style="    background: #d92229;
+                       color: white;">Select Sit <span aria-hidden="true">&rarr;</span></a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 

@@ -1,6 +1,11 @@
 /* 
  Shop Cart product controllers
  */
+
+
+
+
+
 App.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
 
 
@@ -68,11 +73,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         })
     }
     $scope.getCartData();
-    
-    
+
+
     //change productverient
-    $scope.changeProductVarient = function(verient, productobj){
-            console.log(productobj, verient)
+    $scope.changeProductVarient = function (verient, productobj) {
+        console.log(productobj, verient)
     }
     //
     //remove cart data
@@ -151,8 +156,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             })
         });
     }
-    
-    
+
+
     $scope.addToBuy = function (product_id, quantity) {
         var productdict = {
             'product_id': product_id,
@@ -185,11 +190,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
             }).then(
                     function () {
-                        window.location = baseurl+"CartGuest/checkoutInit";
+                        window.location = baseurl + "CartGuest/checkoutInit";
                     },
                     function (dismiss) {
                         if (dismiss === 'timer') {
-                            window.location = baseurl+"CartGuest/checkoutInit";
+                            window.location = baseurl + "CartGuest/checkoutInit";
                         }
                     }
             )
@@ -387,12 +392,22 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
     }, function () {
 
     })
-
-
-
-
 })
 
+
+
+
+App.controller('showTimeContoller', function ($scope, $http, $timeout, $interval, $filter) {
+    $scope.selectShowtime = {"date": "", "time": "", "theater":""};
+
+    $scope.selectDate = function (dateo) {
+        $scope.selectShowtime.date = dateo;
+    }
+    $scope.selectTime = function(timeo, theater){
+        $scope.selectShowtime.time = timeo;
+         $scope.selectShowtime.theater = theater;
+    }
+})
 
 
 
@@ -441,3 +456,7 @@ function decQuantity(obj) {
     var qntyobj = $(obj).parents(".searchinputgroup").find(".cartquantitysearch");
     $(qntyobj).text(Number($(qntyobj).text()) > 1 ? (Number($(qntyobj).text()) - 1) : Number($(qntyobj).text()));
 }
+
+
+
+

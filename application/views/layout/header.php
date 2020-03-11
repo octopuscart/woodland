@@ -46,7 +46,7 @@
 
         <!-- jquery-->
         <script src="<?php echo base_url(); ?>assets/theme2/js/vendor/jquery-2.2.4.min.js" type="text/javascript"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="<?php echo base_url(); ?>assets/theme2/js/jquery-ui.js"></script>
         <!-- Modernizr Js -->
         <script src="<?php echo base_url(); ?>assets/theme2/js/vendor/modernizr-2.8.3.min.js"></script>
         <!-- JavaScripts -->

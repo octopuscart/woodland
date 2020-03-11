@@ -9,14 +9,6 @@
 App.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
 
 
-
-
-
-
-
-
-
-
     $('.typeahead').bind('typeahead:select', function (ev, suggestion) {
         //  window.location = baseurl + "Product/ProductDetails/" + suggestion.id;
     });
@@ -398,15 +390,53 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
 
 
 App.controller('showTimeContoller', function ($scope, $http, $timeout, $interval, $filter) {
-    $scope.selectShowtime = {"date": "", "time": "", "theater":""};
+    $scope.selectShowtime = {"date": "", "time": "", "theater": ""};
 
     $scope.selectDate = function (dateo) {
         $scope.selectShowtime.date = dateo;
     }
-    $scope.selectTime = function(timeo, theater){
+    $scope.selectTime = function (timeo, theater) {
         $scope.selectShowtime.time = timeo;
-         $scope.selectShowtime.theater = theater;
+        $scope.selectShowtime.theater = theater;
     }
+})
+
+
+App.controller('sitSelectContoller', function ($scope, $http, $timeout, $interval, $filter) {
+    $scope.theaterLayout = {"layout": {}};
+    var url = baseurl + "Api/getLayout";
+    $http.get(url).then(function (rdata) {
+        $scope.theaterLayout.layout = rdata.data;
+    }, function () {
+    })
+
+    $scope.seatSelection = {"selected": {}, "total":0};
+    
+    $scope.getTotalPrice = function(){
+        var total = 0;
+        for(k in $scope.seatSelection.selected){
+            var temp = $scope.seatSelection.selected[k].price;
+            console.log(temp)
+            total += Number(temp);
+        }
+        console.log(total)
+        $scope.seatSelection.total = total;
+    };
+
+    $scope.selectSeat = function (seatobj, price) {
+        console.log(seatobj)
+        if ($scope.seatSelection.selected[seatobj]) {
+            delete $scope.seatSelection.selected[seatobj];
+        } else {
+            $scope.seatSelection.selected[seatobj] = {'price':price, 'seat':seatobj};
+        }
+             $scope.getTotalPrice();
+    }
+})
+
+
+App.controller('checkoutContoller', function ($scope, $http, $timeout, $interval, $filter) {
+   
 })
 
 

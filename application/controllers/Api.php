@@ -174,7 +174,7 @@ class Api extends REST_Controller {
             if ($variantproduct) {
                 $value['hasvarient'] = '1';
                 $value['varients'] = $variantproduct;
-                $value['selectedobject'] =$value['product_id']; 
+                $value['selectedobject'] = $value['product_id'];
                 $value['selectedvarient'] = $variantproduct[$value['product_id']];
             } else {
                 $value['hasvarient'] = '0';
@@ -391,6 +391,126 @@ class Api extends REST_Controller {
     }
 
     //function for product list
+
+    function createRange($start, $end, $total, $gapes, $row, $booked, $reserve) {
+        $temp = array();
+        $temprow = array();
+        for ($i = $start; $i <= $end; $i++) {
+            $trow = $row . "-" . $i;
+            $temp[$trow] = $trow;
+        }
+        for ($i = 1; $i <= $total; $i++) {
+            $trow = $row . "-" . $i;
+            if (isset($temp[$trow])) {
+                $temprow[$trow] = "A";
+            } else {
+                $temprow[$trow] = "";
+            }
+            if(isset($booked[$trow])){
+               $temprow[$trow] = "B"; 
+            }
+            if(isset($reserve[$trow])){
+               $temprow[$trow] = "R"; 
+            }
+        }
+        foreach ($gapes as $key => $value) {
+            $trow = $row . "-" . $value;
+            $temprow[$trow] = "";
+        }
+
+        return $temprow;
+    }
+
+    function getLayout2_get() {
+        $layout = array(
+            "totalinrow" => 20,
+            "sitclass" => array(
+                "class1" => array(
+                    "price" => "200",
+                    "rowcount" => "2",
+                    "color" => "#fff",
+                    "row" => array(
+                        "A" => $this->createRange(6, 13, 19),
+                        "B" => $this->createRange(3, 16, 19),
+                    )
+                ),
+                "class2" => array(
+                    "price" => "220",
+                    "rowcount" => "5",
+                    "color" => "#fff",
+                    "row" => array(
+                        "C" => $this->createRange(3, 17, 19),
+                        "D" => $this->createRange(3, 17, 19),
+                        "E" => $this->createRange(3, 17, 19),
+                        "F" => $this->createRange(3, 18, 19),
+                        "G" => $this->createRange(1, 19, 19),
+                    )
+                ),
+            )
+        );
+        $this->response($layout);
+    }
+
+    function getLayout_get() {
+        $booked = array(
+            "A-15" => "", "A-14" => "",
+            "A-13" => "", "B-1" => "",
+            "A-3" => "", "B-4" => "",
+            "Q-27" => "", "Q-28" => "",
+            "Q-29" => "",
+        );
+        $reserved = array(
+            "J-5" => "", "J-6" => "", "J-7" => "", "J-8" => "", "J-9" => "", "J-10" => "",
+            "J-11" => "", "J-12" => "", "J-13" => "", "J-14" => "", "J-15" => "", "J-16" => "",
+            "J-17" => "", "J-18" => "", "J-19" => "", "J-20" => "", "J-21" => "", "J-22" => "",
+            "J-23" => "", "J-24" => "", "J-25" => "", "J-26" => "", "J-27" => "", "J-28" => "",
+        );
+        $layout = array(
+            "totalinrow" => 33,
+            "sitclass" => array(
+                "class1" => array(
+                    "price" => "180",
+                    "rowcount" => "2",
+                    "color" => "#ffc0b266",
+                    "row" => array(
+                        "A" => $this->createRange(8, 25, 32, [], "A", $booked, $reserved),
+                        "B" => $this->createRange(1, 32, 32, [], "B", $booked, $reserved),
+                        "C" => $this->createRange(1, 32, 32, [], "C", $booked, $reserved),
+                        "D" => $this->createRange(1, 32, 32, [], "D", $booked, $reserved),
+                        "E" => $this->createRange(1, 32, 32, [], "E", $booked, $reserved),
+                        "F" => $this->createRange(1, 32, 32, [], "F", $booked, $reserved),
+                    )
+                ),
+                "class2" => array(
+                    "price" => "220",
+                    "rowcount" => "5",
+                    "color" => "#ffe0b266",
+                    "row" => array(
+                        "G" => $this->createRange(5, 28, 32, [25, 26, 7, 8], "G", $booked, $reserved),
+                        "H" => $this->createRange(5, 28, 32, [], "H", $booked, $reserved),
+                        "I" => $this->createRange(5, 28, 32, [], "I",$booked, $reserved),
+                        "J" => $this->createRange(5, 28, 32, [], "J",$booked, $reserved),
+                    )
+                ),
+                "class3" => array(
+                    "price" => "220",
+                    "rowcount" => "5",
+                    "color" => "#ff572247",
+                    "row" => array(
+                        "K" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "L", $booked, $reserved),
+                        "L" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "L", $booked, $reserved),
+                        "M" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "M", $booked, $reserved),
+                        "N" => $this->createRange(1, 32, 32, [], "N", $booked, $reserved),
+                        "O" => $this->createRange(1, 32, 32, [], "O", $booked, $reserved),
+                        "P" => $this->createRange(1, 32, 32, [], "P", $booked, $reserved),
+                        "Q" => $this->createRange(27, 32, 32, [], "Q", $booked, $reserved),
+                    )
+                ),
+            )
+        );
+        $this->response($layout);
+    }
+
 }
 
 ?>

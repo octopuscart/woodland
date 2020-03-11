@@ -147,9 +147,14 @@ $this->load->view('layout/header');
                     <h2 class="page-heading">Select Date</h2>
                     <div class="offer-area1 hidden-after-desk movieblockhome" style="padding:10px;">
                         <div id="countdown2" style="position: inherit;    text-align: left;">
-                            <div class="countdown-section {{selectShowtime.date=='2020-03-07'?'active':''}}" ng-click="selectDate('2020-03-07')" ><h3>7th</h3> <p>MARCH</p> </div>
-                            <div class="countdown-section {{selectShowtime.date=='2020-03-08'?'active':''}}" ng-click="selectDate('2020-03-08')"><h3>8th</h3> <p>MARCH</p> </div>
-                            <div class="countdown-section {{selectShowtime.date=='2020-03-09'?'active':''}}" ng-click="selectDate('2020-03-09')"><h3>9th</h3> <p>MARCH</p> </div>
+
+                            <?php
+                            foreach ($datearray as $key => $value) {
+                                ?>
+                                <div class="countdown-section {{selectShowtime.date=='<?php echo $key;?>'?'active':''}}" ng-click="selectDate('<?php echo $key;?>')" ><h3><?php echo $value['day'];?></h3> <p><?php echo $value['month'];?></p> </div>
+                                <?php
+                            }
+                            ?>
 
                         </div>
                     </div>
@@ -194,7 +199,7 @@ $this->load->view('layout/header');
                 <li class="previous"><a href="<?php echo site_url('Movies/index'); ?>" style="    background: #d92229;
                                         color: white;"><span aria-hidden="true">&larr;</span> Select Movie</a></li>
                 <li class="next">
-                    <a href="<?php echo site_url("Movie/selectSit") . "?movie=" . $movie['id'] . "&"; ?>theater={{selectShowtime.theater}}&selecttime={{selectShowtime.time}}&selectdate={{selectShowtime.date}}" ng-if="selectShowtime.date && selectShowtime.time" style="    background: #d92229;
+                    <a href="<?php echo site_url("Movies/selectSit") . "?movie=" . $movie['id'] . "&"; ?>theater={{selectShowtime.theater}}&selecttime={{selectShowtime.time}}&selectdate={{selectShowtime.date}}" ng-if="selectShowtime.date && selectShowtime.time" style="    background: #d92229;
                        color: white;">Select Sit <span aria-hidden="true">&rarr;</span></a>
                 </li>
             </ul>

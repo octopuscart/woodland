@@ -200,7 +200,7 @@ $this->load->view('layout/header');
                                         color: white;"><span aria-hidden="true">&larr;</span> Select Movie</a></li>
                 <li class="next">
                     <a href="<?php echo site_url("Movies/selectSit") . "?movie=" . $movie['id'] . "&"; ?>theater={{selectShowtime.theater}}&selecttime={{selectShowtime.time}}&selectdate={{selectShowtime.date}}" ng-if="selectShowtime.date && selectShowtime.time" style="    background: #d92229;
-                       color: white;">Select Sit <span aria-hidden="true">&rarr;</span></a>
+                       color: white;">Select Seat <span aria-hidden="true">&rarr;</span></a>
                 </li>
             </ul>
         </nav>

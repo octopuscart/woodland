@@ -422,6 +422,14 @@ class Api extends REST_Controller {
     }
 
     function getLayout2_get() {
+        $booked = array(
+            "A-6" => "", "A-7" => "",
+            "G-6" => "", "G-9" => "",
+         
+        );
+        $reserved = array(
+         
+        );
         $layout = array(
             "totalinrow" => 20,
             "sitclass" => array(
@@ -430,8 +438,8 @@ class Api extends REST_Controller {
                     "rowcount" => "2",
                     "color" => "#fff",
                     "row" => array(
-                        "A" => $this->createRange(6, 13, 19),
-                        "B" => $this->createRange(3, 16, 19),
+                        "A" => $this->createRange(6, 13, 19, [], "A", $booked, $reserved),
+                        "B" => $this->createRange(3, 16, 19, [], "B", $booked, $reserved),
                     )
                 ),
                 "class2" => array(
@@ -439,11 +447,11 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#fff",
                     "row" => array(
-                        "C" => $this->createRange(3, 17, 19),
-                        "D" => $this->createRange(3, 17, 19),
-                        "E" => $this->createRange(3, 17, 19),
-                        "F" => $this->createRange(3, 18, 19),
-                        "G" => $this->createRange(1, 19, 19),
+                        "C" => $this->createRange(3, 17, 19, [], "C", $booked, $reserved),
+                        "D" => $this->createRange(3, 17, 19, [], "D", $booked, $reserved),
+                        "E" => $this->createRange(3, 17, 19, [], "E", $booked, $reserved),
+                        "F" => $this->createRange(3, 18, 19, [], "F", $booked, $reserved),
+                        "G" => $this->createRange(1, 19, 19, [], "G", $booked, $reserved),
                     )
                 ),
             )

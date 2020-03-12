@@ -163,7 +163,9 @@ $this->load->view('layout/header');
     </div>
 </div>
 
-
+<script>
+var layoutgbl = '<?php echo $theater['layout']; ?>';
+</script>
 
 <?php
 $this->load->view('layout/footer');

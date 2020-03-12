@@ -404,7 +404,7 @@ App.controller('showTimeContoller', function ($scope, $http, $timeout, $interval
 
 App.controller('sitSelectContoller', function ($scope, $http, $timeout, $interval, $filter) {
     $scope.theaterLayout = {"layout": {}};
-    var url = baseurl + "Api/getLayout";
+    var url = baseurl + "Api/"+layoutgbl;
     $http.get(url).then(function (rdata) {
         $scope.theaterLayout.layout = rdata.data;
     }, function () {

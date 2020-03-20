@@ -63,29 +63,29 @@ class Movie extends CI_Model {
     function theaters() {
         $listoftheaters = array(
             "GH-V-WALK" => array(
-                "title" => "GH V WALK - Cinema 5",
+                "title" => "GH V WALK - House 5",
                 "timing" => ["10:40", "13:40", "17:40"],
-                "layout" => "getLayout2",
+                "layout" => "getLayout_GH_V_WALK",
             ),
             "GH-HS1" => array(
                 "title" => "GH Whampoa - House 1",
                 "timing" => ["09:40", "15:40", "18:40", "21:10"],
-                "layout" => "getLayout",
+                "layout" => "getLayout_GH_HSE1",
             ),
             "GH-HSE3" => array(
-                "title" => "GH Whampoa - Cinema 3",
+                "title" => "GH Whampoa - House 3",
                 "timing" => ["10:45", "14:45", "16:45", "20:50", "23:15"],
-                "layout" => "getLayout",
+                "layout" => "getLayout_GH_HSE3",
             ),
             "GH-HS4" => array(
-                "title" => "GH Whampoa - Cinema 4",
+                "title" => "GH Whampoa - House 4",
                 "timing" => ["11:45", "14:30", "22:15"],
-                "layout" => "getLayout",
+                "layout" => "getLayout_GH_HSE4",
             ),
             "GRND-OCE" => array(
                 "title" => "Grand Ocean (Tsim Sha Tsui)",
                 "timing" => ["09:45", "13:45", "15:45", "21:50"],
-                "layout" => "getLayout",
+                "layout" => "getLayoutGrandOcean",
             )
         );
         return $listoftheaters;

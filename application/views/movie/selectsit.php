@@ -63,7 +63,6 @@ $this->load->view('layout/header');
         <div class="row">
             <div class="col-sm-10">
                 <div class="theaterblock">
-
                     <table class=" table" >
                         <tbody>
                             <tr>
@@ -72,7 +71,7 @@ $this->load->view('layout/header');
                                 </td>
                             </tr>
                         </tbody>  
-                        <tbody ng-repeat="sclass in theaterLayout.layout.sitclass">
+                        <tbody ng-repeat="(kclass, sclass) in theaterLayout.layout.sitclass">
                             <tr><td class="theaterblockblank" colspan="{{theaterLayout.layout.totalinrow}}"></td></tr>
                             <tr style="background: {{sclass.color}}"><td class="theaterblockblank" colspan="{{theaterLayout.layout.totalinrow}}">{{sclass.price|currency}}</td></tr>
 
@@ -81,7 +80,7 @@ $this->load->view('layout/header');
                                 <td class="theaterblockseat {{sit?'sitable':''}}" ng-repeat="(sit, chkatr) in rows">
                                     <div  ng-if="sit" ng-switch="chkatr">
                                         <div ng-switch-when="A">
-                                            <button class="btn btn-link btn-sm seaticon {{sit == seatSelection.selected[sit].seat?'active':''}}" ng-click="selectSeat(sit, sclass.price)"  title='{{sit}} ({{sclass.price|currency}})'>
+                                            <button id="{{sit}}" class="btn btn-link btn-sm seaticon {{sit == seatSelection.selected[sit].seat?'active':''}}" ng-click="selectSeat(sit, sclass.price)" ng-mouseenter="selectSeatSuggest(sit, kclass)" ng-mouseleave="selectRemoveClass(sit, kclass)"  title='{{sit}} ({{sclass.price|currency}})'>
                                                 <h5 class="theaterblocktext">{{sit}}</h5>
                                             </button>
                                         </div>
@@ -165,7 +164,9 @@ $this->load->view('layout/header');
 
 <script>
 var layoutgbl = '<?php echo $theater['layout']; ?>';
+var seatsgbl = '<?php echo $total_seats;?>' 
 </script>
+<script src="<?php echo base_url(); ?>assets/theme2/angular/ng-movies.js"></script>
 
 <?php
 $this->load->view('layout/footer');

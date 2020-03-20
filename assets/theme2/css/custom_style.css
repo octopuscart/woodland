@@ -1353,6 +1353,14 @@ h5.theaterblocktext {
 
 }
 
+
+.seaticon.suggestion .theaterblocktext{
+    background-color: #8BC34A;
+    color:#fff;
+    display: block;
+
+}
+
 .theaterpricetable td{
 }
 

@@ -144,6 +144,20 @@ $this->load->view('layout/header');
                 <hr/>
 
                 <div class="choose-container choose-container--short">
+                    <h2 class="page-heading">
+                        Select no of seats
+                        <input type="number" class="pull-right" min="1" max="10" ng-model="selectShowtime.seats">
+                    </h2>
+
+                    <p>
+                        More than 10 tickets must contact us for booking for making the payment to purchase the
+                        tickets
+                    </p>
+
+                </div>
+                <hr/>
+
+                <div class="choose-container choose-container--short">
                     <h2 class="page-heading">Select Date</h2>
                     <div class="offer-area1 hidden-after-desk movieblockhome" style="padding:10px;">
                         <div id="countdown2" style="position: inherit;    text-align: left;">
@@ -151,7 +165,7 @@ $this->load->view('layout/header');
                             <?php
                             foreach ($datearray as $key => $value) {
                                 ?>
-                                <div class="countdown-section {{selectShowtime.date=='<?php echo $key;?>'?'active':''}}" ng-click="selectDate('<?php echo $key;?>')" ><h3><?php echo $value['day'];?></h3> <p><?php echo $value['month'];?></p> </div>
+                                <div class="countdown-section {{selectShowtime.date=='<?php echo $key; ?>'?'active':''}}" ng-click="selectDate('<?php echo $key; ?>')" ><h3><?php echo $value['day']; ?></h3> <p><?php echo $value['month']; ?></p> </div>
                                 <?php
                             }
                             ?>
@@ -199,7 +213,7 @@ $this->load->view('layout/header');
                 <li class="previous"><a href="<?php echo site_url('Movies/index'); ?>" style="    background: #d92229;
                                         color: white;"><span aria-hidden="true">&larr;</span> Select Movie</a></li>
                 <li class="next">
-                    <a href="<?php echo site_url("Movies/selectSit") . "?movie=" . $movie['id'] . "&"; ?>theater={{selectShowtime.theater}}&selecttime={{selectShowtime.time}}&selectdate={{selectShowtime.date}}" ng-if="selectShowtime.date && selectShowtime.time" style="    background: #d92229;
+                    <a href="<?php echo site_url("Movies/selectSit") . "?movie=" . $movie['id'] . "&"; ?>theater={{selectShowtime.theater}}&selecttime={{selectShowtime.time}}&selectdate={{selectShowtime.date}}&seats={{selectShowtime.seats}}" ng-if="selectShowtime.date && selectShowtime.time" style="    background: #d92229;
                        color: white;">Select Seat <span aria-hidden="true">&rarr;</span></a>
                 </li>
             </ul>
@@ -207,6 +221,7 @@ $this->load->view('layout/header');
     </div>
 </div>
 
+<script src="<?php echo base_url(); ?>assets/theme2/angular/ng-movies.js"></script>
 
 
 <?php

@@ -170,6 +170,7 @@ $this->load->view('layout/header');
 </div>
 
 
+<script src="<?php echo base_url(); ?>assets/theme2/angular/ng-movies.js"></script>
 
 <?php
 $this->load->view('layout/footer');

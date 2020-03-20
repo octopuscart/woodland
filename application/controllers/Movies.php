@@ -41,7 +41,8 @@ class Movies extends CI_Controller {
 
         $data['stime'] = $stime;
         $data['sdate'] = $sdate;
-
+        $data['total_seats'] =  $this->input->get("seats");
+        
         $movies = $this->Movie->movieList();
         $data['movie'] = $movies[$mid];
 

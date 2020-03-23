@@ -1445,7 +1445,7 @@ h5.theaterblocktext {
 .seatbooked{
     opacity: 0.4;
     opacity: 1!important;
-    background: orange!important;
+    background: #d92229!important;
 }
 
 .instructionblock{

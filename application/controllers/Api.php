@@ -392,7 +392,7 @@ class Api extends REST_Controller {
 
     //function for product list
 
-    function createRange($start, $end, $total, $gapes, $row, $booked, $reserve) {
+    function createRange($start, $end, $total, $gapes, $row, $booked, $reserve, $gap) {
         $temp = array();
         $temprow = array();
         for ($i = $start; $i <= $end; $i++) {
@@ -412,6 +412,10 @@ class Api extends REST_Controller {
             if (isset($reserve[$trow])) {
                 $temprow[$trow] = "R";
             }
+            if(isset($gap[$i])){
+                $trow = $row . "-" . $i."_".$gap[$i];
+                $temprow[$trow] = "";
+            }
         }
         foreach ($gapes as $key => $value) {
             $trow = $row . "-" . $value;
@@ -428,6 +432,7 @@ class Api extends REST_Controller {
         );
         $reserved = array(
         );
+        $gaps=array();
         $layout = array(
             "totalinrow" => 20,
             "sitclass" => array(
@@ -436,8 +441,8 @@ class Api extends REST_Controller {
                     "rowcount" => "2",
                     "color" => "#fff",
                     "row" => array(
-                        "A" => $this->createRange(6, 13, 19, [], "A", $booked, $reserved),
-                        "B" => $this->createRange(3, 16, 19, [], "B", $booked, $reserved),
+                        "A" => $this->createRange(6, 13, 19, [], "A", $booked, $reserved, $gaps),
+                        "B" => $this->createRange(3, 16, 19, [], "B", $booked, $reserved, $gaps),
                     )
                 ),
                 "class2" => array(
@@ -445,11 +450,11 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#fff",
                     "row" => array(
-                        "C" => $this->createRange(3, 17, 19, [], "C", $booked, $reserved),
-                        "D" => $this->createRange(3, 17, 19, [], "D", $booked, $reserved),
-                        "E" => $this->createRange(3, 17, 19, [], "E", $booked, $reserved),
-                        "F" => $this->createRange(3, 18, 19, [], "F", $booked, $reserved),
-                        "G" => $this->createRange(1, 19, 19, [], "G", $booked, $reserved),
+                        "C" => $this->createRange(3, 17, 19, [], "C", $booked, $reserved, $gaps),
+                        "D" => $this->createRange(3, 17, 19, [], "D", $booked, $reserved, $gaps),
+                        "E" => $this->createRange(3, 17, 19, [], "E", $booked, $reserved, $gaps),
+                        "F" => $this->createRange(3, 18, 19, [], "F", $booked, $reserved, $gaps),
+                        "G" => $this->createRange(1, 19, 19, [], "G", $booked, $reserved, $gaps),
                     )
                 ),
             )
@@ -471,20 +476,21 @@ class Api extends REST_Controller {
             "J-17" => "", "J-18" => "", "J-19" => "", "J-20" => "", "J-21" => "", "J-22" => "",
             "J-23" => "", "J-24" => "", "J-25" => "", "J-26" => "", "J-27" => "", "J-28" => "",
         );
+        $gaps=array("7"=>"", "25"=>"");
         $layout = array(
-            "totalinrow" => 33,
+            "totalinrow" => 35,
             "sitclass" => array(
                 "class1" => array(
                     "price" => "180",
                     "rowcount" => "2",
                     "color" => "#ffc0b266",
                     "row" => array(
-                        "A" => $this->createRange(8, 25, 32, [], "A", $booked, $reserved),
-                        "B" => $this->createRange(1, 32, 32, [], "B", $booked, $reserved),
-                        "C" => $this->createRange(1, 32, 32, [], "C", $booked, $reserved),
-                        "D" => $this->createRange(1, 32, 32, [], "D", $booked, $reserved),
-                        "E" => $this->createRange(1, 32, 32, [], "E", $booked, $reserved),
-                        "F" => $this->createRange(1, 32, 32, [], "F", $booked, $reserved),
+                        "A" => $this->createRange(8, 25, 32, [], "A", $booked, $reserved, $gaps),
+                        "B" => $this->createRange(1, 32, 32, [], "B", $booked, $reserved, $gaps),
+                        "C" => $this->createRange(1, 32, 32, [], "C", $booked, $reserved, $gaps),
+                        "D" => $this->createRange(1, 32, 32, [], "D", $booked, $reserved, $gaps),
+                        "E" => $this->createRange(1, 32, 32, [], "E", $booked, $reserved, $gaps),
+                        "F" => $this->createRange(1, 32, 32, [], "F", $booked, $reserved, $gaps),
                     )
                 ),
                 "class2" => array(
@@ -492,10 +498,10 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#ffe0b266",
                     "row" => array(
-                        "G" => $this->createRange(5, 28, 32, [25, 26, 7, 8], "G", $booked, $reserved),
-                        "H" => $this->createRange(5, 28, 32, [], "H", $booked, $reserved),
-                        "I" => $this->createRange(5, 28, 32, [], "I", $booked, $reserved),
-                        "J" => $this->createRange(5, 28, 32, [], "J", $booked, $reserved),
+                        "G" => $this->createRange(5, 28, 32, [25, 26, 7, 8], "G", $booked, $reserved, $gaps),
+                        "H" => $this->createRange(5, 28, 32, [], "H", $booked, $reserved, $gaps),
+                        "I" => $this->createRange(5, 28, 32, [], "I", $booked, $reserved, $gaps),
+                        "J" => $this->createRange(5, 28, 32, [], "J", $booked, $reserved, $gaps),
                     )
                 ),
                 "class3" => array(
@@ -503,13 +509,13 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#ff572247",
                     "row" => array(
-                        "K" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "K", $booked, $reserved),
-                        "L" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "L", $booked, $reserved),
-                        "M" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "M", $booked, $reserved),
-                        "N" => $this->createRange(1, 32, 32, [], "N", $booked, $reserved),
-                        "O" => $this->createRange(1, 32, 32, [], "O", $booked, $reserved),
-                        "P" => $this->createRange(1, 32, 32, [], "P", $booked, $reserved),
-                        "Q" => $this->createRange(27, 32, 32, [], "Q", $booked, $reserved),
+                        "K" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "K", $booked, $reserved, $gaps),
+                        "L" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "L", $booked, $reserved, $gaps),
+                        "M" => $this->createRange(1, 32, 32, [24, 25, 9, 8], "M", $booked, $reserved, $gaps),
+                        "N" => $this->createRange(1, 32, 32, [], "N", $booked, $reserved, $gaps),
+                        "O" => $this->createRange(1, 32, 32, [], "O", $booked, $reserved, $gaps),
+                        "P" => $this->createRange(1, 32, 32, [], "P", $booked, $reserved, $gaps),
+                        "Q" => $this->createRange(27, 32, 32, [], "Q", $booked, $reserved, $gaps),
                     )
                 ),
             )
@@ -525,16 +531,17 @@ class Api extends REST_Controller {
         $reserved = array(
             "Q-5" => "", "Q-6" => "", "Q-1" => "", "Q-2" => ""
         );
+        $gaps=array("4"=>"", "19"=>"");
         $layout = array(
-            "totalinrow" => 23,
+            "totalinrow" => 25,
             "sitclass" => array(
                 "class1" => array(
                     "price" => "180",
                     "rowcount" => "2",
                     "color" => "#ffc0b266",
                     "row" => array(
-                        "B" => $this->createRange(1, 22, 22, [16], "B", $booked, $reserved),
-                        "C" => $this->createRange(1, 22, 22, [], "C", $booked, $reserved),
+                        "B" => $this->createRange(1, 22, 22, [16], "B", $booked, $reserved, $gaps),
+                        "C" => $this->createRange(1, 22, 22, [], "C", $booked, $reserved, $gaps),
                     )
                 ),
                 "class2" => array(
@@ -542,10 +549,10 @@ class Api extends REST_Controller {
                     "rowcount" => "6",
                     "color" => "#ffe0b266",
                     "row" => array(
-                        "D" => $this->createRange(1, 22, 22, [16], "D", $booked, $reserved),
-                        "E" => $this->createRange(1, 22, 22, [], "E", $booked, $reserved),
-                        "F" => $this->createRange(1, 22, 22, [16], "F", $booked, $reserved),
-                        "G" => $this->createRange(1, 22, 22, [], "G", $booked, $reserved),
+                        "D" => $this->createRange(1, 22, 22, [16], "D", $booked, $reserved, $gaps),
+                        "E" => $this->createRange(1, 22, 22, [], "E", $booked, $reserved, $gaps),
+                        "F" => $this->createRange(1, 22, 22, [16], "F", $booked, $reserved, $gaps),
+                        "G" => $this->createRange(1, 22, 22, [], "G", $booked, $reserved, $gaps),
                     )
                 ),
                 "class3" => array(
@@ -553,15 +560,15 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#ff572247",
                     "row" => array(
-                        "H" => $this->createRange(1, 22, 22, [16], "H", $booked, $reserved),
-                        "I" => $this->createRange(1, 22, 22, [], "I", $booked, $reserved),
-                        "J" => $this->createRange(1, 22, 22, [16], "J", $booked, $reserved),
-                        "K" => $this->createRange(1, 22, 22, [], "K", $booked, $reserved),
-                        "L" => $this->createRange(1, 22, 22, [16], "L", $booked, $reserved),
-                        "M" => $this->createRange(1, 22, 22, [], "M", $booked, $reserved),
-                        "N" => $this->createRange(1, 22, 22, [16], "N", $booked, $reserved),
-                        "O" => $this->createRange(1, 22, 22, [], "O", $booked, $reserved),
-                        "P" => $this->createRange(1, 22, 22, [16, 5, 6, 7, 8, 9], "P", $booked, $reserved),
+                        "H" => $this->createRange(1, 22, 22, [16], "H", $booked, $reserved, $gaps),
+                        "I" => $this->createRange(1, 22, 22, [], "I", $booked, $reserved, $gaps),
+                        "J" => $this->createRange(1, 22, 22, [16], "J", $booked, $reserved, $gaps),
+                        "K" => $this->createRange(1, 22, 22, [], "K", $booked, $reserved, $gaps),
+                        "L" => $this->createRange(1, 22, 22, [16], "L", $booked, $reserved, $gaps),
+                        "M" => $this->createRange(1, 22, 22, [], "M", $booked, $reserved, $gaps),
+                        "N" => $this->createRange(1, 22, 22, [16], "N", $booked, $reserved, $gaps),
+                        "O" => $this->createRange(1, 22, 22, [], "O", $booked, $reserved, $gaps),
+                        "P" => $this->createRange(1, 22, 22, [16, 5, 6, 7, 8, 9], "P", $booked, $reserved, $gaps),
                     )
                 ),
             )
@@ -577,16 +584,17 @@ class Api extends REST_Controller {
         $reserved = array(
             "Q-5" => "", "Q-6" => "", "Q-1" => "", "Q-2" => ""
         );
+        $gaps=array("4"=>"", "19"=>"");
         $layout = array(
-            "totalinrow" => 22,
+            "totalinrow" => 24,
             "sitclass" => array(
                 "class1" => array(
                     "price" => "180",
                     "rowcount" => "2",
                     "color" => "#ffc0b266",
                     "row" => array(
-                        "B" => $this->createRange(1, 21, 21, [19], "B", $booked, $reserved),
-                        "C" => $this->createRange(1, 21, 21, [], "C", $booked, $reserved),
+                        "B" => $this->createRange(1, 21, 21, [19], "B", $booked, $reserved, $gaps),
+                        "C" => $this->createRange(1, 21, 21, [], "C", $booked, $reserved, $gaps),
                     )
                 ),
                 "class2" => array(
@@ -594,12 +602,12 @@ class Api extends REST_Controller {
                     "rowcount" => "6",
                     "color" => "#ffe0b266",
                     "row" => array(
-                        "D" => $this->createRange(1, 21, 21, [19], "D", $booked, $reserved),
-                        "E" => $this->createRange(1, 21, 21, [], "E", $booked, $reserved),
-                        "F" => $this->createRange(1, 21, 21, [19], "F", $booked, $reserved),
-                        "G" => $this->createRange(1, 21, 21, [], "G", $booked, $reserved),
-                        "H" => $this->createRange(1, 21, 21, [19], "H", $booked, $reserved),
-                        "I" => $this->createRange(1, 21, 21, [], "I", $booked, $reserved),
+                        "D" => $this->createRange(1, 21, 21, [19], "D", $booked, $reserved, $gaps),
+                        "E" => $this->createRange(1, 21, 21, [], "E", $booked, $reserved, $gaps),
+                        "F" => $this->createRange(1, 21, 21, [19], "F", $booked, $reserved, $gaps),
+                        "G" => $this->createRange(1, 21, 21, [], "G", $booked, $reserved, $gaps),
+                        "H" => $this->createRange(1, 21, 21, [19], "H", $booked, $reserved, $gaps),
+                        "I" => $this->createRange(1, 21, 21, [], "I", $booked, $reserved, $gaps),
                     )
                 ),
                 "class3" => array(
@@ -607,14 +615,14 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#ff572247",
                     "row" => array(
-                        "J" => $this->createRange(1, 21, 21, [19], "J", $booked, $reserved),
-                        "K" => $this->createRange(1, 21, 21, [], "K", $booked, $reserved),
-                        "L" => $this->createRange(1, 21, 21, [19], "L", $booked, $reserved),
-                        "M" => $this->createRange(1, 21, 21, [], "M", $booked, $reserved),
-                        "N" => $this->createRange(1, 21, 21, [19], "N", $booked, $reserved),
-                        "O" => $this->createRange(1, 21, 21, [], "O", $booked, $reserved),
-                        "P" => $this->createRange(1, 21, 21, [19], "P", $booked, $reserved),
-                        "Q" => $this->createRange(1, 21, 21, [20, 21, 3], "Q", $booked, $reserved),
+                        "J" => $this->createRange(1, 21, 21, [19], "J", $booked, $reserved, $gaps),
+                        "K" => $this->createRange(1, 21, 21, [], "K", $booked, $reserved, $gaps),
+                        "L" => $this->createRange(1, 21, 21, [19], "L", $booked, $reserved, $gaps),
+                        "M" => $this->createRange(1, 21, 21, [], "M", $booked, $reserved, $gaps),
+                        "N" => $this->createRange(1, 21, 21, [19], "N", $booked, $reserved, $gaps),
+                        "O" => $this->createRange(1, 21, 21, [], "O", $booked, $reserved, $gaps),
+                        "P" => $this->createRange(1, 21, 21, [19], "P", $booked, $reserved, $gaps),
+                        "Q" => $this->createRange(1, 21, 21, [20, 21, 3], "Q", $booked, $reserved, $gaps),
                     )
                 ),
             )
@@ -630,16 +638,17 @@ class Api extends REST_Controller {
         $reserved = array(
             "O-8" => "", "O-9" => "", "O-10" => "", "O-11" => ""
         );
+        $gaps=array("4"=>"", "19"=>"");
         $layout = array(
-            "totalinrow" => 24,
+            "totalinrow" => 26,
             "sitclass" => array(
                 "class1" => array(
                     "price" => "180",
                     "rowcount" => "2",
                     "color" => "#ffc0b266",
                     "row" => array(
-                        "C" => $this->createRange(1, 24, 24, [], "C", $booked, $reserved),
-                        "D" => $this->createRange(1, 24, 24, [19], "D", $booked, $reserved),
+                        "C" => $this->createRange(1, 24, 24, [], "C", $booked, $reserved, $gaps),
+                        "D" => $this->createRange(1, 24, 24, [19], "D", $booked, $reserved, $gaps),
                     )
                 ),
                 "class2" => array(
@@ -647,11 +656,11 @@ class Api extends REST_Controller {
                     "rowcount" => "6",
                     "color" => "#ffe0b266",
                     "row" => array(
-                        "E" => $this->createRange(1, 24, 24, [], "E", $booked, $reserved),
-                        "F" => $this->createRange(1, 24, 24, [19], "F", $booked, $reserved),
-                        "G" => $this->createRange(1, 24, 24, [], "G", $booked, $reserved),
-                        "H" => $this->createRange(1, 24, 24, [19], "H", $booked, $reserved),
-                        "I" => $this->createRange(1, 24, 24, [], "I", $booked, $reserved),
+                        "E" => $this->createRange(1, 24, 24, [], "E", $booked, $reserved, $gaps),
+                        "F" => $this->createRange(1, 24, 24, [19], "F", $booked, $reserved, $gaps),
+                        "G" => $this->createRange(1, 24, 24, [], "G", $booked, $reserved, $gaps),
+                        "H" => $this->createRange(1, 24, 24, [19], "H", $booked, $reserved, $gaps),
+                        "I" => $this->createRange(1, 24, 24, [], "I", $booked, $reserved, $gaps),
                     )
                 ),
                 "class3" => array(
@@ -659,12 +668,12 @@ class Api extends REST_Controller {
                     "rowcount" => "5",
                     "color" => "#ff572247",
                     "row" => array(
-                        "J" => $this->createRange(1, 24, 24, [19], "J", $booked, $reserved),
-                        "K" => $this->createRange(1, 24, 24, [], "K", $booked, $reserved),
-                        "L" => $this->createRange(1, 24, 24, [19], "L", $booked, $reserved),
-                        "M" => $this->createRange(1, 24, 24, [], "M", $booked, $reserved),
-                        "N" => $this->createRange(1, 24, 24, [19], "N", $booked, $reserved),
-                        "O" => $this->createRange(1, 24, 24, [5,6,7,12], "O", $booked, $reserved),
+                        "J" => $this->createRange(1, 24, 24, [19], "J", $booked, $reserved, $gaps),
+                        "K" => $this->createRange(1, 24, 24, [], "K", $booked, $reserved, $gaps),
+                        "L" => $this->createRange(1, 24, 24, [19], "L", $booked, $reserved, $gaps),
+                        "M" => $this->createRange(1, 24, 24, [], "M", $booked, $reserved, $gaps),
+                        "N" => $this->createRange(1, 24, 24, [19], "N", $booked, $reserved, $gaps),
+                        "O" => $this->createRange(1, 24, 24, [5,6,7,12], "O", $booked, $reserved, $gaps),
 
                     )
                 ),

@@ -37,6 +37,12 @@ App.controller('sitSelectContoller', function ($scope, $http, $timeout, $interva
     };
 
     $scope.selectSeat = function (seatobj, price) {
+        swal({
+            title: 'Choosing Seat(s)',
+            onOpen: function () {
+                swal.showLoading()
+            }
+        })
         var seatlist = Object.keys($scope.seatSelection.selected);
         if (seatlist.length == seatsgbl) {
             $scope.seatSelection.selected = {};
@@ -50,6 +56,7 @@ App.controller('sitSelectContoller', function ($scope, $http, $timeout, $interva
                     $scope.seatSelection.selected[sgobj] = {'price': price, 'seat': sgobj};
                 }
             }
+            swal.close();
             $scope.getTotalPrice();
         }, 500)
     }
@@ -81,7 +88,6 @@ App.controller('sitSelectContoller', function ($scope, $http, $timeout, $interva
 
         var slimit = (seatindex + avl_seatno);
 
-        console.log(avl_seatno, "available seat no", slimit);
 
 
         var suggestion = [];

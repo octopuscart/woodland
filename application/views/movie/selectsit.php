@@ -40,7 +40,6 @@ $this->load->view('layout/header');
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcrumb-area">
-                    <h1>Select Seat(s) </h1>
                     <ul>
                         <li><a href="#"><?php echo $movie['title']; ?></a> - </li>
                         <li><a href="#"><?php echo $theater['title']; ?></a> - </li>

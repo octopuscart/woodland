@@ -142,37 +142,47 @@ $this->load->view('layout/header');
             <div class="col-sm-12">
 
                 <hr/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="choose-container choose-container--short">
+                            <h2 class="page-heading">
+                                Select no. of seat(s)
+                            </h2>
 
-                <div class="choose-container choose-container--short">
-                    <h2 class="page-heading">
-                        Select no of seats
-                        <input type="number" class="pull-right" min="1" max="10" ng-model="selectShowtime.seats">
-                    </h2>
+                            <div style="    padding-top: 15px;">
+                                <input type="number" class="pull-left" min="1" max="10" ng-model="selectShowtime.seats" style="    font-size: 25px;
+                                       margin-right: 10px;margin-top: 5px;">
 
-                    <p>
-                        More than 10 tickets must contact us for booking for making the payment to purchase the
-                        tickets
-                    </p>
+                                <p style="padding: 0px 10px;font-size: 12px;">
+                                    More than 10 tickets must contact us for booking for making the payment to purchase the
+                                    tickets
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="choose-container choose-container--short">
+                            <h2 class="page-heading">Select Date</h2>
+                            <div class="offer-area1 hidden-after-desk movieblockhome" style="padding:10px;">
+                                <div id="countdown2" style="position: inherit;    text-align: left;">
 
-                </div>
-                <hr/>
+                                    <?php
+                                    foreach ($datearray as $key => $value) {
+                                        ?>
+                                        <div class="countdown-section {{selectShowtime.date=='<?php echo $key; ?>'?'active':''}}" ng-click="selectDate('<?php echo $key; ?>')" ><h3><?php echo $value['day']; ?></h3> <p><?php echo $value['month']; ?></p> </div>
+                                        <?php
+                                    }
+                                    ?>
 
-                <div class="choose-container choose-container--short">
-                    <h2 class="page-heading">Select Date</h2>
-                    <div class="offer-area1 hidden-after-desk movieblockhome" style="padding:10px;">
-                        <div id="countdown2" style="position: inherit;    text-align: left;">
-
-                            <?php
-                            foreach ($datearray as $key => $value) {
-                                ?>
-                                <div class="countdown-section {{selectShowtime.date=='<?php echo $key; ?>'?'active':''}}" ng-click="selectDate('<?php echo $key; ?>')" ><h3><?php echo $value['day']; ?></h3> <p><?php echo $value['month']; ?></p> </div>
-                                <?php
-                            }
-                            ?>
-
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
                 <hr/>
                 <h2 class="page-heading">Select time</h2>
 
@@ -180,23 +190,25 @@ $this->load->view('layout/header');
 
                     <?php
                     foreach ($theaters as $key => $value) {
-                        ?>    
+                        if ($value['active'] == 1) {
+                            ?>    
 
-                        <div class="time-select__group group--first">
-                            <div class="col-sm-3">
-                                <p class="time-select__place"><?php echo $value['title']; ?></p>
-                            </div>
-                            <ul class="col-sm-6 items-wrap">
-                                <?php
-                                foreach ($value['timing'] as $key2 => $value2) {
-                                    ?>
-                                    <li class="time-select__item {{selectShowtime.time=='<?php echo $value2; ?>'?'active':''}}" ng-click="selectTime('<?php echo $value2; ?>', '<?php echo $key; ?>')" data-time="<?php echo $value2; ?>"><?php echo $value2; ?></li>
+                            <div class="time-select__group group--first">
+                                <div class="col-sm-3">
+                                    <p class="time-select__place"><?php echo $value['title']; ?></p>
+                                </div>
+                                <ul class="col-sm-6 items-wrap">
                                     <?php
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                        <?php
+                                    foreach ($value['timing'] as $key2 => $value2) {
+                                        ?>
+                                        <li class="time-select__item {{selectShowtime.time=='<?php echo $value2; ?>'?'active':''}}" ng-click="selectTime('<?php echo $value2; ?>', '<?php echo $key; ?>')" data-time="<?php echo $value2; ?>"><?php echo $value2; ?></li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                            <?php
+                        }
                     }
                     ?>
                 </div>

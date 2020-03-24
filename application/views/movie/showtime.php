@@ -13,15 +13,15 @@ $this->load->view('layout/header');
         background-color: #f5f5f5;
     }
     .time-select .time-select__place {
-        font-size: 16px;
-        margin-top: 21px;
-        margin-left: 5px;
-        margin-bottom: 23px;
-        line-height: 46px;
+           font-size: 16px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    line-height: 30px;
     }
     .time-select .items-wrap {
-        padding-top: 15px;
-        margin-bottom: 5px;
+           padding-top: 5px;
+    margin-bottom: 5px;
     }
     .time-select .time-select__group:after {
         content: '';
@@ -95,14 +95,14 @@ $this->load->view('layout/header');
 </style>
 
 <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area" style="   ">
+<div class="inner-page-banner-area" style="   min-height: 27px;
+     padding: 0;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcrumb-area">
-                    <h1><?php echo($movie['title']); ?> </h1>
                     <ul>
-                        <li><a href="#">Home</a> /</li>
+                        <li><a href="#"><?php echo($movie['title']); ?></a> /</li>
                         <li>Select Show Time</li>
                     </ul>
                 </div>
@@ -115,52 +115,48 @@ $this->load->view('layout/header');
 <!-- Single Blog Page Area Start Here -->
 
 
-<div class="portfolio2-page-area1" style="padding: 30px" ng-controller="showTimeContoller">
+<div class="portfolio2-page-area1 showtimeblock" style="padding: 20px" ng-controller="showTimeContoller">
     <div class="container">
 
-        <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12">
-            <div class="product-box2" style="height: 250px;background: #f5f5f5;
-                 color: white;
-                 ">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="img-responsive" style="width: 174px;" src="<?php echo base_url(); ?>assets/movies/<?php echo $movie['image']; ?>" alt="product">
-                    </a>
-                    <div class="media-body">
-                        <div class="product-box2-content">
-                            <h3><a href="#"><?php echo $movie['title']; ?></a></h3>
-                            <span><?php echo $movie['attr']; ?></span>
-                            <p><?php echo $movie['about']; ?></p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-sm-12">
 
-                <hr/>
+
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="choose-container choose-container--short">
-                            <h2 class="page-heading">
-                                Select no. of seat(s)
-                            </h2>
+                        <div class="product-box2" style="height: 250px;background: #f5f5f5;
+                             color: white;
+                             ">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="img-responsive" style="width: 180px;" src="<?php echo base_url(); ?>assets/movies/<?php echo $movie['image']; ?>" alt="product">
+                                </a>
+                                <div class="media-body">
+                                    <div class="product-box2-content">
+                                        <h3><a href="#"><?php echo $movie['title']; ?></a></h3>
+                                        <span><?php echo $movie['attr']; ?></span>
+                                        <input type="button"  class="btn btn-default"  value="View Detais" /> 
+                                        <input type="button"  class="btn btn-default"  value="Watch Trailer" /> 
 
-                            <div style="    padding-top: 15px;">
-                                <input type="number" class="pull-left" min="1" max="10" ng-model="selectShowtime.seats" style="    font-size: 25px;
-                                       margin-right: 10px;margin-top: 5px;">
+                                    </div>
 
-                                <p style="padding: 0px 10px;font-size: 12px;">
-                                    More than 10 tickets must contact us for booking for making the payment to purchase the
-                                    tickets
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <div class="choose-container choose-container--short">
+                            <h2 class="page-heading seatselectblock">
+                                Select no. of seat(s)
+                                <input type="number" class="pull-right" min="1" max="10" ng-model="selectShowtime.seats" style="    font-size: 25px;
+                                       margin-right: 10px;height:35px;">
+                            </h2>
+                            <p style="padding: 0px 0px;font-size: 11px;">
+                                More than 10 tickets must contact us for booking for making the payment to purchase the
+                                tickets
+                            </p>
+                        </div>
                         <div class="choose-container choose-container--short">
                             <h2 class="page-heading">Select Date</h2>
                             <div class="offer-area1 hidden-after-desk movieblockhome" style="padding:10px;">
@@ -183,7 +179,7 @@ $this->load->view('layout/header');
 
 
 
-                <hr/>
+                <hr style="    margin: 5px 0px;"/>
                 <h2 class="page-heading">Select time</h2>
 
                 <div class="time-select time-select--wide">

@@ -124,27 +124,7 @@ $this->load->view('layout/header');
 
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="product-box2" style="height: 250px;background: #f5f5f5;
-                             color: white;
-                             ">
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="img-responsive" style="width: 180px;" src="<?php echo base_url(); ?>assets/movies/<?php echo $movie['image']; ?>" alt="product">
-                                </a>
-                                <div class="media-body">
-                                    <div class="product-box2-content">
-                                        <h3><a href="#"><?php echo $movie['title']; ?></a></h3>
-                                        <span><?php echo $movie['attr']; ?></span>
-                                        <input type="button"  class="btn btn-default"  value="View Detais" /> 
-                                        <input type="button"  class="btn btn-default"  value="Watch Trailer" /> 
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="col-md-6">
                         <div class="choose-container choose-container--short">
                             <h2 class="page-heading seatselectblock">
@@ -169,6 +149,27 @@ $this->load->view('layout/header');
                                         <?php
                                     }
                                     ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="product-box2" style="height: 250px;background: #f5f5f5;
+                             color: white;
+                             ">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="img-responsive" style="width: 180px;" src="<?php echo base_url(); ?>assets/movies/<?php echo $movie['image']; ?>" alt="product">
+                                </a>
+                                <div class="media-body">
+                                    <div class="product-box2-content">
+                                        <h3><a href="#"><?php echo $movie['title']; ?></a></h3>
+                                        <span><?php echo $movie['attr']; ?></span>
+                                        <input type="button"  class="btn btn-default"  value="View Detais" /> 
+                                        <input type="button"  class="btn btn-default"  value="Watch Trailer" /> 
+
+                                    </div>
 
                                 </div>
                             </div>

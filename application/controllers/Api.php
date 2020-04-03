@@ -180,7 +180,7 @@ class Api extends REST_Controller {
         $categoriesString = ltrim($categoriesString, ", ");
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery $proquery  ";
+            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery $proquery order by display_index ";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];

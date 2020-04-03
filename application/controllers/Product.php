@@ -21,7 +21,7 @@ class Product extends CI_Controller {
         $tempcatid = $cat_id;
 
         $categories = $this->Product_model->productListCategories($cat_id);
-        
+
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
@@ -189,6 +189,25 @@ class Product extends CI_Controller {
         $data["custom_item"] = "Jacket";
         $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
+    }
+
+    function testp() {
+        $pquery = "select id, description from products group by description";
+        $attr_products = $this->Product_model->query_exe($pquery);
+        echo "<pre>";
+        foreach ($attr_products as $key => $value) {
+            echo "<br/>";
+            $ids  = $value['id'];
+            $description = $value['description'];
+            $pquery = "select id, description from products where description = '$description' and id!=$ids";
+            $despro = $this->Product_model->query_exe($pquery);
+            echo $ids;
+            foreach ($despro as $skey => $svalue) {
+                $pquery = "update  products set variant_product_of = $ids  where description = '$description' and id!=$ids";
+                $query = $this->db->query($pquery);
+            }
+            print_r($despro);
+        }
     }
 
 }

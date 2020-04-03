@@ -294,8 +294,8 @@
                                         <nav>
                                             <ul>
                                                 <li class="active"><a href="#">Offers</a></li>
-                                                <li><a href="<?php echo site_url("Movies/index");?>">Movie Tickets</a></li>
-                                                <li><a href="">Woodlands Indian Vegetarian Restaurant</a></li>
+                                                <li><a href="http://maharajatickets.com/" target="_blank">Movie Tickets</a></li>
+                                                <li><a href="https://www.woodlandshk.com/"  target="_blank">Woodlands Indian Vegetarian Restaurant</a></li>
 
                                             </ul>
                                         </nav>

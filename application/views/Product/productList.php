@@ -180,10 +180,10 @@ $image2 = "";
 
                 </div>
 
-                <div class="row inner-section-space-top"  style="padding-top: 10px;">
+                <div class="row inner-section-space-top"  style="padding-top: 10px;" >
                     <!-- Tab panes -->
                     <div class="tab-content" >
-                        <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view"> 
+                        <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view" ng-if="productProcess.state==2"> 
 
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" ng-if="$index < 8">
                                 <div class="product-box1" >
@@ -199,7 +199,7 @@ $image2 = "";
                                             <a href="#">{{product.title}}  <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
                                             </a>
-                                            <span><span  style="font-size: 11px;" ng-if="product.sale_price>0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
 
@@ -219,12 +219,12 @@ $image2 = "";
                                             <div>{{product.varients[product.selectedobject].title}}  <br>
                                                 <select class="productsveriantselection" ng-change="changeProductVarient(product.selectedobject, product)" ng-model="product.selectedobject" >
 
-                                                    <option ng-if="product.selectedobject==prd.id" selected value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
-                                                    <option ng-if="product.selectedobject!=prd.id"  value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
+                                                    <option ng-if="product.selectedobject == prd.id" selected value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
+                                                    <option ng-if="product.selectedobject != prd.id"  value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
                                                 </select>
 
                                             </div>
-                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price>0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price > 0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
 
@@ -242,15 +242,15 @@ $image2 = "";
                                 </div>
                             </div>
                             <div style="clear:both"></div>
-                            <div class="" style="height: 265px;">
+<!--                            <div class="" style="height: 265px;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productlistmeddile" style="  ">
                                     <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
                                     <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
                                 </div>
-                            </div>
+                            </div>-->
                             <div style="clear:both"></div>
-                            
-                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" ng-if="$index > 7">
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" ng-if="$index > 7">
                                 <div class="product-box1" >
                                     <div class="addedtocard"><i class="fa fa-cart-plus"></i></div>
 
@@ -264,7 +264,7 @@ $image2 = "";
                                             <a href="#">{{product.title}}  <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
                                             </a>
-                                            <span><span  style="font-size: 11px;" ng-if="product.sale_price>0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
 
@@ -284,12 +284,12 @@ $image2 = "";
                                             <div>{{product.varients[product.selectedobject].title}}  <br>
                                                 <select class="productsveriantselection" ng-change="changeProductVarient(product.selectedobject, product)" ng-model="product.selectedobject" >
 
-                                                    <option ng-if="product.selectedobject==prd.id" selected value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
-                                                    <option ng-if="product.selectedobject!=prd.id"  value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
+                                                    <option ng-if="product.selectedobject == prd.id" selected value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
+                                                    <option ng-if="product.selectedobject != prd.id"  value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.title}}</option>
                                                 </select>
 
                                             </div>
-                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price>0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price > 0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
 
@@ -306,18 +306,28 @@ $image2 = "";
 
                                 </div>
                             </div>
-                            
-                         
+
+
 
                             <div style="clear: both"></div>
                         </div>
+
+                        <div class="col-md-12" id="paging_container1" style="margin-bottom:30px;">
+                            <div class="showing-info">
+                                <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
+                            </div>
+                            <div class="row products-container content" ng-if="productProcess.state == 2" style="display: none;">
+                                <!-- Item -->
+                                <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.productscounter">
+                                </div>
+                            </div>
+                            <center>
+                                <div class="page_navigation"></div>
+                            </center>
+                            <div style="clear: both"></div>
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                        <center>
-                            <div class="page_navigation"></div>
-                        </center>
-                        <div style="clear: both"></div>
-                    </div>
+
                 </div>
 
             </div>
@@ -363,8 +373,10 @@ $image2 = "";
 
 
 <script>
+    var searchdata = "<?php echo isset($_GET["search"]) ? ($_GET["search"] != '' ? $_GET["search"] : '0') : "0"; ?>";
+
     var category_id = <?php echo $category; ?>;
-    var custom_id = <?php echo $custom_id; ?>;</script>
+    var custom_id = <?php echo $category; ?>;</script>
 <?php
 $this->load->view('layout/footer');
 ?>

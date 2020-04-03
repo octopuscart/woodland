@@ -89,7 +89,7 @@ class Api extends REST_Controller {
     }
 
     public function prefetchdata_get() {
-        $pquery = "SELECT title, file_name, id, price from products ";
+        $pquery = "SELECT title, file_name, id, price from products limit 0, 50";
         $attr_products = $this->Product_model->query_exe($pquery);
         $this->response($attr_products);
     }
@@ -117,19 +117,42 @@ class Api extends REST_Controller {
             $pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
         }
 
+
+        $psearch = "";
+        if (isset($attrdatak["search"])) {
+            $searchdata = $attrdatak["search"];
+            unset($attrdatak["search"]);
+            if ($searchdata) {
+                $psearch = " and title like '%$searchdata%' ";
+            }
+        }
+
+        $startpage = $attrdatak["start"] - 1;
+        $endpage = $attrdatak["end"];
+        unset($attrdatak["start"]);
+        unset($attrdatak["end"]);
+        $mnpricr = 0;
+
+        if (isset($attrdatak["minprice"])) {
+            $mnpricr = $attrdatak["minprice"];
+            $mxpricr = $attrdatak["maxprice"];
+            unset($attrdatak["minprice"]);
+            unset($attrdatak["maxprice"]);
+            //$pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
+        }
         foreach ($attrdatak as $key => $atv) {
             if ($atv) {
-                $countpr += 1;
-                $key = str_replace("a", "", $key);
-                $val = str_replace("-", ", ", $atv);
-                $query_attr = "SELECT product_id FROM product_attribute
-                           where  attribute_id in ($key) and attribute_value_id in ($val)
-                           group by product_id";
-                $queryat = $this->db->query($query_attr);
-                $productslist = $queryat->result();
-                foreach ($productslist as $key => $value) {
-                    array_push($products, $value->product_id);
-                }
+//                $countpr += 1;
+//                $key = str_replace("a", "", $key);
+//                $val = str_replace("-", ", ", $atv);
+//                $query_attr = "SELECT product_id FROM product_attribute
+//                           where  attribute_id in ($key) and attribute_value_id in ($val)
+//                           group by product_id";
+//                $queryat = $this->db->query($query_attr);
+//                $productslist = $queryat->result();
+//                foreach ($productslist as $key => $value) {
+//                    array_push($products, $value->product_id);
+//                }
             }
         }
         //print_r($products);
@@ -157,7 +180,7 @@ class Api extends REST_Controller {
         $categoriesString = ltrim($categoriesString, ", ");
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery $proquery";
+            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery $proquery  ";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];
@@ -167,9 +190,7 @@ class Api extends REST_Controller {
         $pricecount = [];
 
         foreach ($product_result as $key => $value) {
-            $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
-            array_push($productListSt, $value['product_id']);
-            array_push($pricecount, $value['price']);
+
             $variantproduct = $this->Product_model->getProductVeriants($value['product_id']);
 
             if ($variantproduct) {
@@ -188,41 +209,16 @@ class Api extends REST_Controller {
 
         $attr_filter = array();
         $pricelist = array();
-        if (count($productListSt)) {
-            $pricelist = array('maxprice' => max($pricecount), 'minprice' => min($pricecount));
 
-
-            $productString = implode(",", $productListSt);
-
-
-            $attr_query = "select count(cav.id) product_count, '' as checked, cvv.widget, cav.attribute_value, cav.additional_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa
-        join category_attribute_value as cav on cav.id = pa.attribute_value_id
-        join category_attribute as cvv on cvv.id = cav.attribute_id
-        where pa.product_id in ($productString)
-        group by cav.id";
-            $attr_result = $this->Product_model->query_exe($attr_query);
-
-
-            foreach ($attr_result as $key => $value) {
-                $filter = $value['attribute_id'];
-                $attitle = $value['attribute'];
-                $widget = $value['widget'];
-                if (isset($attr_filter[$filter])) {
-                    array_push($attr_filter[$filter], $value);
-                } else {
-                    $attr_filter[$filter] = array("title" => $attitle, "attrs" => [], "widget" => $widget);
-                    array_push($attr_filter[$filter], $value);
-                }
-            }
-        }
 
         $this->output->set_header('Content-type: application/json');
         $this->db->where('offer', 1);
         $this->db->limit(5);
         $query = $this->db->get('products');
         $offerproduct = $query->result_array();
+        $productListFinal1 = array_slice($productListFinal, $startpage, 16);
         $productArray = array('attributes' => $attr_filter,
-            'products' => $productListFinal,
+            'products' => $productListFinal1,
             'product_count' => count($product_result),
             'offers' => $offerproduct,
             'price' => $pricelist);

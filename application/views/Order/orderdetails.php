@@ -397,31 +397,31 @@ $paymentstatus = "";
 <script>
 
     App.controller('OrderDetailsController', function ($scope, $http, $timeout, $interval) {
-        var url = baseurl + "Api/order_mail/" + <?php echo $order_data->id; ?> + "/" + '<?php echo $order_data->order_no; ?>';
+        var url = baseurl + "Api/order_mail/" + <?php echo $order_data->id; ?> ;
         $scope.checkmailsend = 0;
         $scope.sendOrderMail = function (order_no) {
-//            swal({
-//                title: 'Sending Mail...',
-//                onOpen: function () {
-//                    swal.showLoading()
-//                },
-//            })
-//            $http.get(url).then(function (rdata) {
-//                swal({timer: 1500,
-//                    title: 'Mail Sent!',
-//                    type: 'success', })
-//            }, function () {
-//                swal({timer: 1500,
-//                    title: 'Unable To Send Mail!',
-//                    type: 'error', })
-//            })
+            swal({
+                title: 'Sending Mail...',
+                onOpen: function () {
+                    swal.showLoading()
+                },
+            })
+            $http.get(url).then(function (rdata) {
+                swal({timer: 1500,
+                    title: 'Mail Sent!',
+                    type: 'success', })
+            }, function () {
+                swal({timer: 1500,
+                    title: 'Unable To Send Mail!',
+                    type: 'error', })
+            })
         }
 
         $interval(function () {
             if ($scope.checkmailsend == 1) {
             }
             else {
-//                $scope.sendOrderMailCheck();
+                $scope.sendOrderMailCheck();
             }
         }, 2000)
 

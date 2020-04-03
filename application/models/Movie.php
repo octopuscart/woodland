@@ -96,4 +96,31 @@ class Movie extends CI_Model {
         return $listoftheaters;
     }
 
+    function bookedSeatById($booking_id) {
+        $this->db->select("*");
+        $this->db->where('movie_ticket_booking_id', $booking_id);
+        $query = $this->db->get('movie_ticket');
+        $moviebooking = $query->result_array();
+        return $moviebooking;
+    }
+
+    function getSelectedSeats($theater_id, $movie_id, $select_date, $select_time) {
+        $this->db->select("*");
+        $this->db->where('theater_id', $theater_id);
+        $this->db->where('movie_id', $movie_id);
+        $this->db->where('select_date', $select_date);
+        $this->db->where('select_time', $select_time);
+        $query = $this->db->get('movie_ticket_booking');
+        $moviebooking = $query->result_array();
+        $seats = [];
+        foreach ($moviebooking as $mbkey => $mbvalue) {
+            $bookingid = $mbvalue['id'];
+            $booking_seat = $this->bookedSeatById($bookingid);
+            foreach ($booking_seat as $skey => $svalue) {
+                array_push($seats, $svalue);
+            }
+        }
+        return $seats;
+    }
+
 }

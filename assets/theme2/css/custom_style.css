@@ -280,6 +280,7 @@ b.barcomb-list {
     padding: 7px!important;
     border: none!important;
     list-style-type: none;
+    font-size: 12px;
 }
 
 .order_box li i{

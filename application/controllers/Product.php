@@ -192,19 +192,19 @@ class Product extends CI_Controller {
     }
 
     function testp() {
-        $pquery = "select id, description from products group by description";
+        echo $pquery = "select id, short_description from products group by short_description";
         $attr_products = $this->Product_model->query_exe($pquery);
         echo "<pre>";
         foreach ($attr_products as $key => $value) {
             echo "<br/>";
             $ids  = $value['id'];
-            $description = $value['description'];
-            $pquery = "select id, description from products where description = '$description' and id!=$ids";
+            $description = $value['short_description'];
+            echo $pquery = 'select id, short_description from products where short_description = "'.$description.'" and id!='.$ids;
             $despro = $this->Product_model->query_exe($pquery);
-            echo $ids;
+        
             foreach ($despro as $skey => $svalue) {
-                $pquery = "update  products set variant_product_of = $ids  where description = '$description' and id!=$ids";
-                $query = $this->db->query($pquery);
+                $pquery = 'update  products set variant_product_of = '.$ids.'  where short_description =  "'.$description.'" and id!='.$ids;
+               // $query = $this->db->query($pquery);
             }
             print_r($despro);
         }

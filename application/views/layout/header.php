@@ -266,20 +266,24 @@
                                             foreach ($menucontainer as $key => $value) {
                                                 $children = $value['children'];
                                                 ?>
-                                                <li><a href="<?php echo site_url('Product/productList/1/1'); ?>">
+                                                <li><a href="<?php echo site_url('Product/productList/1/'.$value['id']); ?>">
                                                         <?php echo $value['category_name']; ?>
                                                         <?php if ($children) { ?>
-                                                            <span><i class="flaticon-next"></i></span></a>
+                                                            <span><i class="flaticon-next"></i></span>
+                                                    </a>
                                                         <ul class="dropdown-menu">
                                                             <?php
                                                             foreach ($children as $ckey => $cvalue) {
                                                                 ?>
-                                                            <li><a href="<?php echo site_url('Product/productList/1/1');?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                            <li><a href="<?php echo site_url('Product/productList/1/'.$cvalue['id']);?>"><?php echo $cvalue['category_name']; ?></a></li>
                                                                 <?php
                                                             }
                                                             ?>
                                                         </ul>
                                                         <?php
+                                                    }else{
+                                                        ?>
+                                                            </a><?php
                                                     }
                                                     ?>
                                                 </li>

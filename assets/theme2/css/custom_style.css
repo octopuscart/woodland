@@ -720,6 +720,7 @@ b.barcomb-list {
 
 .productlistborder{
     border:3px solid #EEEEEE;
+        display: block!important;
 }
 
 .login-registration-page-area .login-registration-field label {
@@ -873,7 +874,16 @@ b.barcomb-list {
 
 .category-menu-area ul li a {
     display: block;
-    padding: 8px 0px 7px 15px;
+    padding: 3px 0px 3px 15px;
+    letter-spacing: 0;
+     text-transform: uppercase;
+}
+
+.category-menu-area ul li .dropdown-menu > li > a {
+    padding: 3px 0px 3px 15px;
+    color: #333333!important;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .product-box1 .product-content-holder h3 {
@@ -1275,7 +1285,8 @@ b.barcomb-list {
 select.productsveriantselection {
     width: 100%;
     margin-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .addedtocard{
@@ -1500,4 +1511,8 @@ h5.theaterblocktext {
     background: #ffeb3b;
     color: black;
     text-align: center;
+}
+.category-menu-area ul li a span {
+    position: absolute;
+    right: 5px;
 }

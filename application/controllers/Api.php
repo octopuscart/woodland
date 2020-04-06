@@ -109,15 +109,6 @@ class Api extends REST_Controller {
         $countpr = 0;
         $pricequery = "";
 
-        if (isset($attrdatak["minprice"])) {
-            $mnpricr = $attrdatak["minprice"] - 1;
-            $mxpricr = $attrdatak["maxprice"] + 1;
-            unset($attrdatak["minprice"]);
-            unset($attrdatak["maxprice"]);
-            $pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
-        }
-
-
         $psearch = "";
         if (isset($attrdatak["search"])) {
             $searchdata = $attrdatak["search"];
@@ -133,54 +124,11 @@ class Api extends REST_Controller {
         unset($attrdatak["end"]);
         $mnpricr = 0;
 
-        if (isset($attrdatak["minprice"])) {
-            $mnpricr = $attrdatak["minprice"];
-            $mxpricr = $attrdatak["maxprice"];
-            unset($attrdatak["minprice"]);
-            unset($attrdatak["maxprice"]);
-            //$pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
-        }
-        foreach ($attrdatak as $key => $atv) {
-            if ($atv) {
-//                $countpr += 1;
-//                $key = str_replace("a", "", $key);
-//                $val = str_replace("-", ", ", $atv);
-//                $query_attr = "SELECT product_id FROM product_attribute
-//                           where  attribute_id in ($key) and attribute_value_id in ($val)
-//                           group by product_id";
-//                $queryat = $this->db->query($query_attr);
-//                $productslist = $queryat->result();
-//                foreach ($productslist as $key => $value) {
-//                    array_push($products, $value->product_id);
-//                }
-            }
-        }
-        //print_r($products);
-
-        $productdict = [];
-
-        $productcheck = array_count_values($products);
-
-
-        //print_r($productcheck);
-
-        foreach ($productcheck as $key => $value) {
-            if ($value == $countpr) {
-                array_push($productdict, $key);
-            }
-        }
-
-        $proquery = "";
-        if (count($productdict)) {
-            $proquerylist = implode(",", $productdict);
-            $proquery = " and pt.id in ($proquerylist) ";
-        }
-
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery $proquery order by display_index ";
+            from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery  order by id ";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];
@@ -188,8 +136,10 @@ class Api extends REST_Controller {
         $productListFinal = [];
 
         $pricecount = [];
+        
+        $productListFinal1 = array_slice($product_result, $startpage, 16);
 
-        foreach ($product_result as $key => $value) {
+        foreach ($productListFinal1 as $key => $value) {
 
             $variantproduct = $this->Product_model->getProductVeriants($value['product_id']);
 
@@ -210,17 +160,13 @@ class Api extends REST_Controller {
         $attr_filter = array();
         $pricelist = array();
 
-
         $this->output->set_header('Content-type: application/json');
-        $this->db->where('offer', 1);
-        $this->db->limit(5);
-        $query = $this->db->get('products');
-        $offerproduct = $query->result_array();
-        $productListFinal1 = array_slice($productListFinal, $startpage, 16);
+        
+//        echo count($productListFinal1);
         $productArray = array('attributes' => $attr_filter,
-            'products' => $productListFinal1,
+            'products' => $productListFinal,
             'product_count' => count($product_result),
-            'offers' => $offerproduct,
+            'offers' => array(),
             'price' => $pricelist);
         $this->response($productArray);
     }

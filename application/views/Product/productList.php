@@ -208,9 +208,9 @@ $image2 = "";
 
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
                                         <h3>
-                                            <a href="#">{{product.title}}  <br>
+                                            <span href="#">{{product.title}}  <br>
                                                 <span style="font-size: 12px">{{product.short_description}} </span>
-                                            </a>
+                                            </span>
                                             <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>

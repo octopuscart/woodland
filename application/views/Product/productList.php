@@ -209,6 +209,7 @@ $image2 = "";
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
                                         <h3>
                                             <div>{{product.title}}  <br>
+                                               <small>SKU#: {{product.sku}}</small>
 
                                           
 <!--                                            <select class="productsveriantselection" >
@@ -238,6 +239,7 @@ $image2 = "";
                                     <div class="product-content-holder" ng-if="product.hasvarient == 1">
                                         <h3>
                                             <div>{{product.varients[product.selectedobject].title}}  <br>
+                                                <small>SKU#: {{product.sku}}</small> <br/>
                                                 <select class="productsveriantselection" ng-change="changeProductVarient(product.selectedobject, product)" ng-model="product.selectedobject" >
 
                                                     <option ng-if="product.selectedobject == prd.id" selected value="{{prd.id}}" ng-repeat="(prk, prd) in product.varients">{{prd.description}} - {{prd.regular_price|currency:"<?php echo globle_currency; ?> "}}</option>

@@ -106,7 +106,7 @@ $this->load->view('layout/header');
             <?php
             $this->load->view('CartGuest/itemblock', array('vtype' => 'items'));
             ?>
-           
+
 
 
 
@@ -152,7 +152,7 @@ $this->load->view('layout/header');
                                                 <p>
                                                     <?php echo $value['address1']; ?>,<br/>
                                                     <?php echo $value['address2']; ?>,<br/>
-                                                    <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
+                                                    <?php echo $value['city']; ?>
 
                                                 </p>
                                             </div>
@@ -196,14 +196,14 @@ $this->load->view('layout/header');
                 </div>
             </div>
             <?php
-        $this->load->view('CartGuest/itemblock', array('vtype' => 'payment'));
-        ?>
+            $this->load->view('CartGuest/itemblock', array('vtype' => 'payment'));
+            ?>
         </div>
 
 
-        
+
     </div>
-    
+
 </div>
 </div>
 
@@ -254,7 +254,7 @@ $this->load->view('Cart/noproduct');
                             </tr>
                             <tr>
                                 <td style="line-height: 25px;">
-                                    <span for="name" class=""><b>Address (Line 1)</b></span>
+                                    <span for="name" class=""><b>Address</b></span>
                                 </td>
                                 <td>
                                     <input type="text" required="" name="address1" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
@@ -263,7 +263,7 @@ $this->load->view('Cart/noproduct');
 
                             <tr>
                                 <td style="line-height: 25px;">
-                                    <span for="name" class=""><b>Address (Line 2)</b></span>
+                                    <span for="name" class=""><b>Landmark</b></span>
                                 </td>
                                 <td>
                                     <input type="text" required="" name="address2" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
@@ -275,35 +275,19 @@ $this->load->view('Cart/noproduct');
 
                                 </td>
                                 <td>
+                                    <input type="hidden" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+
+
+                                    <input type="hidden"  name="zipcode" class="form-control " value="" style="height: 10%;">
+
+
+                                    <input type="hidden" required="" name="country" class="form-control" value="" style="height: 10%;">
+
+
                                     <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
                                 </td>
                             </tr>
-                            <tr>
-                                <td style="line-height: 25px;">
-                                    <span for="name"><b>State</b></span>
-                                </td>
-                                <td>
-                                    <input type="text" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
-                                </td>
-                            </tr>
 
-
-                            <tr>
-                                <td style="line-height: 25px;">
-                                    <span for="name"><b>Zip/Postal</b></span>
-                                </td>
-                                <td>
-                                    <input type="text"  name="zipcode" class="form-control " value="" style="height: 10%;">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="line-height: 25px;">
-                                    <span for="name"><b>Country</b></span>
-                                </td>
-                                <td>
-                                    <input type="text" required="" name="country" class="form-control" value="" style="height: 10%;">
-                                </td>
-                            </tr>
 
                         </tbody>
                     </table>

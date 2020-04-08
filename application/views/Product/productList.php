@@ -108,7 +108,7 @@ $image2 = "";
                             foreach ($categories as $catkey => $catvalue) {
                                 ?>
                                 <li>
-                                    <a href="<?php echo site_url('Product/productList/1/'.$catvalue['id'])?>">
+                                    <a href="<?php echo site_url('Product/productList/1/' . $catvalue['id']) ?>">
                                         <?php echo $catvalue['category_name']; ?><span><i class="flaticon-next"></i></span>
                                     </a>
                                 </li>
@@ -169,7 +169,7 @@ $image2 = "";
 
                     <!-- Tesm Text -->
                     <section class="error-page text-center pad-t-b-130">
-                        <div class="{{productResults.products.length?'container1':'container'}}"> 
+                        <div class="container1"> 
                             <center>
                                 <img src="<?php echo base_url() . 'assets/theme2/img/loader.gif' ?>">
                             </center>
@@ -183,19 +183,19 @@ $image2 = "";
                 <div class="row inner-section-space-top"  style="padding-top: 10px;" >
                     <!-- Tab panes -->
                     <div class="tab-content" >
-                        <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view" ng-if="productProcess.state==2"> 
+                        <div role="tabpanel"  class="tab-pane active clear products-container content" id="gried-view" ng-if="productProcess.state == 2"> 
 
-                 
+
                             <div style="clear:both"></div>
-<!--                            <div class="" style="height: 265px;">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productlistmeddile" style="  ">
-                                    <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
-                                    <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
-                                </div>
-                            </div>-->
+                            <!--                            <div class="" style="height: 265px;">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productlistmeddile" style="  ">
+                                                                <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://maharajamart.com/deal-of-the-week.html"><img src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
+                                                                <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
+                                                            </div>
+                                                        </div>-->
                             <div style="clear:both"></div>
-                            
-                       
+
+
 
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" >
                                 <div class="product-box1" >
@@ -208,13 +208,22 @@ $image2 = "";
 
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
                                         <h3>
-                                            <span href="#">{{product.title}}  <br>
-                                                <span style="font-size: 12px">{{product.short_description}} </span>
-                                            </span>
+                                            <div>{{product.title}}  <br>
+
+                                          
+<!--                                            <select class="productsveriantselection" >
+
+                                                <option  selected  >{{product.description}} - {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</option>
+                                            </select>-->
+                                            </div>
+
+
+                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price > 0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
+
+
                                             <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
-
                                         <div class="productbuttonscontainer">
 
                                             <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
@@ -255,13 +264,13 @@ $image2 = "";
                             </div>
                         </div>
 
-                        <div class="col-md-12" id="paging_container1" style="margin-bottom:30px;">
+                        <div class="col-md-12" id="paging_container3" style="margin-bottom:30px;">
                             <div class="showing-info">
                                 <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
                             </div>
-                            <div class="row products-container content" ng-if="productProcess.state == 2" style="display: none;">
+                            <div class="row products-container  content" ng-if="productProcess.state == 2" style="display: none;">
                                 <!-- Item -->
-                                <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.productscounter">
+                                <div class="col-sm-4 animated zoomIn productscounter"  ng-repeat="(k, product) in productResults.productscounter">
                                 </div>
                             </div>
                             <center>

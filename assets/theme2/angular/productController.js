@@ -126,7 +126,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
             $timeout(function () {
 
-                $('#paging_container1').pajinate({
+                $('#paging_container3').pajinate({
                     items_per_page: 16,
                     num_page_links_to_display: 5,
                 });
@@ -143,13 +143,6 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                 var priceui = document.getElementById("price-range");
                 var minp = Number($scope.productResults.price.minprice) - 1;
                 var maxp = Number($scope.productResults.price.maxprice)
-
-
-
-
-
-
-
 
 
             }, 1000)
@@ -244,15 +237,6 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             } else {
                 $scope.productProcess.state = 0;
             }
-
-
-
-
-
-
-
-
-
 
 
 

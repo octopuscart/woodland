@@ -8,7 +8,7 @@ $this->load->view('layout/header');
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                                                        <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
+                                                                                                                                                                                <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
     <?php
 }
 ?>        
@@ -18,18 +18,18 @@ foreach ($sliders as $key => $value) {
 <?php
 foreach ($sliders as $key => $value) {
     ?>
-                                                                                                                                                                    <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                                                                        <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                                                                            <div class="title-container s-tb-c">
-                                                                                                                                                                                <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
+                                                                                                                                                                            <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
+                                                                                                                                                                                <div class="slider-content t-lfl s-tb slider-1">
+                                                                                                                                                                                    <div class="title-container s-tb-c">
+                                                                                                                                                                                        <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
     <?php echo $value->title; ?>
-                                                                                                                                                                                </h2>
-                                                                                                                                                                                <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                                                                                <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                                                                                <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                                        </h2>
+                                                                                                                                                                                        <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
+                                                                                                                                                                                        <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
+                                                                                                                                                                                        <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                </div>
                                                                                                                                                                             </div>
-                                                                                                                                                                        </div>
-                                                                                                                                                                    </div>
     <?php
 }
 ?>
@@ -44,10 +44,11 @@ foreach ($sliders as $key => $value) {
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
-                <img src="<?php echo base_url(); ?>assets/sliders/cinema-ticket-banner.jpg" alt="" title="#slider-direction-2" />
-                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-3.jpg" alt="" title="#slider-direction-3" />
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-4.jpg" alt="" title="#slider-direction-4" />
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-5.jpg" alt="" title="#slider-direction-5" />
+                <img src="<?php echo base_url(); ?>assets/sliders/cinema-ticket-banner.jpg" alt="" title="#slider-direction-2" />
+                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-3.jpg" alt="" title="#slider-direction-3" />
+
 
             </div>
             <div id="slider-direction-1" class="t-cn slider-direction">
@@ -129,7 +130,7 @@ foreach ($sliders as $key => $value) {
                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 homeproductblock {{globleCartData.products[product.id] ? 'activeproduct': '' }} " ng-repeat="product in homeInit.offers" >
 
                     <div class="product-box1" >
-                      
+
                         <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
                              background-position: center;">
 
@@ -170,13 +171,13 @@ foreach ($sliders as $key => $value) {
                         <span>Movie Ticket Price From </span>
                         <h1>HK$ 180 Only</h1>
                         <p>Choose your Ticket Price<br/> $220 (J-O) - $200 (E-I) - $180 (C-D)</p>
-                        <a href="<?php echo site_url("Movies/index");?>" class="btn-shop-now-fill">Book Now</a>
+                        <a href="http://maharajatickets.com/" target="_blank" class="btn-shop-now-fill">Book Now</a>
                     </div>
                 </div>
                 <div id="countdown2">
-                    <div class="countdown-section"><h3>7th</h3> <p>FAB</p> </div>
+<!--                    <div class="countdown-section"><h3>7th</h3> <p>FAB</p> </div>
                     <div class="countdown-section"><h3>8th</h3> <p>FAB</p> </div>
-                    <div class="countdown-section"><h3>9th</h3> <p>FAB</p> </div>
+                    <div class="countdown-section"><h3>9th</h3> <p>FAB</p> </div>-->
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

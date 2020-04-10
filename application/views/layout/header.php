@@ -113,16 +113,16 @@
             <script>
 
 
-                var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                //$interpolateProvider.startSymbol('{$');
-                //$interpolateProvider.endSymbol('$}');
-                $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
-                });
-                var baseurl = "<?php echo site_url(); ?>";
-                var imageurlg = "<?php echo PRODUCTIMAGELINK; ?>";
-                var globlecurrency = "<?php echo globle_currency; ?>";
-                var avaiblecredits = 0;</script>
+                        var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
+                            //$interpolateProvider.startSymbol('{$');
+                            //$interpolateProvider.endSymbol('$}');
+                            $httpProvider.defaults.headers.common = {};
+                            $httpProvider.defaults.headers.post = {};
+                        });
+                        var baseurl = "<?php echo site_url(); ?>";
+                        var imageurlg = "<?php echo PRODUCTIMAGELINK; ?>";
+                        var globlecurrency = "<?php echo globle_currency; ?>";
+                        var avaiblecredits = 0;</script>
 
             <style>
                 .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -170,7 +170,7 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         <div class="logo-area">
-                                            <a href="<?php echo site_url("/");?>"><img class="img-responsive mainsitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" ></a>
+                                            <a href="<?php echo site_url("/"); ?>"><img class="img-responsive mainsitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" ></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
@@ -194,7 +194,7 @@
                                                         <font>My Cart</font>
                                                         <i class="fa fa-shopping-cart"></i><span>{{globleCartData.total_quantity}}</span>
                                                     </a>
-                                                    <ul ng-if="globleCartData.total_quantity">
+                                                    <ul ng-if="globleCartData.total_quantity" class="">
                                                         <li  ng-repeat="product in globleCartData.products">
 
                                                             <div class="cart-single-product">
@@ -202,23 +202,31 @@
                                                                     <div class="pull-left cart-product-img">
                                                                         <a href="#">
 
-                                                                            <img class="img-responsive" alt="product" src="{{product.file_name}}">
+                                                                            <img class="img-responsive" alt="product" src="{{product.file_name}}" style="height: 80px;" />
                                                                         </a>
                                                                     </div>
                                                                     <div class="media-body cart-content">
                                                                         <ul>
                                                                             <li>
-                                                                                <h2 style="    white-space: nowrap;
-                                                                                    overflow: hidden;
-                                                                                    text-overflow: ellipsis;
-                                                                                    width: 250px;"><a href="#" style="">{{product.title}}</a></h2>
+                                                                                <h2 ><a href="#" style="">{{product.title}}</a></h2>
                                                                                 <h3>                                                                 
                                                                                     <p>
                                                                                         {{product.quantity}} X  {{product.price|currency}} 
                                                                                     </p>
                                                                                 </h3>
+                                                                                <div  class="input-group cart-area-inc input-group-sm searchinputgroup">
+                                                                                    <span class="input-group-btn input-group-sm">
+                                                                                        <button class="btn btn-default  type="button" ng-click="updateCart(product, 'sub')">-</button>
+                                                                                    </span>
+
+                                                                                    <span class="cartquantitysearch"> {{product.quantity}} </span>
+                                                                                    <span class="input-group-btn input-group-sm" >
+                                                                                        <button class="btn btn-default   incbutton" type="button" ng-click="updateCart(product, 'add')">+</button>
+                                                                                    </span>
+                                                                                </div>
                                                                             </li>
                                                                             <li>
+
                                                                             </li>
                                                                             <li>
                                                                                 <p></p>
@@ -257,7 +265,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-4">
                                     <div class="logo-area">
-                                        <a href="<?php echo site_url("/");?>"><img class="img-responsive stickheadersitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
+                                        <a href="<?php echo site_url("/"); ?>"><img class="img-responsive stickheadersitelogo" src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
                                     </div>
                                     <div class="category-menu-area" id="category-menu-area">
                                         <h2 class="category-menu-title"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
@@ -266,24 +274,24 @@
                                             foreach ($menucontainer as $key => $value) {
                                                 $children = $value['children'];
                                                 ?>
-                                                <li><a href="<?php echo site_url('Product/productList/1/'.$value['id']); ?>">
+                                                <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>">
                                                         <?php echo $value['category_name']; ?>
                                                         <?php if ($children) { ?>
                                                             <span><i class="flaticon-next"></i></span>
-                                                    </a>
+                                                        </a>
                                                         <ul class="dropdown-menu">
                                                             <?php
                                                             foreach ($children as $ckey => $cvalue) {
                                                                 ?>
-                                                            <li><a href="<?php echo site_url('Product/productList/1/'.$cvalue['id']);?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                                <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
                                                                 <?php
                                                             }
                                                             ?>
                                                         </ul>
                                                         <?php
-                                                    }else{
+                                                    } else {
                                                         ?>
-                                                            </a><?php
+                                                        </a><?php
                                                     }
                                                     ?>
                                                 </li>
@@ -349,8 +357,10 @@
                                                                                             {{product.quantity}} X  {{product.price|currency}} 
                                                                                         </p>
                                                                                     </h3>
+
                                                                                 </li>
                                                                                 <li>
+
                                                                                 </li>
                                                                                 <li>
                                                                                     <p></p>
@@ -390,7 +400,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mobile-menu">
-                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -415,16 +425,22 @@
             </style>
 
 
-<script type="text/javascript">
-            (function () {
-                var options = {
-                    whatsapp: "85262915892", // WhatsApp number
-                    call_to_action: "Contact Us", // Call to action
-                    position: "right", // Position may be 'right' or 'left'
-                };
-                var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-                var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-                s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-                var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-            })();
-        </script>
+            <script type="text/javascript">
+                (function () {
+                    var options = {
+                        whatsapp: "85262915892", // WhatsApp number
+                        call_to_action: "Contact Us", // Call to action
+                        position: "right", // Position may be 'right' or 'left'
+                    };
+                    var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = url + '/widget-send-button/js/init.js';
+                    s.onload = function () {
+                        WhWidgetSendButton.init(host, proto, options);
+                    };
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                })();
+            </script>

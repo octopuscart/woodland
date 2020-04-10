@@ -72,7 +72,7 @@
     border-top: 1px solid #ffeb3b!important;
     border-bottom: 1px solid #ffeb3b!important;
     border-left: 1px solid #ffeb3b!important;
-    padding: 0px 5px 0px 0px;
+    padding: 0px 0px 0px 0px;
     border: 1px solid #ffeb3b;
 }
 
@@ -171,4 +171,17 @@ span.keywordfooter {
       background: #EEEEEE;
     height: 265px!important;
     padding: 20px 0px;
+}
+
+
+.cart-content .cart-area-inc{
+    width: 100px;
+    text-align: center;
+    border: 1px solid#ffeb3b;
+    margin-top: -9px;
+}
+
+.overflow-y-400{
+    overflow-y: auto;
+    height: 400px;
 }

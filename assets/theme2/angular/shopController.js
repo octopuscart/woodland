@@ -272,13 +272,14 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
              </div>
             <div class="col-xs-3">
                <div class="input-group input-group-sm searchinputgroup">
-                    <span class="input-group-btn" >
-                        <button class="btn btn-default incbutton" type="button" onclick="incQuantity(this)">+</button>
-                     </span>
-                    <span class="cartquantitysearch">1</span>
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" onclick="decQuantity(this)">-</button>
                     </span>
+                    
+                    <span class="cartquantitysearch">1</span>
+                    <span class="input-group-btn" >
+                        <button class="btn btn-default incbutton" type="button" onclick="incQuantity(this)">+</button>
+                     </span>
                 </div>
             </div>
            <div class="col-xs-2">

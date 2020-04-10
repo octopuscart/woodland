@@ -118,7 +118,7 @@ b.barcomb-list {
 }
 
 .cart_image_block{
-    height: 100px;width: auto;    margin: 0 auto;
+    height: 70px;width: auto;    margin: 0 auto;
 }
 
 
@@ -1527,4 +1527,37 @@ h5.theaterblocktext {
 
 #scrollUp {
     z-index: 1000!important;
+}
+
+.cart-page-area .cart-page-top table tr td h3 {
+     letter-spacing: 1px; 
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+ 
+}
+
+.cart-area > ul > li .media .cart-content ul li h2 {
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 220px;
+}
+
+.cart-area > ul > li .media .cart-content ul li p {
+    margin: 0px;
+}
+
+.cart-area-inc button{
+   height: 20px!important;
+    line-height: 0.5!important;
+}
+
+.cart-area > ul > li .media .cart-content ul li h3 {
+    font-size: 12px;
+    margin-bottom: 14px;
 }

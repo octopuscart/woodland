@@ -8637,10 +8637,10 @@ ul {
     z-index: 3;
 }
 .cart-page-area .cart-page-top table tr .quantity .quantity-holder .input-group-btn-vertical .quantity-plus {
-    left: 0;
+    right: 0;
 }
 .cart-page-area .cart-page-top table tr .quantity .quantity-holder .input-group-btn-vertical .quantity-minus {
-    right: 0;
+    left: 0;
 }
 .cart-page-area .cart-page-top table tr .dismiss {
     text-align: center;

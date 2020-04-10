@@ -1516,3 +1516,11 @@ h5.theaterblocktext {
     position: absolute;
     right: 5px;
 }
+
+.cart-page-area .cart-page-top table tr .quantity .quantity-holder .input-group-btn-vertical .quantity-plus {
+    right: 0px!important;
+}
+
+.cart-page-area .cart-page-top table tr .quantity .quantity-holder .input-group-btn-vertical .quantity-minus {
+    left: 0px!important;
+}

@@ -147,7 +147,7 @@ $categorylistsparent = $querymenu->result_array();
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <p>Copyright <?php echo date('Y') ?> by  Maharaja Mart Ltd. All rights reserved.  </p>
+                        <p>Copyright ©  <?php echo date('Y') ?>  by  Maharaja Mart Ltd. All rights reserved.  </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     </div>

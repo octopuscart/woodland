@@ -93,7 +93,7 @@ class Shop extends CI_Controller {
     }
 
     public function aboutus() {
-        //   $this->load->view('pages/aboutus');
+           $this->load->view('pages/aboutus');
     }
 
     public function error404() {
@@ -106,6 +106,10 @@ class Shop extends CI_Controller {
 
     public function catalogue() {
         //  $this->load->view('pages/catalogue');
+    }
+    
+    function privacy_policy(){
+           $this->load->view('pages/pp');
     }
 
 }

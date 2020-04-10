@@ -18,7 +18,7 @@ $querymenu = $this->db->get('category');
 $categorylistsparent = $querymenu->result_array();
 ?>
 <div class="container">
-    <hr/>
+    <hr style="border: 1px solid #d92229;"/>
 
     <table class="footertable">
         <tr>
@@ -69,9 +69,9 @@ $categorylistsparent = $querymenu->result_array();
                             <h3>Information</h3>
                             <ul class="info-list">
                                 <li><a href="#">FAQ's</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="<?php echo site_url('about-us')?>">About Us</a></li>
+                                <li><a href="<?php echo site_url('contact')?>">Contact Us</a></li>
+                                <li><a href="<?php echo site_url('privacy-policy')?>">Privacy Policy</a></li>
                                 <li><a href="#">Terms & Condition</a></li>
                             </ul>
                         </div>

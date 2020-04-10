@@ -29,40 +29,28 @@ $this->load->view('layout/header');
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="single-blog-details-content">
-<!--                   <img class="img-responsive" src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" alt="logo" style="  margin: 0px auto 34px;
-    background: black;
-    height: 53px;">-->
+                    
 
                     <p>
-                        As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.
-                    </p>
+                        Maharaja Mart Ltd formerly known as Maharaja's Indian Emporium. was established in 1999 at Kowloon, Hong Kong to serve the South Asians Ethnic necessities such as grocery, sweets, savories, fresh vegetables and fruits, pooja items, traditional utensils, grinders, mixers, handicrafts and much more. Having the former name Maharaja’s Indian Emporium, Maharaja Mart is the first one to introduce many new items exclusively for South Indian population.                    </p>
 
                     <p>
-                        Our master tailors work with a group of over 250 professionally trained Shanghainese tailors to deliver each garment to utter satisfaction of clients. Our garments are hand-cut and hand-stitched to ensure the best quality outcome.                           
-                    </p>
+                        Our home delivery service is very popular and cater to all territories in and around Hong Kong. Home delivery service is provided free of charge for orders over HK$300.                    </p>
 
                     <p>
-                        Our overseas sales team travels across the globe with wide range of fabrics and styles to provide door-to-door services, office tours, or hotel exhibitions as per clients' requests.                    </p>
-
+                        We are the ONLY Ethnic Grocery Store to accept payments by VISA / MASTER / AMEX credit cards. We also accept Bank Transfers. Payment can also be settled at the store by cash, cheque or EPS. 
 
                 </div>
 
 
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <video autoplay loop muted poster="screenshot.jpg" id="">
-                    <source src="<?php echo base_url(); ?>assets/sliders/bespokeshop.mp4" type="video/mp4">
-                </video>
+               <img class="img-responsive" src="<?php echo base_url() . 'assets/images/hkogo.jpg'; ?>" alt="logo" style="  margin: 0px auto 34px;
+
+                        ">
             </div>
         </div>
-        <div class="single-blog-details-content">
-   
-
-                 
-
-                    <p>
-                        We stock over 20,000 fabrics in our showroom in Hong Kong. Our fabrics include brands like Ermenegildo Zegna, Loro Piana, Vitale Barberis Canonico, Dormeuil, Hugo Collections and many other prestigious fabrics from Italy, United Kingdom and France.                    </p>
-                </div>
+        
     </div>
 </div>
 <!-- Single Blog Page Area End Here -->

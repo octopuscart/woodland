@@ -24,12 +24,9 @@ $this->load->view('layout/header');
 <div class="contact-us-page-area" style="padding: 10px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="background: url(<?php echo base_url(); ?>assets/images/shopf.jpg);    height: 400px;
-                 background-size: cover;
-                 background-position: center;
-                 border-top-left-radius: 50px;
-                 border-bottom-left-radius: 50px;">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="">
                 <div class="contact-us-left" > 
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14765.873530990702!2d114.1717583!3d22.2981191!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc69c3e63f1558607!2sMaharaja%20Mart%20Ltd!5e0!3m2!1sen!2sin!4v1586491736073!5m2!1sen!2sin" width="100%" height="380" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
                 </div>
             </div>
@@ -37,16 +34,17 @@ $this->load->view('layout/header');
                 <div class="contact-us-right">
                     <h2 class="title-sidebar" style="margin-bottom: 10px;">Showroom</h2>
                     <ul style="    margin-bottom: 30px;">
-                        <li class="con-address">2nd Floor, 45 Haiphong Road ,
-                            <br/>
-                            Tsim Sha Tsui, Kowloon, <br/>Hong Kong
+                        <li class="con-address">
+                            205, 2nd Floor, Haiphong Mansions,<br/>
+                            99-101, Nathan Road,<br/>
+                            Tsim Sha Tsui, Kowloon, Hong Kong
                         </li>
-                        <li class="con-envelope">info@bespoketailorshk.com</li>
-                        <li class="con-phone">+(852) 2730 8566</li>
+                        <li class="con-envelope">sales@maharajamart.com</li>
+                        <li class="con-phone">+(852) 2756 5611</li>
 
                         <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
-                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 19:00 <br/>
-                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 18:00
+                            <span class="timeing_open">Mon - Sat</span>: 09:30 to 21:00 <br/>
+                            <span class="timeing_open">Sun & Holidays</span>: Closed
                         </li>
                     </ul>
 
@@ -55,7 +53,7 @@ $this->load->view('layout/header');
 
                         <li class=""><i class="con-clock fa fa-whatsapp"></i> 
                             <span class="timeing_opensm">WhatsApp (24 Hours)</span><br> 
-                            <b>+(852) 6795 8894</b>
+                            <b>+(852) 6291 5892</b>
 
                         </li>
 
@@ -66,102 +64,13 @@ $this->load->view('layout/header');
 
             </div>
         </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="contact-us-right">
-
-                    <h2 class="title-sidebar" style="margin-bottom: 10px;">Shop Address</h2>
-                    <ul>
-                        <li class="con-address">Shop D, Ground Floor,<br/>  Hanyee Building,<br/> 19-21 Hankow Road,
-                            <br/>
-                            Tsim Sha Tsui, Kowloon, <br/>Hong Kong</li>
 
 
-
-                        <li class="con-envelope">info@bespoketailorshk.com</li>
-
-                        <li class="con-phone">+(852) 3460 5254</li>
-
-                        <li class=""><i class="con-clock fa fa-clock-o"></i> <span class="timeing_opensm">Opening Hours</span><br/>
-                            <span class="timeing_open">Mon - Sat</span>: 09:00 to 21:00 <br/>
-                            <span class="timeing_open">Sun & Holidays</span>: 09:00 to 19:00
-                        </li>
-
-                    </ul>
-
-
-                    <ul>
-
-
-                        <li class=""><i class="con-clock fa fa-whatsapp"></i> 
-                            <span class="timeing_opensm">WhatsApp (24 Hours)</span><br> 
-                            <b>+(852) 6795 8894</b>
-
-                        </li>
-
-                    </ul>
-
-
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="background: url(<?php echo base_url(); ?>assets/images/shop5.jpg);    height: 400px;
-                 background-size: cover;
-
-                 border-top-right-radius: 50px;
-                 border-bottom-right-radius: 50px;">
-                <div class="contact-us-left" > 
-
-                </div>
-            </div>
-
-
-        </div>
-
-
+<hr/>
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;">
                 <div class="contact-us-left">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="google-map-area">
-                                <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA319S-ZyrzBQNhbYmjGedtOfl8wm6tY0Y&v=3.exp'></script><div style='overflow:hidden;height:338px;width:100%;'>
-                                    <div id='gmap_canvas' style='height:338px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small>
 
-                                        </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-                                </div><script type='text/javascript'>
-                                    function init_map() {
-                                        //22.2968045,114.1687551  22.2969039,114.1623853
-                                        var myOptions = {zoom: 17, center: new google.maps.LatLng(22.297975, 114.17118299999993),
-                                            mapTypeId: google.maps.MapTypeId.ROADMAP};
-                                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-                                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.297975, 114.17118299999993)});
-
-                                        marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2967832, 114.1709048)});
-
-
-
-                                        infowindow = new google.maps.InfoWindow({content: '<strong>Bespoke Tailors Showroom</strong><br>2nd Floor, 45 Haiphong Road ,Tsim Sha Tsui, Kowloon , Hong Kong<br>'});
-
-                                        google.maps.event.addListener(marker, 'click', function () {
-                                            infowindow.open(map, marker);
-                                        });
-                                        infowindow.open(map, marker);
-
-
-
-                                        infowindow = new google.maps.InfoWindow({content: '<strong>Bespoke Tailors Shop</strong><br>Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road , Tsim Sha Tsui, Kowloon , Hong Kong.<br>'});
-
-                                        google.maps.event.addListener(marker2, 'click', function () {
-                                            infowindow.open(map, marker2);
-                                        });
-                                        infowindow.open(map, marker2);
-
-                                    }
-                                    google.maps.event.addDomListener(window, 'load', init_map);</script>
-
-                            </div>
-                        </div>
-                    </div>
                     <h2>Send Us Message</h2>
                     <div class="row">
                         <div class="contact-form">

@@ -145,6 +145,25 @@ $this->load->view('layout/header');
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text_right">
+                                           SUB TOTAL
+                                        </td>
+                                        <td class="text-center amount">
+                                            {{globleCartData.sub_total_price|currency:"<?php echo globle_currency; ?>"}}
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td colspan="3" class="text_right">
+                                            SHIPPING 
+                                        </td>
+                                        <td class="text-center amount">
+                                            {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text_right">
                                             TOTAL
                                         </td>
                                         <td class="text-center amount">

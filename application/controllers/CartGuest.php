@@ -118,8 +118,8 @@ class CartGuest extends CI_Controller {
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $data['checkoutmode'] = 'Guest';
-        
-        
+
+
         $address = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
 
@@ -168,10 +168,10 @@ class CartGuest extends CI_Controller {
 
         $user_details = $this->session->userdata('customer_inforamtion');
         $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
-       
-        $data['checkoutmode'] = 'Guest'; 
-        
-        
+
+        $data['checkoutmode'] = 'Guest';
+
+
 //place order
         if (isset($_POST['place_order'])) {
             $address = $user_address_details;
@@ -183,8 +183,19 @@ class CartGuest extends CI_Controller {
                 $session_cart = $this->Product_model->cartData();
             }
 
-            $sub_total_price = $session_cart['total_price'];
+            $session_cart['shipping_price'] = 30;
+            if ($session_cart['total_price'] > 299) {
+                $session_cart['shipping_price'] = 0;
+            }
+            $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+            $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
+
+
+            $sub_total_price = $session_cart['sub_total_price'];
             $total_quantity = $session_cart['total_quantity'];
+            $total_price = $session_cart['total_price'];
+            $shipping_price = $session_cart['shipping_price'];
 
 //place order
 
@@ -203,9 +214,10 @@ class CartGuest extends CI_Controller {
                 'country' => $address['country'],
                 'order_date' => date('Y-m-d'),
                 'order_time' => date('H:i:s'),
-                'amount_in_word' => $this->Product_model->convert_num_word($sub_total_price),
+                'amount_in_word' => $this->Product_model->convert_num_word($total_price),
                 'sub_total_price' => $sub_total_price,
-                'total_price' => $sub_total_price,
+                'total_price' => $total_price,
+                'shipping_price' => $shipping_price,
                 'total_quantity' => $total_quantity,
                 'status' => 'Order Confirmed',
                 'payment_mode' => $paymentmathod,

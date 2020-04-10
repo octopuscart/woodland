@@ -233,7 +233,7 @@
                                                         </li>
 
                                                         <li>
-                                                            <span><span>Sub Total</span></span><span>{{globleCartData.total_price|currency}}</span>
+                                                            <span><span>Sub Total</span></span><span>{{globleCartData.sub_total_price|currency}}</span>
 
                                                         </li>
                                                         <li>

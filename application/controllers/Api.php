@@ -30,6 +30,8 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartOperation($product_id, $quantity);
             $session_cart = $this->Product_model->cartData();
         }
+        
+        
 
         $this->response($session_cart['products'][$product_id]);
     }
@@ -40,6 +42,17 @@ class Api extends REST_Controller {
         } else {
             $session_cart = $this->Product_model->cartData();
         }
+        
+         $session_cart['shipping_price'] = 30;
+        if ($session_cart['total_price'] > 299) {
+            $session_cart['shipping_price'] = 0;
+        }
+        $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+        $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
+
+
+        
         $this->response($session_cart);
     }
 

@@ -1142,7 +1142,7 @@ b.barcomb-list {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 250px;
+    width: 200px;;
 }
 .cart-area > a > span {
     background: #111111;
@@ -1523,4 +1523,8 @@ h5.theaterblocktext {
 
 .cart-page-area .cart-page-top table tr .quantity .quantity-holder .input-group-btn-vertical .quantity-minus {
     left: 0px!important;
+}
+
+#scrollUp {
+    z-index: 1000!important;
 }

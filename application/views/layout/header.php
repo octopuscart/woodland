@@ -149,7 +149,7 @@
                                         <div class="header-contact">
                                             <ul>
                                                 <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+(852) 2756 5611">+(852) 2756 5611</a></li>
-                                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> mahamarthk@gmail.com</a></li>
+                                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> sales@maharajamart.com</a></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -57,7 +57,7 @@ foreach ($sliders as $key => $value) {
                         <h2 class="title1">SHOP ORGANIC PRODUCT
                             <br/><span>Upto 20% OFF</span> <br>on Every purchase
                         </h2>
-                        <a href="#" class="btn-shop-now-fill-slider">Shop Now</a>
+                        <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@ foreach ($sliders as $key => $value) {
                         <h2 class="title1" style="font-size: 23px;"><span style="font-size: 40px;">Bollywood Movie Tickets
                             </span> <br>For Bookings Call / Whatsapp - +(852) 6142 8189
                         </h2>
-                        <a href="#" class="btn-shop-now-fill-slider">Contact Us</a>
+                        <a href="http://maharajatickets.com/" target="_blank" class="btn-shop-now-fill-slider">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@ foreach ($sliders as $key => $value) {
                         <h2 class="title1">SHOP KITCHEN PRODUCT
                             <br/><span>Upto 20% OFF</span> <br>on Every purchase
                         </h2>
-                        <a href="#" class="btn-shop-now-fill-slider">Shop Now</a>
+                        <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
                 </div>
             </div>

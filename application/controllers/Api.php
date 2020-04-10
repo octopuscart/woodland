@@ -174,6 +174,7 @@ class Api extends REST_Controller {
     public function productListOffersApi_get() {
         $this->output->set_header('Content-type: application/json');
         $this->db->where('offer', 1);
+        $this->db->where('sale_price!=', "");
         $this->db->limit(6);
         $this->db->order_by("id desc");
         $query = $this->db->get('products');

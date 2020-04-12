@@ -211,7 +211,7 @@ class CartGuest extends CI_Controller {
                 'email' => $user_details['email'],
                 'user_id' => 'guest',
                 'contact_no' => $user_details['contact_no'],
-                'zipcode' => $address['zipcode'],
+                'zipcode' => "",
                 'address1' => $address['address1'],
                 'address2' => $address['address2'],
                 'city' => $address['city'],

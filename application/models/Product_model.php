@@ -755,7 +755,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'attrs' => "",
                     'vendor_id' => $product_details['user_id'],
                     'total_price' => $product_details['price'],
-                    'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
+                    'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                     'quantity' => 1,
                     'item_id' => $item_id,
                     'item_name' => $item_name,
@@ -779,8 +779,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         foreach ($productlist as $key => $value) {
             $quantity = $value['quantity'];
             $product_id = $value['product_id'];
-            $item_id = $value['item_id'];
-            $item_name = $value['item_name'];
+            $item_id = "";
+            $item_name = "";
             $product_details = $this->productDetails($product_id, $item_id);
             $product_dict = array(
                 'title' => $product_details['title'],
@@ -792,8 +792,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
                 'quantity' => $quantity,
                 'user_id' => $user_id,
-                'item_id' => $item_id,
-                'item_name' => $item_name,
+          
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),

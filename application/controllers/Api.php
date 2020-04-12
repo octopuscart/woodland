@@ -8,6 +8,8 @@ class Api extends REST_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Product_model');
+        $this->load->model('User_model');
+
         $this->load->model('Movie');
         $this->load->library('session');
         $this->checklogin = $this->session->userdata('logged_in');
@@ -30,8 +32,8 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartOperation($product_id, $quantity);
             $session_cart = $this->Product_model->cartData();
         }
-        
-        
+
+
 
         $this->response($session_cart['products'][$product_id]);
     }
@@ -42,25 +44,33 @@ class Api extends REST_Controller {
         } else {
             $session_cart = $this->Product_model->cartData();
         }
-        
-         $session_cart['shipping_price'] = 30;
+
+        $session_cart['shipping_price'] = 30;
         if ($session_cart['total_price'] > 299) {
             $session_cart['shipping_price'] = 0;
         }
-        
-        $user_address_details = $this->session->userdata('shipping_address');
-        if($user_address_details){
+        if ($this->checklogin) {
+            $user_address_details2 = $this->User_model->user_address_details($this->user_id);
+            if ($user_address_details2) {
+                $user_address_details = $user_address_details2[0];
+            } else {
+                $user_address_details = "";
+            }
+        } else {
+            $user_address_details = $this->session->userdata('shipping_address');
+        }
+        if ($user_address_details) {
             if ($user_address_details['zipcode'] == 'on') {
                 $session_cart['shipping_price'] = 0;
             }
         }
-        
+
         $session_cart['sub_total_price'] = $session_cart['total_price'];
 
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
 
-        
+
         $this->response($session_cart);
     }
 
@@ -157,7 +167,7 @@ class Api extends REST_Controller {
         $productListFinal = [];
 
         $pricecount = [];
-        
+
         $productListFinal1 = array_slice($product_result, $startpage, 16);
 
         foreach ($productListFinal1 as $key => $value) {
@@ -182,7 +192,7 @@ class Api extends REST_Controller {
         $pricelist = array();
 
         $this->output->set_header('Content-type: application/json');
-        
+
 //        echo count($productListFinal1);
         $productArray = array('attributes' => $attr_filter,
             'products' => $productListFinal,

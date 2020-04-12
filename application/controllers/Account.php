@@ -261,11 +261,17 @@ class Account extends CI_Controller {
             $this->db->where('user_id', $this->user_id);
             $this->db->update('shipping_address');
 
+             $this->db->set('status', "");
+            $this->db->where('user_id', $this->user_id);
+            $this->db->update('shipping_address');
+
             $category_array = array(
-                'address' => $this->input->post('address'),
+                'address1' => $this->input->post('address1'),
+                'address2' => $this->input->post('address2'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
-                'pincode' => $this->input->post('pincode'),
+//                'pincode' => $this->input->post('pincode'),
+                'country' => $this->input->post('country'),
                 'user_id' => $this->user_id,
                 'status' => 'default',
             );

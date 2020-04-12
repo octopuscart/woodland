@@ -195,8 +195,6 @@ class CartGuest extends CI_Controller {
             $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
 
-
-
             $sub_total_price = $session_cart['sub_total_price'];
             $total_quantity = $session_cart['total_quantity'];
             $total_price = $session_cart['total_price'];
@@ -232,7 +230,7 @@ class CartGuest extends CI_Controller {
 
             $this->db->insert('user_order', $order_array);
             $last_id = $this->db->insert_id();
-            $orderno = "MR" . date('Ymd') . "" . $last_id;
+            $orderno = "MM" . date('Ymd') . "" . $last_id;
             $orderkey = md5($orderno);
             $this->db->set('order_no', $orderno);
             $this->db->set('order_key', $orderkey);

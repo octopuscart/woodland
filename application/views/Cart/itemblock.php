@@ -11,7 +11,7 @@
                             <i class="fa fa-shopping-cart fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   My Shopping Bag
-                        <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #fff" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
+                        <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #000" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
                     </a>
                     <?php
                 }

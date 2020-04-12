@@ -68,6 +68,8 @@
     </head>
 
     <?php
+    $this->load->library('session');
+    $this->checklogin = $this->session->userdata('logged_in');
     $this->load->view('layout/menu');
     $this->db->where('parent_id', 0);
     $querymenu = $this->db->get('category');
@@ -156,7 +158,23 @@
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                         <div class="account-wishlist">
                                             <ul>
-                                                <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
+                                                <?php
+                                                if ($this->checklogin) {
+                                                    ?>
+                                                    <li><a href="<?php echo site_url('Account/profile'); ?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                                                    <li><a href="<?php echo site_url('Account/logout'); ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <li><a href="<?php echo site_url('Account/login'); ?>"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
+
+                                                    <?php
+                                                }
+                                                ?>
+
+
+
                                                 <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Wishlist</a></li>
                                                 <li><a href="#"><?php echo globle_currency; ?></a></li>
                                             </ul>

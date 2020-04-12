@@ -107,10 +107,7 @@ $this->load->view('layout/header');
                                         <div class="form-group">
                                             <select name="subject" placeholder="Subject" class="form-control" style="   " required="">
                                                 <option>Enquiry</option>
-                                                <option>Send Swatches</option>
                                                 <option>Feedback</option>
-                                                <option>Appointment</option>
-                                                <option>Alteration</option> 
                                             </select>
                                         </div>
                                     </div>

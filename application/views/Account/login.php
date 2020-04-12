@@ -108,16 +108,9 @@ $this->load->view('layout/header');
 
                             </div>
                             <div class="col-md-6">
-                                <input type="hidden" name="birth_date" id="birth_date" value="{{birth_year}}-{{birth_month}}-{{date_birth}}"> 
+                                <input type="hidden" name="birth_date" id="birth_date" value="{{birth_month}}-{{date_birth}}"> 
                                 <label>Date Of Birth *</label>
-                                <select id="birth_year" name="birth_year" ng-model="birth_year" class="r_corners bg_light w_full border_none bith_date_select_year"  required >
-                                    <option value="" >-YYYY-</option>
-                                    <?php
-                                    for ($i = (date('Y') - 100); $i <= date('Y'); $i++) {
-                                        echo "<option value='$i'>$i</option>";
-                                    }
-                                    ?>
-                                </select>
+                            
 
                                 <select id="birth_month" ng-model="birth_month" name="birth_month" class="r_corners bg_light w_full border_none bith_date_select" required >
                                     <option value="" >-MM-</option>
@@ -150,7 +143,7 @@ $this->load->view('layout/header');
                         <br/>
 
 
-                        <button name = "registration" class="btn-send-message disabled" type="button" value="Login">Register</button>
+                        <button name = "registration" class="btn-send-message disabled" type="submit" value="Login">Register</button>
                     </form>
                 </div>
             </div>

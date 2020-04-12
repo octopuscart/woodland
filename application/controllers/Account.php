@@ -156,8 +156,8 @@ class Account extends CI_Controller {
                         'email' => $email,
                         'password' => md5($password),
                         'password2' => $password,
-                        'profession' => $profession,
-                        'country' => $country,
+                        'profession' => "",
+                        'country' => "",
                         'gender' => $gender,
                         'birth_date' => $birth_date,
                         'registration_datetime' => date("Y-m-d h:i:s A")

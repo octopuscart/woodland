@@ -187,9 +187,14 @@ class CartGuest extends CI_Controller {
             if ($session_cart['total_price'] > 299) {
                 $session_cart['shipping_price'] = 0;
             }
+            if ($address['zipcode'] == 'on') {
+                $session_cart['shipping_price'] = 0;
+            }
             $session_cart['sub_total_price'] = $session_cart['total_price'];
 
             $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
+
+
 
 
             $sub_total_price = $session_cart['sub_total_price'];

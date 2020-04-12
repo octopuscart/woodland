@@ -47,6 +47,14 @@ class Api extends REST_Controller {
         if ($session_cart['total_price'] > 299) {
             $session_cart['shipping_price'] = 0;
         }
+        
+        $user_address_details = $this->session->userdata('shipping_address');
+        if($user_address_details){
+            if ($user_address_details['zipcode'] == 'on') {
+                $session_cart['shipping_price'] = 0;
+            }
+        }
+        
         $session_cart['sub_total_price'] = $session_cart['total_price'];
 
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];

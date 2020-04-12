@@ -86,12 +86,24 @@
             </table>
             <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
+                    <td style="font-size: 12px;width: 50%;padding: 2px 20px;" >
+                        <b>Shipping Address</b><hr/>
+                    </td>
+
+                    <td style="font-size: 12px;width: 50%;padding: 2px 20px;" >
+
+                        <b>Order Information</b><hr/>
+
+                    </td>
+                </tr>
+                <tr>
+
                     <td style="font-size: 12px;width: 50%" >
-                        <b>Shipping Address</b><br/><hr/>
+
                         <span style="text-transform: capitalize;margin-top: 10px;"> 
                             <?php echo $order_data->name; ?>
                         </span> <br/>
-                        <div style="    padding: 5px 0px;">
+                        <div style="    padding: 5px 0px;font-size: 10px">
                             <?php echo $order_data->address1; ?><br/>
                             <?php echo $order_data->address2; ?><br/>
                             <?php echo $order_data->state; ?>
@@ -116,11 +128,7 @@
                     <td style="font-size: 12px;width: 50%" >
 
                         <table class="gn_table">
-                            <tr>
-                                <td colspan="2">
-                                    <b>Order Information</b><br/><hr/>
-                                </td>
-                            </tr>
+
                             <tr>
                                 <th>Order No.</th>
                                 <td>: <?php echo $order_data->order_no; ?> </td>
@@ -194,13 +202,13 @@
                             <?php echo $product->total_price; ?>
                         </td>
                     </tr>
-                    
+
                     <?php
                 }
                 ?>
                 <!--end of cart details-->
 
-                
+
 
 
                 <tr>
@@ -232,7 +240,10 @@
                     <td colspan="6" style="font-size: 12px;">
 
 
-                        <?php echo EMAIL_FOOTER; ?>
+
+                       <?php echo EMAIL_FOOTER;?>
+
+
 
                         <br/>
                         <span style="    text-align: center;

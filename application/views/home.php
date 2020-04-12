@@ -55,7 +55,7 @@ foreach ($sliders as $key => $value) {
                 <div class="slider-content t-lfr s-tb slider-3">
                     <div class="title-container s-tb-c">
                         <h2 class="title1">SHOP ORGANIC PRODUCT
-                            <br/><span>Upto 20% OFF</span> <br>on Every purchase
+                            <br/> Fruits,Oils, Ghee & Much More
                         </h2>
                         <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
@@ -76,7 +76,7 @@ foreach ($sliders as $key => $value) {
 
             <div id="slider-direction-3" class="t-cn slider-direction">
                 <div class="slider-content t-lfr s-tb slider-3">
-                    <div class="title-container s-tb-c">
+                    <div class="title-container s-tb-c">`
                         <h2 class="title1" style="font-size: 23px;">
                             <span style="font-size: 40px;">
                             </span> 
@@ -99,9 +99,8 @@ foreach ($sliders as $key => $value) {
             <div id="slider-direction-5" class="t-cn slider-direction">
                 <div class="slider-content t-lfr s-tb slider-3">
                     <div class="title-container s-tb-c">
-                        <h2 class="title1">SHOP KITCHEN PRODUCT
-                            <br/><span>Upto 20% OFF</span> <br>on Every purchase
-                        </h2>
+                        <h2 class="title1" style="font-size: 22px"> Top quality pulses and food grains, dairy products
+                            <br/><span style="font-size: 20px">Fresh Fruits and Vegetables</span>                         </h2>
                         <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
                 </div>

@@ -72,6 +72,10 @@ $this->load->view('layout/header');
         margin: 0px;
     }
 
+    .freeshippingnote{
+        color:red;
+    }
+    
 </style>
 
 
@@ -152,8 +156,8 @@ $this->load->view('layout/header');
                                                 <p>
                                                     <?php echo $value['address1']; ?>,<br/>
                                                     <?php echo $value['address2']; ?>,<br/>
-                                                    <?php echo $value['city']; ?>
-
+                                                    <?php echo $value['city']; ?><br/>
+ <?php echo $value['zipcode']=='on'?'<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>':''; ?>
                                                 </p>
                                             </div>
                                         </div>
@@ -278,13 +282,24 @@ $this->load->view('Cart/noproduct');
                                     <input type="hidden" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
 
 
-                                    <input type="hidden"  name="zipcode" class="form-control " value="" style="height: 10%;">
 
 
                                     <input type="hidden" required="" name="country" class="form-control" value="" style="height: 10%;">
 
 
                                     <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="line-height: 25px;" colspan="2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="zipcode"> Please check if address belongs to Tsim Sha Tsui
+
+                                        </label>
+                                    </div>
+                                 
+
                                 </td>
                             </tr>
 

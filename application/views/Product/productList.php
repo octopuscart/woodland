@@ -144,21 +144,19 @@ $image2 = "";
                         </div>
                         <button class="btn-services-shop-now" type="submit" value="Login" ng-click="getProducts()">Filter</button>
                     </div>
-<!--                    <h2 class="title-sidebar">Product Tags</h2>
+                    <h2 class="title-sidebar">Product Tags</h2>
                     <div class="product-tags sidebar-section-margin">
                         <ul>
                             <?php
-                            $taglist = [
-                                'rice', 'flour', 'spices', 'dhal', 'dal', 'lentils', 'oilGrocery', 'Fruits', 'vegetables'
-                            ];
-                            foreach ($taglist as $key => $value) {
+                           
+                            foreach ($producttag as $key => $value) {
                                 ?>
-                                <li><a href="#" style="text-transform: uppercase"><?php echo $value; ?></a></li>
+                                <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']) ?>" style="text-transform: uppercase"><?php echo $value['category_name']; ?></a></li>
                                 <?php
                             }
                             ?>
                         </ul>
-                    </div>-->
+                    </div>
                 </div>
             </div>
 

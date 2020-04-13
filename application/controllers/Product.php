@@ -23,11 +23,27 @@ class Product extends CI_Controller {
         $categories = $this->Product_model->productListCategories($cat_id);
 
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
+        $primaryparent = "0";
+        foreach ($data["categorie_parent"] as $ckey => $cvalue) {
+            if ($cvalue['parent_id'] == '0') {
+                $primaryparent = $cvalue['id'];
+            }
+        }
+
+        $categoriesString = $this->Product_model->stringCategories($primaryparent);
+        $categoriesString = trim($categoriesString, ",");
+
+        $this->db->where("id in ($categoriesString)");
+        $query = $this->db->get('category');
+        $producttgs = $query->result_array();
+        
+       $data['producttag'] = $producttgs;
+
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
         $session_last_custom = $this->session->userdata('session_last_custom');
 
-        
+
 
         $this->load->view('Product/productList', $data);
     }

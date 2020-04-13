@@ -148,6 +148,14 @@ class Api extends REST_Controller {
                 $psearch = " and title like '%$searchdata%' ";
             }
         }
+        
+        
+        
+        if (isset($attrdatak["minprice"])) {
+            $priecemn = $attrdatak["minprice"];
+            $priecemx = $attrdatak["maxprice"];
+            $pricequery = " and price > $priecemn and price < $priecemx ";
+        }
 
         $startpage = $attrdatak["start"] - 1;
         $endpage = $attrdatak["end"];
@@ -161,6 +169,17 @@ class Api extends REST_Controller {
         $product_query = "select pt.id as product_id, pt.*
             from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery  order by id ";
         $product_result = $this->Product_model->query_exe($product_query);
+
+
+        $productprices = array();
+        foreach ($product_result as $key => $value) {
+            $productprices[$value['price']] = $value['price'];
+        }
+        sort($productprices);
+        $pricerange = array("maxprice" => 0, "minprice" => 0);
+        if ($productprices) {
+            $pricerange = array("maxprice" => $productprices[count($productprices) - 1], "minprice" => $productprices[0]);
+        }
 
         $productListSt = [];
 
@@ -198,7 +217,8 @@ class Api extends REST_Controller {
             'products' => $productListFinal,
             'product_count' => count($product_result),
             'offers' => array(),
-            'price' => $pricelist);
+            "pricerange" => $pricerange,
+            'price' => $pricerange);
         $this->response($productArray);
     }
 

@@ -116,7 +116,7 @@ $image2 = "";
 
                         </ul>
                     </div>
-                    <h2 class="title-sidebar">BEST PRODUCTS</h2>
+<!--                    <h2 class="title-sidebar">BEST PRODUCTS</h2>
                     <div class="best-products sidebar-section-margin">
                         <div class="media" ng-repeat="prd in offerProducts">
                             <a href="#" class="pull-left">
@@ -130,20 +130,21 @@ $image2 = "";
                                 <p>{{prd.price|currency:"<?php echo globle_currency; ?> "}}</p>
                             </div>
                         </div>
-
-
-
-                    </div>
+                    </div>-->
                     <h2 class="title-sidebar">FILTER BY PRICE</h2>
-                    <div id="price-range-wrapper" class="price-range-wrapper">
+                    
+                    <p>
+                        Price Range: {{productResults.price.minprice|currency}} to {{productResults.price.maxprice|currency}}
+                    </p>
+                    <div id="price-range-wrapper" class="price-range-wrapper" style="padding: 0px 20px;">
                         <div id="price-range-filter"></div>
-                        <div class="price-range-select">
+                        <div class="price-range-select" style="margin: 0px;">
                             <div class="price-range" id="price-range-min"></div>
                             <div class="price-range" id="price-range-max"></div>
                         </div>
-                        <button class="btn-services-shop-now" type="submit" value="Login">Filter</button>
+                        <button class="btn-services-shop-now" type="submit" value="Login" ng-click="getProducts()">Filter</button>
                     </div>
-                    <h2 class="title-sidebar">Product Tags</h2>
+<!--                    <h2 class="title-sidebar">Product Tags</h2>
                     <div class="product-tags sidebar-section-margin">
                         <ul>
                             <?php
@@ -157,7 +158,7 @@ $image2 = "";
                             }
                             ?>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 

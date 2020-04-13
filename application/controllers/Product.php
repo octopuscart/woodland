@@ -26,6 +26,9 @@ class Product extends CI_Controller {
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
         $session_last_custom = $this->session->userdata('session_last_custom');
+
+        
+
         $this->load->view('Product/productList', $data);
     }
 
@@ -197,14 +200,14 @@ class Product extends CI_Controller {
         echo "<pre>";
         foreach ($attr_products as $key => $value) {
             echo "<br/>";
-            $ids  = $value['id'];
+            $ids = $value['id'];
             $description = $value['short_description'];
-            echo $pquery = 'select id, short_description from products where short_description = "'.$description.'" and id!='.$ids;
+            echo $pquery = 'select id, short_description from products where short_description = "' . $description . '" and id!=' . $ids;
             $despro = $this->Product_model->query_exe($pquery);
-        
+
             foreach ($despro as $skey => $svalue) {
-                $pquery = 'update  products set variant_product_of = '.$ids.'  where short_description =  "'.$description.'" and id!='.$ids;
-               // $query = $this->db->query($pquery);
+                $pquery = 'update  products set variant_product_of = ' . $ids . '  where short_description =  "' . $description . '" and id!=' . $ids;
+                // $query = $this->db->query($pquery);
             }
             print_r($despro);
         }

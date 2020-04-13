@@ -14,7 +14,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
 
 
-    $scope.productResults = {};
+    $scope.productResults = {"price":{"maxprice":0, "minprice":0}};
     $scope.init = 0;
     $scope.checkproduct = 0;
     $scope.pricerange = {'min': 0, 'max': 0};
@@ -44,8 +44,8 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         var pricestr = pricelist.join("--");
         var pricefilters = "pfilter=" + pricestr;
         argsk.push(pricefilters);
-        var pmm = $scope.pricerange.min;
-        var pmx = $scope.pricerange.max;
+        var pmm = $scope.productResults.price.minprice;
+        var pmx = $scope.productResults.price.maxprice;
 
         var elempm = "maxprice=" + pmx;
 
@@ -54,8 +54,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
 
         if (pmm != 0) {
-            $scope.pricerange.max = pmx;
-            $scope.pricerange.min = pmm;
+          
             argsk.push(elempx);
             argsk.push(elempm);
         }
@@ -137,7 +136,40 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
                     $("html, body").animate({scrollTop: 0}, "slow")
                 })
 
+       $timeout(function () {
 
+
+                    var priceSlider = document.getElementById('price-range-filter');
+                    if (priceSlider) {
+                        noUiSlider.create(priceSlider, {
+                            start: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
+                            connect: true,
+                            /*tooltips: true,*/
+                            range: {
+                                'min': Number($scope.productResults.price.minprice),
+                                'max': Number($scope.productResults.price.maxprice)
+                            },
+                            format: wNumb({
+                                decimals: 0
+                            }),
+                        });
+                        var marginMin = Number($scope.productResults.price.minprice),
+                                marginMax = Number($scope.productResults.price.maxprice);
+                        priceSlider.noUiSlider.on('update', function (values, handle) {
+                            if (handle) {
+                                $timeout(function () {
+                                    $scope.productResults.price.maxprice = values[handle];
+                                })
+
+                            } else {
+                                $timeout(function () {
+                                    $scope.productResults.price.minprice = values[handle];
+                                })
+                            }
+                        });
+                    }
+
+                }, 1000)
 
 
                 var priceui = document.getElementById("price-range");

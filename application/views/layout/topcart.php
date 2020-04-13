@@ -23,7 +23,7 @@
                                     <button class="btn btn-default"  type="button" ng-click="updateCart(product, 'sub')">-</button>
                                 </span>
 
-                                <span class="cartquantitysearch"> {{product.quantity}} </span>
+                                <span class="cartquantitysearch2"> {{product.quantity}} </span>
                                 <span class="input-group-btn input-group-sm" >
                                     <button class="btn btn-default   incbutton" type="button" ng-click="updateCart(product, 'add')">+</button>
                                 </span>

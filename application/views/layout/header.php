@@ -142,6 +142,15 @@
 
             <!-- Header Area Start Here -->
             <header>
+                <div class="header-top-inner-top" style="color: white;background: red;">
+                    <div class="container">
+                        <h2 style="margin: 0;">
+                            <marquee>
+                                Due to COVID-19 we are not accepting orders online at present. We will resume soon.
+                            </marquee>
+                        </h2>
+                    </div>
+                </div>
                 <div class="header-area-style3" id="sticker">
                     <div class="header-top">
                         <div class="header-top-inner-top">

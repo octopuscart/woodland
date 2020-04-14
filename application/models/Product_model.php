@@ -263,7 +263,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'total_quantity' => 0,
                     'custome_items' => [],
                     'custome_items_name' => [],
-                    'total_credit_limit' => $total_credit_limit,
+                    'total_credit_limit' => 0,
                     'total_price' => 0, 'used_credit' => 0);
                 $this->session->set_userdata('session_cart', $cartdata);
                 $session_cart = $this->session->userdata('session_cart');

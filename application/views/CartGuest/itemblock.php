@@ -43,7 +43,7 @@
                             <i class="fa fa-map-marker fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   Shipping Address
-                        <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
+                        <span style="" class="ng-binding shippingtagtext">
                             <?php
                             if (count($user_address_details)) {
                                 $value = $user_address_details[0];

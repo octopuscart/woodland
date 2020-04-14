@@ -52,7 +52,7 @@ foreach ($sliders as $key => $value) {
 
             </div>
             <div id="slider-direction-1" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3">
+                <div class="slider-content t-lfr s-tb slider-3 hideonmoile">
                     <div class="title-container s-tb-c">
                         <h2 class="title1">SHOP ORGANIC PRODUCT
                             <br/> Fruits,Oils, Ghee & Much More
@@ -63,7 +63,7 @@ foreach ($sliders as $key => $value) {
             </div>
 
             <div id="slider-direction-2" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3">
+                <div class="slider-content t-lfr s-tb slider-3 hideonmoile">
                     <div class="title-container s-tb-c">
                         <h2 class="title1" style="font-size: 23px;"><span style="font-size: 40px;">Bollywood Movie Tickets
                             </span> <br>For Bookings Call / Whatsapp - +(852) 6142 8189
@@ -98,7 +98,7 @@ foreach ($sliders as $key => $value) {
 
             <div id="slider-direction-5" class="t-cn slider-direction">
                 <div class="slider-content t-lfr s-tb slider-3">
-                    <div class="title-container s-tb-c">
+                    <div class="title-container s-tb-c hideonmoile">
                         <h2 class="title1" style="font-size: 22px"> Top quality pulses and food grains, dairy products
                             <br/><span style="font-size: 20px">Fresh Fruits and Vegetables</span>                         </h2>
                         <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>

@@ -316,7 +316,38 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mobile-menu">
-
+                                            <nav id="dropdown">
+                                                <ul>
+                                                     <?php
+                                            foreach ($menucontainer as $key => $value) {
+                                                $children = $value['children'];
+                                                ?>
+                                                <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>">
+                                                        <?php echo $value['category_name']; ?>
+                                                        <?php if ($children) { ?>
+                                                            
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <?php
+                                                            foreach ($children as $ckey => $cvalue) {
+                                                                ?>
+                                                                <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </ul>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        </a><?php
+                                                    }
+                                                    ?>
+                                                </li>
+                                                <?php
+                                            }
+                                            ?>
+                                                </ul>
+                                            </nav>
                                         </div>
                                     </div>
                                 </div>

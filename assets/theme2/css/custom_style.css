@@ -129,12 +129,35 @@ b.barcomb-list {
 
 @media only screen and (max-width: 479px) {
 
+    .hideonmoile{
+        display: none;
+    }
+
     .showonmobile{
         display: block;
     }
 
+    .panel-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: inherit;
+    }
+
+    .btn-apply-coupon {
+        background: #d9242b;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: 0px;
+        display: inline-block;
+        padding: 7px 7px;
+        border: 1px solid #d92229;
+    }
+
     .main-slider2{
-        margin-top: 52px;
+        /*margin-top: 52px;*/
     }
 
     .inner-page-banner-area .breadcrumb-area{
@@ -166,7 +189,7 @@ b.barcomb-list {
 
 @media only screen and (max-width: 767px) {
     .main-slider2{
-        margin-top: 52px;
+        /*margin-top: 52px;*/
     }
 
 
@@ -581,21 +604,21 @@ b.barcomb-list {
 
 .mean-container .mean-bar a.logo-mobile-menu {
     width: 100%;
-    background-color: #000;
+    background-color: #FFEB3B;
     box-sizing: border-box;
 }
 
 .mean-container a.meanmenu-reveal span {
     display: block;
-    background: #ffffff;
+    background: #ff0000;
     height: 3px;
     margin-top: 3px;
-    color: #fff;
+    color: #f00;
 }
 .mean-container a.meanmenu-reveal {
     float: none !important;
     position: absolute;
-    color: white;
+    color: #ff0000;
 }
 
 
@@ -720,7 +743,7 @@ b.barcomb-list {
 
 .productlistborder{
     border:3px solid #EEEEEE;
-        display: block!important;
+    display: block!important;
 }
 
 .login-registration-page-area .login-registration-field label {
@@ -876,7 +899,7 @@ b.barcomb-list {
     display: block;
     padding: 3px 0px 3px 15px;
     letter-spacing: 0;
-     text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .category-menu-area ul li .dropdown-menu > li > a {
@@ -1530,12 +1553,12 @@ h5.theaterblocktext {
 }
 
 .cart-page-area .cart-page-top table tr td h3 {
-     letter-spacing: 1px; 
+    letter-spacing: 1px; 
     text-transform: capitalize;
     font-size: 15px;
     margin-bottom: 0;
     margin-left: 15px;
- 
+
 }
 
 .cart-area > ul > li .media .cart-content ul li h2 {
@@ -1553,11 +1576,85 @@ h5.theaterblocktext {
 }
 
 .cart-area-inc button{
-   height: 20px!important;
+    height: 20px!important;
     line-height: 0.5!important;
 }
 
 .cart-area > ul > li .media .cart-content ul li h3 {
     font-size: 12px;
     margin-bottom: 14px;
+}
+
+.shippingtagtext{
+    float: right;
+    line-height: 29px;
+    font-size: 12px;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 308px;
+}
+
+
+.homeproductblock {
+    border: 3px solid #fff;
+}
+
+@media only screen and (max-width: 479px) {
+
+    .showonmobile{
+        display: block;
+    }
+
+    .panel-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: inherit;
+    }
+
+    .btn-apply-coupon {
+        background: #d9242b;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: 0px;
+        display: inline-block;
+        padding: 7px 7px;
+        border: 1px solid #d92229;
+    }
+
+    .product-details2-area .product-details-tab-area .tab-content {
+        padding: 35px 0px 15px 0px;
+    }
+    .panel-body {
+        padding: 7px;
+    }
+
+    .shippingtagtext{
+        float: right;
+        line-height: 29px;
+        font-size: 12px;
+        font-weight: 300;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 118px;
+    }
+
+
+    .productbutton {
+
+        font-size: 9px;
+    }
+
+    
+    .productlistborder {
+    border: 3px solid #EEEEEE;
+    display: block!important;
+    padding: 10px 10px;
+    text-align: center;
+}
 }

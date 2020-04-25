@@ -8,7 +8,7 @@
                         </div>
                         <div class="col_half col_last nobottommargin">
                             <div class="copyrights-menu copyright-links fright clearfix">
-                                <a href="#">Home</a>/<a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html">About Us</a>/<a href="<?php echo base_url(); ?>assets/theme2/res/menu.html">Menu</a>/<a href="<?php echo base_url(); ?>assets/theme2/res/blog.html">News</a>/<a href="<?php echo base_url(); ?>assets/theme2/res/reservation.html">Contact</a>
+                                <a href="#">Home</a>/<a href="">About Us</a>/<a href="">Menu</a>/<a href="">Wall</a>/<a href="">Contact</a>
                             </div>
                         </div>
                     </div>

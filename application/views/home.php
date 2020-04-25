@@ -1,246 +1,399 @@
 <?php
 $this->load->view('layout/header');
 ?>
-<!-- Slider Area Start Here -->
-<!--<div class="main-slider2">
-    <div class="bend niceties preview-1">
-        <div id="ensign-nivoslider-3" class="slides">
-<?php
-foreach ($sliders as $key => $value) {
-    ?>
-                                                                                                                                                                                <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
-    <?php
-}
-?>        
-        </div>
 
-
-<?php
-foreach ($sliders as $key => $value) {
-    ?>
-                                                                                                                                                                            <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                                                                                <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                                                                                    <div class="title-container s-tb-c">
-                                                                                                                                                                                        <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
-    <?php echo $value->title; ?>
-                                                                                                                                                                                        </h2>
-                                                                                                                                                                                        <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                                                                                        <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                                                                                        <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                            </div>
-    <?php
-}
-?>
-
-    </div>
-</div>-->
-<!-- Slider Area End Here -->
-<div ng-controller="HomeController">
-
-    <!-- Slider Area Start Here -->
-    <div class="main-slider2">
-        <div class="bend niceties preview-1">
-            <div id="ensign-nivoslider-3" class="slides">
-                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
-                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-4.jpg" alt="" title="#slider-direction-4" />
-                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-5.jpg" alt="" title="#slider-direction-5" />
-                <img src="<?php echo base_url(); ?>assets/sliders/cinema-ticket-banner.jpg" alt="" title="#slider-direction-2" />
-                <img src="<?php echo base_url(); ?>assets/sliders/home-banner-3.jpg" alt="" title="#slider-direction-3" />
-
-
-            </div>
-            <div id="slider-direction-1" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3 hideonmoile">
-                    <div class="title-container s-tb-c">
-                        <h2 class="title1">SHOP ORGANIC PRODUCT
-                            <br/> Fruits,Oils, Ghee & Much More
-                        </h2>
-                        <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="slider-direction-2" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3 hideonmoile">
-                    <div class="title-container s-tb-c">
-                        <h2 class="title1" style="font-size: 23px;"><span style="font-size: 40px;">Bollywood Movie Tickets
-                            </span> <br>For Bookings Call / Whatsapp - +(852) 6142 8189
-                        </h2>
-                        <a href="http://maharajatickets.com/" target="_blank" class="btn-shop-now-fill-slider">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="slider-direction-3" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3">
-                    <div class="title-container s-tb-c">`
-                        <h2 class="title1" style="font-size: 23px;">
-                            <span style="font-size: 40px;">
-                            </span> 
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div id="slider-direction-4" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3">
-                    <div class="title-container s-tb-c">
-                        <h2 class="title1" style="font-size: 23px;">
-                            <span style="font-size: 40px;">
-                            </span> 
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div id="slider-direction-5" class="t-cn slider-direction">
-                <div class="slider-content t-lfr s-tb slider-3">
-                    <div class="title-container s-tb-c hideonmoile">
-                        <h2 class="title1" style="font-size: 22px"> Top quality pulses and food grains, dairy products
-                            <br/><span style="font-size: 20px">Fresh Fruits and Vegetables</span>                         </h2>
-                        <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- Slider Area End Here -->
-
-
-
-    <div class="product2-area">
-        <div class="container-fluid" >
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-title">
-                        <span class="title-bar-left"></span>
-                        <h2>Blockbuster Offers</h2>
-                        <span class="title-bar-right"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row featuredContainer">
-                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 homeproductblock {{globleCartData.products[product.id] ? 'activeproduct': '' }} " ng-repeat="product in homeInit.offers" >
-
-                    <div class="product-box1" >
-
-                        <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
-                             background-position: center;">
-
-                        </div>
-
-                        <div class="product-content-holder">
-                            <h3>
-                                <a href="#">{{product.title}}  <br>
-                                    <span style="font-size: 12px">{{product.short_description}} </span>
-                                </a>
-                                <span ><span  style="font-size: 12px;">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
-
-                            </h3>
-
-                            <div class="productbuttonscontainer">
-
-                                <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
-                                        color: white;
-                                        border-color: #d92229;">Add To Cart</button>
-                                <button ng-click="addToBuy(product.id, 1)" type="button" class="productbutton">Buy Now</button>
-
-                            </div>  
+<section id="slider" class="slider-element swiper_wrapper slider-parallax force-full-screen full-screen clearfix" data-effect="fade" data-loop="true" data-autoplay="6000" data-speed="1400">
+    <div class="slider-parallax-inner">
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/1.jpg'); background-position: center center;">
+                    <div class="container dark clearfix">
+                        <div class="slider-caption">
+                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
+                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="400">Woodlands - Vegetarian Restaurant | Jain | Vegan Restaurant | Indian Restaurant in Hong Kong</p>
+                            <div class="static-content" style="position: relative; display: flex; justify-content: flex-start; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="800">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl-white.svg" width="42" height="42" alt="">
+                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/spoon-white.svg" width="42" height="42" alt="">
+                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/glass-white.svg" width="42" height="42" alt="">
+                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/wifi-white.svg" width="42" height="42" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </div>
-    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
-
-    <div class="offer-area1 hidden-after-desk movieblockhome">
-
-        <div class="" style="padding: 0px 50px;">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="brand-area-box-l" style="padding-top: 24px;">
-                        <span>Movie Ticket Price From </span>
-                        <h1>HK$ 180 Only</h1>
-                        <p>Choose your Ticket Price<br/> $220 (J-O) - $200 (E-I) - $180 (C-D)</p>
-                        <a href="http://maharajatickets.com/" target="_blank" class="btn-shop-now-fill">Book Now</a>
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/3.jpg'); background-position: center center;">
+                    <div class="container dark clearfix">
+                        <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
+                            <img data-animate="fadeIn" src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept.png" alt="" style="width: 260px; margin-bottom: 10px;">
+                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn" data-delay="400">Vegetarian Restaurant</h2>
+                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="800">First and Best Indian Vegetarian Restaurant <br/> in Tsim Sha Tsui, Hong Kong</p>
+                            <div class="static-content" style="position: relative; display: flex; justify-content: center; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="1000">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl-white.svg" width="42" height="42" alt="">
+                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/spoon-white.svg" width="42" height="42" alt="">
+                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/glass-white.svg" width="42" height="42" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="countdown2">
-<!--                    <div class="countdown-section"><h3>7th</h3> <p>FAB</p> </div>
-                    <div class="countdown-section"><h3>8th</h3> <p>FAB</p> </div>
-                    <div class="countdown-section"><h3>9th</h3> <p>FAB</p> </div>-->
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="brand-area-box-r">
-                        <a href="#"><img src="<?php echo base_url(); ?>assets/movies/movieposter1.jpg" alt="offer"></a>
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/2.jpg'); background-position: center bottom;">
+                    <div class="container dark clearfix">
+                        <div class="slider-caption slider-caption-right">
+                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn">Hello &amp; Welcome.</h2>
+                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="400">MOST SHARED MENU ITEM OF WOODLANDS
+                                THE FIRST INDIAN RESTAURANT AND VEGETARIAN RESTAURANT IN HONG KONG</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+            <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
         </div>
     </div>
+</section>
 
-    <div class="container block52">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
-            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/contact/"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/become-vendor-1.jpg" alt=""></a></div>
-            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/delivery-around-hong-kong.html"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/hk-delivery-1.jpg" alt=""></a></div>
-            <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/movie-ticket.html"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/favourite-banner-1.jpg" alt=""></a></div>
+<section id="content" style="overflow: visible;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-top: -40px;"></div>
+    <div class="content-wrap">
+        <div class="section nomargin clearfix" style="padding: 40px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/4.jpg') center center no-repeat; background-size: 100% auto">
+            <div class="container clearfix">
+                <div class="heading-block nobottomborder bottommargin-sm">
+                    <h2 class="font-secondary color nott" style="font-size: 52px;">
+                        <div class="fbox-media" style="width: 70px; height: auto;float:left;margin-top: -13px;float: left;margin-right: 20px;">
+                            <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl.svg" alt="">
+                        </div>
+                        Who We Are </h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-10 bottommargin-sm">
+                        <div class="feature-box media-box" style="max-width: 80%">
+
+                            <h3>First and Best Indian Vegetarian Restaurant in Hong Kong</h3>
+                            <p> Vegetarianism is neither a fad not a passing fancy. It is a long and widely established way of life not only for whole communities in the far east And Asia but all over the world among individuals who are making an independent stand for a better healthier and more compassionate society.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="    margin-top: 24px;">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/boutique-collection-1.jpg" alt=""></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/posts/category/csr/"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/cares-shares-1.jpg" alt=""></a></div>
+
+
+        <div class="clear"></div>
+        <div class="section nobottommargin" style="background: #eee  url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') no-repeat top left / cover; padding: 60px 0; border-top: 1px solid #EEE;">
+            <div class="container clearfix">
+                <div class="heading-block center nobottommargin nobottomborder">
+                    <span class="font-primary" style="font-size: 16px; color: #888">Tasty &amp; Healthy</span>
+                    <h3 class="nott font-secondary ls0" style="font-size: 60px;">Our Food Menu</h3>
+                </div>
+            </div>
+        </div>
+        <div class="section food-menu notopmargin nopadding">
+            <div class="container-fluid">
+                <div class="row align-items-stretch clearfix">
+                    <div class="col-lg-7 clearfix">
+                        <div class="vertical-middle1" style="">
+                            <div class="col-padding clearfix">
+                                <div>
+                                    <div id="item-thumb" class="item-thumb">
+
+                                        <?php
+                                        $menuitems = array(
+                                            "SOUP" => "soup.jpg",
+                                            "STARTERS" => "idly.jpg",
+                                            "CHAT CORNER" => "chat.jpg",
+                                            "DOSA" => "dosa.jpg",
+                                            "RAVA DOSA" => "ravadosa.jpg",
+                                            "UTTAPPAM" => "uttapam.jpg",
+                                            "THALI" => "thali.jpg",
+                                            "RICE" => "rice.jpg",
+                                            "BREADS" => "roti.jpg",
+                                        );
+                                        foreach ($menuitems as $key => $value) {
+                                            ?>
+                                            <button role = "button" class = "owl-dot">
+                                                <span style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/<?php echo $value; ?>)">
+                                                    <h3><?php echo $key; ?></h3>
+                                                </span>
+
+                                            </button>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All Menu</a></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
+                        <div id="food-menu-carousel" class="menu-carousel owl-carousel image-carousel food-menu-carousel custom-js owl-loaded">
+
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage" style="padding:0">
+                                    <div class="owl-item active" >
+                                        <div class="oc-item">
+                                            <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/featuremenu.jpg" alt="Image 1" style="    margin: 0px!important;">
+                                            <div class="food-content clearfix">
+                                                <div class="heading-block nobottomborder nobottommargin">
+                                                    <h3 class="font-secondary nott">Nothing brings people together <br/> like our dosa</h3>
+
+                                                    <p class="nobottommargin">
+                                                        India is the home of innumerable delicious vegetarian dishes. There is so much more to Indian food than just curry. Indian food varies from region to region throughout the country. All of the Regional varieties share a common love of healthy fresh vegetables and fragrant spices.
+                                                    </p>
+                                                    <p class="nobottommargin"> We at Woodlands offer traditional lactovegetarian, Jain & Buddhist Food with no onion, garlic, root vegetables and 100% plant-based dishes commonly known as vegan.</p>
+
+                                                    <p class="nobottommargin">All are prepared separately by our expert chefs.</p>
+
+                                                    <p class="nobottommargin">We are best Indian Restaurant and Vegetarian Restaurant in Tsim Sha Tsui, Hong Kong</p>
+
+
+
+                                                </div>
+                                                <a href="demos/restaurant/menu.html" class="more-link">See More Details <i class="icon-line-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png">
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="section nobottommargin" style="padding: 0px 0; background: #FFF;    margin-top: -30px;">
+            <div class="container clearfix">
+                <div class="heading-block center nobottomborder">
+                    <span class="font-primary ls1" style="font-size: 14px; color: #AAA">Expert &amp; Skillful</span>
+                    <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Our Chefs</h3>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-2 col-md-6">
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team">
+                            <div class="team-image imagescalein">
+                                <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/kitta.jpg" alt="Josh Clark"></a>
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title">
+                                    <h4 class="font-primary t400 ls2">KITTA Moolya</h4>
+                                    <span>Executive Chef</span>
+                                </div>
+                                <p>    
+                                    Our chef, Kitta Moolya, was born and raised in Mangalore, close to Udupi, a famous city in South India known for its specialized and highly varied vegetarian cuisine.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team">
+                            <div class="team-image imagescalein">
+                                <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/sures.jpg" alt="Suresh Pairaje Rai
+                                                                                                        "></a>
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title">
+                                    <h4 class="font-primary t400 ls2">Suresh Pairaje Rai</h4>
+                                    <span>Chef</span>
+                                </div>
+                                <p>I want my cooking to reflect the rugged nature and climate of the cold north. I want to create a progressive environment that has a emphasis on the outstanding produce of our region.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section nobottommargin" style="background: #fee749 url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall.jpg') no-repeat center right; background-size: cover; padding: 60px 0;">
+            <div class="heading-block center nobottommargin nobottomborder">
+
+                <h3 class="nott font-secondary ls0" style="font-size: 60px;line-height: 1.3;">Wall Of Woodland</h3>
+            </div>
+        </div>
+        <div class="section dessert-menu nomargin nopadding">
+            <div class="container-fluid">
+                <div class="row align-items-stretch clearfix">
+                    <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);">
+                        <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
+                            <?php
+                            $reviewList = array(
+                                "ranikant" => array(
+                                    "image" => "Rajini.jpg",
+                                    "name" => "Rajani Kanth",
+                                    "position" => "Indian Cine Super Star",
+                                    "date" => "",
+                                ),
+                                "ilayaraja" => array(
+                                    "image" => "Ilayaraja.jpg",
+                                    "name" => "Iilayaraja",
+                                    "position" => "Famous Indian Music Director",
+                                    "date" => "",
+                                ),
+                                "SPB" => array(
+                                    "image" => "SPB.jpg",
+                                    "name" => "S. P. Balasubrahmanyam",
+                                    "position" => "Indian playback singer",
+                                    "date" => "",
+                                ),
+                                "Sunil-Gav" => array(
+                                    "image" => "Sunil-Gav.jpg",
+                                    "name" => "Sunil Gavaskar",
+                                    "position" => "Indian cricketer",
+                                    "date" => "",
+                                ),
+                                "Anil-Kumble" => array(
+                                    "image" => "Anil-Kumble.jpg",
+                                    "name" => "Anil Kumble",
+                                    "position" => "Indian cricketer",
+                                    "date" => "",
+                                ),
+                                "Amrish" => array(
+                                    "image" => "Amrish.jpg",
+                                    "name" => "Amrish Puri",
+                                    "position" => "Indian bollywood actor ",
+                                    "date" => "",
+                                ),
+                            );
+                            foreach ($reviewList as $key => $value) {
+                                ?>
+                                <div class="oc-item">
+                                    <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" style="margin: 26px;    width: 90%;">
+                                    <div class="food-content clearfix">
+                                        <div class="heading-block nobottomborder nobottommargin">
+                                            <h3 class="font-secondary nott"><?php echo $value['name']; ?></h3>
+                                            <div class="food-info"><?php echo $value['position']; ?></div>
+                                            <p class="nobottommargin"><?php echo $value['date']; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            ?>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 clearfix" style="background:url()">
+                        <div class="vertical-middle">
+                            <div class="col-padding clearfix">
+                                <div><div id="item-thumb1" class="item-thumb"></div></div>
+                                <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+
+        <div class="line clear"></div>
+        <div class="container section-contact topmargin-lg clearfix">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-6 bottommargin-sm center">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-et-map"></i>
+                    <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Contact</h3>
+                    <span class="font-primary">
+                        UG Shop 16 & 17, Wing On Plaza,<br/>
+                        62, Mody Road, Tsim Sha Tsui East,<br/>
+                        Kowloon, Hong Kong
+                    </span>
+                </div>
+                <div class="col-lg-3 col-md-6 bottommargin-sm center">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-et-clock"></i>
+                    <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Opening Time</h3>
+                    <span class="font-primary">
+                        <table style="    width: 100%;text-align: left;">
+                            <tr>
+                                <td colspan="2" style="text-align: center;"><strong>Monday To Sunday</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Lunch</td>
+                                <td>: &nbsp; 11:30am – 03:30pm</td>
+                            </tr>
+                            <tr>
+                                <td>Dinner</td>
+                                <td>: &nbsp; 06:30pm – 10:30pm</td>
+                            </tr>
+                        </table>
+                    </span>
+                </div>
+                <div class="col-lg-3 col-md-6 bottommargin-sm center">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-et-clipboard"></i>
+                    <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Reservation</h3>
+                    <span class="font-primary">
+                        <table style="    width: 100%;">
+                            <tr>
+                                <td colspan="1" style="text-align: center;font-size: 20px;"><strong>+(852) 2369 3718</strong></td>
+
+                            </tr>
+                            <tr>
+                              
+                                <td><i class="icon-et-phone"></i>&nbsp; +(852) 2366 1945</td>
+                            </tr>
+                            <tr>
+                              
+                                <td><i class="icon-et-envelope"></i>&nbsp; reachus@vegconcepts.com</td>
+                            </tr>
+                        </table>
+                    </span>
+                </div>
+                <div class="col-lg-3 col-md-6 bottommargin-sm center">
+                    <i class="i-plain i-xlarge divcenter nobottommargin icon-et-heart"></i>
+                    <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Social Contact</h3>
+                    <div style="display: flex; justify-content: center">
+                        <a href="#" class="social-icon si-borderless si-facebook">
+                            <i class="icon-line2-social-facebook"></i>
+                            <i class="icon-line2-social-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon si-borderless si-twitter">
+                            <i class="icon-line2-social-twitter"></i>
+                            <i class="icon-line2-social-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon si-borderless si-youtube">
+                            <i class="icon-line2-social-youtube"></i>
+                            <i class="icon-line2-social-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon si-borderless si-instagram">
+                            <i class="icon-line2-envelope"></i>
+                            <i class="icon-line2-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <video autoplay loop muted poster="screenshot.jpg" id="background">
-        <source src="<?php echo base_url(); ?>assets/sliders/maharajamart.mp4" type="video/mp4">
-    </video>
-
-
-    <div style="clear: both"></div>
-    <div class="brand-area" >
+    <div class="section nomargin dark bgcolor" style="">
         <div class="container">
-            <div class="section-title">
-                <span class="title-bar-left"></span>
-                <h2>our Best Brands</h2>
-                <span class="title-bar-right"></span>
-            </div>
-            <div class="metro-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
-                <?php
-                $brandarray = ['Marico.png', 'Gowardhan.png', 'KhadiNatural.png', 'NaturePearls.png', 'RealFruitPower.png',
-                    'Patanjali.png', 'Bikaji.png', 'PSO.png'
-                ];
-                foreach ($brandarray as $key => $value) {
-                    ?>
-                    <div class="brand-area-box">
-                        <a href="#"><img src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="brand"></a>
-                    </div>
-                    <?php
-                }
-                ?>
-
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-10">
+                    <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
+                </div>
+                <div class="col-md-2">
+                    <a class="button button-circle button-xlarge text-dark bg-white button-light nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Brand Area End Here -->
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header-bg.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
 
+</section>
 
-    <div class="container">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://v1.maharajamart.com/deal-of-the-week.html"><img src="http://v1.maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
-        </div>
-    </div>
-
-</div>
 <?php
 $this->load->view('layout/footer');
 ?>

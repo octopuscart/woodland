@@ -1,0 +1,109 @@
+.feature-box p {
+    margin: 8px 0 0;
+    color: #000;
+    font-size: 17px;
+}
+
+.item-thumb .owl-dot span {
+    position: relative;
+    display: block;
+    background-size: cover!important;
+    background-position: center center!important;
+    width: auto;
+    height: 100%;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+        box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.16);
+}
+
+.item-thumb .owl-dot span h3{
+        background: #4CAF50;
+    color: white;
+    font-size: 15px;
+}
+
+.item-thumb .owl-dot {
+    width: 31.33333%;
+    display: inline-block;
+    justify-content: center;
+    height: 220px;
+    cursor: pointer;
+    padding: 15px;
+    background-color: transparent;
+}
+
+
+.menu-carousel .heading-block h3 {
+    font-size: 34px;
+    line-height: 34px;
+}
+
+
+.section {
+    position: relative;
+    margin: 60px 0;
+    padding: 60px 0;
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+.nopadding {
+    padding: 0!important;
+}
+
+.notopmargin {
+    margin-top: 0!important;
+}
+
+
+
+
+.dessert-menu .item-thumb .owl-dot:nth-of-type(1) span {
+    background-image: url(../res/images/review/Rajini.jpg);
+    background-size: 100%!important;
+}
+.dessert-menu .item-thumb .owl-dot:nth-of-type(2) span {
+    background-image: url(../res/images/review/Ilayaraja.jpg);
+    background-size: 100%!important;
+}
+
+.dessert-menu .item-thumb .owl-dot:nth-of-type(3) span {
+    background-image: url(../res/images/review/SPB.jpg);
+    background-size: 100%!important;
+}
+
+.dessert-menu .item-thumb .owl-dot:nth-of-type(4) span {
+    background-image: url(../res/images/review/Sunil-Gav.jpg);
+    background-size: 100%!important;
+}
+
+.dessert-menu .item-thumb .owl-dot:nth-of-type(5) span {
+    background-image: url(../res/images/review/Anil-Kumble.jpg);
+    background-size: 100%!important;
+}
+
+.dessert-menu .item-thumb .owl-dot:nth-of-type(6) span {
+    background-image: url(../res/images/review/Amrish.jpg);
+    background-size: 100%!important;
+}
+
+.dessert-menu  .item-thumb .owl-dot {
+    width: 31.33333%;
+    display: inline-block;
+    justify-content: center;
+    height: 173px;
+    cursor: pointer;
+    padding: 15px;
+    background-color: transparent;
+}
+
+.double-line, .line {
+    clear: both;
+    position: relative;
+    width: 100%;
+    margin: 17px 0;
+    border-top: 1px solid #eee;
+}

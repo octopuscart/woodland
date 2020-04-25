@@ -2,229 +2,101 @@
 $this->load->view('layout/header');
 ?>
 
-
-<style>
-    .product_image_back {
-        background-size: contain!important;
-        background-repeat: no-repeat!important;
-        height: 200px!important;
-        background-position-x: center!important;
-        background-position-y: center!important;
-    }
-
-    .productblock{
-        padding: 10px;
-        border: 1px solid rgb(255, 214, 88);
-        margin-bottom: 30px;
-    }
-</style>
-
-<!-- Slider -->
-<section class="sub-bnr" data-stellar-background-ratio="0.5">
-    <div class="position-center-center">
-        <div class="container">
-            <h4>Shop page</h4>
-
-            <!-- Breadcrumb -->
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-
-                <?php
-                foreach ($categorie_parent as $key => $value) {
-                    $title = $value['category_name'];
-                    $cid = $value['id'];
-                    echo "<li><a href='" . site_url("Product/ProductList/" . $cid) . "'>$title</a></li>";
-                }
-                ?>
-            </ol>
-        </div>
+<section id="page-title" class="page-title-parallax page-title-dark page-title-center" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/menu2.jpg'); background-size: cover; padding: 120px 0 180px;" data-bottom-top="background-position:0 0px;" data-top-bottom="background-position:0px -300px;">
+    <div class="container clearfix">
+        <h1 class="font-secondary capitalize ls0" style="font-size: 74px;">Menu</h1>
+        <span class="t400">Choose Items from Our Menu</span>
     </div>
 </section>
 
-<!-- Content -->
-<div id="content" ng-controller="ProductController"> 
-
-    <!-- Shop Content -->
-    <div class="shop-content pad-t-b-60">
-        <div class="container" >
-            <div class="row"> 
-
-
-                <!-- Shop Side Bar -->
-                <div class="col-md-3" ng-if="checkproduct == 1">
-                    <div class="side-bar">
-
-
-
-
-                        <div class="search">
-                            <form>
-                                <input type="text" placeholder="SEARCH">
-                                <button type="submit"> <i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-
-                        <!-- HEADING -->
-                        <div class="heading">
-                            <h6>Products Categories</h6>
-                            <hr class="dotted">
-                        </div>
-
-
-
-
-                        <!-- CATEGORIES -->
-                        <ul class="cate">
-                            <?php
-                            foreach ($categories as $key => $value) {
-                                ?>                                   
-                                <li><a href="<?php echo site_url("Product/ProductList/" . $value['id']); ?>"><?php echo $value['category_name']; ?></a></li>
-                                <?php
-                            }
-                            ?>                           
-                        </ul>
-
-                        <!-- HEADING -->
-                        <div class="heading">
-                            <h6>Filter by price</h6>
-                            <hr class="dotted">
-                        </div>
-                        <!-- PRICE -->
-                        <div class="cost-price-content">
-                            <div id="price-range" class="price-range"></div>
-                            <span id="price-min" class="price-min">{{productResults.price.minprice}}</span> <span id="price-max" class="price-max">{{productResults.price.maxprice}}</span> <a href="#." class="btn btn-small btn-inverse pull-right" ng-click="filterPrice()">FILTER</a> 
-                        </div>
-
-                        <div ng-repeat="(attrk, attrv) in productResults.attributes" ng-if="attrv.length > 1">
-                            <!-- HEADING -->
-                            <div class="heading">
-                                <h6>{{attrk}}</h6>
-                                <hr class="dotted">
-                            </div>
-                            <!-- COLORE -->
-                            <ul class="cate">
-                                <li ng-repeat="atv in attrv">
-                                    <a href="#.">
-                                        <label style="font-weight: 500">
-                                            <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)">  {{atv.attribute_value}} ({{atv.product_count}})
-                                        </label>
-                                    </a>
-
-                                    <!--<a href="#."><input type="checkbox">{{atv.attribute_value}} <span>(32) </span></a>-->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Main Shop Itesm -->
-                <div class="col-md-9" ng-if="checkproduct == 1"> 
-                    <!-- SHOWING INFO -->
-                    <div class="showing-info">
-
-                        <div class="side-bar" style="float: left;
-                             width: 68%;padding: 0 5px">
-                            
-
-                            <ul class="tags" ng-if="pricerange.min>0" style="float: left;    float: left;
-                                border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
-                                padding-top: 5px;">
-                                <li>
-                                    <a href="#." style="padding: 5px;background: #fff; margin: 0;    margin-left: 10px;">
-                                        Price Range :  {{pricerange.min}} - {{pricerange.max}}
-                                    </a>
-                                </li>
-                               
-                            </ul>
-
-                            <ul class="tags" ng-repeat="(k, attr) in attribute_checked_pre" style="float: left;    float: left;
-                                border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
-                                padding-top: 5px;">
-                                <li><a href="#." style="padding: 5px;background: #fff; margin: 0;    margin-left: 10px;">{{k}}</a></li>
-                                <li ng-repeat="av in attr"> 
-                                    <a href="#." style="padding: 5px;    margin: 0;    margin-left: 10px;">{{av.attribute_value}}</a>
-                                </li>
-                            </ul>
-
-
-                        </div>
-
-                        <p class="pull-right"  ng-if="productResults.products.length">Showing {{productResults.products.length}} results</p>
-                    </div>
-                    <div class="row" ng-if="productResults.products.length"> 
-                        <!-- Item -->
-                        <div class="col-sm-4" ng-repeat="(k, product) in productResults.products">
-                            <div class="productblock">
-                                <article class="shop-artical"> 
-                                    <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{product.file_name}})"></div>
-                                    <!-- Sale -->
-                                    <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
-                                    <div class="item-hover"> 
-                                        <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
-                                        <a href="#." class="btn by" style="    font-size: 9px;">BUY NOW</a> 
+<section id="content" style="overflow: visible;"  ng-controller="ProductController">
+    <div class="content-wrap nopadding">
+        <div class="container">
+            <div class="tabs tabs-justify clear-bottommargin clearfix" id="tab-1">
+                <ul class="tab-nav clearfix border-bottom-0">
+                    <?php
+                    foreach ($categories as $catkey => $catvalue) {
+                        ?>
+                        <li><a href="#tabs-breakfast"><?php echo $catvalue['category_name']; ?></a></li>
+                    <?php } ?>
+                </ul>
+                <div class="tab-container mt-4">
+                    <div class="tab-content clearfix" id="tabs-breakfast">
+                        <div class="row clearfix">
+                            <div class="col-lg-3 col-md-6"  ng-repeat="(k, product) in productResults.products">
+                                <div class="iportfolio mb-4 clearfix">
+                                    <a href="#" ng-click="addToBuy(product.product_id, 1)" class="portfolio-image"><img src="<?php echo base_url(); ?>assets/theme2/res/food/{{product.file_name}}" alt="1" class="rounded"></a>
+                                    <div class="portfolio-desc pt-2">
+                                        <h4 class="mb-1"><a href="#" class="" >{{product.title}}</a></h4>
+                                        <div class="item-price">{{product.price|currency:"<?php echo globle_currency; ?> "}}</div>
                                     </div>
-                                </article>
-                                <div class="info" style="    height: 80px;"> 
-                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} </a> 
-                                    <span class="price disc">
-                                        <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:" Rs. "}}</span>
-                                        <span>{{product.price|currency:" Rs. "}}</span>
-                                    </span>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
-                    
-                    <div ng-if="!productResults.products.length">
-                        <h1 style="font-size: 40px;text-align: center;">No Product Found</h1>
-                        <p style="text-align: center;">Products Will Comming Soon</p>
-                        <hr class="dotted">
-                      
-                    </div>
-
-                    <!-- Pagination -->
-<!--                    <ul class="pagination" ng-if="productResults.products.length">
-                        <li><a href="#.">1</a></li>
-                        <li><a href="#.">2</a></li>
-                        <li><a href="#.">....</a></li>
-                        <li><a href="#.">&gt;</a></li>
-                    </ul>-->
+                 
                 </div>
-
-
             </div>
         </div>
-
-
-
-        <div id="content"  ng-if="!productResults.products.length"> 
-            <div ng-if="checkproduct == 0">
-                <!-- Tesm Text -->
-                <section class="error-page text-center pad-t-b-130">
-                    <div class="container "> 
-
-                        <!-- Heading -->
-                        <h1 style="font-size: 40px">No Product Found</h1>
-                        <p>Products Will Comming Soon</p>
-                        <hr class="dotted">
-                        <a href="<?php echo site_url(); ?>" class="btn btn-inverse">BACK TO HOME</a>
+        <div class="section mb-0 mt-3" style="padding: 80px 0; background: #F5F5F5 url('<?php echo base_url(); ?>assets/theme2/res/images/food-pattern.png') repeat center center;">
+            <div class="container">
+                <div class="heading-block nobottomborder center bottommargin-sm">
+                    <span class="font-primary ls1 color">Steps of Order</span>
+                    <h3 class="nott font-secondary ls0" style="font-size: 52px; line-height: 1.3;">How do you Get your Food</h3>
+                </div>
+                <div class="clear"></div>
+                <div class="row mt-5 clearfix">
+                    <div class="col-lg-4 col-sm-6 bottommargin-sm">
+                        <div class="feature-box media-box">
+                            <div class="fbox-media" style="width: 60px; height: 60px">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/route.svg" alt="">
+                            </div>
+                            <h3>1. Select Your Location</h3>
+                            <p></p>
+                        </div>
                     </div>
-                </section>
+                    <div class="col-lg-4 col-sm-6 bottommargin-sm">
+                        <div class="feature-box media-box">
+                            <div class="fbox-media" style="width: 60px; height: 60px">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/shop.svg" alt="">
+                            </div>
+                            <h3>2. Choose your Food</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 bottommargin-sm">
+                        <div class="feature-box media-box">
+                            <div class="fbox-media" style="width: 75px; height: 60px">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/delivery-bg.svg" alt="">
+                            </div>
+                            <h3>3. Your Item is on the Way</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-
+        <div class="section nomargin nobg" style="padding: 80px 0 70px;">
+            <div class="container">
+                <div class="divcenter d-flex justify-content-center center" style="max-width: 900px;">
+                    <h3 class="mb-0 ls0">Free Delivery On Order Value $300 And Up <a href="#" class="button button-circle button-xlarge button-light text-white ls0 nott mt-0 mb-1 ml-3" style="position: relative;"><span>Order Now</span> <i class="icon-line-arrow-right t600"></i></a></h3>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<!-- End Content --> 
-
-
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
+</section>
 <script>
+    var searchdata = "<?php echo isset($_GET["search"]) ? ($_GET["search"] != '' ? $_GET["search"] : '0') : "0"; ?>";
+
     var category_id = <?php echo $category; ?>;
-</script>
+    var custom_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/js/jquery.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/jquery.pajinate.min.js"></script>
+
+<script src="<?php echo base_url(); ?>assets/theme2/angular/productController.js"></script>
 
 
 <?php

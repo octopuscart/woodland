@@ -45,7 +45,7 @@ class Product extends CI_Controller {
 
 
 
-        $this->load->view('Product/productList', $data);
+        $this->load->view('Product/productList_1', $data);
     }
 
     function ProductSearch() {

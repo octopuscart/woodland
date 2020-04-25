@@ -65,7 +65,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         }
 
 
-        var countdata = $(".info_text").text().split(" ")[1];
+        var countdata = [0];//$(".info_text").text().split(" ")[1];
         if (Number(countdata[0])) {
             if (countdata) {
                 countdata = countdata.split("-");
@@ -381,7 +381,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         $scope.getProducts2();
     });
 
-
+console.log("hello")
 
 
 

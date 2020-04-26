@@ -161,7 +161,6 @@ $this->load->view('layout/header');
                     </div>
                 </div>
             </div>
-            <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png">
         </div>
 
         <div class="clear"></div>
@@ -227,7 +226,7 @@ $this->load->view('layout/header');
         <div class="section dessert-menu nomargin nopadding">
             <div class="container-fluid">
                 <div class="row align-items-stretch clearfix">
-                    <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);">
+                    <div class="col-lg-5" style="background-color: #FFF; padding: 0; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
                         <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
                             <?php
                             $reviewList = array(
@@ -296,10 +295,52 @@ $this->load->view('layout/header');
                     </div>
                 </div>
             </div>
+            <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png">
         </div>
+
         <div class="clear"></div>
 
+        <div class="section nobottommargin" style="padding: 0px 0; background: #FFF;    margin-top: 0px;">
+            <div class="container clearfix">
+                <div class="heading-block center nobottomborder">
+                    <span class="font-primary ls1" style="font-size: 14px; color: #AAA"></span>
+                    <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Experience Woodlands</h3>
+                </div>
+                <div class="row clearfix">
 
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="team">
+                            <div class="team-image imagescalein">
+                                <iframe width="1133" height="550" src="https://www.youtube.com/embed/ASkSgQxdiVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title">
+                                    <h4 class="font-primary t400 ls2">Welcome to Indian Vegetarian Restaurant - Woodlands
+                                    </h4>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-6 col-md-6">
+                        <div class="team">
+                            <div class="team-image imagescalein">
+                                <iframe width="1133" height="550" src="https://www.youtube.com/embed/smRHSvResAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="team-desc">
+                                <div class="team-title">
+                                    <h4 class="font-primary t400 ls2">Woodlands - 印度菜唔止得咖喱 | Indian Food isn't just curry 2 - Dosa
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <div class="line clear"></div>
         <div class="container section-contact topmargin-lg clearfix">
@@ -343,11 +384,11 @@ $this->load->view('layout/header');
 
                             </tr>
                             <tr>
-                              
+
                                 <td><i class="icon-et-phone"></i>&nbsp; +(852) 2366 1945</td>
                             </tr>
                             <tr>
-                              
+
                                 <td><i class="icon-et-envelope"></i>&nbsp; reachus@vegconcepts.com</td>
                             </tr>
                         </table>

@@ -121,3 +121,9 @@ a.cartheadericon span {
     color: white;
 }
 
+.reservation_buttons div{
+    background: red;
+    padding: 0px 10px;
+    color: white;
+    border-radius: 30px;
+}

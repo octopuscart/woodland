@@ -1723,12 +1723,7 @@ div.tab-pane {
     text-align: right!important;
 }
 
-.reservation_buttons div{
-    background: red;
-    padding: 0px 10px;
-    color: white;
-    border-radius: 30px;
-}
+
 
 #primary-menu ul li>a {
     display: block;

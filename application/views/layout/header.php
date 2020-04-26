@@ -74,7 +74,7 @@
                             </ul>
                             <ul>
                                 <li><a href="<?php echo site_url("annual-charity");?>"><div> ANNUAL CHARITY</div></a></li>
-                                <li><a href=""><div>Contact</div></a></li>
+                                <li><a href="<?php echo site_url("contact"); ?>"><div>Contact</div></a></li>
                                 <li><a href="" class="reservation_buttons"><div class="">Reservation</div></a></li>
                                 <li>
                                     <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
@@ -87,29 +87,7 @@
                 </div>
             </header>
             
-              <style>
-                .wh-widget-right{
-                    z-index:40000000000000!important;
-                }
-            </style>
+            
 
 
-            <script type="text/javascript">
-                (function () {
-                    var options = {
-                        whatsapp: "85262915892", // WhatsApp number
-                        call_to_action: "Contact Us", // Call to action
-                        position: "right", // Position may be 'right' or 'left'
-                    };
-                    var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-                    var s = document.createElement('script');
-                    s.type = 'text/javascript';
-                    s.async = true;
-                    s.src = url + '/widget-send-button/js/init.js';
-                    s.onload = function () {
-                        WhWidgetSendButton.init(host, proto, options);
-                    };
-                    var x = document.getElementsByTagName('script')[0];
-                    x.parentNode.insertBefore(s, x);
-                })();
-            </script>
+       

@@ -80,6 +80,7 @@ class Account extends CI_Controller {
     //login page
     //login page
     function login() {
+        redirect(site_url("CartGuest/checkoutInit"));
         $data1['msg'] = "";
 
         $query = $this->db->get('country');

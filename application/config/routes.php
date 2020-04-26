@@ -55,6 +55,9 @@ $route['404_override'] = 'Shop/error404';
 $route['contact'] = 'Shop/contactus';
 $route['about-us'] = 'Shop/aboutus';
 $route['privacy-policy'] = 'Shop/privacy_policy';
+$route['menu/(:any)/(:any)'] = 'Product/productList/$1/$2';
 
+$route['review'] = 'Shop/wall';
+$route['annual-charity'] = 'Shop/annual_charity';
 
 $route['translate_uri_dashes'] = FALSE;

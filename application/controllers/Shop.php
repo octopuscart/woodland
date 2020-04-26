@@ -93,23 +93,27 @@ class Shop extends CI_Controller {
     }
 
     public function aboutus() {
-           $this->load->view('pages/aboutus');
+        $this->load->view('pages/aboutus');
     }
 
     public function error404() {
-           $this->load->view('pages/error404');
+        $this->load->view('pages/error404');
     }
 
     public function faq() {
         // $this->load->view('pages/faq');
     }
 
-    public function catalogue() {
-        //  $this->load->view('pages/catalogue');
+    public function wall() {
+        $this->load->view('pages/wall');
     }
-    
-    function privacy_policy(){
-           $this->load->view('pages/pp');
+
+    public function annual_charity() {
+          $this->load->view('pages/annual_charity');
+    }
+
+    function privacy_policy() {
+        $this->load->view('pages/pp');
     }
 
 }

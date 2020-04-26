@@ -1,7 +1,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title">
+    <div class="card card-default">
+        <div class="card-heading" role="tab" id="headingOne">
+            <h4 class="card-title">
                 <?php
                 if ($vtype == 'items') {
                     ?>
@@ -11,7 +11,7 @@
                             <i class="fa fa-shopping-cart fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   My Shopping Bag
-                        <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #fff" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
+                        <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
                     </a>
                     <?php
                 }

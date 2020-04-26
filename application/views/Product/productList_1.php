@@ -25,7 +25,7 @@ $this->load->view('layout/header');
                         <div class="row clearfix">
                             <div class="col-lg-3 col-md-6"  ng-repeat="(k, product) in productResults.products">
                                 <div class="iportfolio mb-4 clearfix">
-                                    <a href="#" ng-click="addToBuy(product.product_id, 1)" class="portfolio-image"><img src="<?php echo base_url(); ?>assets/theme2/res/food/{{product.file_name}}" alt="1" class="rounded"></a>
+                                    <a href="#" ng-click="addToCart(product.product_id, 1)" class="portfolio-image"><img src="<?php echo base_url(); ?>assets/theme2/res/food/{{product.file_name}}" alt="1" class="rounded"></a>
                                     <div class="portfolio-desc pt-2">
                                         <h4 class="mb-1"><a href="#" class="" >{{product.title}}</a></h4>
                                         <div class="item-price">{{product.price|currency:"<?php echo globle_currency; ?> "}}</div>

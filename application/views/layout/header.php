@@ -23,8 +23,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/colors2e70.css?color=e7272d" type="text/css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/customstyle.css?color=e7272d" type="text/css" />
+        <!--sweet alert-->
+        <script src="<?php echo base_url(); ?>assets/theme2/sweetalert2/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/sweetalert2/sweetalert2.min.css">
 
         <script src="<?php echo base_url(); ?>assets/theme2/angular/angular.min.js"></script>
+
+        <link href="<?php echo base_url(); ?>assets/theme2/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+
 
         <style>
             /* Page Loader CSS */
@@ -61,18 +67,18 @@
                             <ul>
                                 <li><a href="<?php echo site_url("/"); ?>"><div>Home</div></a></li>
                                 <li><a href="<?php echo site_url("about-us"); ?>"><div>About</div></a></li>
-                                <li><a href=""><div>Menu</div></a></li>
+                                <li><a href="<?php echo site_url("menu/0/0"); ?>"><div>Menu</div></a></li>
                                 <li><a href=""><div>Gallery</div></a></li>
+                                <li><a href="<?php echo site_url("review");?>"><div>Review</div></a></li>
+
                             </ul>
                             <ul>
-                                <li><a href="#"><div>Wall </div></a></li>
-                                <li><a href="#"><div>Review</div></a></li>
+                                <li><a href="<?php echo site_url("annual-charity");?>"><div> ANNUAL CHARITY</div></a></li>
                                 <li><a href=""><div>Contact</div></a></li>
-                                <li><a href=""><div>Chefs</div></a></li>
+                                <li><a href="" class="reservation_buttons"><div class="">Reservation</div></a></li>
                                 <li>
-                                    <a href="#" class="cartheadericon">
-
-                                        <i class="icon-et-basket"></i><span>{{globleCartData.total_quantity}}</span>
+                                    <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
+                                        <i class="icon-et-basket" style="    font-size: 20px;"></i><span>{{globleCartData.total_quantity}}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -80,3 +86,30 @@
                     </div>
                 </div>
             </header>
+            
+              <style>
+                .wh-widget-right{
+                    z-index:40000000000000!important;
+                }
+            </style>
+
+
+            <script type="text/javascript">
+                (function () {
+                    var options = {
+                        whatsapp: "85262915892", // WhatsApp number
+                        call_to_action: "Contact Us", // Call to action
+                        position: "right", // Position may be 'right' or 'left'
+                    };
+                    var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = url + '/widget-send-button/js/init.js';
+                    s.onload = function () {
+                        WhWidgetSendButton.init(host, proto, options);
+                    };
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                })();
+            </script>

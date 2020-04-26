@@ -1,7 +1,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title">
+    <div class="card card-default">
+        <div class="card-heading" role="tab" id="headingOne">
+            <h4 class="card-title">
                 <?php
                 if ($vtype == 'items') {
                     ?>

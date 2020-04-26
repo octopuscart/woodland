@@ -77,237 +77,239 @@ $this->load->view('layout/header');
 
 
 <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>Checkout</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>Checkout</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/res/cart.css" type="text/css" />
+
+<!-- Inner Page Banner Area Start Here -->
+<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/cart.jpg');   margin-top: -30px;    padding: 55px 0px;    background-position: -237px -135px;" data-center="" data-top-bottom="">
+    <div class="container clearfix">
+        <span class="font-primary ls1 mb-2 color" style="font-size: 14px;">Top Services</span>
+        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;">Shopping Cart</h1>
     </div>
-</div>
+</section>
 <!-- Inner Page Banner Area End Here -->
 
 <!-- Content -->
 
-
-<div class="cart-page-area">
-    <div class="container" ng-if="globleCartData.total_quantity">
-        <div class="row">
-            <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'items'));
-            ?>
-          
-            <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
-            ?>
+<section id="content" style="overflow: visible;">
+    <div class="content-wrap nobottompadding">
+        <div class="container clearfix">
+            <div class="row clearfix">
 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <span class="fa-stack">
-                                    <i class="fa fa-money fa-stack-1x"></i>
-                                    <i class="ion-bag fa-stack-1x "></i>
-                                </span>   Payment Method
-                                <span style="float: right; line-height: 29px;font-size: 12px;" class="ng-binding">
-                                    <?php echo DEFAULT_PAYMENT_MODE; ?>
-                                </span> 
-                            </a>
-                        </h4>
-                    </div>
-                    <!-- Address Details -->
-                    <div class="panel-body">
-                        <div class="order-sheet product-details2-area" style="margin-top: 5px;padding:0">
-                            <form action="#" method="post">
-                                <div class="product-details-tab-area" style="margin: 0;">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <ul >
-                                                <?php
-                                                if (PAYMENT_MODE_PAYPAL == 'on') {
-                                                    ?>
-                                                    <li class="<?php echo DEFAULT_PAYMENT_MODE == 'PayPal' ? 'active' : ''; ?>"><a href="#paypal" data-toggle="tab" aria-expanded="false">PayPal</a></li>
-                                                    <?php
-                                                }
-                                                ?>
-                                                <?php
-                                                if (PAYMENT_MODE_BANK == 'on') {
-                                                    ?>
-                                                    <li class="<?php echo DEFAULT_PAYMENT_MODE == 'Bank Transfer' ? 'active' : ''; ?>"><a href="#bank" data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
-                                                    <?php
-                                                }
-                                                ?>
-                                                <?php
-                                                if (PAYMENT_MODE_COD == 'on') {
-                                                    ?>
-                                                    <li class="<?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'active' : ''; ?>"><a href="#cash" data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
-                                                    <?php
-                                                }
-                                                ?>
-                                                <?php
-                                                if (PAYMENT_MODE_CHEQUE == 'on') {
-                                                    ?>
-                                                    <li class="<?php echo DEFAULT_PAYMENT_MODE == 'Cheque On Delivery' ? 'active' : ''; ?>"><a href="#cheque" data-toggle="tab" aria-expanded="false">Cheque On Delivery</a></li>
-                                                    <?php
-                                                }
-                                                ?>
+                <div class="cart-page-area">
+                    <div class="container" ng-if="globleCartData.total_quantity">
+                        <div class="row">
+                            <?php
+                            $this->load->view('Cart/itemblock', array('vtype' => 'items'));
+                            ?>
+
+                            <?php
+                            $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
+                            ?>
 
 
-                                            </ul>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="card card-default">
+                                    <div class="card-heading" role="tab" id="headingOne">
+                                        <h4 class="card-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-money fa-stack-1x"></i>
+                                                    <i class="ion-bag fa-stack-1x "></i>
+                                                </span>   Payment Method
+                                                <span style="float: right; line-height: 29px;font-size: 12px;" class="ng-binding">
+                                                    <?php echo DEFAULT_PAYMENT_MODE; ?>
+                                                </span> 
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <!-- Address Details -->
+                                    <div class="card-body">
+                                        <div class="order-sheet product-details2-area" style="margin-top: 5px;padding:0">
+                                            <form action="#" method="post">
+                                                <div class="product-details-tab-area" style="margin: 0;">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <ul class="nav nav-tabs" role="tablist">
+                                                                <?php
+                                                                if (PAYMENT_MODE_PAYPAL == 'on') {
+                                                                    ?>
+                                                                    <li class=" nav-item"><a href="#paypal" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'PayPal' ? 'active' : ''; ?>" data-toggle="tab" aria-expanded="false">PayPal</a></li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <?php
+                                                                if (PAYMENT_MODE_BANK == 'on') {
+                                                                    ?>
+                                                                    <li class="nav-item"><a href="#bank" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Bank Transfer' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="true">Bank Transfer</a></li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <?php
+                                                                if (PAYMENT_MODE_COD == 'on') {
+                                                                    ?>
+                                                                    <li class="nav-item"><a href="#cash" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <?php
+                                                                if (PAYMENT_MODE_CHEQUE == 'on') {
+                                                                    ?>
+                                                                    <li class="nav-item"><a href="#cheque" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Cheque On Delivery' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="false">Cheque On Delivery</a></li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <div class="tab-content">
+                                                                <?php
+                                                                if (PAYMENT_MODE_PAYPAL == 'on') {
+                                                                    ?>
+                                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'PayPal' ? 'show active' : ''; ?>"  id="paypal">
+                                                                        <p>
+                                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/paypal.png" style="height: 100px;">                
+                                                                        </p>
+                                                                        <div class="cart-page-top table-responsive">
+                                                                            <table class="table table-hover">
+                                                                                <tbody id="quantity-holder">
+                                                                                    <tr>
+                                                                                        <td colspan="4" class="text_right">
+                                                                                            <div class="proceed-button pull-left " >
+                                                                                                <a href=" <?php echo site_url("Cart" . $checkoutmode . "/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                            </div>
+                                                                                            <div class="proceed-button pull-right ">
+
+                                                                                                <a href=" <?php echo site_url("PayPalPayment" . $checkoutmode . "/process"); ?>" class="btn-apply-coupon checkout_button_next disabled"  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php
+                                                                }
+                                                                ?>
+
+                                                                <?php
+                                                                if (PAYMENT_MODE_BANK == 'on') {
+                                                                    ?>
+                                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Bank Transfer' ? 'show active' : ''; ?>" id="bank">
+                                                                        <p>
+                                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/bank.png" style="height: 100px;">                
+                                                                        </p>
+                                                                        <div class="cart-page-top table-responsive">
+                                                                            <table class="table table-hover">
+                                                                                <tbody id="quantity-holder">
+                                                                                    <tr>
+                                                                                        <td colspan="4" class="text_right">
+                                                                                            <div class="proceed-button pull-left " >
+                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                            </div>
+                                                                                            <div class="proceed-button pull-right ">
+                                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer" onclick="confirmOrder()">
+                                                                                                    Place Order <i class="fa fa-arrow-right"></i>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php
+                                                                }
+                                                                ?>
+
+                                                                <?php
+                                                                if (PAYMENT_MODE_COD == 'on') {
+                                                                    ?>
+                                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'show active' : ''; ?>" id="cash">
+                                                                        <p>
+                                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/cod.png" style="height: 100px;">                
+
+                                                                        </p>
+                                                                        <div class="cart-page-top table-responsive">
+                                                                            <table class="table table-hover">
+                                                                                <tbody id="quantity-holder">
+                                                                                    <tr>
+                                                                                        <td colspan="4" class="text_right">
+                                                                                            <div class="proceed-button pull-left " >
+                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                            </div>
+                                                                                            <div class="proceed-button pull-right ">
+                                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cash On Delivery">
+                                                                                                    Place Order <i class="fa fa-arrow-right"></i>
+                                                                                                </button>                                                                  
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php
+                                                                }
+                                                                ?>
+
+                                                                <?php
+                                                                if (PAYMENT_MODE_CHEQUE == 'on') {
+                                                                    ?>
+                                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cheque On Delivery' ? 'show active' : ''; ?>" id="cheque">
+                                                                        <p>
+                                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/chod.png" style="height: 100px;">                
+
+                                                                        </p>
+                                                                        <div class="cart-page-top table-responsive">
+                                                                            <table class="table table-hover">
+                                                                                <tbody id="quantity-holder">
+                                                                                    <tr>
+                                                                                        <td colspan="4" class="text_right">
+                                                                                            <div class="proceed-button pull-left " >
+                                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                            </div>
+                                                                                            <div class="proceed-button pull-right ">
+                                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cheque On Delivery">
+                                                                                                    Place Order <i class="fa fa-arrow-right"></i>
+                                                                                                </button>                                                                   
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <div class="tab-content">
-                                                <?php
-                                                if (PAYMENT_MODE_PAYPAL == 'on') {
-                                                    ?>
-                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'PayPal' ? 'active in' : ''; ?>"  id="paypal">
-                                                        <p>
-                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/paypal.png" style="height: 100px;">                
-                                                        </p>
-                                                        <div class="cart-page-top table-responsive">
-                                                            <table class="table table-hover">
-                                                                <tbody id="quantity-holder">
-                                                                    <tr>
-                                                                        <td colspan="4" class="text_right">
-                                                                            <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart".$checkoutmode."/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                            </div>
-                                                                            <div class="proceed-button pull-right ">
 
-                                                                                <a href=" <?php echo site_url("PayPalPayment".$checkoutmode."/process"); ?>" class="btn-apply-coupon checkout_button_next disabled"  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-
-                                                <?php
-                                                if (PAYMENT_MODE_BANK == 'on') {
-                                                    ?>
-                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Bank Transfer' ? 'active in' : ''; ?>" id="bank">
-                                                        <p>
-                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/bank.png" style="height: 100px;">                
-                                                        </p>
-                                                        <div class="cart-page-top table-responsive">
-                                                            <table class="table table-hover">
-                                                                <tbody id="quantity-holder">
-                                                                    <tr>
-                                                                        <td colspan="4" class="text_right">
-                                                                            <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                            </div>
-                                                                            <div class="proceed-button pull-right ">
-                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Bank Transfer" onclick="confirmOrder()">
-                                                                                    Place Order <i class="fa fa-arrow-right"></i>
-                                                                                </button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-
-                                                <?php
-                                                if (PAYMENT_MODE_COD == 'on') {
-                                                    ?>
-                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'active in' : ''; ?>" id="cash">
-                                                        <p>
-                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/cod.png" style="height: 100px;">                
-
-                                                        </p>
-                                                        <div class="cart-page-top table-responsive">
-                                                            <table class="table table-hover">
-                                                                <tbody id="quantity-holder">
-                                                                    <tr>
-                                                                        <td colspan="4" class="text_right">
-                                                                            <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                            </div>
-                                                                            <div class="proceed-button pull-right ">
-                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cash On Delivery">
-                                                                                    Place Order <i class="fa fa-arrow-right"></i>
-                                                                                </button>                                                                  
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-
-                                                <?php
-                                                if (PAYMENT_MODE_CHEQUE == 'on') {
-                                                    ?>
-                                                    <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cheque On Delivery' ? 'active in' : ''; ?>" id="cheque">
-                                                        <p>
-                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/chod.png" style="height: 100px;">                
-
-                                                        </p>
-                                                        <div class="cart-page-top table-responsive">
-                                                            <table class="table table-hover">
-                                                                <tbody id="quantity-holder">
-                                                                    <tr>
-                                                                        <td colspan="4" class="text_right">
-                                                                            <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                            </div>
-                                                                            <div class="proceed-button pull-right ">
-                                                                                <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Cheque On Delivery">
-                                                                                    Place Order <i class="fa fa-arrow-right"></i>
-                                                                                </button>                                                                   
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
 
+
+
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-
-
         </div>
     </div>
-</div>
-
-
+</section>
 
 <?php
 $this->load->view('Cart/noproduct');
@@ -322,15 +324,15 @@ $this->load->view('Cart/noproduct');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-                                                                                var avaiblecredits = 0;
-                                                                                function confirmOrder() {
-                                                                                    swal({
-                                                                                        title: 'Processing Order',
-                                                                                        onOpen: function () {
-                                                                                            swal.showLoading()
-                                                                                        }
-                                                                                    });
-                                                                                }
+                                                                                                var avaiblecredits = 0;
+                                                                                                function confirmOrder() {
+                                                                                                    swal({
+                                                                                                        title: 'Processing Order',
+                                                                                                        onOpen: function () {
+                                                                                                            swal.showLoading()
+                                                                                                        }
+                                                                                                    });
+                                                                                                }
 </script>
 
 <?php

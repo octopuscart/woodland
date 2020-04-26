@@ -60,5 +60,4 @@
 </script>
 </body>
 
-<!-- Mirrored from themes.semicolonweb.com/html/canvas/demo-restaurant.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 19 Apr 2020 06:46:58 GMT -->
 </html>

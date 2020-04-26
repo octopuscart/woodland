@@ -31,8 +31,7 @@ switch ($baselink) {
 }
 
 define('ADMINURL', $adminlinkmain);
-
-define('PRODUCTIMAGELINK', $adminlinkmain."/assets/product_images/");
+define('PRODUCTIMAGELINK', "https://demo.costcokart.com/assets/theme2/res/food/");
 
 
 define('imageserver', $baselinkmain . "assets_main/productimages/");

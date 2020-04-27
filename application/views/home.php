@@ -223,50 +223,85 @@ $this->load->view('layout/header');
                 <h3 class="nott font-secondary ls0" style="font-size: 60px;line-height: 1.3;">Wall Of Woodland</h3>
             </div>
         </div>
+        <style>
+            
+            <?php
+            $reviewList = array(
+                "ranikant" => array(
+                    "image" => "Rajini.jpg",
+                    "name" => "Rajani Kanth",
+                    "position" => "Indian Cine Super Star",
+                    "date" => "",
+                ),
+                "ilayaraja" => array(
+                    "image" => "Ilayaraja.jpg",
+                    "name" => "Iilayaraja",
+                    "position" => "Famous Indian Music Director",
+                    "date" => "",
+                ),
+                "SPB" => array(
+                    "image" => "SPB.jpg",
+                    "name" => "S. P. Balasubrahmanyam",
+                    "position" => "Indian playback singer",
+                    "date" => "",
+                ),
+                "Sunil-Gav" => array(
+                    "image" => "Sunil-Gav.jpg",
+                    "name" => "Sunil Gavaskar",
+                    "position" => "Indian cricketer",
+                    "date" => "",
+                ),
+                "Anil-Kumble" => array(
+                    "image" => "Anil-Kumble.jpg",
+                    "name" => "Anil Kumble",
+                    "position" => "Indian cricketer",
+                    "date" => "",
+                ),
+                "Amrish" => array(
+                    "image" => "Amrish.jpg",
+                    "name" => "Amrish Puri",
+                    "position" => "Indian bollywood actor ",
+                    "date" => "",
+                ),
+                "hariharan" => array(
+                    "image" => "Hari-haran.jpg",
+                    "name" => "Hari Haran",
+                    "position" => "Indian Cine Singar ",
+                    "date" => "",
+                ),
+                "shrikanth" => array(
+                    "image" => "Srikanth.jpg",
+                    "name" => "Shri Kanth",
+                    "position" => "Indian cricketer ",
+                    "date" => "",
+                ),
+                "Narasimha" => array(
+                    "image" => "Narasimrao.jpg",
+                    "name" => "P. V. Narasimha Rao",
+                    "position" => "Former Prime Minister of India",
+                    "date" => "",
+                ),
+            );
+            $countrr = 1;
+            foreach ($reviewList as $key => $value) {
+                ?>
+
+                .dessert-menu .item-thumb .owl-dot:nth-of-type(<?php echo $countrr; ?>) span {
+                    background-image: url(<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>)!important;
+                    background-size: 100%!important;
+                }
+                <?php
+                $countrr ++;
+            }
+            ?>
+
+        </style>
         <div class="section dessert-menu nomargin nopadding">
             <div class="container-fluid">
                 <div class="row align-items-stretch clearfix">
                     <div class="col-lg-5" style="background-color: #FFF; padding: 0; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
                         <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
                             <?php
-                            $reviewList = array(
-                                "ranikant" => array(
-                                    "image" => "Rajini.jpg",
-                                    "name" => "Rajani Kanth",
-                                    "position" => "Indian Cine Super Star",
-                                    "date" => "",
-                                ),
-                                "ilayaraja" => array(
-                                    "image" => "Ilayaraja.jpg",
-                                    "name" => "Iilayaraja",
-                                    "position" => "Famous Indian Music Director",
-                                    "date" => "",
-                                ),
-                                "SPB" => array(
-                                    "image" => "SPB.jpg",
-                                    "name" => "S. P. Balasubrahmanyam",
-                                    "position" => "Indian playback singer",
-                                    "date" => "",
-                                ),
-                                "Sunil-Gav" => array(
-                                    "image" => "Sunil-Gav.jpg",
-                                    "name" => "Sunil Gavaskar",
-                                    "position" => "Indian cricketer",
-                                    "date" => "",
-                                ),
-                                "Anil-Kumble" => array(
-                                    "image" => "Anil-Kumble.jpg",
-                                    "name" => "Anil Kumble",
-                                    "position" => "Indian cricketer",
-                                    "date" => "",
-                                ),
-                                "Amrish" => array(
-                                    "image" => "Amrish.jpg",
-                                    "name" => "Amrish Puri",
-                                    "position" => "Indian bollywood actor ",
-                                    "date" => "",
-                                ),
-                            );
                             foreach ($reviewList as $key => $value) {
                                 ?>
                                 <div class="oc-item">
@@ -289,7 +324,7 @@ $this->load->view('layout/header');
                         <div class="vertical-middle">
                             <div class="col-padding clearfix">
                                 <div><div id="item-thumb1" class="item-thumb"></div></div>
-                                <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All</a></div>
+                                <div class="center divcenter"><a href="<?php echo site_url("review");?>" class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All</a></div>
                             </div>
                         </div>
                     </div>
@@ -323,7 +358,7 @@ $this->load->view('layout/header');
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="col-lg-6 col-md-6">
                         <div class="team">
                             <div class="team-image imagescalein">

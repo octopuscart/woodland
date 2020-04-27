@@ -68,7 +68,7 @@
                                 <li><a href="<?php echo site_url("about-us"); ?>"><div>INSIGHTS</div></a></li>
                                 <li><a href="<?php echo site_url("menu/0/0"); ?>"><div>Menu</div></a></li>
                                 
-                                <li><a href=""><div>Gallery</div></a></li>
+                                <li><a href="<?php echo site_url("gallery");?>"><div>Gallery</div></a></li>
                                 <!--<li><a href=""><div>Blog</div></a></li>-->
                                 <li><a href="<?php echo site_url("loyalty-program"); ?>"><div>Loyalty Program</div></a></li>
                                 

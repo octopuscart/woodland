@@ -68,6 +68,8 @@ $route['annual-charity'] = 'Shop/annual_charity';
 
 $route['book-now'] = 'Shop/booknow';
 
+$route['gallery'] = 'Shop/gallery';
+
 $route['loyalty-program'] = 'Shop/loyalprogram';
 
 $route['blog'] = 'Shop/blog/$1';

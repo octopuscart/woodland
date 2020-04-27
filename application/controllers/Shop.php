@@ -127,5 +127,8 @@ class Shop extends CI_Controller {
     function privacy_policy() {
         $this->load->view('pages/pp');
     }
+    function gallery() {
+        $this->load->view('pages/gallery');
+    }
 
 }

@@ -111,6 +111,18 @@ class Shop extends CI_Controller {
     public function annual_charity() {
           $this->load->view('pages/annual_charity');
     }
+    
+    public function booknow() {
+        $this->load->view('pages/booknow');
+    }
+    
+    public function blog() {
+        $this->load->view('pages/booknow');
+    }
+    
+    function loyalprogram(){
+         $this->load->view('pages/loyalprogram');
+    }
 
     function privacy_policy() {
         $this->load->view('pages/pp');

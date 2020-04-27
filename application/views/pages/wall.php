@@ -11,7 +11,7 @@ $this->load->view('layout/header');
 
 
 <!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall.jpg');   margin-top: -30px;    padding: 43px 0px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
+<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall.jpg');   margin-top: -30px;    padding: 100px 0px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
     <div class="container clearfix">
         <h1 class="font-secondary capitalize ls0" style="font-size: 62px;">Wall Of Woodland</h1>
     </div>
@@ -25,10 +25,12 @@ $this->load->view('layout/header');
 
 <section style="overflow: visible;">
 
-    <div class="section dessert-menu nomargin nopadding">
+    <div class="section dessert-menu nomargin nopadding" style="    background: white;">
         <div class="container-fluid">
             <div class="row align-items-stretch clearfix">
-                <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);">
+                <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: 0px 2px 38px 4px rgba(0, 0, 0, 0.61);
+    background: #242424;
+    margin: 39px 0px;">
                     <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
                         <?php
                         $reviewList = array(
@@ -75,7 +77,7 @@ $this->load->view('layout/header');
                                 <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" style="margin: 26px;    width: 90%;">
                                 <div class="food-content clearfix">
                                     <div class="heading-block nobottomborder nobottommargin">
-                                        <h3 class="font-secondary nott"><?php echo $value['name']; ?></h3>
+                                        <h3 class="font-secondary nott" style="color:white;"><?php echo $value['name']; ?></h3>
                                         <div class="food-info"><?php echo $value['position']; ?></div>
                                         <p class="nobottommargin"><?php echo $value['date']; ?></p>
                                     </div>

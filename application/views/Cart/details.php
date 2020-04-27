@@ -76,7 +76,14 @@ $this->load->view('layout/header');
 
                                             <tr>
                                                 <td colspan="4" class="text_right">
-                                                    SHIPPING 
+                                                    <p style="    float: left;
+    line-height: 0px;
+    color: red;
+    font-weight: 800;
+    margin-top: 0px;
+    padding-top: 12px;">
+                                                        Free Shipping In Tsim Sha Tsui
+                                                    </p>  SHIPPING 
                                                 </td>
                                                 <td class=" amount">
                                                     {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}

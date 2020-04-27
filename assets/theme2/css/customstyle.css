@@ -123,7 +123,28 @@ a.cartheadericon span {
 
 .reservation_buttons div{
     background: red;
-    padding: 0px 10px;
+        padding: 5px 10px;
+    margin-top: -5px;
     color: white;
     border-radius: 30px;
+    background: #833ab4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#primary-menu ul li>a {
+    display: block;
+    line-height: 22px;
+    padding: 37px 7px;
+    color: #444;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: Raleway,sans-serif;
+    -webkit-transition: margin .4s ease,padding .4s ease;
+    -o-transition: margin .4s ease,padding .4s ease;
+    transition: margin .4s ease,padding .4s ease;
+        margin-top: -7px;
 }

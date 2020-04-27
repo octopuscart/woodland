@@ -299,7 +299,7 @@ $this->load->view('Cart/noproduct');
                                 <td style="line-height: 25px;" colspan="2">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="zipcode"> Please check if address belongs to Tsim Sha Tsui
+                                            <input type="checkbox" name="zipcode"> Check, For Free Shipping In Tsim Sha Tsui
 
                                         </label>
                                     </div>

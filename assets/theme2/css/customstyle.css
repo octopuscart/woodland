@@ -148,3 +148,13 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+
     transition: margin .4s ease,padding .4s ease;
         margin-top: -7px;
 }
+
+.termandconditon h3{
+       font-size: 15px!important;
+}
+
+.termandconditon p {
+    font-size: 13px!important;
+    margin: 0px;
+    margin-top: 8px!important;
+}

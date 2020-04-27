@@ -8,7 +8,7 @@ $this->load->view('layout/header');
         <div class="container">
             <div class="heading-block center nobottomborder">
                 <span class="font-primary ls1">Gallery</span>
-                <h3 class="nott font-secondary ls0" style="font-size: 68px; line-height: 1.3;">See what I do</h3>
+                <h3 class="nott font-secondary ls0" style="font-size: 68px; line-height: 1.3;">See what we do</h3>
             </div>
             <div class="row justify-content-center align-items-center clearfix">
                 <div class="col-sm-5 col-7 center align-self-center" data-lightbox="gallery">
@@ -24,7 +24,7 @@ $this->load->view('layout/header');
                     <a href="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food/1.jpg" data-lightbox="gallery-item">
                         <img src="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food1.jpg" alt="img" width="350" class="rounded" style="border: 3px solid rgba(255,255,255,0.8);">
                     </a>
-                    <a href="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food/2.JPG" class="hidden" data-lightbox="gallery-item"></a>
+                    <a href="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food/2.jpg" class="hidden" data-lightbox="gallery-item"></a>
                     <a href="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food/3.jpg" class="hidden" data-lightbox="gallery-item"></a>
                     <a href="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food/4.jpg" class="hidden" data-lightbox="gallery-item"></a>
                     <a href="<?php echo base_url(); ?>assets/theme2/res/images/gallery/food/5.jpg" class="hidden" data-lightbox="gallery-item"></a>

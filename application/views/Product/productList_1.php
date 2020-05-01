@@ -57,7 +57,7 @@ $this->load->view('layout/header');
                                 foreach ($categoryproducts as $prkey => $prvalue) {
                                     ?>
 
-                                    <div class="col-lg-3 col-md-6" >
+                                    <div class="col-lg-4 col-md-6" >
                                         <div class="iportfolio mb-4 clearfix">
                                             <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image12">
                                                 <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $prvalue['file_name']; ?>)" alt="1" class="rounded product-image-back">

@@ -8,12 +8,12 @@ $this->load->view('layout/header');
         border: 3px solid #8CC646;
     }
     ul.tab-nav:not(.tab-nav-lg) li a {
-    padding: 16px 9px;
-    height: 100px;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-}
+        padding: 16px 9px;
+        height: 100px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+    }
 </style>
 <section id="page-title" class="page-title-parallax page-title-dark page-title-center" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/menu2.jpg'); background-size: cover; padding: 120px 0 180px;" data-bottom-top="background-position:0 0px;" data-top-bottom="background-position:0px -300px;">
     <div class="container clearfix">
@@ -44,10 +44,15 @@ $this->load->view('layout/header');
                         ?>
                         <div class="tab-content clearfix" id="tabs-foodmenu-<?php echo $catvalue['id']; ?>">
                             <div class="row clearfix">
+                                <div class="row col-md-12">
+                                    <h1 class="font-secondary capitalize ls0" style="font-size: 50px;text-align: center;    text-align: center!important;
+    width: 100%;">   <?php echo $catvalue['category_name']; ?></h1>
+                                </div>
                                 <?php
                                 $categoryproducts = $productlist[$catvalue['id']];
                                 foreach ($categoryproducts as $prkey => $prvalue) {
                                     ?>
+
                                     <div class="col-lg-3 col-md-6" >
                                         <div class="iportfolio mb-4 clearfix">
                                             <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image">

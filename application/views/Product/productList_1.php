@@ -5,7 +5,11 @@ $this->load->view('layout/header');
     .product-image-back{
         background-size: cover!important;
         background-position: center!important;
-        border: 3px solid #8CC646;
+        /*border: 3px solid #8CC646;*/
+        border-radius: 20px!important;
+        border-radius: 20px!important;
+    border-bottom-left-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
     }
     ul.tab-nav:not(.tab-nav-lg) li a {
         padding: 16px 9px;
@@ -31,7 +35,7 @@ $this->load->view('layout/header');
                     foreach ($categories as $catkey => $catvalue) {
                         ?>
                         <li style="    border: none;"> <a href="#tabs-foodmenu-<?php echo $catvalue['id']; ?>">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $categories2[$catvalue['id']]; ?>);border:none;height:50px;width:50px;" alt="1" class="rounded product-image-back rounded_border">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $categories2[$catvalue['id']]; ?>);border:none;height:50px;width:50px;border-radius: 50%!important;" alt="1" class="rounded product-image-back rounded_border">
                                 <br/>
                                 <?php echo $catvalue['category_name']; ?>
                             </a></li>
@@ -46,7 +50,7 @@ $this->load->view('layout/header');
                             <div class="row clearfix">
                                 <div class="row col-md-12">
                                     <h1 class="font-secondary capitalize ls0" style="font-size: 50px;text-align: center;    text-align: center!important;
-    width: 100%;">   <?php echo $catvalue['category_name']; ?></h1>
+                                        width: 100%;">   <?php echo $catvalue['category_name']; ?></h1>
                                 </div>
                                 <?php
                                 $categoryproducts = $productlist[$catvalue['id']];
@@ -55,12 +59,21 @@ $this->load->view('layout/header');
 
                                     <div class="col-lg-3 col-md-6" >
                                         <div class="iportfolio mb-4 clearfix">
-                                            <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image">
+                                            <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image12">
                                                 <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $prvalue['file_name']; ?>)" alt="1" class="rounded product-image-back">
                                             </a>
                                             <div class="portfolio-desc pt-2">
                                                 <h4 class="mb-1"><a href="#" class="" ><?php echo $prvalue['title']; ?></a></h4>
                                                 <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
+                                            </div>
+                                            <div class="">
+                                                <button ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colordarkgreen ">
+                                                    Add To Cart
+                                                </button>
+                                                
+                                                 <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow ">
+                                                    Buy Now
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

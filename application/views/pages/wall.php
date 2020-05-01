@@ -99,8 +99,8 @@ $this->load->view('layout/header');
     <div class="section dessert-menu nomargin nopadding" style="    background: white;">
         <div class="container-fluid">
             <div class="row align-items-stretch clearfix">
-                <div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: 0px 2px 38px 4px rgba(0, 0, 0, 0.61);
-                     background: #242424;
+                <div class="col-lg-5 colordarkgreen" style="background-color: #FFF; padding: 0; box-shadow: 0px 2px 38px 4px rgba(0, 0, 0, 0.61);
+                 
                      margin: 39px 0px;">
                     <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
                         <?php
@@ -110,8 +110,8 @@ $this->load->view('layout/header');
                                 <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" style="margin: 26px;    width: 90%;">
                                 <div class="food-content clearfix">
                                     <div class="heading-block nobottomborder nobottommargin">
-                                        <h3 class="font-secondary nott" style="color:white;"><?php echo $value['name']; ?></h3>
-                                        <div class="food-info"><?php echo $value['position']; ?></div>
+                                        <h3 class="font-secondary nott txtcolorlightyellow"><?php echo $value['name']; ?></h3>
+                                        <div class="food-info txtcolorlightgreen"><?php echo $value['position']; ?></div>
                                         <p class="nobottommargin"><?php echo $value['date']; ?></p>
                                     </div>
                                 </div>

@@ -7,7 +7,7 @@ $this->load->view('layout/header');
             <div class="row clearfix parallax" data-0="opacity: 1;margin-top:15px" data-800="opacity: 0.1;margin-top:100px">
                 <div class="col-md-6">
                     <div class="heading-block nobottomborder nobottommargin">
-                        <h2 class="font-secondary color nott" style="font-size: 32px">Our Restaurant</h2>
+                        <h2 class="font-secondary color nott txtcolordarkgreen" style="font-size: 32px">Our Restaurant</h2>
                     </div>
                     <h2 class="t600 mb-2" style="font-size: 42px;color:#a83106;">
                         First and Best Indian Vegetarian Restaurant<br/> in Tsim Sha Tsui, <br/>Hong Kong</h2>
@@ -15,7 +15,7 @@ $this->load->view('layout/header');
             </div>
             <div class="clear"></div>
             <div class="d-flex align-items-center mt-3 clearfix">
-                <a class="button button-circle button-large text-white mb-0 noleftmargin">Reserve Now</a>
+                <a class="button button-circle button-large text-white mb-0 noleftmargin colordarkgreen">Reserve Now</a>
                 <a href="#" data-lightbox="iframe" class="d-flex fright more-link ml-3"><i class="icon-play-sign h3 m-0 align-self-center d-none d-sm-inline-block"></i><span class=" align-self-center ml-2"><u>See Our Story</u></span></a>
             </div>
         </div>
@@ -68,7 +68,7 @@ $this->load->view('layout/header');
                     <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
                 </div>
                 <div class="col-md-2">
-                    <a class="button button-circle button-xlarge text-dark bg-white button-light nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
+                    <a class="button button-circle button-xlarge colordarkgreen bg-white button-light nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
                 </div>
             </div>
         </div>

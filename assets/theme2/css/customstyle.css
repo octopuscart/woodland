@@ -17,11 +17,11 @@
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
-        box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.16);
 }
 
 .item-thumb .owl-dot span h3{
-        background: #4CAF50;
+    background: #4CAF50;
     color: white;
     font-size: 15px;
 }
@@ -47,7 +47,7 @@
     position: relative;
     margin: 60px 0;
     padding: 60px 0;
-    background-color: #EEEEEE;
+    background-color: #8CC646;
     overflow: hidden;
 }
 .nopadding {
@@ -123,13 +123,13 @@ a.cartheadericon span {
 
 .reservation_buttons div{
     background: red;
-        padding: 5px 10px;
+    padding: 5px 10px;
     margin-top: -5px;
     color: white;
     border-radius: 30px;
     background: #833ab4;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -146,11 +146,11 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+
     -webkit-transition: margin .4s ease,padding .4s ease;
     -o-transition: margin .4s ease,padding .4s ease;
     transition: margin .4s ease,padding .4s ease;
-        margin-top: -7px;
+    margin-top: -7px;
 }
 
 .termandconditon h3{
-       font-size: 15px!important;
+    font-size: 15px!important;
 }
 
 .termandconditon p {
@@ -158,3 +158,47 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+
     margin: 0px;
     margin-top: 8px!important;
 }
+
+.bgcolor, .button.button-3d:not(.button-white):not(.button-dark):not(.button-border):not(.button-black):not(.button-red):not(.button-teal):not(.button-yellow):not(.button-green):not(.button-brown):not(.button-aqua):not(.button-purple):not(.button-leaf):not(.button-pink):not(.button-blue):not(.button-dirtygreen):not(.button-amber):not(.button-lime):hover, .process-steps li.active a, .process-steps li.ui-tabs-active a, .sidenav > .ui-tabs-active > a, .sidenav > .ui-tabs-active > a:hover, .owl-carousel .owl-nav [class*=owl-]:hover, .page-item.active .page-link, .page-link:hover, .page-link:focus, .irs-bar, .irs-from, .irs-to, .irs-single, .irs-handle > i:first-child, .irs-handle.state_hover > i:first-child, .irs-handle:hover > i:first-child {
+    background-color: #8CC646 !important;
+}
+
+.color, .top-cart-item-desc a:hover, .portfolio-filter.style-3 li.activeFilter a, .faqlist li a:hover, .tagcloud a:hover, .dark .top-cart-item-desc a:hover, .iconlist-color li i, .dark.overlay-menu #header-wrap:not(.not-dark) #primary-menu > ul > li:hover > a, .dark.overlay-menu #header-wrap:not(.not-dark) #primary-menu > ul > li.current > a, .overlay-menu #primary-menu.dark > ul > li:hover > a, .overlay-menu #primary-menu.dark > ul > li.current > a, .nav-tree li:hover > a, .nav-tree li.current > a, .nav-tree li.active > a {
+    color: #8cc646 !important;
+}
+
+.colordarkgreen{
+    background: #0D6132!important;
+}
+
+.colorlightgreen{
+    background: #8CC646!important;
+}
+
+.colorlightyellow{
+    background: #FBB316!important;
+}
+
+
+.txtcolordarkgreen{
+    color: #0D6132!important;
+}
+
+.txtcolorlightgreen{
+    color: #8CC646!important;
+}
+
+.txtcolorlightyellow{
+    color: #FBB316!important;
+}
+
+
+ul.tab-nav:not(.tab-nav-lg) li a {
+    padding: 16px 9px;
+    height: 71px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+

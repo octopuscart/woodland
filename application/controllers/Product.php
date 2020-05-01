@@ -36,10 +36,33 @@ class Product extends CI_Controller {
         $this->db->where("id in ($categoriesString)");
         $query = $this->db->get('category');
         $producttgs = $query->result_array();
-        
-       $data['producttag'] = $producttgs;
+
+        $data['producttag'] = $producttgs;
+
+        $this->db->where("parent_id", "0");
+        $query = $this->db->get('category');
+        $corecategories = $query->result_array();
+
+        $products = array();
+        $categories2 = array();
+        foreach ($corecategories as $ckey => $cvalue) {
+            $this->db->select("id, title, price, file_name");
+            $this->db->where("category_id", $cvalue["id"]);
+            $query = $this->db->get('products');
+            $productslist = $query->result_array();
+            if ($productslist) {
+                $categories2[$cvalue["id"]] = $productslist[0]['file_name'];
+            } else {
+                $categories2[$cvalue["id"]] = "default.png";
+            }
+            $products[$cvalue["id"]] = $productslist;
+        }
+
+
+        $data['productlist'] = $products;
 
         $data["categories"] = $categories;
+        $data["categories2"] = $categories2;
         $data["category"] = $cat_id;
         $session_last_custom = $this->session->userdata('session_last_custom');
 

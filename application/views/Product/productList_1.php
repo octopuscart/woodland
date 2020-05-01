@@ -1,7 +1,20 @@
 <?php
 $this->load->view('layout/header');
 ?>
-
+<style>
+    .product-image-back{
+        background-size: cover!important;
+        background-position: center!important;
+        border: 3px solid #8CC646;
+    }
+    ul.tab-nav:not(.tab-nav-lg) li a {
+    padding: 16px 9px;
+    height: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+</style>
 <section id="page-title" class="page-title-parallax page-title-dark page-title-center" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/menu2.jpg'); background-size: cover; padding: 120px 0 180px;" data-bottom-top="background-position:0 0px;" data-top-bottom="background-position:0px -300px;">
     <div class="container clearfix">
         <h1 class="font-secondary capitalize ls0" style="font-size: 74px;">Menu</h1>
@@ -17,25 +30,44 @@ $this->load->view('layout/header');
                     <?php
                     foreach ($categories as $catkey => $catvalue) {
                         ?>
-                        <li><a href="#tabs-breakfast"><?php echo $catvalue['category_name']; ?></a></li>
+                        <li><a href="#tabs-foodmenu-<?php echo $catvalue['id']; ?>">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $categories2[$catvalue['id']]; ?>);border:none;height:50px;width:50px;" alt="1" class="rounded product-image-back">
+                                <br/>
+                                <?php echo $catvalue['category_name']; ?>
+                            </a></li>
                     <?php } ?>
                 </ul>
                 <div class="tab-container mt-4">
-                    <div class="tab-content clearfix" id="tabs-breakfast">
-                        <div class="row clearfix">
-                            <div class="col-lg-3 col-md-6"  ng-repeat="(k, product) in productResults.products">
-                                <div class="iportfolio mb-4 clearfix">
-                                    <a href="#" ng-click="addToCart(product.product_id, 1)" class="portfolio-image"><img src="<?php echo base_url(); ?>assets/theme2/res/food/{{product.file_name}}" alt="1" class="rounded"></a>
-                                    <div class="portfolio-desc pt-2">
-                                        <h4 class="mb-1"><a href="#" class="" >{{product.title}}</a></h4>
-                                        <div class="item-price">{{product.price|currency:"<?php echo globle_currency; ?> "}}</div>
+
+                    <?php
+                    foreach ($categories as $catkey => $catvalue) {
+                        ?>
+                        <div class="tab-content clearfix" id="tabs-foodmenu-<?php echo $catvalue['id']; ?>">
+                            <div class="row clearfix">
+                                <?php
+                                $categoryproducts = $productlist[$catvalue['id']];
+                                foreach ($categoryproducts as $prkey => $prvalue) {
+                                    ?>
+                                    <div class="col-lg-3 col-md-6" >
+                                        <div class="iportfolio mb-4 clearfix">
+                                            <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image">
+                                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $prvalue['file_name']; ?>)" alt="1" class="rounded product-image-back">
+                                            </a>
+                                            <div class="portfolio-desc pt-2">
+                                                <h4 class="mb-1"><a href="#" class="" ><?php echo $prvalue['title']; ?></a></h4>
+                                                <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
-                            
                         </div>
-                    </div>
-                 
+                        <?php
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -80,7 +112,7 @@ $this->load->view('layout/header');
         <div class="section nomargin nobg" style="padding: 80px 0 70px;">
             <div class="container">
                 <div class="divcenter d-flex justify-content-center center" style="max-width: 900px;">
-                    <h3 class="mb-0 ls0">Free Delivery On Order Value $300 And Up <a href="#" class="button button-circle button-xlarge button-light text-white ls0 nott mt-0 mb-1 ml-3" style="position: relative;"><span>Order Now</span> <i class="icon-line-arrow-right t600"></i></a></h3>
+                    <h3 class="mb-0 ls0">Free Delivery On Order Value $300 And Up <a href="#" class="button button-circle button-xlarge button-light text-white ls0 nott mt-0 mb-1 ml-3 colorlightgreen" style="position: relative;"><span>Order Now</span> <i class="icon-line-arrow-right t600"></i></a></h3>
                 </div>
             </div>
         </div>
@@ -89,7 +121,6 @@ $this->load->view('layout/header');
 </section>
 <script>
     var searchdata = "<?php echo isset($_GET["search"]) ? ($_GET["search"] != '' ? $_GET["search"] : '0') : "0"; ?>";
-
     var category_id = <?php echo $category; ?>;
     var custom_id = <?php echo $category; ?>;</script>
 <!--angular controllers-->

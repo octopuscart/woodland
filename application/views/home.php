@@ -78,7 +78,7 @@ $this->load->view('layout/header');
 
 
         <div class="clear"></div>
-        <div class="section nobottommargin" style="background: #eee  url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') no-repeat top left / cover; padding: 60px 0; border-top: 1px solid #EEE;">
+        <div class="section nobottommargin" style="background: #8cc646    url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') no-repeat top left / cover; padding: 60px 0; border-top: 1px solid #EEE;">
             <div class="container clearfix">
                 <div class="heading-block center nobottommargin nobottomborder">
                     <span class="font-primary" style="font-size: 16px; color: #888">Tasty &amp; Healthy</span>
@@ -296,7 +296,7 @@ $this->load->view('layout/header');
             ?>
 
         </style>
-        <div class="section dessert-menu nomargin nopadding">
+        <div class="section dessert-menu nomargin nopadding" style="    background: #FBB316;">
             <div class="container-fluid">
                 <div class="row align-items-stretch clearfix">
                     <div class="col-lg-5" style="background-color: #FFF; padding: 0; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
@@ -461,7 +461,7 @@ $this->load->view('layout/header');
                     <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
                 </div>
                 <div class="col-md-2">
-                    <a class="button button-circle button-xlarge text-dark bg-white button-light nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
+                    <a class="button button-circle button-xlarge  bg-white button-light colordarkgreen nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
                 </div>
             </div>
         </div>

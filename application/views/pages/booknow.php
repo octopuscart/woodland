@@ -85,7 +85,7 @@ $this->load->view('layout/header');
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-12 nobottommargin">
-                                                <button class="button button-circle button-large text-white ml-0 mt-3" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Reserve Now</button>
+                                                <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Reserve Now</button>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-12 hidden">

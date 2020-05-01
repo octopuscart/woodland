@@ -205,3 +205,8 @@ a, h1 > span:not(.nocolor):not(.badge), h2 > span:not(.nocolor):not(.badge), h3 
     color: #0D6132!important;
 }
 
+
+.rounded_border {
+    /* border-radius: .25rem!important; */
+    border-radius: 50%!important;;
+}

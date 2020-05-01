@@ -30,8 +30,8 @@ $this->load->view('layout/header');
                     <?php
                     foreach ($categories as $catkey => $catvalue) {
                         ?>
-                        <li><a href="#tabs-foodmenu-<?php echo $catvalue['id']; ?>">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $categories2[$catvalue['id']]; ?>);border:none;height:50px;width:50px;" alt="1" class="rounded product-image-back">
+                        <li style="    border: none;"> <a href="#tabs-foodmenu-<?php echo $catvalue['id']; ?>">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $categories2[$catvalue['id']]; ?>);border:none;height:50px;width:50px;" alt="1" class="rounded product-image-back rounded_border">
                                 <br/>
                                 <?php echo $catvalue['category_name']; ?>
                             </a></li>

@@ -72,13 +72,13 @@
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
         <div class="" style="padding:50px 0px">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding: 0 20px">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #FBB316!important;padding: 0 20px">
                 <tr>
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
-                                     height: 50px;
+                                     height: 100px;color:white;
                                      width: auto;"/><br/>
-                            <h4 style=""> Order No.: <?php echo $order_data->order_no; ?></h4>
+                            <h4 style="color:white;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
                     </td>
 
@@ -86,11 +86,11 @@
             </table>
             <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
-                    <td style="font-size: 12px;width: 50%;padding: 2px 20px;" >
+                    <td style="font-size: 12px;width: 50%;padding: 2px 20px;padding-top: 25px;" >
                         <b>Shipping Address</b><hr/>
                     </td>
 
-                    <td style="font-size: 12px;width: 50%;padding: 2px 20px;" >
+                    <td style="font-size: 12px;width: 50%;padding: 2px 20px;padding-top: 25px;" >
 
                         <b>Order Information</b><hr/>
 
@@ -237,7 +237,7 @@
 
 
                 <tr>
-                    <td colspan="6" style="font-size: 12px;">
+                    <td colspan="6" style="font-size: 12px;background: #8CC646;">
 
 
 
@@ -250,13 +250,22 @@
                               width: 100%;
                               float: left;
                               margin-top: 24px;
-                              background-color: white;
+/*                              background-color: white;*/
                               color: black;
                               font-size: 10px;"> (This is computer generated receipt and does not require physical signature.)</span>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="6" style="padding: 0px;">
+                 
+                        <img src="<?php echo base_url(); ?>assets/emails/emailfooter.JPG" style="width:100%;"></img>
+                              
+                   
+                    </td>
+                </tr>
 
             </table>
+           
 
         </div>
     </body>

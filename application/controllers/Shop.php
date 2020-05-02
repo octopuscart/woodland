@@ -116,8 +116,8 @@ class Shop extends CI_Controller {
         $this->load->view('pages/booknow');
     }
     
-    public function blog() {
-        $this->load->view('pages/booknow');
+    public function blog($pageno=0) {
+        $this->load->view('pages/blog');
     }
     
     function loyalprogram(){

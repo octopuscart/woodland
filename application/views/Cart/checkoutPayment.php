@@ -231,7 +231,7 @@ $this->load->view('layout/header');
                                                                     ?>
                                                                     <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'show active' : ''; ?>" id="cash">
                                                                         <p>
-                                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/cod.png" style="height: 100px;">                
+                                                                            <img src="<?php echo base_url(); ?>assets/paymentstatus/cod.png" style="height: 293px;">                
 
                                                                         </p>
                                                                         <div class="cart-page-top table-responsive">

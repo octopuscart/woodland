@@ -698,11 +698,11 @@ b.barcomb-list {
 }
 .btn-danger {
     color: #fff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
+    background-color: #00a64c;
+    border-color: #00a64c;
     /* border: none; */
     border-radius: 0;
-    background: red;
+    background: #00a64c;
 }
 .btn{
     /*border: 1px;*/
@@ -1114,7 +1114,7 @@ b.barcomb-list {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #ffffff;
+    color: #ffffff!important;
     letter-spacing: 2px;
     display: inline-block;
     padding: 12px 20px;

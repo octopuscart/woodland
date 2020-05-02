@@ -45,8 +45,8 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartData();
         }
 
-        $session_cart['shipping_price'] = 30;
-        if ($session_cart['total_price'] > 299) {
+        $session_cart['shipping_price'] = 40;
+        if ($session_cart['total_price'] > 399) {
             $session_cart['shipping_price'] = 0;
         }
         if ($this->checklogin) {
@@ -60,7 +60,7 @@ class Api extends REST_Controller {
             $user_address_details = $this->session->userdata('shipping_address');
         }
         if ($user_address_details) {
-            if ($user_address_details['zipcode'] == 'on') {
+            if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
                 $session_cart['shipping_price'] = 0;
             }
         }
@@ -148,9 +148,9 @@ class Api extends REST_Controller {
                 $psearch = " and title like '%$searchdata%' ";
             }
         }
-        
-        
-        
+
+
+
         if (isset($attrdatak["minprice"])) {
             $priecemn = $attrdatak["minprice"];
             $priecemx = $attrdatak["maxprice"];

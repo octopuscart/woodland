@@ -71,7 +71,7 @@ $this->load->view('layout/header');
                                                     Add To Cart
                                                 </button>
                                                 
-                                                 <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow ">
+                                                 <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow " style="    float: right;">
                                                     Buy Now
                                                 </button>
                                             </div>
@@ -130,7 +130,7 @@ $this->load->view('layout/header');
         <div class="section nomargin nobg" style="padding: 80px 0 70px;">
             <div class="container">
                 <div class="divcenter d-flex justify-content-center center" style="max-width: 900px;">
-                    <h3 class="mb-0 ls0">Free Delivery On Order Value $300 And Up <a href="#" class="button button-circle button-xlarge button-light text-white ls0 nott mt-0 mb-1 ml-3 colorlightgreen" style="position: relative;"><span>Order Now</span> <i class="icon-line-arrow-right t600"></i></a></h3>
+                    <h3 class="mb-0 ls0">Free Delivery On Order Value $400 And Up <a href="#" class="button button-circle button-xlarge button-light text-white ls0 nott mt-0 mb-1 ml-3 colorlightgreen" style="position: relative;"><span>Order Now</span> <i class="icon-line-arrow-right t600"></i></a></h3>
                 </div>
             </div>
         </div>

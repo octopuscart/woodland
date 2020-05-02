@@ -141,7 +141,7 @@ $this->load->view('layout/header');
                                                         <h3><i class="fa fa-user"></i> <?php echo $user_details['name']; ?> </h3>
                                                         <p class="address_guest_p"><i class="fa fa-phone"></i> <?php echo $user_details['contact_no']; ?> </p>
                                                         <p class="address_guest_p"><i class="fa fa-envelope"></i> <?php echo $user_details['email']; ?> </p>
-                                                        <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $user_details['email']); ?>" class="btn btn-danger address_button btn-sm "><i class ="fa fa-times"></i> Remove Address</a>
+                                                        <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $user_details['email']); ?>" class="btn btn-danger address_button btn-sm text-white "><i class ="fa fa-times"></i> Remove Address</a>
                                                     </div>
 
                                                     <?php
@@ -154,7 +154,7 @@ $this->load->view('layout/header');
                                                                     <?php echo $value['address1']; ?>,<br/>
                                                                     <?php echo $value['address2']; ?>,<br/>
                                                                     <?php echo $value['city']; ?><br/>
-                                                                    <?php echo $value['zipcode'] == 'on' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
+                                                                    <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -295,18 +295,19 @@ $this->load->view('Cart/noproduct');
                                     <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
                                 </td>
                             </tr>
+                            
                             <tr>
-                                <td style="line-height: 25px;" colspan="2">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="zipcode"> Check, For Free Shipping In Tsim Sha Tsui
-
-                                        </label>
-                                    </div>
-
-
+                                <td style="line-height: 25px;">
+                                    <span for="name" class=""><b>Area</b></span>
+                                </td>
+                                <td>
+                                    <select name="zipcode" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;    font-size: 12px;">
+                                        <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Shipping)</option>
+                                        <option value="Whampoa">Whampoa Garden ($40 On Order value < $400)</option>
+                                    </select>
                                 </td>
                             </tr>
+                           
 
 
                         </tbody>

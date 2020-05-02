@@ -15,7 +15,7 @@ $this->load->view('layout/header');
             </div>
             <div class="clear"></div>
             <div class="d-flex align-items-center mt-3 clearfix">
-                <a class="button button-circle button-large text-white mb-0 noleftmargin colordarkgreen" href="<?php echo site_url("menu/0/0");?>">Book Now</a>
+                <a class="button button-circle button-large text-white mb-0 noleftmargin colordarkgreen" href="<?php echo site_url("book-now"); ?>">Book Now</a>
                 <a href="#" data-lightbox="iframe" class="d-flex fright more-link ml-3"><i class="icon-play-sign h3 m-0 align-self-center d-none d-sm-inline-block"></i><span class=" align-self-center ml-2"><u>See Our Story</u></span></a>
             </div>
         </div>
@@ -26,7 +26,7 @@ $this->load->view('layout/header');
 </section>
 
 <section id="content" style="overflow: visible;">
-    <div class="content-wrap nobottompadding" style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/food-pattern.png)">
+    <div class="content-wrap nobottompadding" style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg)">
         <div class="container">
             <div class="heading-block nobottomborder bottommargin-sm">
                 <h3 class="nott font-secondary ls0" style="font-size: 52px; line-height: 1.3;">Who we are
@@ -57,8 +57,26 @@ $this->load->view('layout/header');
             </div>
             <div class="line mt-5"></div>
         </div>
+        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="   "/>
+    </div>
+    <div class="section nobottommargin" style="padding: 0px 0; background: #FFF; ">
+        <div class="container clearfix">
+            <div class="heading-block center nobottomborder">
+                <span class="font-primary ls1" style="font-size: 14px; color: #AAA">Why we are spacial</span>
+                <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Awards & Certifications</h3>
+            </div>
+            <div class="row clearfix">
+
+                <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards.png"/>
+            </div>
+        </div>
 
     </div>
+
+    <?php
+    $this->load->view('layout/contactfooter');
+    ?>
+
     <div class="section nomargin dark bgcolor" style="">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -66,7 +84,7 @@ $this->load->view('layout/header');
                     <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
                 </div>
                 <div class="col-md-2">
-                    <a class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
+                    <a href="<?php echo site_url("contact");?>" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
                 </div>
             </div>
         </div>

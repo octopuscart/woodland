@@ -141,84 +141,27 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
-
-    <div class="container section-contact topmargin-lg clearfix" style="background: white;">
-        <div class="row clearfix">
-            <div class="col-lg-3 col-md-6 bottommargin-sm center">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-et-map"></i>
-                <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Contact</h3>
-                <span class="font-primary">
-                    UG Shop 16 & 17, Wing On Plaza,<br/>
-                    62, Mody Road, Tsim Sha Tsui East,<br/>
-                    Kowloon, Hong Kong
-                </span>
-            </div>
-            <div class="col-lg-3 col-md-6 bottommargin-sm center">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-et-clock"></i>
-                <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Opening Time</h3>
-                <span class="font-primary">
-                    <table style="    width: 100%;text-align: left;">
-                        <tr>
-                            <td colspan="2" style="text-align: center;"><strong>Monday To Sunday</strong></td>
-
-                        </tr>
-                        <tr>
-                            <td>Lunch</td>
-                            <td>: &nbsp; 11:30am – 03:30pm</td>
-                        </tr>
-                        <tr>
-                            <td>Dinner</td>
-                            <td>: &nbsp; 06:30pm – 10:30pm</td>
-                        </tr>
-                    </table>
-                </span>
-            </div>
-            <div class="col-lg-3 col-md-6 bottommargin-sm center">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-et-clipboard"></i>
-                <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Reservation</h3>
-                <span class="font-primary">
-                    <table style="    width: 100%;">
-                        <tr>
-                            <td colspan="1" style="text-align: center;font-size: 20px;"><strong>+(852) 2369 3718</strong></td>
-
-                        </tr>
-                        <tr>
-
-                            <td><i class="icon-et-phone"></i>&nbsp; +(852) 2366 1945</td>
-                        </tr>
-                        <tr>
-
-                            <td><i class="icon-et-envelope"></i>&nbsp; reachus@vegconcepts.com</td>
-                        </tr>
-                    </table>
-                </span>
-            </div>
-            <div class="col-lg-3 col-md-6 bottommargin-sm center">
-                <i class="i-plain i-xlarge divcenter nobottommargin icon-et-heart"></i>
-                <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Social Contact</h3>
-                <div style="display: flex; justify-content: center">
-                    <a href="#" class="social-icon si-borderless si-facebook">
-                        <i class="icon-line2-social-facebook"></i>
-                        <i class="icon-line2-social-facebook"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-twitter">
-                        <i class="icon-line2-social-twitter"></i>
-                        <i class="icon-line2-social-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-youtube">
-                        <i class="icon-line2-social-youtube"></i>
-                        <i class="icon-line2-social-youtube"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-instagram">
-                        <i class="icon-line2-envelope"></i>
-                        <i class="icon-line2-envelope"></i>
-                    </a>
+  <?php
+    $this->load->view('layout/contactfooter');
+    ?>
+ <div class="section nomargin dark bgcolor" style="">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-10">
+                    <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
+                </div>
+                <div class="col-md-2">
+                    <a class="button button-circle button-xlarge text-white bg-white button-light colordarkgreen nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
                 </div>
             </div>
         </div>
     </div>
-    <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
-
+    <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch-header-bg.png" style="    bottom: 27px;
+    position: relative;
+    z-index: 300000;
+    height: 91px;
+    width: 100%;
+    margin-bottom: -53px;">
 </section>
 
 

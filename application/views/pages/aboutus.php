@@ -15,7 +15,7 @@ $this->load->view('layout/header');
             </div>
             <div class="clear"></div>
             <div class="d-flex align-items-center mt-3 clearfix">
-                <a class="button button-circle button-large text-white mb-0 noleftmargin colordarkgreen">Reserve Now</a>
+                <a class="button button-circle button-large text-white mb-0 noleftmargin colordarkgreen" href="<?php echo site_url("menu/0/0");?>">Book Now</a>
                 <a href="#" data-lightbox="iframe" class="d-flex fright more-link ml-3"><i class="icon-play-sign h3 m-0 align-self-center d-none d-sm-inline-block"></i><span class=" align-self-center ml-2"><u>See Our Story</u></span></a>
             </div>
         </div>
@@ -39,9 +39,7 @@ $this->load->view('layout/header');
 
                             Woodlands Welcomes you to a world of delicious vegetarian food. Signature dishes coming from our grand Indian heritage. We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
                         </p>
-
                         <p>In Woodlands you can experience the especially rich flavours of so many South Indian recipes that have evolved over the centuries. They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices. </p>
-
                         <p>Woodlands is the first Indian Vegetarian restaurant in Hong Kong - open since 1981. We were the first people to try out a new bold venture, sharing Indian vegetarianism as an 'alternative' in meat-loving Hong Kong.</p>
 
                         <p>Today, our client base continues to expand, from our local Indian community to our many Chinese friends and other International visitors, usually referred by the people who have tasted our authentic delicacies.</p>
@@ -68,7 +66,7 @@ $this->load->view('layout/header');
                     <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
                 </div>
                 <div class="col-md-2">
-                    <a class="button button-circle button-xlarge colordarkgreen bg-white button-light nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
+                    <a class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
                 </div>
             </div>
         </div>

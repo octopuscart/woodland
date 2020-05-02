@@ -85,7 +85,7 @@ $this->load->view('layout/header');
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-12 nobottommargin">
-                                                <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Reserve Now</button>
+                                                <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Book Now</button>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-12 hidden">
@@ -148,11 +148,11 @@ $this->load->view('layout/header');
                             </tr>
                             <tr>
                                 <td>Lunch</td>
-                                <td>: &nbsp; 11:30am – 03:30pm</td>
+                                <td>: &nbsp; 11:30 am – 03:30 pm</td>
                             </tr>
                             <tr>
                                 <td>Dinner</td>
-                                <td>: &nbsp; 06:30pm – 10:30pm</td>
+                                <td>: &nbsp; 06:30 pm – 10:30 pm</td>
                             </tr>
                         </table>
                     </span>

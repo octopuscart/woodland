@@ -54,22 +54,22 @@
             <i class="i-plain i-xlarge divcenter nobottommargin icon-et-heart"></i>
             <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Social Contact</h3>
             <div style="display: flex; justify-content: center">
-                <a href="#" class="socialicon ">
+                <a href="https://www.facebook.com/woodlandshk" class="socialicon ">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a href="#" class="socialicon ">
+                <a href="https://twitter.com/woodlandshk" class="socialicon ">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a href="#" class="socialicon ">
+                <a href="https://www.instagram.com/woodlands.hk/" class="socialicon ">
                     <i class="fa fa-instagram"></i>
                 </a>
 
-                <a href="#" class="socialicon ">
+                <a href="https://www.youtube.com/channel/UCr6JHgxgWr57Zb4TyzTXJJw/videos" class="socialicon ">
                     <i class="fa fa-youtube"></i>
                 </a>
 
 
-                <a href="#" class="socialicon ">
+                <a href="https://www.tripadvisor.in/Restaurant_Review-g294217-d1216071-Reviews-Woodlands_Indian_Vegetarian_Restaurant-Hong_Kong.html" class="socialicon ">
                     <i class="fa fa-tripadvisor"></i>
                 </a>
 

@@ -95,7 +95,9 @@ $this->load->view('layout/header');
         <div class="container clearfix">
             <div class="row clearfix">
 
-
+<?php
+                $this->load->view('Cart/commanmessage');
+                ?>
                 <div class="cart-page-area">
                     <div class="container" ng-if="globleCartData.total_quantity">
                         <div class="row">

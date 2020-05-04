@@ -90,7 +90,9 @@ $this->load->view('layout/header');
     <div class="content-wrap nobottompadding">
         <div class="container clearfix">
             <div class="row clearfix">
-
+                <?php
+                $this->load->view('Cart/commanmessage');
+                ?>
                 <div class="cart-page-area">
                     <div class="container" ng-if="globleCartData.total_quantity">
                         <div class="row">
@@ -225,7 +227,7 @@ $this->load->view('layout/header');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-                                                var avaiblecredits = 0;
+                                                                var avaiblecredits = 0;
 </script>
 
 <?php

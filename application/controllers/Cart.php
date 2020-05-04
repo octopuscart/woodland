@@ -210,13 +210,13 @@ class Cart extends CI_Controller {
 
                 $user_credits = $this->User_model->user_credits($this->user_id);
                 $data['user_credits'] = $user_credits;
-                  $address = $user_address_details[0];
+                $address = $user_address_details[0];
 
-                $session_cart['shipping_price'] = 30;
-                if ($session_cart['total_price'] > 299) {
+                $session_cart['shipping_price'] = 40;
+                if ($session_cart['total_price'] > 399) {
                     $session_cart['shipping_price'] = 0;
                 }
-                if ($address['zipcode'] == 'on') {
+                if ($address['zipcode'] == 'Tsim Sha Tsui') {
                     $session_cart['shipping_price'] = 0;
                 }
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
@@ -233,7 +233,7 @@ class Cart extends CI_Controller {
 
                 //place order
 
-              
+
                 $paymentmathod = $this->input->post('place_order');
                 $order_array = array(
                     'name' => $user_details->first_name . " " . $user_details->last_name,
@@ -252,7 +252,7 @@ class Cart extends CI_Controller {
                     'sub_total_price' => $sub_total_price,
                     'total_price' => $session_cart['total_price'],
                     'total_quantity' => $total_quantity,
-                     'shipping_price' => $shipping_price,
+                    'shipping_price' => $shipping_price,
                     'status' => 'Order Confirmed',
                     'payment_mode' => $paymentmathod,
                     'measurement_style' => '',
@@ -261,7 +261,7 @@ class Cart extends CI_Controller {
 
                 $this->db->insert('user_order', $order_array);
                 $last_id = $this->db->insert_id();
-                $orderno = "MM" . date('Y/m/d') . "/" . $last_id;
+                $orderno = "WL" . date('Y/m/d') . "/" . $last_id;
                 $orderkey = md5($orderno);
                 $this->db->set('order_no', $orderno);
                 $this->db->set('order_key', $orderkey);

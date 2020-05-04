@@ -28,7 +28,7 @@ $this->load->view('layout/header');
                 if ($next_link === 'checkoutInit') {
                     ?>
                     <h5  class="text-center">
-                        <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger">
+                        <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control border-form-control tleft required">
                             <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
                         </a>
                     </h5>
@@ -63,7 +63,7 @@ $this->load->view('layout/header');
                         <input type="password" class="sm-form-control border-form-control tleft required" name="password" placeholder="Password *" required=""/>
                         <div style="clear: both"></div>
                         <br/>
-                        <button class="btn-send-message button button-circle button-large text-white ml-0 mt-3 colordarkgreen" name="signIn" type="submit" value="signIn">Login</button>
+                        <button class="btn-send-message button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control border-form-control tleft required" name="signIn" type="submit" value="signIn">Login</button>
                         <!--<span><input type="checkbox" name="remember"/>Remember Me</span>-->
                     </form>
                 </div>

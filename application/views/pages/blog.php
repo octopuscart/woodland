@@ -39,7 +39,7 @@ $this->load->view('layout/header');
                                     <li><a href="#">ADMIN</a></li>
                                 </ul>
                                 <div class="clear"></div>
-                                <h2 class="nobottommargin"><a href="#">Make Ahead Super Green Vegan Quinoa Sandwich.</a></h2>
+                                <h2 class="nobottommargin"><a href="#">Dosa is a popular south Indian food. Do you want to know more about this special food?</a></h2>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ $this->load->view('layout/header');
                                     <li><a href="#">ADMIN</a></li>
                                 </ul>
                                 <div class="clear"></div>
-                                <h2 class="nobottommargin"><a href="#">We Delivered Heart Shape Cornbread Waffles.</a></h2>
+                                <h2 class="nobottommargin"><a href="#">Panipuri or Phuchka is a type of snack that originated in the Indian subcontinent.</a></h2>
                             </div>
                         </div>
                     </div>

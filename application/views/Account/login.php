@@ -28,7 +28,8 @@ $this->load->view('layout/header');
                 if ($next_link === 'checkoutInit') {
                     ?>
                     <h5  class="text-center">
-                        <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control border-form-control tleft required">
+                        <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control border-form-control tleft required" style="    width: 302px;
+    display: inline-block;">
                             <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
                         </a>
                     </h5>

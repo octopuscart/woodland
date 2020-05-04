@@ -237,6 +237,16 @@ class Account extends CI_Controller {
 
         $this->load->view('Account/orderList', $data);
     }
+    
+    
+    function newsletter() {
+        if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
+     
+
+        $this->load->view('Account/newsletter');
+    }
 
     //Address management
     function address() {

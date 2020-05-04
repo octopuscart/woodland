@@ -24,6 +24,9 @@ $this->load->view('layout/header');
     .blog-posts article {
         margin-bottom: 10px;
     }
+    .checkbox{
+        font-size: 15px;
+    }
 </style>
 
 <style>
@@ -61,38 +64,21 @@ $this->load->view('layout/header');
 
 
                     <div class="col-md-9" >
-                        <h4>Available Credits : <small>Rs.</small> {{<?php echo $user_credits; ?> |currency:" "}}</h4>
+                        <h4>Newsletter Preferences</h4>
+                        <hr/>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name=""> Monthly Subscription
 
-                        <h5 style="    margin-top: 51px;
-                            font-size: 18px;
-                            font-weight: 400">Credits Statement</h5>
 
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name=""> Weekly Subscription
 
-                        <table class="table">
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Credit</th>
-                                <th>Debit</th>
-                                <th>Remark</th>
-                            </tr>
-                            <?php
-                            foreach ($creditlist as $key => $value) {
-                                ?>
-                                <tr>
-                                    <td><?php echo $key + 1; ?></td>
-                                    <td><?php echo $value->c_date; ?></td>
-                                    <td><?php echo $value->c_time; ?></td>
-                                    <td>{{<?php echo $value->credit ? $value->credit : 0; ?> |currency:" "}}</td>
-                                    <td>{{<?php echo $value->debit ? $value->debit : 0; ?> |currency:" "}}</td>
-                                    <td><?php echo $value->remark; ?></td>
-
-                                </tr>
-                                <?php
-                            }
-                            ?>
-                        </table>
+                            </label>
+                        </div>
                     </div>
 
 

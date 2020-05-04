@@ -85,6 +85,25 @@
                                         <i class="icon-et-basket" style="    font-size: 20px;"></i><span>{{globleCartData.total_quantity}}</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <?php
+                                    $session_data = $this->session->userdata('logged_in');
+                                    if ($session_data) {
+                                        ?>
+
+                                        <a href="<?php echo site_url("Account/profile") ?>" class="cartheadericon" style="    padding-left: 24px;">
+                                            <i class="icon-et-profile-male" style="    font-size: 20px;"></i> 
+                                        </a>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <a href="<?php echo site_url("Account/login") ?>" class="cartheadericon" style="    padding-left: 24px;">
+                                            <i class="icon-et-lock" style="    font-size: 20px;"></i> 
+                                        </a>
+                                        <?php
+                                    }
+                                    ?>
+                                </li>
                             </ul>
                         </nav>
                     </div>

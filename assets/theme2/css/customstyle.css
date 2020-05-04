@@ -258,3 +258,38 @@ a.socialicon {
     /* background: #8cc646; */
     /* color: white!important; */
 }
+li.woocommerce-form-row.woocommerce-form-row--last.form-row.form-row-last {
+    margin-top: 14px;
+}
+
+.my-account-page-area{
+    margin-top: 50px;
+}
+
+li.woocommerce-MyAccount-navigation-link {
+    margin: 10px 0px;
+    font-size: 18px;
+}
+
+.colleft{
+    float: left;
+}
+
+.blog-posts article {
+    margin-bottom: 10px;
+    border: 1px solid #096031;
+    border-radius: 15px;
+}
+
+.listbuttons{
+    margin: 0px;
+    float: right;
+    height: 29px;
+    line-height: 28px;
+        height: 29px!important;
+    line-height: 28px!important;
+}
+
+.btn.btn-default {
+    border: 1px solid #000;
+}

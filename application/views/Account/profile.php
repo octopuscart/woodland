@@ -3,23 +3,22 @@ $this->load->view('layout/header');
 ?>
 
 
-
-<div class="inner-page-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>My Profile</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>Account</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<style>
+    footer{
+        position: inherit!important;
+    }
+</style> 
+<!-- Inner Page Banner Area Start Here -->
+<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/blog.jpg');   margin-top: -30px;    padding: 100px 0px;   " data-center="" data-top-bottom="">
+    <div class="container clearfix">
+        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;color:white;">Account</h1>
     </div>
-</div>
+</section>
+<!-- Inner Page Banner Area End Here -->
 
+<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
+     position: absolute;
+     z-index: 200;" />
 
 
 
@@ -62,33 +61,33 @@ $this->load->view('layout/header');
 
                                 <form class="create_account_form row woocommerce-EditAccountForm edit-account" method="post" action="#">
                                     <input type="hidden" name="user_id" value="45">
-                                    <ul class="">
-                                        <li class="col-sm-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                    <ul class="row">
+                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                             <label>
                                                 First Name
-                                                <input type="text" name="first_name" class="woocommerce-Input woocommerce-Input--text input-text"  value="<?php echo $user_details->first_name; ?>">
+                                                <input type="text" name="first_name" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->first_name; ?>">
                                             </label>
                                         </li>
-                                        <li class="col-sm-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
 
                                             <label>
                                                 Last Name
-                                                <input type="text" name="last_name" class="woocommerce-Input woocommerce-Input--text input-text"  value="<?php echo $user_details->last_name; ?>">
+                                                <input type="text" name="last_name" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->last_name; ?>">
                                             </label>
                                         </li>
 
 
-                                        <li class="col-sm-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
 
                                             <label>
                                                 Contact No.
-                                                <input type="text" name="contact_no" class="woocommerce-Input woocommerce-Input--text input-text"  value="<?php echo $user_details->contact_no; ?>">
+                                                <input type="text" name="contact_no" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->contact_no; ?>">
                                             </label>
                                         </li>
 
 
 
-                                        <li class="col-sm-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
 
                                             <label>
                                                 Gender
@@ -106,16 +105,16 @@ $this->load->view('layout/header');
                                             </label> 
                                         </li>
 
-                                        <li class="col-sm-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
 
                                             <label>
                                                 Date of Birth
-                                                <input type="date" class="woocommerce-Input woocommerce-Input--text input-text" name="birth_date"  value="<?php echo $user_details->birth_date; ?>">
+                                                <input type="date" class="woocommerce-Input sm-form-control border-form-control tleft required" name="birth_date"  value="<?php echo $user_details->birth_date; ?>">
                                             </label>
                                         </li>
 
 
-                                        <li class="col-sm-6" style="padding-top: 20px;">
+                                        <li class="col-sm-6 col-lg-6" style="padding-top: 20px;">
 
                                             <button name="update_profile" type="submit" class="woocommerce-Button button btn-shop-now-fill">Update Profile</button>
                                         </li>
@@ -187,17 +186,17 @@ $this->load->view('layout/header');
 
                                 <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                     Old Password
-                                    <input type="text" name="old_password"  value="" class=" woocommerce-Input woocommerce-Input--text input-text">
+                                    <input type="text" name="old_password"  value="" class=" woocommerce-Input sm-form-control border-form-control tleft required">
                                 </label>
 
                                 <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                     New Password
-                                    <input type="text" name="new_password"  value="" class=" woocommerce-Input woocommerce-Input--text input-text">
+                                    <input type="text" name="new_password"  value="" class=" woocommerce-Input sm-form-control border-form-control tleft required">
                                 </label>
                                 <br/>
                                 <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                                     Confirm Password
-                                    <input type="text" name="re_password"  value="" class=" woocommerce-Input woocommerce-Input--text input-text">
+                                    <input type="text" name="re_password"  value="" class=" woocommerce-Input sm-form-control border-form-control tleft required">
                                 </label>
                             </div>
                             <div class="modal-footer">

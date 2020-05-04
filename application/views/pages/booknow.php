@@ -57,7 +57,7 @@ $this->load->view('layout/header');
                                                 <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control border-form-control required" placeholder="Phone">
                                             </div>
                                             <div class="col-sm-6 mb-3 input-daterange travel-date-group">
-                                                <input type="text" id="template-contactform-subject" name="subject" value="" class="sm-form-control border-form-control tleft required" placeholder="Select Reservation Date">
+                                                <input type="date" id="template-contactform-subject" name="subject" value="" class="sm-form-control border-form-control tleft required" placeholder="Select Reservation Date">
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-6 mb-3">

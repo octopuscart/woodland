@@ -182,11 +182,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
             }).then(
                     function () {
-                        window.location = baseurl + "CartGuest/checkoutInit";
+                        window.location = baseurl + "Cart/checkoutInit";
                     },
                     function (dismiss) {
                         if (dismiss === 'timer') {
-                            window.location = baseurl + "CartGuest/checkoutInit";
+                            window.location = baseurl + "Cart/checkoutInit";
                         }
                     }
             )

@@ -144,24 +144,7 @@ $this->load->view('layout/header');
   <?php
     $this->load->view('layout/contactfooter');
     ?>
- <div class="section nomargin dark bgcolor" style="">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-10">
-                    <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
-                </div>
-                <div class="col-md-2">
-                    <a class="button button-circle button-xlarge text-white bg-white button-light colordarkgreen nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch-header-bg.png" style="    bottom: 27px;
-    position: relative;
-    z-index: 300000;
-    height: 91px;
-    width: 100%;
-    margin-bottom: -53px;">
+
 </section>
 
 

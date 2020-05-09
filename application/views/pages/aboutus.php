@@ -1,7 +1,7 @@
 <?php
 $this->load->view('layout/header');
 ?>
-<section id="slider" class="slider-element clearfix" style="height: 600px; background: #ffc162  url('<?php echo base_url(); ?>assets/theme2/res/images/sections/about-us.jpg') right center no-repeat; background-size: auto 100%;">
+<section id="slider" class="slider-element clearfix" style="height: 600px; background: #fafbfd   url('<?php echo base_url(); ?>assets/theme2/res/images/sections/about-us.jpg') right center no-repeat; background-size: auto 100%;">
     <div class="vertical-middle">
         <div class="container">
             <div class="row clearfix parallax" data-0="opacity: 1;margin-top:15px" data-800="opacity: 0.1;margin-top:100px">
@@ -26,15 +26,27 @@ $this->load->view('layout/header');
 </section>
 
 <section id="content" style="overflow: visible;">
-    <div class="content-wrap nobottompadding" style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg)">
+    <div class="content-wrap nobottompadding" style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg);    background-size: 270px;padding: 20px 0px;">
         <div class="container">
-            <div class="heading-block nobottomborder bottommargin-sm">
+            <div class="heading-block nobottomborder bottommargin-sm" style="    margin-bottom: -10px!important;">
                 <h3 class="nott font-secondary ls0" style="font-size: 52px; line-height: 1.3;">Who we are
                 </h3>
             </div>
             <div class="row clearfix">
                 <div class="col-lg-12 col-sm-12 bottommargin-sm">
+
                     <div class="feature-box media-box">
+
+                        <p>The Woodlands International Restaurant had been renamed as <b>Wooldands Indian Vegetarian Restaurant</b> in the year 2018,
+                            when the management of the restaurant was taken over by the company <b>VEG CONCEPTS LTD. </b></p>
+                        <p>  The Founder / Director of VEG CONCEPTS LTD, <b>Mr. Arun (also known as Alex)</b>, has setup this company which will be acting as a parent company for all current business under the concept of VEGETARIANISM. </p>
+                        <p>  The major objective of the company is to educate and promote Indian Vegetarian Cuisine among the Hong Kong Local residents and to make them aware of the speciality of the Indian Cuisine especially the South Indian Vegetarian food, which provides a vast variety for the Vegetarian Food Lovers. </p>
+
+                    </div>
+
+                    <div class="feature-box media-box">
+
+
                         <p>
 
                             Woodlands Welcomes you to a world of delicious vegetarian food. Signature dishes coming from our grand Indian heritage. We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
@@ -61,35 +73,100 @@ $this->load->view('layout/header');
     </div>
     <div class="section nobottommargin" style="padding: 0px 0; background: #FFF; ">
         <div class="container clearfix">
-            <div class="heading-block center nobottomborder">
-                <span class="font-primary ls1" style="font-size: 14px; color: #AAA">Why we are spacial</span>
-                <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Awards & Certifications</h3>
-            </div>
-            <div class="row clearfix">
 
-                <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards.png"/>
+            <div class="row clearfix awardstyleblock">
+
+                <div class="row clearfix">
+                    <div class="col-lg-5 bottommargin-sm">
+                        <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards_crc.png"/>
+                    </div>
+                    <div class="col-lg-7 bottommargin-sm">
+                        <div class="heading-block nobottomborder bottommargin-sm">
+                            <h2 class="font-secondary color nott" style="    color: #ca0922!important;">
+                                Caring Company Award
+                            </h2>
+                        </div>
+                        <div class="feature-box media-box" style="">
+
+                            <p> 
+                                In appreciation of our “caring to the community” by donating hk$120,000 raised through the “EAT AS MUCH AS YOU CAN. PAY AS MUCH YOU WISH” Charity Lunch & Dinner Charity event held on the 7th October, 2019, Woodlands has been awarded the “Caring Company” Logo by the Hong Kong Caring Company Organization. 
+                                The collected amount was donated to a Hong Kong based NGO called “SILENCE” Who are working for the betterment of the people with hearing and speaking disability. 
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <hr/>
+                <div class="row clearfix">
+
+                    <div class="col-lg-7 bottommargin-sm">
+
+                        <div class="feature-box media-box" style="">
+
+                            <p> 
+                                The Quality Tourism Services (QTS) Scheme makes it easy for you to find shops, restaurants and budget visitor accommodation that you can trust.
+                                Under the scheme administered by the Hong Kong Tourism Board (HKTB), QTS-accredited establishments must pass stringent annual assessments showing that they meet high standards of product quality and service. <br/>This means they must:
+                            </p>
+                            <ul style="margin-bottom: 0px;
+                                margin-left: 40px;">
+                                <li><p> Provide clearly displayed prices</p></li>
+                                <li><p> Display clear product information</p></li>
+                                <li><p> Ensure superb customer service.</p></li>
+                            </ul>
+                            <p>
+                                The HKTB has commissioned the Hong Kong Productivity Council as its QTS Scheme consultant responsible for conducting the assessments and mid-year surveillance visits of the shopping and dining merchants as well as visitor accommodation premises.
+                                Woodlands has been awarded with the QTS Logo after the assessment and meeting high standards of product quality and service. 
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 bottommargin-sm text-center">
+                        <div class="heading-block nobottomborder bottommargin-sm">
+                            <h2 class="font-secondary color nott" style="color: #dda50e!important;    text-align: center;">
+                                Quality Tourism Services
+                            </h2>
+                        </div>
+                        <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards_qts.png"/>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <hr/>
+
+                <div class="row clearfix">
+                    <div class="col-lg-5 bottommargin-sm text-center">
+                        <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards_sdg.png" style="    height: 350px;"/>
+                    </div>
+                    <div class="col-lg-7 bottommargin-sm">
+                        <div class="heading-block nobottomborder bottommargin-sm">
+                            <h2 class="font-secondary color nott" style="color: #d6c406!important">
+                                SDG World Records<br/>
+                                <span>World Record by Sustainable Growth Development </span>
+                            </h2>
+                        </div>
+                        <div class="feature-box media-box" style="">
+                            <p>
+                                Contributing to SDG-10 - “Reduced Inequalities through F&B Industry” - The highest Indian Vegetarian crowdfunding of HK$110,000 was received from a one day Charity Lunch, Dinner and online donation platform in Hong Kong on the 7th October, 2019. 
+                            </p>
+                            <p>
+                                225 persons with education qualification of Intermediate Sign Language Certificate course to create better job opportunities, to help and to promote social inclusion in the Society of all hearing-impaired persons of the “SILENCE Organization”
+                            </p>
+                            <p>
+                                Certificate Validation : <a href="http://SDG.do/PH26">http://SDG.do/PH26</a>
+                            </p>
+                           
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 
     <?php
     $this->load->view('layout/contactfooter');
     ?>
 
-    <div class="section nomargin dark bgcolor" style="">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-10">
-                    <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
-                </div>
-                <div class="col-md-2">
-                    <a href="<?php echo site_url("contact");?>" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header-bg.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
 
 </section>
 

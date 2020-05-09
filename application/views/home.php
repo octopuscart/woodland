@@ -6,16 +6,13 @@ $this->load->view('layout/header');
     <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/1.jpg'); background-position: center center;">
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
                             <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
                             <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="400">Woodlands - Vegetarian Restaurant | Jain | Vegan Restaurant | Indian Restaurant in Hong Kong</p>
                             <div class="static-content" style="position: relative; display: flex; justify-content: flex-start; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="800">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl-white.svg" width="42" height="42" alt="">
-                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/spoon-white.svg" width="42" height="42" alt="">
-                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/glass-white.svg" width="42" height="42" alt="">
-                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/wifi-white.svg" width="42" height="42" alt="">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
                             </div>
                         </div>
                     </div>
@@ -27,9 +24,7 @@ $this->load->view('layout/header');
                             <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn" data-delay="400">Vegetarian Restaurant</h2>
                             <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="800">First and Best Indian Vegetarian Restaurant <br/> in Tsim Sha Tsui, Hong Kong</p>
                             <div class="static-content" style="position: relative; display: flex; justify-content: center; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="1000">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl-white.svg" width="42" height="42" alt="">
-                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/spoon-white.svg" width="42" height="42" alt="">
-                                <img class="leftmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/icons/glass-white.svg" width="42" height="42" alt="">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
                             </div>
                         </div>
                     </div>
@@ -50,7 +45,7 @@ $this->load->view('layout/header');
     </div>
 </section>
 
-<section id="content" style="overflow: visible;">
+<section id="content" style="overflow: visible; margin-bottom: 192px!important;">
     <div class="content-wrap1">
         <div class="section nomargin clearfix" style="padding: 10px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/41.jpg') center center no-repeat; background-size: 100% auto">
             <div class="container clearfix">
@@ -94,7 +89,6 @@ $this->load->view('layout/header');
                         <p> Vegetarianism is neither a fad not a passing fancy. It is a long and widely established way of life not only for whole communities in the far east And Asia but all over the world among individuals who are making an independent stand for a better healthier and more compassionate society.</p>
                     </div>
                 </div>
-
 
             </div>
         </div>
@@ -156,7 +150,7 @@ $this->load->view('layout/header');
                             <div class="owl-stage" style="padding:0">
                                 <div class="owl-item active" >
                                     <div class="oc-item">
-                                        <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/featuremenu.jpg" alt="Image 1" style="    margin: 0px!important;">
+                                        <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/featuremenu2.jpg" alt="Image 1" style="    margin: 0px!important;">
                                         <div class="food-content clearfix">
                                             <div class="heading-block nobottomborder nobottommargin">
                                                 <h3 class="font-secondary nott">Nothing brings people together <br/> like our dosa</h3>
@@ -173,7 +167,7 @@ $this->load->view('layout/header');
 
 
                                             </div>
-                                            <a href="demos/restaurant/menu.html" class="more-link">See More Details <i class="icon-line-arrow-right"></i></a>
+                                            <a href="<?php echo site_url("menu/0/0"); ?>" class="more-link">See More Details <i class="icon-line-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -407,20 +401,7 @@ $this->load->view('layout/header');
     ?>
 
 
-    <div class="section nomargin dark bgcolor" style="">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-10">
-                    <h3 class="mb-0 ls0">Do You want to Contact with us. Then Don't Hesitate!</h3>
-                </div>
-                <div class="col-md-2">
-                    <a class="button button-circle button-xlarge text-white bg-white button-light colordarkgreen nott ls0 font-primary ml-0 mt-3 mt-md-0 ">Contact Us Here</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header-bg.png') repeat center bottom; background-size: auto 100%;     height: 70px;
-         margin-bottom: -48px;"></div>
+   
 
 </section>
 

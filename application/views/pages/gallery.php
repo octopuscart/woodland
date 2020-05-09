@@ -37,9 +37,15 @@ $this->load->view('layout/header');
     <div class="video-wrap" style="position: absolute; height: 100%; z-index: 1;">
         <div class="video-overlay" style="background: rgba(0,0,0,0.3);"></div>
     </div>
+    
 </section>
 
-<section id="content">
+<section >
+       <?php
+    $this->load->view('layout/contactfooter');
+    ?>
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('images/sketch-header.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
+
 </section>
 
 

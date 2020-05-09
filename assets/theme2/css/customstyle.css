@@ -253,8 +253,9 @@ a.socialicon {
     width: 40px;
     height: 40px;
     float: left;
-    border: 2px solid #444444;
+    border: 2px solid #000000;
     border-radius: 50%;
+    color: #000000!important;
     /* background: #8cc646; */
     /* color: white!important; */
 }
@@ -286,10 +287,101 @@ li.woocommerce-MyAccount-navigation-link {
     float: right;
     height: 29px;
     line-height: 28px;
-        height: 29px!important;
+    height: 29px!important;
     line-height: 28px!important;
 }
 
 .btn.btn-default {
     border: 1px solid #000;
+}
+
+#footer{
+    position: relative!important;
+    border-top: 0px solid rgba(0,0,0,.2)!important;
+}
+
+#content {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 0px!important;
+}
+
+.tglineblock{
+    text-align: center;
+}
+
+.tglineblock li{
+    white-space: nowrap;
+    color: white;
+}
+
+.dark hr {
+    border-top-color: #4CAF50;
+}
+#copyrights a{
+    color:white!important;
+}
+
+#copyrights {
+    color: rgba(255,255,255,.5);
+    /*padding-bottom: 3px;*/
+}
+
+.tripadvisorblock{
+    text-align: center;
+    background: #fae82e!important;
+    color: black;
+    padding: 24px;
+    border-radius: 86px;
+    padding-bottom: 0px;
+}
+
+.tripadvisorblock h4{
+    color:black;
+}
+
+.feature-box.media-box p {
+    margin-top: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+}
+
+.awardstyleblock .bottommargin-sm{
+    margin-bottom: 0px!important;
+}
+
+.awardstyleblock .feature-box{
+    margin-top: 0px!important;
+}
+
+.awardstyleblock .feature-box p{
+    font-size: 15px;
+}
+
+.awardstyleblock .heading-block h2{
+    font-size: 38px;
+    /*text-shadow: 1px 1px 1px #000000;*/
+}
+.awardstyleblock .heading-block h2 span{
+    font-size: 29px;
+    text-shadow: none;
+    margin-top: -11px;
+    display: block;
+}
+.awardstyleblock hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgb(250, 232, 46);
+    width: 100%;
+}
+
+.charity-block .heading-block h2{
+    font-size: 38px;
+    /*text-shadow: 1px 1px 1px #000000;*/
+}
+
+.charity-block .feature-box p{
+    font-size: 14px;
 }

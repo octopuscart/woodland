@@ -7,6 +7,9 @@
         meta_tags();
         ?>
         <link href="https://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,600,700,800,900|Poppins:300,400,500,600,700|Playfair+Display:400,400i,700,700i,900" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic%7CPoppins%3A400%2C400italic%2C700%2C700italic%2C600%2C600italic%2C300%2C300italic%7COswald%3A400%2C700" rel="stylesheet">
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/bootstrap.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/style.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/dark.css" type="text/css" />

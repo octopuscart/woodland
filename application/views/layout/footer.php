@@ -55,7 +55,11 @@
             </div>
             <div class="col_half col_last nobottommargin">
                 <div class="copyrights-menu copyright-links fright clearfix text-white">
-                    <a href="#">Home</a>/<a href="">About Us</a>/<a href="">Menu</a>/<a href="">Wall</a>/<a href="">Contact</a>
+                    <a href="<?php echo site_url("/"); ?>">Home</a>
+                    /<a href="<?php echo site_url("about-us"); ?>">Insights</a>
+                    /<a href="<?php echo site_url("review"); ?>">Review</a>
+                    /<a href="<?php echo site_url("menu/0/0"); ?>">Menu</a>
+                    /<a href="<?php echo site_url("contact"); ?>">Contact</a>
                 </div>
             </div>
         </div>

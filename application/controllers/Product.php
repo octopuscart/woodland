@@ -46,7 +46,7 @@ class Product extends CI_Controller {
         $products = array();
         $categories2 = array();
         foreach ($corecategories as $ckey => $cvalue) {
-            $this->db->select("id, title, price, file_name");
+            $this->db->select("id, title, price, file_name, short_description");
             $this->db->where("category_id", $cvalue["id"]);
             $query = $this->db->get('products');
             $productslist = $query->result_array();

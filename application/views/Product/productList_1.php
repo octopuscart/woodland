@@ -8,8 +8,8 @@ $this->load->view('layout/header');
         /*border: 3px solid #8CC646;*/
         border-radius: 20px!important;
         border-radius: 20px!important;
-    border-bottom-left-radius: 0px!important;
-    border-bottom-right-radius: 0px!important;
+        border-bottom-left-radius: 0px!important;
+        border-bottom-right-radius: 0px!important;
     }
     ul.tab-nav:not(.tab-nav-lg) li a {
         padding: 16px 9px;
@@ -59,9 +59,15 @@ $this->load->view('layout/header');
 
                                     <div class="col-lg-4 col-md-6" >
                                         <div class="iportfolio mb-4 clearfix">
+                                            <a href="#"  class="portfolio-image12 hoverdesription">
+                                                <span><?php echo $prvalue['short_description']; ?></span>
+                                                <img src="<?php echo base_url(); ?>assets/theme2/res/food/default2.png"  alt="1" class="rounded product-image-back">
+
+                                            </a>
                                             <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image12">
                                                 <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $prvalue['file_name']; ?>)" alt="1" class="rounded product-image-back">
                                             </a>
+                                            
                                             <div class="portfolio-desc pt-2">
                                                 <h4 class="mb-1"><a href="#" class="" ><?php echo $prvalue['title']; ?></a></h4>
                                                 <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
@@ -70,8 +76,8 @@ $this->load->view('layout/header');
                                                 <button ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colordarkgreen ">
                                                     Add To Cart
                                                 </button>
-                                                
-                                                 <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow " style="    float: right;">
+
+                                                <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow " style="    float: right;">
                                                     Buy Now
                                                 </button>
                                             </div>

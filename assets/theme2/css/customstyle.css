@@ -385,3 +385,27 @@ li.woocommerce-MyAccount-navigation-link {
 .charity-block .feature-box p{
     font-size: 14px;
 }
+
+.hoverdesription .product-image-back{
+    background: #00000085;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.hoverdesription span{
+   
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    z-index: 2000;
+        color: #fff;
+}
+
+.hoverdesription{
+    opacity: 0;
+}
+
+.hoverdesription:hover{
+    opacity: 1;
+}

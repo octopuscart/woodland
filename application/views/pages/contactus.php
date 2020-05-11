@@ -63,10 +63,6 @@ $this->load->view('layout/header');
             </form>
         </div>
     </div>
-
-
-
-
 </section>
 
 <section >

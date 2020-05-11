@@ -9,8 +9,8 @@ $this->load->view('layout/header');
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
-                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
-                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="400">Woodlands - Vegetarian Restaurant | Jain | Vegan Restaurant | Indian Restaurant in Hong Kong</p>
+                            <h2 class="font-secondary ls0 t400 nott" style="font-size: 50px;" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
+                            <p class="d-none d-sm-block font-primary" style="    font-size: 18px;" data-animate="fadeIn" data-delay="400">Woodlands - Vegetarian Restaurant | Jain | Vegan Restaurant | Indian Restaurant in Hong Kong</p>
                             <div class="static-content" style="position: relative; display: flex; justify-content: flex-start; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="800">
                                 <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
                             </div>

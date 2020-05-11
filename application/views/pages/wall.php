@@ -71,10 +71,10 @@ $this->load->view('layout/header');
             background-image: url(<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>)!important;
             background-size: 100%!important;
         }
-    <?php
-    $countrr ++;
-    
-    } ?>
+        <?php
+        $countrr ++;
+    }
+    ?>
 
 </style>
 
@@ -100,7 +100,7 @@ $this->load->view('layout/header');
         <div class="container-fluid">
             <div class="row align-items-stretch clearfix">
                 <div class="col-lg-5 colordarkgreen" style="background-color: #FFF; padding: 0; box-shadow: 0px 2px 38px 4px rgba(0, 0, 0, 0.61);
-                 
+
                      margin: 39px 0px;">
                     <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
                         <?php
@@ -141,7 +141,29 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
-  <?php
+    <section >
+
+
+        <div class="container clearfix" style="padding: 20px 0px;">
+            <div class="heading-block center nobottommargin nobottomborder">
+                <h3 class="nott font-secondary ls0" style="font-size: 60px;">Reviews on TripAdvisor</h3>
+            </div>
+            <div class="row">
+                <div class="" style="text-align: center;width:100%;">
+                    <div id="TA_selfserveprop474" class="TA_selfserveprop" style="display: inline-block;width:500px;">
+                        <ul id="VTatmM" class="TA_links XW52hq5Xclrd">
+                            <li id="HGpatLPntM7" class="O6eEKDqDdZdK">
+                                <a target="_blank" href="https://en.tripadvisor.com.hk/"><img src="https://en.tripadvisor.com.hk/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <script async src="https://www.jscache.com/wejs?wtype=selfserveprop&uniq=474&locationId=1216071&lang=en_HK&rating=true&nreviews=4&writereviewlink=true&popIdx=true&iswide=true&border=true&display_version=2" data-loadtrk onload="this.loadtrk = true"></script>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <?php
     $this->load->view('layout/contactfooter');
     ?>
 

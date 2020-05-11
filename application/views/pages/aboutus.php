@@ -36,33 +36,22 @@ $this->load->view('layout/header');
                 <div class="col-lg-12 col-sm-12 bottommargin-sm">
 
                     <div class="feature-box media-box">
-
                         <p>The Woodlands International Restaurant had been renamed as <b>Wooldands Indian Vegetarian Restaurant</b> in the year 2018,
                             when the management of the restaurant was taken over by the company <b>VEG CONCEPTS LTD. </b></p>
                         <p>  The Founder / Director of VEG CONCEPTS LTD, <b>Mr. Arun (also known as Alex)</b>, has setup this company which will be acting as a parent company for all current business under the concept of VEGETARIANISM. </p>
                         <p>  The major objective of the company is to educate and promote Indian Vegetarian Cuisine among the Hong Kong Local residents and to make them aware of the speciality of the Indian Cuisine especially the South Indian Vegetarian food, which provides a vast variety for the Vegetarian Food Lovers. </p>
-
                     </div>
 
                     <div class="feature-box media-box">
-
-
                         <p>
-
                             Woodlands Welcomes you to a world of delicious vegetarian food. Signature dishes coming from our grand Indian heritage. We are a vegetarian multi-cuisine restaurant which believes in quality standards which are never compromised.
                         </p>
                         <p>In Woodlands you can experience the especially rich flavours of so many South Indian recipes that have evolved over the centuries. They have been perfected by our experienced Chefs over decades, experts in the art of mixing and blending spices. </p>
                         <p>Woodlands is the first Indian Vegetarian restaurant in Hong Kong - open since 1981. We were the first people to try out a new bold venture, sharing Indian vegetarianism as an 'alternative' in meat-loving Hong Kong.</p>
-
                         <p>Today, our client base continues to expand, from our local Indian community to our many Chinese friends and other International visitors, usually referred by the people who have tasted our authentic delicacies.</p>
-
                         <p>Whether you are dining for business or purely for pleasure, a meal at Woodlands is sure to make a lasting impression.</p>
-
                         <p>We are usually open 365/366 days a year.</p>
-
                         <p>We look forward very much to cooking for you and serving you. </p>
-
-
                     </div>
                 </div>
 
@@ -155,7 +144,7 @@ $this->load->view('layout/header');
                             <p>
                                 Certificate Validation : <a href="http://SDG.do/PH26">http://SDG.do/PH26</a>
                             </p>
-                           
+
                         </div>
                     </div>
                 </div>

@@ -70,7 +70,7 @@ $this->load->view('layout/header');
                                             
                                             <div class="portfolio-desc pt-2">
                                                 <h4 class="mb-1"><a href="#" class="" ><?php echo $prvalue['title']; ?></a></h4>
-                                                <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
+                                                <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}} = <?php echo $prvalue['file_name']; ?></div>
                                             </div>
                                             <div class="">
                                                 <button ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colordarkgreen ">

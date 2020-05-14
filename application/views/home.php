@@ -248,7 +248,7 @@ $this->load->view('layout/header');
         $reviewList = array(
             "ranikant" => array(
                 "image" => "Rajini.jpg",
-                "name" => "Rajani Kanth",
+                "name" => "Rajinikanth",
                 "position" => "Indian Cine Super Star",
                 "date" => "",
             ),

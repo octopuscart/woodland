@@ -6,6 +6,11 @@ $this->load->view('layout/header');
     footer{
         position: inherit!important;
     }
+    .dessert-menu .item-thumb{
+        height: 600px;
+        overflow-y: scroll;
+        margin-top: 100px;
+    }
     <?php
     $reviewList = array(
         "ranikant" => array(
@@ -56,10 +61,94 @@ $this->load->view('layout/header');
             "position" => "Indian cricketer ",
             "date" => "",
         ),
+        "Solomon" => array(
+            "image" => "Solomon.jpg",
+            "name" => "Solomon Pappaiah",
+            "position" => "Indian scholar",
+            "date" => "",
+        ),
+        "Sudha" => array(
+            "image" => "Sudha.jpg",
+            "name" => "Sudha Ragunathan",
+            "position" => "Indian Vocalist",
+            "date" => "",
+        ),
         "Narasimha" => array(
             "image" => "Narasimrao.jpg",
             "name" => "P. V. Narasimha Rao",
             "position" => "Former Prime Minister of India",
+            "date" => "",
+        ),
+        "omar" => array(
+            "image" => "omar.jpg",
+            "name" => "Omar Abdullah",
+            "position" => "Former Chief Minister of Jammu and Kashmir",
+            "date" => "",
+        ),
+        "Jaipal" => array(
+            "image" => "Jaipal.jpg",
+            "name" => "Jaipal Reddy",
+            "position" => "Indian Politician",
+            "date" => "",
+        ),
+        "Jayawanti" => array(
+            "image" => "Jayawanti.jpg",
+            "name" => "Jayawanti Mehta",
+            "position" => "Indian Politician",
+            "date" => "",
+        ),
+        "BSA" => array(
+            "image" => "BSA.jpg",
+            "name" => "Indian entrepreneur",
+            "position" => "Indian Politician",
+            "date" => "",
+        ),
+        "Sivanthi" => array(
+            "image" => "Sivanthi.jpg",
+            "name" => "Sivanthi Adithan",
+            "position" => "Indian media baron",
+            "date" => "",
+        ),
+        "Vedavalli" => array(
+            "image" => "Vedavalli.jpg",
+            "name" => "Vedavalli",
+            "position" => "South Indian Carnatic Singer",
+            "date" => "",
+        ),
+        "Gopalakrishnan" => array(
+            "image" => "Gopalakrishnan.jpg",
+            "name" => "M. S. Gopalakrishnan",
+            "position" => "Indian Violinist",
+            "date" => "",
+        ),
+        "Hariprasad" => array(
+            "image" => "Hariprasad.jpg",
+            "name" => "Hariprasad Chaurasia",
+            "position" => "Famous Indian music director",
+            "date" => "",
+        ),
+        "Ravikumar" => array(
+            "image" => "Ravikumar.jpg",
+            "name" => "K. S. Ravikumar",
+            "position" => "Indian Cine Director",
+            "date" => "",
+        ),
+        "YGeeMahendra" => array(
+            "image" => "YGeeMahendra.jpg",
+            "name" => "Y. Gee. Mahendra",
+            "position" => "Indian dramatist",
+            "date" => "",
+        ),
+        "Gangai" => array(
+            "image" => "Gangai.jpg",
+            "name" => "Gangai Amaran",
+            "position" => "Indian Music Director",
+            "date" => "",
+        ),
+        "annachi" => array(
+            "image" => "annachi.jpg",
+            "name" => "Imman Annachi",
+            "position" => "Indian Actor",
             "date" => "",
         ),
     );
@@ -101,7 +190,7 @@ $this->load->view('layout/header');
             <div class="row align-items-stretch clearfix">
                 <div class="col-lg-5 colordarkgreen" style="background-color: #FFF; padding: 0; box-shadow: 0px 2px 38px 4px rgba(0, 0, 0, 0.61);
 
-                     margin: 39px 0px;">
+                     margin: 39px 0px;height: 600px;">
                     <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
                         <?php
                         foreach ($reviewList as $key => $value) {

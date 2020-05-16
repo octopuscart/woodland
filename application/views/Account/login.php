@@ -64,7 +64,7 @@ $this->load->view('layout/header');
                         <input type="password" class="sm-form-control border-form-control tleft required" name="password" placeholder="Password *" required=""/>
                         <div style="clear: both"></div>
                         <br/>
-                        <button class="btn-send-message button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control border-form-control tleft required" name="signIn" type="submit" value="signIn">Login</button>
+                        <button class="btn-send-message button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control1 border-form-control tleft required" name="signIn" type="submit" value="signIn">Login</button>
                         <!--<span><input type="checkbox" name="remember"/>Remember Me</span>-->
                     </form>
                 </div>

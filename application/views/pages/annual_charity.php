@@ -99,8 +99,8 @@ $this->load->view('layout/header');
 
     <section style="overflow: visible;">
 
-        <iframe src="https://annualcharity.woodlandshk.com/" width="100%" height="2800"></iframe>
-
+        <!--<iframe src="https://annualcharity.woodlandshk.com/" width="100%" height="2800"></iframe>-->
+        <iframe src="<?php echo site_url('Shop/charityIfram');?>" width="100%" height="2800"></iframe>
         <?php
         $this->load->view('layout/contactfooter');
         ?>

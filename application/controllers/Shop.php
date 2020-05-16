@@ -130,5 +130,9 @@ class Shop extends CI_Controller {
     function gallery() {
         $this->load->view('pages/gallery');
     }
+    
+    function charityIfram() {
+        $this->load->view('pages/charityIfram');
+    }
 
 }

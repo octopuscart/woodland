@@ -95,7 +95,7 @@ $this->load->view('layout/header');
         <div class="container clearfix">
             <div class="row clearfix">
 
-<?php
+                <?php
                 $this->load->view('Cart/commanmessage');
                 ?>
                 <div class="cart-page-area">
@@ -134,6 +134,13 @@ $this->load->view('layout/header');
                                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                                             <ul class="nav nav-tabs" role="tablist">
                                                                 <?php
+                                                                if (PAYMENT_MODE_COD == 'on') {
+                                                                    ?>
+                                                                    <li class="nav-item"><a href="#cash" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <?php
                                                                 if (PAYMENT_MODE_PAYPAL == 'on') {
                                                                     ?>
                                                                     <li class=" nav-item"><a href="#paypal" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'PayPal' ? 'active' : ''; ?>" data-toggle="tab" aria-expanded="false">PayPal</a></li>
@@ -147,13 +154,7 @@ $this->load->view('layout/header');
                                                                     <?php
                                                                 }
                                                                 ?>
-                                                                <?php
-                                                                if (PAYMENT_MODE_COD == 'on') {
-                                                                    ?>
-                                                                    <li class="nav-item"><a href="#cash" class="nav-link <?php echo DEFAULT_PAYMENT_MODE == 'Cash On Delivery' ? 'active' : ''; ?> " data-toggle="tab" aria-expanded="false">Cash On Delivery</a></li>
-                                                                    <?php
-                                                                }
-                                                                ?>
+
                                                                 <?php
                                                                 if (PAYMENT_MODE_CHEQUE == 'on') {
                                                                     ?>
@@ -161,6 +162,9 @@ $this->load->view('layout/header');
                                                                     <?php
                                                                 }
                                                                 ?>
+
+                                                                <li class="nav-item"><a href="#payme" class="nav-link " data-toggle="tab" aria-expanded="false">PayMe</a></li>
+
 
 
                                                             </ul>
@@ -291,6 +295,46 @@ $this->load->view('layout/header');
                                                                     <?php
                                                                 }
                                                                 ?>
+
+
+
+                                                                <div class="tab-pane fade " id="payme">
+                                                                     <div class='col-md-12'>
+                                                                            
+                                                                            <p style='font-size: 19px;
+    font-weight: 600;
+    color: red;'>Pay Using PayMe HKQR code and send us screenshot of payment, will proceed your order after confirmation.</p>
+                                                                        </div>
+                                                                    <div class='row' style='text-align: center;'>
+                                                                        <div class='col-md-12'>
+                                                                            <p>
+                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/payme.jpg" style="height: 400px;">                
+
+                                                                            </p>
+                                                                        </div>
+                                                                       
+                                                                    </div>
+                                                                    <div class="cart-page-top table-responsive">
+                                                                        <table class="table table-hover">
+                                                                            <tbody id="quantity-holder">
+                                                                                <tr>
+                                                                                    <td colspan="4" class="text_right">
+                                                                                        <div class="proceed-button pull-left " >
+                                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                        </div>
+                                                                                        <div class="proceed-button pull-right ">
+                                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="PayMe">
+                                                                                                Place Order <i class="fa fa-arrow-right"></i>
+                                                                                            </button>                                                                   
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>

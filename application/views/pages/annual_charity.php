@@ -80,7 +80,7 @@ $this->load->view('layout/header');
 
                             </table>
                             <p>
-                                A total of amount of HK$ 1,00,000,000 (One Million HKD) has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society. 
+                                A total of amount of HK$ 1,000,000 (One Million HKD) has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society. 
                             </p>
                             <p>
                                 For further enquiries, you may contact us through e-mail reachus@vegconcepts.com

@@ -16,14 +16,34 @@ $this->load->view('layout/header');
             <div class="clear"></div>
             <div class="d-flex align-items-center mt-3 clearfix">
                 <a class="button button-circle button-large text-white mb-0 noleftmargin colordarkgreen" href="<?php echo site_url("book-now"); ?>">Book Now</a>
-                <a href="#" data-lightbox="iframe" class="d-flex fright more-link ml-3"><i class="icon-play-sign h3 m-0 align-self-center d-none d-sm-inline-block"></i><span class=" align-self-center ml-2"><u>See Our Story</u></span></a>
+                <a href="#" data-toggle="modal" data-target="#storymodal" class="d-flex fright more-link ml-3"><i class="icon-play-sign h3 m-0 align-self-center d-none d-sm-inline-block"></i><span class=" align-self-center ml-2"><u>See Our Story</u></span></a>
             </div>
         </div>
     </div>
-    <div class="video-wrap d-block d-md-none" style="position: absolute; height: 100%; z-index: 1;">
-        <div class="video-overlay" style="background: rgba(255,255,255,0.8);"></div>
-    </div>
+
 </section>
+
+
+<!-- Modal -->
+<div class="modal  fade" id="storymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body checkout-form">
+
+                <iframe style="width: 100%;height: 400px;" src="https://www.youtube.com/embed/AgLK1EEkogc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
 <section id="content" style="overflow: visible;">
     <div class="content-wrap nobottompadding" style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg);    background-size: 270px;padding: 20px 0px;">

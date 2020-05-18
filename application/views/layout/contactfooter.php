@@ -45,7 +45,10 @@
                     </tr>
                     <tr>
 
-                        <td><i class="icon-et-envelope"></i>&nbsp; reachus@vegconcepts.com</td>
+                        <td>
+                            <i class="icon-et-envelope" style="    float: left;   margin-left: 20px; padding-top: 13px"></i>
+                            <span style="float: left;">&nbsp; order@woodlandshk.com<br/>info@woodlandshk.com
+                            </span></td>
                     </tr>
                 </table>
             </span>

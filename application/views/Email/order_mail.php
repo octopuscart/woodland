@@ -258,7 +258,7 @@
                 <tr>
                     <td colspan="6" style="padding: 0px;">
                  
-                        <img src="<?php echo base_url(); ?>assets/emails/emailfooter.JPG" style="width:100%;"></img>
+                        <!--<img src="<?php echo base_url(); ?>assets/emails/emailfooter.JPG" style="width:100%;"></img>-->
                               
                    
                     </td>

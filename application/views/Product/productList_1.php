@@ -60,7 +60,12 @@ $this->load->view('layout/header');
                                     <div class="col-lg-4 col-md-6" >
                                         <div class="iportfolio mb-4 clearfix">
                                             <a href="#"  class="portfolio-image12 hoverdesription">
-                                                <span><?php echo $prvalue['short_description']; ?></span>
+                                                <span>
+                                                    <?php echo $prvalue['short_description']; ?>
+                                                    <br/>
+                                                    
+                                                     <?php echo $prvalue['description']; ?>
+                                                </span>
                                                 <img src="<?php echo base_url(); ?>assets/theme2/res/food/default2.png"  alt="1" class="rounded product-image-back">
 
                                             </a>

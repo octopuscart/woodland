@@ -191,7 +191,8 @@
                         </td>
 
                         <td style="text-align: right">
-                            <?php echo $product->price; ?>
+                            <?php // echo $product->price; ?>
+                            <?php echo number_format($product->price, 2, '.', ''); ?>
                         </td>
 
                         <td style="text-align: right">
@@ -199,7 +200,8 @@
                         </td>
 
                         <td style="text-align: right;">
-                            <?php echo $product->total_price; ?>
+                            <?php // echo $product->total_price; ?>
+                            <?php echo number_format($product->total_price, 2, '.', ''); ?>
                         </td>
                     </tr>
 
@@ -241,7 +243,7 @@
 
 
 
-                       <?php echo EMAIL_FOOTER;?>
+                        <?php echo EMAIL_FOOTER; ?>
 
 
 
@@ -250,22 +252,22 @@
                               width: 100%;
                               float: left;
                               margin-top: 24px;
-/*                              background-color: white;*/
+                              /*                              background-color: white;*/
                               color: black;
                               font-size: 10px;"> (This is computer generated receipt and does not require physical signature.)</span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="6" style="padding: 0px;">
-                 
-                        <!--<img src="<?php echo base_url(); ?>assets/emails/emailfooter.JPG" style="width:100%;"></img>-->
-                              
-                   
+
+       <!--<img src="<?php echo base_url(); ?>assets/emails/emailfooter.JPG" style="width:100%;"></img>-->
+
+
                     </td>
                 </tr>
 
             </table>
-           
+
 
         </div>
     </body>

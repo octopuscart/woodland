@@ -99,9 +99,16 @@ $this->load->view('layout/header');
     <!-- Content -->
 
     <section style="overflow: visible;">
+        <div class="row" style="text-align: center">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <video  controls style="display: inline-block;width:100%;    width: 100%;    border-radius: 19px;    margin-bottom: 20px;">
+                    <source src="<?php echo base_url(); ?>assets/theme2/images/SilencePromoVideo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
 
-        <!--<iframe src="https://annualcharity.woodlandshk.com/" width="100%" height="2800"></iframe>-->
-        <iframe src="<?php echo site_url('Shop/charityIfram');?>" width="100%" height="2800"></iframe>
         <?php
         $this->load->view('layout/contactfooter');
         ?>

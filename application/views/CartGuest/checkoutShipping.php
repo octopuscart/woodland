@@ -122,7 +122,7 @@ $this->load->view('layout/header');
                                                 <span class="fa-stack">
                                                     <i class="fa fa-map-marker fa-stack-1x"></i>
                                                     <i class="ion-bag fa-stack-1x "></i>
-                                                </span>   Shopping Address
+                                                </span>   Shipping Address
                                                 <span style="float: right; line-height: 29px;" class="ng-binding">
                                                     <button class="btn btn-danger" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>
                                                 </span> 

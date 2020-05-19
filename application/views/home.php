@@ -126,18 +126,18 @@ $this->load->view('layout/header');
                                     );
                                     foreach ($menuitems as $key => $value) {
                                         ?>
-                                        <button role = "button" class = "owl-dot">
+                                    <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot">
                                             <span style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/<?php echo $value; ?>)">
                                                 <h3><?php echo $key; ?></h3>
                                             </span>
 
-                                        </button>
+                                        </a>
                                         <?php
                                     }
                                     ?>
                                 </div>
                             </div>
-                            <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All Menu</a></div>
+                            <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" href="<?php echo site_url("menu/0/0"); ?>" style="margin-top: 0px;">See All Menu</a></div>
                         </div>
 
 

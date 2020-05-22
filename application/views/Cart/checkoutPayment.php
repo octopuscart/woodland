@@ -3,6 +3,10 @@ $this->load->view('layout/header');
 ?>
 
 <style>
+    
+    
+    
+    
     .cartbutton{
         width: 100%;
         padding: 6px;
@@ -299,20 +303,34 @@ $this->load->view('layout/header');
 
 
                                                                 <div class="tab-pane fade " id="payme">
-                                                                     <div class='col-md-12'>
-                                                                            
-                                                                            <p style='font-size: 19px;
-    font-weight: 600;
-    color: red;'>Pay Using PayMe HKQR code and send us screenshot of payment, will proceed your order after confirmation.</p>
-                                                                        </div>
+                                                                    <div class='col-md-12'>
+
+                                                                        <p style='font-size: 19px;
+                                                                           font-weight: 600;
+                                                                           color: red;'>Pay Using PayMe HKQR code and send us screenshot of payment, will proceed your order after confirmation.</p>
+                                                                    </div>
                                                                     <div class='row' style='text-align: center;'>
                                                                         <div class='col-md-12'>
                                                                             <p>
-                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/payme.jpg" style="height: 400px;">                
+                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/payme2.jpg" style="height: 400px;">                
 
                                                                             </p>
                                                                         </div>
-                                                                       
+
+
+                                                                        <div class='col-md-12' style="margin-bottom: 10px;">
+                                                                            <div class="proceed-button" style="text-align: center;">
+                                                                                <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" style="background: #da0010;">Copy Payment Link</a>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- The text field -->
+                                                                        <input type="text" value="Hello World" id="myInput">
+
+                                                                        <!-- The button used to copy the text -->
+                                                                        <button onclick="myFunction()">Copy text</button>
+
+
                                                                     </div>
                                                                     <div class="cart-page-top table-responsive">
                                                                         <table class="table table-hover">
@@ -370,15 +388,31 @@ $this->load->view('Cart/noproduct');
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 <script>
-                                                                                                var avaiblecredits = 0;
-                                                                                                function confirmOrder() {
-                                                                                                    swal({
-                                                                                                        title: 'Processing Order',
-                                                                                                        onOpen: function () {
-                                                                                                            swal.showLoading()
-                                                                                                        }
-                                                                                                    });
-                                                                                                }
+                                                                            var avaiblecredits = 0;
+                                                                            function confirmOrder() {
+                                                                                swal({
+                                                                                    title: 'Processing Order',
+                                                                                    onOpen: function () {
+                                                                                        swal.showLoading()
+                                                                                    }
+                                                                                });
+                                                                            }
+
+
+                                                                            function myFunction() {
+                                                                                /* Get the text field */
+                                                                                var copyText = document.getElementById("myInput");
+
+                                                                                /* Select the text field */
+                                                                                copyText.select();
+                                                                                copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+                                                                                /* Copy the text inside the text field */
+                                                                                document.execCommand("copy");
+
+                                                                                /* Alert the copied text */
+                                                                                alert("Copied the text: " + copyText.value);
+                                                                            }
 </script>
 
 <?php

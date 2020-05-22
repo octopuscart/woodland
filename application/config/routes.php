@@ -75,3 +75,5 @@ $route['loyalty-program'] = 'Shop/loyalprogram';
 $route['blog'] = 'Shop/blog/$1';
 
 $route['translate_uri_dashes'] = FALSE;
+
+$route['sitemap_index\.xml'] = "Sitemap/index";

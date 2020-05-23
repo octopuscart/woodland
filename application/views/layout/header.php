@@ -62,8 +62,8 @@
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                         <div id="logo">
-                            <a href="<?php echo site_url("/"); ?>" class="standard-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Canvas Logo"></a>
-                            <a href="#" class="retina-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Canvas Logo"></a>
+                            <a href="<?php echo site_url("/"); ?>" class="standard-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Woodlandshk Logo"></a>
+                            <a href="#" class="retina-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="Woodlandshk Logo"></a>
                         </div>
 
                         <nav id="primary-menu" class="with-arrows clearfix">

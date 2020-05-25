@@ -15,9 +15,9 @@ class PaymentGatway extends CI_Controller {
 
     public function testApi() {
         $data = array();
-        $amt = "10.00";
+        $amt = "0.50";
         $mid = "852202005040001";
-        $marchentref = date("YmdHisa");
+        $marchentref = date("YmdHis");
         $secret_code = "f8ad907d5f24aecb1322b3ac5447c9ee0cf02ede";
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=ALIPAY&service=SALE&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;

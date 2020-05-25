@@ -1,5 +1,34 @@
 <?php
 $this->load->view('layout/header');
+
+$timeslotarray = array(
+    "13" => "01:00 PM",
+    "14" => "02:00 PM",
+    "15" => "03:00 PM",
+    "16" => "04:00 PM",
+    "17" => "05:00 PM",
+    "18" => "06:00 PM",
+    "19" => "07:00 PM",
+    "20" => "08:00 PM",
+    "21" => "09:00 PM",
+);
+
+$timeslot = [];
+foreach ($timeslotarray as $key => $value) {
+    array_push($timeslot, $key);
+}
+
+ $f_dtime = $timeslot[0];
+ $l_dtime = $timeslot[count($timeslot) - 1];
+
+
+
+ $ctime = date('H');
+
+ if($ctime>$f_dtime){
+      array_search($ctime, $timeslot);
+ }
+ date('Y-m-d', strtotime(' +1 day'))
 ?>
 
 <style>
@@ -170,7 +199,19 @@ $this->load->view('layout/header');
                                                     <?php
                                                 }
                                                 ?>
-                                            </div>                            
+                                            </div>    
+                                            <div class="col-md-12" style="margin-top: 50px;">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <h4>
+                                                            Select delivery time
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-md-4">
+
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -298,7 +339,7 @@ $this->load->view('Cart/noproduct');
                                     <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td style="line-height: 25px;">
                                     <span for="name" class=""><b>Area</b></span>
@@ -310,7 +351,7 @@ $this->load->view('Cart/noproduct');
                                     </select>
                                 </td>
                             </tr>
-                           
+
 
 
                         </tbody>

@@ -22,7 +22,7 @@ class PaymentGatway extends CI_Controller {
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=ALIPAY&service=SALE&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
-        $ganarateurl = "&return_url=http://www.woodlandshk.com/paymentresult&goods_subject=mobile phone&app_pay=WEB&goods_body=goods_body&api_version=2.8&lang=en&reuse=Y&active_time=300";
+        $ganarateurl = "&return_url=http://www.woodlandshk.com/paymentresult&goods_subject=mobile phone&app_pay=WEB&goods_body=goods_body&api_version=2.8&lang=en&reuse=Y&active_time=300&wallet=HK";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
         echo $endurl = "http://118.140.3.194:8081/eopg_testing_env/ForexTradeRecetion.jsp?" . $ganarateurl;
 //        $this->load->view('pages/paymentpage', $data);

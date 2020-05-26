@@ -26,9 +26,26 @@ class PaymentGatway extends CI_Controller {
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
         echo $endurl = "http://118.140.3.194:8081/eopg_testing_env/ForexTradeRecetion.jsp?" . $ganarateurl;
 //        $this->load->view('pages/paymentpage', $data);
+
+        echo "<br/>";
+
+        $marchentref = "20200526003016";
+        $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=ALIPAY&service=QUERY&trans_amount=$amt";
+
+        $hsakeystr = $secret_code . $urlset;
+        $seckey = hash("sha256", $hsakeystr);
+        $ganarateurl = "&return_url=http://www.woodlandshk.com/PaymentGatway/paymentNotify&api_version=2.8";
+        $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
+        echo $endurl = "http://118.140.3.194:8081/eopg_testing_env/ForexCheckQuery.jsp?" . $ganarateurl;
+//    
     }
-    
-    public function paymentResult(){
+
+    public function paymentResult() {
+        print_r($_GET);
+        print_r($_POST);
+    }
+
+    public function paymentNotify() {
         print_r($_GET);
         print_r($_POST);
     }

@@ -54,6 +54,9 @@ class CartGuest extends CI_Controller {
         $data['user_details'] = $address ? $this->session->userdata('customer_inforamtion') : array();
 
 
+        $delivery_details = $this->session->userdata('delivery_details');
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
+
         $this->load->view('CartGuest/checkoutInit', $data);
     }
 
@@ -126,12 +129,26 @@ class CartGuest extends CI_Controller {
         $user_info = $this->session->userdata('customer_inforamtion');
         $data['user_details'] = $user_info ? $this->session->userdata('customer_inforamtion') : array();
 
+        $delivery_details = $this->session->userdata('delivery_details');
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
+
+
 //Get Address
         if (isset($_GET['removeAddress'])) {
             $addressdata = $this->session->userdata('shipping_address');
             $this->session->unset_userdata('shipping_address');
             $this->session->unset_userdata('customer_inforamtion');
             redirect('CartGuest/checkoutShipping');
+        }
+
+        if (isset($_POST['processtopayment'])) {
+            $delivery_details = array(
+                'delivery_date' => $this->input->post('delivery_date'),
+                'delivery_time' => $this->input->post('delivery_time'),
+            );
+
+            $this->session->set_userdata('delivery_details', $delivery_details);
+            redirect('CartGuest/checkoutPayment');
         }
 
 //add New address
@@ -153,6 +170,14 @@ class CartGuest extends CI_Controller {
                 'contact_no' => $this->input->post('contact_no'),
             );
             $this->session->set_userdata('customer_inforamtion', $customer);
+
+
+            $delivery_details = array(
+                'delivery_date' => $this->input->post('delivery_date'),
+                'delivery_time' => $this->input->post('delivery_time'),
+            );
+            $this->session->set_userdata('delivery_details', $delivery_details);
+
             redirect('CartGuest/checkoutShipping');
         }
         $this->load->view('CartGuest/checkoutShipping', $data);
@@ -286,7 +311,17 @@ class CartGuest extends CI_Controller {
             $this->session->unset_userdata($newdata);
             $this->session->sess_destroy();
 
-            redirect('Order/orderdetailsguest/' . $orderkey);
+
+            switch ($paymentmathod) {
+                case 'Alipay':
+                    redirect('Order/orderPayment/' . $orderkey."/ALIPAY");
+                    break;
+                case 'WeChat':
+                    redirect('Order/orderPayment/' . $orderkey."/WECHAT");
+                    break;
+                default:
+                    redirect('Order/orderdetailsguest/' . $orderkey);
+            }
         }
         $this->load->view('Cart/checkoutPayment', $data);
     }

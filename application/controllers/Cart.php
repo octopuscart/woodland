@@ -48,6 +48,10 @@ class Cart extends CI_Controller {
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
+        $delivery_details = $this->session->userdata('delivery_details');
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
+
+
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
             $user_address_details = $this->User_model->user_address_details($this->user_id);
@@ -120,6 +124,11 @@ class Cart extends CI_Controller {
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $session_data = $this->session->userdata('logged_in');
+
+        $delivery_details = $this->session->userdata('delivery_details');
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
+
+
         if ($session_data) {
             $user_details = $this->User_model->user_details($this->user_id);
             $data['user_details'] = $user_details;
@@ -129,6 +138,16 @@ class Cart extends CI_Controller {
 
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
+
+            if (isset($_POST['processtopayment'])) {
+                $delivery_details = array(
+                    'delivery_date' => $this->input->post('delivery_date'),
+                    'delivery_time' => $this->input->post('delivery_time'),
+                );
+
+                $this->session->set_userdata('delivery_details', $delivery_details);
+                redirect('Cart/checkoutPayment');
+            }
 
             //Get Address
             if (isset($_GET['setAddress'])) {
@@ -289,7 +308,19 @@ class Cart extends CI_Controller {
                 );
                 $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);
-                redirect('Order/orderdetails/' . $orderkey);
+
+                switch ($paymentmathod) {
+                    case 'Alipay':
+                        redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");
+                        break;
+                    case 'WeChat':
+                        redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
+                        break;
+                    default:
+                       redirect('Order/orderdetails/' . $orderkey);
+                }
+
+                
             }
             $this->load->view('Cart/checkoutPayment', $data);
         } else {

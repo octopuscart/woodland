@@ -31,12 +31,11 @@ class PaymentGatway extends CI_Controller {
 
         $marchentref = "20200526003016";
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=ALIPAY&service=QUERY&trans_amount=$amt";
-
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
-        $ganarateurl = "&return_url=http://www.woodlandshk.com/PaymentGatway/paymentNotify&api_version=2.8";
+        $ganarateurl = "&return_url=http://www.woodlandshk.com/PaymentGatway/paymentNotify&api_version=2.9&redirect=N";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
-        echo $endurl = "http://118.140.3.194:8081/eopg_testing_env/ForexCheckQuery.jsp?" . $ganarateurl;
+        echo $endurl = "http://118.140.3.194:8081/eopg_testing_env/ForexCheckQuery?" . $ganarateurl;
 //    
     }
 

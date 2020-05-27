@@ -20,6 +20,8 @@ class Product extends CI_Controller {
 
         $tempcatid = $cat_id;
 
+
+
         $categories = $this->Product_model->productListCategories($cat_id);
 
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
@@ -47,6 +49,15 @@ class Product extends CI_Controller {
         $categories2 = array();
         foreach ($corecategories as $ckey => $cvalue) {
             $this->db->select("id, title, price, file_name, short_description, description");
+            if (isset($_GET['mode'])) {
+                if ($_GET['mode'] == 'test') {
+                   
+                } else {
+                    $this->db->where("credit_limit", "");
+                }
+            } else {
+                $this->db->where("credit_limit", "");
+            }
             $this->db->where("category_id", $cvalue["id"]);
             $query = $this->db->get('products');
             $productslist = $query->result_array();
@@ -268,8 +279,8 @@ class Product extends CI_Controller {
             'Rasgulla' => '印式甜奶球', 'Rasmalai' => '杏仁糖漿甜奶球', 'Woodlands Special Thali Kheer' => '活蘭特色練奶', 'Kulfi Almond Flavored' => '印式雪糕', 'Plain Roasted ' => '原味焗脆薄餅', 'Plain Fried' => '原味炸脆薄餅', 'Masala Roasted' => '蕃茄洋蔥香料焗脆薄餅', 'Masala Fried' => '蕃茄洋蔥香料脆薄餅');
         foreach ($menuitems as $key => $value) {
             echo $key, $value, "<br/>";
-           echo  $pquery = 'update  products set description = "' . $value . '"  where title =  "' . $key . '"';
-                 $query = $this->db->query($pquery);
+            echo $pquery = 'update  products set description = "' . $value . '"  where title =  "' . $key . '"';
+            $query = $this->db->query($pquery);
         }
     }
 

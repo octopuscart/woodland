@@ -193,6 +193,8 @@ class Cart extends CI_Controller {
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $data['checkoutmode'] = '';
+        $delivery_details = $this->session->userdata('delivery_details');
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
 
         $session_data = $this->session->userdata('logged_in');
@@ -276,6 +278,8 @@ class Cart extends CI_Controller {
                     'payment_mode' => $paymentmathod,
                     'measurement_style' => '',
                     'credit_price' => $this->input->post('credit_price') || 0,
+                    'delivery_date'=>$delivery_details['delivery_date'],
+                    'delivery_time'=>$delivery_details['delivery_time'],
                 );
 
                 $this->db->insert('user_order', $order_array);
@@ -317,10 +321,8 @@ class Cart extends CI_Controller {
                         redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
                         break;
                     default:
-                       redirect('Order/orderdetails/' . $orderkey);
+                        redirect('Order/orderdetails/' . $orderkey);
                 }
-
-                
             }
             $this->load->view('Cart/checkoutPayment', $data);
         } else {

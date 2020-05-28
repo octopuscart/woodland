@@ -831,7 +831,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $value['total_price'],
-                'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],,
+                'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                 'quantity' => $quantity,
                 'user_id' => 'guest',
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,

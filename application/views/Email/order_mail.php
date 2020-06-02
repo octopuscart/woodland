@@ -65,6 +65,20 @@
                 margin-top: 0px;
                 width: 20px;
             }
+
+            .socialicons{
+                height: 50px;
+                /* float: left; */
+                position: inherit;
+                width: 50px;
+                display: inline-block;
+                    margin-right: 20px;
+            }
+
+            .socialicons img {
+                width: 50px;
+               
+            }
         </style>
     </head>
     <body style="margin: 0;
@@ -78,6 +92,8 @@
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
                                      height: 100px;color:white;
                                      width: auto;"/><br/>
+                            <h3 style="color:white;">Thank you for your order</h3>
+
                             <h4 style="color:white;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
                     </td>
@@ -87,7 +103,7 @@
             <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
                 <tr>
                     <td style="font-size: 12px;width: 50%;padding: 2px 20px;padding-top: 25px;" >
-                        <b>Shipping Address</b><hr/>
+                        <b>Delivery Address</b><hr/>
                     </td>
 
                     <td style="font-size: 12px;width: 50%;padding: 2px 20px;padding-top: 25px;" >
@@ -225,7 +241,7 @@
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align: right">Shipping Amount</td>
+                    <td colspan="2" style="text-align: right">Delivery Charges</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->shipping_price, 2, '.', ''); ?> </td>
                 </tr>
                 <tr>
@@ -243,7 +259,49 @@
 
 
 
-                        <?php echo EMAIL_FOOTER; ?>
+                        <?php // echo EMAIL_FOOTER; ?>
+                        <table style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <p style="text-align: center;">Thank you for choosing Woodlands. Your food will be on its way.</p>
+
+                                        <p>For any queries, Please contact us on Whastsapp <a href="https://api.whatsapp.com/send?phone=85256818131&amp;text=&amp;source=&amp;data=&amp;app_absent=" style="color:black;" target="_blank">+(852) 5681 8131</a> or email at <a href="mailto:order@woodlandshk.com" style="color:black;" target="_blank">order@woodlandshk.com</a></p>
+
+                                        <p>Enjoy the food from</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 60%">
+                                        <div style="height: 200px;">Your Favorite Vegetarian Restaurants<br />
+                                            <img src="https://www.woodlandshk.com/assets/images/logo.png" style="    height: 90px; margin: 5px 0px 10px;" />
+                                            <address><span style="float: left; font-size: 12px;"><b>Address </b><br />
+                                                    UG Shop 16 &amp; 17, Wing On Plaza,<br />
+                                                    62, Mody Road, Tsim Sha Tsui East,<br />
+                                                    Kowloon, Hong Kong<br />
+                                                    <b>Tel#</b>:&nbsp;+(852) 2369 3718, +(852) 2366 1945<br />
+                                                    <b>Email</b>: order@woodlandshk.com, info@woodlandshk.com<br />
+                                                    <b>Web</b>: www.woodlandshk.com</span></address>
+                                            <span style="float: left; font-size: 12px;"> </span></div>
+                                    </td>
+                                    <td style="    width: 40%;    text-align: center;">
+                                        <p>
+                                            <a href="https://www.facebook.com/woodlandshk" target="_blank" class="socialicons">
+                                                <img src="https://www.woodlandshk.com/assets/icon/facebook.png"/>
+                                            </a>
+                                            <a href="https://www.instagram.com/woodlands.hk/" target="_blank" class="socialicons">
+                                                <img src="https://www.woodlandshk.com/assets/icon/instagram.png"/>
+                                            </a>
+
+                                        </p>
+                                        <p>&nbsp;</p>
+
+                                        <p><a href="https://www.woodlandshk.com/loyalty-program" target="_blank">Join our loyalty program.</a> <br/>(For exclusive offers and benefits)</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
 
 
 

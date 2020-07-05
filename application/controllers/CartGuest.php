@@ -195,6 +195,10 @@ class CartGuest extends CI_Controller {
         $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
 
         $data['checkoutmode'] = 'Guest';
+        
+        $delivery_details = $this->session->userdata('delivery_details');
+        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
+
 
 
 //place order
@@ -234,7 +238,7 @@ class CartGuest extends CI_Controller {
                 'email' => $user_details['email'],
                 'user_id' => 'guest',
                 'contact_no' => $user_details['contact_no'],
-                'zipcode' => "",
+                'zipcode' => $address['zipcode'],
                 'address1' => $address['address1'],
                 'address2' => $address['address2'],
                 'city' => $address['city'],
@@ -250,6 +254,8 @@ class CartGuest extends CI_Controller {
                 'status' => 'Order Confirmed',
                 'payment_mode' => $paymentmathod,
                 'measurement_style' => "",
+                'delivery_date' => $delivery_details['delivery_date'],
+                'delivery_time' => $delivery_details['delivery_time'],
                 'credit_price' => $this->input->post('credit_price') || 0,
             );
 
@@ -314,10 +320,10 @@ class CartGuest extends CI_Controller {
 
             switch ($paymentmathod) {
                 case 'Alipay':
-                    redirect('Order/orderPayment/' . $orderkey."/ALIPAY");
+                    redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");
                     break;
                 case 'WeChat':
-                    redirect('Order/orderPayment/' . $orderkey."/WECHAT");
+                    redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
                     break;
                 default:
                     redirect('Order/orderdetailsguest/' . $orderkey);

@@ -261,7 +261,7 @@ class Cart extends CI_Controller {
                     'email' => $user_details->email,
                     'user_id' => $user_details->id,
                     'contact_no' => $user_details->contact_no ? $user_details->contact_no : '---',
-                    'zipcode' => "",
+                    'zipcode' => $address['zipcode'],
                     'address1' => $address['address1'],
                     'address2' => $address['address2'],
                     'city' => $address['city'],

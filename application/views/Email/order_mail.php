@@ -72,12 +72,12 @@
                 position: inherit;
                 width: 50px;
                 display: inline-block;
-                    margin-right: 20px;
+                margin-right: 20px;
             }
 
             .socialicons img {
                 width: 50px;
-               
+
             }
         </style>
     </head>
@@ -122,10 +122,7 @@
                         <div style="    padding: 5px 0px;font-size: 10px">
                             <?php echo $order_data->address1; ?><br/>
                             <?php echo $order_data->address2; ?><br/>
-                            <?php echo $order_data->state; ?>
-                            <?php echo $order_data->city; ?>
 
-                            <?php echo $order_data->country; ?> <?php echo $order_data->zipcode; ?>
 
                         </div>
                         <table class="gn_table">
@@ -138,6 +135,20 @@
                                 <td>: <?php echo $order_data->contact_no; ?> </td>
                             </tr>
                         </table>
+
+                        <div style="border: 2px solid red;">
+                            <table class="gn_table">
+                                <tr>
+                                    <th>Delivery Area</th>
+                                    <td>: <?php echo $order_data->zipcode; ?> </td>
+                                </tr>
+                                <tr>
+                                    <th>Delivery Date/Time</th>
+                                    <td>: <?php echo $order_data->delivery_date . ' / ' . $order_data->delivery_time; ?> </td>
+                                </tr>
+                            </table>
+                        </div>
+
 
 
                     </td>
@@ -301,9 +312,6 @@
                                 </tr>
                             </tbody>
                         </table>
-
-
-
 
                         <br/>
                         <span style="    text-align: center;

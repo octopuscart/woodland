@@ -238,7 +238,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                             </h4>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <select name="delivery_time" class="form-control" ng-model="shippingInit.delivery_time">
+                                                            <select name="delivery_time" class="form-control" required="" ng-model="shippingInit.delivery_time">
+                                                                                                                                <option value="0">Select Time</option>
+
                                                                 <?php
                                                                 foreach ($selectTimeSlot as $key => $value) {
                                                                     echo "<option value='$value'>$value</option>";
@@ -248,7 +250,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <div name="delivery_date" class="form-control" ng-model="shippingInit.delivery_date">
+                                                            <div name="delivery_date" class="form-control"  ng-model="shippingInit.delivery_date">
                                                                 <?php
                                                                 echo "<option value='$delivery_date'>$delivery_date</option>";
                                                                 ?>
@@ -317,46 +319,17 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                     </div>
                     <div class="modal-body checkout-form">
-
+<div class="card-heading" role="tab" id="headingOne" style="background: red;padding:3px;">
+                            <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0;  color: white;">Delivery process is only available in Tsim Sha Tsui and whampoa garden
+                                <p class="" style="font-size: 12px;  margin-bottom: 10px;  font-weight: 400;">
+                                    Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)
+                                </p>
+                            </h4>
+                        </div>
                         <table class="table">
                             <tbody>
 
-                                <tr>
-                                    <td style="line-height: 25px;">
-                                        <span for="name" class=""><b>Address</b></span>
-                                    </td>
-                                    <td>
-                                        <input type="text" required="" name="address1" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="line-height: 25px;">
-                                        <span for="name" class=""><b>Landmark</b></span>
-                                    </td>
-                                    <td>
-                                        <input type="text" required="" name="address2" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="line-height: 25px;">
-                                        <span for="name" class=""><b>Town/City</b></span>
-
-                                    </td>
-                                    <td>
-                                        <input type="hidden" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
-
-
-
-
-                                        <input type="hidden" required="" name="country" class="form-control" value="" style="height: 10%;">
-
-
-                                        <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
-                                    </td>
-                                </tr>
-
-                                <tr>
+                                 <tr>
                                     <td style="line-height: 25px;">
                                         <span for="name" class=""><b>Area</b></span>
                                     </td>
@@ -372,6 +345,36 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                     </td>
                                 </tr>
+                                
+                                <tr>
+                                    <td style="line-height: 25px;">
+                                        <span for="name" class=""><b>Address Line 1</b></span>
+                                    </td>
+                                    <td>
+                                        <input type="text" required="" name="address1" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="line-height: 25px;">
+                                        <span for="name" class=""><b>Address Line 2</b></span>
+                                    </td>
+                                    <td>
+                                        <input type="text" required="" name="address2" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" required="" style="height: 10%;">
+
+                                        <input type="hidden" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+
+
+
+
+                                        <input type="hidden" required="" name="country" class="form-control" value="" style="height: 10%;">
+
+
+                                        <input type="hidden" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    </td>
+                                </tr>
+
+                               
 
 
 

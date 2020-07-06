@@ -35,7 +35,7 @@ $this->load->view('layout/header');
 
                 </ul>
                 <div class="tab-container mt-4" >
-                    <div class="tab-content clearfix" >
+                    <div class="tab-content clearfix" id="tabs-restaurant">
                         <center style="width:100%;">
                             <div class="row clearfix" style="    width: fit-content;">
 

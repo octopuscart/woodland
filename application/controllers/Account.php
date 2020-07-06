@@ -140,6 +140,9 @@ class Account extends CI_Controller {
             $first_name = $this->input->post('first_name');
             $last_name = $this->input->post('last_name');
             $cpassword = $this->input->post('con_password');
+            
+            
+            $contact_no = $this->input->post('contact_no');
 
             $birth_date = $this->input->post('birth_date');
             $gender = $this->input->post('gender');
@@ -158,6 +161,7 @@ class Account extends CI_Controller {
                         'password' => md5($password),
                         'password2' => $password,
                         'profession' => "",
+                        "contact_no"=>$contact_no,
                         'country' => "",
                         'gender' => $gender,
                         'birth_date' => $birth_date,

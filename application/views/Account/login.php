@@ -29,7 +29,7 @@ $this->load->view('layout/header');
                     ?>
                     <h5  class="text-center">
                         <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger button button-circle button-large text-white ml-0 mt-3 colordarkgreen sm-form-control border-form-control tleft required" style="    width: 302px;
-    display: inline-block;">
+                           display: inline-block;">
                             <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
                         </a>
                     </h5>
@@ -84,9 +84,16 @@ $this->load->view('layout/header');
                                 <input type="text" name="first_name" class="sm-form-control border-form-control tleft required" placeholder="First Name *" required="">
                             </div>
                         </div>
-                        <label>Email address *</label>
-                        <input type="email" name="email" class="sm-form-control border-form-control tleft required" placeholder="Email *" required="">
-
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email address *</label>
+                                <input type="email" name="email" class="sm-form-control border-form-control tleft required" placeholder="Email *" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Contact No. *</label>
+                                <input type="text" name="contact_no" class="sm-form-control border-form-control tleft required" placeholder="Contact No. *" required="">
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Password *</label>

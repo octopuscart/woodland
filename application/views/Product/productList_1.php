@@ -77,7 +77,7 @@ $this->load->view('layout/header');
                                                 <h4 class="mb-1"><a href="#" class="" ><?php echo $prvalue['title']; ?></a></h4>
                                                 <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
                                             </div>
-                                            <div class="">
+<!--                                            <div class="">
                                                 <button ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colordarkgreen ">
                                                     Add To Cart
                                                 </button>
@@ -85,7 +85,7 @@ $this->load->view('layout/header');
                                                 <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow " style="    float: right;">
                                                     Buy Now
                                                 </button>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                     <?php

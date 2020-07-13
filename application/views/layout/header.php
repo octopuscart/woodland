@@ -82,7 +82,7 @@
                                 <li><a href="<?php echo site_url("annual-charity"); ?>"><div>  CHARITY</div></a></li>
                                 <li><a href="<?php echo site_url("contact"); ?>"><div>Contact</div></a></li>
                                 <li><a href="<?php echo site_url("menu/0/0"); ?>" class="reservation_buttons"><div>Order Now</div></a></li>
-                                <li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons"><div class="">Book </div></a></li>
+                                <!--<li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons"><div class="">Book </div></a></li>-->
                                 <li>
                                     <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
                                         <i class="icon-et-basket" style="    font-size: 20px;"></i><span>{{globleCartData.total_quantity}}</span>

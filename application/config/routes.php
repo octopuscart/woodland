@@ -72,6 +72,8 @@ $route['gallery'] = 'Shop/gallery';
 
 $route['loyalty-program'] = 'Shop/loyalprogram';
 
+$route['feedback'] = 'Shop/feedback';
+
 $route['blog'] = 'Shop/blog/$1';
 
 $route['translate_uri_dashes'] = FALSE;

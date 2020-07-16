@@ -194,5 +194,68 @@ class Shop extends CI_Controller {
     function charityIfram() {
         $this->load->view('pages/charityIfram');
     }
+    
+      public function feedback() {
+//        if (isset($_POST['booknow'])) {
+//            $booking_order = array(
+//                'name' => $this->input->post('name'),
+//                'email' => $this->input->post('email'),
+//                'contact' => $this->input->post('contact'),
+//                'select_date' => $this->input->post('select_date'),
+//                'select_time' => $this->input->post('select_time'),
+//                'people' => $this->input->post('people'),
+//                'datetime' => date("Y-m-d H:i:s a"),
+//                'order_source' => 'Website',
+//                'extra_remark' => '',
+//                'booking_type' => '',
+//                'select_table' => '',
+//            );
+//            $this->db->insert('booking_order', $booking_order);
+//            $last_id = $this->db->insert_id();
+//            $oderid = $last_id;
+//            $ordertype = "Website";
+//            $orderlog = array(
+//                'log_type' => "Reservation Received",
+//                'log_datetime' => date('Y-m-d H:i:s'),
+//                'user_id' => "",
+//                'order_id' => $last_id,
+//                'log_detail' => "Booking No. #$last_id  $ordertype From Website",
+//            );
+//            $this->db->insert('system_log', $orderlog);
+//            //email sending
+//            $emailsender = email_sender;
+//            $sendername = email_sender_name;
+//            $email_bcc = email_bcc;
+//
+//            if ($this->input->post('email')) {
+//                $this->email->set_newline("\r\n");
+//                $this->email->from(email_bcc, $sendername);
+//                $this->email->to($this->input->post('email'));
+//                $this->email->bcc(email_bcc);
+//                $subjectt = "Thank you for your booking.";
+//                $subject = $subjectt;
+//                $this->email->subject($subject);
+//                $appointment['appointment'] = $booking_order;
+//                $appointment['orderid'] = $oderid;
+//                $htmlsmessage = $this->load->view('Email/weborder', $appointment, true);
+//                if (REPORT_MODE == 1) {
+//          
+//                    $this->email->message($htmlsmessage);
+//                    $this->email->print_debugger();
+//                    $send = $this->email->send();
+//                    if ($send) {
+//                       redirect("book-now");
+//                    } else {
+//                        $error = $this->email->print_debugger(array('headers'));
+//                        redirect("book-now");
+//                    }
+//                } else {
+//                    echo $htmlsmessage;
+//                }
+//            }
+//            redirect("book-now");
+//        }
+        $this->load->view('pages/feedback');
+    }
 
 }

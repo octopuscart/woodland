@@ -421,3 +421,7 @@ li.woocommerce-MyAccount-navigation-link {
     99%{    color:transparent;  }
     100%{   color: #fff;    }
 }
+
+#header .container {
+    max-width: 100%;
+}

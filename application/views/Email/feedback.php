@@ -52,7 +52,7 @@
                                         </tr>
 
                                         <tr style="height: 50px">
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">Date</th>
+                                            <th style="text-align: right;width:200px;padding-right: 10px;">Gender</th>
                                             <td style="    text-align: left;"><?php echo $feedback['gender']; ?></td>
                                         </tr>
 
@@ -148,8 +148,8 @@
                                         </tr>
 
                                         <tr >
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">Comment </th>
-                                            <td style="    text-align: left;"><?php echo $feedback['comment']; ?></td>
+                                            
+                                            <td style="    text-align: left;" colspan="2"><b>Comment:</b> <br/><?php echo $feedback['comment']; ?></td>
                                         </tr>
 
 

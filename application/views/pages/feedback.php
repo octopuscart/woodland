@@ -29,6 +29,10 @@ $this->load->view('layout/header');
         width: 35px;
         margin-bottom: 5px;
     }
+    
+    .displaynone {
+    display: none;
+}
 
 
 </style>
@@ -76,7 +80,7 @@ $this->load->view('layout/header');
                                     <div class="clear"></div>
                                     <div class="col-6 mb-3">
                                         <select id="template-contactform-time" class="custom-select sm-form-control border-form-control" name="gender" required="">
-                                            <option value="-" disabled="" selected=""  >Gender</option>
+                                            <option value="-"   >Gender</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
 
@@ -84,7 +88,7 @@ $this->load->view('layout/header');
                                     </div>
                                     <div class="col-6 mb-3">
                                         <select id="template-contactform-people" class="custom-select sm-form-control border-form-control" name="age_group" required="">
-                                            <option value="-" disabled="" selected=""  >Age Group</option>
+                                            <option value="-"  >Age Group</option>
                                             <option value="Adult">Adult</option>
                                             <option value="Teen">Teen</option>
                                             <option value="Sr. Citizen">Sr. Citizen</option>

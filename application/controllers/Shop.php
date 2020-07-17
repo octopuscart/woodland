@@ -232,7 +232,7 @@ class Shop extends CI_Controller {
                 $this->email->set_newline("\r\n");
                 $this->email->from(email_bcc, $sendername);
                 $this->email->to($this->input->post('email'));
-//                $this->email->bcc(email_bcc);
+                $this->email->bcc(email_bcc);
                 $subjectt = "Thank you for your Feedback.";
                 $subject = $subjectt;
                 $this->email->subject($subject);

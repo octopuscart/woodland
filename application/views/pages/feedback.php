@@ -9,14 +9,14 @@ $this->load->view('layout/header');
 
     .smilyblock{
         padding: 5px 0px 0px 0px;
-    border: 1px solid #000;
-    text-align: center;
-    border-radius: 10px;
+        border: 1px solid #000;
+        text-align: center;
+        border-radius: 10px;
     }
 
     .smilyblock h3{
         font-size:15px; 
-    margin-bottom: 10px;
+        margin-bottom: 10px;
     }
 
     .smilyblock .col-smile-20{
@@ -25,9 +25,9 @@ $this->load->view('layout/header');
     }
 
     .smilyblock .col-smile-20 img{
-          height: 35px;
-    width: 35px;
-    margin-bottom: 5px;
+        height: 35px;
+        width: 35px;
+        margin-bottom: 5px;
     }
 
 
@@ -76,7 +76,7 @@ $this->load->view('layout/header');
                                     <div class="clear"></div>
                                     <div class="col-6 mb-3">
                                         <select id="template-contactform-time" class="custom-select sm-form-control border-form-control" name="gender" required="">
-                                            <option value="disabled" disabled="" selected=""  >Gender</option>
+                                            <option value="-" disabled="" selected=""  >Gender</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
 
@@ -84,7 +84,7 @@ $this->load->view('layout/header');
                                     </div>
                                     <div class="col-6 mb-3">
                                         <select id="template-contactform-people" class="custom-select sm-form-control border-form-control" name="age_group" required="">
-                                            <option value="disabled" disabled="" selected=""  >Age Group</option>
+                                            <option value="-" disabled="" selected=""  >Age Group</option>
                                             <option value="Adult">Adult</option>
                                             <option value="Teen">Teen</option>
                                             <option value="Sr. Citizen">Sr. Citizen</option>
@@ -94,26 +94,21 @@ $this->load->view('layout/header');
 
                                     <div class="clear"></div>
                                     <div class="col-sm-12 mb-3">
-
-
                                         <div class="smilyblock">
-                                            <h3>Quality of food</h3>
+                                            <h3>Quality Of Food</h3>
+                                            <input type="radio" name="quality_of_food" id="quality_of_food" class="displaynone" value="-" checked="">
                                             <?php
                                             for ($i = 5; $i > 0; $i--) {
                                                 ?>
                                                 <div class="col-smile-20">
                                                     <div class="radio">
                                                         <label>
-
                                                             <img src="<?php echo base_url(); ?>assets/theme2/smily/<?php echo $i; ?>.png">
                                                             <br/>
-
                                                             <input type="radio" name="quality_of_food" id="quality_of_food" value="<?php echo $i; ?>" >
-
                                                         </label>
                                                     </div>
                                                 </div>
-
                                                 <?php
                                             }
                                             ?>
@@ -124,7 +119,9 @@ $this->load->view('layout/header');
                                     <!--start of Quantity of food--> 
                                     <div class="col-sm-12 mb-3">
                                         <div class="smilyblock">
-                                            <h3>Quantity of food </h3>
+                                            <h3>Quantity Of Food </h3>
+                                            <input type="radio" name="quantity_of_food" id="quantity_of_food" class="displaynone" value="-" checked="">
+
                                             <?php
                                             for ($i = 5; $i > 0; $i--) {
                                                 ?>
@@ -150,6 +147,8 @@ $this->load->view('layout/header');
                                     <div class="col-sm-12 mb-3">
                                         <div class="smilyblock">
                                             <h3>On Time Delivery</h3>
+                                            <input type="radio" name="on_time_delivery" id="on_time_delivery" class="displaynone" value="-" checked="">
+
                                             <?php
                                             for ($i = 5; $i > 0; $i--) {
                                                 ?>
@@ -168,11 +167,13 @@ $this->load->view('layout/header');
                                             <div class="clear"></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!--Variety Of Food-->
                                     <div class="col-sm-12 mb-3">
                                         <div class="smilyblock">
-                                            <h3>Variety Of Food</h3>
+                                            <h3>Varieties Of Food</h3>
+                                            <input type="radio" name="variety_of_food" id="varieties_of_food"  class="displaynone" value="-" checked="">
+
                                             <?php
                                             for ($i = 5; $i > 0; $i--) {
                                                 ?>
@@ -181,7 +182,7 @@ $this->load->view('layout/header');
                                                         <label>
                                                             <img src="<?php echo base_url(); ?>assets/theme2/smily/<?php echo $i; ?>.png">
                                                             <br/>
-                                                            <input type="radio" name="variety_of_food" id="variety_of_food" value="<?php echo $i; ?>" >
+                                                            <input type="radio" name="variety_of_food" id="varieties_of_food" value="<?php echo $i; ?>" >
                                                         </label>
                                                     </div>
                                                 </div>
@@ -191,20 +192,20 @@ $this->load->view('layout/header');
                                             <div class="clear"></div>
                                         </div>
                                     </div>
-                                    
-                                     <!--Variety Of Food-->
+
+                                    <!--Variety Of Food-->
                                     <div class="col-sm-12 mb-3">
                                         <div class="smilyblock">
                                             <h3>Comment</h3>
-                                            <textarea style="height: 100px;    border: 1px solid;
-    border-radius: 7px!important;" class="required sm-form-control border-form-control" name="comment" maxlength="500"></textarea>
+                                            <textarea style="height: 220px;    border: 1px solid;
+                                                      border-radius: 7px!important;" class="required sm-form-control border-form-control" name="comment" maxlength="500"></textarea>
                                             <div class="clear"></div>
                                         </div>
                                     </div>
 
                                     <div class="clear"></div>
                                     <div class="col-12 nobottommargin">
-                                        <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="booknow" value="submit">Submit Now</button>
+                                        <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit">Submit Now</button>
                                     </div>
                                     <div class="clear"></div>
 

@@ -93,7 +93,7 @@
                 </div>
                 <div class="row clearfix" style="display: block;text-align: center;">
 
-                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards.png" style="height: 200px;"/>
+                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards.png" >
                     <hr/>
 
                 </div>
@@ -106,7 +106,7 @@
          margin-top: -18px;">
 
         <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" style="    height: 83px;
-             margin-left: 50px;"/>
+            "/>
     </div>
 
     <div class="section nomargin dark bgcolor" style="    padding-bottom: 0px!important;">

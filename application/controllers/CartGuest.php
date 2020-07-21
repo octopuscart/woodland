@@ -302,7 +302,7 @@ class CartGuest extends CI_Controller {
                 'c_date' => date('Y-m-d'),
                 'c_time' => date('H:i:s'),
                 'order_id' => $last_id,
-                'status' => "Order Confirmed",
+                'status' => $genstatus,
                 'user_id' => 'guest',
                 'remark' => "$genstatus By Using " . $paymentmathod . ",  Waiting For Payment",
             );

@@ -93,6 +93,7 @@
                                      height: 100px;color:white;
                                      width: auto;"/><br/>
                             <h3 style="color:white;">Thank you for your order</h3>
+                            <h4>Restaurant will call you to confirm the order</h4>
 
                             <h4 style="color:white;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>

@@ -199,6 +199,7 @@ class CartGuest extends CI_Controller {
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
+        $genstatus = "Confirmation Pending";  
 
 
 //place order
@@ -251,7 +252,7 @@ class CartGuest extends CI_Controller {
                 'total_price' => $total_price,
                 'shipping_price' => $shipping_price,
                 'total_quantity' => $total_quantity,
-                'status' => 'Order Confirmed',
+                'status' => $genstatus,
                 'payment_mode' => $paymentmathod,
                 'measurement_style' => "",
                 'delivery_date' => $delivery_details['delivery_date'],
@@ -303,7 +304,7 @@ class CartGuest extends CI_Controller {
                 'order_id' => $last_id,
                 'status' => "Order Confirmed",
                 'user_id' => 'guest',
-                'remark' => "Order Confirmed By Using " . $paymentmathod . ",  Waiting For Payment",
+                'remark' => "$genstatus By Using " . $paymentmathod . ",  Waiting For Payment",
             );
             $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);

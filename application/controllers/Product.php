@@ -79,7 +79,7 @@ class Product extends CI_Controller {
 
 
 
-        $this->load->view('Product/productList_1', $data);
+        $this->load->view('Product/productListFood', $data);
     }
 
     function ProductSearch() {

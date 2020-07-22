@@ -53,7 +53,7 @@ $this->load->view('layout/header');
                                     <td>: 1985 - 1993</td>
                                 </tr>
                                 <tr>
-                                    <td> Medicine Sans Frontiers	</td>		
+                                    <td> Medecins Sans Frontieres</td>		
                                     <td>: 1994</td>
                                 </tr>
                                 <tr>

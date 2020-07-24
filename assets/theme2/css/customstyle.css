@@ -425,3 +425,17 @@ li.woocommerce-MyAccount-navigation-link {
 #header .container {
     max-width: 100%;
 }
+
+.smallmessage{
+        font-size: 10px;
+    top: 59px;
+    position: absolute;
+    text-align: center;
+    width: 136px;
+    margin-left: -12px;
+}
+
+.disablebooking{
+    cursor: not-allowed;
+    opacity: 0.5;
+}

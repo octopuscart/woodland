@@ -257,4 +257,20 @@ class Shop extends CI_Controller {
         $this->load->view('pages/feedback');
     }
 
+ 
+
+   
+
+    function testDate() {
+        $timeslotarray = ["10:00 AM", "12:24 PM", "02:24 PM", "04:30 PM", "06:30 PM", "07:30 PM", "10:20 PM", date("h:i A")];
+
+        $timeslot = [];
+        foreach ($timeslotarray as $key => $value) {
+           $check =  $this->Utils->checkTime($value);
+           echo "--<br>";
+           print_r($check);
+        }
+
+    }
+
 }

@@ -34,6 +34,8 @@ define('ADMINURL', $adminlinkmain);
 define('PRODUCTIMAGELINK', "https://demo.costcokart.com/assets/theme2/res/food/");
 
 
+
+
 define('imageserver', $baselinkmain . "assets_main/productimages/");
 define('imageserverslider', $baselinkmain . "assets_main/sliderimages/");
 define('imageservermain', $baselinkmain . "assets_main/");
@@ -69,7 +71,6 @@ define('DEFAULT_PAYMENT_MODE', $globleConnectCartCheckout['default_payment_mode'
 define('ORDER_PREFIX', $globleConnectCartCheckout['order_prefix']);
 define('PRODUCT_PATH_PRE', $globleConnectCartCheckout['product_path_pre']);
 define('PRODUCT_PATH_POST', $globleConnectCartCheckout['product_path_post']);
-
 
 
 

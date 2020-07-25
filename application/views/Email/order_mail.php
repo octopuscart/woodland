@@ -94,9 +94,9 @@
                                      width: auto;"/><br/>
                             <h3 style="color:white;">Thank you for your order</h3>
                             <h4 style="    background: red;
-    padding: 8px;
-    color: white;
-    border-radius: 20px;">Restaurant will call you to confirm the order</h4>
+                                padding: 8px;
+                                color: white;
+                                border-radius: 20px;">Restaurant will call you to confirm the order</h4>
 
                             <h4 style="color:white;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
@@ -141,16 +141,29 @@
                         </table>
 
                         <div style="border: 2px solid red;">
-                            <table class="gn_table">
-                                <tr>
-                                    <th>Delivery Area</th>
-                                    <td>: <?php echo $order_data->zipcode; ?> </td>
-                                </tr>
-                                <tr>
-                                    <th>Delivery Date/Time</th>
-                                    <td>: <?php echo $order_data->delivery_date . ' / ' . $order_data->delivery_time; ?> </td>
-                                </tr>
-                            </table>
+                            <?php if ($order_data->zipcode == 'Pickup') { ?>
+                                <table class="gn_table">
+                                   
+                                    <tr>
+                                        <th>Expected Ready Time</th>
+                                        <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
+                                    </tr>
+                                </table>
+                                <?php
+                            }else { ?>
+                                <table class="gn_table">
+                                    <tr>
+                                        <th>Delivery Area</th>
+                                        <td>: <?php echo $order_data->zipcode; ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Expected Delivery Date/Time</th>
+                                        <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
+                                    </tr>
+                                </table>
+                                <?php
+                            }
+                            ?>
                         </div>
 
 

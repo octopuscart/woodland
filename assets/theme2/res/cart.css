@@ -1600,6 +1600,7 @@ h5.theaterblocktext {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 308px;
+    text-align: right;
 }
 
 

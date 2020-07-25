@@ -151,6 +151,36 @@ class CartGuest extends CI_Controller {
             redirect('CartGuest/checkoutPayment');
         }
 
+
+        if (isset($_POST['processtopaymentpickup'])) {
+            $category_array = array(
+                'address1' => "Pickup From Woodlands",
+                'address2' => "",
+                'city' => "",
+                'state' => "",
+                'zipcode' => "Pickup",
+                'country' => "",
+                'user_id' => $this->user_id,
+                'status' => 'default',
+            );
+            $this->session->set_userdata('shipping_address', $category_array);
+            $customer = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact_no' => $this->input->post('contact_no'),
+            );
+            $this->session->set_userdata('customer_inforamtion', $customer);
+
+
+            $delivery_details = array(
+                'delivery_date' => $this->input->post('delivery_date'),
+                'delivery_time' => $this->input->post('delivery_time'),
+            );
+            $this->session->set_userdata('delivery_details', $delivery_details);
+
+            redirect('CartGuest/checkoutPayment');
+        }
+
 //add New address
         if (isset($_POST['add_address'])) {
             $category_array = array(
@@ -195,11 +225,11 @@ class CartGuest extends CI_Controller {
         $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
 
         $data['checkoutmode'] = 'Guest';
-        
+
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
-        $genstatus = "Confirmation Pending";  
+        $genstatus = "Confirmation Pending";
 
 
 //place order

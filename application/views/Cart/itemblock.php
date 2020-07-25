@@ -5,7 +5,7 @@
                 <?php
                 if ($vtype == 'items') {
                     ?>
-                <!--cart block-->
+                    <!--cart block-->
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <span class="fa-stack">
                             <i class="fa fa-shopping-cart fa-stack-1x"></i>
@@ -16,30 +16,30 @@
                     <?php
                 }
                 ?>
-                
-                
+
+
                 <?php
                 if ($vtype == 'size') {
                     ?>
-                <!--shipping block-->
+                    <!--shipping block-->
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                         <span class="fa-stack">
-                                    <i class="fa fa-list-ol fa-stack-1x"></i>
-                                    <i class="ion-bag fa-stack-1x "></i>
-                                </span>   Your Size
+                        <span class="fa-stack">
+                            <i class="fa fa-list-ol fa-stack-1x"></i>
+                            <i class="ion-bag fa-stack-1x "></i>
+                        </span>   Your Size
                         <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
-                            <?php echo $measurement_style_type;?>
+                            <?php echo $measurement_style_type; ?>
                         </span> 
                     </a>
                     <?php
                 }
                 ?>
-                
-                
+
+
                 <?php
                 if ($vtype == 'shipping') {
                     ?>
-                <!--shipping block-->
+                    <!--shipping block-->
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <span class="fa-stack">
                             <i class="fa fa-map-marker fa-stack-1x"></i>
@@ -49,12 +49,16 @@
                             <?php
                             if (count($user_address_details)) {
                                 $value = $user_address_details[0];
-                                ?>
+                                if ($value['zipcode'] == 'Pickup') {
+                                    echo $value['address1'];
+                                } else {
+                                    ?>
 
-                                <?php echo $value['address1']; ?>,
-                                <?php echo $value['address2']; ?>,
-                                <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
-                                <?php
+                                    <?php echo $value['address1']; ?>,
+                                    <?php echo $value['address2']; ?>,
+                                    <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
+                                    <?php
+                                }
                             } else {
                                 echo "Choose Shipping Address";
                             }
@@ -64,11 +68,11 @@
                     <?php
                 }
                 ?>
-                
+
                 <?php
                 if ($vtype == 'payment') {
                     ?>
-                <!--shipping block-->
+                    <!--shipping block-->
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <span class="fa-stack">
                             <i class="fa fa-money fa-stack-1x"></i>
@@ -81,9 +85,9 @@
                     <?php
                 }
                 ?>
-                
-                
-                
+
+
+
             </h4>
         </div>
     </div>

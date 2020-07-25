@@ -61,7 +61,6 @@ $delivery_time = current($selectTimeSlot);
 $delivery_date = $delivery_details ? $delivery_details['delivery_date'] : $delivery_date;
 $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $delivery_time;
 ?>
-
 <style>
     .cartbutton{
         width: 100%;
@@ -183,124 +182,183 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
 
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="card card-default">
-                                        <div class="card-heading" role="tab" id="headingOne">
-                                            <h4 class="card-title">
-                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    <span class="fa-stack">
-                                                        <i class="fa fa-map-marker fa-stack-1x"></i>
-                                                        <i class="ion-bag fa-stack-1x "></i>
-                                                    </span>   Shipping Address
-                                                    <span style="float: right; line-height: 29px;" class="ng-binding">
-                                                        <button class="btn btn-danger" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>
-                                                    </span> 
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <!-- Address Details -->
-                                        <div class="card-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 20px;
+                                     border: 1px solid #000;
+                                     border-radius: 10px;">
+
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery</a></li>
+                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup</a></li>
+
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="delivery">
+                                            <div class="card card-default">
+                                                <div class="card-heading" role="tab" id="headingOne">
+                                                    <h4 class="card-title">
+                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                            <span class="fa-stack">
+                                                                <i class="fa fa-map-marker fa-stack-1x"></i>
+                                                                <i class="ion-bag fa-stack-1x "></i>
+                                                            </span>   Shipping Address
+                                                            <span style="float: right; line-height: 29px;" class="ng-binding">
+                                                                <button class="btn btn-danger" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>
+                                                            </span> 
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <!-- Address Details -->
+                                                <div class="card-body">
 
 
-                                            <div class="row" >  
+                                                    <div class="row" >  
 
-                                                <div class="col-md-12">
+                                                        <div class="col-md-12">
 
-                                                    <?php
-                                                    if (count($user_address_details)) {
-                                                        ?>
-                                                        <div class="col-md-6">
-                                                            <h3><i class="fa fa-user"></i> <?php echo $user_details['name']; ?> </h3>
-                                                            <p class="address_guest_p"><i class="fa fa-phone"></i> <?php echo $user_details['contact_no']; ?> </p>
-                                                            <p class="address_guest_p"><i class="fa fa-envelope"></i> <?php echo $user_details['email']; ?> </p>
-                                                            <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $user_details['email']); ?>" class="btn btn-danger address_button btn-sm text-white "><i class ="fa fa-times"></i> Remove Address</a>
-                                                        </div>
-
-                                                        <?php
-                                                        foreach ($user_address_details as $key => $value) {
-                                                            ?>
-                                                            <div class="col-md-6">
-                                                                <div class="">
-                                                                    <b>Ship To</b>
-                                                                    <p>
-                                                                        <?php echo $value['address1']; ?>,<br/>
-                                                                        <?php echo $value['address2']; ?>,<br/>
-                                                                        <?php echo $value['city']; ?><br/>
-                                                                        <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
                                                             <?php
-                                                        }
-                                                    } else {
-                                                        ?>
-                                                        <h4 class="text-center " style="color: red"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+                                                            if (count($user_address_details)) {
+                                                                ?>
+                                                                <div class="col-md-6">
+                                                                    <h3><i class="fa fa-user"></i> <?php echo $user_details['name']; ?> </h3>
+                                                                    <p class="address_guest_p"><i class="fa fa-phone"></i> <?php echo $user_details['contact_no']; ?> </p>
+                                                                    <p class="address_guest_p"><i class="fa fa-envelope"></i> <?php echo $user_details['email']; ?> </p>
+                                                                    <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $user_details['email']); ?>" class="btn btn-danger address_button btn-sm text-white "><i class ="fa fa-times"></i> Remove Address</a>
+                                                                </div>
 
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </div>    
-                                                <div class="col-md-12" style="margin-top: 50px;">
-                                                    <div class="row delivery_block">
-                                                        <div class="col-md-4">
-                                                            <h4 style="color:black;">
-                                                                Select delivery time
-                                                            </h4>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <select name="delivery_time" class="form-control" ng-model="shippingInit.delivery_time">
-                                                                <option value="0">Select Time</option>
                                                                 <?php
-                                                                foreach ($selectTimeSlot as $key => $value) {
-                                                                    echo "<option value='$value'>$value</option>";
+                                                                foreach ($user_address_details as $key => $value) {
+                                                                    ?>
+                                                                    <div class="col-md-6">
+                                                                        <div class="">
+                                                                            <b>Ship To</b>
+                                                                            <p>
+                                                                                <?php echo $value['address1']; ?>,<br/>
+                                                                                <?php echo $value['address2']; ?>,<br/>
+                                                                                <?php echo $value['city']; ?><br/>
+                                                                                <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php
                                                                 }
+                                                            } else {
                                                                 ?>
-                                                            </select>
+                                                                <h4 class="text-center " style="color: red"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </div>    
+                                                        <div class="col-md-12" style="margin-top: 50px;">
+                                                            <div class="row delivery_block">
+                                                                <input  name="delivery_time" type="hidden" value="" />
+
+                                                                <input name="delivery_date" type="hidden" value="" >
+
+                                                            </div>
                                                         </div>
 
-                                                        <div class="col-md-4">
-                                                            <div name="delivery_date" class="form-control" ng-model="shippingInit.delivery_date">
-                                                                <?php
-                                                                echo "<option value='$delivery_date'>$delivery_date</option>";
-                                                                ?>
-                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-page-top table-responsive">
+                                                    <table class="table table-hover">
+                                                        <tbody id="quantity-holder">
+                                                            <tr>
+                                                                <td colspan="4" class="text_right">
+                                                                    <div class="proceed-button pull-left " >
+                                                                        <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                    </div>
+                                                                    <div class="proceed-button pull-right ">
+                                                                        <form action="#" method="post">
+                                                                            <?php
+                                                                            if (count($user_address_details)) {
+                                                                                ?>
+                                                                                <input type="hidden" name="delivery_date" value="{{shippingInit.delivery_date}}"/>
+
+                                                                                <input type="hidden" name="delivery_time" value="{{shippingInit.delivery_time}}"/>
+
+                                                        <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                                <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
+                                                                                <?php
+                                                                            }
+                                                                            ?>
+                                                                        </form>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade " id="pickup">
+                                            <form action="#" method="post" style="margin-bottom: 0;">
+                                                <div class="card card-default">
+                                                    <div class="card-body">
+                                                        <table class="table table-borderd">
+                                                            <tr>
+                                                                <td style="line-height: 25px;">
+                                                                    <span for="name" class=""><b>Full Name</b></span>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" required="" name="name" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                                                </td>
+
+                                                                <td style="line-height: 25px;">
+                                                                    <span for="name" class=""><b>Email Address</b></span>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="email" required="" name="email" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                                                </td>
+
+                                                                <td style="line-height: 25px;">
+                                                                    <span for="name" class=""><b>Contact No.</b></span>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="tel" required="" name="contact_no" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <h3>
+                                                            <?php
+                                                            echo "Your order will be ready in 45 minute, Expected time is " . date("h:i a", strtotime("+45 minute"));
+                                                            ?>
+                                                        </h3>
+                                                        <div class="cart-page-top table-responsive">
+                                                            <table class="table table-hover">
+                                                                <tbody id="quantity-holder">
+                                                                    <tr>
+                                                                        <td colspan="4" class="text_right">
+                                                                            <div class="proceed-button pull-left " >
+                                                                                <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                            </div>
+                                                                            <div class="proceed-button pull-right ">
+
+
+                                                                                <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
+
+                                                                                <input type="hidden" name="delivery_time" value="<?php echo date("h:i a"); ?>"/>
+
+                                                                                <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopaymentpickup">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
+
+
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cart-page-top table-responsive">
-                                            <table class="table table-hover">
-                                                <tbody id="quantity-holder">
-                                                    <tr>
-                                                        <td colspan="4" class="text_right">
-                                                            <div class="proceed-button pull-left " >
-                                                                <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                            </div>
-                                                            <div class="proceed-button pull-right ">
-                                                                <form action="#" method="post">
-                                                                    <?php
-                                                                    if (count($user_address_details)) {
-                                                                        ?>
-                                                                        <input type="hidden" name="delivery_date" value="{{shippingInit.delivery_date}}"/>
-
-                                                                        <input type="hidden" name="delivery_time" value="{{shippingInit.delivery_time}}"/>
-
-                <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
-                                                                        <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
-                                                                        <?php
-                                                                    }
-                                                                    ?>
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
+                                            </form>
                                         </div>
                                     </div>
+                                    <div style="clear: both"></div>
+
+
+
                                 </div>
                                 <?php
                                 $this->load->view('CartGuest/itemblock', array('vtype' => 'payment'));
@@ -343,7 +401,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                         <table class="table">
                             <tbody>
-                                 <tr>
+                                <tr>
                                     <td style="line-height: 25px;">
                                         <span for="name" class=""><b>Area</b></span>
                                     </td>
@@ -360,7 +418,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     </td>
                                 </tr>
 
-                                
+
                                 <tr>
                                     <td style="line-height: 25px;">
                                         <span for="name" class=""><b>Full Name</b></span>
@@ -414,9 +472,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     </td>
                                 </tr>
 
-                           
 
-                               
+
+
 
 
                             </tbody>

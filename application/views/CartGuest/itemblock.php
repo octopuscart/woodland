@@ -47,12 +47,16 @@
                             <?php
                             if (count($user_address_details)) {
                                 $value = $user_address_details[0];
-                                ?>
-                                <?php echo $user_details['name']; ?>,
-                                <?php echo $value['address1']; ?>,
-                                <?php echo $value['address2']; ?>,
-                                <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
-                                <?php
+                                if ($value['zipcode'] == 'Pickup') {
+                                    echo $value['address1'];
+                                } else {
+                                    ?>
+                                    <?php echo $user_details['name']; ?>,
+                                    <?php echo $value['address1']; ?>,
+                                    <?php echo $value['address2']; ?>,
+                                    <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
+                                    <?php
+                                }
                             } else {
                                 echo "Choose Shipping Address";
                             }

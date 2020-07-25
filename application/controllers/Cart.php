@@ -181,6 +181,30 @@ class Cart extends CI_Controller {
                 $this->db->insert('shipping_address', $category_array);
                 redirect('Cart/checkoutShipping');
             }
+
+            if (isset($_POST['processtopaymentpickup'])) {
+                $category_array = array(
+                    'address1' => "Pickup From Woodlands",
+                    'address2' => "",
+                    'city' => "",
+                    'state' => "",
+                    'zipcode' => "Pickup",
+                    'country' => "",
+                    'user_id' => $this->user_id,
+                    'status' => 'default',
+                );
+                $this->session->set_userdata('shipping_address', $category_array);
+
+                $delivery_details = array(
+                    'delivery_date' => $this->input->post('delivery_date'),
+                    'delivery_time' => $this->input->post('delivery_time'),
+                );
+                $this->session->set_userdata('delivery_details', $delivery_details);
+
+                redirect('Cart/checkoutPayment');
+            }
+
+
             $this->load->view('Cart/checkoutShipping', $data);
         } else {
             redirect('Account/login?page=checkoutInit');
@@ -196,8 +220,12 @@ class Cart extends CI_Controller {
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
+
+
+
+        $genstatus = "Confirmation Pending";
         
-       $genstatus = "Confirmation Pending";             
+        $data['haspickup'] = 0;
 
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
@@ -205,7 +233,11 @@ class Cart extends CI_Controller {
             $data['user_details'] = $user_details;
 
             $user_address_details = $this->User_model->user_address_details($this->user_id);
+
+
+
             $data['user_address_details'] = $user_address_details;
+
 
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
@@ -235,11 +267,22 @@ class Cart extends CI_Controller {
                 $data['user_credits'] = $user_credits;
                 $address = $user_address_details[0];
 
+                $checkaddress = $this->session->userdata('shipping_address');
+                
+                if ($checkaddress['zipcode'] == 'Pickup') {
+                    $address = $checkaddress;
+                    $data['haspickup'] = 1;
+                }
+
+
                 $session_cart['shipping_price'] = 40;
                 if ($session_cart['total_price'] > 399) {
                     $session_cart['shipping_price'] = 0;
                 }
                 if ($address['zipcode'] == 'Tsim Sha Tsui') {
+                    $session_cart['shipping_price'] = 0;
+                }
+                if ($address['zipcode'] == 'Pickup') {
                     $session_cart['shipping_price'] = 0;
                 }
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
@@ -280,8 +323,8 @@ class Cart extends CI_Controller {
                     'payment_mode' => $paymentmathod,
                     'measurement_style' => '',
                     'credit_price' => $this->input->post('credit_price') || 0,
-                    'delivery_date'=>$delivery_details['delivery_date'],
-                    'delivery_time'=>$delivery_details['delivery_time'],
+                    'delivery_date' => $delivery_details['delivery_date'],
+                    'delivery_time' => $delivery_details['delivery_time'],
                 );
 
                 $this->db->insert('user_order', $order_array);

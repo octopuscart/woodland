@@ -273,9 +273,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                             <?php
                                                                             if (count($user_address_details)) {
                                                                                 ?>
-                                                                                <input type="hidden" name="delivery_date" value="{{shippingInit.delivery_date}}"/>
+                                                                                <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
 
-                                                                                <input type="hidden" name="delivery_time" value="{{shippingInit.delivery_time}}"/>
+                                                                                <input type="hidden" name="delivery_time" value="<?php echo date("h:i a"); ?>"/>
 
                                                         <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                 <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>

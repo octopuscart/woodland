@@ -49,8 +49,8 @@
                             <?php
                             if (count($user_address_details)) {
                                 $value = $user_address_details[0];
-                                if ($value['zipcode'] == 'Pickup') {
-                                    echo $value['address1'];
+                                if ($haspickup) {
+                                    echo "Pickup";
                                 } else {
                                     ?>
 

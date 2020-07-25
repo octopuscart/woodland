@@ -143,14 +143,14 @@
                         <div style="border: 2px solid red;">
                             <?php if ($order_data->zipcode == 'Pickup') { ?>
                                 <table class="gn_table">
-                                   
+
                                     <tr>
                                         <th>Expected Ready Time</th>
                                         <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
                                     </tr>
                                 </table>
-                                <?php
-                            }else { ?>
+                                <?php } else {
+                                ?>
                                 <table class="gn_table">
                                     <tr>
                                         <th>Delivery Area</th>

@@ -22,13 +22,13 @@ class Utils extends CI_Model {
         $time1 = "12:01 PM";
         $timeo1 = $this->createTimeObject($time1);
 
-        $time2 = "02:15 PM";
+        $time2 = "03:00 PM";
         $timeo2 = $this->createTimeObject($time2);
 
         $time3 = "06:00 PM";
         $timeo3 = $this->createTimeObject($time3);
 
-        $time4 = "09:00 PM";
+        $time4 = "09:30 PM";
         $timeo4 = $this->createTimeObject($time4);
 
 

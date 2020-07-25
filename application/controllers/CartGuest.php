@@ -154,7 +154,7 @@ class CartGuest extends CI_Controller {
 
         if (isset($_POST['processtopaymentpickup'])) {
             $category_array = array(
-                'address1' => "Pickup From Woodlands",
+                'address1' => "Pickup At Woodlands",
                 'address2' => "",
                 'city' => "",
                 'state' => "",

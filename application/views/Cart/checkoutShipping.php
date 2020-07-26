@@ -243,6 +243,11 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                         </div>
                                                        
                                                     </div>
+                                                    <h3>
+                                                            <?php
+                                                            echo "Your order will be ready in 45 minutes, Expected time is " . date("h:i a", strtotime("+45 minute"));
+                                                            ?>
+                                                        </h3>
                                                     <div class="cart-page-top table-responsive">
                                                         <table class="table table-hover">
                                                             <tbody id="quantity-holder">

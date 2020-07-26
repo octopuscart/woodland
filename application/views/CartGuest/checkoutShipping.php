@@ -248,7 +248,10 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 <?php
                                                             }
                                                             ?>
-                                                        </div>    
+                                                        </div>  
+                                                        <?php
+                                                            echo "Your order will be derlivered in 45 minutes, Expected time is " . date("h:i a", strtotime("+45 minute"));
+                                                            ?>
                                                         <div class="col-md-12" style="margin-top: 50px;">
                                                             <div class="row delivery_block">
                                                                 <input  name="delivery_time" type="hidden" value="" />
@@ -322,7 +325,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                         </table>
                                                         <h3>
                                                             <?php
-                                                            echo "Your order will be ready in 45 minute, Expected time is " . date("h:i a", strtotime("+45 minute"));
+                                                            echo "Your order will be ready in 45 minutes, Expected time is " . date("h:i a", strtotime("+45 minute"));
                                                             ?>
                                                         </h3>
                                                         <div class="cart-page-top table-responsive">

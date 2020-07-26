@@ -15,13 +15,23 @@ class Utils extends CI_Model {
 //        return date("d H:i:s a", $d);
         return new DateTime($timestr);
     }
+    
+    function checkMinuetHour($interval){
+        $hours = $interval->format("%h");
+        $minutes = $interval->format("%i");
+        $hourstxt = $hours=="1"? "$hours Hour":"$hours Hours";
+        $minutetxt = $minutes=="1"? "$minutes Minute":"$minutes Minutes";
+        return "$hourstxt $minutetxt";
+        
+    }
 
     function checkTime($checktime) {
         $checktime_o = $this->createTimeObject($checktime);
 
-        $time1 = "12:01 PM";
+        $time1 = "11:30 AM";
         $timeo1 = $this->createTimeObject($time1);
-
+        
+     
         $time2 = "03:00 PM";
         $timeo2 = $this->createTimeObject($time2);
 
@@ -41,7 +51,7 @@ class Utils extends CI_Model {
                 break;
             case $checktime_o < $timeo1:
                 $interval = date_diff($checktime_o, $timeo1);
-                $message = "Opening in " . $interval->format("%h Hours %i Minute");
+                $message = "Opening in " . $this->checkMinuetHour($interval);
                 $status = "Opening Soon";
                 $code = 0;
                 break;
@@ -49,7 +59,7 @@ class Utils extends CI_Model {
             case $checktime_o > $timeo2 && $checktime_o < $timeo3:
                 $status = "Interval";
                 $interval = date_diff($checktime_o, $timeo3);
-                $message = "Opening in " . $interval->format("%h Hours %i Minute");
+                $message = "Opening in " . $this->checkMinuetHour($interval);
                 $code = 0;
                 break;
             default:

@@ -427,15 +427,29 @@ li.woocommerce-MyAccount-navigation-link {
 }
 
 .smallmessage{
-        font-size: 10px;
-    top: 59px;
+   font-size: 10px;
+    top: 60px;
     position: absolute;
     text-align: center;
-    width: 136px;
-    margin-left: -12px;
+    width: 153px;
+
+    margin-left: -19px;
 }
 
 .disablebooking{
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .smallmessage{
+   font-size: 10px;
+    top: 40px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    margin-left: 0px;
+}
 }

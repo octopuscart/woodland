@@ -224,7 +224,7 @@ class Cart extends CI_Controller {
 
 
         $genstatus = "Confirmation Pending";
-        
+
         $data['haspickup'] = 0;
 
         $session_data = $this->session->userdata('logged_in');
@@ -242,7 +242,12 @@ class Cart extends CI_Controller {
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
 
+            $checkaddress = $this->session->userdata('shipping_address');
 
+            if ($checkaddress['zipcode'] == 'Pickup') {
+                $address = $checkaddress;
+                $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+            }
 
             //place order
             if (isset($_POST['place_order'])) {
@@ -267,12 +272,12 @@ class Cart extends CI_Controller {
                 $data['user_credits'] = $user_credits;
                 $address = $user_address_details[0];
 
-                $checkaddress = $this->session->userdata('shipping_address');
-                
+
                 if ($checkaddress['zipcode'] == 'Pickup') {
                     $address = $checkaddress;
-                    $data['haspickup'] = 1;
+                    $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
                 }
+
 
 
                 $session_cart['shipping_price'] = 40;

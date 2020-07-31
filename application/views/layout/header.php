@@ -73,15 +73,15 @@
 
                                 <li><a href="<?php echo site_url("gallery"); ?>"><div>Gallery</div></a></li>
 
-                                <li><a href="<?php echo site_url("loyalty-program"); ?>"><div>Loyalty Program</div></a></li>
+                                <li><a href="<?php echo site_url("loyalty-program"); ?>"><div>REWARD</div></a></li>
 
                                 <li><a href="<?php echo site_url("review"); ?>"><div>Review</div></a></li>
                                 <!--<li><a href="<?php echo site_url("blog"); ?>"><div>Blog</div></a></li>-->
                                 <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>
+                                <li><a href="<?php echo site_url("annual-charity"); ?>"><div>  CHARITY</div></a></li>
 
                             </ul>
                             <ul>
-                                <li><a href="<?php echo site_url("annual-charity"); ?>"><div>  CHARITY</div></a></li>
                                 <li><a href="<?php echo site_url("contact"); ?>"><div>Contact</div></a></li>
 <!--                                <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
 
@@ -101,6 +101,8 @@
                                     }
                                     ?>
                                 </li>
+                                <li><a href="<?php echo site_url("our-menu/0/0"); ?>" class="reservation_buttons "><div class="">MENU </div></a></li>
+
                                 <li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons "><div class="">Book </div></a></li>
 
                                 <li>

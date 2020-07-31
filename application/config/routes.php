@@ -61,6 +61,7 @@ $route['about-us'] = 'Shop/aboutus';
 $route['privacy-policy'] = 'Shop/privacy_policy';
 
 $route['menu/(:any)/(:any)'] = 'Product/productList/$1/$2';
+$route['our-menu/(:any)/(:any)'] = 'Product/productList2/$1/$2';
 
 $route['review'] = 'Shop/wall';
 

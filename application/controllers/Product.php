@@ -40,6 +40,76 @@ class Product extends CI_Controller {
         $producttgs = $query->result_array();
 
         $data['producttag'] = $producttgs;
+        $data['viewonly'] = "0";
+
+        $this->db->where("parent_id", "0");
+        $query = $this->db->get('category');
+        $corecategories = $query->result_array();
+
+        $products = array();
+        $categories2 = array();
+        foreach ($corecategories as $ckey => $cvalue) {
+            $this->db->select("id, title, price, file_name, short_description, description");
+            if (isset($_GET['mode'])) {
+                if ($_GET['mode'] == 'test') {
+                   
+                } else {
+                    $this->db->where("credit_limit", "");
+                }
+            } else {
+                $this->db->where("credit_limit", "");
+            }
+            $this->db->where("category_id", $cvalue["id"]);
+            $query = $this->db->get('products');
+            $productslist = $query->result_array();
+            if ($productslist) {
+                $categories2[$cvalue["id"]] = $productslist[0]['file_name'];
+            } else {
+                $categories2[$cvalue["id"]] = "default.png";
+            }
+            $products[$cvalue["id"]] = $productslist;
+        }
+
+
+        $data['productlist'] = $products;
+
+        $data["categories"] = $categories;
+        $data["categories2"] = $categories2;
+        $data["category"] = $cat_id;
+        $session_last_custom = $this->session->userdata('session_last_custom');
+
+
+
+        $this->load->view('Product/productListFood', $data);
+    }
+    
+    
+     //function for product list
+    function ProductList2($custom_id, $cat_id) {
+
+        $tempcatid = $cat_id;
+
+
+
+        $categories = $this->Product_model->productListCategories($cat_id);
+
+        $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
+        $primaryparent = "0";
+        foreach ($data["categorie_parent"] as $ckey => $cvalue) {
+            if ($cvalue['parent_id'] == '0') {
+                $primaryparent = $cvalue['id'];
+            }
+        }
+
+        $categoriesString = $this->Product_model->stringCategories($primaryparent);
+        $categoriesString = trim($categoriesString, ",");
+
+        $this->db->where("id in ($categoriesString)");
+        $query = $this->db->get('category');
+        $producttgs = $query->result_array();
+
+        $data['producttag'] = $producttgs;
+        $data['viewonly'] = "1";
 
         $this->db->where("parent_id", "0");
         $query = $this->db->get('category');

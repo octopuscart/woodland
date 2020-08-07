@@ -31,7 +31,7 @@ switch ($baselink) {
 }
 
 define('ADMINURL', $adminlinkmain);
-define('PRODUCTIMAGELINK', "https://demo.costcokart.com/assets/theme2/res/food/");
+define('PRODUCTIMAGELINK', "https://www.woodlandshk.com/assets/theme2/res/food/");
 
 
 

@@ -59,19 +59,35 @@ class Api extends REST_Controller {
         } else {
             $user_address_details = $this->session->userdata('shipping_address');
         }
+
+        $discountrate = 10;
         if ($user_address_details) {
-            
+
             $addresscheck2 = $this->session->userdata('shipping_address');
-            
+
             if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
                 $session_cart['shipping_price'] = 0;
             }
             if ($addresscheck2['zipcode'] == 'Pickup') {
+                $discountrate = 20;
                 $session_cart['shipping_price'] = 0;
             }
         }
 
+        $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+        $rawdiscount = round($discoutamount);
+        $expdiscount = explode(".", $rawdiscount);
+
+        $actdiscount = count($expdiscount) > 1 ? ($rawdiscount + 1) : $rawdiscount;
+
+        $session_cart['discount'] = $actdiscount;
+        
+
         $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+        $session_cart['total_price'] = $session_cart['total_price'] - $session_cart['discount'];
+
+
 
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 

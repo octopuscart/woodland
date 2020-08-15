@@ -361,7 +361,7 @@ $paymentstatus = "";
                                                     </tr>
 
                                                     <tr>
-                                                        <td colspan="3"  rowspan="4" style="font-size: 12px">
+                                                        <td colspan="3"  rowspan="5" style="font-size: 12px">
                                                             <b>Total Amount in Words:</b><br/>
                                                             <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
                                                         </td>
@@ -370,6 +370,10 @@ $paymentstatus = "";
                                                     <tr>
                                                         <td colspan="2" style="text-align: right">Sub Total</td>
                                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td colspan="2" style="text-align: right">Discount</td>
+                                                        <td style="text-align: right;width: 60px">{{<?php echo $order_data->credit_price; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
                                                     </tr>
                                                     <tr>
                                                         <td colspan="2" style="text-align: right">Shipping</td>

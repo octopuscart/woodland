@@ -243,6 +243,8 @@ class CartGuest extends CI_Controller {
                 $session_cart = $this->Product_model->cartData();
             }
 
+            $discountrate = 10;
+
             $session_cart['shipping_price'] = 40;
             if ($session_cart['total_price'] > 399) {
                 $session_cart['shipping_price'] = 0;
@@ -251,10 +253,23 @@ class CartGuest extends CI_Controller {
                 $session_cart['shipping_price'] = 0;
             }
             if ($address['zipcode'] == 'Pickup') {
+                $discountrate = 20;
                 $session_cart['shipping_price'] = 0;
             }
 
             $session_cart['sub_total_price'] = $session_cart['total_price'];
+
+
+            $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+            $rawdiscount = round($discoutamount);
+            $expdiscount = explode(".", $rawdiscount);
+            
+            $actdiscount = count($expdiscount)>1 ? ($rawdiscount+1):$rawdiscount;
+
+            $session_cart['discount'] = $actdiscount;
+            
+            
+            $session_cart['total_price'] = $session_cart['total_price'] - $actdiscount ;
 
             $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
 
@@ -291,7 +306,7 @@ class CartGuest extends CI_Controller {
                 'measurement_style' => "",
                 'delivery_date' => $delivery_details['delivery_date'],
                 'delivery_time' => $delivery_details['delivery_time'],
-                'credit_price' => $this->input->post('credit_price') || 0,
+                'credit_price' => $actdiscount,
             );
 
             $this->db->insert('user_order', $order_array);

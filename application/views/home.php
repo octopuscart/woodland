@@ -405,6 +405,32 @@ $this->load->view('layout/header');
 
 </section>
 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="adModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-body" style="padding: 0px;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;
+    right: 6px;
+"><span aria-hidden="true">&times;</span></button>
+
+          <img src="<?php echo base_url(); ?>assets/adimages/offer.jpg" style="width: 100%; ">
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 <?php
 $this->load->view('layout/footer');
 ?>
+
+<script>
+$(function(){
+    $("#adModal").modal("show");
+})
+</script>

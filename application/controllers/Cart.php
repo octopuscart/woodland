@@ -193,6 +193,7 @@ class Cart extends CI_Controller {
                     'user_id' => $this->user_id,
                     'status' => 'default',
                 );
+                 $this->session->set_userdata('shipping_address', $category_array);
                 $this->session->set_userdata('shipping_address', $category_array);
 
                 $delivery_details = array(

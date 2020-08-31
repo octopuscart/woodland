@@ -69,9 +69,11 @@ class Api extends REST_Controller {
             if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
                 $session_cart['shipping_price'] = 0;
             }
-            if ($addresscheck2['zipcode'] == 'Pickup') {
-                $discountrate = 20;
-                $session_cart['shipping_price'] = 0;
+            if (!$this->checklogin) {
+                if ($addresscheck2['zipcode'] == 'Pickup') {
+                    $discountrate = 20;
+                    $session_cart['shipping_price'] = 0;
+                }
             }
         }
 
@@ -82,7 +84,7 @@ class Api extends REST_Controller {
         $actdiscount = count($expdiscount) > 1 ? ($rawdiscount + 1) : $rawdiscount;
 
         $session_cart['discount'] = $actdiscount;
-        
+
 
         $session_cart['sub_total_price'] = $session_cart['total_price'];
 

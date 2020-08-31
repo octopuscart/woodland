@@ -60,7 +60,8 @@ class Api extends REST_Controller {
             $user_address_details = $this->session->userdata('shipping_address');
         }
 
-        $discountrate = 10;
+        $discountrate = 0;
+        $discoutamount = 0;
         if ($user_address_details) {
 
             $addresscheck2 = $this->session->userdata('shipping_address');
@@ -74,7 +75,7 @@ class Api extends REST_Controller {
             }
         }
 
-        $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+//        $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
         $rawdiscount = round($discoutamount);
         $expdiscount = explode(".", $rawdiscount);
 

@@ -407,8 +407,8 @@ $this->load->view('layout/header');
 
 
 
-
-<!-- Modal -->
+<!--
+ Modal 
 <div class="modal fade" id="adModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -423,14 +423,14 @@ $this->load->view('layout/header');
       
     </div>
   </div>
-</div>
+</div>-->
 
 <?php
 $this->load->view('layout/footer');
 ?>
 
 <script>
-$(function(){
-    $("#adModal").modal("show");
-})
+//$(function(){
+//    $("#adModal").modal("show");
+//})
 </script>

@@ -273,14 +273,13 @@ class Cart extends CI_Controller {
                 $address = $user_address_details[0];
 
 
-                $discountrate = 10;
-
+                $discountrate = 0;
+                $discoutamount = 0;
                 if ($checkaddress['zipcode'] == 'Pickup') {
                     $address = $checkaddress;
 
                     $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
                 }
-
 
 
                 $session_cart['shipping_price'] = 40;
@@ -296,7 +295,8 @@ class Cart extends CI_Controller {
                 }
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
 
-                $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+//                $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+
                 $rawdiscount = round($discoutamount);
                 $expdiscount = explode(".", $rawdiscount);
 

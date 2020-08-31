@@ -220,7 +220,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                                     <?php echo $value['address1']; ?>,<br/>
                                                                                     <?php echo $value['address2']; ?>,<br/>
                                                                                     <?php echo $value['city']; ?><br/>
-                                                                                    <?php echo $value['zipcode'] == 'on' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
+                                                                                    <?php echo $value['zipcode'] ;?>
                                                                                     <br/>
                                                                                     <?php if ($value['status'] != 'default') { ?> 
                                                                                         <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn-send-message address_button btn-small " style="    padding: 0px 10px;

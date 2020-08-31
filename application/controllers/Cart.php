@@ -135,6 +135,19 @@ class Cart extends CI_Controller {
 
             $user_address_details = $this->User_model->user_address_details($this->user_id);
             $data['user_address_details'] = $user_address_details;
+            if ($user_address_details) {
+                $category_array = array(
+                    'address1' => $this->input->post('address1'),
+                    'address2' => $this->input->post('address2'),
+                    'city' => $this->input->post('city'),
+                    'state' => $this->input->post('state'),
+                    'zipcode' => $this->input->post('zipcode'),
+                    'country' => $this->input->post('country'),
+                    'user_id' => $this->user_id,
+                    'status' => 'default',
+                );
+                $this->session->set_userdata('pickup_shipping_address', $category_array);
+            }
 
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
@@ -159,6 +172,17 @@ class Cart extends CI_Controller {
                 $this->db->set('status', "default");
                 $this->db->where('id', $adid);
                 $this->db->update('shipping_address');
+                $category_array = array(
+                    'address1' => $this->input->post('address1'),
+                    'address2' => $this->input->post('address2'),
+                    'city' => $this->input->post('city'),
+                    'state' => $this->input->post('state'),
+                    'zipcode' => $this->input->post('zipcode'),
+                    'country' => $this->input->post('country'),
+                    'user_id' => $this->user_id,
+                    'status' => 'default',
+                );
+                $this->session->set_userdata('pickup_shipping_address', $category_array);
                 redirect('Cart/checkoutShipping');
             }
 
@@ -179,6 +203,17 @@ class Cart extends CI_Controller {
                     'status' => 'default',
                 );
                 $this->db->insert('shipping_address', $category_array);
+                $category_array = array(
+                    'address1' => $this->input->post('address1'),
+                    'address2' => $this->input->post('address2'),
+                    'city' => $this->input->post('city'),
+                    'state' => $this->input->post('state'),
+                    'zipcode' => $this->input->post('zipcode'),
+                    'country' => $this->input->post('country'),
+                    'user_id' => $this->user_id,
+                    'status' => 'default',
+                );
+                $this->session->set_userdata('pickup_shipping_address', $category_array);
                 redirect('Cart/checkoutShipping');
             }
 
@@ -193,8 +228,7 @@ class Cart extends CI_Controller {
                     'user_id' => $this->user_id,
                     'status' => 'default',
                 );
-                 $this->session->set_userdata('shipping_address', $category_array);
-                $this->session->set_userdata('shipping_address', $category_array);
+                $this->session->set_userdata('pickup_shipping_address', $category_array);
 
                 $delivery_details = array(
                     'delivery_date' => $this->input->post('delivery_date'),
@@ -244,10 +278,18 @@ class Cart extends CI_Controller {
             $data['user_credits'] = $user_credits;
 
             $checkaddress = $this->session->userdata('shipping_address');
+            if ($this->checklogin) {
+                $addresscheck2 = $this->session->userdata('pickup_shipping_address');
+                if ($addresscheck2['zipcode'] == 'Pickup') {
+                    $data['user_address_details'] = $addresscheck2 ? [$addresscheck2] : [];
+                    $address = $addresscheck2;
+                }
+            } else {
 
-            if ($checkaddress['zipcode'] == 'Pickup') {
-                $address = $checkaddress;
-                $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                if ($checkaddress['zipcode'] == 'Pickup') {
+                    $address = $checkaddress;
+                    $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                }
             }
 
             //place order
@@ -280,6 +322,21 @@ class Cart extends CI_Controller {
                     $address = $checkaddress;
 
                     $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                }
+
+
+                if ($this->checklogin) {
+                    $addresscheck2 = $this->session->userdata('pickup_shipping_address');
+                    if ($addresscheck2['zipcode'] == 'Pickup') {
+                        $data['user_address_details'] = $addresscheck2 ? [$addresscheck2] : [];
+                        $address = $addresscheck2;
+                    }
+                } else {
+
+                    if ($checkaddress['zipcode'] == 'Pickup') {
+                        $address = $checkaddress;
+                        $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+                    }
                 }
 
 
@@ -365,7 +422,7 @@ class Cart extends CI_Controller {
 
 
 
-
+                $this->session->set_userdata('shipping_address', array());
 
                 $order_status_data = array(
                     'c_date' => date('Y-m-d'),

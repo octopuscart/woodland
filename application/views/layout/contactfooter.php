@@ -113,7 +113,7 @@
         <div class="container">
             <div class="row justify-content-between align-items-center" style="text-align: center;">
                 <div class="col-md-12">
-                    <h3 class="mb-0 ls0" style="margin-bottom:20px!important">Do You want to Contact with us. Then Don't Hesitate!</h3>
+                    <h3 class="mb-0 ls0" style="margin-bottom:20px!important">Have questions? Please don't hesitate to contact us.</h3>
                     <a href="<?php echo site_url("contact"); ?>" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 " >Contact Us Here</a>
 
                 </div>

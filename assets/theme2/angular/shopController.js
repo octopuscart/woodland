@@ -7,6 +7,8 @@
 
 
 App.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
+    
+    $scope.selectlang ={"select": "en"};
 
 
     $('.typeahead').bind('typeahead:select', function (ev, suggestion) {

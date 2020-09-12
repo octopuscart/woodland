@@ -6,6 +6,30 @@ $this->load->view('layout/header');
     footer{
         position: inherit!important;
     }
+    .selectlanguage {
+        display: inline-block;
+        width: 120px;
+    }
+    
+    .selectlanguage select{
+        border-radius: 17px;
+    }
+
+    .linkdonate{
+        display: inline-block;
+        padding: 0px 30px;
+    }
+    
+    .selectlanguage span{
+           color: #0a6132!important;
+    }
+    
+    .donateh2{
+            color: #0a6132!important;
+    font-size: 19px;
+    margin-top: -21px;
+    text-align: center;
+    }
 </style>
 
 
@@ -17,6 +41,40 @@ $this->load->view('layout/header');
     </div>
 </section>
 <!-- Inner Page Banner Area End Here -->
+
+
+<section id="content" style="overflow: visible; margin-bottom: 192px!important;">
+    <div class="content-wrap1 charity-block">
+        <div class="section nomargin clearfix" style="background: #fcb316;">
+            <div class="container clearfix">
+
+                <h2 class=" color nott donateh2" >
+                    Annual Charity 2nd Oct, 2020 | UNESCO HK GPC & House of Learning (HOL)
+
+                </h2>
+                <div class=" col-md-12" style="    text-align: center;
+                     display: block;">
+                    <div class="selectlanguage">
+                        <span>Select Language</span>
+                        <select name="selectlng" class="form-control" ng-model="selectlang.select">
+                            <option value="en">English</option>
+                            <option value="ch">Chinese</option>
+                        </select>
+                    </div>
+                    <div class="linkdonate">
+
+                        <a ng-if="selectlang.select == 'en'" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 "  target="_blank" href="https://woodlands-annual-charity-2020.raisely.com">
+                            Donate Now
+                        </a>
+                        <a ng-if="selectlang.select == 'ch'" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 " target="_blank" href="https://woodlands-annual-charity-2020hk.raisely.com">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <section id="content" style="overflow: visible; margin-bottom: 192px!important;">

@@ -69,7 +69,7 @@ $this->load->view('layout/header');
                     <div class="linkdonate">
 
                         <a  class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 "  target="_blank" href="https://woodlands-annual-charity-2020.raisely.com">
-                            Donate Now | 即時捐款
+                            Donate Now&nbsp; |&nbsp; 即時捐款
                         </a>
                      
                     </div>

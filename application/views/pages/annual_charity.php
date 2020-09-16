@@ -37,7 +37,10 @@ $this->load->view('layout/header');
 <!-- Inner Page Banner Area Start Here -->
 <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
     <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 62px;">Annual Charity Lunch and Dinner</h1>
+        <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 62px;">Annual Charity Lunch and Dinner<br/>
+</h1>
+        <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 51px;
+    margin-top: 17px;">週年慈善午餐&晚餐</h1>
     </div>
 </section>
 <!-- Inner Page Banner Area End Here -->
@@ -52,15 +55,17 @@ $this->load->view('layout/header');
                     Annual Charity 2nd Oct, 2020 | UNESCO HK GPC & House of Learning (HOL)
 
                 </h2>
+                
+                <h2 class=" color nott donateh2" >
+                   2020年10月2日週年慈善活動｜香港聯合國教科文組織協會和平中心和腦之家
+
+                </h2>
+                
+                
+                
                 <div class=" col-md-12" style="    text-align: center;
                      display: block;">
-                    <div class="selectlanguage">
-                        <span>Select Language</span>
-                        <select name="selectlng" class="form-control" ng-model="selectlang.select">
-                            <option value="en">English</option>
-                            <option value="ch">Chinese</option>
-                        </select>
-                    </div>
+                  
                     <div class="linkdonate">
 
                         <a ng-if="selectlang.select == 'en'" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 "  target="_blank" href="https://woodlands-annual-charity-2020.raisely.com">

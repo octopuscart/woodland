@@ -10,7 +10,7 @@ $this->load->view('layout/header');
         display: inline-block;
         width: 120px;
     }
-    
+
     .selectlanguage select{
         border-radius: 17px;
     }
@@ -19,16 +19,16 @@ $this->load->view('layout/header');
         display: inline-block;
         padding: 0px 30px;
     }
-    
+
     .selectlanguage span{
-           color: #0a6132!important;
+        color: #0a6132!important;
     }
-    
+
     .donateh2{
-            color: #0a6132!important;
-    font-size: 19px;
-    margin-top: -21px;
-    text-align: center;
+        color: #0a6132!important;
+        font-size: 19px;
+        margin-top: -21px;
+        text-align: center;
     }
 </style>
 
@@ -38,9 +38,9 @@ $this->load->view('layout/header');
 <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
     <div class="container clearfix">
         <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 62px;">Annual Charity Lunch and Dinner<br/>
-</h1>
+        </h1>
         <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 51px;
-    margin-top: 17px;">週年慈善午餐&晚餐</h1>
+            margin-top: 17px;">週年慈善午餐&晚餐</h1>
     </div>
 </section>
 <!-- Inner Page Banner Area End Here -->
@@ -55,25 +55,35 @@ $this->load->view('layout/header');
                     Annual Charity 2nd Oct, 2020 | UNESCO HK GPC & House of Learning (HOL)
 
                 </h2>
-                
+
                 <h2 class=" color nott donateh2" >
-                   2020年10月2日週年慈善活動｜香港聯合國教科文組織協會和平中心和腦之家
+                    2020年10月2日週年慈善活動｜香港聯合國教科文組織協會和平中心和腦之家
 
                 </h2>
-                
-                
-                
+
+
+
                 <div class=" col-md-12" style="    text-align: center;
                      display: block;">
-                  
+
                     <div class="linkdonate">
 
                         <a  class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 "  target="_blank" href="https://woodlands-annual-charity-2020.raisely.com">
                             Donate Now&nbsp; |&nbsp; 即時捐款
                         </a>
-                     
+
                     </div>
                 </div>
+
+
+                <div class="row" style="text-align: center;margin-top:20px;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/uI8ARH4dmH4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
             </div>
         </div>
     </div>

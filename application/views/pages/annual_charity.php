@@ -68,12 +68,10 @@ $this->load->view('layout/header');
                   
                     <div class="linkdonate">
 
-                        <a ng-if="selectlang.select == 'en'" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 "  target="_blank" href="https://woodlands-annual-charity-2020.raisely.com">
+                        <a  class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 "  target="_blank" href="https://woodlands-annual-charity-2020.raisely.com">
                             Donate Now
                         </a>
-                        <a ng-if="selectlang.select == 'ch'" class="button button-circle button-xlarge colordarkgreen bg-white button-light text-white nott ls0 font-primary ml-0 mt-3 mt-md-0 " target="_blank" href="https://woodlands-annual-charity-2020hk.raisely.com">
-                            Donate Now
-                        </a>
+                     
                     </div>
                 </div>
             </div>

@@ -32,7 +32,7 @@ class Email extends CI_Controller {
         $subject = "";
         $this->email->subject($subject);
         $checkcode = REPORT_MODE;
-        if ($checkcode != '') {
+        if ($checkcode == '') {
             echo $this->load->view('Email/charity', array(), true);
         } else {
             $this->email->message($this->load->view('Email/charity', array(), true));

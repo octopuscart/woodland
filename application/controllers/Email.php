@@ -29,7 +29,7 @@ class Email extends CI_Controller {
         $this->email->from($email_bcc, $sendername);
         $this->email->to("octopuscartltd@gmail.com");
          $this->email->bcc($email_bcc);
-        $subject = "";
+        $subject = "Woodlands Annual Charity Lunch And Dinner";
         $this->email->subject($subject);
         $checkcode = REPORT_MODE;
         if ($checkcode == '') {

@@ -96,7 +96,7 @@
                         <P>Dear Test name, </P>
 
 
- <P>Greetings from Woodlands</P>
+ <P>Greetings from Woodlands.</P>
 
 
  <P>Thank you very much for your contribution towards our Annual Charity Event<br/> on the 2nd October 2020.</P> 
@@ -115,7 +115,7 @@
 
 
 
-     <P>Thank you very much for your support</P> 
+     <P>Thank you very much for your support.</P> 
                     </td>
                 </tr>  
                 <tr>

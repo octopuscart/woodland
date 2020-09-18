@@ -21,28 +21,26 @@ class Email extends CI_Controller {
         redirect('/');
     }
 
-   public function sendMail(){
+    public function sendMail() {
         setlocale(LC_MONETARY, 'en_US');
-        $emailsender = EMAIL_SENDER;
-        $sendername = EMAIL_SENDER_NAME;
-        $email_bcc = EMAIL_BCC;
-
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
         $this->email->from(EMAIL_BCC, $sendername);
-        //$this->email->to("bespoke@biznetvigator.com");
         $this->email->to("octopuscartltd@gmail.com");
-       // $this->email->bcc("octopuscartltd@gmail.com");
-        $subject = "Bespoke Tailors Special Deals August 2019";
+         $this->email->bcc($email_bcc);
+        $subject = "";
         $this->email->subject($subject);
         $checkcode = REPORT_MODE;
-        if ($checkcode != 0) {
-//                ob_clean();
-            echo $this->load->view('Email/general', array(), true);
+        if ($checkcode != '') {
+            echo $this->load->view('Email/charity', array(), true);
         } else {
-           $this->email->message($this->load->view('Email/general', array(), true));
-           $this->email->print_debugger();
+            $this->email->message($this->load->view('Email/charity', array(), true));
+            $this->email->print_debugger();
             echo $result = $this->email->send();
         }
-   }
+    }
+
 }
 ?>
 

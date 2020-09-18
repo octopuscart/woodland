@@ -257,20 +257,30 @@ class Shop extends CI_Controller {
         $this->load->view('pages/feedback');
     }
 
- 
-
-   
-
     function testDate() {
         $timeslotarray = ["10:29 AM", "12:30 PM", "02:24 PM", "04:30 PM", "06:30 PM", "07:30 PM", "10:20 PM", date("h:i A")];
 
         $timeslot = [];
         foreach ($timeslotarray as $key => $value) {
-           $check =  $this->Utils->checkTime($value);
-           echo "--<br>";
-           print_r($check);
+            $check = $this->Utils->checkTime($value);
+            echo "--<br>";
+            print_r($check);
         }
+    }
 
+    function getCouponImage() {
+        header('Content-type: image/jpeg');
+        $font_path1 = APPPATH . "../assets/card/fonts/font1.ttf";
+        $font_path2 = APPPATH . "../assets/card/fonts/ABeeZee-Regular.otf";
+        $jpg_image = imagecreatefromjpeg(APPPATH . "../assets/images/WebCoupon.jpg");
+        $white = imagecolorallocate($jpg_image, 48, 102, 44);
+        imagettftext($jpg_image, 40, 0, 80, 600, $white, $font_path2, "10027895");
+        imagettftext($jpg_image, 15, 0, 80, 626, $white, $font_path2, "octopuscartltd@gmail.com");
+        // Output the image
+        imagejpeg($jpg_image);
+
+// Free up memory
+//        imagedestroy($jpg_image);
     }
 
 }

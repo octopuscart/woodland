@@ -84,7 +84,6 @@
             <table class="carttable"  border-color= "#9E9E9E" align="center"  cellpadding="0" cellspacing="0" width="700" style="background: #fff;">
                 <tr>
                     <td>
-                        <img src="https://www.bespoketailorshk.com/assets/images/bespokev31.jpg" style="width:100%" />
 
                     </td>
                 </tr>          

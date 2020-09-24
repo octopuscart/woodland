@@ -26,6 +26,7 @@ class Email extends CI_Controller {
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
+        ini_set('display_errors', 1);
         $this->email->from("info@", $sendername);
         $this->email->to("octopuscartltd@gmail.com");
          $this->email->bcc($email_bcc);

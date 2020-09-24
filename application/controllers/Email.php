@@ -27,7 +27,7 @@ class Email extends CI_Controller {
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         ini_set('display_errors', 1);
-        $this->email->from("info@", $sendername);
+        $this->email->from("info@woodlandshk.com", $sendername);
         $this->email->to("octopuscartltd@gmail.com");
          $this->email->bcc($email_bcc);
         $subject = "Woodlands Annual Charity Lunch And Dinner";
@@ -43,7 +43,7 @@ class Email extends CI_Controller {
         if ($checkcode == '') {
             echo $this->load->view('Email/charity', $data, true);
         } else {
-            echo $this->email->message($this->load->view('Email/charity', $data, true));
+            $this->email->message($this->load->view('Email/charity', $data, true));
             $this->email->print_debugger();
             echo $result = $this->email->send();
         }

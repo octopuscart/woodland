@@ -26,16 +26,23 @@ class Email extends CI_Controller {
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
-        $this->email->from($email_bcc, $sendername);
+        $this->email->from("info@", $sendername);
         $this->email->to("octopuscartltd@gmail.com");
          $this->email->bcc($email_bcc);
         $subject = "Woodlands Annual Charity Lunch And Dinner";
         $this->email->subject($subject);
         $checkcode = REPORT_MODE;
+        
+        $useremail =  $this->input->get('useremail');
+        
+        $randomno = "1002".rand(1000, 9999);
+        $data['useremail'] = $useremail;
+        $data['coupon_no'] = $randomno;
+        
         if ($checkcode == '') {
-            echo $this->load->view('Email/charity', array(), true);
+            echo $this->load->view('Email/charity', $data, true);
         } else {
-            $this->email->message($this->load->view('Email/charity', array(), true));
+            $this->email->message($this->load->view('Email/charity', $data, true));
             $this->email->print_debugger();
             echo $result = $this->email->send();
         }

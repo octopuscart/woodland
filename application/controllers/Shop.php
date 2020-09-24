@@ -268,14 +268,15 @@ class Shop extends CI_Controller {
         }
     }
 
-    function getCouponImage() {
+    function getCouponImage($couponcode) {
         header('Content-type: image/jpeg');
         $font_path1 = APPPATH . "../assets/card/fonts/font1.ttf";
         $font_path2 = APPPATH . "../assets/card/fonts/ABeeZee-Regular.otf";
         $jpg_image = imagecreatefromjpeg(APPPATH . "../assets/images/WebCoupon.jpg");
         $white = imagecolorallocate($jpg_image, 48, 102, 44);
-        imagettftext($jpg_image, 40, 0, 80, 600, $white, $font_path2, "10027895");
-        imagettftext($jpg_image, 15, 0, 80, 626, $white, $font_path2, "octopuscartltd@gmail.com");
+        $useremail =  $this->input->get('client_email');
+        imagettftext($jpg_image, 40, 0, 80, 600, $white, $font_path2, $couponcode);
+        imagettftext($jpg_image, 15, 0, 80, 626, $white, $font_path2, $useremail);
         // Output the image
         imagejpeg($jpg_image);
 

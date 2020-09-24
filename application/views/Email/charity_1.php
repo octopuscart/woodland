@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
             .carttable{
@@ -95,41 +95,36 @@
                     <td style="font-size: 15px;">
                         <P>Dear Test name, </P>
 
-                        <p>Greetings from Woodlands.<br/>
-                            Woodlands 送上親切的問候。
-                        </p>
-                        <p>
-                            Thank you very much for your contribution towards our Annual Charity Event on the 2nd October 2020.<br/>
-                            非常感謝你對我們2020年10月2日週年慈善活動的踴躍支持。
-                        </p>
-                        <p>
-                            EAT AS MUCH AS YOU CAN<br/>
-                            素食任你食
-                        </p>
 
-                        <p>
-                            PAY AS MUCH AS YOU WANT<br/>
-                            價錢任你定
-                        </p>
+ <P>Greetings from Woodlands.</P>
 
-                        <p>
-                            In appreciation of your contribution, kindly accept our donor coupon which can be used till 2nd Apr,2021 for dine-in in our restaurant. <br/>
-                            為表感謝你的捐贈，請接受我們送贈上的捐贈優惠劵，可於2021年4月2日前隨時到我們餐廳享用。
-                        </p>
-                        <p>
-                            Thank you very much for your support.<br/>
-                            再一次多謝你的支持。<br/>
-                           
-                        </p>
+
+ <P>Thank you very much for your contribution towards our Annual Charity Event<br/> on the 2nd October 2020.</P> 
+
+
+
+ <P>EAT AS MUCH AS YOU CAN</P>
+
+
+ <P>PAY AS MUCH AS YOU WISH</P>
+
+
+
+
+ <P>In appreciation of your contribution, kindly accept our donor coupon which can be used till 2nd Apr, 2021 for dine-in in our restaurant. </P>
+
+
+
+     <P>Thank you very much for your support.</P> 
                     </td>
                 </tr>  
                 <tr>
                     <td style="padding: 0;">
                         <div class="">
-                            <img src="<?php echo site_url('Shop/getCouponImage/'. $coupon_no.'?client_email='.$useremail); ?>" style="width: 100%" />
+                            <img src="<?php echo site_url('Shop/getCouponImage');?>" style="width: 100%" />
                         </div>
-
-
+                        
+                   
                     </td>
                 </tr>  
 

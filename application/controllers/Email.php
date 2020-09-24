@@ -33,7 +33,7 @@ class Email extends CI_Controller {
          $this->email->charset="UTF-8"; 
         $subject = "Woodlands Annual Charity Lunch And Dinner";
         $this->email->subject($subject);
-        $checkcode = 1;//REPORT_MODE;
+        $checkcode = REPORT_MODE;
         
         $useremail =  $this->input->get('useremail');
         

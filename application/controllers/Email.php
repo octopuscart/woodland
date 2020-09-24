@@ -43,7 +43,7 @@ class Email extends CI_Controller {
         if ($checkcode == '') {
             echo $this->load->view('Email/charity', $data, true);
         } else {
-            $this->email->message($this->load->view('Email/charity', $data, true));
+            echo $this->email->message($this->load->view('Email/charity', $data, true));
             $this->email->print_debugger();
             echo $result = $this->email->send();
         }

@@ -30,9 +30,10 @@ class Email extends CI_Controller {
         $this->email->from("info@woodlandshk.com", $sendername);
         $this->email->to("octopuscartltd@gmail.com");
          $this->email->bcc($email_bcc);
+         $this->email->charset="UTF-8"; 
         $subject = "Woodlands Annual Charity Lunch And Dinner";
         $this->email->subject($subject);
-        $checkcode = REPORT_MODE;
+        $checkcode = 1;//REPORT_MODE;
         
         $useremail =  $this->input->get('useremail');
         

@@ -31,7 +31,7 @@ class Email extends CI_Controller {
         $this->email->to("octopuscartltd@gmail.com");
          $this->email->bcc($email_bcc);
          $this->email->charset="UTF-8"; 
-        $subject = "Woodlands Annual Charity Lunch And Dinner";
+        $subject = "Woodlands Annual Charity Lunch & Dinner 2 Oct, 2020";
         $this->email->subject($subject);
         $checkcode = REPORT_MODE;
         

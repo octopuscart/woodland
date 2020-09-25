@@ -30,6 +30,9 @@ $this->load->view('layout/header');
         margin-top: -21px;
         text-align: center;
     }
+    .table-donatelist td{
+        text-align: left;
+    }
 </style>
 
 
@@ -92,11 +95,11 @@ $this->load->view('layout/header');
 
 <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
     <div class="content-wrap1 charity-block">
-        <div class="section nomargin clearfix" style="padding: 10px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/45.jpg') center center no-repeat; background-size: 100% auto">
+        <div class="section nomargin clearfix" style="padding: 10px 0; background:#fff; background-size: 100% auto">
             <div class="container clearfix">
 
                 <div class="row clearfix">
-                    <div class="col-lg-7 bottommargin-sm">
+                    <div class="col-lg-12 text-center bottommargin-sm">
                         <div class="heading-block nobottomborder bottommargin-sm">
                             <h2 class="font-secondary color nott" style="color:#000!important;">
                                 Caring about the Community
@@ -104,7 +107,7 @@ $this->load->view('layout/header');
                         </div>
                         <div class="feature-box media-box" style="">
                             <p>
-                                Caring and Sharing with the community has been a Tradition of Woodlands, not just recently but from the beginning of the Woodlands Restaurant Since the Year 1981. 
+                                Caring and Sharing with the community has been a Tradition of Woodlands, <br/>not just recently but from the beginning of the Woodlands Restaurant Since the Year 1981. 
                             </p>
                             <p>
 
@@ -118,7 +121,7 @@ $this->load->view('layout/header');
                             <p>
                                 The Organizations we donated are listed below
                             </p>
-                            <table>
+                            <table style="display: inline;" class="table table-donatelist">
                                 <tr>
                                     <td>OXFAM	</td>		
                                     <td>: 1985 - 1993</td>

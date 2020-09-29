@@ -9,7 +9,7 @@ $this->load->view('layout/header');
     </div>
 </section>
 
-<section id="content" style="overflow: visible;"  ng-controller="ProductController" >
+<section id="content" style="overflow: visible;" >
     <div class="content-wrap nopadding" style="background: url(http://localhost/woodlandshk/assets/theme2/res/images/food-pattern.png) center center repeat rgb(245, 245, 245);">
         <div class="container">
             <div class="tabs tabs-justify clear-bottommargin clearfix" id="tab-1">
@@ -58,7 +58,7 @@ $this->load->view('layout/header');
                                                 <input type="text" id="template-contactform-phone" name="contact" value="" class="sm-form-control border-form-control required" placeholder="Contact No." required="">
                                             </div>
                                             <div class="col-sm-6 mb-3 input-daterange travel-date-group">
-                                                <input type="date" id="template-contactform-subject" name="select_date" value="" class="sm-form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d")?>">
+                                                <input type="date" id="template-contactform-subject" name="select_date" value="" class="sm-form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>">
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-6 mb-3">
@@ -67,10 +67,10 @@ $this->load->view('layout/header');
                                                     <option value="12:00">12:00 - 13:00</option>
                                                     <option value="13:00">13:00 - 14:00</option>
                                                     <option value="14:00">14:00 - 15:00</option>
-<!--                                                    <option value="18:00">18:00 - 19:00</option>
-                                                    <option value="19:00">19:00 - 20:00</option>
-                                                    <option value="20:00">20:00 - 21:00</option>
-                                                    <option value="21:00">21:00 - 22:00</option>-->
+                                                    <!--                                                    <option value="18:00">18:00 - 19:00</option>
+                                                                                                        <option value="19:00">19:00 - 20:00</option>
+                                                                                                        <option value="20:00">20:00 - 21:00</option>
+                                                                                                        <option value="21:00">21:00 - 22:00</option>-->
                                                 </select>
                                             </div>
                                             <div class="col-6 mb-3">
@@ -203,3 +203,28 @@ $this->load->view('layout/header');
 <?php
 $this->load->view('layout/footer');
 ?>
+<script>
+    var date = document.querySelector('[type=date]');
+
+    function noMondays(e) {
+
+        var day = e.target.value;
+        console.log(day)
+
+        // Days in JS range from 0-6 where 0 is Sunday and 6 is Saturday
+
+        if (day == '2020-10-02') {
+            console.log("test")
+
+            alert('Booking Not Available On 2nd Oct.');
+            e.target.value = "";
+
+        } else {
+
+
+        }
+
+    }
+
+    date.addEventListener('input', noMondays);
+</script>

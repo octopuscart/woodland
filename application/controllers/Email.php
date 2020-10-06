@@ -56,10 +56,13 @@ class Email extends CI_Controller {
 
 
         $useremail = $this->input->get('useremail');
+        $username = $this->input->get('name');
+        
 
         $randomno = "1002" . rand(1000, 9999);
         $data['useremail'] = $useremail;
         $data['coupon_no'] = $randomno;
+        $data['name'] = $username;
 
         if ($checkcode == '') {
             echo $this->load->view('Email/charity', $data, true);

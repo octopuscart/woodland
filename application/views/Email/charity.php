@@ -93,7 +93,7 @@
             <table class="carttable"  border-color= "#9E9E9E" align="center"  cellpadding="0" cellspacing="0" width="700" style="background: #fff;">
                 <tr>
                     <td style="font-size: 15px;">
-                        <P>Dear Test name, </P>
+                        <P>Dear <?php echo $name;?>, </P>
 
                         <p>Greetings from Woodlands.<br/>
                             Woodlands 送上親切的問候。

@@ -39,25 +39,26 @@ class Email extends CI_Controller {
             'crlf' => "\r\n",
             'newline' => "\r\n"
         ));
-        
+
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         ini_set('display_errors', 1);
+        $useremail = $this->input->get('useremail');
+        $username = $this->input->get('name');
         $this->email->from("info@woodlandshk.com", $sendername);
-        $this->email->to("octopuscartltd@gmail.com");
+        $this->email->to($useremail);
         $this->email->bcc($email_bcc);
         $this->email->charset = "UTF-8";
         $subject = "Woodlands Annual Charity Lunch & Dinner 2 Oct, 2020";
         $this->email->subject($subject);
         $checkcode = REPORT_MODE;
 
-        
 
 
-        $useremail = $this->input->get('useremail');
-        $username = $this->input->get('name');
-        
+
+
+
 
         $randomno = "1002" . rand(1000, 9999);
         $data['useremail'] = $useremail;

@@ -61,7 +61,7 @@ class Email extends CI_Controller {
         $data['useremail'] = $useremail;
         $data['coupon_no'] = $randomno;
 
-        if ($checkcode == '1') {
+        if ($checkcode == '') {
             echo $this->load->view('Email/charity', $data, true);
         } else {
             $this->email->message($this->load->view('Email/charity', $data, true));

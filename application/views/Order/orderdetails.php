@@ -136,6 +136,17 @@ $paymentstatus = "";
                                         <i class="fa fa-envelope"></i> Request Order Copy On Mail
                                     </button>
 
+                                    <?php
+                                    if ($order_data->payment_mode == 'PayMe') {
+                                        ?>
+                                        <div class='col-md-12' style="margin-top: 10px;">
+                                            <div class="proceed-button" style="text-align: center;">
+                                                <a href="<?php echo site_url('Order/orderPayMe/' . $order_data->order_key); ?>" class="btn-apply-coupon checkout_button_pre " style="background: #da0010;">Pay Now Using PayMe<i class="fa fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
 
 
 
@@ -371,7 +382,7 @@ $paymentstatus = "";
                                                         <td colspan="2" style="text-align: right">Sub Total</td>
                                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
                                                     </tr>
-                                                     <tr>
+                                                    <tr>
                                                         <td colspan="2" style="text-align: right">Discount</td>
                                                         <td style="text-align: right;width: 60px">{{<?php echo $order_data->credit_price; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
                                                     </tr>

@@ -139,10 +139,11 @@ $paymentstatus = "";
                                     <?php
                                     if ($order_data->payment_mode == 'PayMe') {
                                         ?>
-                                        <div class='col-md-12' style="margin-top: 10px;">
+                                        <div class='col-md-12 text-center' style="margin-top: 10px;">
                                             <div class="proceed-button" style="text-align: center;">
                                                 <a href="<?php echo site_url('Order/orderPayMe/' . $order_data->order_key); ?>" class="btn-apply-coupon checkout_button_pre " style="background: #da0010;">Pay Now Using PayMe<i class="fa fa-arrow-right"></i></a>
                                             </div>
+                                            <span>(Ignore If Already Paid)</span>
                                         </div>
                                         <?php
                                     }

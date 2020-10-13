@@ -81,7 +81,7 @@
             <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff;">
                 <tr>
                     <td >
-                        <center><img src="<?php echo base_url(); ?>assets/images/headercopuon.jpg" style="
+                        <center><img src="https://www.woodlandshk.com/assets/images/headercopuon.jpg" style="
                                      width: 700px"/><br/>
                         </center>
                     </td>
@@ -126,7 +126,7 @@
                 <tr>
                     <td style="padding: 0;">
                         <div class="">
-                            <img src="<?php echo site_url('Shop/getCouponImage/'. $coupon_no.'?client_email='.$useremail); ?>" style="width: 100%" />
+                            <img src="<?php echo 'https://www.woodlandshk.com/Shop/getCouponImage/'. $coupon_no.'?client_email='.$useremail; ?>" style="width: 100%" />
                         </div>
 
 

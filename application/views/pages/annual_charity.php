@@ -66,7 +66,7 @@ $this->load->view('layout/header');
 
 
 
-                <div class=" col-md-12" style="    text-align: center;
+<!--                <div class=" col-md-12" style="    text-align: center;
                      display: block;">
 
                     <div class="linkdonate">
@@ -76,13 +76,13 @@ $this->load->view('layout/header');
                         </a>
 
                     </div>
-                </div>
+                </div>-->
 
 
                 <div class="row" style="text-align: center;margin-top:20px;">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
-                       <iframe width="560" height="315" src="https://www.youtube.com/embed/uI8ARH4dmH4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/zgYpG-ThKvk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
@@ -173,15 +173,13 @@ $this->load->view('layout/header');
     <!-- Content -->
 
     <section style="overflow: visible;">
-        <div class="row" style="text-align: center">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <video  controls style="display: inline-block;width:100%;    width: 100%;    border-radius: 19px;    margin-bottom: 20px;">
-                    <source src="<?php echo base_url(); ?>assets/theme2/images/SilencePromoVideo.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
+        <div class="row" style="text-align: center;margin-top:20px;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/uI8ARH4dmH4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
 
         <?php
         $this->load->view('layout/contactfooter');

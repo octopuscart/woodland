@@ -292,7 +292,7 @@ class Shop extends CI_Controller {
     }
 
     function getCouponImage($couponcode) {
-        $email = $this->input->get("email");
+        $email = $this->input->get("client_email");
         $this->db->where('email', $email); //set column_name and value in which row need to update
         $query = $this->db->get('mailer_contacts2');
         $contactdata = $query->row();

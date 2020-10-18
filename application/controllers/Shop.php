@@ -257,6 +257,29 @@ class Shop extends CI_Controller {
         $this->load->view('pages/feedback');
     }
 
+    function getCoupon() {
+        $data['message'] = "";
+        $data['status'] = '0';
+        $data['email'] = "";
+        if (isset($_GET['submitdata'])) {
+            $email = $this->input->get("email");
+            $this->db->where('email', $email); //set column_name and value in which row need to update
+            $query = $this->db->get('mailer_contacts2');
+            $contactdata = $query->row();
+            if ($contactdata) {
+                $data['status'] = '1';
+                $couponcode = $contactdata->full_name;
+                $data['couponcode'] = $couponcode;
+                $data['email'] = $email;
+            } else {
+                $data['status'] = '2';
+                $data['email'] = $email;
+                $data['message'] = "Email address not found in record.";
+            }
+        }
+        $this->load->view('pages/couponget', $data);
+    }
+
     function testDate() {
         $timeslotarray = ["10:29 AM", "12:30 PM", "02:24 PM", "04:30 PM", "06:30 PM", "07:30 PM", "10:20 PM", date("h:i A")];
 
@@ -269,16 +292,25 @@ class Shop extends CI_Controller {
     }
 
     function getCouponImage($couponcode) {
-        header('Content-type: image/jpeg');
-        $font_path1 = APPPATH . "../assets/card/fonts/font1.ttf";
-        $font_path2 = APPPATH . "../assets/card/fonts/ABeeZee-Regular.otf";
-        $jpg_image = imagecreatefromjpeg(APPPATH . "../assets/images/WebCoupon.jpg");
-        $white = imagecolorallocate($jpg_image, 48, 102, 44);
-        $useremail =  $this->input->get('client_email');
-        imagettftext($jpg_image, 40, 0, 80, 600, $white, $font_path2, $couponcode);
-        imagettftext($jpg_image, 15, 0, 80, 626, $white, $font_path2, $useremail);
-        // Output the image
-        imagejpeg($jpg_image);
+        $email = $this->input->get("email");
+        $this->db->where('email', $email); //set column_name and value in which row need to update
+        $query = $this->db->get('mailer_contacts2');
+        $contactdata = $query->row();
+        if ($contactdata) {
+            header('Content-type: image/jpeg');
+            $font_path1 = APPPATH . "../assets/card/fonts/font1.ttf";
+            $font_path2 = APPPATH . "../assets/card/fonts/ABeeZee-Regular.otf";
+            $jpg_image = imagecreatefromjpeg(APPPATH . "../assets/images/WebCoupon.jpg");
+            $white = imagecolorallocate($jpg_image, 48, 102, 44);
+            $useremail = $this->input->get('client_email');
+            imagettftext($jpg_image, 40, 0, 80, 600, $white, $font_path2, $couponcode);
+            imagettftext($jpg_image, 15, 0, 80, 626, $white, $font_path2, $useremail);
+            // Output the image
+            imagejpeg($jpg_image);
+        }
+        else{
+            echo "No Data Found";
+        }
 
 // Free up memory
 //        imagedestroy($jpg_image);

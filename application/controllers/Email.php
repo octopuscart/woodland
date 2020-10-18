@@ -97,7 +97,7 @@ class Email extends CI_Controller {
         $data['coupon_no'] = $randomno;
 //        $data['name'] = $username;
         $data['name'] = "Sir/Ma'am";
-        
+
 
 
         $result = "";
@@ -173,6 +173,19 @@ class Email extends CI_Controller {
             $this->email->message($this->load->view('Email/charity', $data, true));
             $this->email->print_debugger();
             echo $result = $this->email->send();
+        }
+    }
+
+    function getCouponByEmail() {
+        $email = $this->input->get("email");
+        $this->db->where('email', $email); //set column_name and value in which row need to update
+        $query = $this->db->get('mailer_contacts2');
+
+        $contactdata = $query->row();
+        if ($contactdata) {
+            $couponcode = $contactdata->full_name;
+            echo  "<img src='https://www.woodlandshk.com/Shop/getCouponImage/$couponcode?client_email=$email' style='width: 100%'>";
+
         }
     }
 

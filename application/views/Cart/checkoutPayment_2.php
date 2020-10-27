@@ -168,8 +168,7 @@ $this->load->view('layout/header');
                                                                 ?>
 
 
-                                                                <li class="nav-item"><a href="#alipay" class="nav-link " data-toggle="tab" aria-expanded="false">Alipay</a></li>
-                                                                <li class="nav-item"><a href="#wechat" class="nav-link " data-toggle="tab" aria-expanded="false">WeChat</a></li>
+
                                                                 <li class="nav-item"><a href="#payme" class="nav-link " data-toggle="tab" aria-expanded="false">PayMe</a></li>
 
 
@@ -305,35 +304,13 @@ $this->load->view('layout/header');
 
 
                                                                 <div class="tab-pane fade " id="payme">
-                                                                    <div class='col-md-12'>
+                                                                    <p>
+                                                                        <img src="<?php echo base_url(); ?>assets/paymentstatus/payme_red_on_white_bg.png" style="width: 293px;">                
 
-                                                                        <p style='font-size: 19px;
-                                                                           font-weight: 600;
-                                                                           color: red;'>Pay Using PayMe HKQR code and send us screenshot of payment, will proceed your order after confirmation.</p>
-                                                                    </div>
-                                                                    <div class='row' style='text-align: center;'>
-                                                                        <div class='col-md-12'>
-                                                                            <p>
-                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/payme2.jpg" style="height: 400px;">                
-
-                                                                            </p>
-                                                                        </div>
+                                                                    </p>
 
 
-                                                                        <div class='col-md-12' style="margin-bottom: 10px;">
-                                                                            <div class="proceed-button" style="text-align: center;">
-                                                                                <button type="button" class="btn-apply-coupon checkout_button_pre " onclick="myFunction()" style="background: #da0010;">Copy Payment Link</button>
-                                                                            </div>
-                                                                            <br/>
-
-                                                                            <input type="text" class="form-control"  value="https://19981.paymebiz.hsbc.com.hk/payments/qr-codes/Evyc1DNL6brCDb3UaRPXF" id="myInput" style="border: none;
-                                                                                   text-align: center;">
-
-                                                                        </div>
-
-
-
-                                                                    </div>
+                                                                 
                                                                     <div class="cart-page-top table-responsive">
                                                                         <table class="table table-hover">
                                                                             <tbody id="quantity-holder">
@@ -355,71 +332,8 @@ $this->load->view('layout/header');
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="tab-pane fade " id="alipay">
 
-                                                                    <div class='row' style='text-align: center;'>
-                                                                        <div class='col-md-12'>
-                                                                            <p>
-                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" style="height: 100px;">                
 
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <div class="cart-page-top table-responsive">
-                                                                        <table class="table table-hover">
-                                                                            <tbody id="quantity-holder">
-                                                                                <tr>
-                                                                                    <td colspan="4" class="text_right">
-                                                                                        <div class="proceed-button pull-left " >
-                                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                                        </div>
-                                                                                        <div class="proceed-button pull-right ">
-                                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Alipay">
-                                                                                                Place Order <i class="fa fa-arrow-right"></i>
-                                                                                            </button>                                                                   
-                                                                                        </div>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                 <div class="tab-pane fade " id="wechat">
-
-                                                                    <div class='row' style='text-align: center;'>
-                                                                        <div class='col-md-12'>
-                                                                            <p>
-                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" style="height: 100px;">                
-
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <div class="cart-page-top table-responsive">
-                                                                        <table class="table table-hover">
-                                                                            <tbody id="quantity-holder">
-                                                                                <tr>
-                                                                                    <td colspan="4" class="text_right">
-                                                                                        <div class="proceed-button pull-left " >
-                                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
-                                                                                        </div>
-                                                                                        <div class="proceed-button pull-right ">
-                                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="WeChat">
-                                                                                                Place Order <i class="fa fa-arrow-right"></i>
-                                                                                            </button>                                                                   
-                                                                                        </div>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-
-                                                                    </div>
-                                                                </div>
-
-                                                            
 
                                                             </div>
                                                         </div>

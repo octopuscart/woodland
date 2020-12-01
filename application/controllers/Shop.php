@@ -113,6 +113,19 @@ class Shop extends CI_Controller {
     }
 
     public function booknow() {
+         $cdate = date("Y-m-d");
+        $this->db->where('select_date >=', $cdate);
+        $this->db->order_by("select_date");
+        $query = $this->db->get('booking_date_block');
+        $listofdatetemp = $query->result_array();
+        $listofdate = array();
+        foreach ($listofdatetemp as $key => $value) {
+            array_push($listofdate, $value['select_date']);
+            $disabledates[$value['select_date']] = $value['select_date'];
+        }
+
+        $data['datelist'] = $listofdate;
+        
         if (isset($_POST['booknow'])) {
             $booking_order = array(
                 'name' => $this->input->post('name'),
@@ -172,7 +185,7 @@ class Shop extends CI_Controller {
             }
             redirect("book-now");
         }
-        $this->load->view('pages/booknow');
+        $this->load->view('pages/booknow', $data);
     }
 
     public function blog($pageno = 0) {

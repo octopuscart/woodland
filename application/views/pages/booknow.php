@@ -9,8 +9,8 @@ $this->load->view('layout/header');
     </div>
 </section>
 
-<section id="content" style="overflow: visible;" >
-    <div class="content-wrap nopadding" style="background: url(http://localhost/woodlandshk/assets/theme2/res/images/food-pattern.png) center center repeat rgb(245, 245, 245);">
+<section id="content" style="overflow: visible;" ng-controller="bookController" >
+    <div class="content-wrap nopadding" style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/food-pattern.png) center center repeat rgb(245, 245, 245);">
         <div class="container">
             <div class="tabs tabs-justify clear-bottommargin clearfix" id="tab-1">
                 <ul class="tab-nav clearfix border-bottom-0">
@@ -58,7 +58,7 @@ $this->load->view('layout/header');
                                                 <input type="text" id="template-contactform-phone" name="contact" value="" class="sm-form-control border-form-control required" placeholder="Contact No." required="">
                                             </div>
                                             <div class="col-sm-6 mb-3 input-daterange travel-date-group">
-                                                <input type="date" id="template-contactform-subject" name="select_date" value="" class="sm-form-control border-form-control tleft required" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>">
+                                                <input type="text" id="selecteddate" name="select_date" value="" class="sm-form-control border-form-control tleft required datepicker" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" autocomplete="off">
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-6 mb-3">
@@ -67,10 +67,10 @@ $this->load->view('layout/header');
                                                     <option value="12:00">12:00 - 13:00</option>
                                                     <option value="13:00">13:00 - 14:00</option>
                                                     <option value="14:00">14:00 - 15:00</option>
-                                                    <!--                                                    <option value="18:00">18:00 - 19:00</option>
-                                                                                                        <option value="19:00">19:00 - 20:00</option>
-                                                                                                        <option value="20:00">20:00 - 21:00</option>
-                                                                                                        <option value="21:00">21:00 - 22:00</option>-->
+                                                    <option value="18:30">18:30 - 19:00</option>
+                                                    <option value="19:00">19:00 - 20:00</option>
+                                                    <option value="20:00">20:00 - 21:00</option>
+                                                    <option value="21:00">21:00 - 22:00</option>
                                                 </select>
                                             </div>
                                             <div class="col-6 mb-3">
@@ -199,10 +199,21 @@ $this->load->view('layout/header');
     <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
 </section>
 
+<script>
+var listofbookeddate = <?php echo json_encode($datelist);?>
+</script>
 
 <?php
 $this->load->view('layout/footer');
 ?>
+
+<!--<script src="<?php echo base_url(); ?>assets/jqlib/jquery-3.4.1.slim.min.js"></script>-->
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jqlib/jquery-ui.css">
+
+<!--<script src="<?php echo base_url(); ?>assets/jqlib/jquery-1.12.4.js"></script>-->
+<script src="<?php echo base_url(); ?>assets/jqlib/jquery-ui.js"></script>
+<script src="<?php echo base_url(); ?>assets/jqlib/moment.js"></script>
 <script>
     var date = document.querySelector('[type=date]');
 

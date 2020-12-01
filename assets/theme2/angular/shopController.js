@@ -389,6 +389,70 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
     })
 })
 
+App.controller('bookController', function ($scope, $http, $timeout, $interval, $filter) {
+
+    $scope.bookinit = {"selectdate": "", "predate": "", "defaultdate": ""};
+    $timeout(function () {
+        $scope.bookinit.selectdate = $scope.bookinit.predate;
+
+    }, 1500);
+
+    var datearray = listofbookeddate;
+    $scope.getnextDate = function (tdate) {
+        var next_date = moment(tdate).add(1, 'days');
+        return (next_date.format("YYYY-MM-DD"));
+    }
+    var nextAvailableDate = moment().format("YYYY-MM-DD");
+    var nextAvailableDate2 = moment().format("YYYY-MM-DD");
+
+
+    for (dt in datearray) {
+        var ddt = $scope.getnextDate(datearray[dt]);
+        var ddt2 = datearray[Number(dt) + 1];
+        if (ddt != ddt2) {
+            nextAvailableDate = ddt;
+            break
+        }
+    }
+    
+    if (datearray.indexOf(nextAvailableDate2) > (-1)) {
+        $("#selecteddate").val(nextAvailableDate);
+    } else {
+        $("#selecteddate").val(nextAvailableDate2);
+    }
+
+
+
+
+
+    $(function () {
+
+        var datepickerobj =jQuery(".datepicker").datepicker({
+
+            "dateFormat": "yy-mm-dd",
+            minDate: -0,
+            beforeShowDay: function (date) {
+                var string = $.datepicker.formatDate('yy-mm-dd', date);
+                return [datearray.indexOf(string) == -1]
+            },
+            onSelect: function (dateselect) {
+
+                $timeout(function () {
+                    $scope.bookinit.selectdate = dateselect;
+                }, 1000)
+            }
+        });
+
+
+
+    });
+
+
+    $scope.changeDate = function () {
+        console.log($scope.bookinit)
+    }
+
+})
 
 
 

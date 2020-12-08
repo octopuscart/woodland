@@ -153,7 +153,15 @@ $this->load->view('layout/header');
                                                         </td>
                                                         <td></td>
                                                     </tr>
-
+                                                    <tr>
+                                                        <td colspan="3" class="text_right">
+                                                            DISCOUNT 
+                                                        </td>
+                                                        <td class="text-center amount">
+                                                            {{globleCartData.discount|currency:"<?php echo globle_currency; ?>"}}
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
                                                     <tr>
                                                         <td colspan="3" class="text_right">
                                                             SHIPPING 

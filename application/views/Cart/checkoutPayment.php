@@ -131,6 +131,9 @@ $this->load->view('layout/header');
                                     </div>
                                     <!-- Address Details -->
                                     <div class="card-body">
+                                        <?php
+                                        $this->load->view('Cart/carttotal');
+                                        ?>
                                         <div class="order-sheet product-details2-area" style="margin-top: 5px;padding:0">
                                             <form action="#" method="post">
                                                 <div class="product-details-tab-area" style="margin: 0;">
@@ -365,7 +368,7 @@ $this->load->view('layout/header');
                                                                             </p>
                                                                         </div>
                                                                     </div>
-                                                                    
+
                                                                     <div class="cart-page-top table-responsive">
                                                                         <table class="table table-hover">
                                                                             <tbody id="quantity-holder">
@@ -386,8 +389,8 @@ $this->load->view('layout/header');
 
                                                                     </div>
                                                                 </div>
-                                                                
-                                                                 <div class="tab-pane fade " id="wechat">
+
+                                                                <div class="tab-pane fade " id="wechat">
 
                                                                     <div class='row' style='text-align: center;'>
                                                                         <div class='col-md-12'>
@@ -397,7 +400,7 @@ $this->load->view('layout/header');
                                                                             </p>
                                                                         </div>
                                                                     </div>
-                                                                    
+
                                                                     <div class="cart-page-top table-responsive">
                                                                         <table class="table table-hover">
                                                                             <tbody id="quantity-holder">
@@ -419,7 +422,7 @@ $this->load->view('layout/header');
                                                                     </div>
                                                                 </div>
 
-                                                            
+
 
                                                             </div>
                                                         </div>

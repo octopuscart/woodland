@@ -243,7 +243,7 @@ class CartGuest extends CI_Controller {
                 $session_cart = $this->Product_model->cartData();
             }
 
-            $discountrate = 0;
+            $discountrate = 20;
             $discoutamount = 0;
             $session_cart['shipping_price'] = 40;
             if ($session_cart['total_price'] > 399) {
@@ -253,14 +253,14 @@ class CartGuest extends CI_Controller {
                 $session_cart['shipping_price'] = 0;
             }
             if ($address['zipcode'] == 'Pickup') {
-                $discountrate = 20;
+                $discountrate = 30;
                 $session_cart['shipping_price'] = 0;
             }
 
             $session_cart['sub_total_price'] = $session_cart['total_price'];
 
 
-//            $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+            $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
             $rawdiscount = round($discoutamount);
             $expdiscount = explode(".", $rawdiscount);
 

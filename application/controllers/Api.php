@@ -46,6 +46,7 @@ class Api extends REST_Controller {
         }
 
         $session_cart['shipping_price'] = 40;
+        $session_cart['discount_note'] = "";
         if ($session_cart['total_price'] > 399) {
             $session_cart['shipping_price'] = 0;
         }
@@ -60,14 +61,17 @@ class Api extends REST_Controller {
             $user_address_details = $this->session->userdata('shipping_address');
         }
 
-        $discountrate = 0;
+        $discountrate = 20;
         $discoutamount = 0;
+        $session_cart['discount_note'] = "20% Discount on delivery";
+         $session_cart['shipping_note'] = "";
         if ($user_address_details) {
 
             $addresscheck2 = $this->session->userdata('shipping_address');
 
             if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
                 $session_cart['shipping_price'] = 0;
+                $session_cart['shipping_note'] = "Free Shipping In Tsim Sha Tsui";
             }
 
 
@@ -75,18 +79,22 @@ class Api extends REST_Controller {
 
                 $addresscheck2 = $this->session->userdata('pickup_shipping_address');
                 if ($addresscheck2['zipcode'] == 'Pickup') {
-                    $discountrate = 20;
+                    $discountrate = 30;
                     $session_cart['shipping_price'] = 0;
+                    $session_cart['discount_note'] = "30% Discount on pickup";
+                    $session_cart['shipping_note'] = "";
                 }
             } else {
                 if ($addresscheck2['zipcode'] == 'Pickup') {
-                    $discountrate = 20;
+                    $discountrate = 30;
                     $session_cart['shipping_price'] = 0;
+                    $session_cart['discount_note'] = "30% Discount on pickup";
+                    $session_cart['shipping_note'] = "";
                 }
             }
         }
 
-//        $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
+        $discoutamount = ($session_cart['total_price'] * $discountrate) / 100;
         $rawdiscount = round($discoutamount);
         $expdiscount = explode(".", $rawdiscount);
 
@@ -416,8 +424,6 @@ class Api extends REST_Controller {
         // $this->Product_model->order_mail_to_vendor($order_id);
         $this->response("hell");
     }
-
-    
 
 }
 

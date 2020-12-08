@@ -57,7 +57,7 @@ $this->load->view('layout/header');
                                                         <button type="button" class="btn btn-secondary"  ng-click="updateCart(product, 'sub')"><i class="fa fa-minus" aria-hidden="true" ></i></button>
                                                     </div>
 
-                                                    
+
                                                 </td>
                                                 <td class="amount numbertext">{{product.total_price|currency:" "}}</td>
                                                 <td class="dismiss"><a href="#"  ng-click="removeCart(product.product_id)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
@@ -76,13 +76,40 @@ $this->load->view('layout/header');
 
                                             <tr>
                                                 <td colspan="4" class="text_right">
-                                                    <p style="    float: left;
-    line-height: 0px;
-    color: red;
-    font-weight: 800;
-    margin-top: 0px;
-    padding-top: 12px;">
-                                                        Free Shipping In Tsim Sha Tsui
+                                                    <p style="    
+                                                       float: left;
+                                                       line-height: 11px;
+                                                       color: red;
+                                                       font-size: 14px;
+                                                       font-weight: 800;
+                                                       /* padding-top: 12px; */
+                                                       /* padding-top: 12px; */
+                                                       margin-bottom: 0;
+
+                                                       ">
+                                                        {{globleCartData.discount_note}}
+                                                    </p>     DISCOUNT
+                                                </td>
+                                                <td class=" amount numbertext">
+                                                    {{globleCartData.discount|currency:"<?php echo globle_currency; ?>"}}
+                                                </td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="4" class="text_right">
+                                                    <p style="    
+                                                       float: left;
+                                                       line-height: 11px;
+                                                       color: red;
+                                                       font-size: 14px;
+                                                       font-weight: 800;
+                                                       /* padding-top: 12px; */
+                                                       /* padding-top: 12px; */
+                                                       margin-bottom: 0;
+
+                                                       ">
+                                                        {{globleCartData.shipping_note}}
                                                     </p>  SHIPPING 
                                                 </td>
                                                 <td class=" amount">

@@ -63,7 +63,7 @@ class Api extends REST_Controller {
 
         $discountrate = 20;
         $discoutamount = 0;
-        $session_cart['discount_note'] = "20% Discount on delivery";
+        $session_cart['discount_note'] = "20% Discount On Delivery";
          $session_cart['shipping_note'] = "";
         if ($user_address_details) {
 

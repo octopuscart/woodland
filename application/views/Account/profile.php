@@ -62,7 +62,7 @@ $this->load->view('layout/header');
                                 <form class="create_account_form row woocommerce-EditAccountForm edit-account" method="post" action="#">
                                     <input type="hidden" name="user_id" value="45">
                                     <ul class="row">
-                                        <li class="col-sm-6 col-lg-6 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                                        <li class="col-sm-6 col-lg-6 form-group woocommerce-form-row--last form-row form-row-last">
                                             <label>
                                                 First Name
                                                 <input type="text" name="first_name" class="woocommerce-Input sm-form-control border-form-control tleft required"  value="<?php echo $user_details->first_name; ?>">

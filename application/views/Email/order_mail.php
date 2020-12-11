@@ -149,7 +149,7 @@
                                         <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
                                     </tr>
                                 </table>
-                                <?php } else {
+                            <?php } else {
                                 ?>
                                 <table class="gn_table">
                                     <tr>
@@ -268,7 +268,7 @@
                     <td colspan="2" style="text-align: right">Sub Total</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
                 </tr>
-                 <tr>
+                <tr>
                     <td colspan="2" style="text-align: right"> Discount</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
                 </tr>
@@ -276,7 +276,7 @@
                     <td colspan="2" style="text-align: right">Delivery Charges</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->shipping_price, 2, '.', ''); ?> </td>
                 </tr>
-               
+
                 <tr>
                     <td colspan="2" style="text-align: right">Toal Amount</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->total_price, 2, '.', ''); ?> </td>
@@ -330,7 +330,13 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                        <table>
+                            <div class="" style="width: 100%;float:left;background: #fff;padding: 5px 0px;;text-align: center;background: #d92229;">
+                                <a href="<?php echo ADMINURL . 'order/order_pdf_order_key/' . $order_data->order_key; ?>"  target="_blank" style="color:white!important;">
+                                    Click Here To Download Invoice
+                                </a>
+                            </div>
+                        </table>
                         <br/>
                         <span style="    text-align: center;
                               width: 100%;

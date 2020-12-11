@@ -388,7 +388,7 @@ $paymentstatus = "";
                                                         <td style="text-align: right;width: 60px">{{<?php echo $order_data->credit_price; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2" style="text-align: right">Shipping</td>
+                                                        <td colspan="2" style="text-align: right">Delivery</td>
                                                         <td style="text-align: right;width: 60px">{{<?php echo $order_data->shipping_price; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
                                                     </tr>
                                                     <tr>

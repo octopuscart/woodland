@@ -460,3 +460,42 @@ li.woocommerce-MyAccount-navigation-link {
     color: white;
     padding: 0px 5px;
 }
+
+.change-color-gradiant {
+    background: linear-gradient(270deg, #ff0000, #00db25, #0005db, #db8900, #00dbc0, #db0000);
+    background-size: 1200% 1200%;
+    -webkit-animation: changegradiantcolor 10s ease infinite;
+    -moz-animation: changegradiantcolor 10s ease infinite;
+    animation: changegradiantcolor 10s ease infinite;
+}
+
+@-webkit-keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes changegradiantcolor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+.tablemessageblock td{
+        padding: 5px 10px;
+    border: 2px solid #ffffff12;
+    text-align: left;
+    background: #0000001f;
+    margin: 0px;
+}
+
+.tablemessageblock{
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}

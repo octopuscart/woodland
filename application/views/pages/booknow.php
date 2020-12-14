@@ -48,20 +48,25 @@ $this->load->view('layout/header');
                                         <form class="mb-0 row"  action="#" method="post" >
                                             <div class="form-process"></div>
                                             <div class="col-sm-6 mb-3">
+                                                <label class='text-left pull-left'>Name</label>
                                                 <input type="text" id="template-contactform-name" name="name" value="" class="sm-form-control border-form-control required" placeholder="Name" required="">
                                             </div>
                                             <div class="col-sm-6 mb-3">
+                                                <label class='text-left pull-left'>Email</label>
                                                 <input type="email" id="template-contactform-email" name="email" value="" class="required email sm-form-control border-form-control" placeholder="Email Address" required="">
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-sm-6 mb-3">
+                                                <label class='text-left pull-left'>Contact No.</label>
                                                 <input type="text" id="template-contactform-phone" name="contact" value="" class="sm-form-control border-form-control required" placeholder="Contact No." required="">
                                             </div>
                                             <div class="col-sm-6 mb-3 input-daterange travel-date-group">
+                                                <label class='text-left pull-left'>Select Date</label>
                                                 <input type="text" id="selecteddate" name="select_date" value="" class="sm-form-control border-form-control tleft required datepicker" placeholder="Select Reservation Date" required="" min="<?php echo date("Y-m-d") ?>" autocomplete="off">
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-6 mb-3">
+                                                 <label class='text-left pull-left'>Select Time</label>
                                                 <select id="template-contactform-time" class="custom-select sm-form-control border-form-control" name="select_time" required="">
                                                     <option value="disabled" disabled="" selected="">Select Time</option>
                                                     <option value="12:00">12:00 - 13:00</option>
@@ -74,10 +79,10 @@ $this->load->view('layout/header');
                                                 </select>
                                             </div>
                                             <div class="col-6 mb-3">
+                                                <label class='text-left pull-left'>No. Of Persons</label>
                                                 <select id="template-contactform-people" class="custom-select sm-form-control border-form-control" name="people" required="">
-                                                    <option value="disabled" disabled="" selected=""  >Person</option>
                                                     <option value="1">1</option>
-                                                    <option value="2">2</option>
+                                                    <option value="2" selected="">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
@@ -200,7 +205,7 @@ $this->load->view('layout/header');
 </section>
 
 <script>
-var listofbookeddate = <?php echo json_encode($datelist);?>
+    var listofbookeddate = <?php echo json_encode($datelist); ?>
 </script>
 
 <?php

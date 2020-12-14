@@ -393,13 +393,13 @@ li.woocommerce-MyAccount-navigation-link {
     top: 0;
 }
 .hoverdesription span{
-   
+
     position: absolute;
     left: 0;
     top: 0;
     padding: 15px;
     z-index: 2000;
-        color: #fff;
+    color: #fff;
 }
 
 .hoverdesription{
@@ -427,7 +427,7 @@ li.woocommerce-MyAccount-navigation-link {
 }
 
 .smallmessage{
-   font-size: 10px;
+    font-size: 10px;
     top: 60px;
     position: absolute;
     text-align: center;
@@ -444,12 +444,19 @@ li.woocommerce-MyAccount-navigation-link {
 
 @media only screen and (max-width: 767px) {
     .smallmessage{
-   font-size: 10px;
-    top: 40px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-
-    margin-left: 0px;
+        font-size: 10px;
+        top: 40px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
 }
+
+.discountnotetab{
+    width: 100%;
+    font-size: 14px;
+    background: #4CAF50;
+    color: white;
+    padding: 0px 5px;
 }

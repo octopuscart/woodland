@@ -173,9 +173,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                      border: 1px solid #000;
                                      border-radius: 10px;">
 
-                            <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'>20% Discount On Delivery</p></a></li>
-                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab'>30% Discount On Pickup</p></a></li>
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery</a></li>
+                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup</a></li>
 
                                     </ul>
                                     <div class="tab-content">
@@ -253,9 +253,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                             <tbody id="quantity-holder">
                                                                 <tr>
                                                                     <td colspan="4" class="text_right">
-<!--                                                                        <div class="proceed-button pull-left " >
+                                                                        <div class="proceed-button pull-left " >
                                                                             <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                        </div>-->
+                                                                        </div>
                                                                         <div class="proceed-button pull-right ">
                                                                             <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                             <form action="#" method="post">
@@ -300,9 +300,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 <tbody id="quantity-holder">
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
-<!--                                                                            <div class="proceed-button pull-left " >
+                                                                            <div class="proceed-button pull-left " >
                                                                                 <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                            </div>-->
+                                                                            </div>
                                                                             <div class="proceed-button pull-right ">
 
 

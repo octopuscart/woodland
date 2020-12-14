@@ -92,7 +92,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             }
         }
         if (oper == 'add') {
-            if (productobj.quantity > 5) {
+            if (productobj.quantity > 100) {
             } else {
                 productobj.quantity = Number(productobj.quantity) + 1;
             }

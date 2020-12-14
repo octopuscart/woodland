@@ -74,7 +74,7 @@ $this->load->view('layout/header');
                                                 <td></td>
                                             </tr>
 
-                                            <tr>
+<!--                                            <tr>
                                                 <td colspan="4" class="text_right">
                                                     <p style="    
                                                        float: left;
@@ -125,7 +125,7 @@ $this->load->view('layout/header');
                                                     {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
                                                 </td>
                                                 <td></td>
-                                            </tr>
+                                            </tr>-->
 
                                             <tr>
                                                 <td colspan="6" class="text_right">

@@ -143,6 +143,8 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
     .freeshippingnote{
         color:red;
     }
+    
+    
 
 </style>
 
@@ -187,8 +189,8 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                      border-radius: 10px;">
 
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery</a></li>
-                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup</a></li>
+                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'>20% Discount On Delivery</p></a></li>
+                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab'>30% Discount On Pickup</p></a></li>
 
                                     </ul>
                                     <div class="tab-content">
@@ -200,7 +202,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                             <span class="fa-stack">
                                                                 <i class="fa fa-map-marker fa-stack-1x"></i>
                                                                 <i class="ion-bag fa-stack-1x "></i>
-                                                            </span>   Shipping Address
+                                                            </span>   Delivery Address
                                                             <span style="float: right; line-height: 29px;" class="ng-binding">
                                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>
                                                             </span> 
@@ -235,7 +237,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                                 <?php echo $value['address1']; ?>,<br/>
                                                                                 <?php echo $value['address2']; ?>,<br/>
                                                                                 <?php echo $value['city']; ?><br/>
-                                                                                <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free shipping at Tsim Sha Tsui<span>' : ''; ?>
+                                                                                <?php echo $value['zipcode'] == 'Tsim Sha Tsui' ? '<span class="freeshippingnote">Free delivery at Tsim Sha Tsui<span>' : ''; ?>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -243,7 +245,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 }
                                                             } else {
                                                                 ?>
-                                                                <h4 class="text-center " style="color: red"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+                                                                <h4 class="text-center " style="color: red"><i class="fa fa-warning"></i> Please Add Delivery Address</h4>
 
                                                                 <?php
                                                             }
@@ -268,9 +270,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                         <tbody id="quantity-holder">
                                                             <tr>
                                                                 <td colspan="4" class="text_right">
-                                                                    <div class="proceed-button pull-left " >
+<!--                                                                    <div class="proceed-button pull-left " >
                                                                         <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                    </div>
+                                                                    </div>-->
                                                                     <div class="proceed-button pull-right ">
                                                                         <form action="#" method="post">
                                                                             <?php
@@ -333,9 +335,9 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 <tbody id="quantity-holder">
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
-                                                                            <div class="proceed-button pull-left " >
+<!--                                                                            <div class="proceed-button pull-left " >
                                                                                 <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                            </div>
+                                                                            </div>-->
                                                                             <div class="proceed-button pull-right ">
 
 
@@ -410,7 +412,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     </td>
                                     <td>
                                         <select name="zipcode" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;    font-size: 12px;">
-                                            <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Shipping)</option>
+                                            <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Delivery)</option>
                                             <option value="Whampoa">Whampoa Garden ($40 On Order value < $400)</option>
                                         </select>
 

@@ -71,7 +71,7 @@ class Api extends REST_Controller {
 
             if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
                 $session_cart['shipping_price'] = 0;
-                $session_cart['shipping_note'] = "Free Shipping In Tsim Sha Tsui";
+                $session_cart['shipping_note'] = "Free Delviery In Tsim Sha Tsui";
             }
 
 
@@ -81,14 +81,14 @@ class Api extends REST_Controller {
                 if ($addresscheck2['zipcode'] == 'Pickup') {
                     $discountrate = 30;
                     $session_cart['shipping_price'] = 0;
-                    $session_cart['discount_note'] = "30% Discount on pickup";
+                    $session_cart['discount_note'] = "30% Discount On Pickup";
                     $session_cart['shipping_note'] = "";
                 }
             } else {
                 if ($addresscheck2['zipcode'] == 'Pickup') {
                     $discountrate = 30;
                     $session_cart['shipping_price'] = 0;
-                    $session_cart['discount_note'] = "30% Discount on pickup";
+                    $session_cart['discount_note'] = "30% Discount On Pickup";
                     $session_cart['shipping_note'] = "";
                 }
             }

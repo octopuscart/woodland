@@ -44,6 +44,7 @@ class Cart extends CI_Controller {
     }
 
     function checkoutInit() {
+        redirect(site_url("Cart/checkoutShipping"));
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
@@ -62,61 +63,7 @@ class Cart extends CI_Controller {
         }
     }
 
-    function checkoutSize() {
-        $this->redirectCart();
-
-        $measurement_style = $this->session->userdata('measurement_style');
-        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
-        if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
-            $user_details = $this->User_model->user_details($this->user_id);
-            $data['user_details'] = $user_details;
-
-            $user_address_details = $this->User_model->user_address_details($this->user_id);
-            $data['user_address_details'] = $user_address_details;
-        } else {
-            $session_cart = $this->Product_model->cartData();
-        }
-
-        $custome_items = $session_cart['custome_items'];
-
-        $this->db->select("group_concat(measurements) as measurement");
-        $this->db->where_in('id', $custome_items);
-        $query = $this->db->get('custome_items');
-        $custome_measurements = $query->row();
-        $data['customitems'] = $custome_measurements;
-
-        $data['custome_items'] = $custome_items;
-
-
-        $measurementarray = explode(",", $custome_measurements->measurement);
-
-        $this->db->select("*");
-        $this->db->order_by('display_index', 'asc');
-        $this->db->where_in('id', $measurementarray);
-        $query = $this->db->get('measurement');
-        $custome_measurements = $query->result_array();
-        $data['measurements_list'] = $custome_measurements;
-        if (isset($_POST['submit_measurement'])) {
-            $measurement_style = array(
-                'measurement_style' => $this->input->post('measurement_type'),
-                'measurement_dict' => array()
-            );
-            $measurement_title = $this->input->post('measurement_title');
-            $measurement_value = $this->input->post('measurement_value');
-
-            foreach ($measurement_title as $key => $value) {
-                $mvalue = $measurement_value[$key];
-                $mtitle = $value;
-                $measurement_style['measurement_dict'][$mtitle] = $mvalue;
-            }
-
-            $this->session->set_userdata('measurement_style', $measurement_style);
-            redirect('Cart/checkoutShipping');
-        }
-        $this->load->view('Cart/checkoutSize', $data);
-    }
+  
 
     function checkoutShipping() {
         $this->redirectCart();

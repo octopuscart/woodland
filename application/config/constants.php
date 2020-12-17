@@ -27,7 +27,7 @@ switch ($baselink) {
           $adminlinkmain = $baselink . "/shopadmin";
         break;
     default:
-        $adminlinkmain = "https://admin.maharajamart.com/";
+        $adminlinkmain = "https://admin.woodlandshk.com/";
 }
 
 define('ADMINURL', $adminlinkmain);

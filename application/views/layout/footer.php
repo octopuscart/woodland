@@ -79,6 +79,10 @@
 
 <!-- type ahead-->
 <script src="<?php echo base_url(); ?>assets/typeahead.bundle.js" type="text/javascript"></script>
+
+
+<script src="<?php echo base_url(); ?>assets/theme2/OwlCarousel2-2.3.4/owl.carousel.min.js" type="text/javascript"></script>
+
 <script>
 
     jQuery(document).ready(function ($) {
@@ -106,6 +110,14 @@
             dotsContainer: '#item-thumb1',
             rtl: carouselRTL
         });
+          $('#oc-clients').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    autoplay: 1,
+                            autoplayTimeout: 3000,
+                 
+                });
     });
 
 

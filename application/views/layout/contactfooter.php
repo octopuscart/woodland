@@ -79,7 +79,51 @@
             </div>
         </div>
     </div>
+
+
+
+
 </div>
+
+<!--media links-->
+<div class="clearfix " style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg);background-size: contain;">
+
+
+    <div class=" clearfix" >
+        <div class="medialinkdesing">
+
+            <div class="medialinkdesing-slider">
+                <div id="oc-clients" class="owl-carousel " data-margin="0" data-loop="true" data-nav="true" data-autoplay="5000" data-pagi="false"  data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
+
+                    <?php
+                    $querymedialink = $this->db->get("media_link");
+                    $querymedialinkresult = $querymedialink->result_array();
+
+
+                    $medialink = $querymedialinkresult;
+
+                    foreach ($medialink as $key => $value) {
+                        ?>
+                        <div class="oc-item ">
+                            <div class="media-item-block">
+                                <p><?php echo $value['text']; ?></p>
+                                <h3 class="" >
+                                    <?php echo $value['source']; ?>
+                                </h3>
+                                <a class="" href="<?php echo $value['link']; ?>" target="_blank">View More <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--end of media link-->
 <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="      margin-top: -66px;     z-index: 200000;
      position: relative;"/>
 
@@ -106,7 +150,7 @@
          margin-top: -18px;">
 
         <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" style="    height: 83px;
-            "/>
+             "/>
     </div>
 
     <div class="section nomargin dark bgcolor" style="    padding-bottom: 0px!important;">

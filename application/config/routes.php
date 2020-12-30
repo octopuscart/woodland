@@ -66,6 +66,8 @@ $route['our-menu/(:any)/(:any)'] = 'Product/productList2/$1/$2';
 $route['review'] = 'Shop/wall';
 
 
+$route['coupon'] = 'Coupon/index';
+
 
 $route['annual-charity'] = 'Shop/annual_charity';
 

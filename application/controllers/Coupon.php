@@ -9,7 +9,7 @@ class Coupon extends CI_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
-        $this->db->where_in('attr_key', ["EOPGMid", "EOPGSecretCode", "EOPGSalesLink", "EOPGQueryLink"]);
+        $this->db->where_in('attr_key', ["EOPGMid", "EOPGSecretCode", "EOPGSalesLink", "EOPGQueryLink", "CouponLink"]);
         $query = $this->db->get('configuration_attr');
         $paymentattr = $query->result_array();
         $paymentconf = array();
@@ -20,6 +20,36 @@ class Coupon extends CI_Controller {
         $this->secret_code = $paymentconf['EOPGSecretCode'];
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
+        $this->couponApiUrl = $paymentconf['CouponLink'];
+    }
+
+    private function useCurl($url, $headers, $fields = null) {
+        // Open connection
+        $ch = curl_init();
+        if ($url) {
+            // Set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            // Disabling SSL Certificate support temporarly
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            if ($fields) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+            }
+
+            // Execute post
+            $result = curl_exec($ch);
+            if ($result === FALSE) {
+                die('Curl failed: ' . curl_error($ch));
+            }
+
+            // Close connection
+            curl_close($ch);
+
+            return $result;
+        }
     }
 
     public function index() {
@@ -53,8 +83,8 @@ class Coupon extends CI_Controller {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
         $requestdata = $query->row();
-
-        $itemsdescription = "Woodlands $100.00 Coupon Purchase";
+        $amount = $requestdata->amount;
+        $itemsdescription = "Woodlands $$amount Coupon Purchase";
         $paymenttypeg = $requestdata->payment_type;
         $amt = $requestdata->amount;
         $marchentref = $order_key;
@@ -67,8 +97,8 @@ class Coupon extends CI_Controller {
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$returnUrl&goods_subject=Woodlands Coupon&app_pay=WEB&goods_body=$itemsdescription&api_version=2.8&lang=en&reuse=Y&active_time=300&wallet=HK";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
-        echo $endurl = $salesLink . "?" . $ganarateurl;
-//        redirect($endurl = $salesLink . "?" . $ganarateurl);
+//        echo $endurl = $salesLink . "?" . $ganarateurl;
+        redirect($endurl = $salesLink . "?" . $ganarateurl);
     }
 
     function orderPaymentResult($order_key) {
@@ -94,9 +124,30 @@ class Coupon extends CI_Controller {
     }
 
     function orderPaymentNotify($order_key, $paymenttype) {
-
         $returndata = $_GET;
-        print_r($returndata);
+        if (isset($returndata['trans_status'])) {
+            if ($returndata['trans_status'] == 'SUCCESS') {
+                $this->db->where("request_id", $order_key);
+                $query = $this->db->get("coupon_request");
+                $requestdata = $query->row_array();
+                $requestdata['txn_no'] = $returndata['order_id'];
+                $requestdata['coupon_for'] = "woodlandshk";
+                $requestdata['prefix'] = "WL";
+                $requestdata['payment_status'] = "SUCCESS";
+                $headers = array(
+                    'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+                    'Content-Type: application/json'
+                );
+                $url = $this->couponApiUrl . 'Api/generateCoupon';
+                $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
+                $codehas = json_decode($curldata);
+                redirect("Coupon/yourCode/" . $codehas."/".$order_key);
+            }
+        }
+    }
+
+    function yourCode($couponhas, $order_key) {
+        echo $couponhas;
     }
 
 }

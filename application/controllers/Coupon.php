@@ -31,7 +31,11 @@ class Coupon extends CI_Controller {
                 'name' => $this->input->post('name'),
                 'email' => $this->input->post('email'),
                 'contact_no' => $this->input->post('contact_no'),
+                'name_receiver' => $this->input->post('name_receiver'),
+                'email_receiver' => $this->input->post('email_receiver'),
+                'contact_no_receiver' => $this->input->post('contact_no_receiver'),
                 'payment_type' => $this->input->post('payment_type'),
+                'message' => $this->input->post('message'),
                 'amount' => '100.00',
                 'status' => 'Payment Init',
                 'remark' => '',
@@ -39,20 +43,22 @@ class Coupon extends CI_Controller {
                 'time' => date('H:i:s'),
             );
             $this->db->insert('coupon_request', $coupnrequest);
-            redirect("Coupon/orderPayment/".$requestid."/".$paymenttype);
-            
+            redirect("Coupon/orderPayment/" . $requestid);
         }
 
         $this->load->view('coupon/gift_coupon');
     }
 
-    function orderPayment($order_key, $paymenttype) {
+    function orderPayment($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
 
         $itemsdescription = "Woodlands $100.00 Coupon Purchase";
-        $paymenttypeg = $paymenttype;
-        $amt = "100.00";
+        $paymenttypeg = $requestdata->payment_type;
+        $amt = $requestdata->amount;
         $marchentref = $order_key;
-        $returnUrl = site_url("Coupon/orderPaymentResult/$order_key/$paymenttype");
+        $returnUrl = site_url("Coupon/orderPaymentResult/$order_key");
         $mid = $this->mid;
         $secret_code = $this->secret_code;
         $salesLink = $this->salesLink;
@@ -61,23 +67,24 @@ class Coupon extends CI_Controller {
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$returnUrl&goods_subject=Woodlands Coupon&app_pay=WEB&goods_body=$itemsdescription&api_version=2.8&lang=en&reuse=Y&active_time=300&wallet=HK";
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
-//        echo $endurl = $salesLink . "?" . $ganarateurl;
-        redirect($endurl = $salesLink . "?" . $ganarateurl);
+        echo $endurl = $salesLink . "?" . $ganarateurl;
+//        redirect($endurl = $salesLink . "?" . $ganarateurl);
     }
 
-    function orderPaymentResult($order_key, $paymenttype) {
-        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-        $marchentref = $order_details['order_data']->order_no;
-
-        $amt = $order_details['order_data']->total_price;
-        $marchentref = $order_details['order_data']->order_no;
-        $returnUrl = site_url("Order/orderPaymentResult/$order_key");
+    function orderPaymentResult($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        $marchentref = $order_key;
+        $amt = $requestdata->amount;
+        $paymenttype = $requestdata->payment_type;
+        $marchentref = $order_key;
         $mid = $this->mid;
         $secret_code = $this->secret_code;
         $salesLink = $this->salesLink;
         $queryLink = $this->queryLink;
         $paymenttypeg = $paymenttype;
-        $notifyUrl = site_url("Order/orderPaymentNotify/$order_key/$paymenttype");
+        $notifyUrl = site_url("Coupon/orderPaymentNotify/$order_key/$paymenttype");
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=$paymenttypeg&service=QUERY&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
@@ -87,50 +94,9 @@ class Coupon extends CI_Controller {
     }
 
     function orderPaymentNotify($order_key, $paymenttype) {
-        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+
         $returndata = $_GET;
-        $order_id = $order_details['order_data']->id;
-        if ($returndata['trans_status'] == 'SUCCESS') {
-            $productattr = array(
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-                'status' => "Payment Confirmed",
-                'remark' => "Payment completed using $paymenttype",
-                'description' => "Payment Id#: " . $returndata['order_id'],
-                'order_id' => $order_id
-            );
-            $this->db->insert('user_order_status', $productattr);
-            $orderlog = array(
-                'log_type' => "Payment Confirmed",
-                'log_datetime' => date('Y-m-d H:i:s'),
-                'user_id' => "",
-                'order_id' => $order_id,
-                'log_detail' => "Payment completed using $paymenttype " . "Payment Id#: " . $returndata['order_id'],
-            );
-            $this->db->insert('system_log', $orderlog);
-            $productattr = array(
-                'status' => "Payment completed using $paymenttype ",
-                'remark' => $this->input->post('remark'),
-                'txn_no' => $returndata['order_id'],
-                'c_date' => date('Y-m-d'),
-                'c_time ' => date('H:i:s'),
-                'description' => "Payment Id#: " . $returndata['order_id'],
-                'order_id' => $order_id
-            );
-            $this->db->insert('paypal_status', $productattr);
-        }
-        if ($returndata['trans_status'] != 'SUCCESS') {
-            $productattr = array(
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-                'status' => "Payment Failure",
-                'remark' => "Payment failure using $paymenttype",
-                'description' => "Payment Id#: " . $returndata['order_id'],
-                'order_id' => $order_id
-            );
-            $this->db->insert('user_order_status', $productattr);
-        }
-        redirect(site_url("Order/orderdetails/$order_key"));
+        print_r($returndata);
     }
 
 }

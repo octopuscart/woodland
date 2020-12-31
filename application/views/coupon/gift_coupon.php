@@ -64,8 +64,8 @@ $this->load->view('layout/header');
                             <h3 class="font-secondary text-white" style="font-size: 30px">The procedure to make a gift card purchase is extremely convenient and hassle-free. 
                                 Enter the lucky person’s e-mail address and recipient’s name.
                                 Click on the Buy gift card option. 
-                                Once the payment is confirmed, Your gift card is on the way!</h3> 
-                              <img src="https://manager2.woodlandshk.com/assets/images/coupon100.jpg">
+                                Once the payment is confirmed, Your gift card is on the way!</h3>  
+                             <img src="https://manager2.woodlandshk.com/assets/images/coupon100.jpg">
                             
                           
                         </div>

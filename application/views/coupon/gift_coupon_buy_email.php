@@ -29,7 +29,8 @@
                                 <td>
 
                                     <b>Hello <?php echo $coupon['name']; ?>,</b>
-                                    <p>Thank you for buying gift coupon, below you can find you coupon code. You can use this coupon in our both restaurants Woodlands Or Hello India.</p>
+                                    <p>Thank you for buying Gift Coupon, below you can find your coupon code. 
+This coupon code can be used either in Woodlands or in Hello India</p>
                                 </td>
                             </tr>
                             <tr>

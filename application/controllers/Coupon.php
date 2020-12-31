@@ -147,7 +147,7 @@ class Coupon extends CI_Controller {
                     "status" => $returndata['trans_status'],
                     "remark" => "Txn_id:" . $returndata['order_id']
                 );
-                $this->db->set();
+                $this->db->set($updatearray);
                 $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
                 $this->db->update("coupon_request");
                 site_url("Coupon/orderPaymentFailed/$order_key");

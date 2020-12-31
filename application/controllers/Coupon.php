@@ -166,6 +166,12 @@ class Coupon extends CI_Controller {
                 $url = $this->couponApiUrl . 'Api/generateCoupon';
                 $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
                 $codehas = json_decode($curldata);
+                $updatearray = array(
+                    "remark" => $codehas
+                );
+                $this->db->set($updatearray);
+                $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
+                $this->db->update("coupon_request");
                 redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {
                 $updatearray = array(
@@ -181,14 +187,19 @@ class Coupon extends CI_Controller {
     }
 
     function yourCode($couponhas, $order_key) {
-        echo $couponhas;
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        $data = array("coupon" => $requestdata);
+        $this->load->view('coupon/gift_coupon_get', $data);
     }
 
     function orderPaymentFailed($order_key) {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
         $requestdata = $query->row();
-        print_r($requestdata);
+        $data = array("coupon" => $requestdata);
+        $this->load->view('coupon/gift_coupon_failed', $data);
     }
 
 }

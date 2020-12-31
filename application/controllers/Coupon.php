@@ -122,8 +122,7 @@ class Coupon extends CI_Controller {
         $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
         redirect($endurl = $queryLink . "?" . $ganarateurl);
     }
-    
-    
+
     function orderPaymentResultTest($order_key) {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
@@ -137,17 +136,17 @@ class Coupon extends CI_Controller {
         $salesLink = $this->salesLink;
         $queryLink = $this->queryLink;
         $paymenttypeg = $paymenttype;
-        $notifyUrl = site_url("Coupon/orderPaymentNotify/$order_key/$paymenttype");
+        $notifyUrl = site_url("Coupon/orderPaymentNotifyTest/$order_key/$paymenttype");
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=$paymenttypeg&service=QUERY&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$notifyUrl&api_version=2.9&redirect=Y";
         echo $endurl = $queryLink . "?" . $ganarateurl;
-      
     }
-    
-    
-    
+
+    function orderPaymentNotifyTest($order_key, $paymenttype) {
+        $returndata = $_GET;
+    }
 
     function orderPaymentNotify($order_key, $paymenttype) {
         $returndata = $_GET;

@@ -141,13 +141,29 @@ class Coupon extends CI_Controller {
                 $url = $this->couponApiUrl . 'Api/generateCoupon';
                 $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
                 $codehas = json_decode($curldata);
-                redirect("Coupon/yourCode/" . $codehas."/".$order_key);
+                redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
+            } else {
+                $updatearray = array(
+                    "status" => $returndata['trans_status'],
+                    "remark" => "Txn_id:" . $returndata['order_id']
+                );
+                $this->db->set();
+                $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
+                $this->db->update("coupon_request");
+                site_url("Coupon/orderPaymentFailed/$order_key");
             }
         }
     }
 
     function yourCode($couponhas, $order_key) {
         echo $couponhas;
+    }
+
+    function orderPaymentFailed($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row();
+        print_r($requestdata);
     }
 
 }

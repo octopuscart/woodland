@@ -172,6 +172,12 @@ class Coupon extends CI_Controller {
                 $this->db->set($updatearray);
                 $this->db->where('request_id', $order_key); //set column_name and value in which row need to update
                 $this->db->update("coupon_request");
+                
+                $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
+                $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
+                $this->useCurl($senderemail, $headers);
+                $this->useCurl($receiveremail, $headers);
+                
                 redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {
                 $updatearray = array(
@@ -191,6 +197,8 @@ class Coupon extends CI_Controller {
         $query = $this->db->get("coupon_request");
         $requestdata = $query->row();
         $data = array("coupon" => $requestdata);
+        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
+        $data['couponimage'] = $urlimage;
         $this->load->view('coupon/gift_coupon_get', $data);
     }
 
@@ -200,6 +208,73 @@ class Coupon extends CI_Controller {
         $requestdata = $query->row();
         $data = array("coupon" => $requestdata);
         $this->load->view('coupon/gift_coupon_failed', $data);
+    }
+
+    function couponBuyEmail($couponhas, $order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row_array();
+        $data = array("coupon" => $requestdata);
+        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
+        $data['couponimage'] = $urlimage;
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($requestdata['email']);
+//            $this->email->bcc(email_bcc);
+        $subjectt = "Thank you for buying gift coupon";
+        $subject = $subjectt;
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view('coupon/gift_coupon_buy_email', $data, true);
+        if (REPORT_MODE == 1) {
+            $this->email->message($htmlsmessage);
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
+        } else {
+            echo $htmlsmessage;
+        }
+    }
+
+    function couponReceiverEmail($couponhas, $order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row_array();
+        $data = array("coupon" => $requestdata);
+        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
+        $data['couponimage'] = $urlimage;
+
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($requestdata['email_receiver']);
+//            $this->email->bcc(email_bcc);
+        $subjectt = "You have gifted a coupon from ".$requestdata['name'];
+        $subject = $subjectt;
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view('coupon/gift_coupon_receiver_email', $data, true);
+        if (REPORT_MODE == 1) {
+            $this->email->message($htmlsmessage);
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
+        } else {
+            echo $htmlsmessage;
+        }
     }
 
 }

@@ -60,11 +60,10 @@ $this->load->view('layout/header');
                     <div  style="    width: 100%;text-align: center;">
 
 
-
                         <h3 class="font-secondary text-white text-center    " style="font-size: 30px">
                             Thanks you for purchasing coupon, your coupon code has been sent to your email.
                         </h3> 
-                        <img src="https://manager2.woodlandshk.com/assets/images/coupon100.jpg" style="height: 300px;">
+                        <img src="<?php echo $couponimage; ?>" style="height: 300px;">
 
 
 

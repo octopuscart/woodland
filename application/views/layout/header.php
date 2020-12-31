@@ -106,7 +106,7 @@
 
                         </ul>
                         <ul>
-                            <li><a href="<?php echo site_url("contact"); ?>"><div>Contact</div></a></li>
+                            <li><a href="<?php echo site_url("coupon"); ?>"><div>Gift Coupon</div></a></li>
 <!--                                <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
 
                             <li>

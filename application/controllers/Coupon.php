@@ -142,7 +142,7 @@ class Coupon extends CI_Controller {
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
         $ganarateurl = "&return_url=$notifyUrl&api_version=2.9&redirect=Y";
-        echo $ganarateurl = $urlset . $ganarateurl . "&signature=$seckey";
+        echo $endurl = $queryLink . "?" . $ganarateurl;
       
     }
     

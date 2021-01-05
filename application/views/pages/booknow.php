@@ -72,10 +72,10 @@ $this->load->view('layout/header');
                                                     <option value="12:00">12:00 - 13:00</option>
                                                     <option value="13:00">13:00 - 14:00</option>
                                                     <option value="14:00">14:00 - 15:00</option>
-                                                    <option value="18:30">18:30 - 19:00</option>
+<!--                                                    <option value="18:30">18:30 - 19:00</option>
                                                     <option value="19:00">19:00 - 20:00</option>
                                                     <option value="20:00">20:00 - 21:00</option>
-                                                    <option value="21:00">21:00 - 22:00</option>
+                                                    <option value="21:00">21:00 - 22:00</option>-->
                                                 </select>
                                             </div>
                                             <div class="col-6 mb-3">

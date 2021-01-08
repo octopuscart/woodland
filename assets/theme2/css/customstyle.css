@@ -136,10 +136,10 @@ a.cartheadericon span {
 #primary-menu ul li>a {
     display: block;
     line-height: 22px;
-    padding: 37px 7px;
+       padding: 37px 5px;
     color: #444;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: Raleway,sans-serif;
@@ -543,4 +543,11 @@ li.woocommerce-MyAccount-navigation-link {
     bottom: 25px;
     right:31px;
     color: white!important;
+}
+
+#header, #header-wrap, #logo img {
+    height: 90px;
+    -webkit-transition: height .4s ease,opacity .3s ease;
+    -o-transition: height .4s ease,opacity .3s ease;
+    transition: height .4s ease,opacity .3s ease;
 }

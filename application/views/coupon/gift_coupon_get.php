@@ -61,7 +61,7 @@ $this->load->view('layout/header');
 
 
                         <h3 class="font-secondary text-white text-center    " style="font-size: 30px">
-                            Thanks you for purchasing coupon, your coupon code has been sent to your email.
+                            Thanks you for purchasing Cash Voucher, your Cash Voucher code has been sent to your email.
                         </h3> 
                         <img src="<?php echo $couponimage; ?>" style="height: 300px;">
 

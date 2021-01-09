@@ -4,7 +4,7 @@ $this->load->view('layout/header');
 
 <section id="page-title" class="page-title-parallax page-title-dark page-title-center" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/booknow.jpg'); background-size: cover; padding: 50px 0 100px;" data-bottom-top="background-position:0 0px;" data-top-bottom="background-position:0px -49px;">
     <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0" style="font-size: 74px;">Book Now</h1>
+        <h1 class="font-secondary capitalize ls0" style="font-size: 74px;">Reserve Table</h1>
         <span class="t400">------</span>
     </div>
 </section>

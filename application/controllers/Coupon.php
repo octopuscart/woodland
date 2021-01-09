@@ -54,29 +54,59 @@ class Coupon extends CI_Controller {
 
     public function index() {
         if (isset($_POST['submit_now'])) {
-            $requestid = "WOODLAND" . date('Ymd') . date('His');
+            $requestid = "WL" . date('Ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
             $coupnrequest = array(
-                'request_id' => $requestid,
-                'name' => $this->input->post('name'),
-                'email' => $this->input->post('email'),
-                'contact_no' => $this->input->post('contact_no'),
-                'name_receiver' => $this->input->post('name_receiver'),
-                'email_receiver' => $this->input->post('email_receiver'),
-                'contact_no_receiver' => $this->input->post('contact_no_receiver'),
-                'payment_type' => $this->input->post('payment_type'),
-                'message' => $this->input->post('message'),
-                'amount' => '100.00',
-                'status' => 'Payment Init',
-                'remark' => '',
-                'date' => date('Y-m-d'),
-                'time' => date('H:i:s'),
+                "request_id" => $requestid,
+                "name" => $this->input->post('name'),
+                "email" => $this->input->post('email'),
+                "contact_no" => $this->input->post('contact_no'),
+                "name_receiver" => $this->input->post('name_receiver'),
+                "email_receiver" => $this->input->post('email_receiver'),
+                "contact_no_receiver" => $this->input->post('contact_no_receiver'),
+                "payment_type" => $this->input->post('payment_type'),
+                "message" => $this->input->post('message'),
+                'base_amount' => $this->input->post('base_amount'),
+                'percent' => $this->input->post('percent'),
+                'quantity' => $this->input->post('quantity'),
+                'amount' => $this->input->post('amount'),
+                'check_receiver' => $this->input->post('check_receiver'),
+                "status" => "Payment Init",
+                "remark" => "",
+                "date" => date('Y-m-d'),
+                "time" => date('H:i:s'),
             );
+
             $this->db->insert('coupon_request', $coupnrequest);
             redirect("Coupon/orderPayment/" . $requestid);
         }
 
         $this->load->view('coupon/gift_coupon');
+    }
+
+    public function test() {
+        $coupnrequest = Array(
+            'request_id' => 'WOODLAND20210110012334',
+            'name' => 'OCTOPUS CART',
+            'email' => 'octopuscartltd@gmail.com',
+            'contact_no' => '000000000',
+            'name_receiver' => '',
+            'email_receiver' => '',
+            'contact_no_receiver' => '',
+            'payment_type' => 'WECHAT',
+            'message' => '',
+            'base_amount' => 500,
+            'percent' => 15,
+            'quantity' => 5,
+            'amount' => 425,
+            'check_receiver' => '',
+            'status' => 'Payment Init',
+            'remark' => '',
+            'date' => '2021-01-10',
+            'time' => '01:23:34'
+        );
+        print_r($coupnrequest);
+        $this->db->insert('coupon_request', $coupnrequest);
     }
 
     public function couponTest() {

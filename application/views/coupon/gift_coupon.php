@@ -117,7 +117,7 @@ $this->load->view('layout/header');
                                                 <div class="checkbox">
                                                     <label>
                                                         <input type="hidden" name="check_receiver" value="{{couponinit.showreceiver}}">
-                                                        <input type="checkbox"  ng-model="couponinit.showreceiver"> Check here if you want to send cash voucher to other.
+                                                        <input type="checkbox"  ng-model="couponinit.showreceiver"> Tick here, if you want to send cash voucher to someone.
                                                     </label>
                                                 </div>
 
@@ -227,8 +227,9 @@ $this->load->view('layout/footer');
     App.controller('couponController', function ($scope, $http, $timeout, $interval, $filter) {
         $scope.couponinit = {'quantity': 1, "showreceiver": false, "amount": 100, "amountinit": 100, "basepercent": 10};
         $scope.calculation = function () {
+            var percent = {1: 10}
             $scope.couponinit.amountbase = $scope.couponinit.quantity * $scope.couponinit.amountinit;
-
+            $scope.couponinit.basepercent = 10;
             if ($scope.couponinit.quantity > 4 && $scope.couponinit.quantity < 10) {
                 $scope.couponinit.basepercent = 15;
             }

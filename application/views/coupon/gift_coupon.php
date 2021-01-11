@@ -251,7 +251,10 @@ $this->load->view('layout/footer');
                 }
             }
             if (oper == 'add') {
-                $scope.couponinit.quantity = Number($scope.couponinit.quantity) + 1;
+                if ($scope.couponinit.quantity > 14) {
+                } else {
+                    $scope.couponinit.quantity = Number($scope.couponinit.quantity) + 1;
+                }
             }
             $scope.calculation();
         }

@@ -84,34 +84,9 @@ class Coupon extends CI_Controller {
         $this->load->view('coupon/gift_coupon');
     }
 
-    public function test() {
-        $coupnrequest = Array(
-            'request_id' => 'WOODLAND20210110012334',
-            'name' => 'OCTOPUS CART',
-            'email' => 'octopuscartltd@gmail.com',
-            'contact_no' => '000000000',
-            'name_receiver' => '',
-            'email_receiver' => '',
-            'contact_no_receiver' => '',
-            'payment_type' => 'WECHAT',
-            'message' => '',
-            'base_amount' => 500,
-            'percent' => 15,
-            'quantity' => 5,
-            'amount' => 425,
-            'check_receiver' => '',
-            'status' => 'Payment Init',
-            'remark' => '',
-            'date' => '2021-01-10',
-            'time' => '01:23:34'
-        );
-        print_r($coupnrequest);
-        $this->db->insert('coupon_request', $coupnrequest);
-    }
-
-    public function couponTest() {
+      public function couponTest() {
         if (isset($_POST['submit_now'])) {
-            $requestid = "HI" . date('Ymd') . date('His');
+            $requestid = "WL" . date('Ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
             $coupnrequest = array(
                 'request_id' => $requestid,
@@ -123,7 +98,11 @@ class Coupon extends CI_Controller {
                 'contact_no_receiver' => $this->input->post('contact_no_receiver'),
                 'payment_type' => $this->input->post('payment_type'),
                 'message' => $this->input->post('message'),
-                'amount' => '0.01',
+                'base_amount' => $this->input->post('base_amount'),
+                'percent' => $this->input->post('percent'),
+                'quantity' => $this->input->post('quantity'),
+                'amount' => "0.01",
+                'check_receiver' => $this->input->post('check_receiver'),
                 'status' => 'Payment Init',
                 'remark' => '',
                 'date' => date('Y-m-d'),
@@ -132,9 +111,10 @@ class Coupon extends CI_Controller {
             $this->db->insert('coupon_request', $coupnrequest);
             redirect("Coupon/orderPayment/" . $requestid);
         }
-
         $this->load->view('coupon/gift_coupon');
     }
+
+  
 
     function orderPayment($order_key) {
         $this->db->where("request_id", $order_key);
@@ -233,7 +213,9 @@ class Coupon extends CI_Controller {
                 $senderemail = site_url("Coupon/couponBuyEmail/$codehas/$order_key");
                 $receiveremail = site_url("Coupon/couponReceiverEmail/$codehas/$order_key");
                 $this->useCurl($senderemail, $headers);
-                $this->useCurl($receiveremail, $headers);
+                if ($requestdata['check_receiver'] == 'true') {
+                    $this->useCurl($receiveremail, $headers);
+                }
 
                 redirect("Coupon/yourCode/" . $codehas . "/" . $order_key);
             } else {

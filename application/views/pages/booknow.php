@@ -66,16 +66,22 @@ $this->load->view('layout/header');
                                             </div>
                                             <div class="clear"></div>
                                             <div class="col-6 mb-3">
-                                                 <label class='text-left pull-left'>Select Time</label>
+                                                <label class='text-left pull-left'>Select Time</label>
                                                 <select id="template-contactform-time" class="custom-select sm-form-control border-form-control" name="select_time" required="">
                                                     <option value="disabled" disabled="" selected="">Select Time</option>
-                                                    <option value="12:00">12:00 - 13:00</option>
-                                                    <option value="13:00">13:00 - 14:00</option>
-                                                    <option value="14:00">14:00 - 15:00</option>
-<!--                                                    <option value="18:30">18:30 - 19:00</option>
-                                                    <option value="19:00">19:00 - 20:00</option>
-                                                    <option value="20:00">20:00 - 21:00</option>
-                                                    <option value="21:00">21:00 - 22:00</option>-->
+                                                    <?php
+                                                    $timelist = [12, 13, 14];
+                                                    foreach ($timelist as $key => $value) {
+                                                        ?>
+                                                        <option value="<?php echo $value . ":00" ?>"><?php echo $value.":00"?> - <?php echo $value.":30"?></option>
+                                                        <option value="<?php echo $value . ":30" ?>"><?php echo $value.":30"?> - <?php echo ($value+1).":00"?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    <!--                                                    <option value="18:30">18:30 - 19:00</option>
+                                                                                                        <option value="19:00">19:00 - 20:00</option>
+                                                                                                        <option value="20:00">20:00 - 21:00</option>
+                                                                                                        <option value="21:00">21:00 - 22:00</option>-->
                                                 </select>
                                             </div>
                                             <div class="col-6 mb-3">

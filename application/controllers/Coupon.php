@@ -264,7 +264,7 @@ class Coupon extends CI_Controller {
         $this->email->from(email_bcc, $sendername);
         $this->email->to($requestdata['email']);
 //            $this->email->bcc(email_bcc);
-        $subjectt = "Thank you for buying gift coupon";
+        $subjectt = "Thank you for buying cash voucher";
         $subject = $subjectt;
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view('coupon/gift_coupon_buy_email', $data, true);
@@ -298,7 +298,7 @@ class Coupon extends CI_Controller {
         $this->email->from(email_bcc, $sendername);
         $this->email->to($requestdata['email_receiver']);
 //            $this->email->bcc(email_bcc);
-        $subjectt = "You have gifted a coupon from " . $requestdata['name'];
+        $subjectt = "You have gifted a cash voucher from " . $requestdata['name'];
         $subject = $subjectt;
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view('coupon/gift_coupon_receiver_email', $data, true);

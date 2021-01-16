@@ -25,26 +25,20 @@
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
                         <tbody>
                             <tr>
-                                <td STYLE="WIDTH:200PX;">
-                                    <img src="https://manager2.woodlandshk.com/assets/images/gift-box.png" style="height: 200px;" />
 
-                                </td>
                                 <td>
 
-                                    <b>Hello <?php echo $coupon['name_receiver']; ?>,</b>
-                                    <p>Message: <?php echo $coupon['message']; ?></p>
-                                    <p>You have gifted a Cash Voucher from <b><?php echo $coupon['name']; ?></b> (<?php echo $coupon['email']; ?>), below you can find your cash voucher code(s). 
-                                        This cash voucher can be used either in Woodlands or in Hello India.</p>
+                                    <b>Hello <?php echo $memberdata->name; ?>,</b>
+                                    <p>Thank you for joining your loyalty program. 
+                                        You can earn exclusive offers and cash vouchers based on numbers of visits to Woodlands or in Hello India.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="    text-align: center;font-size: 18px;" colspan="2">
 
+                                    <img src="<?php echo $image; ?>" style="height: 300px;"/>
 
-                                    <p>
-                                        <img src="<?php echo $couponimage; ?>" style="height: 300px;"/>
-                                    </p>
-
+                                    <hr/>
 
                                 </td>
                             </tr>

@@ -21,6 +21,7 @@ class Coupon extends CI_Controller {
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
         $this->couponApiUrl = $paymentconf['CouponLink'];
+        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
     }
 
     private function useCurl($url, $headers, $fields = null) {
@@ -84,7 +85,7 @@ class Coupon extends CI_Controller {
         $this->load->view('coupon/gift_coupon');
     }
 
-      public function couponTest() {
+    public function couponTest() {
         if (isset($_POST['submit_now'])) {
             $requestid = "WL" . date('Ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
@@ -113,8 +114,6 @@ class Coupon extends CI_Controller {
         }
         $this->load->view('coupon/gift_coupon');
     }
-
-  
 
     function orderPayment($order_key) {
         $this->db->where("request_id", $order_key);
@@ -302,6 +301,93 @@ class Coupon extends CI_Controller {
         $subject = $subjectt;
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view('coupon/gift_coupon_receiver_email', $data, true);
+        if (REPORT_MODE == 1) {
+            $this->email->message($htmlsmessage);
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
+        } else {
+            echo $htmlsmessage;
+        }
+    }
+
+    function joinLoyaltiProgram() {
+        $data = array("join_status" => "");
+        $data['join_msg'] = "";
+        if (isset($_POST['submit'])) {
+            $paymenttype = $this->input->post('payment_type');
+            $jonrequest = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact_no' => $this->input->post('contact_no')
+            );
+            $jonrequest['prefix'] = "WL";
+            $jonrequest['join_from'] = "WOODLANDS";
+            $headers = array(
+                'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+                'Content-Type: application/json'
+            );
+            $url = $this->couponApiUrl . 'Api/joinProgram';
+            $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
+            $codehas = json_decode($curldata);
+            $data['join_msg'] = $codehas->msg;
+            $data['join_status'] = $codehas->status;
+            if ($data['join_status'] == '200') {
+                $senderemail = site_url("Coupon/loyalProgramMail/". $codehas->join_code_hash);
+                $this->useCurl($senderemail, $headers);
+                redirect("loyalty-program-thanks/" . $codehas->join_code_hash);
+            }
+        }
+
+        $this->load->view('coupon/loyalprogram', $data);
+    }
+
+    function loyalProgramThanks($codehas) {
+        $data = array("redirectlink" => site_url("loyalty-program"));
+        $jonrequest['code_hash'] = $codehas;
+        $headers = array(
+            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+            'Content-Type: application/json'
+        );
+        $url = $this->couponApiUrl . 'Api/checkLoyalProgram';
+        $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
+        $codehas = json_decode($curldata);
+        if ($codehas->status == '200') {
+
+            $this->load->view('coupon/loyalprogramthanks', $data);
+        } else {
+            redirect("loyalty-program");
+        }
+    }
+
+    function loyalProgramMail($codehas) {
+        $jonrequest['code_hash'] = $codehas;
+        $headers = array(
+            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+            'Content-Type: application/json'
+        );
+        $url = $this->couponApiUrl . 'Api/checkLoyalProgram';
+        $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
+        $codehas = json_decode($curldata);
+        $data['memberdata'] = $codehas->memberdata;
+        $data["image"] = $codehas->image;
+
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($codehas->memberdata->email);
+//            $this->email->bcc(email_bcc);
+        $subjectt = "Thank you for joining our loyalty program";
+        $subject = $subjectt;
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view('coupon/loyalprogrammail', $data, true);
         if (REPORT_MODE == 1) {
             $this->email->message($htmlsmessage);
             $this->email->print_debugger();

@@ -75,7 +75,7 @@ $route['book-now'] = 'Shop/booknow';
 
 $route['gallery'] = 'Shop/gallery';
 
-$route['loyalty-program'] = 'Shop/loyalprogram';
+
 
 $route['feedback'] = 'Shop/feedback';
 
@@ -86,3 +86,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['sitemap_index\.xml'] = "Sitemap/index";
 
 $route['paymentresult'] = 'PaymentGatway/paymentResult';
+
+
+$route['loyalty-program'] = 'Coupon/joinLoyaltiProgram';
+$route['loyalty-program-thanks/(:any)'] = 'Coupon/loyalProgramThanks/$1';

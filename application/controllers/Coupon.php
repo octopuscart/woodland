@@ -21,7 +21,7 @@ class Coupon extends CI_Controller {
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
         $this->couponApiUrl = $paymentconf['CouponLink'];
-        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
+       
     }
 
     private function useCurl($url, $headers, $fields = null) {

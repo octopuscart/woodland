@@ -79,7 +79,7 @@ $this->load->view('layout/header');
                                                     <h3 class="font-secondary nott">Welcome to the Woodlands Loyalty program </h3>
                                                     <p style="    font-size: 15px;
                                                        text-transform: uppercase;" >Join our customer loyalty program and earn cash vouchers based on numbers of visits to Woodlands !</p>
-                                                    <div style="text-align: center"><img src="<?php echo base_url(); ?>assets/theme2/res/images/sections/membership.png" style="height: 300px;width: 300px;display: inline;"/></div>
+                                                    <div style="text-align: center"><img src="<?php echo base_url(); ?>assets/images/wlqr.png" style="height: 300px;width: 300px;display: inline;"/></div>
                                                     <hr/>
 
 

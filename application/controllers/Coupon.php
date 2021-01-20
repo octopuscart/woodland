@@ -21,7 +21,7 @@ class Coupon extends CI_Controller {
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
         $this->couponApiUrl = $paymentconf['CouponLink'];
-        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
+//        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
     }
 
     private function useCurl($url, $headers, $fields = null) {
@@ -428,7 +428,7 @@ class Coupon extends CI_Controller {
         $subjectt = "You have rewarded from loyalty program";
         $subject = $subjectt;
         $this->email->subject($subject);
-        $htmlsmessage = $this->load->view('coupon/loyalProgramReimburse', $data, true);
+       echo $htmlsmessage = $this->load->view('coupon/loyalProgramReimburse', $data, true);
         if (REPORT_MODE == 1) {
             $this->email->message($htmlsmessage);
             $this->email->print_debugger();

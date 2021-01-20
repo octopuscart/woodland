@@ -428,7 +428,7 @@ class Coupon extends CI_Controller {
         $subjectt = "You have rewarded from loyalty program";
         $subject = $subjectt;
         $this->email->subject($subject);
-       echo $htmlsmessage = $this->load->view('coupon/loyalProgramReimburse', $data, true);
+        $htmlsmessage = $this->load->view('coupon/loyalProgramReimburse', $data, true);
         if (REPORT_MODE == 1) {
             $this->email->message($htmlsmessage);
             $this->email->print_debugger();

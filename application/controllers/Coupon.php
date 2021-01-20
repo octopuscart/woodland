@@ -21,7 +21,7 @@ class Coupon extends CI_Controller {
         $this->salesLink = $paymentconf['EOPGSalesLink'];
         $this->queryLink = $paymentconf['EOPGQueryLink'];
         $this->couponApiUrl = $paymentconf['CouponLink'];
-       
+        $this->couponApiUrl = "http://localhost/woodlandcoupon/index.php/";
     }
 
     private function useCurl($url, $headers, $fields = null) {
@@ -337,7 +337,7 @@ class Coupon extends CI_Controller {
             $data['join_msg'] = $codehas->msg;
             $data['join_status'] = $codehas->status;
             if ($data['join_status'] == '200') {
-                $senderemail = site_url("Coupon/loyalProgramMail/". $codehas->join_code_hash);
+                $senderemail = site_url("Coupon/loyalProgramMail/" . $codehas->join_code_hash);
                 $this->useCurl($senderemail, $headers);
                 redirect("loyalty-program-thanks/" . $codehas->join_code_hash);
             }
@@ -388,6 +388,47 @@ class Coupon extends CI_Controller {
         $subject = $subjectt;
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view('coupon/loyalprogrammail', $data, true);
+        if (REPORT_MODE == 1) {
+            $this->email->message($htmlsmessage);
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
+        } else {
+            echo $htmlsmessage;
+        }
+    }
+
+    function loyalProgramReimbursementMail($reimburse_id) {
+        $jonrequest['reimburse_id'] = $reimburse_id;
+        $headers = array(
+            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+            'Content-Type: application/json'
+        );
+        $url = $this->couponApiUrl . 'Api/memberReimbursement';
+        $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
+        $codehas = json_decode($curldata);
+    
+
+        $data['memberdata'] = $codehas->memberdata;
+        $data["image"] = $codehas->image;
+        $data["reimbursement"] = $codehas->reimbursement;
+
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($codehas->memberdata->email);
+//            $this->email->bcc(email_bcc);
+        $subjectt = "You have rewarded from loyalty program";
+        $subject = $subjectt;
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view('coupon/loyalProgramReimburse', $data, true);
         if (REPORT_MODE == 1) {
             $this->email->message($htmlsmessage);
             $this->email->print_debugger();

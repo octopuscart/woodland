@@ -55,11 +55,23 @@
                                             <td class="leftaling">Reimbursement</td>
                                             <td class="leftaling"><b><?php echo globle_currency . number_format($reimbursement->amount, 2, '.', '') ?></b></td>
                                         </tr>
-                                        <tr>
-                                            <td class="leftaling">Total Amount</td>
-                                            <td class="leftaling"><?php echo globle_currency . number_format($reimbursement->order_amount, 2, '.', ''); ?></td>
-                                        </tr>
-
+                                        <?php
+                                        if ($reimbursement->order_amount > (-1)) {
+                                            ?>
+                                            <tr>
+                                                <td class="leftaling">Paid Amount</td>
+                                                <td class="leftaling"><?php echo globle_currency . number_format($reimbursement->order_amount, 2, '.', ''); ?></td>
+                                            </tr>
+                                            <?php
+                                        } else {
+                                            ?>
+                                         <tr>
+                                                <td class="leftaling">Remaining Discount</td>
+                                                <td class="leftaling"><?php echo globle_currency . number_format(($reimbursement->order_amount*(-1)), 2, '.', ''); ?></td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
                                     </table>
 
                                     <hr/>

@@ -2,7 +2,7 @@
 $this->load->view('layout/header');
 ?>
 
-<section id="slider" class="slider-element swiper_wrapper slider-parallax force-full-screen full-screen clearfix" data-effect="fade" data-loop="true" data-autoplay="6000" data-speed="1400">
+<section id="slider" class="slider-element swiper_wrapper slider-parallax force-full-screen full-screen clearfix" data-effect="fade" data-loop="true" data-autoplay="3000" data-speed="1400">
     <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
@@ -382,7 +382,7 @@ $this->load->view('layout/header');
             <div class="row clearfix">
 
 
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-4 col-md-4">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <iframe width="1133" height="550" src="https://www.youtube.com/embed/ASkSgQxdiVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -397,7 +397,7 @@ $this->load->view('layout/header');
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-4 col-md-4">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <iframe width="1133" height="550" src="https://www.youtube.com/embed/smRHSvResAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -406,6 +406,21 @@ $this->load->view('layout/header');
                             <div class="team-title">
                                 <h4 class="font-primary t400 ls2">Woodlands - 印度菜唔止得咖喱 | Indian Food isn't just curry 2 - Dosa
                                 </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <div class="team">
+                        <div class="team-image imagescalein">
+                            <iframe width="1133" height="550" src="https://www.youtube.com/embed/mL-w8MEkUMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="team-desc">
+                            <div class="team-title">
+                                <h4 class="font-primary t400 ls2">【美味推介】印度菜並不只是咖喱：活蘭印度素食 / Indian Food isn't all about Curry: Woodlands Indian Restaurant (Subtitled)
+                                </h4>
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -262,7 +262,7 @@ class Coupon extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
         $this->email->to($requestdata['email']);
-//            $this->email->bcc(email_bcc);
+        $this->email->bcc(email_bcc);
         $subjectt = "Thank you for buying cash voucher";
         $subject = $subjectt;
         $this->email->subject($subject);
@@ -296,7 +296,7 @@ class Coupon extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
         $this->email->to($requestdata['email_receiver']);
-//            $this->email->bcc(email_bcc);
+        $this->email->bcc(email_bcc);
         $subjectt = "You have gifted a cash voucher from " . $requestdata['name'];
         $subject = $subjectt;
         $this->email->subject($subject);
@@ -383,7 +383,7 @@ class Coupon extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
         $this->email->to($codehas->memberdata->email);
-//            $this->email->bcc(email_bcc);
+        $this->email->bcc(email_bcc);
         $subjectt = "Thank you for joining our loyalty program";
         $subject = $subjectt;
         $this->email->subject($subject);
@@ -411,7 +411,7 @@ class Coupon extends CI_Controller {
         $url = $this->couponApiUrl . 'Api/memberReimbursement';
         $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
         $codehas = json_decode($curldata);
-    
+
 
         $data['memberdata'] = $codehas->memberdata;
         $data["image"] = $codehas->image;
@@ -424,7 +424,7 @@ class Coupon extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
         $this->email->to($codehas->memberdata->email);
-//            $this->email->bcc(email_bcc);
+        $this->email->bcc(email_bcc);
         $subjectt = "You have rewarded from loyalty program";
         $subject = $subjectt;
         $this->email->subject($subject);

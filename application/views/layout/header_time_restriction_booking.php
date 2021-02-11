@@ -110,8 +110,20 @@
 <!--                                <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
 
                             <li>
-                                <a href="<?php echo site_url("menu/0/0"); ?>" class="reservation_buttons "><div>Order Food</div></a>
+                                <?php
+                                $checktime = $this->Utils->checkTime(date("h:i A"));
+                                if ($checktime['code']) {
+                                    ?>
+                                    <a href="<?php echo site_url("menu/0/0"); ?>" class="reservation_buttons "><div>Order Food</div></a>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <a href="#" class="reservation_buttons disablebooking"><div>Order Food</div></a>
 
+                                    <?php
+                                    echo "<span class='smallmessage'>" . $checktime['message'] . "</span>";
+                                }
+                                ?>
                             </li>
                             <li><a href="<?php echo site_url("our-menu/0/0"); ?>" class="reservation_buttons "><div class="">MENU </div></a></li>
 

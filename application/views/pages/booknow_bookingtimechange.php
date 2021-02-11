@@ -69,45 +69,19 @@ $this->load->view('layout/header');
                                                 <label class='text-left pull-left'>Select Time</label>
                                                 <select id="template-contactform-time" class="custom-select sm-form-control border-form-control" name="select_time" required="">
                                                     <option value="disabled" disabled="" selected="">Select Time</option>
-                                                    <optgroup label="Lunch">
-                                                        <option value="<?php echo "11:30"; ?>"><?php echo "11:30"; ?></option>
-                                                        <option value="<?php echo "11:45"; ?>"><?php echo "11:45"; ?></option>
-
-                                                        <?php
-                                                        $timelist = [12, 13, 14];
-                                                        foreach ($timelist as $key => $value) {
-                                                            ?>
-                                                            <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
-                                                            <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
-                                                            <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
-                                                            <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
-                                                            <?php
-                                                        }
+                                                    <?php
+                                                    $timelist = [12, 13, 14];
+                                                    foreach ($timelist as $key => $value) {
                                                         ?>
-                                                        <option value="<?php echo "15:00"; ?>"><?php echo "15:00"; ?></option>
-
-                                                    </optgroup>
-                                                    <optgroup label="Dinner">
-
-                                                        <option value="18:30">18:30</option>
-                                                        <option value="18:45">18:45</option>
-
+                                                        <option value="<?php echo $value . ":00" ?>"><?php echo $value.":00"?> - <?php echo $value.":30"?></option>
+                                                        <option value="<?php echo $value . ":30" ?>"><?php echo $value.":30"?> - <?php echo ($value+1).":00"?></option>
                                                         <?php
-                                                        $timelist = [19, 20];
-                                                        foreach ($timelist as $key => $value) {
-                                                            ?>
-                                                            <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
-                                                            <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
-                                                            <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
-                                                            <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
-                                                            <?php
-                                                        }
-                                                        ?>
-
-                                                        <option value="21:00">21:00</option>
-                                                        <option value="21:15">21:15</option>
-                                                        <option value="21:30">21:30</option>
-                                                    </optgroup>
+                                                    }
+                                                    ?>
+                                                    <!--                                                    <option value="18:30">18:30 - 19:00</option>
+                                                                                                        <option value="19:00">19:00 - 20:00</option>
+                                                                                                        <option value="20:00">20:00 - 21:00</option>
+                                                                                                        <option value="21:00">21:00 - 22:00</option>-->
                                                 </select>
                                             </div>
                                             <div class="col-6 mb-3">

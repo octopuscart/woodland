@@ -319,30 +319,38 @@ class Coupon extends CI_Controller {
         $data = array("join_status" => "");
         $data['join_msg'] = "";
         if (isset($_POST['submit'])) {
-            $paymenttype = $this->input->post('payment_type');
-            $jonrequest = array(
-                'name' => $this->input->post('name'),
-                'email' => $this->input->post('email'),
-                'contact_no' => $this->input->post('contact_no')
-            );
-            $jonrequest['prefix'] = "WL";
-            $jonrequest['join_from'] = "WOODLANDS";
-            $headers = array(
-                'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
-                'Content-Type: application/json'
-            );
-            $url = $this->couponApiUrl . 'Api/joinProgram';
-            $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
-            $codehas = json_decode($curldata);
-            $data['join_msg'] = $codehas->msg;
-            $data['join_status'] = $codehas->status;
-            if ($data['join_status'] == '200') {
-                $senderemail = site_url("Coupon/loyalProgramMail/" . $codehas->join_code_hash);
-                $this->useCurl($senderemail, $headers);
-                redirect("loyalty-program-thanks/" . $codehas->join_code_hash);
+            $email = $this->input->post('email');
+            $reemail = $this->input->post('reemail');
+
+
+            if ($reemail === $email) {
+                $paymenttype = $this->input->post('payment_type');
+                $jonrequest = array(
+                    'name' => $this->input->post('name'),
+                    'email' => $this->input->post('email'),
+                    'contact_no' => $this->input->post('contact_no')
+                );
+                $jonrequest['prefix'] = "WL";
+                $jonrequest['join_from'] = "WOODLANDS";
+                $headers = array(
+                    'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+                    'Content-Type: application/json'
+                );
+                $url = $this->couponApiUrl . 'Api/joinProgram';
+                $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
+                $codehas = json_decode($curldata);
+                $data['join_msg'] = $codehas->msg;
+                $data['join_status'] = $codehas->status;
+                if ($data['join_status'] == '200') {
+                    $senderemail = site_url("Coupon/loyalProgramMail/" . $codehas->join_code_hash);
+                    $this->useCurl($senderemail, $headers);
+                    redirect("loyalty-program-thanks/" . $codehas->join_code_hash);
+                }
+            } else {
+                $data['join_msg'] = "Email not matched.";
+                $data["join_status"] = 100;
             }
         }
-
         $this->load->view('coupon/loyalprogram', $data);
     }
 

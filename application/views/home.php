@@ -16,14 +16,14 @@ $this->load->view('layout/header');
                     </div>
                 </div>
                 
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/offerslide.jpg'); background-position: center center;">
+<!--                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/offerslide.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
                             
                         </div>
                     </div>
                 </div>
-                
+                -->
                 
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
                     <div class="container dark clearfix">

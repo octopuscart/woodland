@@ -1,51 +1,12 @@
 <?php
 $this->load->view('layout/header');
 
-function getNextSelectTime($timelisttemp, $selectedhour, $selectminut) {
-    $assmtime = $selectedhour . ":" . $selectminut;
-    $indexarray = array_search($assmtime, $timelisttemp);
-    if ($indexarray > 0) {
-        return $indexarray;
-    } else {
-        $assmtime = $selectedhour . ":" . $selectminut;
-        $timestamp = strtotime($assmtime);
-        $timestamp_one_hour_later = $timestamp + 3600;
-        $nexthour = strftime('%H', $timestamp_one_hour_later);
-        $assmtime2 = $nexthour . ":" . $selectminut;
-        $indexarray = array_search($assmtime2, $timelisttemp);
-        if ($indexarray > 0) {
-            return $indexarray;
-        } else {
-            return getNextSelectTime($timelisttemp, $nexthour, $selectminut);
-        }
-    }
-}
-
-function getNextSelectTime2($timelisttemp, $selectedhour, $selectminut) {
-    $assmtime = $selectedhour;
-    $indexarray = isset($timelisttemp[$assmtime]);
-    if ($indexarray) {
-        return $timelisttemp[$assmtime];
-    } else {
-        $assmtime = $selectedhour . ":00";
-
-        $timestamp = strtotime($assmtime);
-        $timestamp_one_hour_later = $timestamp + 3600;
-        $nexthour = strftime('%H', $timestamp_one_hour_later);
-        $assmtime2 = $nexthour;
-        $indexarray = isset($timelisttemp[$assmtime2]);
-        if ($indexarray) {
-            return $timelisttemp[$assmtime2];
-        } else {
-            return getNextSelectTime2($timelisttemp, $nexthour, $selectminut);
-        }
-    }
-}
-
 $timeslotarray = array(
     "13" => "01:00 PM",
     "14" => "02:00 PM",
     "15" => "03:00 PM",
+//    "16" => "04:00 PM",
+//    "17" => "05:00 PM",
     "18" => "06:00 PM",
     "19" => "07:00 PM",
     "20" => "08:00 PM",
@@ -99,83 +60,6 @@ $delivery_time = current($selectTimeSlot);
 
 $delivery_date = $delivery_details ? $delivery_details['delivery_date'] : $delivery_date;
 $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $delivery_time;
-
-$deliverytimeselection = [
-    array("ttype" => "half", "timelist" => ["11:30", "11:45"]),
-    array("ttype" => "full", "timelist" => [12, 13, 14]),
-    array("ttype" => "half", "timelist" => ["15:00"]),
-    array("ttype" => "half", "timelist" => ["18:30", "18:45"]),
-    array("ttype" => "full", "timelist" => [19, 20]),
-    array("ttype" => "half", "timelist" => ["21:00", "21:15", "21:30"]),
-];
-
-$timelist = array();
-$currenttime_h = $ctime = date('H');
-$currenttime_m = $ctime = date('m');
-
-
-$currenttime_h2 = date('H', strtotime('1 hour'));
-$currenttime_h2 = "23";
-//
-//$currenttime_m = "10";
-
-$selecttimec = "15";
-if ($currenttime_m > 0) {
-    $selecttimec = "15";
-}
-if ($currenttime_m > 15) {
-    $selecttimec = "30";
-}
-if ($currenttime_m > 30) {
-    $selecttimec = "45";
-}
-if ($currenttime_m > 45) {
-    $selecttimec = "00";
-    $currenttime_h2 = date('H', strtotime('2 hour'));
-}
-$currenttime_h . ":" . $currenttime_m;
-
-$assumetime = $currenttime_h2 . ":" . $selecttimec;
-
-$timelisth = array();
-$timelisth;
-
-
-foreach ($deliverytimeselection as $key => $datevalue) {
-    if ($datevalue["ttype"] == "half") {
-        foreach ($datevalue["timelist"] as $key => $value) {
-            array_push($timelist, $value);
-            $timestamp = strtotime($value);
-            $nexthour = strftime('%H', $timestamp);
-            if ($key == 0) {
-                $timelisth[$nexthour] = $value;
-            }
-        }
-    }
-    if ($datevalue["ttype"] == "full") {
-        foreach ($datevalue["timelist"] as $key => $value) {
-            $timelisth[$value] = $value . ":00";
-            array_push($timelist, $value . ":00");
-            array_push($timelist, $value . ":15");
-            array_push($timelist, $value . ":30");
-            array_push($timelist, $value . ":45");
-        }
-    }
-}
-
-
-$returntime = getNextSelectTime($timelist, $currenttime_h2, $selecttimec);
-
-$returntime2 = getNextSelectTime2($timelisth, $currenttime_h2, $selecttimec);
-
-$assumetime2 = $timelist[$returntime];
-
-$indexarray = array_search($assumetime2, $timelist);
-$finaltimelist = $timelist;
-if ($indexarray) {
-    $returnarray = array_slice($timelist, $indexarray);
-    $finaltimelist = $returnarray;
-}
 ?>
 
 <style>
@@ -289,8 +173,8 @@ if ($indexarray) {
                                      border: 1px solid #000;
                                      border-radius: 10px;">
 
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'></p></a></li>
+                            <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'>20% Discount On Delivery</p></a></li>
                                         <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab'>30% Discount On Pickup</p></a></li>
 
                                     </ul>
@@ -336,7 +220,7 @@ if ($indexarray) {
                                                                                     <?php echo $value['address1']; ?>,<br/>
                                                                                     <?php echo $value['address2']; ?>,<br/>
                                                                                     <?php echo $value['city']; ?><br/>
-                                                                                    <?php echo $value['zipcode']; ?>
+                                                                                    <?php echo $value['zipcode'] ;?>
                                                                                     <br/>
                                                                                     <?php if ($value['status'] != 'default') { ?> 
                                                                                         <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn-send-message address_button btn-small " style="    padding: 0px 10px;
@@ -357,81 +241,51 @@ if ($indexarray) {
                                                             </div>                            
 
                                                         </div>
-
+                                                       
                                                     </div>
-
+                                                  
                                                     <div class="cart-page-top table-responsive">
-                                                        <form action="#" method="post">
-                                                            <table class="table table-hover">
-                                                                <tbody id="quantity-holder">
-                                                                    <tr>
-
-                                                                        <td colspan="3">
-                                                                            <div class="row">
-                                                                                <div class="col-md-6">
-                                                                                    <h3>
-                                                                                        Select Delivery Time
-                                                                                    </h3>
-
-
-
-                                                                                </div>
-                                                                                <div class="col-md-6">
-                                                                                    <select class="form-control" name="delivery_time">
-                                                                                        <?php
-                                                                                        foreach ($finaltimelist as $key => $value) {
-                                                                                            ?>
-                                                                                            <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                            <?php
-                                                                                        }
-                                                                                        ?>
-                                                                                    </select>
-                                                                                </div>
-
-                                                                            </div>   
-                                                                            <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
-
-                                                                        </td>
-                                                                        <td colspan="1" class="text_right">
-                                                                            <!--                                                                        <div class="proceed-button pull-left " >
-                                                                                                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                                                                                                    </div>-->
-                                                                            <div class="proceed-button pull-right ">
-                                                                                <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
-
+                                                        <table class="table table-hover">
+                                                            <tbody id="quantity-holder">
+                                                                <tr>
+                                                                    <td colspan="4" class="text_right">
+<!--                                                                        <div class="proceed-button pull-left " >
+                                                                            <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                        </div>-->
+                                                                        <div class="proceed-button pull-right ">
+                                                                            <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                            <form action="#" method="post">
                                                                                 <?php
                                                                                 if (count($user_address_details)) {
                                                                                     ?>
+                                                                                   <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
 
+                                                                                <input type="hidden" name="delivery_time" value="<?php echo date("h:i a"); ?>"/>
 
-
-                                                                                                                                                                                                    <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                     <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                     <?php
                                                                                 }
                                                                                 ?>
+                                                                            </form>
 
-
-                                                                            </div>
-
-                                                                        </td>
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </form>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
 
                                                     </div>
                                                 </div>
                                             </div>
 
                                         </div>
-
+                                        
                                         <div class="tab-pane fade " id="pickup">
                                             <form action="#" method="post" style="margin-bottom: 0;">
                                                 <div class="card card-default">
                                                     <div class="card-body">
-
+                                                     
                                                         <h3>
                                                             <?php
                                                             echo "Your order will be ready in 45 minute, Expected time is " . date("h:i a", strtotime("+45 minute"));
@@ -441,37 +295,18 @@ if ($indexarray) {
                                                             <table class="table table-hover">
                                                                 <tbody id="quantity-holder">
                                                                     <tr>
-                                                                        <td colspan="3">
-                                                                            <div class="row">
-                                                                                <div class="col-md-6">
-                                                                                    <h3>
-                                                                                        Select Pickup Time
-                                                                                    </h3>
-                                                                                </div>
-                                                                                <div class="col-md-6">
-                                                                                    <select class="form-control" name="delivery_time">
-                                                                                        <?php
-                                                                                        foreach ($finaltimelist as $key => $value) {
-                                                                                            ?>
-                                                                                            <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                            <?php
-                                                                                        }
-                                                                                        ?>
-                                                                                    </select>
-                                                                                </div>
-
-                                                                            </div>   
-                                                                            <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
-
-                                                                        </td>
-                                                                        <td colspan="1" class="text_right">
-                                                                            <!--                                                                            <div class="proceed-button pull-left " >
-                                                                                                                                                            <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                                                                                                        </div>-->
+                                                                        <td colspan="4" class="text_right">
+<!--                                                                            <div class="proceed-button pull-left " >
+                                                                                <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                            </div>-->
                                                                             <div class="proceed-button pull-right ">
 
 
-                                                                             <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopaymentpickup">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
+                                                                                <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
+
+                                                                                <input type="hidden" name="delivery_time" value="<?php echo date("h:i a"); ?>"/>
+
+                                                                                <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopaymentpickup">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
 
 
                                                                             </div>
@@ -485,7 +320,7 @@ if ($indexarray) {
                                                 </div>
                                             </form>
                                         </div>
-
+                                        
                                     </div>
                                 </div>
 

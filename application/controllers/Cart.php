@@ -104,6 +104,7 @@ class Cart extends CI_Controller {
                     'delivery_date' => $this->input->post('delivery_date'),
                     'delivery_time' => $this->input->post('delivery_time'),
                 );
+                print_r($delivery_details);
 
                 $this->session->set_userdata('delivery_details', $delivery_details);
                 redirect('Cart/checkoutPayment');
@@ -194,6 +195,7 @@ class Cart extends CI_Controller {
     }
 
     function checkoutPayment() {
+        
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
@@ -201,7 +203,6 @@ class Cart extends CI_Controller {
         $data['checkoutmode'] = '';
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
-
 
 
 
@@ -263,7 +264,7 @@ class Cart extends CI_Controller {
                 $address = $user_address_details[0];
 
 
-                $discountrate = 20;
+                $discountrate = 0;
                 $discoutamount = 0;
                 if ($checkaddress['zipcode'] == 'Pickup') {
                     $address = $checkaddress;

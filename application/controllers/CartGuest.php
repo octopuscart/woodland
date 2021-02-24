@@ -162,6 +162,7 @@ class CartGuest extends CI_Controller {
 
     function checkoutPayment() {
         $this->redirectCart();
+//        print_r($this->session->userdata('delivery_details'));
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -190,7 +191,7 @@ class CartGuest extends CI_Controller {
                 $session_cart = $this->Product_model->cartData();
             }
 
-            $discountrate = 20;
+            $discountrate = 0;
             $discoutamount = 0;
             $session_cart['shipping_price'] = 40;
             if ($session_cart['total_price'] > 399) {

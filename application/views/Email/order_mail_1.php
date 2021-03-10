@@ -145,8 +145,8 @@
                                 <table class="gn_table">
 
                                     <tr>
-                                        <th> Pickup Time</th>
-                                        <td>: <?php echo $order_data->delivery_time; ?> </td>
+                                        <th>Expected Ready Time</th>
+                                        <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
                                     </tr>
                                 </table>
                             <?php } else {
@@ -157,8 +157,8 @@
                                         <td>: <?php echo $order_data->zipcode; ?> </td>
                                     </tr>
                                     <tr>
-                                        <th> Delivery Time</th>
-                                        <td>: <?php echo $order_data->delivery_time; ?> </td>
+                                        <th>Expected Delivery Date/Time</th>
+                                        <td>: <?php echo date("h:i a", strtotime("+45 minute")); ?> </td>
                                     </tr>
                                 </table>
                                 <?php

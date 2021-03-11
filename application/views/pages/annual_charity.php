@@ -56,33 +56,7 @@ $this->load->view('layout/header');
     <div class="content-wrap1 charity-block">
         <div class="section nomargin clearfix" style="padding: 10px 0; background:#fff; background-size: 100% auto">
             <div class="container clearfix">
-                <div class="row clearfix">
-                    <div class="col-lg-12 text-center bottommargin-sm">
-                        <div class="heading-block nobottomborder bottommargin-sm">
-                            <h2 class="" style="color:#000!important;">
-                                House of Learning & Unesco HK GPC : 2020
 
-                            </h2>
-                        </div>
-                        <div class="feature-box media-box" style="">
-                            <p>
-                                A total of amount of over <b>HK$ 1,100,000 (One Million and One Hundred Thousands HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
-                            </p>
-
-                            <div class="col-md-12">
-                                <h2 class="" style="color:#000!important;  font-size: 15px; margin-bottom: 0px;
-    margin-top: 25px;">Social Peace Award by UNESCO HK GPC
-                                </h2>
-                                <img src="<?php echo base_url(); ?>assets/images/charity/IMG_0017.jpeg">
-                                <img src="<?php echo base_url(); ?>assets/images/charity/IMG_0021.jpeg">
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </div>
-                <hr/>
                 <div class="row clearfix">
                     <div class="col-lg-12 text-center bottommargin-sm">
                         <div class="heading-block nobottomborder bottommargin-sm">
@@ -139,41 +113,75 @@ $this->load->view('layout/header');
 
                             </table>
                             <p>
-                                A total of amount of HK$ 1,000,000 (One Million HKD) has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
+                                A total of amount of <b>HK$ 1,000,000 (One Million HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
                             </p>
-                            <p>
-                                For further enquiries, you may contact us through e-mail info@woodlandshk.com
 
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr/>
+                <div class="row clearfix">
+                    <div class="col-lg-12 text-center bottommargin-sm">
+                        <div class="heading-block nobottomborder bottommargin-sm">
+                            <h2 class="" style="color:#000!important;">
+                                House of Learning & Unesco HK GPC : 2020
+
+                            </h2>
+                        </div>
+                        <div class="feature-box media-box" style="">
+                            <p>
+                                A total of amount of over <b>HK$ 1,100,000 (One Million and One Hundred Thousands HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
                             </p>
+
+                            <div class="col-md-12">
+                                <h2 class="" style="color:#000!important;  font-size: 15px; margin-bottom: 0px;
+                                    margin-top: 25px;">Social Peace Award by UNESCO HK GPC
+                                </h2>
+                                <img src="<?php echo base_url(); ?>assets/images/charity/IMG_0017.jpeg">
+                                <img src="<?php echo base_url(); ?>assets/images/charity/IMG_0021.jpeg">
+                            </div>
+
+
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-top: -40px;"></div>
 
     </div>
+</section>
+<!-- Content -->
+<hr/>
+<section style="overflow: visible;text-align: center;">
+    <p>
+        For further enquiries, you may contact us through e-mail <b>info@woodlandshk.com</b>
 
-    <!-- Content -->
+    </p>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-top: -40px;"></div>
 
-    <section style="overflow: visible;">
-        <div class="row" style="text-align: center;margin-top:20px;margin-bottom: 50px;">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/uI8ARH4dmH4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
-            </div>
-            <div class="col-md-3"></div>
+</section>
+
+<section style="overflow: visible;">
+    <div class="row" style="text-align: center;margin-top:20px;margin-bottom: 50px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uI8ARH4dmH4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
         </div>
-
-        <?php
-        $this->load->view('layout/contactfooter');
-        ?>
-    </section>
-
-
-
+        <div class="col-md-3"></div>
+    </div>
 
     <?php
-    $this->load->view('layout/footer');
+    $this->load->view('layout/contactfooter');
     ?>
+</section>
+
+
+
+
+<?php
+$this->load->view('layout/footer');
+?>

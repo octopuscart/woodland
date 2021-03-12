@@ -109,11 +109,16 @@ $this->load->view('layout/header');
                                     <td>SILENCE </td>
                                     <td>: 2019</td>
                                 </tr>
+                                 <tr>
+                                    <td> House of Learning & Unesco HK GPC  </td>
+                                    <td>: 2020</td>
+                                </tr>
+
 
 
                             </table>
                             <p>
-                                A total of amount of <b>HK$ 1,000,000 (One Million HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
+                                A total of amount of over <b>HK$ 1,100,000 (One Million and One Hundred Thousands HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
                             </p>
 
 
@@ -125,17 +130,9 @@ $this->load->view('layout/header');
                 <hr/>
                 <div class="row clearfix">
                     <div class="col-lg-12 text-center bottommargin-sm">
-                        <div class="heading-block nobottomborder bottommargin-sm">
-                            <h2 class="" style="color:#000!important;">
-                                House of Learning & Unesco HK GPC : 2020
-
-                            </h2>
-                        </div>
+                       
                         <div class="feature-box media-box" style="">
-                            <p>
-                                A total of amount of over <b>HK$ 1,100,000 (One Million and One Hundred Thousands HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
-                            </p>
-
+                        
                             <div class="col-md-12">
                                 <h2 class="" style="color:#000!important;  font-size: 15px; margin-bottom: 0px;
                                     margin-top: 25px;">Social Peace Award by UNESCO HK GPC

@@ -64,7 +64,7 @@ class Api extends REST_Controller {
         $discountrate = 0;
         $discoutamount = 0;
         $session_cart['discount_note'] = "";
-         $session_cart['shipping_note'] = "";
+        $session_cart['shipping_note'] = "";
         if ($user_address_details) {
 
             $addresscheck2 = $this->session->userdata('shipping_address');
@@ -79,16 +79,20 @@ class Api extends REST_Controller {
 
                 $addresscheck2 = $this->session->userdata('pickup_shipping_address');
                 if ($addresscheck2['zipcode'] == 'Pickup') {
-                    $discountrate = 30;
-                    $session_cart['shipping_price'] = 0;
-                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                    $discountrate = 0;
+//                    $session_cart['shipping_price'] = 0;
+//                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                    $session_cart['shipping_price'] = 30;
+                    $session_cart['discount_note'] = "";
                     $session_cart['shipping_note'] = "";
                 }
             } else {
                 if ($addresscheck2['zipcode'] == 'Pickup') {
-                    $discountrate = 30;
+                    $discountrate = 0;
+//                    $session_cart['shipping_price'] = 30;
                     $session_cart['shipping_price'] = 0;
-                    $session_cart['discount_note'] = "30% Discount On Pickup";
+//                    $session_cart['discount_note'] = "30% Discount On Pickup";
+                     $session_cart['discount_note'] = "";
                     $session_cart['shipping_note'] = "";
                 }
             }

@@ -291,7 +291,10 @@ if ($indexarray) {
 
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'></p></a></li>
-                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup<p class='discountnotetab'>30% Discount On Pickup</p></a></li>
+                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
+                                                <!--<p class='discountnotetab'>30% Discount On Pickup</p>-->
+                                            
+                                            </a></li>
 
                                     </ul>
                                     <div class="tab-content">

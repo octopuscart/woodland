@@ -61,7 +61,6 @@ class CartGuest extends CI_Controller {
         $this->load->view('CartGuest/checkoutInit', $data);
     }
 
-
     function checkoutShipping() {
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
@@ -201,7 +200,8 @@ class CartGuest extends CI_Controller {
                 $session_cart['shipping_price'] = 0;
             }
             if ($address['zipcode'] == 'Pickup') {
-                $discountrate = 30;
+//                $discountrate = 30;
+                $discountrate = 0;
                 $session_cart['shipping_price'] = 0;
             }
 

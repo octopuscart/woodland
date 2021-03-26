@@ -63,8 +63,6 @@ class Cart extends CI_Controller {
         }
     }
 
-  
-
     function checkoutShipping() {
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
@@ -195,7 +193,7 @@ class Cart extends CI_Controller {
     }
 
     function checkoutPayment() {
-        
+
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
@@ -296,7 +294,8 @@ class Cart extends CI_Controller {
                     $session_cart['shipping_price'] = 0;
                 }
                 if ($address['zipcode'] == 'Pickup') {
-                    $discountrate = 30;
+//                    $discountrate = 30;
+                    $discountrate = 0;
                     $session_cart['shipping_price'] = 0;
                 }
                 $session_cart['sub_total_price'] = $session_cart['total_price'];

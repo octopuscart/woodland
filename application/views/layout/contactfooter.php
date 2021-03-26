@@ -137,7 +137,7 @@
                 </div>
                 <div class="row clearfix" style="display: block;text-align: center;">
 
-                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards.png" >
+                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards_v2.png" >
                     <hr/>
 
                 </div>

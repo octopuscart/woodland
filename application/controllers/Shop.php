@@ -113,7 +113,7 @@ class Shop extends CI_Controller {
     }
 
     public function booknow() {
-         $cdate = date("Y-m-d");
+        $cdate = date("Y-m-d");
         $this->db->where('select_date >=', $cdate);
         $this->db->order_by("select_date");
         $query = $this->db->get('booking_date_block');
@@ -125,7 +125,7 @@ class Shop extends CI_Controller {
         }
 
         $data['datelist'] = $listofdate;
-        
+
         if (isset($_POST['booknow'])) {
             $booking_order = array(
                 'name' => $this->input->post('name'),
@@ -186,6 +186,170 @@ class Shop extends CI_Controller {
             redirect("book-now");
         }
         $this->load->view('pages/booknow', $data);
+    }
+
+    public function booking_edit($booking_id) {
+
+
+        $cdate = date("Y-m-d");
+        $this->db->where('select_date >=', $cdate);
+        $this->db->order_by("select_date");
+        $query = $this->db->get('booking_date_block');
+        $listofdatetemp = $query->result_array();
+        $listofdate = array();
+        foreach ($listofdatetemp as $key => $value) {
+            array_push($listofdate, $value['select_date']);
+            $disabledates[$value['select_date']] = $value['select_date'];
+        }
+
+        $data['datelist'] = $listofdate;
+
+
+        $bookingemail = $this->input->get("email");
+//        $this->db->select("select_date, select_time, people");
+        $this->db->where("email", $bookingemail);
+        $this->db->where("id", $booking_id);
+        $this->db->where("status!=", "cancelled");
+        $bquery = $this->db->get("booking_order");
+        $bookingquery = $bquery->row_array();
+        if ($bookingquery) {
+            
+        } else {
+               redirect("book-now");
+        }
+
+
+
+        $data["bookingdata"] = $bookingquery;
+
+
+        if (isset($_POST['booknow'])) {
+            $booking_order = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact' => $this->input->post('contact'),
+                'select_date' => $this->input->post('select_date'),
+                'select_time' => $this->input->post('select_time'),
+                'people' => $this->input->post('people'),
+                'datetime' => date("Y-m-d H:i:s a"),
+                'order_source' => 'Website',
+                'extra_remark' => $this->input->post('extra_remark'),
+                'booking_type' => '',
+                'select_table' => '',
+                "status" => "udpate",
+            );
+            $this->db->where("id", $booking_id);
+            $this->db->set($booking_order);
+            $this->db->update('booking_order');
+            $booking_order["reason"] = "Your booking has been modified by you, here you can see your booking details";
+            $last_id = $booking_id;
+            $oderid = $last_id;
+            $ordertype = "Website";
+            $orderlog = array(
+                'log_type' => "Reservation modified",
+                'log_datetime' => date('Y-m-d H:i:s'),
+                'user_id' => "",
+                'order_id' => $last_id,
+                'log_detail' => "Booking No. #$last_id  $ordertype, has been modified by customer",
+            );
+            $this->db->insert('system_log', $orderlog);
+            //email sending
+            $emailsender = email_sender;
+            $sendername = email_sender_name;
+            $email_bcc = email_bcc;
+
+            if ($this->input->post('email')) {
+                $this->email->set_newline("\r\n");
+                $this->email->from(email_bcc, $sendername);
+                $this->email->to($this->input->post('email'));
+                $this->email->bcc(email_bcc);
+                $subjectt = "Your booking has been modified";
+                $subject = $subjectt;
+                $this->email->subject($subject);
+                $appointment['appointment'] = $booking_order;
+                $appointment['orderid'] = $oderid;
+                $htmlsmessage = $this->load->view('Email/weborderupdate', $appointment, true);
+                if (REPORT_MODE == 1) {
+
+                    $this->email->message($htmlsmessage);
+                    $this->email->print_debugger();
+                    $send = $this->email->send();
+                    if ($send) {
+                        redirect("book-now");
+                    } else {
+                        $error = $this->email->print_debugger(array('headers'));
+                        redirect("book-now");
+                    }
+                } else {
+                  //  echo $htmlsmessage;
+                }
+            }
+          //  redirect("book-now");
+        }
+        if (isset($_POST['cancel'])) {
+            $booking_order = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'contact' => $this->input->post('contact'),
+                'select_date' => $this->input->post('select_date'),
+                'select_time' => $this->input->post('select_time'),
+                'people' => $this->input->post('people'),
+                'datetime' => date("Y-m-d H:i:s a"),
+                'order_source' => 'Website',
+                'extra_remark' => $this->input->post('extra_remark'),
+                'booking_type' => '',
+                'select_table' => '',
+                "status" => "cancelled",
+            );
+            $this->db->where("id", $booking_id);
+            $this->db->set($booking_order);
+            $this->db->update('booking_order');
+            $booking_order["reason"] = "Your booking has been cancelled by you, here you can see your booking details";
+
+            $oderid = $booking_id;
+            $ordertype = "Website";
+            $orderlog = array(
+                'log_type' => "Reservation Cancelled",
+                'log_datetime' => date('Y-m-d H:i:s'),
+                'user_id' => "",
+                'order_id' => $booking_id,
+                'log_detail' => "Booking No. #$booking_id  $ordertype has been Cancelled.",
+            );
+            $this->db->insert('system_log', $orderlog);
+            //email sending
+            $emailsender = email_sender;
+            $sendername = email_sender_name;
+            $email_bcc = email_bcc;
+
+            if ($this->input->post('email')) {
+                $this->email->set_newline("\r\n");
+                $this->email->from(email_bcc, $sendername);
+                $this->email->to($this->input->post('email'));
+                $this->email->bcc(email_bcc);
+                $subjectt = "Your booking has been cancelled";
+                $subject = $subjectt;
+                $this->email->subject($subject);
+                $appointment['appointment'] = $booking_order;
+                $appointment['orderid'] = $oderid;
+                $htmlsmessage = $this->load->view('Email/weborderupdate', $appointment, true);
+                if (REPORT_MODE == 1) {
+
+                    $this->email->message($htmlsmessage);
+                    $this->email->print_debugger();
+                    $send = $this->email->send();
+                    if ($send) {
+                        redirect("book-now");
+                    } else {
+                        $error = $this->email->print_debugger(array('headers'));
+                        redirect("book-now");
+                    }
+                } else {
+//                    echo $htmlsmessage;
+                }
+            }
+          //  redirect("book-now");
+        }
+        $this->load->view('pages/bookedit', $data);
     }
 
     public function blog($pageno = 0) {
@@ -320,8 +484,7 @@ class Shop extends CI_Controller {
             imagettftext($jpg_image, 15, 0, 80, 626, $white, $font_path2, $useremail);
             // Output the image
             imagejpeg($jpg_image);
-        }
-        else{
+        } else {
             echo "No Data Found";
         }
 

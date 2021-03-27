@@ -107,7 +107,7 @@ $this->load->view('layout/header');
                                             </div>
 
                                             <div class="col-12 nobottommargin">
-                                                <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="booknow" value="submit">Upadate Booking</button>
+                                                <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="booknow" value="submit">Update Booking</button>
 
                                                 <button class="button button-circle button-large text-white ml-0 mt-3 " type="submit" name="cancel" value="submit">Cancel Booking</button>
                                             </div>

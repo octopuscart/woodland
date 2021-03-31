@@ -170,17 +170,21 @@ $this->load->view('layout/header');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Confirm Your Delivery Location</h4>
+                <h4 class="modal-title text-center" id="myModalLabel" style="width:100%">Confirm Your Delivery Location</h4>
 
             </div>
             <div class="modal-body">
-                <p style="font-size: 25px;color:black;">
-                  Do you belong to Tsim Sha Tsui
+                <p style="font-size: 25px;color:black;text-align: center;">
+                    DO YOU WISH DELIVERY <br/>
+                    IN <b>TSIM SHA TSUI</b><br/>
+                    OR <br/>
+                    IN <b>WHAMPOA</b>
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success btn-lg"  data-dismiss="modal">Yes</button>
-                <a href="https://woodlands.oddle.me/en_HK" target="_blank" type="button" class="btn btn-danger btn-lg " style="    color: white!important;">No</a>
+                <a href="https://woodlands.oddle.me/en_HK" target="_blank" type="button" class="btn btn-danger btn-lg pull-left " style="    color: white!important;">No</a>
+                            <button type="button" class="btn btn-success btn-lg "  data-dismiss="modal">Yes</button>
+
             </div>
         </div>
     </div>
@@ -188,8 +192,8 @@ $this->load->view('layout/header');
 
 
 <script>
-    $(function(){
-    $("#checkdelivery").modal("show");
+    $(function () {
+        $("#checkdelivery").modal("show");
     });
 
 

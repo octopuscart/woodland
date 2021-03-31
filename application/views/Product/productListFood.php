@@ -63,8 +63,8 @@ $this->load->view('layout/header');
                                                 <span>
                                                     <?php echo $prvalue['short_description']; ?>
                                                     <br/>
-                                                    
-                                                     <?php echo $prvalue['description']; ?>
+
+                                                    <?php echo $prvalue['description']; ?>
                                                 </span>
                                                 <img src="<?php echo base_url(); ?>assets/theme2/res/food/default2.png"  alt="1" class="rounded product-image-back">
 
@@ -72,24 +72,24 @@ $this->load->view('layout/header');
                                             <a href="#" ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="portfolio-image12">
                                                 <img src="<?php echo base_url(); ?>assets/theme2/res/food/default.png" style="background: url(<?php echo base_url(); ?>assets/theme2/res/food/<?php echo $prvalue['file_name']; ?>)" alt="1" class="rounded product-image-back">
                                             </a>
-                                            
+
                                             <div class="portfolio-desc pt-2">
                                                 <h4 class="mb-1"><a href="#" class="" ><?php echo $prvalue['title']; ?></a></h4>
                                                 <div class="item-price">{{<?php echo $prvalue['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</div>
                                             </div>
                                             <?php
-                                            if($viewonly=='0'){
-                                            ?>
-                                            <div class="">
-                                                <button ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colordarkgreen ">
-                                                    Add To Cart
-                                                </button>
+                                            if ($viewonly == '0') {
+                                                ?>
+                                                <div class="">
+                                                    <button ng-click="addToCart(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colordarkgreen ">
+                                                        Add To Cart
+                                                    </button>
 
-                                                <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow " style="    float: right;">
-                                                    Buy Now
-                                                </button>
-                                            </div>
-                                            <?php
+                                                    <button ng-click="addToBuy(<?php echo $prvalue['id']; ?>, 1)" class="button button-circle button-light text-white button_product  colorlightyellow " style="    float: right;">
+                                                        Buy Now
+                                                    </button>
+                                                </div>
+                                                <?php
                                             }
                                             ?>
                                         </div>
@@ -164,6 +164,36 @@ $this->load->view('layout/header');
 
 <script src="<?php echo base_url(); ?>assets/theme2/angular/productController.js"></script>
 
+
+<!-- Modal -->
+<div class="modal fade" id="checkdelivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Confirm Your Delivery Location</h4>
+
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 25px;color:black;">
+                  Do you belong to Tsim Sha Tsui
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-lg"  data-dismiss="modal">Yes</button>
+                <a href="https://woodlands.oddle.me/en_HK" target="_blank" type="button" class="btn btn-danger btn-lg " style="    color: white!important;">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+    $("#checkdelivery").modal("show");
+    });
+
+
+</script>
 
 <?php
 $this->load->view('layout/footer');

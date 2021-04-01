@@ -571,3 +571,8 @@ li.woocommerce-MyAccount-navigation-link {
        width:100%;
     }
 }
+
+a.reservation_buttons.sf-with-ul {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}

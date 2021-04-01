@@ -117,7 +117,7 @@
 
                                     <li><a href="<?php echo site_url("menu/0/0"); ?>">Tsim Sha Tsui</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="https://woodlands.oddle.me/en_HK">Other Location</a></li>
+                                    <li><a href="https://woodlands.oddle.me/en_HK" target="_blank">Other Location</a></li>
                                 </ul>
 
                             </li>

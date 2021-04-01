@@ -58,6 +58,7 @@
                     <a href="<?php echo site_url("/"); ?>">Home</a>
                     /<a href="<?php echo site_url("about-us"); ?>">Insights</a>
                     /<a href="<?php echo site_url("review"); ?>">Review</a>
+                    /<a href="<?php  echo site_url("feedback"); ?>">Feedback</a>
                     /<a href="<?php echo site_url("menu/0/0"); ?>">Menu</a>
                     /<a href="<?php echo site_url("contact"); ?>">Contact</a>
                 </div>

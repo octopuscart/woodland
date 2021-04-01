@@ -165,7 +165,7 @@ $this->load->view('layout/header');
 <script src="<?php echo base_url(); ?>assets/theme2/angular/productController.js"></script>
 
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="checkdelivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -188,13 +188,13 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 
 <script>
-    $(function () {
-        $("#checkdelivery").modal("show");
-    });
+//    $(function () {
+//        $("#checkdelivery").modal("show");
+//    });
 
 
 </script>

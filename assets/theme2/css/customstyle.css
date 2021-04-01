@@ -136,7 +136,7 @@ a.cartheadericon span {
 #primary-menu ul li>a {
     display: block;
     line-height: 22px;
-       padding: 37px 5px;
+      padding: 37px 10px 10px;
     color: #444;
     font-weight: 700;
     font-size: 11px;
@@ -503,7 +503,7 @@ li.woocommerce-MyAccount-navigation-link {
 
 .medialinkdesing{
     height:320px;
- 
+
 }
 .media-item-block{
     height: 170px;
@@ -550,4 +550,24 @@ li.woocommerce-MyAccount-navigation-link {
     -webkit-transition: height .4s ease,opacity .3s ease;
     -o-transition: height .4s ease,opacity .3s ease;
     transition: height .4s ease,opacity .3s ease;
+}
+
+#primary-menu ul ul li>a {
+
+    padding-left: 15px;
+}
+
+
+@media (max-width: 991.98px){
+    #primary-menu ul>li>a, #primary-menu.style-2>div>ul>li>a {
+       float:left;
+        width:100%;
+    }
+}
+
+@media (max-width: 768px){
+    #primary-menu ul>li>a, #primary-menu.style-2>div>ul>li>a {
+       float:left;
+       width:100%;
+    }
 }

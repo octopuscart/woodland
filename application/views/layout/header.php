@@ -101,7 +101,7 @@
 
                             <li><a href="<?php echo site_url("review"); ?>"><div>Review</div></a></li>
                             <!--<li><a href="<?php echo site_url("blog"); ?>"><div>Blog</div></a></li>-->
-                            <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>
+                            <!--<li><a href="<?php  echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
                             <li><a href="<?php echo site_url("annual-charity"); ?>"><div>  CHARITY</div></a></li>
 
                         </ul>
@@ -110,12 +110,20 @@
 <!--                                <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
 
                             <li>
-                                <a href="<?php echo site_url("menu/0/0"); ?>" class="reservation_buttons "><div>Order Food</div></a>
+                                <a href="#" class="reservation_buttons "
+                                   data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false"><div>Order Food</div></a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                                    <li><a href="<?php echo site_url("menu/0/0"); ?>">Tsim Sha Tsui</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="https://woodlands.oddle.me/en_HK">Other Location</a></li>
+                                </ul>
 
                             </li>
-                            <li><a href="<?php echo site_url("our-menu/0/0"); ?>" class="reservation_buttons "><div class="">MENU </div></a></li>
+                            <!--<li><a href="<?php echo site_url("our-menu/0/0"); ?>" class="reservation_buttons " ><div class="">MENU </div></a></li>-->
 
-                            <li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons "><div class="">Reserve Table </div></a></li>
+                            <li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons "><div class="">Reservation </div></a></li>
 
                             <li>
                                 <a href="<?php echo site_url("cart") ?>" class="cartheadericon">

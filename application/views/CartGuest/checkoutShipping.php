@@ -572,7 +572,9 @@ if ($indexarray) {
                     <div class="modal-body checkout-form">
 
                         <div class="card-heading" role="tab" id="headingOne" style="background: red;padding:3px;">
-                            <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0;  color: white;">Delivery process is only available in Tsim Sha Tsui and whampoa garden
+                            <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0;  color: white;">
+                                <!--Delivery process is only available in Tsim Sha Tsui and whampoa garden-->
+                                    Delivery process is only available in Tsim Sha Tsui
                                 <p class="" style="font-size: 12px;  margin-bottom: 10px;  font-weight: 400;">
                                     <!--Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)-->
                                                                     Free Delivery: Tsim Sha Tsui

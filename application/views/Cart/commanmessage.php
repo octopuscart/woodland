@@ -6,7 +6,7 @@
                 Delivery process is only available in Tsim Sha Tsui 
                 <table class='tablemessageblock'>
                     <tr>
-                        <td rowspan="2"> Delivery Charges:</td>
+                        <td> Delivery Charges:</td>
                         <td>Free Delivery In Tsim Sha Tsui</td>
                     </tr>
 <!--                    <tr>

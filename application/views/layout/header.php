@@ -115,7 +115,7 @@
                                    aria-expanded="false"><div>Order Food</div></a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
-                                    <li><a href="<?php echo site_url("menu/0/0"); ?>">Tsim Sha Tsui / Whampoa</a></li>
+                                    <li><a href="<?php echo site_url("menu/0/0"); ?>">Tsim Sha Tsui</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="https://woodlands.oddle.me/en_HK" target="_blank">Other Location</a></li>
                                 </ul>

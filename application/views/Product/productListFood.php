@@ -144,13 +144,13 @@ $this->load->view('layout/header');
                 </div>
             </div>
         </div>
-        <div class="section nomargin nobg" style="padding: 80px 0 70px;">
+<!--        <div class="section nomargin nobg" style="padding: 80px 0 70px;">
             <div class="container">
                 <div class="divcenter d-flex justify-content-center center" style="max-width: 900px;">
                     <h3 class="mb-0 ls0">Free Delivery On Order Value $400 And Up <a href="#" class="button button-circle button-xlarge button-light text-white ls0 nott mt-0 mb-1 ml-3 colorlightgreen" style="position: relative;"><span>Order Now</span> <i class="icon-line-arrow-right t600"></i></a></h3>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch-header.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
 </section>

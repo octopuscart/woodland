@@ -517,9 +517,12 @@ if ($indexarray) {
                     </div>
                     <div class="modal-body checkout-form">
                         <div class="card-heading" role="tab" id="headingOne" style="background: red;padding:3px;">
-                            <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0;  color: white;">Delivery process is only available in Tsim Sha Tsui and whampoa garden
+                            <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0;  color: white;">Delivery process is only available in Tsim Sha Tsui 
+                                <!--Delivery process is only available in Tsim Sha Tsui and whampoa garden-->
                                 <p class="" style="font-size: 12px;  margin-bottom: 10px;  font-weight: 400;">
-                                    Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)
+                                    <!--Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)-->
+                                    Free Delivery: Tsim Sha Tsui
+
                                 </p>
                             </h4>
                         </div>
@@ -533,7 +536,7 @@ if ($indexarray) {
                                     <td>
                                         <select name="zipcode" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;    font-size: 12px;">
                                             <option value="Tsim Sha Tsui">Tsim Sha Tsui (For Free Delivery)</option>
-                                            <option value="Whampoa">Whampoa Garden ($40 On Order value < $400)</option>
+                                            <!--<option value="Whampoa">Whampoa Garden ($40 On Order value < $400)</option>-->
                                         </select>
 
                                         <input type="hidden" name="delivery_date" value="{{shippingInit.delivery_date}}"/>

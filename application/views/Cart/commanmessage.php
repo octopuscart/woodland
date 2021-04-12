@@ -3,8 +3,8 @@
         <div class="card-heading change-color-gradiant" role="tab" id="headingOne" >
             <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0; text-align: center; color: white;">
                 <!--Delivery process is only available in Tsim Sha Tsui and Whampoa Garden-->
-                Delivery process is only available in Tsim Sha Tsui 
-                <table class='tablemessageblock'>
+                Delivery process is only available in Tsim Sha Tsui <br/>
+                <table class='tablemessageblock' style="    display: inline-block">
                     <tr>
                         <td> Delivery Charges:</td>
                         <td>Free Delivery In Tsim Sha Tsui</td>

@@ -451,7 +451,7 @@ $this->load->view('layout/header');
 <?php
 $this->load->view('layout/footer');
 ?>
-<div class="modal fade" id="adModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+<div class="modal fade" id="adModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
     <div class="modal-dialog " role="document">
         <div class="modal-content" style="border:none">
 

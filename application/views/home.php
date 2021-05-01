@@ -9,28 +9,28 @@ $this->load->view('layout/header');
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/oddle.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
-                            
+
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/coupon.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
-                            
+
                         </div>
                     </div>
                 </div>
-                
+
 <!--                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/offerslide.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
-                            
-                        </div>
-                    </div>
-                </div>
+    <div class="container dark clearfix">
+        <div class="slider-caption">
+            
+        </div>
+    </div>
+</div>
                 -->
-                
+
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
@@ -151,7 +151,7 @@ $this->load->view('layout/header');
                                     );
                                     foreach ($menuitems as $key => $value) {
                                         ?>
-                                    <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot">
+                                        <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot">
                                             <span style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/<?php echo $value; ?>)">
                                                 <h3><?php echo $key; ?></h3>
                                             </span>
@@ -335,7 +335,7 @@ $this->load->view('layout/header');
                 background-size: 100%!important;
             }
             <?php
-            $countrr ++;
+            $countrr++;
         }
         ?>
 
@@ -416,7 +416,7 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-4">
                     <div class="team">
                         <div class="team-image imagescalein">
@@ -441,36 +441,40 @@ $this->load->view('layout/header');
     ?>
 
 
-   
+
 
 </section>
 
 
 
-<!--
- Modal 
-<div class="modal fade" id="adModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-    
-      <div class="modal-body" style="padding: 0px;">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;
-    right: 6px;
-"><span aria-hidden="true">&times;</span></button>
-
-          <img src="<?php echo base_url(); ?>assets/adimages/offer.jpg" style="width: 100%; ">
-      </div>
-      
-    </div>
-  </div>
-</div>-->
 
 <?php
 $this->load->view('layout/footer');
 ?>
+<div class="modal fade" id="adModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content" style="border:none">
 
+            <div class="modal-body" style="padding: 0px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;
+                        right: 6px;
+                        "><span aria-hidden="true">&times;</span></button>
+
+                <img src="<?php echo base_url(); ?>assets/adimages/ordernow.jpg" style="width: 100%; ">
+                <div class="col-md-12" style="    background: #ff3859;
+                     border: none;padding-bottom: 20px;
+                     text-align: center;width:100%;">
+                    <a  href="<?php echo site_url("menu/0/0"); ?>" class="btn btn-default " style="color: white!important;border-color:white;">Tsim Sha Tsui</a>
+                   &nbsp;&nbsp; <a  href="https://woodlands.oddle.me/en_HK" target="_blank" class="btn btn-default  "  style="color: white!important;border-color:white;">Other Location</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 <script>
-//$(function(){
-//    $("#adModal").modal("show");
-//})
+    $(function () {
+        $("#adModal2").modal("show");
+    })
 </script>

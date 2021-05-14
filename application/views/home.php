@@ -30,7 +30,13 @@ $this->load->view('layout/header');
     </div>
 </div>
                 -->
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/maharaja1.jpg'); background-position: center center;">
+                    <div class="container dark clearfix">
+                        <div class="slider-caption">
 
+                        </div>
+                    </div>
+                </div>
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
@@ -42,6 +48,8 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
+
+
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/3.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
@@ -51,6 +59,13 @@ $this->load->view('layout/header');
                             <div class="static-content" style="position: relative; display: flex; justify-content: center; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="1000">
                                 <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/maharaja2.jpg'); background-position: center center;">
+                    <div class="container dark clearfix">
+                        <div class="slider-caption">
+
                         </div>
                     </div>
                 </div>
@@ -465,7 +480,7 @@ $this->load->view('layout/footer');
                      border: none;padding-bottom: 20px;
                      text-align: center;width:100%;">
                     <a  href="<?php echo site_url("menu/0/0"); ?>" class="btn btn-default " style="color: white!important;border-color:white;">Tsim Sha Tsui</a>
-                   &nbsp;&nbsp; <a  href="https://woodlands.oddle.me/en_HK" target="_blank" class="btn btn-default  "  style="color: white!important;border-color:white;">Other Location</a>
+                    &nbsp;&nbsp; <a  href="https://woodlands.oddle.me/en_HK" target="_blank" class="btn btn-default  "  style="color: white!important;border-color:white;">Other Location</a>
                 </div>
             </div>
 

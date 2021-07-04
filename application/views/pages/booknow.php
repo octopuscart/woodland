@@ -9,11 +9,15 @@ $this->load->view('layout/header');
         color: #ffffff;
     }
     .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    float: left;
-    padding: .5em 1em;
-    text-decoration: none;
-    width: 100%!important;
-}
+        float: left;
+        padding: .5em 1em;
+        text-decoration: none;
+        width: 100%!important;
+    }
+
+    .processbuttonblock {
+        height: 35px;
+    }
 </style>
 <section id="page-title" class="page-title-parallax page-title-dark page-title-center" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/booknow.jpg'); background-size: cover; padding: 50px 0 100px;" data-bottom-top="background-position:0 0px;" data-top-bottom="background-position:0px -49px;">
     <div class="container clearfix">
@@ -95,10 +99,10 @@ $this->load->view('layout/header');
                     $timelist = [12, 13, 14];
                     foreach ($timelist as $key => $value) {
                         ?>
-                                                                                        <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
-                                                                                        <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
-                                                                                        <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
-                                                                                        <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
+                                                                                            <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
+                                                                                            <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
+                                                                                            <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
+                                                                                            <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
                         <?php
                     }
                     ?>
@@ -114,10 +118,10 @@ $this->load->view('layout/header');
                     $timelist = [19, 20];
                     foreach ($timelist as $key => $value) {
                         ?>
-                                                                                        <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
-                                                                                        <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
-                                                                                        <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
-                                                                                        <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
+                                                                                            <option value="<?php echo $value . ":00" ?>"><?php echo $value . ":00" ?></option>
+                                                                                            <option value="<?php echo $value . ":15" ?>"><?php echo $value . ":15" ?></option>
+                                                                                            <option value="<?php echo $value . ":30" ?>"><?php echo $value . ":30" ?></option>
+                                                                                            <option value="<?php echo $value . ":45" ?>"><?php echo $value . ":45" ?></option>
                         <?php
                     }
                     ?>

@@ -6,6 +6,13 @@ $this->load->view('layout/header');
     <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/coupon2.jpg'); background-position: center center;">
+                    <div class="container dark clearfix">
+                        <div class="slider-caption">
+
+                        </div>
+                    </div>
+                </div>
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/oddle.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
@@ -489,7 +496,7 @@ $this->load->view('layout/footer');
     </div>
 </div>
 <script>
-    $(function () {
-        $("#adModal2").modal("show");
-    })
+//    $(function () {
+//        $("#adModal2").modal("show");
+//    })
 </script>

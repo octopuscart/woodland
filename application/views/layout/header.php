@@ -123,8 +123,10 @@
                             </li>
                             <!--<li><a href="<?php echo site_url("our-menu/0/0"); ?>" class="reservation_buttons " ><div class="">MENU </div></a></li>-->
 
-                            <li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons "><div class="">Reservation </div></a></li>
+                            <!--<li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons "><div class="">Reservation </div></a></li>-->
+                            <li><a href="https://book.bistrochat.com/woodlands" target="_blank"  class="reservation_buttons "><div class="">Reservation </div></a></li>
 
+                            
                             <li>
                                 <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
                                     <i class="icon-et-basket" style="    font-size: 20px;"></i><span>{{globleCartData.total_quantity}}</span>

@@ -234,7 +234,7 @@ class Coupon extends CI_Controller {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
         $requestdata = $query->row_array();
-        $requestdata['txn_no'] = $returndata['order_id'];
+        $requestdata['txn_no'] = "test";
         $requestdata['coupon_for'] = "woodlandshk";
         $requestdata['prefix'] = "WL";
         $requestdata['payment_status'] = "SUCCESS";

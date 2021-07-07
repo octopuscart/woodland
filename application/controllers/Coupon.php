@@ -230,6 +230,23 @@ class Coupon extends CI_Controller {
         }
     }
 
+    function testCouponGenerate($order_key) {
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("coupon_request");
+        $requestdata = $query->row_array();
+        $requestdata['txn_no'] = $returndata['order_id'];
+        $requestdata['coupon_for'] = "woodlandshk";
+        $requestdata['prefix'] = "WL";
+        $requestdata['payment_status'] = "SUCCESS";
+        $headers = array(
+            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
+            'Content-Type: application/json'
+        );
+        $url = $this->couponApiUrl . 'Api/generateCoupon';
+        $curldata = $this->useCurl($url, $headers, json_encode($requestdata));
+        $codehas = json_decode($curldata);
+    }
+
     function yourCode($couponhas, $order_key) {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");

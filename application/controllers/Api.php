@@ -428,6 +428,10 @@ class Api extends REST_Controller {
         // $this->Product_model->order_mail_to_vendor($order_id);
         $this->response("hell");
     }
+    
+    function userMailSend($useer_id){
+        $this->User_model->registration_mail($user_id);
+    }
 
 }
 

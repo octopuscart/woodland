@@ -429,7 +429,7 @@ class Api extends REST_Controller {
         $this->response("hell");
     }
     
-    function userMailSend($useer_id){
+    function userMailSend($user_id){
         $this->User_model->registration_mail($user_id);
     }
 

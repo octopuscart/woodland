@@ -124,7 +124,7 @@
 </div>
 
 <!--end of media link-->
-<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="      margin-top: -66px;     z-index: 200000;
+<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" alt="Woodlands Desing" style="      margin-top: -66px;     z-index: 200000;
      position: relative;"/>
 
 <div class="content-wrap1">
@@ -137,7 +137,7 @@
                 </div>
                 <div class="row clearfix" style="display: block;text-align: center;">
 
-                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards_v2.png" >
+                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/awards_v2.png" alt="Woodlands Awards">
                     <hr/>
 
                 </div>
@@ -149,7 +149,7 @@
          text-align: center;
          margin-top: -18px;">
 
-        <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" style="    height: 83px;
+        <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" alt="Veg Vegan Logo" style="    height: 83px;
              "/>
     </div>
 

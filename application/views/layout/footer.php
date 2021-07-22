@@ -5,7 +5,7 @@
         <div class="container clearfix">
             <div class="section nobottommargin row tripadvisorblock" style="background:none;text-align: center;    margin-top: 0px;">
                 <div class="col-md-3" style=" padding: 0;">
-                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/tripadvisor.svg" style="      height: auto;
+                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/tripadvisor.svg" alt="tripadvisor logo" style="      height: auto;
                          width: 278px;
 
                          margin-top: 34px;"/>

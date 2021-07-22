@@ -114,6 +114,7 @@
           $('#oc-clients').owlCarousel({
                     loop: true,
                     margin: 10,
+                    dot:false,
                     nav: true,
                     autoplay: 1,
                             autoplayTimeout: 3000,

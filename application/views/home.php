@@ -50,7 +50,7 @@ $this->load->view('layout/header');
                             <h2 class="font-secondary ls0 t400 nott" style="font-size: 50px;" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
                             <p class="d-none d-sm-block font-primary" style="    font-size: 18px;" data-animate="fadeIn" data-delay="400">Woodlands - Vegetarian Restaurant | Jain | Vegan Restaurant | Indian Restaurant in Hong Kong</p>
                             <div class="static-content" style="position: relative; display: flex; justify-content: flex-start; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="800">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="Woodlands Veg Vegan Logo">
                             </div>
                         </div>
                     </div>
@@ -60,11 +60,11 @@ $this->load->view('layout/header');
                 <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/3.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
-                            <img data-animate="fadeIn" src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept.png" alt="" style="width: 260px; margin-bottom: 10px;">
+                            <img data-animate="fadeIn" src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept.png" alt="Veg Concept" style="width: 260px; margin-bottom: 10px;">
                             <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn" data-delay="400">Vegetarian Restaurant</h2>
                             <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="800">First and Best Indian Vegetarian Restaurant <br/> in Tsim Sha Tsui, Hong Kong</p>
                             <div class="static-content" style="position: relative; display: flex; justify-content: center; flex-direction: row; margin-top: 30px" data-animate="fadeIn" data-delay="1000">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/Veg_Vegan_Jain_Bud_Logo.png" height="100" alt="Veg Vegan Logo">
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ $this->load->view('layout/header');
                 <div class="row clearfix">
                     <div class="col-lg-7 bottommargin-sm">
                         <div class="heading-block nobottomborder bottommargin-sm">
-                            <img src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept2.png" style="height: 80px;" alt="">
+                            <img src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept2.png" style="height: 80px;" alt="Veg Concept">
 
                         </div>
                         <div class="feature-box media-box" style="">
@@ -126,7 +126,7 @@ $this->load->view('layout/header');
                     <div class="heading-block nobottomborder bottommargin-sm">
                         <h2 class="font-secondary color nott" style="font-size: 52px;">
                             <div class="fbox-media" style="width: 70px; height: auto;float:left;margin-top: -13px;float: left;margin-right: 20px;">
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl.svg" alt="">
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/icons/bowl.svg" alt="Woodlands Bowl">
                             </div>
                             Who We Are </h2>
                     </div>
@@ -197,7 +197,7 @@ $this->load->view('layout/header');
                             <div class="owl-stage" style="padding:0">
                                 <div class="owl-item active" >
                                     <div class="oc-item">
-                                        <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/featuremenu2.jpg" alt="Image 1" style="    margin: 0px!important;">
+                                        <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/featuremenu2.jpg" alt="Food Menu" style="    margin: 0px!important;">
                                         <div class="food-content clearfix">
                                             <div class="heading-block nobottomborder nobottommargin">
                                                 <h3 class="font-secondary nott">Nothing brings people together <br/> like our dosa</h3>
@@ -225,7 +225,7 @@ $this->load->view('layout/header');
                 </div>
             </div>
         </div>
-        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="   "/>
+        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" alt="Woodlands Desing" style="   "/>
 
     </div>
 
@@ -245,7 +245,7 @@ $this->load->view('layout/header');
                 <div class="col-lg-3 col-md-6">
                     <div class="team">
                         <div class="team-image imagescalein">
-                            <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/kitta.jpg" alt="Josh Clark"></a>
+                            <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/kitta.jpg" alt="KITTA Moolya"></a>
                         </div>
                         <div class="team-desc">
                             <div class="team-title">
@@ -396,7 +396,7 @@ $this->load->view('layout/header');
                 </div>
             </div>
         </div>
-        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png">
+        <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" alt="woodlands desing">
     </div>
 
     <div class="clear"></div>
@@ -482,7 +482,7 @@ $this->load->view('layout/footer');
                         right: 6px;
                         "><span aria-hidden="true">&times;</span></button>
 
-                <img src="<?php echo base_url(); ?>assets/adimages/ordernow.jpg" style="width: 100%; ">
+                <img src="<?php echo base_url(); ?>assets/adimages/ordernow.jpg" alt="Order Now" style="width: 100%; ">
                 <div class="col-md-12" style="    background: #ff3859;
                      border: none;padding-bottom: 20px;
                      text-align: center;width:100%;">

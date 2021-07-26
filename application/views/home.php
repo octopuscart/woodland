@@ -2,7 +2,7 @@
 $this->load->view('layout/header');
 ?>
 
-<section id="slider" class="slider-element swiper_wrapper slider-parallax force-full-screen full-screen clearfix" data-effect="fade" data-loop="true" data-autoplay="3000" data-speed="1400">
+<section id="slider" class="slider-element swiper_wrapper slider-parallax force-full-screen full-screen clearfix" data-effect="fade" data-loop="true" data-autoplay="6000" data-speed="1400">
     <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">

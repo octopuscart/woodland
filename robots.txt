@@ -14,4 +14,4 @@ Allow: /
 User-agent: googlebot-mobile
 Allow: /
 
-Sitemap: http://www.woodlandshk.com/sitemap_index.xml
+Sitemap: http://www.woodlandshk.com/sitemap.xml

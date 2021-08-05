@@ -83,7 +83,7 @@ $route['blog'] = 'Shop/blog/$1';
 
 $route['translate_uri_dashes'] = FALSE;
 
-$route['sitemap_index\.xml'] = "Sitemap/index";
+$route['sitemap\.xml'] = "Sitemap/index";
 
 $route['paymentresult'] = 'PaymentGatway/paymentResult';
 

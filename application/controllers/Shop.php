@@ -71,20 +71,20 @@ class Shop extends CI_Controller {
 
                 $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
 
-                if ($this->input->post('email')) {
-                    $this->email->message($htmlsmessage);
-
-                    $this->email->print_debugger();
-                    $send = $this->email->send();
-                    if ($send) {
-                        echo json_encode("send");
-                    } else {
-                        $error = $this->email->print_debugger(array('headers'));
-                        echo json_encode($error);
-                    }
-                } else {
-                    echo $htmlsmessage;
-                }
+//                if ($this->input->post('email')) {
+//                    $this->email->message($htmlsmessage);
+//
+//                    $this->email->print_debugger();
+//                    $send = $this->email->send();
+//                    if ($send) {
+//                        echo json_encode("send");
+//                    } else {
+//                        $error = $this->email->print_debugger(array('headers'));
+//                        echo json_encode($error);
+//                    }
+//                } else {
+//                    echo $htmlsmessage;
+//                }
             }
 
             redirect('Shop/contactus');
@@ -415,19 +415,19 @@ class Shop extends CI_Controller {
                 $this->email->subject($subject);
                 $appointment['feedback'] = $feedback;
                 $htmlsmessage = $this->load->view('Email/feedback', $appointment, true);
-                if (REPORT_MODE == 1) {
-                    $this->email->message($htmlsmessage);
-                    $this->email->print_debugger();
-                    $send = $this->email->send();
-                    if ($send) {
-                        redirect("feedback");
-                    } else {
-                        $error = $this->email->print_debugger(array('headers'));
-                        redirect("feedback");
-                    }
-                } else {
-                    echo $htmlsmessage;
-                }
+//                if (REPORT_MODE == 1) {
+//                    $this->email->message($htmlsmessage);
+//                    $this->email->print_debugger();
+//                    $send = $this->email->send();
+//                    if ($send) {
+//                        redirect("feedback");
+//                    } else {
+//                        $error = $this->email->print_debugger(array('headers'));
+//                        redirect("feedback");
+//                    }
+//                } else {
+//                    echo $htmlsmessage;
+//                }
             }
             redirect("feedback");
         }

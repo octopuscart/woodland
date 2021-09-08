@@ -69,7 +69,7 @@ $route['review'] = 'Shop/wall';
 $route['coupon'] = 'Coupon/index';
 
 
-$route['annual-charity'] = 'Shop/annual_charity';
+$route['annual-charity'] = 'Charity/index';
 
 $route['book-now'] = 'Shop/booknow';
 

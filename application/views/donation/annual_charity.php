@@ -44,7 +44,7 @@ $this->load->view('layout/header');
     .formblocksection{
         padding: 45px;
         padding-top: 15px;
-      
+
     }
     .formblocksectionhead{
         padding: 31px;
@@ -69,8 +69,8 @@ $this->load->view('layout/header');
         cursor: pointer;
     }
     .donation-amount-block .amoutblock.active{
-           border: 1px solid #fcb316;
-    background: #fcb316;
+        border: 1px solid #fcb316;
+        background: #fcb316;
     }
     .donation-amount-block .otheramountblock{
         display: inline-block;
@@ -247,14 +247,14 @@ $this->load->view('layout/header');
                                         <div class="row">
                                             <div class="donation-amount-block">
                                                 <div class="amoutblock {{donationinput.selected_amount==amount?'active':''}}" ng-repeat="amount in donationinput.amountarray" ng-click="selectAmount(amount)">
-                                                    {{amount|currency:"<?php echo globle_currency;?>"}}
-                                                    
-                                                    
+                                                    {{amount|currency:"<?php echo globle_currency; ?>"}}
+
+
                                                 </div>
                                                 <br/>
                                                 <div class="otheramountblock mt-3">
                                                     <label>Enter Other Amount</label>
-                                                    <input type="number" id="template-contactform-name" name="amount" ng-model="donationinput.other_amount" value="" class="form-control border-form-control required" placeholder="HK$ Other" required="">
+                                                    <input type="number" id="template-contactform-name" min='0'  ng-model="donationinput.other_amount" value="" class="form-control border-form-control required" placeholder="HK$ Other" required="">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -262,15 +262,13 @@ $this->load->view('layout/header');
                                                 <div class="col-sm-12 mb-3 mt-3">
                                                     <input type="text" id="template-contactform-name" name="name" value="" class="form-control border-form-control required" placeholder="Name" required="">
                                                 </div>
-                                                <div class="col-sm-12 mb-3  mt-3">
+                                                <div class="col-sm-12 mb-3  ">
                                                     <input type="text" id="template-contactform-phone" name="contact_no" value="" class="form-control border-form-control required" placeholder="Contact No." required="">
                                                 </div>
-
-                                                <div class="clear"></div>
-                                                <div class="col-sm-12 mb-3  mt-3">
+                                                <div class="col-sm-12 mb-3  ">
                                                     <input type="email" id="template-contactform-email" name="email" value="" class="required email form-control border-form-control" placeholder="Email Address" required="">
                                                 </div>
-                                                <div class="col-sm-12   mt-3">
+                                                <div class="col-sm-12 mb-3">
                                                     <textarea type="text" id="template-contactform-message" name="message" value="" class="required  form-control border-form-control" placeholder="Type you message here" required="" max="300"></textarea>
                                                 </div>
                                                 <br/>
@@ -278,8 +276,8 @@ $this->load->view('layout/header');
                                                     <div class="headerformblock">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="hidden" name="check_receiver" value="{{couponinit.showreceiver}}">
-                                                                <input type="checkbox"  ng-model="couponinit.showreceiver"> Keep my donation anonymous
+                                                                <input type="hidden" name="anonymous_donation" value="{{donationinput.showreceiver}}">
+                                                                <input type="checkbox"  ng-model="donationinput.showreceiver"> Keep my donation anonymous
                                                             </label>
                                                         </div>
                                                     </div>
@@ -310,7 +308,9 @@ $this->load->view('layout/header');
 
                                         <div class="clear"></div>
                                         <div class="col-12 nobottommargin" style='    text-align: center;'>
-                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit">Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency;?>'}} Now</button>
+                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit" ng-if='donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
+                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" disabled="" ng-if='!donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
+
                                         </div>
                                         <div class="clear"></div>
 

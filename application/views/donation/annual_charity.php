@@ -254,7 +254,7 @@ $this->load->view('layout/header');
                                                 <br/>
                                                 <div class="otheramountblock mt-3">
                                                     <label>Enter Other Amount</label>
-                                                    <input type="number" id="template-contactform-name" min='0'  ng-model="donationinput.other_amount" value="" class="form-control border-form-control required" placeholder="HK$ Other" required="">
+                                                    <input type="number" id="template-contactform-name" min='0'  ng-model="donationinput.other_amount" value="" class="form-control border-form-control " placeholder="HK$ Other" >
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -308,6 +308,8 @@ $this->load->view('layout/header');
 
                                         <div class="clear"></div>
                                         <div class="col-12 nobottommargin" style='    text-align: center;'>
+                                            <input type="hidden" name="amount" value="{{donationinput.selected_amount}}">
+
                                             <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit" ng-if='donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
                                             <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" disabled="" ng-if='!donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
 

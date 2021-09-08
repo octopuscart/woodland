@@ -55,9 +55,10 @@ class Charity extends CI_Controller {
 
     public function index() {
         if (isset($_POST['submit_now'])) {
-            $requestid = "CHWL" . date('Ymd') . date('His');
+            $requestid = "CHWL" . date('ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
             $charity_donation = array(
+                "request_hash" => md5($requestid),
                 "request_id" => $requestid,
                 "name" => $this->input->post('name'),
                 "email" => $this->input->post('email'),
@@ -71,8 +72,9 @@ class Charity extends CI_Controller {
                 "date" => date('Y-m-d'),
                 "time" => date('H:i:s'),
             );
+//            print_r($charity_donation);
             $this->db->insert('charity_donation', $charity_donation);
-//            redirect("Coupon/orderPayment/" . $requestid);
+            redirect("Charity/orderPayment/" . $requestid);
         }
 
         $this->load->view('donation/annual_charity');
@@ -117,7 +119,7 @@ class Charity extends CI_Controller {
         $paymenttypeg = $requestdata->payment_type;
         $amt = $requestdata->amount;
         $marchentref = $order_key;
-        $returnUrl = site_url("Coupon/orderPaymentResult/$order_key");
+        $returnUrl = site_url("Charity/orderPaymentResult/$order_key");
         $mid = $this->mid;
         $secret_code = $this->secret_code;
         $salesLink = $this->salesLink;
@@ -143,7 +145,7 @@ class Charity extends CI_Controller {
         $salesLink = $this->salesLink;
         $queryLink = $this->queryLink;
         $paymenttypeg = $paymenttype;
-        $notifyUrl = site_url("Coupon/orderPaymentNotify/$order_key/$paymenttype");
+        $notifyUrl = site_url("Charity/orderPaymentNotify/$order_key/$paymenttype");
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=$paymenttypeg&service=QUERY&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
@@ -165,7 +167,7 @@ class Charity extends CI_Controller {
         $salesLink = $this->salesLink;
         $queryLink = $this->queryLink;
         $paymenttypeg = $paymenttype;
-        $notifyUrl = site_url("Coupon/orderPaymentNotifyTest/$order_key/$paymenttype");
+        $notifyUrl = site_url("Charity/orderPaymentNotifyTest/$order_key/$paymenttype");
         $urlset = "merch_ref_no=$marchentref&mid=$mid&payment_type=$paymenttypeg&service=QUERY&trans_amount=$amt";
         $hsakeystr = $secret_code . $urlset;
         $seckey = hash("sha256", $hsakeystr);
@@ -258,7 +260,7 @@ class Charity extends CI_Controller {
         $this->load->view('coupon/gift_coupon_failed', $data);
     }
 
-    function couponBuyEmail($couponhas, $order_key) {
+    function thankyouEmail($couponhas, $order_key) {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
         $requestdata = $query->row_array();
@@ -291,174 +293,6 @@ class Charity extends CI_Controller {
         }
     }
 
-    function couponReceiverEmail($couponhas, $order_key) {
-        $this->db->where("request_id", $order_key);
-        $query = $this->db->get("coupon_request");
-        $requestdata = $query->row_array();
-        $data = array("coupon" => $requestdata);
-        $urlimage = $this->couponApiUrl . "Api/getCouponImage/$couponhas";
-        $data['couponimage'] = $urlimage;
 
-        $emailsender = email_sender;
-        $sendername = email_sender_name;
-        $email_bcc = email_bcc;
-
-        $this->email->set_newline("\r\n");
-        $this->email->from(email_bcc, $sendername);
-        $this->email->to($requestdata['email_receiver']);
-        $this->email->bcc(email_bcc);
-        $subjectt = "You have gifted a cash voucher from " . $requestdata['name'];
-        $subject = $subjectt;
-        $this->email->subject($subject);
-        $htmlsmessage = $this->load->view('coupon/gift_coupon_receiver_email', $data, true);
-        if (REPORT_MODE == 1) {
-            $this->email->message($htmlsmessage);
-            $this->email->print_debugger();
-            $send = $this->email->send();
-            if ($send) {
-                
-            } else {
-                $error = $this->email->print_debugger(array('headers'));
-            }
-        } else {
-            echo $htmlsmessage;
-        }
-    }
-
-    function joinLoyaltiProgram() {
-        $data = array("join_status" => "");
-        $data['join_msg'] = "";
-        if (isset($_POST['submit'])) {
-            $email = $this->input->post('email');
-            $reemail = $this->input->post('reemail');
-
-
-            if ($reemail === $email) {
-                $paymenttype = $this->input->post('payment_type');
-                $jonrequest = array(
-                    'name' => $this->input->post('name'),
-                    'email' => $this->input->post('email'),
-                    'contact_no' => $this->input->post('contact_no')
-                );
-                $jonrequest['prefix'] = "WL";
-                $jonrequest['join_from'] = "WOODLANDS";
-                $headers = array(
-                    'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
-                    'Content-Type: application/json'
-                );
-                $url = $this->couponApiUrl . 'Api/joinProgram';
-                $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
-                $codehas = json_decode($curldata);
-                $data['join_msg'] = $codehas->msg;
-                $data['join_status'] = $codehas->status;
-                if ($data['join_status'] == '200') {
-                    $senderemail = site_url("Coupon/loyalProgramMail/" . $codehas->join_code_hash);
-                    $this->useCurl($senderemail, $headers);
-                    redirect("loyalty-program-thanks/" . $codehas->join_code_hash);
-                }
-            } else {
-                $data['join_msg'] = "Email not matched.";
-                $data["join_status"] = 100;
-            }
-        }
-        $this->load->view('coupon/loyalprogram', $data);
-    }
-
-    function loyalProgramThanks($codehas) {
-        $data = array("redirectlink" => site_url("loyalty-program"));
-        $jonrequest['code_hash'] = $codehas;
-        $headers = array(
-            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
-            'Content-Type: application/json'
-        );
-        $url = $this->couponApiUrl . 'Api/checkLoyalProgram';
-        $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
-        $codehas = json_decode($curldata);
-        if ($codehas->status == '200') {
-
-            $this->load->view('coupon/loyalprogramthanks', $data);
-        } else {
-            redirect("loyalty-program");
-        }
-    }
-
-    function loyalProgramMail($codehas) {
-        $jonrequest['code_hash'] = $codehas;
-        $headers = array(
-            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
-            'Content-Type: application/json'
-        );
-        $url = $this->couponApiUrl . 'Api/checkLoyalProgram';
-        $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
-        $codehas = json_decode($curldata);
-        $data['memberdata'] = $codehas->memberdata;
-        $data["image"] = $codehas->image;
-
-        $emailsender = email_sender;
-        $sendername = email_sender_name;
-        $email_bcc = email_bcc;
-
-        $this->email->set_newline("\r\n");
-        $this->email->from(email_bcc, $sendername);
-        $this->email->to($codehas->memberdata->email);
-        $this->email->bcc(email_bcc);
-        $subjectt = "Thank you for joining our loyalty program";
-        $subject = $subjectt;
-        $this->email->subject($subject);
-        $htmlsmessage = $this->load->view('coupon/loyalprogrammail', $data, true);
-        if (REPORT_MODE == 1) {
-            $this->email->message($htmlsmessage);
-            $this->email->print_debugger();
-            $send = $this->email->send();
-            if ($send) {
-                
-            } else {
-                $error = $this->email->print_debugger(array('headers'));
-            }
-        } else {
-            echo $htmlsmessage;
-        }
-    }
-
-    function loyalProgramReimbursementMail($reimburse_id) {
-        $jonrequest['reimburse_id'] = $reimburse_id;
-        $headers = array(
-            'Authorization: key=' . "AIzaSyBlRI5PaIZ6FJPwOdy0-hc8bTiLF5Lm0FQ",
-            'Content-Type: application/json'
-        );
-        $url = $this->couponApiUrl . 'Api/memberReimbursement';
-        $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
-        $codehas = json_decode($curldata);
-
-
-        $data['memberdata'] = $codehas->memberdata;
-        $data["image"] = $codehas->image;
-        $data["reimbursement"] = $codehas->reimbursement;
-
-        $emailsender = email_sender;
-        $sendername = email_sender_name;
-        $email_bcc = email_bcc;
-
-        $this->email->set_newline("\r\n");
-        $this->email->from(email_bcc, $sendername);
-        $this->email->to($codehas->memberdata->email);
-        $this->email->bcc(email_bcc);
-        $subjectt = "You have rewarded from loyalty program";
-        $subject = $subjectt;
-        $this->email->subject($subject);
-        $htmlsmessage = $this->load->view('coupon/loyalProgramReimburse', $data, true);
-        if (REPORT_MODE == 1) {
-            $this->email->message($htmlsmessage);
-            $this->email->print_debugger();
-            $send = $this->email->send();
-            if ($send) {
-                
-            } else {
-                $error = $this->email->print_debugger(array('headers'));
-            }
-        } else {
-            echo $htmlsmessage;
-        }
-    }
 
 }

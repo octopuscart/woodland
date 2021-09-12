@@ -108,7 +108,8 @@ $this->load->view('layout/header');
                     <div class="row">
                         <div class="col-md-7">
                             <div class="informationblock">
-                                <h4>Annual Charity Lunch & Dinner 2021 週年慈善午餐&晚餐2021
+                                <h4>
+                                    Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021
                                 </h4>
                                 <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
                                      border-radius: 19px!IMPORTANT;">
@@ -135,99 +136,60 @@ $this->load->view('layout/header');
                                 <h4>
                                     Woodlands Indian Vegetarian Restaurant's Annual Charity Lunch & Dinner Event 2021<br/>
                                     活蘭印度素食餐廳週年慈善午餐&晚餐活動2021
+
                                 </h4>
                                 <h5>
-                                    October 2nd (SAT) 2021
+                                    1st October (FRI) 2021 | 2021年10月1日
                                 </h5>
                             </div>
                             <hr/>
                             <div class="informationblock feature-box media-box">
                                 <h3 class="text-danger">
-                                    UNESCO HK GPC<br/>
-                                    香港聯合國教科文組織協會和平中心
+                                    DARKNESS FIGHTERS | 有關黑武士
+
                                 </h3>
                                 <br/>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/b-eQWLme4AI?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1XGZJ5_mCP0?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                 <br/>
                                 <p style="font-weight: 500">
-                                    Support <b>UNESCO’s vision “building peace in the minds of men and women”</b>. Promote community awareness and dialogues within and among all nations, peoples and culture to PEACE, harmony and sustainable development.
+                                    The Darkness Fighters Sports Association for the Blind is a non-profit organization that aims to promote equal social participation of people with disabilities through sports. Through different media and experience projects, we will achieve equality and opportunities for people with disabilities in different fields, encourage them to be independent, promote integration into society, and improve the quality of life.
                                     <br/>
-                                    支持聯合國教科文組織“在男人和女人心中建立和平”的願景。 在所有國家，民族和文化內和之間促進社區意識和對話，以實現和平，和諧與可持續發展。
+                                    The Darkness Fighters Sports Club for the Blind is committed to developing various sports rehabilitation programs, assisting the disabled in physical, mental, social, and spiritual rehabilitation development, and is committed to promoting equal participation in sports by the group. In addition to the dragon boat team, the club also has physical training classes, hiking activities, smartphone classes, and meditation classes. It is also preparing for indoor rowing classes. During the epidemic, the association also distributed materials to members.
+                                    All are welcome to join and support.
+                                    <br/>
+                                    <br/>
+                                    黑武士失明人體育會乃一非牟利性質之機構，旨在透過運動推廣殘疾人士平等社會參與。透過不同媒介及體驗項目，實現殘疾人士在不同範疇的平等和機會，鼓勵他們獨立自主，促進融入社會，提升生活質素。黑武士失明人體育會致力發展各運動復康項目，協助殘疾人在身、心、社、靈方面的復康發展，並致力推動群體在體育上的平等參與。本會除了龍舟隊外，還有 體能鍛練班、 行山活動、智能手機班、冥想班，也正籌備室內划艇班。在疫情期間，本會也向會員派發物資。歡迎各界人士加入和支持。
                                 </p>
                             </div>
                             <hr/>
                             <div class="informationblock feature-box media-box">
                                 <h3 class="text-danger">
-                                    House of Learning (HOL) 
-                                    腦之家
+                                    Event Ambassador: <br/>Ms Jennifer (Codekey Cookies 點字曲奇)
                                 </h3>
                                 <br/>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/6K8hkYai-30?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/xo3c6lSfk7Q?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                 <br/>
                                 <p style="font-weight: 500">
-                                    <b> House of Learning</b> - An NGO Serving the underachieved and underprivileged children by providing training and programs to help them become productive citizens in the society, in the future.
-                                    <br/>
-                                    腦之家為一間非牟利慈善機構，腦之家一向致力為本地及內地貧困兒童推行不同的教育計劃，以知識改變命運。                                <br/>
-                                </p>
-                                <p style="font-weight: 500">
-                                    Inviting you to be a part of the Change! Lets us join together to make a better future and continue to make a difference in the lives of our biggest investment:<b> the children!
-                                        <br/>
-                                        誠邀您參加我們的活動，讓我們攜手合作，共創美好未來，繼續為我們最大的投資：孩子們的生活帶來改變。
-                                        <br/>
-                                        "Give the Best to the Most Important"
-                                        <br/>
-                                        “將最好的給予最重要的人”
+                                    <b> CODEKEY COOKIES 點字曲奇</b> - Codekey Cookies, a social enterprise cookie brand founded by the visually impaired, hopes to break social labels and promote social integration by making Braille cookies.
 
-                                        <br/>
-                                        Children are our future soceity. Every Child deserves the best possible education and equal learning opportunities.
-                                        <br/>
-                                        將最好的學習資源給予我們的孩子，社會的下一代!
-                                        <br/>
+                                    <br/>
+                                    Codekey Cookies 由兩位視障人士於2015年創立，希望透過製作「點字曲奇」傳達心意，推動社會共融。                                <br/>
+                                </p>
+                                <p>
+                                    To Know More 了解更多: <a href="www.codekeycookies.com/about.html" target="_blank"> www.codekeycookies.com/about.html</a>
+                                </p>
+
+
+                                <p style="font-weight: 500">
+                                    Take part to be a part of the change | Donate Generously | Share the joy of caring with your Friends<br/>
+                                    踴躍參加 | 慷慨解囊 | 與朋友分享關懷的喜悅
                                     </b>
                                 </p>
                             </div>
 
                             <div class="col-md-12 feature-box media-box">
 
-                                <p><b> 5 Strategic Areas of HOL 腦之家五項策略範疇</b></p>
-                                <ul>
-                                    <li>   <p>1. Enhancing research and service capacity.
-                                            <br/>
-                                            提升研究及服務的領域</p>
-                                    </li>
-                                    <li> 
-                                        <p>  2. Fostering professional excellence.
-                                            <br/>
-                                            培育卓越的專業精神</p>
-                                    </li>
-                                    <li> 
-                                        <p>  3. Diversifying our programs to meet the need of our society.
-                                            <br/>
-                                            製作多元化的項目去迎合社會上不同的需要</p>
-                                    </li>
-                                    <li> 
-                                        <p>   4. Internationalization and outreaching to the Mainland.
-                                            <br/>
-                                            服務延伸到國內及國際化</p>
-                                    </li>
-                                    <li> 
-                                        <p>   5. Revolutionalizing social entrepreneurship.
-                                            <br/>
-                                            將社會企業革命化</p>
-                                    </li>
-                                </ul>
-                                <p>
-                                    There's a popular Chinese saying is 飲水思源 , which means when we drink water we must remember from where the water came. And this is the spirit behind which I founded the House of Learning: we must remember the person we are today because many have helped us along the way, and so likewise we need to help those who are less fortunate than us.
-                                    <br/>
-                                    「飲水思源」：我們需要記得我們之所以能成為今日的我們是因為曾有很多人一直在幫我們
-                                </p>
-                                <p>
-                                    HOL's motive is to provide the best possible learning and education experiences to those who are underprivileged. Being born poor does not mean being not able to learn. Being born poor does not mean they should be deprived of great learning experiences. Throughout the years, we have been providing enriched learning experiences to the underprivileged and underachievers, and we found when children are exposed to these experiences, the lights inside them get turned on and they would glow in self-confidence, in social skills, in academic improvement.
-                                    <br/>
-                                    腦之家一向致力為本地及內地貧困兒童推行不同的教育計劃，以知識改變命運。透過組織活動及服務來幫助低成就及弱勢的兒童及青少年，使他們獲得基本生活需要、提昇自信及發展潛能
-                                    <br/>
-                                    多年來，我們一直在為弱勢和學業不佳的人提供豐富的學習經驗，我們發現，當孩子們接觸到這些經驗時，他們裡面的燈會亮起來，它們會以自信，社交技巧，學術上發光亮。
-                                </p>
+
                             </div>
                         </div>
 
@@ -242,7 +204,7 @@ $this->load->view('layout/header');
 
                                 <div class=" mt-4 mt-lg-0 formblocksection" >
                                     <div class="form-result"></div>
-                                    <form class="mb-0 row"  action="#" method="post" >
+                                    <form class="mb-0 row"  action="#" method="post" ng-submit="donationSubmit()">
                                         <div class="form-process"></div>
                                         <div class="row">
                                             <div class="donation-amount-block">
@@ -307,17 +269,43 @@ $this->load->view('layout/header');
 
 
                                         <div class="clear"></div>
-                                        <div class="col-12 nobottommargin" style='    text-align: center;'>
+                                        <div class="col-12 nobottommargin" style='    text-align: center;' ng-if="!donationinput.isprocess">
                                             <input type="hidden" name="amount" value="{{donationinput.selected_amount}}">
 
                                             <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit" ng-if='donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
+
                                             <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" disabled="" ng-if='!donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
+
+                                        </div>
+                                        <div class="col-12 nobottommargin" style='    text-align: center;' ng-if="donationinput.isprocess">
+                                            <input type="hidden" name="amount" value="{{donationinput.selected_amount}}">
+
+
+                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" disabled="" >Processing...</button>
 
                                         </div>
                                         <div class="clear"></div>
 
                                     </form>
                                 </div>
+                            </div>
+
+                            <div class="col-md-12 feature-box media-box">
+                                <?php
+                                $previouselink = [
+                                    "zgYpG-ThKvk",
+                                    "uI8ARH4dmH4",
+                                    "ZC0Fb9BjB64"
+                                ];
+                                foreach ($previouselink as $key => $value) {
+                                    ?>
+                                    <br/>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value;?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                    <br/>
+                                    <?php
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>

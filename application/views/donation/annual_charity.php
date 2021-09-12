@@ -85,6 +85,20 @@ $this->load->view('layout/header');
         width: 180px;
         text-align: center;
     }
+    .qrpayment{
+        background: #efecff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+    }
+    .qrscanimage{
+        border-radius: 10px;
+        height: 90px;
+        cursor: pointer;
+    }
+    .qrscanimage:hover{
+        box-shadow: 0px 0px 16px #c4c1d2;
+    }
 
 </style>
 
@@ -288,6 +302,19 @@ $this->load->view('layout/header');
 
                                     </form>
                                 </div>
+                                <div class="qrpayment">
+                                    <h4>Pay Using QR Code Scan <br/><small>
+                                            Click image to select payment method.
+                                        </small></h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/donation/payme_red_on_white_bg.png" class="qrscanimage" data-toggle="modal" data-target="#qrcodemodel" ng-click="openQR('payme')">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/donation/fps.png" class="qrscanimage" data-toggle="modal" data-target="#qrcodemodel" ng-click="openQR('fps')">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-md-12 feature-box media-box">
@@ -300,7 +327,7 @@ $this->load->view('layout/header');
                                 foreach ($previouselink as $key => $value) {
                                     ?>
                                     <br/>
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value;?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                     <br/>
                                     <?php
                                 }
@@ -445,7 +472,25 @@ $this->load->view('layout/header');
         $this->load->view('layout/contactfooter');
         ?>
     </section>
+    <!-- Modal -->
+    <div class="modal fade" id="qrcodemodel" tabindex="-1" role="dialog" aria-labelledby="qrcodemodel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">{{qucodeselect.title}}</h4>
 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body text-center">
+                  
+                    <img src="<?php echo base_url(); ?>assets/donation/{{qucodeselect.image}}" style="width:300px" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="<?php echo base_url(); ?>assets/theme2/angular/ng-donation.js"></script>

@@ -54,7 +54,7 @@ class Charity extends CI_Controller {
     }
 
     public function index() {
-        if (isset($_POST['submit_now'])) {
+        if (isset($_POST['amount'])) {
             $requestid = "CHWL" . date('ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
             $charity_donation = array(

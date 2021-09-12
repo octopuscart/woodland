@@ -245,7 +245,7 @@ $this->load->view('layout/header');
                                                     <input type="email" id="template-contactform-email" name="email" value="" class="required email form-control border-form-control" placeholder="Email Address" required="">
                                                 </div>
                                                 <div class="col-sm-12 mb-3">
-                                                    <textarea type="text" id="template-contactform-message" name="message" value="" class="required  form-control border-form-control" placeholder="Type you message here" required="" max="300"></textarea>
+                                                    <textarea type="text" id="template-contactform-message" name="message" value="" class="required  form-control border-form-control" placeholder="Type you message here"  max="300"></textarea>
                                                 </div>
                                                 <br/>
                                                 <div class="col-md-12  mt-3">

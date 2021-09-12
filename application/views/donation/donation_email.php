@@ -29,9 +29,8 @@
                                 <td>
 
                                     <b>Hello <?php echo $donation['name']; ?>,</b>
-                                    <p> Thank you for your donation <b>(<?php echo globle_currency . " " . number_format($donation['amount'], 2, '.', ''); ?> )</b>.</p>
 
-                                    <p>Thank you for supporting us with your generous donations. </p>
+                                    <p>Thank you for supporting us with your generous donation of <b><?php echo globle_currency . " " . number_format($donation['amount'], 2, '.', ''); ?></b>. </p>
                                     <p>Your valuable gift is helping us provide long-term support to <b>The Darkness Fighters Sports Association for the Blind.</b></p>
                                 </td>
                             </tr>

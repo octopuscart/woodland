@@ -203,7 +203,7 @@ $this->load->view('layout/header');
 
                             <div class="col-md-12 feature-box media-box">
 
-
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg" style="border-radius: 19px;">
                             </div>
                         </div>
 
@@ -482,7 +482,7 @@ $this->load->view('layout/header');
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body text-center">
-                  
+
                     <img src="<?php echo base_url(); ?>assets/donation/{{qucodeselect.image}}" style="width:300px" />
                 </div>
                 <div class="modal-footer">

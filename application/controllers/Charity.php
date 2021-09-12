@@ -207,7 +207,6 @@ class Charity extends CI_Controller {
         $query = $this->db->get("charity_donation");
         $requestdata = $query->row_array();
         $data = array("donation" => $requestdata);
-
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;

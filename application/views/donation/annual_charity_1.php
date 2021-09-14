@@ -123,7 +123,7 @@ $this->load->view('layout/header');
                         <div class="col-md-7">
                             <div class="informationblock">
                                 <h4>
-                                    Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021 | <b>活。睛彩 </b>
+                                    Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021
                                 </h4>
                                 <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
                                      border-radius: 19px!IMPORTANT;">
@@ -149,7 +149,7 @@ $this->load->view('layout/header');
                                 <hr/>
                                 <h4>
                                     Woodlands Indian Vegetarian Restaurant's Annual Charity Lunch & Dinner Event 2021<br/>
-                                    活蘭印度素食餐廳週年慈善午餐&晚餐活動2021 
+                                    活蘭印度素食餐廳週年慈善午餐&晚餐活動2021
 
                                 </h4>
                                 <h5>
@@ -163,8 +163,7 @@ $this->load->view('layout/header');
 
                                 </h3>
                                 <br/>
-                                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcablewish%2Fvideos%2F1814552805268505%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden;border-radius: 19px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/1XGZJ5_mCP0?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>-->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1XGZJ5_mCP0?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                 <br/>
                                 <p style="font-weight: 500">
                                     The Darkness Fighters Sports Association for the Blind is a non-profit organization that aims to promote equal social participation of people with disabilities through sports. Through different media and experience projects, we will achieve equality and opportunities for people with disabilities in different fields, encourage them to be independent, promote integration into society, and improve the quality of life.

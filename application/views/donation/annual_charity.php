@@ -155,6 +155,10 @@ $this->load->view('layout/header');
                                 <h5>
                                     1st October (FRI) 2021 | 2021年10月1日
                                 </h5>
+                                <div class="col-md-12 feature-box media-box">
+
+                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg" style="border-radius: 19px;">
+                            </div>
                             </div>
                             <hr/>
                             <div class="informationblock feature-box media-box">
@@ -202,10 +206,7 @@ $this->load->view('layout/header');
                                 </p>
                             </div>
 
-                            <div class="col-md-12 feature-box media-box">
-
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg" style="border-radius: 19px;">
-                            </div>
+                            
                         </div>
 
                         <div class="col-md-5">

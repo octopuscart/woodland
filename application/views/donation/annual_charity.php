@@ -108,7 +108,7 @@ $this->load->view('layout/header');
     <!-- Inner Page Banner Area Start Here -->
     <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px 18px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
         <div class="container clearfix">
-            <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 30px;"> 
+            <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 40px;"> 
                 Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021
             </h1>
             <h2 class="font-secondary capitalize ls0 text-white" style="font-size: 44px;"> 

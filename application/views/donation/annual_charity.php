@@ -67,6 +67,7 @@ $this->load->view('layout/header');
         font-weight: bold;
         color: white;
         cursor: pointer;
+        font-size: 12px;
     }
     .donation-amount-block .amoutblock.active{
         border: 1px solid #fcb316;
@@ -105,10 +106,14 @@ $this->load->view('layout/header');
 <div ng-controller="donatinController">
 
     <!-- Inner Page Banner Area Start Here -->
-    <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
+    <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px 18px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
         <div class="container clearfix">
-            <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 62px;"> Annual Charity Lunch & Dinner 2021 <br />
+            <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 30px;"> 
+                Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021
             </h1>
+            <h2 class="font-secondary capitalize ls0 text-white" style="font-size: 44px;"> 
+                <b>活。睛彩 </b>
+            </h2>
 
         </div>
     </section>
@@ -122,9 +127,9 @@ $this->load->view('layout/header');
                     <div class="row">
                         <div class="col-md-7">
                             <div class="informationblock">
-                                <h4>
-                                    Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021 | <b>活。睛彩 </b>
-                                </h4>
+                                <!--                                <h4>
+                                                                    Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021 | <b>活。睛彩 </b>
+                                                                </h4>-->
                                 <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
                                      border-radius: 19px!IMPORTANT;">
 
@@ -136,10 +141,10 @@ $this->load->view('layout/header');
                                             <span><strong>Target:</strong> HK$100,000</span>
                                         </div>
                                         <ul class="skills pt-3 mb-2 mt-3">
-                                            <li data-percent="45">
+                                            <li data-percent="9">
                                                 <div class="progress">
                                                     <div class="progress-percent">
-                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="45" data-refresh-interval="30" data-speed="1100"></span>%</div>
+                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="9" data-refresh-interval="30" data-speed="1100"></span>%</div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -157,8 +162,8 @@ $this->load->view('layout/header');
                                 </h5>
                                 <div class="col-md-12 feature-box media-box">
 
-                                <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg" style="border-radius: 19px;">
-                            </div>
+                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg" style="border-radius: 19px;">
+                                </div>
                             </div>
                             <hr/>
                             <div class="informationblock feature-box media-box">
@@ -206,7 +211,7 @@ $this->load->view('layout/header');
                                 </p>
                             </div>
 
-                            
+
                         </div>
 
                         <div class="col-md-5">

@@ -5,7 +5,7 @@ App.controller('donatinController', function ($scope, $http, $location) {
 
 //    var globlecart = baseurl + "Api/cartOperationShirtSingle/"+product_id;
 
-    $scope.donationinput = {"amountarray": [50, 100, 200, 500],
+    $scope.donationinput = {"amountarray": [100, 300, 500, 1000],
         "selected_amount": 0, "other_amount": "", "isprocess": false,
         "showreceiver": false};
     $scope.selectAmount = function (selectedamount) {

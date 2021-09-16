@@ -101,7 +101,27 @@ $this->load->view('layout/header');
         box-shadow: 0px 0px 16px #c4c1d2;
     }
 
+    .donate_name{
+
+        margin: 0px!important;
+    }
+    p.donate_message {
+        font-size: 12px!important;
+        font-style: italic!important;
+    }
+    .dataTables_paginate a {
+        padding: 7px;
+        border: 1px solid #000;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
 </style>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap.min.css" type="text/css" />
+
+
 
 <div ng-controller="donatinController">
 
@@ -141,10 +161,10 @@ $this->load->view('layout/header');
                                             <span><strong>Target:</strong> HK$100,000</span>
                                         </div>
                                         <ul class="skills pt-3 mb-2 mt-3">
-                                            <li data-percent="9">
+                                            <li data-percent="<?php echo $target_achive;?>">
                                                 <div class="progress">
                                                     <div class="progress-percent">
-                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="9" data-refresh-interval="30" data-speed="1100"></span>%</div>
+                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="<?php echo $target_achive;?>" data-refresh-interval="30" data-speed="1100"></span>%</div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -286,8 +306,26 @@ $this->load->view('layout/header');
                                                     <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
                                                 </label>
                                             </div>
-                                        </div>
+                                            <div class="col-md-6 pull-left">
+                                                <label class="radio-inline">
+                                                    <input type="radio"  name="payment_type" value="PAYME" class="checkbox-coupon  " checked=true required="">
+                                                    <img src="<?php echo base_url(); ?>assets/donation/payme_red_on_white_bg.png" class="coupon-imgage-payment">
+                                                </label>
+                                            </div>
 
+                                            <div class="col-md-6 pull-left">
+                                                <label class="radio-inline">
+                                                    <input type="radio"  name="payment_type" value="FPS" class="checkbox-coupon "  checked=false required="">
+                                                    <img src="<?php echo base_url(); ?>assets/donation/fps.png" class="coupon-imgage-payment">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p style="text-align: center;
+                                               font-size: 15px;">
+                                                <b> *Donation of $100 or above are Tax deductible *</b>
+                                            </p>
+                                        </div>
 
                                         <div class="clear"></div>
                                         <div class="col-12 nobottommargin" style='    text-align: center;' ng-if="!donationinput.isprocess">
@@ -310,7 +348,7 @@ $this->load->view('layout/header');
                                     </form>
                                 </div>
                                 <div class="qrpayment">
-                                    <h4>Pay Using QR Code Scan <br/><small>
+<!--                                    <h4>Pay Using QR Code Scan <br/><small>
                                             Click image to select payment method.
                                         </small></h4>
                                     <div class="row">
@@ -320,9 +358,23 @@ $this->load->view('layout/header');
                                         <div class="col-md-6">
                                             <img src="<?php echo base_url(); ?>assets/donation/fps.png" class="qrscanimage" data-toggle="modal" data-target="#qrcodemodel" ng-click="openQR('fps')">
                                         </div>
+                                    </div>-->
+
+                                    <div class="col-md-12 feature-box media-box text-left">
+                                        <div class="donationlist">
+                                            <table id="donationalisttable" class="table">
+                                                <thead>
+                                                    <tr><th>LATEST DONATIONS</th></tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
 
                             <div class="col-md-12 feature-box media-box">
                                 <?php
@@ -505,3 +557,30 @@ $this->load->view('layout/header');
 <?php
 $this->load->view('layout/footer');
 ?>
+
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+                        $(function () {
+
+                            $('#donationalisttable').DataTable({
+                                "processing": true,
+                                "serverSide": true,
+                                "searching": false,
+                                "bLengthChange": false,
+                                "bInfo": false,
+                                "ordering": false,
+                                "ajax": {
+                                    url: "<?php echo site_url("Api/donationListApi"); ?>",
+                                    type: 'GET'
+                                },
+                                "columns": [
+
+                                    {"data": "donator"},
+                                ]
+                            })
+                        }
+                        )
+
+</script>

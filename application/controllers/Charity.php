@@ -54,6 +54,18 @@ class Charity extends CI_Controller {
     }
 
     public function index() {
+        $c_query = "SELECT sum(amount) as amount FROM `charity_donation` where confirm_status='Confirm' order by id desc";
+        $querytotal = $this->db->query($c_query);
+        $totalrcv = $querytotal->row_array();
+
+        $collectamount = $totalrcv["amount"];
+        
+        $targetgoal = "100000";
+        
+        $collectpercent = ($collectamount*100)/$targetgoal;
+        
+        $data["target_achive"] = $collectpercent;
+
         if (isset($_POST['amount'])) {
             $requestid = "CHWL" . date('ymd') . date('His');
             $paymenttype = $this->input->post('payment_type');
@@ -74,10 +86,24 @@ class Charity extends CI_Controller {
             );
 //            print_r($charity_donation);
             $this->db->insert('charity_donation', $charity_donation);
-            redirect("Charity/orderPayment/" . $requestid);
+            $restpay = array("PAYME" => "", "FPS" => "");
+            if (isset($restpay[$paymenttype])) {
+                redirect("Charity/qrPayment/$paymenttype/" . $requestid);
+            } else {
+                redirect("Charity/orderPayment/" . $requestid);
+            }
         }
 
-        $this->load->view('donation/annual_charity');
+        $this->load->view('donation/annual_charity', $data);
+    }
+
+    function qrPayment($paymenttype, $order_key) {
+        $restpay = array("PAYME" => "paymeqr_2.jpeg", "FPS" => "fpsqr_2.jpeg");
+        $this->db->where("request_id", $order_key);
+        $query = $this->db->get("charity_donation");
+        $requestdata = $query->row_array();
+        $data = array("donation" => $requestdata, "paymentqr" => $restpay[$paymenttype]);
+        $this->load->view('donation/payment_qr', $data);
     }
 
     function orderPayment($order_key) {
@@ -183,8 +209,6 @@ class Charity extends CI_Controller {
             }
         }
     }
-
-   
 
     function orderPaymentFailed($order_key) {
         $this->db->where("request_id", $order_key);

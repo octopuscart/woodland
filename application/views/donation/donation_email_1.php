@@ -30,20 +30,16 @@
 
                                     <b>Hello <?php echo $donation['name']; ?>,</b>
 
-                                    <p>You have made a donation of  <b><?php echo globle_currency . " " . number_format($donation['amount'], 2, '.', ''); ?> </b>.<br/>
-                                        Towards the <b>Woodlands Annual Charity Event 2021</b>.<i>(Donations over $100 are Tax deductible)</i> </p>
-                                    <p>We will send the official receipt to you after the event.  </p>
-                                    <p>Kindly share with your friends to support this event. </p>
+                                    <p>Thank you for supporting us with your generous donation of <b><?php echo globle_currency . " " . number_format($donation['amount'], 2, '.', ''); ?></b>. </p>
+                                    <p>Your valuable gift is helping us provide long-term support to <b>The Darkness Fighters Sports Association for the Blind.</b></p>
                                 </td>
                             </tr>
                             <tr>
-                                <td style=" " colspan="2">
+                                <td style="    text-align: center;font-size: 18px;" colspan="2">
 
-                                    <p>
-                                        Thank you </br>
-                                        Alex P.E</br>
-                                        Director | Woodlands</br>
-                                    </p>
+
+
+
 
                                 </td>
                             </tr>

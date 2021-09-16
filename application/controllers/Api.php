@@ -92,7 +92,7 @@ class Api extends REST_Controller {
 //                    $session_cart['shipping_price'] = 30;
                     $session_cart['shipping_price'] = 0;
 //                    $session_cart['discount_note'] = "30% Discount On Pickup";
-                     $session_cart['discount_note'] = "";
+                    $session_cart['discount_note'] = "";
                     $session_cart['shipping_note'] = "";
                 }
             }
@@ -428,9 +428,48 @@ class Api extends REST_Controller {
         // $this->Product_model->order_mail_to_vendor($order_id);
         $this->response("hell");
     }
-    
-    function userMailSend_get($user_id){
+
+    function userMailSend_get($user_id) {
         $this->User_model->registration_mail($user_id);
+    }
+
+    public function donationListApi_get() {
+        $draw = intval($this->input->get("draw"));
+        $start = intval($this->input->get("start"));
+        $length = intval($this->input->get("length"));
+
+        $c_query = "SELECT amount, message, if(anonymous_donation='false', name, 'Anonymous') as name, date, time, anonymous_donation "
+                . "FROM `charity_donation` where confirm_status='Confirm' order by id desc";
+
+
+        $querytotal = $this->db->query($c_query);
+
+        $query = "$c_query  limit  $start, $length";
+        $queryfilter = $this->db->query($query);
+        $result_array = $queryfilter->result_array();
+        $return_array = [];
+        foreach ($result_array as $key => $value) {
+            $message = $value["message"];
+            $name = $value["name"];
+            $datetime = $value["date"] . " " . $value["time"];
+            $amount = $value["amount"];
+            $amount2 = globle_currency . " " . number_format($amount, 2, '.', '');
+
+            $objtext = "<div class='row'><div class='col-md-5'><b>$amount2</b></div>".
+                    "<div class='col-md-7'><p class='donate_name'><b>$name</b> donated</p>".
+                    "<p class='donate_time'>$datetime</p><p class='donate_message'>$message</p></div></div>";
+            array_push($return_array, array("donator"=>$objtext));
+        }
+
+
+        $output = array(
+            "draw" => $draw,
+            "recordsTotal" => $querytotal->num_rows(),
+            "recordsFiltered" => $queryfilter->num_rows(),
+            "data" => $return_array
+        );
+        echo json_encode($output);
+        exit();
     }
 
 }

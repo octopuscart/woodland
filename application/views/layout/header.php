@@ -6,7 +6,7 @@
         <?php
         meta_tags();
         ?>
-        <meta name="facebook-domain-verification" content="yxeqfr3257ss06hezw5hqly0fonnbr" />
+
         <link href="https://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,600,700,800,900|Poppins:300,400,500,600,700|Playfair+Display:400,400i,700,700i,900" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic%7CPoppins%3A400%2C400italic%2C700%2C700italic%2C600%2C600italic%2C300%2C300italic%7COswald%3A400%2C700" rel="stylesheet">
@@ -35,6 +35,8 @@
 
         <link href="<?php echo base_url(); ?>assets/theme2/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
 
+        <!--facebook domain verification-->
+        <meta name="facebook-domain-verification" content="yxeqfr3257ss06hezw5hqly0fonnbr" />
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/OwlCarousel2-2.3.4/owl.carousel.min.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/OwlCarousel2-2.3.4/owl.theme.default.min.css" type="text/css" />
@@ -102,7 +104,7 @@
 
                             <li><a href="<?php echo site_url("review"); ?>"><div>Review</div></a></li>
                             <!--<li><a href="<?php echo site_url("blog"); ?>"><div>Blog</div></a></li>-->
-                            <!--<li><a href="<?php  echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
+                            <!--<li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
                             <li><a href="<?php echo site_url("annual-charity"); ?>"><div>  CHARITY</div></a></li>
 
                         </ul>
@@ -127,7 +129,7 @@
                             <!--<li><a href="<?php echo site_url("book-now"); ?>" class="reservation_buttons "><div class="">Reservation </div></a></li>-->
                             <li><a href="https://book.bistrochat.com/woodlands" target="_blank"  class="reservation_buttons "><div class="">Reservation </div></a></li>
 
-                            
+
                             <li>
                                 <a href="<?php echo site_url("cart") ?>" class="cartheadericon">
                                     <i class="icon-et-basket" style="    font-size: 20px;"></i><span>{{globleCartData.total_quantity}}</span>

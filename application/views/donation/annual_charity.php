@@ -366,7 +366,20 @@ $this->load->view('layout/header');
                                                 <thead>
                                                     <tr><th>LATEST DONATIONS</th></tr>
                                                 </thead>
-                                                <tbody></tbody>
+                                                <tbody>
+                                                    <?php
+                                                    foreach ($donationdata as $key => $value) {
+                                                        ?>
+                                                    <tr>
+                                                        <td>
+                                                            <?php echo $value["donator"];?>
+                                                        </td>
+                                                    </tr>
+                                                            <?php
+                                                    }
+                                                    ?>
+                                                    
+                                                </tbody>
                                             </table>
                                         </div>
                                     </div>
@@ -566,19 +579,12 @@ $this->load->view('layout/footer');
 
                             $('#donationalisttable').DataTable({
                                 "processing": true,
-                                "serverSide": true,
+                              
                                 "searching": false,
                                 "bLengthChange": false,
                                 "bInfo": false,
                                 "ordering": false,
-                                "ajax": {
-                                    url: "<?php echo site_url("Api/donationListApi"); ?>",
-                                    type: 'GET'
-                                },
-                                "columns": [
-
-                                    {"data": "donator"},
-                                ]
+                                
                             })
                         }
                         )

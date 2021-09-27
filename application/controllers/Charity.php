@@ -93,6 +93,26 @@ class Charity extends CI_Controller {
                 redirect("Charity/orderPayment/" . $requestid);
             }
         }
+        $c_query = "SELECT amount, message, if(anonymous_donation='false', name, 'Anonymous') as name, date, time, anonymous_donation "
+                . "FROM `charity_donation` where confirm_status='Confirm' order by id desc";
+
+
+        $queryfilter = $this->db->query($c_query);
+        $result_array = $queryfilter->result_array();
+        $return_array = [];
+        foreach ($result_array as $key => $value) {
+            $message = $value["message"];
+            $name = $value["name"];
+            $datetime = $value["date"] . " " . $value["time"];
+            $amount = $value["amount"];
+            $amount2 = globle_currency . " " . number_format($amount, 2, '.', '');
+
+            $objtext = "<div class='row'><div class='col-md-5'><b>$amount2</b></div>".
+                    "<div class='col-md-7'><p class='donate_name'><b>$name</b> donated</p>".
+                    "<p class='donate_time'>$datetime</p><p class='donate_message'>$message</p></div></div>";
+            array_push($return_array, array("donator"=>$objtext));
+        }
+        $data["donationdata"] = $return_array;
 
         $this->load->view('donation/annual_charity', $data);
     }

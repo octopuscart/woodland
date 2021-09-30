@@ -293,7 +293,7 @@ $this->load->view('layout/header');
                                         <div class="clear"></div>
                                         <div class="col-sm-12 mb-3">
                                             <p class="text-center" style="    margin-top: 20px;   margin-bottom: 0;">Choose Payment Method</p>
-                                            <div class="col-md-6 pull-left">
+<!--                                            <div class="col-md-6 pull-left">
                                                 <label class="radio-inline">
                                                     <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
                                                     <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
@@ -305,7 +305,7 @@ $this->load->view('layout/header');
                                                     <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
                                                     <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
                                                 </label>
-                                            </div>
+                                            </div>-->
                                             <div class="col-md-6 pull-left">
                                                 <label class="radio-inline">
                                                     <input type="radio"  name="payment_type" value="PAYME" class="checkbox-coupon  " checked=true required="">

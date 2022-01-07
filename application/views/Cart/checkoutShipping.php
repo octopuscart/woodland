@@ -293,7 +293,7 @@ if ($indexarray) {
                                         <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'></p></a></li>
                                         <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
                                                 <!--<p class='discountnotetab'>30% Discount On Pickup</p>-->
-                                            
+
                                             </a></li>
 
                                     </ul>
@@ -408,7 +408,7 @@ if ($indexarray) {
 
 
 
-                                                                                                                                                                                                    <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                                                                                                                                                        <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
                                                                                     <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                     <?php
                                                                                 }
@@ -455,9 +455,11 @@ if ($indexarray) {
                                                                                     <select class="form-control" name="delivery_time">
                                                                                         <?php
                                                                                         foreach ($finaltimelist as $key => $value) {
-                                                                                            ?>
-                                                                                            <option value="<?php echo $value; ?>"><?php echo $value ?></option>
-                                                                                            <?php
+                                                                                            if (time() < strtotime($value)) {
+                                                                                                ?>
+                                                                                                <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+                                                                                                <?php
+                                                                                            }
                                                                                         }
                                                                                         ?>
                                                                                     </select>
@@ -474,7 +476,7 @@ if ($indexarray) {
                                                                             <div class="proceed-button pull-right ">
 
 
-                                                                             <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopaymentpickup">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
+                                                                                <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopaymentpickup">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
 
 
                                                                             </div>

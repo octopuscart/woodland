@@ -259,8 +259,8 @@ if ($indexarray) {
     .freeshippingnote{
         color:red;
     }
-    
-    
+
+
 
 </style>
 
@@ -370,8 +370,8 @@ if ($indexarray) {
                                                             ?>
                                                         </div>  
                                                         <?php
-                                                            echo "Your order will be derlivered in 45 minutes, Expected time is " . date("h:i a", strtotime("+45 minute"));
-                                                            ?>
+                                                        echo "Your order will be derlivered in 45 minutes, Expected time is " . date("h:i a", strtotime("+45 minute"));
+                                                        ?>
                                                         <div class="col-md-12" style="margin-top: 50px;">
                                                             <div class="row delivery_block">
                                                                 <input  name="delivery_time" type="hidden" value="" />
@@ -384,68 +384,70 @@ if ($indexarray) {
                                                     </div>
                                                 </div>
                                                 <div class="cart-page-top table-responsive">
-                                                    
-                                                       <form action="#" method="post">
-                                                            <table class="table table-hover">
-                                                                <tbody id="quantity-holder">
-                                                                    <tr>
 
-                                                                        <td colspan="3">
-                                                                            <div class="row">
-                                                                                <div class="col-md-6">
-                                                                                    <h3>
-                                                                                        Select Delivery Time
-                                                                                    </h3>
+                                                    <form action="#" method="post">
+                                                        <table class="table table-hover">
+                                                            <tbody id="quantity-holder">
+                                                                <tr>
+
+                                                                    <td colspan="3">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <h3>
+                                                                                    Select Delivery Time
+                                                                                </h3>
 
 
 
-                                                                                </div>
-                                                                                <div class="col-md-6">
-                                                                                    <select class="form-control" name="delivery_time">
-                                                                                        <?php
-                                                                                        foreach ($finaltimelist as $key => $value) {
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <select class="form-control" name="delivery_time">
+                                                                                    <?php
+                                                                                    foreach ($finaltimelist as $key => $value) {
+                                                                                        if (time() < strtotime($value)) {
                                                                                             ?>
                                                                                             <option value="<?php echo $value; ?>"><?php echo $value ?></option>
                                                                                             <?php
                                                                                         }
-                                                                                        ?>
-                                                                                    </select>
-                                                                                </div>
-
-                                                                            </div>   
-                                                                            <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
-
-                                                                        </td>
-                                                                        <td colspan="1" class="text_right">
-                                                                            <!--                                                                        <div class="proceed-button pull-left " >
-                                                                                                                                                        <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                                                                                                    </div>-->
-                                                                            <div class="proceed-button pull-right ">
-                                                                                <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
-
-                                                                                <?php
-                                                                                if (count($user_address_details)) {
+                                                                                    }
                                                                                     ?>
+                                                                                </select>
+                                                                            </div>
 
+                                                                        </div>   
+                                                                        <input type="hidden" name="delivery_date" value="<?php echo date("Y-m-d"); ?>"/>
 
+                                                                    </td>
+                                                                    <td colspan="1" class="text_right">
+                                                                        <!--                                                                        <div class="proceed-button pull-left " >
+                                                                                                                                                    <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                                                                                                </div>-->
+                                                                        <div class="proceed-button pull-right ">
+                                                                            <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
 
-                                                                                                                                                                                                    <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
-                                                                                    <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
-                                                                                    <?php
-                                                                                }
+                                                                            <?php
+                                                                            if (count($user_address_details)) {
                                                                                 ?>
 
 
-                                                                            </div>
 
-                                                                        </td>
+                                                                                                                                                                                                        <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                                <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
+                                                                                <?php
+                                                                            }
+                                                                            ?>
 
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </form>
-                                                    
-                                                 
+
+                                                                        </div>
+
+                                                                    </td>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </form>
+
+
 
                                                 </div>
                                             </div>
@@ -511,9 +513,9 @@ if ($indexarray) {
 
                                                                         </td>
                                                                         <td colspan="4" class="text_right">
-<!--                                                                            <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                            </div>-->
+                                                                            <!--                                                                            <div class="proceed-button pull-left " >
+                                                                                                                                                            <a href=" <?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
+                                                                                                                                                        </div>-->
                                                                             <div class="proceed-button pull-right ">
 
 
@@ -574,10 +576,10 @@ if ($indexarray) {
                         <div class="card-heading" role="tab" id="headingOne" style="background: red;padding:3px;">
                             <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0;  color: white;">
                                 <!--Delivery process is only available in Tsim Sha Tsui and whampoa garden-->
-                                    Delivery process is only available in Tsim Sha Tsui
+                                Delivery process is only available in Tsim Sha Tsui
                                 <p class="" style="font-size: 12px;  margin-bottom: 10px;  font-weight: 400;">
                                     <!--Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)-->
-                                                                    Free Delivery: Tsim Sha Tsui
+                                    Free Delivery: Tsim Sha Tsui
 
                                 </p>
                             </h4>

@@ -482,18 +482,29 @@ $this->load->view('layout/header');
                                         <td> House of Learning & Unesco HK GPC  </td>
                                         <td>: 2020</td>
                                     </tr>
+                                    
+                                    <tr>
+                                        <td>  DARKNESS FIGHTERS  </td>
+                                        <td>: 2021</td>
+                                    </tr>
 
 
 
                                 </table>
+                                
+                                <h2 class="" style="color:#000!important; text-align: center; font-size: 15px; margin-bottom: 0px;
+                                        margin-top: 25px;">Donation 2021
+                                    </h2>
+                                
                                 <p>
-                                    A total of amount of over <b>HK$ 153,178.80</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
+                                    A total of amount of over <b>HK$ 153,178.80</b> has been donated. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
                                 </p>
 
 
                             </div>
 
                             <div class="row clearfix">
+                                
                                 <div class="col-lg-12 text-center bottommargin-sm">
                                     <div class="feature-box media-box" style="">
 

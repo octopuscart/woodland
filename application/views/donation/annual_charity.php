@@ -161,10 +161,10 @@ $this->load->view('layout/header');
                                             <span><strong>Target:</strong> HK$100,000</span>
                                         </div>
                                         <ul class="skills pt-3 mb-2 mt-3">
-                                            <li data-percent="<?php echo $target_achive;?>">
+                                            <li data-percent="<?php echo $target_achive; ?>">
                                                 <div class="progress">
                                                     <div class="progress-percent">
-                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="<?php echo $target_achive;?>" data-refresh-interval="30" data-speed="1100"></span>%</div>
+                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="<?php echo $target_achive; ?>" data-refresh-interval="30" data-speed="1100"></span>%</div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -293,19 +293,19 @@ $this->load->view('layout/header');
                                         <div class="clear"></div>
                                         <div class="col-sm-12 mb-3">
                                             <p class="text-center" style="    margin-top: 20px;   margin-bottom: 0;">Choose Payment Method</p>
-<!--                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
-                                                    <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
-
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
-                                                    <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>-->
+                                            <!--                                            <div class="col-md-6 pull-left">
+                                                                                            <label class="radio-inline">
+                                                                                                <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
+                                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
+                                                                                            </label>
+                                                                                        </div>
+                                            
+                                                                                        <div class="col-md-6 pull-left">
+                                                                                            <label class="radio-inline">
+                                                                                                <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
+                                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
+                                                                                            </label>
+                                                                                        </div>-->
                                             <div class="col-md-6 pull-left">
                                                 <label class="radio-inline">
                                                     <input type="radio"  name="payment_type" value="PAYME" class="checkbox-coupon  " checked=true required="">
@@ -370,15 +370,15 @@ $this->load->view('layout/header');
                                                     <?php
                                                     foreach ($donationdata as $key => $value) {
                                                         ?>
-                                                    <tr>
-                                                        <td>
-                                                            <?php echo $value["donator"];?>
-                                                        </td>
-                                                    </tr>
-                                                            <?php
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo $value["donator"]; ?>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
                                                     }
                                                     ?>
-                                                    
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -487,9 +487,45 @@ $this->load->view('layout/header');
 
                                 </table>
                                 <p>
-                                    A total of amount of over <b>HK$ 1,100,000 (One Million and One Hundred Thousands HKD)</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
+                                    A total of amount of over <b>HK$ 153,178.80</b> has been donated from the inception of this event till date. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
                                 </p>
 
+
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-12 text-center bottommargin-sm">
+                                    <div class="feature-box media-box" style="">
+
+                                        <div class="col-md-12">
+                                            <?php
+                                            $imagesarray = [
+                                                "IMG_0368.jpg",
+                                                "IMG_0369.jpg",
+                                                "IMG_0378.jpg",
+                                                "IMG_0380.jpg",
+                                                "IMG_0383.jpg",
+                                                "IMG_0413.jpg",
+                                                "IMG_0431.jpg",
+                                                "IMG_0432.jpg",
+                                                "IMG_0511.jpg",
+                                                "IMG_0521.jpg",
+                                                "IMG_0535.jpg",
+                                                "IMG_0542.jpg",
+                                                "IMG_0570.jpg",
+                                                "IMG_0584.jpg",
+                                                "IMG_0854.jpg",
+                                            ];
+                                            foreach ($imagesarray as $key => $value) {
+                                                ?>
+                                                <img class="col-sm-4" style="margin:10px 0px" src="<?php echo base_url(); ?>assets/images/charity/03032022/<?php echo $value; ?>">
+                                                <?php
+                                            }
+                                            ?>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -579,12 +615,12 @@ $this->load->view('layout/footer');
 
                             $('#donationalisttable').DataTable({
                                 "processing": true,
-                              
+
                                 "searching": false,
                                 "bLengthChange": false,
                                 "bInfo": false,
                                 "ordering": false,
-                                
+
                             })
                         }
                         )

@@ -139,7 +139,7 @@ $this->load->view('layout/header');
     </section>
     <!-- Inner Page Banner Area End Here -->
 
-<!--    <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
+    <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
         <div class="content-wrap1 charity-block">
             <div class="section nomargin clearfix" style="padding: 10px 20px; background:#fff; background-size: 100% auto">
                 <div class="container-fluid clearfix">
@@ -147,16 +147,16 @@ $this->load->view('layout/header');
                     <div class="row">
                         <div class="col-md-7">
                             <div class="informationblock">
-                                                                <h4>
+                                <!--                                <h4>
                                                                     Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021 | <b>活。睛彩 </b>
-                                                                </h4>
+                                                                </h4>-->
                                 <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
                                      border-radius: 19px!IMPORTANT;">
 
                                     <div class="card-body py-2 px-4">
                                         <div class="d-flex justify-content-between">
                                             <div class="counter counter-inherit d-flex justify-content-between">
-                                                <strong class="me-1 ls0">Donated:</strong> $<span data-from="0" data-to="115700" data-refresh-interval="10" data-speed="1100" data-comma="true"></span>
+                                                <!--<strong class="me-1 ls0">Donated:</strong> $<span data-from="0" data-to="115700" data-refresh-interval="10" data-speed="1100" data-comma="true"></span>-->
                                             </div>
                                             <span><strong>Target:</strong> HK$100,000</span>
                                         </div>
@@ -192,7 +192,7 @@ $this->load->view('layout/header');
 
                                 </h3>
                                 <br/>
-                                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcablewish%2Fvideos%2F1814552805268505%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden;border-radius: 19px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                                <!--<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcablewish%2Fvideos%2F1814552805268505%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden;border-radius: 19px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>-->
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/bClYYrOfR84?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                 <br/>
                                 <p style="font-weight: 500">
@@ -293,7 +293,7 @@ $this->load->view('layout/header');
                                         <div class="clear"></div>
                                         <div class="col-sm-12 mb-3">
                                             <p class="text-center" style="    margin-top: 20px;   margin-bottom: 0;">Choose Payment Method</p>
-                                                                                        <div class="col-md-6 pull-left">
+                                            <!--                                            <div class="col-md-6 pull-left">
                                                                                             <label class="radio-inline">
                                                                                                 <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
                                                                                                 <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
@@ -305,7 +305,7 @@ $this->load->view('layout/header');
                                                                                                 <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
                                                                                                 <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
                                                                                             </label>
-                                                                                        </div>
+                                                                                        </div>-->
                                             <div class="col-md-6 pull-left">
                                                 <label class="radio-inline">
                                                     <input type="radio"  name="payment_type" value="PAYME" class="checkbox-coupon  " checked=true required="">
@@ -348,7 +348,7 @@ $this->load->view('layout/header');
                                     </form>
                                 </div>
                                 <div class="qrpayment">
-                                    <h4>Pay Using QR Code Scan <br/><small>
+<!--                                    <h4>Pay Using QR Code Scan <br/><small>
                                             Click image to select payment method.
                                         </small></h4>
                                     <div class="row">
@@ -358,7 +358,7 @@ $this->load->view('layout/header');
                                         <div class="col-md-6">
                                             <img src="<?php echo base_url(); ?>assets/donation/fps.png" class="qrscanimage" data-toggle="modal" data-target="#qrcodemodel" ng-click="openQR('fps')">
                                         </div>
-                                    </div>
+                                    </div>-->
 
                                     <div class="col-md-12 feature-box media-box text-left">
                                         <div class="donationlist">
@@ -367,17 +367,17 @@ $this->load->view('layout/header');
                                                     <tr><th>LATEST DONATIONS</th></tr>
                                                 </thead>
                                                 <tbody>
-    <?php
-    foreach ($donationdata as $key => $value) {
-        ?>
-                                                                    <tr>
-                                                                        <td>
-        <?php echo $value["donator"]; ?>
-                                                                        </td>
-                                                                    </tr>
-        <?php
-    }
-    ?>
+                                                    <?php
+                                                    foreach ($donationdata as $key => $value) {
+                                                        ?>
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo $value["donator"]; ?>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                    }
+                                                    ?>
 
                                                 </tbody>
                                             </table>
@@ -390,20 +390,20 @@ $this->load->view('layout/header');
 
 
                             <div class="col-md-12 feature-box media-box">
-    <?php
-    $previouselink = [
-        "zgYpG-ThKvk",
-        "uI8ARH4dmH4",
-        "ZC0Fb9BjB64"
-    ];
-    foreach ($previouselink as $key => $value) {
-        ?>
-                                                <br/>
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
-                                                <br/>
-        <?php
-    }
-    ?>
+                                <?php
+                                $previouselink = [
+                                    "zgYpG-ThKvk",
+                                    "uI8ARH4dmH4",
+                                    "ZC0Fb9BjB64"
+                                ];
+                                foreach ($previouselink as $key => $value) {
+                                    ?>
+                                    <br/>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                    <br/>
+                                    <?php
+                                }
+                                ?>
 
                             </div>
                         </div>
@@ -418,7 +418,7 @@ $this->load->view('layout/header');
             </div>
 
         </div>
-    </section>-->
+    </section>
 
 
     <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
@@ -482,7 +482,7 @@ $this->load->view('layout/header');
                                         <td> House of Learning & Unesco HK GPC  </td>
                                         <td>: 2020</td>
                                     </tr>
-
+                                    
                                     <tr>
                                         <td>  DARKNESS FIGHTERS  </td>
                                         <td>: 2021</td>
@@ -491,11 +491,11 @@ $this->load->view('layout/header');
 
 
                                 </table>
-
+                                
                                 <h2 class="" style="color:#000!important; text-align: center; font-size: 15px; margin-bottom: 0px;
-                                    margin-top: 25px;">Donation 2021
-                                </h2>
-
+                                        margin-top: 25px;">Donation 2021
+                                    </h2>
+                                
                                 <p>
                                     A total of amount of over <b>HK$ 153,178.80</b> has been donated. Join us and be a part of this event every year and be a part of a Change that we want to make to our society.
                                 </p>
@@ -504,11 +504,11 @@ $this->load->view('layout/header');
                             </div>
 
                             <div class="row clearfix">
-
+                                
                                 <div class="col-lg-12 text-center bottommargin-sm">
                                     <div class="feature-box media-box" style="">
 
-                                        <div class="col-md-12 owl-carousel owl-theme"  id="oc-clients2">
+                                        <div class="col-md-12">
                                             <?php
                                             $imagesarray = [
                                                 "IMG_0368.jpg",
@@ -529,16 +529,13 @@ $this->load->view('layout/header');
                                             ];
                                             foreach ($imagesarray as $key => $value) {
                                                 ?>
-                                                <img class="col-sm-12 item" style="margin:10px 0px" src="<?php echo base_url(); ?>assets/images/charity/03032022/<?php echo $value; ?>">
+                                                <img class="col-sm-4" style="margin:10px 0px" src="<?php echo base_url(); ?>assets/images/charity/03032022/<?php echo $value; ?>">
                                                 <?php
                                             }
                                             ?>
                                         </div>
 
                                     </div>
-                                </div>
-                                <div class=" clearfix" >
-
                                 </div>
 
                             </div>
@@ -635,26 +632,8 @@ $this->load->view('layout/footer');
                                 "bInfo": false,
                                 "ordering": false,
 
-                            });
-
-                            $('#oc-clients2').owlCarousel({
-                                loop: true,
-                                margin: 10,
-                                nav: true,
-                                dots:false,
-                                responsive: {
-                                    0: {
-                                        items: 1
-                                    },
-                                    600: {
-                                        items: 3
-                                    },
-                                    1000: {
-                                        items: 4
-                                    }
-                                }
                             })
                         }
-                        );
+                        )
 
 </script>

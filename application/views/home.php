@@ -6,59 +6,34 @@ $this->load->view('layout/header');
     <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
-<!--                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
 
+
+                <?php
+                $sliderimages = [
+                    "Woodlands-01.jpg",
+                    "Woodlands-02.jpg",
+                    "Woodlands-03.jpg",
+                    "Woodlands-04.jpg",
+                    "Woodlands-05.jpg",
+                    "Woodlands-06.jpg",
+                    "Woodlands-07.jpg",
+                    "Woodlands-08.jpg",
+                ];
+                foreach ($sliderimages as $key => $value) {
+                    ?>
+                    <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/<?php echo $value;?>'); background-position: center center;">
+                        <div class="container dark clearfix">
+                            <div class="slider-caption">
+
+                            </div>
                         </div>
                     </div>
-                </div>-->
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/consumption_vouc.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
+                    <?php
+                }
+                ?>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/coupon2.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
 
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/oddle.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/coupon.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
-
-                        </div>
-                    </div>
-                </div>
-
-<!--                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/offerslide.jpg'); background-position: center center;">
-    <div class="container dark clearfix">
-        <div class="slider-caption">
-            
-        </div>
-    </div>
-</div>
-                -->
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/maharaja1.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/11.jpg'); background-position: center center;">
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/Woodlands-10.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption">
                             <h2 class="font-secondary ls0 t400 nott" style="font-size: 50px;" data-animate="fadeIn">Experience the rich taste of all south Indian recipes</h2>
@@ -71,7 +46,7 @@ $this->load->view('layout/header');
                 </div>
 
 
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/3.jpg'); background-position: center center;">
+                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/Woodlands-9.jpg'); background-position: center center;">
                     <div class="container dark clearfix">
                         <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
                             <img data-animate="fadeIn" src="<?php echo base_url(); ?>assets/theme2/res/images/vegconcept.png" alt="Veg Concept" style="width: 260px; margin-bottom: 10px;">
@@ -83,22 +58,8 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/maharaja2.jpg'); background-position: center center;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption">
 
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/2.jpg'); background-position: center bottom;">
-                    <div class="container dark clearfix">
-                        <div class="slider-caption slider-caption-right">
-                            <h2 class="font-secondary ls0 t400 nott" data-animate="fadeIn">Hello &amp; Welcome.</h2>
-                            <p class="d-none d-sm-block font-primary" data-animate="fadeIn" data-delay="400">MOST SHARED MENU ITEM OF WOODLANDS
-                                THE FIRST INDIAN RESTAURANT AND VEGETARIAN RESTAURANT IN HONG KONG</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
             <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>

@@ -59,6 +59,14 @@
             fbq('init', '2769320453302463');
             fbq('track', 'PageView');
         </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133359416-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-133359416-2');
+        </script>
         <noscript>
     <img height="1" width="1" 
          src="https://www.facebook.com/tr?id=2769320453302463&ev=PageView
@@ -136,17 +144,17 @@
                                 </a>
                             </li>
                             <li>
-                                <?php
-                                $session_data = $this->session->userdata('logged_in');
-                                if ($session_data) {
-                                    ?>
+<?php
+$session_data = $this->session->userdata('logged_in');
+if ($session_data) {
+    ?>
 
                                     <a href="<?php echo site_url("Account/profile") ?>" class="cartheadericon" style="    padding-left: 24px;">
                                         <i class="icon-et-profile-male" style="    font-size: 20px;"></i> 
                                     </a>
-                                    <?php
-                                } else {
-                                    ?>
+    <?php
+} else {
+    ?>
                                     <a href="<?php echo site_url("Account/login") ?>" class="cartheadericon" style="    padding-left: 24px;">
                                         <i class="icon-et-lock" style="    font-size: 20px;"></i> 
                                     </a>

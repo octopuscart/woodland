@@ -51,6 +51,12 @@ $this->load->view('layout/header');
         float: right;
     }
 
+    .wanrning-text  h3{
+        font-size: 17px;
+        margin-bottom: 0px;
+        color: red;
+    }
+
 
 
 </style>
@@ -82,7 +88,7 @@ $this->load->view('layout/header');
                                 <p class="coupontextp">*Discounts upto 20%</p> 
 
                                 <p class="coupontextp" >Group Dining? <br/ >
-                                        Get Cash Vouchers</p>
+                                    Get Cash Vouchers</p>
                             </h3>  
                             <img src="https://manager2.woodlandshk.com/assets/images/coupon100.jpg">
 
@@ -193,6 +199,10 @@ $this->load->view('layout/header');
 
                                         <div class="clear"></div>
                                         <div class="col-12 nobottommargin" style='    text-align: center;'>
+                                            <div class="wanrning-text">
+                                                
+                                                <h3>Your coupon code(s) must be used after 7 days from the purchased date.</h3>
+                                            </div>
                                             <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit">Buy Now</button>
                                         </div>
                                         <div class="clear"></div>

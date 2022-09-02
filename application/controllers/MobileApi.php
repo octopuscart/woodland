@@ -10,7 +10,12 @@ class MobileApi extends REST_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $session_user = $this->session->userdata('logged_in');
+        if ($session_user) {
+            $this->user_id = $session_user['login_id'];
+        } else {
+            $this->user_id = 0;
+        }
     }
 
     function productListData($category_id) {

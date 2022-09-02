@@ -10,7 +10,12 @@ class CustomApi extends REST_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $session_user = $this->session->userdata('logged_in');
+        if ($session_user) {
+            $this->user_id = $session_user['login_id'];
+        } else {
+            $this->user_id = 0;
+        }
     }
 
     //shirt Implemantation
@@ -150,9 +155,9 @@ class CustomApi extends REST_Controller {
                     ), array(
                         "status" => "1",
                         "title" => "Single Cuff Rounded",
-                        "elements" => [ "cuff_m_rounded20001.png"],
-                        "insertele" => [ "cuff_m_rounded30001.png"],
-                        "inserteleo" => [ "cuff_m_rounded30001.png"],
+                        "elements" => ["cuff_m_rounded20001.png"],
+                        "insertele" => ["cuff_m_rounded30001.png"],
+                        "inserteleo" => ["cuff_m_rounded30001.png"],
                         "customization_category_id" => "3",
                         "image" => "customization/cuff_single_rounded.jpg",
                         "sleeve1" => ["shirt_sleeve0001.png"],
@@ -166,9 +171,9 @@ class CustomApi extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Cutaway",
-                        "elements" => [ "cuff_m_cutaway20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_cutaway20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "customization/single_cuff_cutaway.jpg",
                         "insert_style_css" => "",
@@ -182,9 +187,9 @@ class CustomApi extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Squared",
-                        "elements" => [ "cuff_m_squre20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_squre20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "customization/cuff_single_squred.jpg",
                         "insert_style_css" => "",
@@ -200,9 +205,9 @@ class CustomApi extends REST_Controller {
                         "title" => "2 Buttons Cutaway",
                         "customization_category_id" => "3",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => [ "cuff_m_cutaway20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_cutaway20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "image" => "customization/2_buttons_cutaway.jpg",
                         "insert_style_css" => "",
                         "insert_style" => "cuff_m_cutaway20001.png",
@@ -215,9 +220,9 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "2 Buttons Rounded",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => [ "cuff_m_rounded20001.png"],
-                        "insertele" => [ "cuff_m_rounded30001.png"],
-                        "inserteleo" => [ "cuff_m_rounded30001.png"],
+                        "elements" => ["cuff_m_rounded20001.png"],
+                        "insertele" => ["cuff_m_rounded30001.png"],
+                        "inserteleo" => ["cuff_m_rounded30001.png"],
                         "customization_category_id" => "3",
                         "image" => "customization/2_buttons_rounded.jpg",
                         "insert_style_css" => "",
@@ -232,9 +237,9 @@ class CustomApi extends REST_Controller {
                         "title" => "French Cuff Squared",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
-                        "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
-                        "insertele" => [ "cuff_m_franch_squre0001.png"],
-                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+                        "elements" => ["cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
+                        "insertele" => ["cuff_m_franch_squre0001.png"],
+                        "inserteleo" => ["cuff_m_franch_squre0001.png"],
                         "image" => "customization/cuff_franch_rounded.jpg",
                         "insert_style_css" => "",
                         "insert_style" => "cuff_m_franch_squre_insert0001.png",
@@ -249,9 +254,9 @@ class CustomApi extends REST_Controller {
                         "title" => "French Cuff Cutaway",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
-                        "elements" => [ "cuff_m_franch_cutaway20001.png"],
+                        "elements" => ["cuff_m_franch_cutaway20001.png"],
                         "insertele" => [],
-                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+                        "inserteleo" => ["cuff_m_franch_squre0001.png"],
                         "image" => "customization/cufffranchcuffcutaway.jpeg",
                         "insert_style_css" => "",
                         "insert_style" => "",
@@ -264,9 +269,9 @@ class CustomApi extends REST_Controller {
                     array(
                         "status" => "0",
                         "title" => "Convertible Cuff Cutaway",
-                        "elements" => [ "cuff_m_cutaway20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_cutaway20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "customization/convertiblecutaway.jpeg",
                         "insert_style_css" => "",
@@ -286,7 +291,7 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png",],
-                        "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "yoke0001.png"],
+                        "elements" => ["b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "yoke0001.png"],
                         "overlay" => "",
                         "image" => "customization/back_plain.jpeg"
                     ), array(
@@ -305,7 +310,7 @@ class CustomApi extends REST_Controller {
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png", "back_sleeve_cuff0001.png"],
                         "overlay" => "box_pleat_overlay1.png",
-                        "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_box0001.png", "yoke0001.png"],
+                        "elements" => ["b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_box0001.png", "yoke0001.png"],
                         "image" => "customization/back_box_pleat.jpeg"
                     ), array(
                         "status" => "0",
@@ -354,7 +359,7 @@ class CustomApi extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Fly Front",
-                        "elements" => [ "flyfront0001.png"],
+                        "elements" => ["flyfront0001.png"],
                         "customization_category_id" => "4",
                         "image" => "customization/front_fly.jpeg",
                         "show_buttons" => "false",
@@ -362,7 +367,7 @@ class CustomApi extends REST_Controller {
                     , array(
                         "status" => "1",
                         "title" => "Pleated",
-                        "elements" => [ "flyfront0001.png"],
+                        "elements" => ["flyfront0001.png"],
                         "customization_category_id" => "4",
                         "image" => "customization/front_ivy.jpeg",
                         "show_buttons" => "true",
@@ -372,7 +377,7 @@ class CustomApi extends REST_Controller {
                     array(
                         "status" => "1",
                         "title" => "Regular",
-                        "elements" => [ "collar_ragular_5w0001.png"],
+                        "elements" => ["collar_ragular_5w0001.png"],
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -385,7 +390,7 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
-                        "elements" => [ "collar_medium_spread_5w0001.png"],
+                        "elements" => ["collar_medium_spread_5w0001.png"],
                         "insert_full" => ["collar_m_medium_spread20001.png"],
                         "image" => "customization/collar_medium_spread.jpeg",
                         "buttons" => "buttonsh1.png",
@@ -396,14 +401,14 @@ class CustomApi extends REST_Controller {
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_full" => ["collar_m_full_cutaway20001.png"],
-                        "elements" => [ "collar_fullcutaway_5w0001.png"],
+                        "elements" => ["collar_fullcutaway_5w0001.png"],
                         "image" => "customization/collar_full_cutaway.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
                         "status" => "0",
                         "title" => "Wide Spread",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_wide_spread_5w0001.png"],
+                        "elements" => ["collar_wide_spread_5w0001.png"],
                         "image" => "customization/collar_wide_spread.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -414,9 +419,9 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Button Down",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_button_down_5w0001.png"],
+                        "elements" => ["collar_button_down_5w0001.png"],
                         "image" => "customization/collar_regular_button_down.jpeg",
-                        "overlay" => [ "button_down_overlay.png"],
+                        "overlay" => ["button_down_overlay.png"],
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_full" => ["collar_wide_spread20001.png"],
@@ -426,8 +431,8 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Hidden Button Down",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_hidden_button_down_5w0001.png"],
-                        "overlay" => [ "hidden_button_down_overlay.png"],
+                        "elements" => ["collar_hidden_button_down_5w0001.png"],
+                        "overlay" => ["hidden_button_down_overlay.png"],
                         "image" => "customization/hidden_button_down.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -438,7 +443,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Round Point",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_ragular_round_point0001.png"],
+                        "elements" => ["collar_ragular_round_point0001.png"],
                         "image" => "customization/collar_round_point.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -449,7 +454,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Wing Tip",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_wingtip_5w0001.png"],
+                        "elements" => ["collar_wingtip_5w0001.png"],
                         "image" => "customization/collar_wingtip.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -460,7 +465,7 @@ class CustomApi extends REST_Controller {
                         "status" => "0",
                         "title" => "Mandarian",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_mandarian_5w0001.png"],
+                        "elements" => ["collar_mandarian_5w0001.png"],
                         "image" => "customization/collar_mandarin.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -944,7 +949,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "false",
                         "canvas_m" => "jacketstyle",
                         "canvas_o" => "jacketstyleoverlay",
-                        "overlay" => [ "single_overlay.png"],
+                        "overlay" => ["single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -987,14 +992,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_notch0001.png", "laple_single_notch_upper0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["single_laple_n1.png",]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
@@ -1009,21 +1012,18 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_notch_modern0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['button_hole_notch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png",
                                 ], "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
@@ -1042,14 +1042,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_p.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -1064,14 +1062,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_p.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1083,7 +1079,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_p.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1100,14 +1095,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_s.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -1122,14 +1115,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_s.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1141,7 +1132,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_s.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1420,7 +1410,7 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["buttons_120001.png"],
                         "button_hole" => ["button_hole_110001.png", "button_hole_120001.png"],
                         "show_buttons" => "false",
-                        "overlay" => [ "single_overlay.png"],
+                        "overlay" => ["single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -1458,14 +1448,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_notch0001.png", "laple_single_notch_upper0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["single_laple_n.png",]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
@@ -1480,21 +1468,18 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_notch_modern0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['button_hole_notch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png",
                                     "laple_double_42.png",
                                 ], "overelay" => ["double_laple_overlay_n.png"]),
@@ -1515,14 +1500,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_p.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -1537,14 +1520,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_p.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1556,7 +1537,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_p.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1573,14 +1553,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_s.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -1595,14 +1573,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_s.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1614,7 +1590,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_s.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -1637,7 +1612,6 @@ class CustomApi extends REST_Controller {
     function customeElementsPant_get() {
         $customeele = array(
             "keys" => [
-
                 array(
                     "title" => "Number of Pleat",
                     "viewtype" => "pant",
@@ -1933,22 +1907,22 @@ class CustomApi extends REST_Controller {
                     ),
                 ],
                 "Ribbon on Side Seam" => [
-                array(
-                    "status" => "1",
-                    "title" => "Satin",
-                    "customization_category_id" => "4",
-                    "folder" => "satin",
-                    "elements" => ['pant_side_seamst0001.png',],
-                    "image" => "suit_elements/tuxedo/sidesatin.png",
-                ),
-                array(
-                    "status" => "0",
-                    "title" => "Grosgrain",
-                    "elements" => ['pant_side_seam0001.png',],
-                    "folder" => "grossgrain",
-                    "image" => "suit_elements/tuxedo/sidegrosgrain.png",
-                ),
-            ],
+                    array(
+                        "status" => "1",
+                        "title" => "Satin",
+                        "customization_category_id" => "4",
+                        "folder" => "satin",
+                        "elements" => ['pant_side_seamst0001.png',],
+                        "image" => "suit_elements/tuxedo/sidesatin.png",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Grosgrain",
+                        "elements" => ['pant_side_seam0001.png',],
+                        "folder" => "grossgrain",
+                        "image" => "suit_elements/tuxedo/sidegrosgrain.png",
+                    ),
+                ],
                 "Number of Back Pocket" => [
                     array(
                         "status" => "0",
@@ -1991,7 +1965,6 @@ class CustomApi extends REST_Controller {
                     ),
                 ],
                 "Lapel Facing" => [
-
                     array(
                         "status" => "1",
                         "title" => "Satin",
@@ -2199,7 +2172,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "false",
                         "canvas_m" => "jacketstyle",
                         "canvas_o" => "jacketstyleoverlay",
-                        "overlay" => [ "single_overlay.png"],
+                        "overlay" => ["single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -2242,14 +2215,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_notch0001.png", "laple_single_notch_upper0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["single_laple_n1.png",]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
@@ -2264,21 +2235,18 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_notch_modern0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['button_hole_notch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png",
                                 ], "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
@@ -2297,14 +2265,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_p.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -2319,14 +2285,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_p.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2338,7 +2302,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_p.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2355,14 +2318,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_s.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -2377,14 +2338,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_s.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2396,7 +2355,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_s.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2415,6 +2373,7 @@ class CustomApi extends REST_Controller {
         }
         $this->response($customeele);
     }
+
     function customeElementsTuxedoJacket_get() {
         $customeele = array(
             "keys" => [
@@ -2462,7 +2421,6 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                     "style_side" => "    background-size: 19%!important;",
                 ),
-                
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
@@ -2535,22 +2493,22 @@ class CustomApi extends REST_Controller {
                     ),
                 ],
                 "Ribbon on Side Seam" => [
-                array(
-                    "status" => "1",
-                    "title" => "Satin",
-                    "customization_category_id" => "4",
-                    "folder" => "satin",
-                    "elements" => ['pant_side_seamst0001.png',],
-                    "image" => "suit_elements/tuxedo/sidesatin.png",
-                ),
-                array(
-                    "status" => "0",
-                    "title" => "Grosgrain",
-                    "elements" => ['pant_side_seam0001.png',],
-                    "folder" => "grossgrain",
-                    "image" => "suit_elements/tuxedo/sidegrosgrain.png",
-                ),
-            ],
+                    array(
+                        "status" => "1",
+                        "title" => "Satin",
+                        "customization_category_id" => "4",
+                        "folder" => "satin",
+                        "elements" => ['pant_side_seamst0001.png',],
+                        "image" => "suit_elements/tuxedo/sidesatin.png",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Grosgrain",
+                        "elements" => ['pant_side_seam0001.png',],
+                        "folder" => "grossgrain",
+                        "image" => "suit_elements/tuxedo/sidegrosgrain.png",
+                    ),
+                ],
                 "Number of Back Pocket" => [
                     array(
                         "status" => "0",
@@ -2593,7 +2551,6 @@ class CustomApi extends REST_Controller {
                     ),
                 ],
                 "Lapel Facing" => [
-
                     array(
                         "status" => "1",
                         "title" => "Satin",
@@ -2801,7 +2758,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "false",
                         "canvas_m" => "jacketstyle",
                         "canvas_o" => "jacketstyleoverlay",
-                        "overlay" => [ "single_overlay.png"],
+                        "overlay" => ["single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -2844,14 +2801,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_notch0001.png", "laple_single_notch_upper0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["single_laple_n1.png",]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching.png'],
@@ -2866,21 +2821,18 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_notch_modern0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['button_hole_notch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png"
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["button_hole_notch.png"],
                                 "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_notch0001.png",
                                 ], "overelay" => ["double_laple_overlay_n.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
@@ -2899,14 +2851,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_p.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -2921,14 +2871,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_p.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2940,7 +2888,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_p.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple__double_peak0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2957,14 +2904,12 @@ class CustomApi extends REST_Controller {
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["single_laple_s.png"]),
                             "2 Buttons" => array("elements" => [
-
                                     "laple_single_shwal0001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
@@ -2979,14 +2924,12 @@ class CustomApi extends REST_Controller {
                                     "laple_single_3_peak_morden0001.png"
                                 ], "overelay" => ["13notchpeaklapleoverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["button_hole_peak.png"],
                                 "overelay" => ["double_laple_overlay_s.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -2998,7 +2941,6 @@ class CustomApi extends REST_Controller {
                                     "laple_6_peack_morden0001.png"
                                 ], "overelay" => ["double_laple_overlay_s.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
-
                                     "laple_double_swal0001.png",
                                     "laple_double_42.png"
                                 ],
@@ -3017,7 +2959,8 @@ class CustomApi extends REST_Controller {
         }
         $this->response($customeele);
     }
-     function customeElementsTuxedoPant_get() {
+
+    function customeElementsTuxedoPant_get() {
         $customeele = array(
             "keys" => [
                 array(
@@ -3051,7 +2994,6 @@ class CustomApi extends REST_Controller {
                     "viewtype" => "pant",
                     "type" => "main",
                 ),
-                
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
@@ -3124,22 +3066,22 @@ class CustomApi extends REST_Controller {
                     ),
                 ],
                 "Ribbon on Side Seam" => [
-                array(
-                    "status" => "1",
-                    "title" => "Satin",
-                    "customization_category_id" => "4",
-                    "folder" => "satin",
-                    "elements" => ['pant_side_seamst0001.png',],
-                    "image" => "suit_elements/tuxedo/sidesatin.png",
-                ),
-                array(
-                    "status" => "0",
-                    "title" => "Grosgrain",
-                    "elements" => ['pant_side_seam0001.png',],
-                    "folder" => "grossgrain",
-                    "image" => "suit_elements/tuxedo/sidegrosgrain.png",
-                ),
-            ],
+                    array(
+                        "status" => "1",
+                        "title" => "Satin",
+                        "customization_category_id" => "4",
+                        "folder" => "satin",
+                        "elements" => ['pant_side_seamst0001.png',],
+                        "image" => "suit_elements/tuxedo/sidesatin.png",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Grosgrain",
+                        "elements" => ['pant_side_seam0001.png',],
+                        "folder" => "grossgrain",
+                        "image" => "suit_elements/tuxedo/sidegrosgrain.png",
+                    ),
+                ],
                 "Number of Back Pocket" => [
                     array(
                         "status" => "0",
@@ -3181,7 +3123,6 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ),
                 ],
-                
             ),
         );
         foreach ($customeele as $key => $value) {

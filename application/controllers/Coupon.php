@@ -8,7 +8,13 @@ class Coupon extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->library('session');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+
+        $session_user = $this->session->userdata('logged_in');
+        if ($session_user) {
+            $this->user_id = $session_user['login_id'];
+        } else {
+            $this->user_id = 0;
+        }
         $this->db->where_in('attr_key', ["EOPGMid", "EOPGSecretCode", "EOPGSalesLink", "EOPGQueryLink", "CouponLink"]);
         $query = $this->db->get('configuration_attr');
         $paymentattr = $query->result_array();
@@ -339,7 +345,6 @@ class Coupon extends CI_Controller {
             $email = $this->input->post('email');
             $reemail = $this->input->post('reemail');
 
-
             if ($reemail === $email) {
                 $paymenttype = $this->input->post('payment_type');
                 $jonrequest = array(
@@ -436,7 +441,6 @@ class Coupon extends CI_Controller {
         $url = $this->couponApiUrl . 'Api/memberReimbursement';
         $curldata = $this->useCurl($url, $headers, json_encode($jonrequest));
         $codehas = json_decode($curldata);
-
 
         $data['memberdata'] = $codehas->memberdata;
         $data["image"] = $codehas->image;

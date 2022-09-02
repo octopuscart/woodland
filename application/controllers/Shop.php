@@ -8,7 +8,13 @@ class Shop extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->library('session');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+
+        $session_user = $this->session->userdata('logged_in');
+        if ($session_user) {
+            $this->user_id = $session_user['login_id'];
+        } else {
+            $this->user_id = 0;
+        }
     }
 
     public function index() {
@@ -66,8 +72,6 @@ class Shop extends CI_Controller {
                 $this->email->subject($subject);
 
                 $web_enquiry['web_enquiry'] = $web_enquiry;
-
-
 
                 $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
 
@@ -204,7 +208,6 @@ class Shop extends CI_Controller {
 
         $data['datelist'] = $listofdate;
 
-
         $bookingemail = $this->input->get("email");
 //        $this->db->select("select_date, select_time, people");
         $this->db->where("email", $bookingemail);
@@ -215,13 +218,12 @@ class Shop extends CI_Controller {
         if ($bookingquery) {
             
         } else {
-               redirect("book-now");
+            redirect("book-now");
         }
 
 
 
         $data["bookingdata"] = $bookingquery;
-
 
         if (isset($_POST['booknow'])) {
             $booking_order = array(
@@ -281,10 +283,10 @@ class Shop extends CI_Controller {
                         redirect("book-now");
                     }
                 } else {
-                  //  echo $htmlsmessage;
+                    //  echo $htmlsmessage;
                 }
             }
-          //  redirect("book-now");
+            //  redirect("book-now");
         }
         if (isset($_POST['cancel'])) {
             $booking_order = array(
@@ -347,7 +349,7 @@ class Shop extends CI_Controller {
 //                    echo $htmlsmessage;
                 }
             }
-          //  redirect("book-now");
+            //  redirect("book-now");
         }
         $this->load->view('pages/bookedit', $data);
     }

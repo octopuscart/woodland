@@ -272,6 +272,8 @@ class Coupon extends CI_Controller {
     }
 
     function couponBuyEmail($couponhas, $order_key) {
+         header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("coupon_request");
         $requestdata = $query->row_array();

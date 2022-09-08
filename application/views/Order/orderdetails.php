@@ -427,6 +427,8 @@ $paymentstatus = "";
             },
     })
             $http.get(url).then(function (rdata) {
+                   var url3 = "<?php echo  ADMINURL;?>/index.php/LocalApi2/newOrderNotification/<?php echo $order_data->id; ?>";
+                $http.get(url3).then(function (rdata) {});
     swal({timer: 1500,
             title: 'Mail Sent!',
             type: 'success', })
@@ -452,6 +454,7 @@ $paymentstatus = "";
             if ($scope.checkmailsend == 0) {
             var url2 = baseurl + "Api/order_mailchecksend/" + <?php echo $order_data->id; ?> + "/" + '<?php echo $order_data->order_no; ?>';
             $http.get(url2).then(function (rdata) {
+             
             swal({timer: 1500,
                     title: 'Mail Sent!',
                     type: 'success', })

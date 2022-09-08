@@ -21,10 +21,10 @@ switch ($baselink) {
 
 switch ($baselink) {
     case "http://localhost":
-        $adminlinkmain = $baselink . "/woodlandsadmin";
+        $adminlinkmain = $baselink . "/woodlandsadmin/";
         break;
     case "http://192.168.1.2":
-          $adminlinkmain = $baselink . "/woodlandsadmin";
+          $adminlinkmain = $baselink . "/woodlandsadmin/";
         break;
     default:
         $adminlinkmain = "https://admin.woodlandshk.com/";

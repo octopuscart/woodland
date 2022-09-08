@@ -427,7 +427,7 @@ $paymentstatus = "";
             },
     })
             $http.get(url).then(function (rdata) {
-                   var url3 = "<?php echo  ADMINURL;?>/index.php/LocalApi2/newOrderNotification/<?php echo $order_data->id; ?>";
+                   var url3 = "<?php echo  ADMINURL;?>index.php/LocalApi2/newOrderNotification/<?php echo $order_data->id; ?>";
                 $http.get(url3).then(function (rdata) {});
     swal({timer: 1500,
             title: 'Mail Sent!',

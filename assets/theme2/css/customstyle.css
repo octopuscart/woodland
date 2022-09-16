@@ -241,7 +241,7 @@ a, h1 > span:not(.nocolor):not(.badge), h2 > span:not(.nocolor):not(.badge), h3 
 
 .footercontact{
     max-width: 100%!important;
-    padding: 28px 10%;
+    padding: 28px 5%;
     margin: 0!important;
 }
 
@@ -503,6 +503,7 @@ li.woocommerce-MyAccount-navigation-link {
 
 .medialinkdesing{
     height:320px;
+    /*width: fit-content;*/
 
 }
 .media-item-block{
@@ -511,7 +512,7 @@ li.woocommerce-MyAccount-navigation-link {
     cursor: pointer;
     color: white;
     padding: 20px;
-    margin:15px;
+    /*margin:15px;*/
     white-space: normal;
     font-size: 15px;
     background: #ca0922;

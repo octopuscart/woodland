@@ -8,7 +8,14 @@ class Charity extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->library('session');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $session_user = $this->session->userdata('logged_in');
+        if ($session_user) {
+            $this->user_id = $session_user['login_id'];
+        } else {
+            $this->user_id = 0;
+        }
+        
+        
         $this->db->where_in('attr_key', ["EOPGMid", "EOPGSecretCode", "EOPGSalesLink", "EOPGQueryLink", "CouponLink"]);
         $query = $this->db->get('configuration_attr');
         $paymentattr = $query->result_array();
@@ -94,7 +101,7 @@ class Charity extends CI_Controller {
             }
         }
         $c_query = "SELECT amount, message, if(anonymous_donation='false', name, 'Anonymous') as name, date, time, anonymous_donation "
-                . "FROM `charity_donation` where confirm_status='Confirm' order by id desc";
+                . "FROM `charity_donation` where confirm_status='Confirm' and date>'2022-01-01' order by id desc";
 
 
         $queryfilter = $this->db->query($c_query);

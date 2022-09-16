@@ -10,6 +10,7 @@ $this->load->view('layout/header');
 
                 <?php
                 $sliderimages = [
+                    "charity2022.jpg",
                     "Woodlands-01.jpg",
                     "Woodlands-02.jpg",
                     "Woodlands-03.jpg",

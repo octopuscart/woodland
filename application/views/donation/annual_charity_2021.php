@@ -129,17 +129,17 @@ $this->load->view('layout/header');
     <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px 18px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
         <div class="container clearfix">
             <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 40px;"> 
-                Annual Charity Lunch & Dinner 2022  |  週年慈善午餐&晚餐2022
+                Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021
             </h1>
             <h2 class="font-secondary capitalize ls0 text-white" style="font-size: 44px;"> 
-                <b> 活。睛彩</b>
+                <b>活。睛彩 </b>
             </h2>
 
         </div>
     </section>
     <!-- Inner Page Banner Area End Here -->
 
-    <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
+<!--    <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
         <div class="content-wrap1 charity-block">
             <div class="section nomargin clearfix" style="padding: 10px 20px; background:#fff; background-size: 100% auto">
                 <div class="container-fluid clearfix">
@@ -147,9 +147,9 @@ $this->load->view('layout/header');
                     <div class="row">
                         <div class="col-md-7">
                             <div class="informationblock">
-                                <h4>
-                                    Annual Charity Lunch & Dinner 2022  |  週年慈善午餐&晚餐2022 | <b>活。睛彩</b>
-                                </h4>
+                                                                <h4>
+                                                                    Annual Charity Lunch & Dinner 2021  |  週年慈善午餐&晚餐 2021 | <b>活。睛彩 </b>
+                                                                </h4>
                                 <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
                                      border-radius: 19px!IMPORTANT;">
 
@@ -173,52 +173,59 @@ $this->load->view('layout/header');
                                 </div>
                                 <hr/>
                                 <h4>
-                                    Woodlands Indian Vegetarian Restaurant's Annual Charity Lunch & Dinner Event 2022
-                                    <br/>
-                                    活蘭印度素食餐廳週年慈善午餐&晚餐活動2022
+                                    Woodlands Indian Vegetarian Restaurant's Annual Charity Lunch & Dinner Event 2021<br/>
+                                    活蘭印度素食餐廳週年慈善午餐&晚餐活動2021 
 
                                 </h4>
                                 <h5>
-                                    2nd October (SUN) 2022 | 2022年10月2日
+                                    1st October (FRI) 2021 | 2021年10月1日
                                 </h5>
                                 <div class="col-md-12 feature-box media-box">
 
-                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity2022.jpg" style="border-radius: 19px;">
+                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity.jpg" style="border-radius: 19px;">
                                 </div>
                             </div>
                             <hr/>
-                            <div class="informationblock feature-box media-box text-center">
-                                <div class="row col-md-12" style="display: contents;">
-                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/IDEAL_logo-01.png" style="border-radius: 19px;width: 100px;">
-                                </div>
+                            <div class="informationblock feature-box media-box">
                                 <h3 class="text-danger">
-                                    Beneficiaries of this year: IDEAL | 勵智協進會
+                                    DARKNESS FIGHTERS | 有關黑武士
 
                                 </h3>
-                                <p>
-                                    (Helping the Intellectually challenged to develop skills for Independent Living)
-                                    <br/>(幫助智障人士發展獨立生活技能) 
-                                </p>
                                 <br/>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/NCqNGJx9bI8?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcablewish%2Fvideos%2F1814552805268505%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden;border-radius: 19px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/bClYYrOfR84?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                 <br/>
                                 <p style="font-weight: 500">
-                                    IDEAL was formed by a group of people with intellectual disabilities, their parents and volunteers in 1989 and was registered as a charitable organization in 1991. Aiming at the objectives and in the spirit of “GIVE and TAKE”, the organization works actively for people with intellectual disabilities. IDEAL is a member of the Hong Kong Council of Social Service, the Hong Kong Sports Association for Persons with Intellectual Disability and the Agency for Volunteer Service and a supporting organization of the Life Care Movement.
+                                    The Darkness Fighters Sports Association for the Blind is a non-profit organization that aims to promote equal social participation of people with disabilities through sports. Through different media and experience projects, we will achieve equality and opportunities for people with disabilities in different fields, encourage them to be independent, promote integration into society, and improve the quality of life.
+                                    <br/>
+                                    The Darkness Fighters Sports Club for the Blind is committed to developing various sports rehabilitation programs, assisting the disabled in physical, mental, social, and spiritual rehabilitation development, and is committed to promoting equal participation in sports by the group. In addition to the dragon boat team, the club also has physical training classes, hiking activities, smartphone classes, and meditation classes. It is also preparing for indoor rowing classes. During the epidemic, the association also distributed materials to members.
+                                    All are welcome to join and support.
                                     <br/>
                                     <br/>
-                                    勵智協進會是由一群智障人士、家長及義工於1989年組成，並於1991年註冊成為非牟利慈善組織。本著「有所取亦有所給」的精神，大家共同策劃，分擔會務，積極參與，為智障人士而努力，以達致本會宗旨。本會乃香港社會服務聯會、香港智障人士體育協會、義務工作發展局及生命存愛行動會員機構。
-                                </p>
-                                <p>
-                                    <a href="http://ideal.org.hk/" target="_blank">  To Know More 了解更多: http://ideal.org.hk/ </a>
+                                    黑武士失明人體育會乃一非牟利性質之機構，旨在透過運動推廣殘疾人士平等社會參與。透過不同媒介及體驗項目，實現殘疾人士在不同範疇的平等和機會，鼓勵他們獨立自主，促進融入社會，提升生活質素。黑武士失明人體育會致力發展各運動復康項目，協助殘疾人在身、心、社、靈方面的復康發展，並致力推動群體在體育上的平等參與。本會除了龍舟隊外，還有 體能鍛練班、 行山活動、智能手機班、冥想班，也正籌備室內划艇班。在疫情期間，本會也向會員派發物資。歡迎各界人士加入和支持。
                                 </p>
                             </div>
                             <hr/>
                             <div class="informationblock feature-box media-box">
+                                <h3 class="text-danger">
+                                    Event Ambassador: <br/>Ms Jennifer (Codekey Cookies 點字曲奇)
+                                </h3>
+                                <br/>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/xo3c6lSfk7Q?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                <br/>
+                                <p style="font-weight: 500">
+                                    <b> CODEKEY COOKIES 點字曲奇</b> - Codekey Cookies, a social enterprise cookie brand founded by the visually impaired, hopes to break social labels and promote social integration by making Braille cookies.
 
+                                    <br/>
+                                    Codekey Cookies 由兩位視障人士於2015年創立，希望透過製作「點字曲奇」傳達心意，推動社會共融。                                <br/>
+                                </p>
+                                <p>
+                                    To Know More 了解更多: <a href="www.codekeycookies.com/about.html" target="_blank"> www.codekeycookies.com/about.html</a>
+                                </p>
 
 
                                 <p style="font-weight: 500">
-                                    Take part to be a part of the change | Donate Generously | Share the joy of caring with your Friends!<br/>
+                                    Take part to be a part of the change | Donate Generously | Share the joy of caring with your Friends<br/>
                                     踴躍參加 | 慷慨解囊 | 與朋友分享關懷的喜悅
                                     </b>
                                 </p>
@@ -286,19 +293,19 @@ $this->load->view('layout/header');
                                         <div class="clear"></div>
                                         <div class="col-sm-12 mb-3">
                                             <p class="text-center" style="    margin-top: 20px;   margin-bottom: 0;">Choose Payment Method</p>
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
-                                                    <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
-
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
-                                                    <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
+                                                                                        <div class="col-md-6 pull-left">
+                                                                                            <label class="radio-inline">
+                                                                                                <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
+                                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
+                                                                                            </label>
+                                                                                        </div>
+                                            
+                                                                                        <div class="col-md-6 pull-left">
+                                                                                            <label class="radio-inline">
+                                                                                                <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
+                                                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
+                                                                                            </label>
+                                                                                        </div>
                                             <div class="col-md-6 pull-left">
                                                 <label class="radio-inline">
                                                     <input type="radio"  name="payment_type" value="PAYME" class="checkbox-coupon  " checked=true required="">
@@ -360,17 +367,17 @@ $this->load->view('layout/header');
                                                     <tr><th>LATEST DONATIONS</th></tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php
-                                                    foreach ($donationdata as $key => $value) {
-                                                        ?>
-                                                        <tr>
-                                                            <td>
-                                                                <?php echo $value["donator"]; ?>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                                                    }
-                                                    ?>
+    <?php
+    foreach ($donationdata as $key => $value) {
+        ?>
+                                                                    <tr>
+                                                                        <td>
+        <?php echo $value["donator"]; ?>
+                                                                        </td>
+                                                                    </tr>
+        <?php
+    }
+    ?>
 
                                                 </tbody>
                                             </table>
@@ -383,20 +390,20 @@ $this->load->view('layout/header');
 
 
                             <div class="col-md-12 feature-box media-box">
-                                <?php
-                                $previouselink = [
-                                    "zgYpG-ThKvk",
-                                    "uI8ARH4dmH4",
-                                    "ZC0Fb9BjB64"
-                                ];
-                                foreach ($previouselink as $key => $value) {
-                                    ?>
-                                    <br/>
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
-                                    <br/>
-                                    <?php
-                                }
-                                ?>
+    <?php
+    $previouselink = [
+        "zgYpG-ThKvk",
+        "uI8ARH4dmH4",
+        "ZC0Fb9BjB64"
+    ];
+    foreach ($previouselink as $key => $value) {
+        ?>
+                                                <br/>
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                                <br/>
+        <?php
+    }
+    ?>
 
                             </div>
                         </div>
@@ -411,7 +418,7 @@ $this->load->view('layout/header');
             </div>
 
         </div>
-    </section>
+    </section>-->
 
 
     <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
@@ -574,8 +581,8 @@ $this->load->view('layout/header');
 
     </section>
 
-    <section  class="container section-contact topmargin-lg clearfix footercontact" style="overflow: visible;">
-        <div class="row" style="text-align: center;margin-top:20px;margin-bottom: 50px;padding: 0px;">
+    <section style="overflow: visible;">
+        <div class="row" style="text-align: center;margin-top:20px;margin-bottom: 50px;">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <iframe height="315" src="https://www.youtube.com/embed/uI8ARH4dmH4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
@@ -583,13 +590,10 @@ $this->load->view('layout/header');
             <div class="col-md-3"></div>
         </div>
 
-
-    </section>
-    <div class="">
         <?php
         $this->load->view('layout/contactfooter');
         ?>
-    </div>
+    </section>
     <!-- Modal -->
     <div class="modal fade" id="qrcodemodel" tabindex="-1" role="dialog" aria-labelledby="qrcodemodel">
         <div class="modal-dialog" role="document">
@@ -637,7 +641,7 @@ $this->load->view('layout/footer');
                                 loop: true,
                                 margin: 10,
                                 nav: true,
-                                dots: false,
+                                dots:false,
                                 responsive: {
                                     0: {
                                         items: 1

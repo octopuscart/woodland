@@ -86,7 +86,7 @@
 </div>
 
 <!--media links-->
-<div class="clearfix " style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg);background-size: contain;">
+<div class="clearfix container-fluid section-contact footercontact " style="background:url(<?php echo base_url(); ?>assets/theme2/res/images/vegbackground.jpg);background-size: contain;">
 
 
     <div class=" clearfix" >

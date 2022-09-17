@@ -70,7 +70,7 @@ $this->load->view('layout/header');
 
 <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
     <div class="content-wrap1">
-        <div class="section nomargin clearfix" style="padding: 10px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/41.jpg') center center no-repeat; background-size: 100% auto">
+        <div class="section nomargin clearfix vegconceptblock" >
             <div class="container clearfix">
 
                 <div class="row clearfix">
@@ -88,12 +88,12 @@ $this->load->view('layout/header');
                 </div>
             </div>
         </div>
-        <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch.png') repeat center bottom; background-size: auto 100%; height: 40px; margin-top: -40px;"></div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 3; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sketch.png') repeat center bottom; background-size: auto 100%; height: 42px; margin-top: -40px;"></div>
 
     </div>
 
 
-    <div class="section nomargin clearfix" style="padding: 40px 0; background: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/42.jpg') center center no-repeat; background-size: 100% auto">
+    <div class="section nomargin clearfix who_we_are_block" >
         <div class="container clearfix">
 
             <div class="row clearfix">
@@ -131,7 +131,7 @@ $this->load->view('layout/header');
             <div class="row align-items-stretch clearfix">
                 <div class="col-lg-7 clearfix">
                     <div class="vertical-middle1" style="">
-                        <div class="col-padding clearfix">
+                        <div class="col-padding1 clearfix">
                             <div>
                                 <div id="item-thumb" class="item-thumb">
 
@@ -149,7 +149,7 @@ $this->load->view('layout/header');
                                     );
                                     foreach ($menuitems as $key => $value) {
                                         ?>
-                                        <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot">
+                                        <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot " style="width:48%;">
                                             <span style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/<?php echo $value; ?>)">
                                                 <h3><?php echo $key; ?></h3>
                                             </span>
@@ -214,11 +214,11 @@ $this->load->view('layout/header');
                 <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Our Chefs</h3>
             </div>
             <div class="row clearfix">
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-2">
 
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-4">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/kitta.jpg" alt="KITTA Moolya"></a>
@@ -234,10 +234,8 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-
-                </div>
-                <div class="col-lg-3 col-md-6">
+              
+                <div class="col-lg-4 col-md-4">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <a href="<?php echo base_url(); ?>assets/theme2/res/about-us.html"><img src="<?php echo base_url(); ?>assets/theme2/res/images/chefs/sures.jpg" alt="Suresh Pairaje Rai
@@ -252,7 +250,7 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-2">
 
                 </div>
             </div>
@@ -262,7 +260,7 @@ $this->load->view('layout/header');
     <div class="section nobottommargin" style="background: #fee749 url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall.jpg') no-repeat center right; background-size: cover; padding: 60px 0;">
         <div class="heading-block center nobottommargin nobottomborder">
 
-            <h3 class="nott font-secondary ls0" style="font-size: 60px;line-height: 1.3;">Wall Of Woodland</h3>
+            <h3 class="nott font-secondary ls0 wall_of_woodland_heading" style="">Wall Of Woodland</h3>
         </div>
     </div>
     <style>
@@ -330,7 +328,8 @@ $this->load->view('layout/header');
 
             .dessert-menu .item-thumb .owl-dot:nth-of-type(<?php echo $countrr; ?>) span {
                 background-image: url(<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>)!important;
-                background-size: 100%!important;
+                background-size: contain!important;;
+                background-repeat: no-repeat;
             }
             <?php
             $countrr++;
@@ -363,8 +362,8 @@ $this->load->view('layout/header');
                     </div>
                 </div>
                 <div class="col-lg-7 clearfix" style="background:url()">
-                    <div class="vertical-middle">
-                        <div class="col-padding clearfix">
+                    <div class="vertical-middle1">
+                        <div class="clearfix" style="padding-top:60px;">
                             <div><div id="item-thumb1" class="item-thumb"></div></div>
                             <div class="center divcenter"><a href="<?php echo site_url("review"); ?>" class="button button-border button-small button-black button-dark button-circle noleftmargin" style="margin-top: 0px;">See All</a></div>
                         </div>
@@ -386,7 +385,7 @@ $this->load->view('layout/header');
             <div class="row clearfix">
 
 
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 videoblockbottom">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <iframe width="1133" height="550" src="https://www.youtube.com/embed/ASkSgQxdiVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -401,7 +400,7 @@ $this->load->view('layout/header');
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 videoblockbottom">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <iframe width="1133" height="550" src="https://www.youtube.com/embed/smRHSvResAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -415,7 +414,7 @@ $this->load->view('layout/header');
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 videoblockbottom">
                     <div class="team">
                         <div class="team-image imagescalein">
                             <iframe width="1133" height="550" src="https://www.youtube.com/embed/mL-w8MEkUMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

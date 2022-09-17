@@ -124,7 +124,7 @@
 </div>
 
 <!--end of media link-->
-<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" alt="Woodlands Desing" style="      margin-top: -66px;     z-index: 200000;
+<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" alt="Woodlands Desing" style="      margin-top: -66px;     z-index: 200000;height: 50px;width: 100%;
      position: relative;"/>
 
 <div class="content-wrap1">

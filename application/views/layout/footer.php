@@ -58,7 +58,7 @@
                     <a href="<?php echo site_url("/"); ?>">Home</a>
                     /<a href="<?php echo site_url("about-us"); ?>">Insights</a>
                     /<a href="<?php echo site_url("review"); ?>">Review</a>
-                    /<a href="<?php  echo site_url("feedback"); ?>">Feedback</a>
+                    /<a href="<?php echo site_url("feedback"); ?>">Feedback</a>
                     /<a href="<?php echo site_url("menu/0/0"); ?>">Menu</a>
                     /<a href="<?php echo site_url("contact"); ?>">Contact</a>
                 </div>
@@ -111,15 +111,31 @@
             dotsContainer: '#item-thumb1',
             rtl: carouselRTL
         });
-          $('#oc-clients').owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    dots:false,
+        $('#oc-clients').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots: false,
+            nav: true,
+            autoplay: 1,
+            autoplayTimeout: 3000,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
                     nav: true,
-                    autoplay: 1,
-                            autoplayTimeout: 3000,
-                 
-                });
+                    loop: false
+                }
+            }
+
+        });
     });
 
 

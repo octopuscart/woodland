@@ -11,13 +11,13 @@
     background-position: center center!important;
     width: auto;
     height: 100%;
-    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
-    -moz-box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
-    box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0 0px 0px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 0 0px 0px rgba(0,0,0,.05);
+    box-shadow: 0 0 0px 0px rgba(0,0,0,.05);
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
-    box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.16);
 }
 
 .item-thumb .owl-dot span h3{
@@ -27,7 +27,7 @@
 }
 
 .item-thumb .owl-dot {
-    width: 31.33333%;
+    /*width: 48.33333%!important;*/
     display: inline-block;
     justify-content: center;
     height: 220px;
@@ -61,37 +61,8 @@
 
 
 
-.dessert-menu .item-thumb .owl-dot:nth-of-type(1) span {
-    background-image: url(../res/images/review/Rajini.jpg);
-    background-size: 100%!important;
-}
-.dessert-menu .item-thumb .owl-dot:nth-of-type(2) span {
-    background-image: url(../res/images/review/Ilayaraja.jpg);
-    background-size: 100%!important;
-}
-
-.dessert-menu .item-thumb .owl-dot:nth-of-type(3) span {
-    background-image: url(../res/images/review/SPB.jpg);
-    background-size: 100%!important;
-}
-
-.dessert-menu .item-thumb .owl-dot:nth-of-type(4) span {
-    background-image: url(../res/images/review/Sunil-Gav.jpg);
-    background-size: 100%!important;
-}
-
-.dessert-menu .item-thumb .owl-dot:nth-of-type(5) span {
-    background-image: url(../res/images/review/Anil-Kumble.jpg);
-    background-size: 100%!important;
-}
-
-.dessert-menu .item-thumb .owl-dot:nth-of-type(6) span {
-    background-image: url(../res/images/review/Amrish.jpg);
-    background-size: 100%!important;
-}
-
 .dessert-menu  .item-thumb .owl-dot {
-    width: 31.33333%;
+    /*width: 31.33333%;*/
     display: inline-block;
     justify-content: center;
     height: 173px;
@@ -136,7 +107,7 @@ a.cartheadericon span {
 #primary-menu ul li>a {
     display: block;
     line-height: 22px;
-      padding: 37px 10px 10px;
+    padding: 37px 10px 10px;
     color: #444;
     font-weight: 700;
     font-size: 11px;
@@ -208,7 +179,8 @@ a, h1 > span:not(.nocolor):not(.badge), h2 > span:not(.nocolor):not(.badge), h3 
 
 .rounded_border {
     /* border-radius: .25rem!important; */
-    border-radius: 50%!important;;
+    border-radius: 50%!important;
+    ;
 }
 
 
@@ -415,11 +387,21 @@ li.woocommerce-MyAccount-navigation-link {
     animation:blinkingText 1.2s infinite;
 }
 @keyframes blinkingText{
-    0%{     color: #fff;    }
-    49%{    color: #fff; }
-    60%{    color: transparent; }
-    99%{    color:transparent;  }
-    100%{   color: #fff;    }
+    0%{
+        color: #fff;
+    }
+    49%{
+        color: #fff;
+    }
+    60%{
+        color: transparent;
+    }
+    99%{
+        color:transparent;
+    }
+    100%{
+        color: #fff;
+    }
 }
 
 #header .container {
@@ -470,19 +452,37 @@ li.woocommerce-MyAccount-navigation-link {
 }
 
 @-webkit-keyframes changegradiantcolor {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{
+        background-position:0% 50%
+    }
+    50%{
+        background-position:100% 50%
+    }
+    100%{
+        background-position:0% 50%
+    }
 }
 @-moz-keyframes changegradiantcolor {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{
+        background-position:0% 50%
+    }
+    50%{
+        background-position:100% 50%
+    }
+    100%{
+        background-position:0% 50%
+    }
 }
 @keyframes changegradiantcolor {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{
+        background-position:0% 50%
+    }
+    50%{
+        background-position:100% 50%
+    }
+    100%{
+        background-position:0% 50%
+    }
 }
 
 
@@ -561,19 +561,73 @@ li.woocommerce-MyAccount-navigation-link {
 
 @media (max-width: 991.98px){
     #primary-menu ul>li>a, #primary-menu.style-2>div>ul>li>a {
-       float:left;
+        float:left;
         width:100%;
     }
 }
 
 @media (max-width: 768px){
     #primary-menu ul>li>a, #primary-menu.style-2>div>ul>li>a {
-       float:left;
-       width:100%;
+        float:left;
+        width:100%;
     }
 }
 
 a.reservation_buttons.sf-with-ul {
     padding-left: 0px!important;
     padding-right: 0px!important;
+}
+.vegconceptblock{
+    background: url(../res/images/sections/41.jpg);
+    padding: 10px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.who_we_are_block{
+    background: url(../res/images/sections/42.jpg);
+    padding: 10px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.videoblockbottom{
+    margin-bottom: 20px;
+}
+
+.wall_of_woodland_heading{
+    /*font-size: 60px;*/
+     font-size: 60px!important;
+    line-height: 1.3;
+}
+@media only screen and (max-width: 768px) {
+    .vegconceptblock{
+        background: #fff;
+        padding: 10px 0;
+        background-size: 100% auto;
+    }
+    .who_we_are_block{
+        background: #fff;
+        padding: 10px 0;
+        background-size: 100% auto;
+    }
+    .swiper_wrapper .swiper-slide {
+
+        height: 300px!important;
+    }
+    .swiper_wrapper .swiper-container {
+        height: auto!important;
+    }
+
+    #slider{
+        height: 300px!important;
+    }
+    .wall_of_woodland_heading{
+        font-size: 35px!important;
+        line-height: 1.3;
+        text-align: left;
+        margin-left: 20px;
+    }
+
 }

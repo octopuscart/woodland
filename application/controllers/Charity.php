@@ -130,7 +130,7 @@ class Charity extends CI_Controller {
         $this->db->where("request_id", $order_key);
         $query = $this->db->get("charity_donation");
         $requestdata = $query->row_array();
-        $data = array("donation" => $requestdata, "paymentqr" => $restpay[$paymenttype]);
+        $data = array("donation" => $requestdata, "paymentqr" => $restpay[$paymenttype], "payment_type"=>$paymenttype);
         $this->load->view('donation/payment_qr', $data);
     }
 

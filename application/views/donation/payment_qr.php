@@ -62,8 +62,18 @@ $this->load->view('layout/header');
                 <div class="row clearfix">
                     <div  style="    width: 100%;text-align: center;">
 
+                        <?php
+                        if ($payment_type == "PAYME") {
+                            ?>
+                            <a href="https://qr.payme.hsbc.com.hk/2/Evyc1DNL6brCDb3UaRPXF" class="button button-circle button-large text-white ml-0 mt-3 " type="button" disabled="" >Click Here To Pay (PayMe)</a>
 
-                    <img src="<?php echo base_url("assets/donation/"). $paymentqr; ?>" style="width:400px" />
+                            <br/>
+
+                            <hr/>
+                            <?php
+                        }
+                        ?>
+                        <img src="<?php echo base_url("assets/donation/") . $paymentqr; ?>" style="width:400px" />
 
                         <h3 class="text-white text-center    " style="font-size: 30px">
 

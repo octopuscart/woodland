@@ -156,7 +156,7 @@ $this->load->view('layout/header');
                                     <div class="card-body py-2 px-4">
                                         <div class="d-flex justify-content-between">
                                             <div class="counter counter-inherit d-flex justify-content-between">
-                                                <strong class="me-1 ls0">Donated:</strong> $<span data-from="0" data-to="115700" data-refresh-interval="10" data-speed="1100" data-comma="true"></span>
+                                                <strong class="me-1 ls0">Donated:</strong> $<span data-from="0" data-to="<?php echo $collectamount; ?>" data-refresh-interval="10" data-speed="1100" data-comma="true"></span>
                                             </div>
                                             <span><strong>Target:</strong> HK$100,000</span>
                                         </div>

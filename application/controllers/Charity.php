@@ -61,7 +61,7 @@ class Charity extends CI_Controller {
     }
 
     public function index() {
-        $c_query = "SELECT sum(amount) as amount FROM `charity_donation` where confirm_status='Confirm' order by id desc";
+        $c_query = "SELECT sum(amount) as amount FROM `charity_donation` where confirm_status='Confirm'  and date>'2022-01-01'  order by id desc";
         $querytotal = $this->db->query($c_query);
         $totalrcv = $querytotal->row_array();
 
@@ -72,6 +72,7 @@ class Charity extends CI_Controller {
         $collectpercent = ($collectamount*100)/$targetgoal;
         
         $data["target_achive"] = $collectpercent;
+        $data["collectamount"] = $collectamount;
 
         if (isset($_POST['amount'])) {
             $requestid = "CHWL" . date('ymd') . date('His');

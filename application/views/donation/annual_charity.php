@@ -148,7 +148,7 @@ $this->load->view('layout/header');
                         <div class="col-md-7">
                             <div class="informationblock">
                                 <h4>
-                                    Annual Charity Lunch & Dinner 2022  |  週年慈善午餐&晚餐2022 | <b>活。睛彩</b>
+                                    Annual Charity Lunch & Dinner 2022  |  週年慈善午餐&晚餐2022 
                                 </h4>
                                 <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
                                      border-radius: 19px!IMPORTANT;">
@@ -200,7 +200,7 @@ $this->load->view('layout/header');
                                     <br/>(幫助智障人士發展獨立生活技能) 
                                 </p>
                                 <br/>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/NCqNGJx9bI8?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mmHTii83IVM?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
                                 <br/>
                                 <p style="font-weight: 500">
                                     IDEAL was formed by a group of people with intellectual disabilities, their parents and volunteers in 1989 and was registered as a charitable organization in 1991. Aiming at the objectives and in the spirit of “GIVE and TAKE”, the organization works actively for people with intellectual disabilities. IDEAL is a member of the Hong Kong Council of Social Service, the Hong Kong Sports Association for Persons with Intellectual Disability and the Agency for Volunteer Service and a supporting organization of the Life Care Movement.
@@ -385,9 +385,9 @@ $this->load->view('layout/header');
                             <div class="col-md-12 feature-box media-box">
                                 <?php
                                 $previouselink = [
-                                    "zgYpG-ThKvk",
-                                    "uI8ARH4dmH4",
-                                    "ZC0Fb9BjB64"
+                                    "jj8bFYR1VM0",
+                                    "jSn-mCE5hi0",
+                                   
                                 ];
                                 foreach ($previouselink as $key => $value) {
                                     ?>

@@ -65,11 +65,11 @@ $this->load->view('layout/header');
                         <?php
                         if ($payment_type == "PAYME") {
                             ?>
-                            <a href="https://qr.payme.hsbc.com.hk/2/Evyc1DNL6brCDb3UaRPXF" class="button button-circle button-large text-white ml-0 mt-3 " type="button" disabled="" >Click Here To Pay (PayMe)</a>
+<!--                            <a href="https://qr.payme.hsbc.com.hk/2/Evyc1DNL6brCDb3UaRPXF" class="button button-circle button-large text-white ml-0 mt-3 " type="button" disabled="" >Click Here To Pay (PayMe)</a>
 
                             <br/>
 
-                            <hr/>
+                            <hr/>-->
                             <?php
                         }
                         ?>

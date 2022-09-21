@@ -27,7 +27,7 @@ App.controller('donatinController', function ($scope, $http, $location) {
     $scope.openQR = function (qrtype) {
         if (qrtype == "payme") {
             $scope.qucodeselect.title = "Pay Using PayMe";
-            $scope.qucodeselect.image = "paymeqr.jpeg";
+            $scope.qucodeselect.image = "paymeqr_2.jpeg";
         } else {
             $scope.qucodeselect.title = "Pay Using FPS";
             $scope.qucodeselect.image = "fpsqr.jpeg";

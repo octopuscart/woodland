@@ -50,16 +50,17 @@
 
             </div>
             <hr/>
-            <div class="col_half nobottommargin">
+            <div class="col_one_third nobottommargin">
                 <span class="font-primary text-white">&copy; WOODLANDS. <?php echo date('Y'); ?>. All Rights Reserved.</span>
             </div>
-            <div class="col_half col_last nobottommargin">
+            <div class="col_two_third col_last nobottommargin">
                 <div class="copyrights-menu copyright-links fright clearfix text-white">
                     <a href="<?php echo site_url("/"); ?>">Home</a>
                     /<a href="<?php echo site_url("about-us"); ?>">Insights</a>
-                    /<a href="<?php echo site_url("review"); ?>">Review</a>
-                    /<a href="<?php echo site_url("feedback"); ?>">Feedback</a>
                     /<a href="<?php echo site_url("menu/0/0"); ?>">Menu</a>
+                    /<a href="<?php echo site_url("our-policies"); ?>"> Our Policies</a>
+                    /<a href="<?php echo site_url("refund-policy"); ?>"> Refund Policy</a>
+                    /<a href="<?php echo site_url("terms-of-use"); ?>"> Terms of Use</a>
                     /<a href="<?php echo site_url("contact"); ?>">Contact</a>
                 </div>
             </div>

@@ -75,8 +75,6 @@ $route['book-now'] = 'Shop/booknow';
 
 $route['gallery'] = 'Shop/gallery';
 
-
-
 $route['feedback'] = 'Shop/feedback';
 
 $route['blog'] = 'Shop/blog/$1';
@@ -90,3 +88,7 @@ $route['paymentresult'] = 'PaymentGatway/paymentResult';
 
 $route['loyalty-program'] = 'Coupon/joinLoyaltiProgram';
 $route['loyalty-program-thanks/(:any)'] = 'Coupon/loyalProgramThanks/$1';
+
+$route['our-policies'] = 'ExtPages/ourPolicy';
+$route['refund-policy'] = 'ExtPages/refundPolicy';
+$route['terms-of-use'] = 'ExtPages/termsOfUse';

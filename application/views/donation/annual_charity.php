@@ -129,11 +129,9 @@ $this->load->view('layout/header');
     <section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/wall2.jpg');   margin-top: -30px;    padding: 50px 0px 18px;    background-position: -471px -230px;" data-center="" data-top-bottom="">
         <div class="container clearfix">
             <h1 class="font-secondary capitalize ls0 text-white" style="font-size: 40px;"> 
-                Annual Charity Lunch & Dinner 2022  |  週年慈善午餐&晚餐2022
+                Woodlands Annual Charity Event - 2022
             </h1>
-            <h2 class="font-secondary capitalize ls0 text-white" style="font-size: 44px;"> 
-                <b> 活。睛彩</b>
-            </h2>
+
 
         </div>
     </section>
@@ -145,261 +143,61 @@ $this->load->view('layout/header');
                 <div class="container-fluid clearfix">
 
                     <div class="row">
-                        <div class="col-md-7">
-                            <div class="informationblock">
+                        <div class="col-md-12">
+                            <div class="informationblock  text-center">
                                 <h4>
-                                    Annual Charity Lunch & Dinner 2022  |  週年慈善午餐&晚餐2022 
+                                    Woodlands Annual Charity Event - 2022
                                 </h4>
-                                <div class="card bg-color-light rounded-0 my-4" style="    background: #8cc646;
-                                     border-radius: 19px!IMPORTANT;">
 
-                                    <div class="card-body py-2 px-4">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="counter counter-inherit d-flex justify-content-between">
-                                                <strong class="me-1 ls0">Donated:</strong> $<span data-from="0" data-to="<?php echo $collectamount; ?>" data-refresh-interval="10" data-speed="1100" data-comma="true"></span>
-                                            </div>
-                                            <span><strong>Target:</strong> HK$100,000</span>
-                                        </div>
-                                        <ul class="skills pt-3 mb-2 mt-3">
-                                            <li data-percent="<?php echo $target_achive; ?>">
-                                                <div class="progress">
-                                                    <div class="progress-percent">
-                                                        <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="<?php echo $target_achive; ?>" data-refresh-interval="30" data-speed="1100"></span>%</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <h4>
-                                    Woodlands Indian Vegetarian Restaurant's Annual Charity Lunch & Dinner Event 2022
-                                    <br/>
-                                    活蘭印度素食餐廳週年慈善午餐&晚餐活動2022
-
-                                </h4>
-                                <h5>
-                                    2nd October (SUN) 2022 | 2022年10月2日
-                                </h5>
-                                <div class="col-md-12 feature-box media-box">
-
-                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/slider/charity2022.jpg" style="border-radius: 19px;">
-                                </div>
                             </div>
-                            <hr/>
+
                             <div class="informationblock feature-box media-box text-center">
-                                <div class="row col-md-12" style="display: contents;">
-                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/IDEAL_logo-01.png" style="border-radius: 19px;width: 100px;">
-                                </div>
-                                <h3 class="text-danger">
-                                    Beneficiaries of this year: IDEAL | 勵智協進會
+                                <p>
 
-                                </h3>
-                                <p>
-                                    (Helping the Intellectually challenged to develop skills for Independent Living)
-                                    <br/>(幫助智障人士發展獨立生活技能) 
-                                </p>
-                                <br/>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mmHTii83IVM?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
-                                <br/>
-                                <p style="font-weight: 500">
-                                    IDEAL was formed by a group of people with intellectual disabilities, their parents and volunteers in 1989 and was registered as a charitable organization in 1991. Aiming at the objectives and in the spirit of “GIVE and TAKE”, the organization works actively for people with intellectual disabilities. IDEAL is a member of the Hong Kong Council of Social Service, the Hong Kong Sports Association for Persons with Intellectual Disability and the Agency for Volunteer Service and a supporting organization of the Life Care Movement.
-                                    <br/>
-                                    <br/>
-                                    勵智協進會是由一群智障人士、家長及義工於1989年組成，並於1991年註冊成為非牟利慈善組織。本著「有所取亦有所給」的精神，大家共同策劃，分擔會務，積極參與，為智障人士而努力，以達致本會宗旨。本會乃香港社會服務聯會、香港智障人士體育協會、義務工作發展局及生命存愛行動會員機構。
-                                </p>
-                                <p>
-                                    <a href="http://ideal.org.hk/" target="_blank">  To Know More 了解更多: http://ideal.org.hk/ </a>
+                                    We are very happy and thankful to all who have generously supported our event on the 2nd Oct, 2022 in commemoration of Mahatma Gandhi's Birth Anniversary<br/>
+
+                                    With your tremendous support we have managed to raise a sum of $202,555 from this event and the same will be donated fully to IDEAL NGO. <br/>
+
+                                    We express our sincere gratitude to all our patrons for supporting our event and to keep us motivated to do more every year. 🙏🏻
                                 </p>
                             </div>
                             <hr/>
-                            <div class="informationblock feature-box media-box">
+                            <div class="informationblock text-center">
+                                <h4>
+                                    Woodlands年度慈善活動- 2022年
+                                </h4>
 
+                            </div>
 
+                            <div class="informationblock feature-box media-box text-center">
+                                <p>
 
-                                <p style="font-weight: 500">
-                                    Take part to be a part of the change | Donate Generously | Share the joy of caring with your Friends!<br/>
-                                    踴躍參加 | 慷慨解囊 | 與朋友分享關懷的喜悅
-                                    </b>
+                                    我們非常高興和感謝所有在2022年10月2日慷慨支持我們紀念聖雄甘地誕辰周年紀念日的活動既善長人翁*<br/>
+
+                                    在您的大力支持下，我們在今次活動中成功籌集了$2️⃣0️⃣2️⃣,5️⃣5️⃣5️⃣港幣，這筆款項將全部捐贈給勵智協進會*NGO。 <br/>
+
+                                    我哋衷心感謝所有贊助人支持我哋嘅活動，你地既支持係推動我哋年年做更多善事既動力。
                                 </p>
                             </div>
+                            <hr/>
+                            <div class="informationblock row">
+
+                                <div class="col-md-6 feature-box media-box" style="padding: 10px;">
+
+                                    <img src="<?php echo base_url(); ?>assets/theme2/res/images/CHRITY-2022-03.jpg" style="border-radius: 19px;">
+                                </div>
+                                <div class="col-md-6 feature-box media-box" style="padding: 10px;">
+                <iframe  src="https://www.youtube.com/embed/PrlHKrvtPsc?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
+
+                                </div>
+                            </div>
+                            <br/>
+
 
 
                         </div>
 
-                        <div class="col-md-5">
-                            <div class="p-5rounded formblocksectionparent" style=" ">
-                                <div class="formblocksectionhead">
-                                    <h3 class=" ">
-                                        Please Donate Generously<br/> 請慷慨解囊
 
-                                    </h3>
-                                </div>
-
-                                <div class=" mt-4 mt-lg-0 formblocksection" >
-                                    <div class="form-result"></div>
-                                    <form class="mb-0 row"  action="#" method="post" ng-submit="donationSubmit()">
-                                        <div class="form-process"></div>
-                                        <div class="row">
-                                            <div class="donation-amount-block">
-                                                <div class="amoutblock {{donationinput.selected_amount==amount?'active':''}}" ng-repeat="amount in donationinput.amountarray" ng-click="selectAmount(amount)">
-                                                    {{amount|currency:"<?php echo globle_currency; ?>"}}
-
-
-                                                </div>
-                                                <br/>
-                                                <div class="otheramountblock mt-3">
-                                                    <label>Enter Other Amount</label>
-                                                    <input type="number" id="template-contactform-name" min='0'  ng-model="donationinput.other_amount" value="" class="form-control border-form-control " placeholder="HK$ Other" >
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-sm-12 mb-3 mt-3">
-                                                    <input type="text" id="template-contactform-name" name="name" value="" class="form-control border-form-control required" placeholder="Name" required="">
-                                                </div>
-                                                <div class="col-sm-12 mb-3  ">
-                                                    <input type="text" id="template-contactform-phone" name="contact_no" value="" class="form-control border-form-control required" placeholder="Contact No." required="">
-                                                </div>
-                                                <div class="col-sm-12 mb-3  ">
-                                                    <input type="email" id="template-contactform-email" name="email" value="" class="required email form-control border-form-control" placeholder="Email Address" required="">
-                                                </div>
-                                                <div class="col-sm-12 mb-3">
-                                                    <textarea type="text" id="template-contactform-message" name="message" value="" class="required  form-control border-form-control" placeholder="Type you message here"  max="300"></textarea>
-                                                </div>
-                                                <br/>
-                                                <div class="col-md-12  mt-3">
-                                                    <div class="headerformblock">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="hidden" name="anonymous_donation" value="{{donationinput.showreceiver}}">
-                                                                <input type="checkbox"  ng-model="donationinput.showreceiver"> Keep my donation anonymous
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="clear"></div>
-                                        <div class="col-sm-12 mb-3">
-                                            <p class="text-center" style="    margin-top: 20px;   margin-bottom: 0;">Choose Payment Method</p>
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="ALIPAY" class="checkbox-coupon  " checked=true required="">
-                                                    <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
-
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="WECHAT" class="checkbox-coupon "  checked=false required="">
-                                                    <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="PAYME" class="checkbox-coupon  " checked=true required="">
-                                                    <img src="<?php echo base_url(); ?>assets/donation/payme_red_on_white_bg.png" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
-
-                                            <div class="col-md-6 pull-left">
-                                                <label class="radio-inline">
-                                                    <input type="radio"  name="payment_type" value="FPS" class="checkbox-coupon "  checked=false required="">
-                                                    <img src="<?php echo base_url(); ?>assets/donation/fps.png" class="coupon-imgage-payment">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <p style="text-align: center;
-                                               font-size: 15px;">
-                                                <b> *Donation of $100 or above are Tax deductible *</b>
-                                            </p>
-                                        </div>
-
-                                        <div class="clear"></div>
-                                        <div class="col-12 nobottommargin" style='    text-align: center;' ng-if="!donationinput.isprocess">
-                                            <input type="hidden" name="amount" value="{{donationinput.selected_amount}}">
-
-                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit" ng-if='donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
-
-                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" disabled="" ng-if='!donationinput.selected_amount'>Donate {{donationinput.selected_amount|currency:'<?php echo globle_currency; ?>'}} Now</button>
-
-                                        </div>
-                                        <div class="col-12 nobottommargin" style='    text-align: center;' ng-if="donationinput.isprocess">
-                                            <input type="hidden" name="amount" value="{{donationinput.selected_amount}}">
-
-
-                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" disabled="" >Processing...</button>
-
-                                        </div>
-                                        <div class="clear"></div>
-
-                                    </form>
-                                </div>
-                                <div class="qrpayment">
-                                    <h4>Pay Using QR Code Scan <br/><small>
-                                            Click image to select payment method.
-                                        </small></h4>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/donation/payme_red_on_white_bg.png" class="qrscanimage" data-toggle="modal" data-target="#qrcodemodel" ng-click="openQR('payme')">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/donation/fps.png" class="qrscanimage" data-toggle="modal" data-target="#qrcodemodel" ng-click="openQR('fps')">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 feature-box media-box text-left">
-                                        <div class="donationlist">
-                                            <table id="donationalisttable" class="table">
-                                                <thead>
-                                                    <tr><th>LATEST DONATIONS</th></tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    foreach ($donationdata as $key => $value) {
-                                                        ?>
-                                                        <tr>
-                                                            <td>
-                                                                <?php echo $value["donator"]; ?>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                                                    }
-                                                    ?>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="col-md-12 feature-box media-box">
-                                <?php
-                                $previouselink = [
-                                    "jj8bFYR1VM0",
-                                    "jSn-mCE5hi0",
-                                   
-                                ];
-                                foreach ($previouselink as $key => $value) {
-                                    ?>
-                                    <br/>
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $value; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 19px;" allowfullscreen></iframe>
-                                    <br/>
-                                    <?php
-                                }
-                                ?>
-
-                            </div>
-                        </div>
                     </div>
 
 

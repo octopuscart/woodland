@@ -1,4 +1,40 @@
-            
+<!-- Modal -->
+<div class="modal fade" id="selectLocations" tabindex="-1" role="dialog" aria-labelledby="selectLocations" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel">Select Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <?php
+                    $locationarray = [
+                        array("title" => "Tsim Sha Tsui", "image" => "tst.jpg", "link" => "tst"),
+                        array("title" => "Wan Chai", "image" => "wanchai.jpg", "link" => "wanchai")
+                    ];
+                    foreach ($locationarray as $key => $value) {
+                        $location = $value["link"];
+                        ?>
+                        <div class="col-md-6 text-center">
+                            <img class="thumbnail" src="<?php echo base_url(); ?>assets/locations/<?php echo $value["image"]; ?>" style="display: inline-block;    border-radius: 20px;" /><hr/>
+                            <a href="<?php echo site_url("menu/$location/0"); ?>" class="reservation_buttons"><div class="">Select </div></a>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>           
 <footer id="footer" class="dark" style="background: url('<?php echo base_url(); ?>assets/theme2/res/images/footer-bg.jpg')  repeat center center / cover; background-size: auto 100%;; padding:0px 0 22px;    ">
 
     <div id="copyrights" class="nobg">

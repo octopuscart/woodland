@@ -9,6 +9,12 @@
                 62, Mody Road, Tsim Sha Tsui East,<br/>
                 Kowloon, Hong Kong
             </span>
+            <hr/>
+            <span class="font-primary" style="color:black">
+                1/F, Dannies House, 20 Luard Road, <br/>
+                Wan Chai, MTR Exit C & A,<br/>
+                Hong Kong
+            </span>
         </div>
         <div class="col-lg-3 col-md-6 bottommargin-sm center">
             <i class="i-plain i-xlarge divcenter nobottommargin icon-et-clock"></i>
@@ -36,18 +42,29 @@
             <span class="font-primary">
                 <table style="    width: 100%;color:black">
                     <tr>
-                        <td colspan="1" style="text-align: center;font-size: 20px;color:black"><strong>+(852) 2369 3718</strong></td>
-
+                        <td colspan="1" style="text-align: center;">
+                            <strong>Tsim Sha Tsui</strong><br/>
+                            <i class="icon-et-phone"></i>&nbsp; +(852) 2369 3718 / 2366 1945
+                        </td>
                     </tr>
                     <tr>
-
-                        <td><i class="icon-et-phone"></i>&nbsp; +(852) 2366 1945</td>
-                    </tr>
-                    <tr>
-
                         <td>
-                            <i class="icon-et-envelope" style="    float: left;   margin-left: 20px; padding-top: 13px"></i>
-                            <span style="float: left;">&nbsp; order@woodlandshk.com<br/>info@woodlandshk.com
+                            <hr/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="text-align: center;">
+                            <strong>Wan Chai</strong><br/>
+                            <i class="icon-et-phone"></i>&nbsp; +(852) 2921 2188 / 2921 2189
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td style="text-align: center;">
+                            <hr/>
+                          
+                            <span >  <i class="icon-et-envelope"></i>&nbsp; dine@woodlandshk.com
                             </span></td>
                     </tr>
                 </table>
@@ -98,7 +115,6 @@
                     <?php
                     $querymedialink = $this->db->get("media_link");
                     $querymedialinkresult = $querymedialink->result_array();
-
 
                     $medialink = $querymedialinkresult;
 

@@ -29,6 +29,9 @@ $this->load->view('layout/header');
 <section id="content" style="overflow: visible;"  ng-controller="ProductController">
     <div class="content-wrap nopadding">
         <div class="container">
+            <?php
+            if($location == "tst"){
+            ?>
             <div class="tabs tabs-justify clear-bottommargin clearfix" id="tab-1">
                 <ul class="tab-nav clearfix border-bottom-0">
                     <?php
@@ -105,6 +108,19 @@ $this->load->view('layout/header');
 
                 </div>
             </div>
+            <?php
+            }
+            else{
+                ?>
+            <div class="well well-sm mt-5 mb-5">
+                <h2 class="text-center">
+                      <span class="t400">Coming Soon</span>
+                </h2>
+                
+            </div>
+                    <?php
+            }
+            ?>
         </div>
         <div class="section mb-0 mt-3" style="padding: 80px 0; background: #F5F5F5 url('<?php echo base_url(); ?>assets/theme2/res/images/food-pattern.png') repeat center center;">
             <div class="container">

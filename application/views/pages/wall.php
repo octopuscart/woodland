@@ -178,9 +178,9 @@ $this->load->view('layout/header');
 </section>
 <!-- Inner Page Banner Area End Here -->
 
-<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
+<!--<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
      position: absolute;
-     z-index: 200;" />
+     z-index: 200;" />-->
 <!-- Content -->
 
 <section style="overflow: visible;">
@@ -221,7 +221,7 @@ $this->load->view('layout/header');
                         have dined at Woodlands and left their hand-written
                         testimonials about their experience with us.
                     </span>
-                    <div class="vertical-middle">
+                    <div class="vertical-middle1">
                         <div class="col-padding clearfix">
                             <div><div id="item-thumb1" class="item-thumb"></div></div>
                         </div>
@@ -238,8 +238,8 @@ $this->load->view('layout/header');
                 <h3 class="nott font-secondary ls0" style="font-size: 60px;">Reviews on TripAdvisor</h3>
             </div>
             <div class="row">
-                <div class="" style="text-align: center;width:100%;">
-                    <div id="TA_selfserveprop474" class="TA_selfserveprop" style="display: inline-block;width:500px;">
+                <div class="" style="text-align: center;width:100%;overflow-x: scroll;">
+                    <div id="TA_selfserveprop474" class="TA_selfserveprop" style="display: inline-block;width:100%;;">
                         <ul id="VTatmM" class="TA_links XW52hq5Xclrd">
                             <li id="HGpatLPntM7" class="O6eEKDqDdZdK">
                                 <a target="_blank" href="https://en.tripadvisor.com.hk/"><img src="https://en.tripadvisor.com.hk/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a>

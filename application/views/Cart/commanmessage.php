@@ -3,11 +3,22 @@
         <div class="card-heading change-color-gradiant" role="tab" id="headingOne" >
             <h4 class="card-title " style="font-size: 16px; margin: 7px 0px;  margin: 0; text-align: center; color: white;">
                 <!--Delivery process is only available in Tsim Sha Tsui and Whampoa Garden-->
-                Delivery process is only available in Tsim Sha Tsui <br/>
-                <table class='tablemessageblock' style="    display: inline-block">
+                Pick Up <br/>
+                <table class='tablemessageblock' style="    display: inline-block;    font-weight: 300;
+    font-size: 13px;">
                     <tr>
-                        <td> Delivery Charges:</td>
-                        <td>Free Delivery In Tsim Sha Tsui</td>
+                        <td style="width:300px;">
+                            <h4  style="margin-bottom: 10px;color:white;">Tsim Sha Tsui</h4>
+                            UG Shop 16 & 17, Wing On Plaza,<br/>
+                            62, Mody Road, <br/>
+                           Tsim Sha Tsui East, Kowloon, Hong Kong
+                        </td>
+                        <td style="width:300px;">
+                            <h4 style="margin-bottom: 10px;color:white;">Wan Chai</h4>
+                            1/F, Dannies House, 20 Luard Road, <br/>
+                            Wan Chai, MTR Exit C & A,<br/>
+                            Hong Kong
+                        </td>
                     </tr>
 <!--                    <tr>
 
@@ -15,9 +26,9 @@
                     </tr>-->
                 </table>
 
-                
-<!--                Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)-->
-               
+
+                <!--                Free Delivery: Tsim Sha Tsui, Whampoa Garden ($40 On Order value < $400)-->
+
             </h4>
         </div>
     </div>

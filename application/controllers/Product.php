@@ -21,7 +21,7 @@ class Product extends CI_Controller {
     }
 
     //function for product list
-    function ProductList($custom_id, $cat_id) {
+    function ProductList($location_id, $cat_id) {
 
         $tempcatid = $cat_id;
 
@@ -81,6 +81,7 @@ class Product extends CI_Controller {
         $data["categories"] = $categories;
         $data["categories2"] = $categories2;
         $data["category"] = $cat_id;
+        $data["location"] = $location_id;
         $session_last_custom = $this->session->userdata('session_last_custom');
 
 

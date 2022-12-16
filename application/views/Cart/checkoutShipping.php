@@ -290,15 +290,15 @@ if ($indexarray) {
                                      border-radius: 10px;">
 
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'></p></a></li>
-                                        <li class="nav-item"><a href="#pickup" class="nav-link " data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
+                                        <!--<li class="nav-item"><a href="#delivery" class="nav-link active" data-toggle="tab" aria-expanded="false" style="font-size: 27px">Delivery<p class='discountnotetab'></p></a></li>-->
+                                        <li class="nav-item"><a href="#pickup" class="nav-link active" data-toggle="tab" aria-expanded="false"  style="font-size: 27px">Pickup
                                                 <!--<p class='discountnotetab'>30% Discount On Pickup</p>-->
 
                                             </a></li>
 
                                     </ul>
                                     <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="delivery">
+<!--                                        <div class="tab-pane fade show active" id="delivery">
 
                                             <div class="card card-default">
                                                 <div class="card-heading" role="tab" id="headingOne">
@@ -314,7 +314,7 @@ if ($indexarray) {
                                                         </a>
                                                     </h4>
                                                 </div>
-                                                <!-- Address Details -->
+                                                 Address Details 
                                                 <div class="card-body">
                                                     <div class="order-sheet" style="margin-top: 30px">
 
@@ -396,11 +396,11 @@ if ($indexarray) {
 
                                                                         </td>
                                                                         <td colspan="1" class="text_right">
-                                                                            <!--                                                                        <div class="proceed-button pull-left " >
+                                                                                                                                                    <div class="proceed-button pull-left " >
                                                                                                                                                         <a href=" <?php echo site_url("Cart/checkoutInit"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Cart</a>
-                                                                                                                                                    </div>-->
+                                                                                                                                                    </div>
                                                                             <div class="proceed-button pull-right ">
-                                                                                <!--<a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                                <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
 
                                                                                 <?php
                                                                                 if (count($user_address_details)) {
@@ -408,7 +408,7 @@ if ($indexarray) {
 
 
 
-                                                                                                                                                                                                        <!--                                                                        <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>-->
+                                                                                                                                                                                                                                                                                <a href=" <?php echo site_url("CartGuest/checkoutPayment"); ?>" class="btn-apply-coupon checkout_button_next disabled" >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
                                                                                     <button type="submit" class="btn-apply-coupon checkout_button_next " name="processtopayment">Choose Payment Method <i class="fa fa-arrow-right"></i></button>
                                                                                     <?php
                                                                                 }
@@ -428,9 +428,9 @@ if ($indexarray) {
                                                 </div>
                                             </div>
 
-                                        </div>
+                                        </div>-->
 
-                                        <div class="tab-pane fade " id="pickup">
+                                        <div class="tab-pane fade show active" id="pickup">
                                             <form action="#" method="post" style="margin-bottom: 0;">
                                                 <div class="card card-default">
                                                     <div class="card-body">

@@ -24,7 +24,7 @@ $this->load->view('layout/header');
                 ];
                 foreach ($sliderimages as $key => $value) {
                     ?>
-                    <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/<?php echo $value;?>'); background-position: center center;">
+                    <div class="swiper-slide" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/slider/<?php echo $value; ?>'); background-position: center center;">
                         <div class="container dark clearfix">
                             <div class="slider-caption">
 
@@ -71,6 +71,71 @@ $this->load->view('layout/header');
 </section>
 
 <section id="content" style="overflow: visible; margin-bottom: 192px!important;">
+    <div class="container clearfix">
+        <div class="heading-block center nobottomborder">
+            <h3 class="nott font-secondary ls0" style="font-size: 60px; line-height: 1.3;">Our Locations</h3>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-3">
+
+            </div>
+
+         
+                <?php
+                $locationarray = [
+                    array("title" => "Tsim Sha Tsui",
+                        "image" => "tst.jpg", 
+                        "address"=>'<span class="font-primary" style="color:black">
+                UG Shop 16 & 17, Wing On Plaza,<br/>
+                62, Mody Road, Tsim Sha Tsui East,<br/>
+                Kowloon, Hong Kong
+            </span>',
+                        "link" => "tst"),
+                    array("title" => "Wan Chai", 
+                        "image" => "wanchai.jpg",
+                        "address"=>'<span class="font-primary" style="color:black">
+                1/F, Dannies House, 20 Luard Road, <br/>
+                Wan Chai, MTR Exit C & A,<br/>
+                Hong Kong
+            </span>',
+                        "link" => "wanchai")
+                ];
+                foreach ($locationarray as $key => $value) {
+                    $location = $value["link"];
+                    ?>
+                    <div class="col-lg-3 col-md-4 mb-3">
+                        <div class="team">
+                            <div class="team-image imagescalein">
+                                <a href=""><img class="img-thumbnail" src="<?php echo base_url(); ?>assets/locations/<?php echo $value["image"]; ?>" alt="<?php echo $value["title"]; ?>" style="border-radius: 20px;" /></a>
+                            </div>
+                            <div class="team-desc">
+                              
+                                <p>  
+                                    <?php echo $value["address"]; ?>
+                                 </p>
+                            </div>
+                        </div>
+                           <div class="col-md-12 text-center">
+                        <a href="<?php echo site_url("menu/$location/0"); ?>" class="reservation_buttons"><div class="">Order Now </div></a>
+                    </div>
+                    </div>
+                 
+                    <?php
+                }
+                ?>
+
+
+        
+
+
+
+           
+            <div class="col-lg-3 col-md-3">
+
+            </div>
+        </div>
+    </div>
+    <hr/>
     <div class="content-wrap1">
         <div class="section nomargin clearfix vegconceptblock" >
             <div class="container clearfix">
@@ -236,7 +301,7 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-              
+
                 <div class="col-lg-4 col-md-4">
                     <div class="team">
                         <div class="team-image imagescalein">
@@ -330,7 +395,8 @@ $this->load->view('layout/header');
 
             .dessert-menu .item-thumb .owl-dot:nth-of-type(<?php echo $countrr; ?>) span {
                 background-image: url(<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>)!important;
-                background-size: contain!important;;
+                background-size: contain!important;
+                ;
                 background-repeat: no-repeat;
             }
             <?php

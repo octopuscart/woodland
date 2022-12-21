@@ -3,7 +3,7 @@
     <div class="row clearfix" >
         <div class="col-lg-3 col-md-6 bottommargin-sm center">
             <i class="i-plain i-xlarge divcenter nobottommargin icon-et-map"></i>
-            <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px;color:black">Contact</h3>
+            <h3 class="uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px;color:black">Locations</h3>
             <span class="font-primary" style="color:black">
                 UG Shop 16 & 17, Wing On Plaza,<br/>
                 62, Mody Road, Tsim Sha Tsui East,<br/>

@@ -12,7 +12,7 @@ $this->load->view('layout/header');
                 $sliderimages = [
                     "Woodlands-wan-chai.jpg",
                     "Woodlands-wan-chai.jpg",
-                    "charity2022.jpg",
+//                    "charity2022.jpg",
                     "Woodlands-01.jpg",
                     "Woodlands-02.jpg",
                     "Woodlands-03.jpg",

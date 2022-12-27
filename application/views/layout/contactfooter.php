@@ -55,7 +55,7 @@
                     <tr>
                         <td colspan="1" style="text-align: center;">
                             <strong>Wan Chai</strong><br/>
-                            <i class="icon-et-phone"></i>&nbsp; +(852) 2921 2188 / 2921 2189
+                            <i class="icon-et-phone"></i>&nbsp; +(852) 2129 2188 / 2129 2189
                         </td>
 
                     </tr>

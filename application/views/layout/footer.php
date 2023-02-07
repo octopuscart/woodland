@@ -12,16 +12,29 @@
                 <div class="row">
                     <?php
                     $locationarray = [
-                        array("title" => "Tsim Sha Tsui", "image" => "tst.jpg", "link" => "tst"),
-                        array("title" => "Wan Chai", "image" => "wanchai.jpg", "link" => "wanchai")
+                        array("title" => "Tsim Sha Tsui", "image" => "tst.jpg",
+                            "externallink" => "",
+                            "link" => "tst"),
+                        array("title" => "Wan Chai", "image" => "wanchai.jpg", 
+                             "externallink" => "https://bit.ly/Woodlands-Wanchai-FoodDelivery",
+                            "link" => "wanchai")
                     ];
                     foreach ($locationarray as $key => $value) {
                         $location = $value["link"];
                         ?>
                         <div class="col-md-6 text-center">
                             <img class="thumbnail" src="<?php echo base_url(); ?>assets/locations/<?php echo $value["image"]; ?>" style="display: inline-block;    border-radius: 20px;" /><hr/>
+ <?php
+                        if ($value["externallink"]) {
+                            ?>                        <a href="<?php echo $value["externallink"]; ?>" class="reservation_buttons"><div class=""> Select </div></a>
+
+                            <?php
+                        } else {
+                            ?>
                             <a href="<?php echo site_url("menu/$location/0"); ?>" class="reservation_buttons"><div class="">Select </div></a>
-                        </div>
+                            <?php
+                        }
+                        ?>                        </div>
                         <?php
                     }
                     ?>

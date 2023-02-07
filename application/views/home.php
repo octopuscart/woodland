@@ -80,56 +80,67 @@ $this->load->view('layout/header');
 
             </div>
 
-         
-                <?php
-                $locationarray = [
-                    array("title" => "Tsim Sha Tsui",
-                        "image" => "tst.jpg", 
-                        "address"=>'<span class="font-primary" style="color:black">
+
+            <?php
+            $locationarray = [
+                array("title" => "Tsim Sha Tsui",
+                    "image" => "tst.jpg",
+                    "address" => '<span class="font-primary" style="color:black">
                 UG Shop 16 & 17, Wing On Plaza,<br/>
                 62, Mody Road, Tsim Sha Tsui East,<br/>
                 Kowloon, Hong Kong
             </span>',
-                        "link" => "tst"),
-                    array("title" => "Wan Chai", 
-                        "image" => "wanchai.jpg",
-                        "address"=>'<span class="font-primary" style="color:black">
+                    "link" => "tst", "externallink" => ""),
+                array("title" => "Wan Chai",
+                    "image" => "wanchai.jpg",
+                    "address" => '<span class="font-primary" style="color:black">
                 1/F, Dannies House, 20 Luard Road, <br/>
                 Wan Chai, MTR Exit C & A,<br/>
                 Hong Kong
             </span>',
-                        "link" => "wanchai")
-                ];
-                foreach ($locationarray as $key => $value) {
-                    $location = $value["link"];
-                    ?>
-                    <div class="col-lg-3 col-md-4 mb-3">
-                        <div class="team">
-                            <div class="team-image imagescalein">
-                                <a href=""><img class="img-thumbnail" src="<?php echo base_url(); ?>assets/locations/<?php echo $value["image"]; ?>" alt="<?php echo $value["title"]; ?>" style="border-radius: 20px;" /></a>
-                            </div>
-                            <div class="team-desc">
-                              
-                                <p>  
-                                    <?php echo $value["address"]; ?>
-                                 </p>
-                            </div>
-                        </div>
-                           <div class="col-md-12 text-center">
-                        <a href="<?php echo site_url("menu/$location/0"); ?>" class="reservation_buttons"><div class="">Order Now </div></a>
-                    </div>
-                    </div>
-                 
-                    <?php
-                }
+                    "link" => "wanchai",
+                    "externallink" => "https://bit.ly/Woodlands-Wanchai-FoodDelivery")
+            ];
+            foreach ($locationarray as $key => $value) {
+                $location = $value["link"];
                 ?>
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="team">
+                        <div class="team-image imagescalein">
+                            <a href=""><img class="img-thumbnail" src="<?php echo base_url(); ?>assets/locations/<?php echo $value["image"]; ?>" alt="<?php echo $value["title"]; ?>" style="border-radius: 20px;" /></a>
+                        </div>
+                        <div class="team-desc">
+
+                            <p>  
+                                <?php echo $value["address"]; ?>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <?php
+                        if ($value["externallink"]) {
+                            ?>                        <a href="<?php echo $value["externallink"]; ?>" class="reservation_buttons"><div class="">Order Now </div></a>
+
+                            <?php
+                        } else {
+                            ?>
+                            <a href="<?php echo site_url("menu/$location/0"); ?>" class="reservation_buttons"><div class="">Order Now </div></a>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+
+    <?php
+}
+?>
 
 
-        
 
 
 
-           
+
+
             <div class="col-lg-3 col-md-3">
 
             </div>
@@ -202,29 +213,29 @@ $this->load->view('layout/header');
                             <div>
                                 <div id="item-thumb" class="item-thumb">
 
-                                    <?php
-                                    $menuitems = array(
-                                        "SOUP" => "soup.jpg",
-                                        "STARTERS" => "idly.jpg",
-                                        "CHAT CORNER" => "chat.jpg",
-                                        "DOSA" => "dosa.jpg",
-                                        "RAVA DOSA" => "ravadosa.jpg",
-                                        "UTTAPPAM" => "uttapam.jpg",
-                                        "THALI" => "thali.jpg",
-                                        "RICE" => "rice.jpg",
-                                        "BREADS" => "roti.jpg",
-                                    );
-                                    foreach ($menuitems as $key => $value) {
-                                        ?>
+<?php
+$menuitems = array(
+    "SOUP" => "soup.jpg",
+    "STARTERS" => "idly.jpg",
+    "CHAT CORNER" => "chat.jpg",
+    "DOSA" => "dosa.jpg",
+    "RAVA DOSA" => "ravadosa.jpg",
+    "UTTAPPAM" => "uttapam.jpg",
+    "THALI" => "thali.jpg",
+    "RICE" => "rice.jpg",
+    "BREADS" => "roti.jpg",
+);
+foreach ($menuitems as $key => $value) {
+    ?>
                                         <a href="<?php echo site_url("menu/0/0"); ?>" role = "button" class = "owl-dot " style="width:48%;">
                                             <span style="background: url(<?php echo base_url(); ?>assets/theme2/res/images/menu/menu/<?php echo $value; ?>)">
                                                 <h3><?php echo $key; ?></h3>
                                             </span>
 
                                         </a>
-                                        <?php
-                                    }
-                                    ?>
+    <?php
+}
+?>
                                 </div>
                             </div>
                             <div class="center divcenter"><a class="button button-border button-small button-black button-dark button-circle noleftmargin" href="<?php echo site_url("menu/0/0"); ?>" style="margin-top: 0px;">See All Menu</a></div>
@@ -332,66 +343,66 @@ $this->load->view('layout/header');
     </div>
     <style>
 
-        <?php
-        $reviewList = array(
-            "ranikant" => array(
-                "image" => "Rajini.jpg",
-                "name" => "Rajinikanth",
-                "position" => "Indian Cine Super Star",
-                "date" => "",
-            ),
-            "ilayaraja" => array(
-                "image" => "Ilayaraja.jpg",
-                "name" => "Iilayaraja",
-                "position" => "Famous Indian Music Director",
-                "date" => "",
-            ),
-            "SPB" => array(
-                "image" => "SPB.jpg",
-                "name" => "S. P. Balasubrahmanyam",
-                "position" => "Indian playback singer",
-                "date" => "",
-            ),
-            "Sunil-Gav" => array(
-                "image" => "Sunil-Gav.jpg",
-                "name" => "Sunil Gavaskar",
-                "position" => "Indian cricketer",
-                "date" => "",
-            ),
-            "Anil-Kumble" => array(
-                "image" => "Anil-Kumble.jpg",
-                "name" => "Anil Kumble",
-                "position" => "Indian cricketer",
-                "date" => "",
-            ),
-            "Amrish" => array(
-                "image" => "Amrish.jpg",
-                "name" => "Amrish Puri",
-                "position" => "Indian bollywood actor ",
-                "date" => "",
-            ),
-            "hariharan" => array(
-                "image" => "Hari-haran.jpg",
-                "name" => "Hari Haran",
-                "position" => "Indian Cine Singar ",
-                "date" => "",
-            ),
-            "shrikanth" => array(
-                "image" => "Srikanth.jpg",
-                "name" => "Shri Kanth",
-                "position" => "Indian cricketer ",
-                "date" => "",
-            ),
-            "Narasimha" => array(
-                "image" => "Narasimrao.jpg",
-                "name" => "P. V. Narasimha Rao",
-                "position" => "Former Prime Minister of India",
-                "date" => "",
-            ),
-        );
-        $countrr = 1;
-        foreach ($reviewList as $key => $value) {
-            ?>
+<?php
+$reviewList = array(
+    "ranikant" => array(
+        "image" => "Rajini.jpg",
+        "name" => "Rajinikanth",
+        "position" => "Indian Cine Super Star",
+        "date" => "",
+    ),
+    "ilayaraja" => array(
+        "image" => "Ilayaraja.jpg",
+        "name" => "Iilayaraja",
+        "position" => "Famous Indian Music Director",
+        "date" => "",
+    ),
+    "SPB" => array(
+        "image" => "SPB.jpg",
+        "name" => "S. P. Balasubrahmanyam",
+        "position" => "Indian playback singer",
+        "date" => "",
+    ),
+    "Sunil-Gav" => array(
+        "image" => "Sunil-Gav.jpg",
+        "name" => "Sunil Gavaskar",
+        "position" => "Indian cricketer",
+        "date" => "",
+    ),
+    "Anil-Kumble" => array(
+        "image" => "Anil-Kumble.jpg",
+        "name" => "Anil Kumble",
+        "position" => "Indian cricketer",
+        "date" => "",
+    ),
+    "Amrish" => array(
+        "image" => "Amrish.jpg",
+        "name" => "Amrish Puri",
+        "position" => "Indian bollywood actor ",
+        "date" => "",
+    ),
+    "hariharan" => array(
+        "image" => "Hari-haran.jpg",
+        "name" => "Hari Haran",
+        "position" => "Indian Cine Singar ",
+        "date" => "",
+    ),
+    "shrikanth" => array(
+        "image" => "Srikanth.jpg",
+        "name" => "Shri Kanth",
+        "position" => "Indian cricketer ",
+        "date" => "",
+    ),
+    "Narasimha" => array(
+        "image" => "Narasimrao.jpg",
+        "name" => "P. V. Narasimha Rao",
+        "position" => "Former Prime Minister of India",
+        "date" => "",
+    ),
+);
+$countrr = 1;
+foreach ($reviewList as $key => $value) {
+    ?>
 
             .dessert-menu .item-thumb .owl-dot:nth-of-type(<?php echo $countrr; ?>) span {
                 background-image: url(<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>)!important;
@@ -399,10 +410,10 @@ $this->load->view('layout/header');
                 ;
                 background-repeat: no-repeat;
             }
-            <?php
-            $countrr++;
-        }
-        ?>
+    <?php
+    $countrr++;
+}
+?>
 
     </style>
     <div class="section dessert-menu nomargin nopadding" style="    background: #FBB316;">
@@ -410,9 +421,9 @@ $this->load->view('layout/header');
             <div class="row align-items-stretch clearfix">
                 <div class="col-lg-5" style="background-color: #FFF; padding: 0; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);margin: 40px 0px;">
                     <div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel custom-js">
-                        <?php
-                        foreach ($reviewList as $key => $value) {
-                            ?>
+<?php
+foreach ($reviewList as $key => $value) {
+    ?>
                             <div class="oc-item">
                                 <img class="topmargin-sm" src="<?php echo base_url(); ?>assets/theme2/res/images/review/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" style="margin: 26px;    width: 90%;">
                                 <div class="food-content clearfix">
@@ -423,9 +434,9 @@ $this->load->view('layout/header');
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
+    <?php
+}
+?>
 
                     </div>
                 </div>
@@ -501,9 +512,9 @@ $this->load->view('layout/header');
         </div>
     </div>
 
-    <?php
-    $this->load->view('layout/contactfooter');
-    ?>
+<?php
+$this->load->view('layout/contactfooter');
+?>
 
 
 

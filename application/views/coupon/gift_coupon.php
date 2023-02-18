@@ -203,7 +203,7 @@ $this->load->view('layout/header');
                                                 
                                                 <h3>Your coupon code(s) must be used after 7 days from the purchased date.</h3>
                                             </div>
-                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" name="submit_now" value="submit">Buy Now</button>
+                                            <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="button" name="submit_now" value="submit">Buy Now</button>
                                         </div>
                                         <div class="clear"></div>
 

@@ -60,33 +60,33 @@ class Coupon extends CI_Controller {
     }
 
     public function index() {
-        if (isset($_POST['submit_now'])) {
-            $requestid = "WL" . date('Ymd') . date('His');
-            $paymenttype = $this->input->post('payment_type');
-            $coupnrequest = array(
-                "request_id" => $requestid,
-                "name" => $this->input->post('name'),
-                "email" => $this->input->post('email'),
-                "contact_no" => $this->input->post('contact_no'),
-                "name_receiver" => $this->input->post('name_receiver'),
-                "email_receiver" => $this->input->post('email_receiver'),
-                "contact_no_receiver" => $this->input->post('contact_no_receiver'),
-                "payment_type" => $this->input->post('payment_type'),
-                "message" => $this->input->post('message'),
-                'base_amount' => $this->input->post('base_amount'),
-                'percent' => $this->input->post('percent'),
-                'quantity' => $this->input->post('quantity'),
-                'amount' => $this->input->post('amount'),
-                'check_receiver' => $this->input->post('check_receiver'),
-                "status" => "Payment Init",
-                "remark" => "",
-                "date" => date('Y-m-d'),
-                "time" => date('H:i:s'),
-            );
-
-            $this->db->insert('coupon_request', $coupnrequest);
-            redirect("Coupon/orderPayment/" . $requestid);
-        }
+//        if (isset($_POST['submit_now'])) {
+//            $requestid = "WL" . date('Ymd') . date('His');
+//            $paymenttype = $this->input->post('payment_type');
+//            $coupnrequest = array(
+//                "request_id" => $requestid,
+//                "name" => $this->input->post('name'),
+//                "email" => $this->input->post('email'),
+//                "contact_no" => $this->input->post('contact_no'),
+//                "name_receiver" => $this->input->post('name_receiver'),
+//                "email_receiver" => $this->input->post('email_receiver'),
+//                "contact_no_receiver" => $this->input->post('contact_no_receiver'),
+//                "payment_type" => $this->input->post('payment_type'),
+//                "message" => $this->input->post('message'),
+//                'base_amount' => $this->input->post('base_amount'),
+//                'percent' => $this->input->post('percent'),
+//                'quantity' => $this->input->post('quantity'),
+//                'amount' => $this->input->post('amount'),
+//                'check_receiver' => $this->input->post('check_receiver'),
+//                "status" => "Payment Init",
+//                "remark" => "",
+//                "date" => date('Y-m-d'),
+//                "time" => date('H:i:s'),
+//            );
+//
+//            $this->db->insert('coupon_request', $coupnrequest);
+//            redirect("Coupon/orderPayment/" . $requestid);
+//        }
 
         $this->load->view('coupon/gift_coupon');
     }

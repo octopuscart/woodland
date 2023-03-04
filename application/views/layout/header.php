@@ -117,7 +117,7 @@
 
                         </ul>
                         <ul>
-                            <li><a href="<?php echo site_url("coupon"); ?>"><div>Cash Voucher</div></a></li>
+                            <!--<li><a href="<?php echo site_url("coupon"); ?>"><div>Cash Voucher</div></a></li>-->
 <!--                                <li><a href="<?php echo site_url("feedback"); ?>" class=""><div class="">Feedback </div></a></li>-->
 
                             <li>
